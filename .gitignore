@@ -1,0 +1,11 @@
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# Editoren
+.vscode/
+.idea/
+*.swp
+
+# Persönliche Sicherungen des Lernfortschritts
+spanisch-fortschritt-*.json

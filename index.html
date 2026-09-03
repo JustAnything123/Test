@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c8102e">
+<title>¡Vamos! — Spanisch A2 → B1</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+
+<!-- =================== KOPFZEILE =================== -->
+<header id="kopf">
+  <button class="kopf-btn" id="btn-zurueck" hidden aria-label="Zurück">←</button>
+  <div id="kopf-titel">¡Vamos!</div>
+  <div id="kopf-fortschritt" hidden>
+    <div class="balken"><div class="balken-fuell" id="balken-fuell"></div></div>
+    <span id="balken-text">0/0</span>
+  </div>
+  <button class="kopf-btn" id="btn-menue" aria-label="Menü">☰</button>
+</header>
+
+<!-- =================== HAUPTBEREICH =================== -->
+<main id="haupt">
+
+  <!-- ---------- Startbildschirm ---------- -->
+  <section class="seite" id="seite-start">
+    <div class="streak-box">
+      <div class="streak-zahl"><span id="stat-streak">0</span><span class="streak-flamme">🔥</span></div>
+      <div class="streak-label">Tage in Folge</div>
+    </div>
+
+    <div class="kachel-gitter">
+      <div class="kachel"><div class="kachel-zahl" id="stat-aktive-tage">0</div><div class="kachel-label">Aktive Tage</div></div>
+      <div class="kachel"><div class="kachel-zahl" id="stat-woerter">0</div><div class="kachel-label">Gelernte Wörter</div></div>
+      <div class="kachel"><div class="kachel-zahl" id="stat-genauigkeit">–</div><div class="kachel-label">Genauigkeit</div></div>
+      <div class="kachel kachel-warnung" id="kachel-leech"><div class="kachel-zahl" id="stat-leeches">0</div><div class="kachel-label">Problemwörter</div></div>
+    </div>
+
+    <div class="tageskarte" id="tageskarte">
+      <div class="tageskarte-kopf">
+        <span class="niveau-chip" id="tag-niveau">A2</span>
+        <span class="tageskarte-tag">Tag <span id="tag-nummer">1</span> von 60</span>
+      </div>
+      <h2 id="tag-thema">Sich vorstellen</h2>
+      <p class="tageskarte-gram">Grammatik: <span id="tag-grammatik">–</span></p>
+      <div class="tageskarte-zeilen" id="tageskarte-zeilen"></div>
+      <button class="btn btn-gross" id="btn-lernen">Heute lernen</button>
+      <p class="hinweis" id="hinweis-fertig" hidden>✅ Heute schon erledigt — du kannst trotzdem weiter üben.</p>
+    </div>
+
+    <div class="zusatz-knoepfe">
+      <button class="btn btn-neben" id="btn-speed">⚡ Schnell-Wiederholung</button>
+      <button class="btn btn-neben" id="btn-nur-wdh">🔁 Nur Wiederholen</button>
+    </div>
+
+    <h3 class="abschnitt-titel">Letzte 12 Wochen</h3>
+    <div id="heatmap"></div>
+  </section>
+
+  <!-- ---------- Lern-/Übungsbildschirm ---------- -->
+  <section class="seite" id="seite-uebung" hidden>
+    <div id="uebung-phase" class="phasen-band"></div>
+    <div id="uebung-inhalt"></div>
+    <div id="uebung-rueckmeldung" class="rueckmeldung" hidden>
+      <div class="rueckmeldung-titel" id="rueckmeldung-titel"></div>
+      <div class="rueckmeldung-text" id="rueckmeldung-text"></div>
+    </div>
+    <div class="fussleiste" id="uebung-fuss">
+      <button class="btn btn-gross" id="btn-pruefen">Prüfen</button>
+      <button class="btn btn-gross" id="btn-weiter" hidden>Weiter</button>
+    </div>
+  </section>
+
+  <!-- ---------- Abschlussbildschirm ---------- -->
+  <section class="seite" id="seite-fertig" hidden>
+    <div class="fertig-box">
+      <div class="fertig-emoji">🎉</div>
+      <h2 id="fertig-titel">¡Muy bien!</h2>
+      <p id="fertig-untertitel">Tag 1 abgeschlossen</p>
+      <div class="kachel-gitter">
+        <div class="kachel"><div class="kachel-zahl" id="fertig-aufgaben">0</div><div class="kachel-label">Aufgaben</div></div>
+        <div class="kachel"><div class="kachel-zahl" id="fertig-quote">0%</div><div class="kachel-label">Richtig</div></div>
+        <div class="kachel"><div class="kachel-zahl" id="fertig-neu">0</div><div class="kachel-label">Neue Wörter</div></div>
+        <div class="kachel"><div class="kachel-zahl" id="fertig-streak">0</div><div class="kachel-label">Streak</div></div>
+      </div>
+      <div id="fertig-fehlerliste"></div>
+      <button class="btn btn-gross" id="btn-fertig-zurueck">Zur Übersicht</button>
+    </div>
+  </section>
+
+  <!-- ---------- Historie ---------- -->
+  <section class="seite" id="seite-historie" hidden>
+    <h2>Historie</h2>
+    <p class="hinweis">Alle Wörter und Sätze, die du schon gesehen hast — sortiert nach Fehlern.</p>
+    <div class="filter-leiste">
+      <button class="chip chip-aktiv" data-filter="alle">Alle</button>
+      <button class="chip" data-filter="leech">Nur Problemwörter</button>
+      <button class="chip" data-filter="faellig">Jetzt fällig</button>
+    </div>
+    <div id="historie-liste"></div>
+  </section>
+
+  <!-- ---------- Erinnerung ---------- -->
+  <section class="seite" id="seite-erinnerung" hidden>
+    <h2>Tägliche Erinnerung um 19:30</h2>
+    <div class="info-box">
+      <strong>Warum kein „echter" Handy-Alarm aus der App?</strong>
+      <p>Eine Webseite kann sich nicht selbst melden, wenn sie geschlossen ist — JavaScript
+      läuft nur im offenen Tab. Die Web-Schnittstelle, die das lösen sollte
+      (<em>Notification Triggers</em>), wurde von Google getestet, aber nie ausgeliefert.
+      Deshalb übernimmt dein Kalender oder Wecker den Job: das ist zu 100 % zuverlässig
+      und funktioniert auch offline und im Energiesparmodus.</p>
+    </div>
+
+    <h3>Weg 1 — Kalendereintrag (ein Klick)</h3>
+    <ol class="schritte">
+      <li>Auf den Button unten tippen — es lädt eine Datei <code>spanisch-1930.ics</code>.</li>
+      <li>Datei in den Downloads antippen → Google Kalender öffnet sich.</li>
+      <li>„Importieren" bestätigen. Fertig.</li>
+    </ol>
+    <button class="btn btn-gross" id="btn-ics">📅 Kalender-Erinnerung herunterladen</button>
+    <p class="hinweis">Der Termin wiederholt sich täglich um 19:30 (Zeitzone Europe/Berlin,
+    passt sich also automatisch an Sommer-/Winterzeit an) und enthält den Link zu dieser App.</p>
+
+    <h3>Weg 2 — Wecker der Uhr-App</h3>
+    <ol class="schritte">
+      <li>Uhr-App öffnen → Reiter <strong>Wecker</strong> → <strong>+</strong></li>
+      <li>Zeit <strong>19:30</strong> einstellen</li>
+      <li><strong>Wiederholen</strong> antippen → alle sieben Wochentage auswählen</li>
+      <li>Als Bezeichnung <strong>„Spanisch lernen 🇪🇸"</strong> eingeben</li>
+      <li>Speichern</li>
+    </ol>
+
+    <h3>App aufs Handy legen</h3>
+    <ol class="schritte">
+      <li>Diese Seite in Chrome öffnen</li>
+      <li>Menü (⋮) → <strong>Zum Startbildschirm hinzufügen</strong></li>
+      <li>Ab dann startet sie wie eine normale App, ohne Adressleiste</li>
+    </ol>
+  </section>
+
+  <!-- ---------- Einstellungen ---------- -->
+  <section class="seite" id="seite-einstellungen" hidden>
+    <h2>Einstellungen</h2>
+
+    <div class="einst-zeile">
+      <label for="ein-ton">Aussprache vorlesen</label>
+      <input type="checkbox" id="ein-ton" class="schalter">
+    </div>
+    <p class="hinweis" id="stimme-status"></p>
+
+    <div class="einst-zeile">
+      <label for="ein-thema">Darstellung</label>
+      <select id="ein-thema">
+        <option value="auto">Automatisch</option>
+        <option value="hell">Hell</option>
+        <option value="dunkel">Dunkel</option>
+      </select>
+    </div>
+
+    <div class="einst-zeile">
+      <label for="ein-ziel">Aufgaben pro Tag (max.)</label>
+      <select id="ein-ziel">
+        <option value="15">15 — kurz</option>
+        <option value="25">25 — normal</option>
+        <option value="40">40 — intensiv</option>
+        <option value="999">Alles Fällige</option>
+      </select>
+    </div>
+
+    <h3>Sicherung</h3>
+    <p class="hinweis">Dein Fortschritt liegt nur in diesem Browser. Wenn du die
+    Browserdaten löschst, ist er weg. Lade dir ab und zu eine Sicherung herunter.</p>
+    <button class="btn" id="btn-export">⬇️ Fortschritt sichern</button>
+    <button class="btn" id="btn-import">⬆️ Sicherung einspielen</button>
+    <input type="file" id="datei-import" accept=".json" hidden>
+
+    <h3>Zurücksetzen</h3>
+    <button class="btn btn-gefahr" id="btn-reset">Allen Fortschritt löschen</button>
+  </section>
+
+</main>
+
+<!-- =================== MENÜ =================== -->
+<nav id="menue" hidden>
+  <button data-ziel="start">🏠 Übersicht</button>
+  <button data-ziel="historie">📜 Historie</button>
+  <button data-ziel="erinnerung">⏰ Erinnerung 19:30</button>
+  <button data-ziel="einstellungen">⚙️ Einstellungen</button>
+</nav>
+<div id="menue-schatten" hidden></div>
+
+<!-- =================== SKRIPTE =================== -->
+<!-- Reihenfolge ist wichtig: erst Daten-Sammelbehälter, dann Inhalte, dann Logik -->
+<script src="js/daten.js"></script>
+<script src="data/lektionen-01-10.js"></script>
+<script src="data/lektionen-11-20.js"></script>
+<script src="data/lektionen-21-30.js"></script>
+<script src="data/lektionen-31-40.js"></script>
+<script src="data/lektionen-41-50.js"></script>
+<script src="data/lektionen-51-60.js"></script>
+<script src="js/speicher.js"></script>
+<script src="js/srs.js"></script>
+<script src="js/sprache.js"></script>
+<script src="js/uebungen.js"></script>
+<script src="js/statistik.js"></script>
+<script src="js/tagesplan.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

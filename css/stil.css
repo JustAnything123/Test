@@ -1,0 +1,396 @@
+/* ==========================================================================
+   ¡Vamos! — Spanisch-Lern-App
+   Mobil zuerst gedacht: alles ist für ein Handy im Hochformat ausgelegt.
+   Farben liegen als "CSS-Variablen" (--name) an einer Stelle, damit du sie
+   an einem Ort ändern kannst.
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* Helles Thema */
+  --grund:        #f6f4f0;
+  --flaeche:      #ffffff;
+  --flaeche-2:    #f0ede8;
+  --rand:         #e0dbd3;
+  --text:         #1f1c19;
+  --text-leise:   #6d675f;
+
+  --akzent:       #c8102e;   /* Spanisch-Rot */
+  --akzent-dunkel:#9c0c23;
+  --gold:         #e8a317;   /* Spanisch-Gelb */
+  --gruen:        #1f9254;
+  --gruen-hell:   #e3f5ea;
+  --rot:          #cc2936;
+  --rot-hell:     #fdeaec;
+  --blau:         #2563a8;
+
+  --radius:       14px;
+  --schatten:     0 1px 3px rgba(0,0,0,.08), 0 4px 14px rgba(0,0,0,.05);
+  --kopf-hoehe:   56px;
+}
+
+/* Dunkles Thema: Systemeinstellung ODER manuell gewählt */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-thema="hell"]) {
+    --grund:      #16140f;
+    --flaeche:    #211e19;
+    --flaeche-2:  #2c2822;
+    --rand:       #3a352d;
+    --text:       #f2efe9;
+    --text-leise: #a49d92;
+    --akzent:     #ef4a5f;
+    --akzent-dunkel:#c8102e;
+    --gruen:      #4ac585;
+    --gruen-hell: #16321f;
+    --rot:        #ef5566;
+    --rot-hell:   #3a1a1d;
+    --blau:       #6ba3e8;
+    --schatten:   0 1px 3px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+  }
+}
+:root[data-thema="dunkel"] {
+  --grund:      #16140f;
+  --flaeche:    #211e19;
+  --flaeche-2:  #2c2822;
+  --rand:       #3a352d;
+  --text:       #f2efe9;
+  --text-leise: #a49d92;
+  --akzent:     #ef4a5f;
+  --akzent-dunkel:#c8102e;
+  --gruen:      #4ac585;
+  --gruen-hell: #16321f;
+  --rot:        #ef5566;
+  --rot-hell:   #3a1a1d;
+  --blau:       #6ba3e8;
+  --schatten:   0 1px 3px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+}
+
+* { box-sizing: border-box; }
+
+/* Wichtig: Elemente mit dem Attribut "hidden" müssen wirklich verschwinden.
+   Ohne !important gewinnt sonst z. B. .btn { display:inline-block } dagegen. */
+[hidden] { display: none !important; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--grund);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-y: contain;
+}
+
+h2 { font-size: 1.35rem; margin: 0 0 .5rem; }
+h3 { font-size: 1.05rem; margin: 1.6rem 0 .5rem; }
+p  { margin: .5rem 0; }
+code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; font-size: .9em; }
+
+/* ---------------------------- Kopfzeile ---------------------------- */
+#kopf {
+  position: sticky; top: 0; z-index: 40;
+  height: var(--kopf-hoehe);
+  display: flex; align-items: center; gap: .6rem;
+  padding: 0 .5rem;
+  padding-top: env(safe-area-inset-top);
+  background: var(--flaeche);
+  border-bottom: 1px solid var(--rand);
+}
+#kopf-titel { font-weight: 700; font-size: 1.05rem; flex: 0 0 auto; }
+.kopf-btn {
+  background: none; border: 0; color: var(--text);
+  font-size: 1.4rem; width: 40px; height: 40px; border-radius: 10px;
+  cursor: pointer; flex: 0 0 auto;
+}
+.kopf-btn:active { background: var(--flaeche-2); }
+
+#kopf-fortschritt { flex: 1; display: flex; align-items: center; gap: .5rem; }
+.balken { flex: 1; height: 10px; background: var(--flaeche-2); border-radius: 99px; overflow: hidden; }
+.balken-fuell { height: 100%; width: 0%; background: var(--gruen); border-radius: 99px; transition: width .3s ease; }
+#balken-text { font-size: .8rem; color: var(--text-leise); font-variant-numeric: tabular-nums; }
+
+/* ---------------------------- Seiten ---------------------------- */
+#haupt { max-width: 560px; margin: 0 auto; padding: 1rem .9rem 5rem; }
+.seite[hidden] { display: none; }
+
+/* ---------------------------- Startbildschirm ---------------------------- */
+.streak-box { text-align: center; padding: .8rem 0 1.2rem; }
+.streak-zahl { font-size: 3.2rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
+.streak-flamme { font-size: 2.2rem; margin-left: .2rem; }
+.streak-label { color: var(--text-leise); font-size: .9rem; margin-top: .2rem; }
+
+.kachel-gitter { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; }
+.kachel {
+  background: var(--flaeche); border: 1px solid var(--rand); border-radius: var(--radius);
+  padding: .8rem .7rem; text-align: center;
+}
+.kachel-zahl { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.kachel-label { font-size: .78rem; color: var(--text-leise); margin-top: .1rem; }
+.kachel-warnung { cursor: pointer; }
+.kachel-warnung.aktiv { border-color: var(--rot); }
+.kachel-warnung.aktiv .kachel-zahl { color: var(--rot); }
+
+.tageskarte {
+  margin: 1.2rem 0 .8rem;
+  background: var(--flaeche); border: 1px solid var(--rand); border-radius: var(--radius);
+  padding: 1rem; box-shadow: var(--schatten);
+}
+.tageskarte-kopf { display: flex; align-items: center; justify-content: space-between; margin-bottom: .4rem; }
+.tageskarte-tag { font-size: .82rem; color: var(--text-leise); }
+.niveau-chip {
+  background: var(--akzent); color: #fff; font-size: .72rem; font-weight: 700;
+  padding: .18rem .5rem; border-radius: 99px; letter-spacing: .04em;
+}
+.tageskarte h2 { margin: .1rem 0 .3rem; }
+.tageskarte-gram { font-size: .88rem; color: var(--text-leise); margin: 0 0 .8rem; }
+.tageskarte-zeilen { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1rem; }
+.zeile { display: flex; align-items: center; gap: .5rem; font-size: .9rem; }
+.zeile-punkt {
+  width: 22px; height: 22px; border-radius: 50%; flex: 0 0 auto;
+  display: grid; place-items: center; font-size: .7rem;
+  background: var(--flaeche-2); color: var(--text-leise);
+}
+.zeile.hat .zeile-punkt { background: var(--gruen); color: #fff; }
+.zeile-anzahl { margin-left: auto; color: var(--text-leise); font-size: .82rem; }
+
+.zusatz-knoepfe { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-bottom: .5rem; }
+.abschnitt-titel { font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; color: var(--text-leise); }
+
+/* ---------------------------- Buttons ---------------------------- */
+.btn {
+  display: inline-block; width: 100%;
+  padding: .75rem 1rem; border: 1px solid var(--rand); border-radius: 12px;
+  background: var(--flaeche-2); color: var(--text);
+  font-size: .95rem; font-weight: 600; font-family: inherit;
+  cursor: pointer; text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active { transform: translateY(1px); }
+.btn-gross {
+  background: var(--akzent); border-color: var(--akzent); color: #fff;
+  font-size: 1.05rem; padding: .9rem 1rem;
+}
+.btn-gross:disabled { opacity: .45; cursor: default; }
+.btn-neben { font-size: .88rem; padding: .65rem .5rem; }
+.btn-gefahr { background: var(--rot-hell); border-color: var(--rot); color: var(--rot); }
+.btn + .btn { margin-top: .5rem; }
+
+/* ---------------------------- Heatmap ---------------------------- */
+#heatmap {
+  display: grid; grid-template-rows: repeat(7, 1fr); grid-auto-flow: column;
+  gap: 3px; margin-top: .5rem; overflow-x: auto; padding-bottom: .3rem;
+}
+.hm-tag { width: 12px; height: 12px; border-radius: 3px; background: var(--flaeche-2); }
+.hm-tag.s1 { background: color-mix(in srgb, var(--gruen) 30%, var(--flaeche-2)); }
+.hm-tag.s2 { background: color-mix(in srgb, var(--gruen) 55%, var(--flaeche-2)); }
+.hm-tag.s3 { background: color-mix(in srgb, var(--gruen) 78%, var(--flaeche-2)); }
+.hm-tag.s4 { background: var(--gruen); }
+.hm-tag.heute { outline: 2px solid var(--akzent); outline-offset: 1px; }
+
+/* ---------------------------- Übungsbildschirm ---------------------------- */
+.phasen-band {
+  font-size: .75rem; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--text-leise); margin-bottom: .8rem; font-weight: 600;
+}
+.frage { font-size: .92rem; color: var(--text-leise); margin-bottom: .3rem; }
+.wort-gross {
+  font-size: 2rem; font-weight: 700; line-height: 1.2; margin: .2rem 0 .6rem;
+  overflow-wrap: anywhere;
+}
+.wort-mittel { font-size: 1.4rem; font-weight: 600; margin: .2rem 0 .6rem; overflow-wrap: anywhere; }
+.wortart { font-size: .78rem; color: var(--text-leise); font-style: italic; }
+.beispiel {
+  background: var(--flaeche-2); border-left: 3px solid var(--gold);
+  padding: .6rem .7rem; border-radius: 0 8px 8px 0; margin: .8rem 0;
+  font-size: .92rem;
+}
+.beispiel .de { color: var(--text-leise); font-size: .86rem; display: block; margin-top: .2rem; }
+
+.lern-karte {
+  background: var(--flaeche); border: 1px solid var(--rand); border-radius: var(--radius);
+  padding: 1.2rem 1rem; box-shadow: var(--schatten); text-align: center;
+}
+.lern-karte .wort-gross { color: var(--akzent); }
+
+/* Multiple Choice */
+.optionen { display: flex; flex-direction: column; gap: .55rem; margin-top: 1rem; }
+.option {
+  padding: .85rem 1rem; border: 2px solid var(--rand); border-radius: 12px;
+  background: var(--flaeche); color: var(--text); font-size: 1rem; font-family: inherit;
+  text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.option:active { background: var(--flaeche-2); }
+.option.gewaehlt { border-color: var(--blau); background: color-mix(in srgb, var(--blau) 10%, var(--flaeche)); }
+.option.richtig  { border-color: var(--gruen); background: var(--gruen-hell); }
+.option.falsch   { border-color: var(--rot);   background: var(--rot-hell); }
+.option:disabled { cursor: default; }
+
+/* Eingabefeld + Akzentleiste */
+.eingabe {
+  width: 100%; padding: .8rem .9rem; font-size: 1.15rem; font-family: inherit;
+  border: 2px solid var(--rand); border-radius: 12px;
+  background: var(--flaeche); color: var(--text); margin-top: 1rem;
+}
+.eingabe:focus { outline: none; border-color: var(--blau); }
+.eingabe.richtig { border-color: var(--gruen); background: var(--gruen-hell); }
+.eingabe.falsch  { border-color: var(--rot);   background: var(--rot-hell); }
+/* Neun Tasten in genau einer Reihe — mit flex-wrap ist die letzte
+   Taste umgebrochen, ein Raster teilt die Breite sauber auf. */
+.akzentleiste { display: grid; grid-template-columns: repeat(9, 1fr); gap: .3rem; margin-top: .5rem; }
+.akzent-taste {
+  padding: .5rem .1rem; font-size: 1.05rem; font-family: inherit;
+  border: 1px solid var(--rand); border-radius: 9px; background: var(--flaeche-2);
+  color: var(--text); cursor: pointer;
+}
+.akzent-taste:active { background: var(--rand); }
+
+/* Tapping (Satzbau) */
+.tap-ziel {
+  min-height: 92px; border: 2px dashed var(--rand); border-radius: 12px;
+  padding: .6rem; margin-top: 1rem;
+  display: flex; flex-wrap: wrap; gap: .4rem; align-content: flex-start;
+}
+.tap-vorrat { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.tap-wort {
+  padding: .5rem .75rem; border: 1px solid var(--rand); border-radius: 10px;
+  background: var(--flaeche); color: var(--text); font-size: 1rem; font-family: inherit;
+  cursor: pointer; box-shadow: 0 2px 0 var(--rand);
+}
+.tap-wort:active { transform: translateY(2px); box-shadow: none; }
+.tap-wort.benutzt { visibility: hidden; }
+.tap-ziel .tap-wort { background: var(--flaeche-2); }
+
+/* Lückentext */
+.luecke-satz { font-size: 1.25rem; line-height: 1.9; margin-top: 1rem; }
+.luecke-feld {
+  display: inline-block; min-width: 100px; padding: .2rem .5rem;
+  border: 0; border-bottom: 2px solid var(--akzent); background: transparent;
+  color: var(--text); font-size: 1.15rem; font-family: inherit; text-align: center;
+}
+.luecke-feld:focus { outline: none; background: var(--flaeche-2); }
+.tipp-reihe { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.tipp-btn {
+  padding: .45rem .8rem; border: 1px solid var(--rand); border-radius: 99px;
+  background: var(--flaeche-2); color: var(--text); font-size: .92rem; font-family: inherit; cursor: pointer;
+}
+
+/* Grammatik-Erklärung */
+.gram-box {
+  background: var(--flaeche); border: 1px solid var(--rand); border-radius: var(--radius);
+  padding: 1rem; box-shadow: var(--schatten);
+}
+.gram-box h3 { margin-top: 0; font-size: 1.2rem; color: var(--akzent); }
+.gram-box table { width: 100%; border-collapse: collapse; margin: .8rem 0; font-size: .92rem; }
+.gram-box th, .gram-box td { border: 1px solid var(--rand); padding: .4rem .5rem; text-align: left; }
+.gram-box th { background: var(--flaeche-2); font-weight: 600; }
+.gram-box ul { padding-left: 1.2rem; margin: .6rem 0; }
+.gram-box li { margin: .3rem 0; }
+.gram-box .merke {
+  background: color-mix(in srgb, var(--gold) 16%, var(--flaeche));
+  border-left: 3px solid var(--gold); padding: .6rem .7rem; border-radius: 0 8px 8px 0; margin: .8rem 0;
+}
+.gram-box em { color: var(--akzent); font-style: normal; font-weight: 600; }
+
+/* Hör-Übung */
+.hoer-knopf {
+  width: 96px; height: 96px; border-radius: 50%; margin: 1.5rem auto; display: block;
+  border: 0; background: var(--akzent); color: #fff; font-size: 2.4rem; cursor: pointer;
+  box-shadow: var(--schatten);
+}
+.hoer-knopf:active { transform: scale(.96); }
+.laut-klein {
+  border: 0; background: none; color: var(--akzent); font-size: 1.4rem;
+  cursor: pointer; padding: .2rem .4rem;
+}
+
+/* Rückmeldung */
+.rueckmeldung { border-radius: 12px; padding: .8rem .9rem; margin-top: 1rem; }
+.rueckmeldung.gut    { background: var(--gruen-hell); border: 1px solid var(--gruen); }
+.rueckmeldung.fast   { background: color-mix(in srgb, var(--gold) 18%, var(--flaeche)); border: 1px solid var(--gold); }
+.rueckmeldung.schlecht { background: var(--rot-hell); border: 1px solid var(--rot); }
+.rueckmeldung-titel { font-weight: 700; margin-bottom: .2rem; }
+.rueckmeldung.gut .rueckmeldung-titel { color: var(--gruen); }
+.rueckmeldung.schlecht .rueckmeldung-titel { color: var(--rot); }
+.rueckmeldung-text { font-size: .95rem; }
+.rueckmeldung-text b { color: var(--akzent); }
+
+.fussleiste { margin-top: 1.2rem; padding-bottom: env(safe-area-inset-bottom); }
+
+/* ---------------------------- Abschluss ---------------------------- */
+.fertig-box { text-align: center; padding-top: 1.5rem; }
+.fertig-emoji { font-size: 4rem; line-height: 1; }
+.fertig-box .kachel-gitter { margin: 1.2rem 0; text-align: center; }
+#fertig-fehlerliste { text-align: left; margin: 1rem 0; }
+#fertig-fehlerliste .fehler-zeile {
+  background: var(--rot-hell); border: 1px solid var(--rot); border-radius: 10px;
+  padding: .5rem .7rem; margin-bottom: .4rem; font-size: .9rem;
+}
+
+/* ---------------------------- Historie ---------------------------- */
+.filter-leiste { display: flex; gap: .4rem; margin: .8rem 0; flex-wrap: wrap; }
+.chip {
+  padding: .4rem .8rem; border: 1px solid var(--rand); border-radius: 99px;
+  background: var(--flaeche); color: var(--text-leise); font-size: .85rem;
+  font-family: inherit; cursor: pointer;
+}
+.chip-aktiv { background: var(--akzent); border-color: var(--akzent); color: #fff; }
+
+.h-zeile {
+  background: var(--flaeche); border: 1px solid var(--rand); border-radius: 10px;
+  padding: .6rem .75rem; margin-bottom: .45rem;
+}
+.h-zeile.ist-leech { border-color: var(--rot); }
+.h-kopf { display: flex; align-items: baseline; gap: .5rem; }
+.h-es { font-weight: 600; }
+.h-de { color: var(--text-leise); font-size: .9rem; }
+.h-meta { margin-left: auto; font-size: .78rem; color: var(--text-leise); white-space: nowrap; }
+.h-stufen { display: flex; gap: 2px; margin-top: .35rem; }
+.h-punkt { width: 100%; height: 4px; border-radius: 2px; background: var(--flaeche-2); }
+.h-punkt.voll { background: var(--gruen); }
+.h-letzte-fehler { font-size: .8rem; color: var(--rot); margin-top: .3rem; }
+.leer-hinweis { text-align: center; color: var(--text-leise); padding: 2rem 1rem; }
+
+/* ---------------------------- Erinnerung / Einstellungen ---------------------------- */
+.info-box {
+  background: var(--flaeche); border: 1px solid var(--rand); border-left: 3px solid var(--blau);
+  border-radius: 0 12px 12px 0; padding: .8rem .9rem; margin: .8rem 0;
+  font-size: .92rem;
+}
+.info-box p { margin: .4rem 0 0; color: var(--text-leise); }
+.schritte { padding-left: 1.3rem; }
+.schritte li { margin: .45rem 0; }
+.hinweis { font-size: .85rem; color: var(--text-leise); }
+
+.einst-zeile {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .8rem 0; border-bottom: 1px solid var(--rand);
+}
+.einst-zeile select {
+  padding: .45rem .6rem; border: 1px solid var(--rand); border-radius: 9px;
+  background: var(--flaeche); color: var(--text); font-family: inherit; font-size: .95rem;
+}
+.schalter { width: 46px; height: 26px; accent-color: var(--gruen); }
+
+/* ---------------------------- Menü ---------------------------- */
+#menue {
+  position: fixed; top: calc(var(--kopf-hoehe) + env(safe-area-inset-top)); right: .5rem; z-index: 60;
+  background: var(--flaeche); border: 1px solid var(--rand); border-radius: 12px;
+  box-shadow: var(--schatten); overflow: hidden; min-width: 200px;
+}
+#menue button {
+  display: block; width: 100%; text-align: left; padding: .8rem 1rem;
+  background: none; border: 0; border-bottom: 1px solid var(--rand);
+  color: var(--text); font-size: .95rem; font-family: inherit; cursor: pointer;
+}
+#menue button:last-child { border-bottom: 0; }
+#menue button:active { background: var(--flaeche-2); }
+#menue-schatten { position: fixed; inset: 0; z-index: 50; }
+
+/* ---------------------------- Animation ---------------------------- */
+@keyframes rein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+#uebung-inhalt > * { animation: rein .18s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  #uebung-inhalt > *, .balken-fuell { animation: none; transition: none; }
+}
