@@ -166,10 +166,10 @@ LEKTION('es-419', {
     uebungen: [
       { id: "g0301", satz: "Yo ___ (empezar) a las ocho.", loesung: "empiezo", tipps: ["empiezo", "empezo"], hinweis: "e → ie", ue: "Ich fange um acht an." },
       { id: "g0302", satz: "Nosotros ___ (volver) tarde.", loesung: "volvemos", tipps: ["volvemos", "vuelvemos"], hinweis: "nosotros bleibt regelmäßig!", ue: "Wir kommen spät zurück." },
-      { id: "g0306", satz: "¿A qué hora ___ (empezar) ustedes?", loesung: "empiezan", tipps: ["empiezan", "empezan"], hinweis: "ustedes = wie ellos", ue: "Um wie viel Uhr fangen Sie an?" },
       { id: "g0303", satz: "Ella ___ (dormir) poco.", loesung: "duerme", tipps: ["duerme", "dorme"], hinweis: "o → ue", ue: "Sie schläft wenig." },
       { id: "g0304", satz: "Yo ___ (salir) ahora.", loesung: "salgo", tipps: ["salgo", "salo"], hinweis: "nur yo unregelmäßig", ue: "Ich gehe jetzt raus." },
-      { id: "g0305", satz: "¿Qué ___ (pedir) nosotros?", loesung: "pedimos", tipps: ["pedimos", "pidimos"], hinweis: "nosotros bleibt regelmäßig!", ue: "Was bestellen wir?" }
+      { id: "g0305", satz: "¿Qué ___ (pedir) nosotros?", loesung: "pedimos", tipps: ["pedimos", "pidimos"], hinweis: "nosotros bleibt regelmäßig!", ue: "Was bestellen wir?" },
+      { id: "g0306", satz: "¿A qué hora ___ (empezar) ustedes?", loesung: "empiezan", tipps: ["empiezan", "empezan"], hinweis: "ustedes = wie ellos", ue: "Um wie viel Uhr fangen Sie an?" }
     ]
   }
 });
