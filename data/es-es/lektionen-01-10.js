@@ -1,19 +1,19 @@
 /* Tag 1–10 · Niveau A2 · Grundlagen festigen
    Aufbau jeder Lektion: 10 Vokabeln, 5 Sätze, 1 Grammatikthema mit Übungen. */
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 1, niveau: "A2", thema: "Sich vorstellen",
   vokabeln: [
-    { id: "v0101", es: "el apellido",   de: "der Nachname",        wortart: "Substantiv", beispiel: "Mi apellido es García.", beispielDe: "Mein Nachname ist García." },
-    { id: "v0102", es: "soltero",       de: "ledig",               wortart: "Adjektiv",   beispiel: "Mi hermano está soltero.", beispielDe: "Mein Bruder ist ledig." },
-    { id: "v0103", es: "casado",        de: "verheiratet",         wortart: "Adjektiv",   beispiel: "Estoy casado desde 2020.", beispielDe: "Ich bin seit 2020 verheiratet." },
-    { id: "v0104", es: "el barrio",     de: "das Viertel",         wortart: "Substantiv", beispiel: "Vivo en un barrio tranquilo.", beispielDe: "Ich wohne in einem ruhigen Viertel." },
-    { id: "v0105", es: "amable",        de: "freundlich",          wortart: "Adjektiv",   beispiel: "Mis vecinos son muy amables.", beispielDe: "Meine Nachbarn sind sehr freundlich." },
-    { id: "v0106", es: "el apodo",      de: "der Spitzname",       wortart: "Substantiv", beispiel: "Mi apodo es Nacho.", beispielDe: "Mein Spitzname ist Nacho." },
-    { id: "v0107", es: "jubilado",      de: "im Ruhestand",        wortart: "Adjektiv",   beispiel: "Mi padre ya está jubilado.", beispielDe: "Mein Vater ist schon im Ruhestand." },
-    { id: "v0108", es: "el idioma",     de: "die Sprache",         wortart: "Substantiv", beispiel: "El español es un idioma bonito.", beispielDe: "Spanisch ist eine schöne Sprache." },
-    { id: "v0109", es: "conocer",       de: "kennenlernen",        wortart: "Verb",       beispiel: "Encantado de conocerte.", beispielDe: "Freut mich, dich kennenzulernen." },
-    { id: "v0110", es: "el compañero",  de: "der Kollege",         wortart: "Substantiv", beispiel: "Él es mi compañero de trabajo.", beispielDe: "Er ist mein Arbeitskollege." }
+    { id: "v0101", es: "el apellido",   de: "der Nachname",        wortart: "Substantiv", beispiel: "Mi apellido es García.", beispielUe: "Mein Nachname ist García." },
+    { id: "v0102", es: "soltero",       de: "ledig",               wortart: "Adjektiv",   beispiel: "Mi hermano está soltero.", beispielUe: "Mein Bruder ist ledig." },
+    { id: "v0103", es: "casado",        de: "verheiratet",         wortart: "Adjektiv",   beispiel: "Estoy casado desde 2020.", beispielUe: "Ich bin seit 2020 verheiratet." },
+    { id: "v0104", es: "el barrio",     de: "das Viertel",         wortart: "Substantiv", beispiel: "Vivo en un barrio tranquilo.", beispielUe: "Ich wohne in einem ruhigen Viertel." },
+    { id: "v0105", es: "amable",        de: "freundlich",          wortart: "Adjektiv",   beispiel: "Mis vecinos son muy amables.", beispielUe: "Meine Nachbarn sind sehr freundlich." },
+    { id: "v0106", es: "el apodo",      de: "der Spitzname",       wortart: "Substantiv", beispiel: "Mi apodo es Nacho.", beispielUe: "Mein Spitzname ist Nacho." },
+    { id: "v0107", es: "jubilado",      de: "im Ruhestand",        wortart: "Adjektiv",   beispiel: "Mi padre ya está jubilado.", beispielUe: "Mein Vater ist schon im Ruhestand." },
+    { id: "v0108", es: "el idioma",     de: "die Sprache",         wortart: "Substantiv", beispiel: "El español es un idioma bonito.", beispielUe: "Spanisch ist eine schöne Sprache." },
+    { id: "v0109", es: "conocer",       de: "kennenlernen",        wortart: "Verb",       beispiel: "Encantado de conocerte.", beispielUe: "Freut mich, dich kennenzulernen." },
+    { id: "v0110", es: "el compañero",  de: "der Kollege",         wortart: "Substantiv", beispiel: "Él es mi compañero de trabajo.", beispielUe: "Er ist mein Arbeitskollege." }
   ],
   saetze: [
     { id: "s0101", es: "Me llamo Dennis y soy de Alemania.", de: "Ich heiße Dennis und komme aus Deutschland." },
@@ -57,19 +57,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 2, niveau: "A2", thema: "Meine Wohnung",
   vokabeln: [
-    { id: "v0201", es: "el piso",       de: "die Wohnung",     wortart: "Substantiv", beispiel: "Mi piso tiene tres habitaciones.", beispielDe: "Meine Wohnung hat drei Zimmer." },
-    { id: "v0202", es: "el armario",    de: "der Schrank",     wortart: "Substantiv", beispiel: "La ropa está en el armario.", beispielDe: "Die Kleidung ist im Schrank." },
-    { id: "v0203", es: "la nevera",     de: "der Kühlschrank", wortart: "Substantiv", beispiel: "No hay leche en la nevera.", beispielDe: "Es ist keine Milch im Kühlschrank." },
-    { id: "v0204", es: "el pasillo",    de: "der Flur",        wortart: "Substantiv", beispiel: "El baño está al final del pasillo.", beispielDe: "Das Bad ist am Ende des Flurs." },
-    { id: "v0205", es: "la escalera",   de: "die Treppe",      wortart: "Substantiv", beispiel: "Subimos por la escalera.", beispielDe: "Wir gehen die Treppe hoch." },
-    { id: "v0206", es: "el vecino",     de: "der Nachbar",     wortart: "Substantiv", beispiel: "El vecino de arriba hace ruido.", beispielDe: "Der Nachbar von oben macht Lärm." },
-    { id: "v0207", es: "amueblado",     de: "möbliert",        wortart: "Adjektiv",   beispiel: "Buscamos un piso amueblado.", beispielDe: "Wir suchen eine möblierte Wohnung." },
-    { id: "v0208", es: "el alquiler",   de: "die Miete",       wortart: "Substantiv", beispiel: "El alquiler es muy caro aquí.", beispielDe: "Die Miete ist hier sehr teuer." },
-    { id: "v0209", es: "la planta",     de: "das Stockwerk / die Pflanze", wortart: "Substantiv", beispiel: "Vivo en la tercera planta.", beispielDe: "Ich wohne im dritten Stock." },
-    { id: "v0210", es: "el enchufe",    de: "die Steckdose",   wortart: "Substantiv", beispiel: "¿Dónde hay un enchufe?", beispielDe: "Wo gibt es eine Steckdose?" }
+    { id: "v0201", es: "el piso",       de: "die Wohnung",     wortart: "Substantiv", beispiel: "Mi piso tiene tres habitaciones.", beispielUe: "Meine Wohnung hat drei Zimmer." },
+    { id: "v0202", es: "el armario",    de: "der Schrank",     wortart: "Substantiv", beispiel: "La ropa está en el armario.", beispielUe: "Die Kleidung ist im Schrank." },
+    { id: "v0203", es: "la nevera",     de: "der Kühlschrank", wortart: "Substantiv", beispiel: "No hay leche en la nevera.", beispielUe: "Es ist keine Milch im Kühlschrank." },
+    { id: "v0204", es: "el pasillo",    de: "der Flur",        wortart: "Substantiv", beispiel: "El baño está al final del pasillo.", beispielUe: "Das Bad ist am Ende des Flurs." },
+    { id: "v0205", es: "la escalera",   de: "die Treppe",      wortart: "Substantiv", beispiel: "Subimos por la escalera.", beispielUe: "Wir gehen die Treppe hoch." },
+    { id: "v0206", es: "el vecino",     de: "der Nachbar",     wortart: "Substantiv", beispiel: "El vecino de arriba hace ruido.", beispielUe: "Der Nachbar von oben macht Lärm." },
+    { id: "v0207", es: "amueblado",     de: "möbliert",        wortart: "Adjektiv",   beispiel: "Buscamos un piso amueblado.", beispielUe: "Wir suchen eine möblierte Wohnung." },
+    { id: "v0208", es: "el alquiler",   de: "die Miete",       wortart: "Substantiv", beispiel: "El alquiler es muy caro aquí.", beispielUe: "Die Miete ist hier sehr teuer." },
+    { id: "v0209", es: "la planta",     de: "das Stockwerk / die Pflanze", wortart: "Substantiv", beispiel: "Vivo en la tercera planta.", beispielUe: "Ich wohne im dritten Stock." },
+    { id: "v0210", es: "el enchufe",    de: "die Steckdose",   wortart: "Substantiv", beispiel: "¿Dónde hay un enchufe?", beispielUe: "Wo gibt es eine Steckdose?" }
   ],
   saetze: [
     { id: "s0201", es: "Hay una lámpara sobre la mesa.",       de: "Es gibt eine Lampe auf dem Tisch." },
@@ -108,19 +108,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 3, niveau: "A2", thema: "Mein Tagesablauf",
   vokabeln: [
-    { id: "v0301", es: "empezar",    de: "anfangen",       wortart: "Verb", beispiel: "Empiezo a trabajar a las ocho.", beispielDe: "Ich fange um acht an zu arbeiten." },
-    { id: "v0302", es: "volver",     de: "zurückkommen",   wortart: "Verb", beispiel: "Vuelvo a casa a las seis.", beispielDe: "Ich komme um sechs nach Hause." },
-    { id: "v0303", es: "dormir",     de: "schlafen",       wortart: "Verb", beispiel: "Duermo ocho horas.", beispielDe: "Ich schlafe acht Stunden." },
-    { id: "v0304", es: "pedir",      de: "bitten um / bestellen", wortart: "Verb", beispiel: "Pido un café con leche.", beispielDe: "Ich bestelle einen Milchkaffee." },
-    { id: "v0305", es: "salir",      de: "hinausgehen",    wortart: "Verb", beispiel: "Salgo de casa muy temprano.", beispielDe: "Ich gehe sehr früh aus dem Haus." },
-    { id: "v0306", es: "el horario", de: "der Zeitplan",   wortart: "Substantiv", beispiel: "Tengo un horario flexible.", beispielDe: "Ich habe einen flexiblen Zeitplan." },
-    { id: "v0307", es: "el descanso",de: "die Pause",      wortart: "Substantiv", beispiel: "Hacemos un descanso a mediodía.", beispielDe: "Wir machen mittags eine Pause." },
-    { id: "v0308", es: "madrugar",   de: "früh aufstehen", wortart: "Verb", beispiel: "No me gusta madrugar.", beispielDe: "Ich stehe nicht gern früh auf." },
-    { id: "v0309", es: "el trayecto",de: "der Weg / die Strecke", wortart: "Substantiv", beispiel: "El trayecto dura media hora.", beispielDe: "Der Weg dauert eine halbe Stunde." },
-    { id: "v0310", es: "soler",      de: "pflegen zu",     wortart: "Verb", beispiel: "Suelo desayunar en casa.", beispielDe: "Ich frühstücke normalerweise zu Hause." }
+    { id: "v0301", es: "empezar",    de: "anfangen",       wortart: "Verb", beispiel: "Empiezo a trabajar a las ocho.", beispielUe: "Ich fange um acht an zu arbeiten." },
+    { id: "v0302", es: "volver",     de: "zurückkommen",   wortart: "Verb", beispiel: "Vuelvo a casa a las seis.", beispielUe: "Ich komme um sechs nach Hause." },
+    { id: "v0303", es: "dormir",     de: "schlafen",       wortart: "Verb", beispiel: "Duermo ocho horas.", beispielUe: "Ich schlafe acht Stunden." },
+    { id: "v0304", es: "pedir",      de: "bitten um / bestellen", wortart: "Verb", beispiel: "Pido un café con leche.", beispielUe: "Ich bestelle einen Milchkaffee." },
+    { id: "v0305", es: "salir",      de: "hinausgehen",    wortart: "Verb", beispiel: "Salgo de casa muy temprano.", beispielUe: "Ich gehe sehr früh aus dem Haus." },
+    { id: "v0306", es: "el horario", de: "der Zeitplan",   wortart: "Substantiv", beispiel: "Tengo un horario flexible.", beispielUe: "Ich habe einen flexiblen Zeitplan." },
+    { id: "v0307", es: "el descanso",de: "die Pause",      wortart: "Substantiv", beispiel: "Hacemos un descanso a mediodía.", beispielUe: "Wir machen mittags eine Pause." },
+    { id: "v0308", es: "madrugar",   de: "früh aufstehen", wortart: "Verb", beispiel: "No me gusta madrugar.", beispielUe: "Ich stehe nicht gern früh auf." },
+    { id: "v0309", es: "el trayecto",de: "der Weg / die Strecke", wortart: "Substantiv", beispiel: "El trayecto dura media hora.", beispielUe: "Der Weg dauert eine halbe Stunde." },
+    { id: "v0310", es: "soler",      de: "pflegen zu",     wortart: "Verb", beispiel: "Suelo desayunar en casa.", beispielUe: "Ich frühstücke normalerweise zu Hause." }
   ],
   saetze: [
     { id: "s0301", es: "Empiezo a trabajar a las nueve.",     de: "Ich fange um neun an zu arbeiten." },
@@ -162,19 +162,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 4, niveau: "A2", thema: "Morgens im Bad",
   vokabeln: [
-    { id: "v0401", es: "despertarse",  de: "aufwachen",      wortart: "Verb", beispiel: "Me despierto a las siete.", beispielDe: "Ich wache um sieben auf." },
-    { id: "v0402", es: "levantarse",   de: "aufstehen",      wortart: "Verb", beispiel: "Me levanto enseguida.", beispielDe: "Ich stehe sofort auf." },
-    { id: "v0403", es: "ducharse",     de: "duschen",        wortart: "Verb", beispiel: "Se ducha por la mañana.", beispielDe: "Er/Sie duscht morgens." },
-    { id: "v0404", es: "vestirse",     de: "sich anziehen",  wortart: "Verb", beispiel: "Nos vestimos rápido.", beispielDe: "Wir ziehen uns schnell an." },
-    { id: "v0405", es: "peinarse",     de: "sich kämmen",    wortart: "Verb", beispiel: "Se peina delante del espejo.", beispielDe: "Er/Sie kämmt sich vor dem Spiegel." },
-    { id: "v0406", es: "el espejo",    de: "der Spiegel",    wortart: "Substantiv", beispiel: "El espejo está sucio.", beispielDe: "Der Spiegel ist schmutzig." },
-    { id: "v0407", es: "la toalla",    de: "das Handtuch",   wortart: "Substantiv", beispiel: "Necesito una toalla limpia.", beispielDe: "Ich brauche ein sauberes Handtuch." },
-    { id: "v0408", es: "el cepillo de dientes", de: "die Zahnbürste", wortart: "Substantiv", beispiel: "Mi cepillo de dientes es azul.", beispielDe: "Meine Zahnbürste ist blau." },
-    { id: "v0409", es: "acostarse",    de: "ins Bett gehen", wortart: "Verb", beispiel: "Me acuesto sobre las once.", beispielDe: "Ich gehe gegen elf ins Bett." },
-    { id: "v0410", es: "quedarse",     de: "bleiben",        wortart: "Verb", beispiel: "Hoy me quedo en casa.", beispielDe: "Heute bleibe ich zu Hause." }
+    { id: "v0401", es: "despertarse",  de: "aufwachen",      wortart: "Verb", beispiel: "Me despierto a las siete.", beispielUe: "Ich wache um sieben auf." },
+    { id: "v0402", es: "levantarse",   de: "aufstehen",      wortart: "Verb", beispiel: "Me levanto enseguida.", beispielUe: "Ich stehe sofort auf." },
+    { id: "v0403", es: "ducharse",     de: "duschen",        wortart: "Verb", beispiel: "Se ducha por la mañana.", beispielUe: "Er/Sie duscht morgens." },
+    { id: "v0404", es: "vestirse",     de: "sich anziehen",  wortart: "Verb", beispiel: "Nos vestimos rápido.", beispielUe: "Wir ziehen uns schnell an." },
+    { id: "v0405", es: "peinarse",     de: "sich kämmen",    wortart: "Verb", beispiel: "Se peina delante del espejo.", beispielUe: "Er/Sie kämmt sich vor dem Spiegel." },
+    { id: "v0406", es: "el espejo",    de: "der Spiegel",    wortart: "Substantiv", beispiel: "El espejo está sucio.", beispielUe: "Der Spiegel ist schmutzig." },
+    { id: "v0407", es: "la toalla",    de: "das Handtuch",   wortart: "Substantiv", beispiel: "Necesito una toalla limpia.", beispielUe: "Ich brauche ein sauberes Handtuch." },
+    { id: "v0408", es: "el cepillo de dientes", de: "die Zahnbürste", wortart: "Substantiv", beispiel: "Mi cepillo de dientes es azul.", beispielUe: "Meine Zahnbürste ist blau." },
+    { id: "v0409", es: "acostarse",    de: "ins Bett gehen", wortart: "Verb", beispiel: "Me acuesto sobre las once.", beispielUe: "Ich gehe gegen elf ins Bett." },
+    { id: "v0410", es: "quedarse",     de: "bleiben",        wortart: "Verb", beispiel: "Hoy me quedo en casa.", beispielUe: "Heute bleibe ich zu Hause." }
   ],
   saetze: [
     { id: "s0401", es: "Me levanto a las siete todos los días.", de: "Ich stehe jeden Tag um sieben auf." },
@@ -218,19 +218,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 5, niveau: "A2", thema: "Was gerade passiert",
   vokabeln: [
-    { id: "v0501", es: "el ruido",     de: "der Lärm",         wortart: "Substantiv", beispiel: "¿Qué es ese ruido?", beispielDe: "Was ist das für ein Lärm?" },
-    { id: "v0502", es: "llover",       de: "regnen",           wortart: "Verb", beispiel: "Está lloviendo mucho.", beispielDe: "Es regnet stark." },
-    { id: "v0503", es: "esperar",      de: "warten / hoffen",  wortart: "Verb", beispiel: "Estoy esperando el autobús.", beispielDe: "Ich warte auf den Bus." },
-    { id: "v0504", es: "buscar",       de: "suchen",           wortart: "Verb", beispiel: "Estamos buscando las llaves.", beispielDe: "Wir suchen die Schlüssel." },
-    { id: "v0505", es: "el momento",   de: "der Augenblick",   wortart: "Substantiv", beispiel: "En este momento no puedo.", beispielDe: "In diesem Augenblick kann ich nicht." },
-    { id: "v0506", es: "arreglar",     de: "reparieren / regeln", wortart: "Verb", beispiel: "Está arreglando el coche.", beispielDe: "Er repariert gerade das Auto." },
-    { id: "v0507", es: "mientras",     de: "während",          wortart: "Konjunktion", beispiel: "Leo mientras espero.", beispielDe: "Ich lese, während ich warte." },
-    { id: "v0508", es: "el rato",      de: "die Weile",        wortart: "Substantiv", beispiel: "Espera un rato, por favor.", beispielDe: "Warte bitte eine Weile." },
-    { id: "v0509", es: "ocupado",      de: "beschäftigt",      wortart: "Adjektiv", beispiel: "Ahora estoy ocupado.", beispielDe: "Ich bin gerade beschäftigt." },
-    { id: "v0510", es: "seguir",       de: "weitermachen / folgen", wortart: "Verb", beispiel: "Sigo estudiando español.", beispielDe: "Ich lerne weiter Spanisch." }
+    { id: "v0501", es: "el ruido",     de: "der Lärm",         wortart: "Substantiv", beispiel: "¿Qué es ese ruido?", beispielUe: "Was ist das für ein Lärm?" },
+    { id: "v0502", es: "llover",       de: "regnen",           wortart: "Verb", beispiel: "Está lloviendo mucho.", beispielUe: "Es regnet stark." },
+    { id: "v0503", es: "esperar",      de: "warten / hoffen",  wortart: "Verb", beispiel: "Estoy esperando el autobús.", beispielUe: "Ich warte auf den Bus." },
+    { id: "v0504", es: "buscar",       de: "suchen",           wortart: "Verb", beispiel: "Estamos buscando las llaves.", beispielUe: "Wir suchen die Schlüssel." },
+    { id: "v0505", es: "el momento",   de: "der Augenblick",   wortart: "Substantiv", beispiel: "En este momento no puedo.", beispielUe: "In diesem Augenblick kann ich nicht." },
+    { id: "v0506", es: "arreglar",     de: "reparieren / regeln", wortart: "Verb", beispiel: "Está arreglando el coche.", beispielUe: "Er repariert gerade das Auto." },
+    { id: "v0507", es: "mientras",     de: "während",          wortart: "Konjunktion", beispiel: "Leo mientras espero.", beispielUe: "Ich lese, während ich warte." },
+    { id: "v0508", es: "el rato",      de: "die Weile",        wortart: "Substantiv", beispiel: "Espera un rato, por favor.", beispielUe: "Warte bitte eine Weile." },
+    { id: "v0509", es: "ocupado",      de: "beschäftigt",      wortart: "Adjektiv", beispiel: "Ahora estoy ocupado.", beispielUe: "Ich bin gerade beschäftigt." },
+    { id: "v0510", es: "seguir",       de: "weitermachen / folgen", wortart: "Verb", beispiel: "Sigo estudiando español.", beispielUe: "Ich lerne weiter Spanisch." }
   ],
   saetze: [
     { id: "s0501", es: "Estoy trabajando en un proyecto nuevo.", de: "Ich arbeite gerade an einem neuen Projekt." },
@@ -275,19 +275,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 6, niveau: "A2", thema: "Einkaufen",
   vokabeln: [
-    { id: "v0601", es: "la caja",      de: "die Kasse",       wortart: "Substantiv", beispiel: "Pago en la caja.", beispielDe: "Ich zahle an der Kasse." },
-    { id: "v0602", es: "el carrito",   de: "der Einkaufswagen", wortart: "Substantiv", beispiel: "El carrito está lleno.", beispielDe: "Der Einkaufswagen ist voll." },
-    { id: "v0603", es: "la oferta",    de: "das Angebot",     wortart: "Substantiv", beispiel: "Hoy hay muchas ofertas.", beispielDe: "Heute gibt es viele Angebote." },
-    { id: "v0604", es: "gastar",       de: "ausgeben",        wortart: "Verb", beispiel: "Gasto mucho en comida.", beispielDe: "Ich gebe viel für Essen aus." },
-    { id: "v0605", es: "devolver",     de: "zurückgeben",     wortart: "Verb", beispiel: "Quiero devolver esta camisa.", beispielDe: "Ich möchte dieses Hemd zurückgeben." },
-    { id: "v0606", es: "el recibo",    de: "der Kassenbon",   wortart: "Substantiv", beispiel: "¿Me da el recibo?", beispielDe: "Geben Sie mir den Kassenbon?" },
-    { id: "v0607", es: "barato",       de: "billig",          wortart: "Adjektiv", beispiel: "Este vino es muy barato.", beispielDe: "Dieser Wein ist sehr billig." },
-    { id: "v0608", es: "probarse",     de: "anprobieren",     wortart: "Verb", beispiel: "¿Puedo probarme estos pantalones?", beispielDe: "Kann ich diese Hose anprobieren?" },
-    { id: "v0609", es: "el tamaño",    de: "die Größe",       wortart: "Substantiv", beispiel: "¿Tiene otro tamaño?", beispielDe: "Haben Sie eine andere Größe?" },
-    { id: "v0610", es: "la bolsa",     de: "die Tüte",        wortart: "Substantiv", beispiel: "¿Necesita una bolsa?", beispielDe: "Brauchen Sie eine Tüte?" }
+    { id: "v0601", es: "la caja",      de: "die Kasse",       wortart: "Substantiv", beispiel: "Pago en la caja.", beispielUe: "Ich zahle an der Kasse." },
+    { id: "v0602", es: "el carrito",   de: "der Einkaufswagen", wortart: "Substantiv", beispiel: "El carrito está lleno.", beispielUe: "Der Einkaufswagen ist voll." },
+    { id: "v0603", es: "la oferta",    de: "das Angebot",     wortart: "Substantiv", beispiel: "Hoy hay muchas ofertas.", beispielUe: "Heute gibt es viele Angebote." },
+    { id: "v0604", es: "gastar",       de: "ausgeben",        wortart: "Verb", beispiel: "Gasto mucho en comida.", beispielUe: "Ich gebe viel für Essen aus." },
+    { id: "v0605", es: "devolver",     de: "zurückgeben",     wortart: "Verb", beispiel: "Quiero devolver esta camisa.", beispielUe: "Ich möchte dieses Hemd zurückgeben." },
+    { id: "v0606", es: "el recibo",    de: "der Kassenbon",   wortart: "Substantiv", beispiel: "¿Me da el recibo?", beispielUe: "Geben Sie mir den Kassenbon?" },
+    { id: "v0607", es: "barato",       de: "billig",          wortart: "Adjektiv", beispiel: "Este vino es muy barato.", beispielUe: "Dieser Wein ist sehr billig." },
+    { id: "v0608", es: "probarse",     de: "anprobieren",     wortart: "Verb", beispiel: "¿Puedo probarme estos pantalones?", beispielUe: "Kann ich diese Hose anprobieren?" },
+    { id: "v0609", es: "el tamaño",    de: "die Größe",       wortart: "Substantiv", beispiel: "¿Tiene otro tamaño?", beispielUe: "Haben Sie eine andere Größe?" },
+    { id: "v0610", es: "la bolsa",     de: "die Tüte",        wortart: "Substantiv", beispiel: "¿Necesita una bolsa?", beispielUe: "Brauchen Sie eine Tüte?" }
   ],
   saetze: [
     { id: "s0601", es: "El pan lo compro cada mañana.",       de: "Das Brot kaufe ich jeden Morgen." },
@@ -334,19 +334,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 7, niveau: "A2", thema: "Geschenke und Gefallen",
   vokabeln: [
-    { id: "v0701", es: "regalar",      de: "schenken",        wortart: "Verb", beispiel: "Le regalo un libro a mi madre.", beispielDe: "Ich schenke meiner Mutter ein Buch." },
-    { id: "v0702", es: "prestar",      de: "leihen (geben)",  wortart: "Verb", beispiel: "¿Me prestas tu bolígrafo?", beispielDe: "Leihst du mir deinen Kugelschreiber?" },
-    { id: "v0703", es: "el favor",     de: "der Gefallen",    wortart: "Substantiv", beispiel: "¿Me haces un favor?", beispielDe: "Tust du mir einen Gefallen?" },
-    { id: "v0704", es: "explicar",     de: "erklären",        wortart: "Verb", beispiel: "El profesor nos explica la lección.", beispielDe: "Der Lehrer erklärt uns die Lektion." },
-    { id: "v0705", es: "contar",       de: "erzählen / zählen", wortart: "Verb", beispiel: "Te cuento una historia.", beispielDe: "Ich erzähle dir eine Geschichte." },
-    { id: "v0706", es: "enviar",       de: "schicken",        wortart: "Verb", beispiel: "Le envío un correo.", beispielDe: "Ich schicke ihm/ihr eine E-Mail." },
-    { id: "v0707", es: "el paquete",   de: "das Paket",       wortart: "Substantiv", beispiel: "Ha llegado un paquete.", beispielDe: "Ein Paket ist angekommen." },
-    { id: "v0708", es: "agradecer",    de: "danken",          wortart: "Verb", beispiel: "Te agradezco mucho la ayuda.", beispielDe: "Ich danke dir sehr für die Hilfe." },
-    { id: "v0709", es: "el cumpleaños",de: "der Geburtstag",  wortart: "Substantiv", beispiel: "Mañana es mi cumpleaños.", beispielDe: "Morgen ist mein Geburtstag." },
-    { id: "v0710", es: "devolverle",   de: "ihm zurückgeben", wortart: "Verb", beispiel: "Tengo que devolverle el dinero.", beispielDe: "Ich muss ihm das Geld zurückgeben." }
+    { id: "v0701", es: "regalar",      de: "schenken",        wortart: "Verb", beispiel: "Le regalo un libro a mi madre.", beispielUe: "Ich schenke meiner Mutter ein Buch." },
+    { id: "v0702", es: "prestar",      de: "leihen (geben)",  wortart: "Verb", beispiel: "¿Me prestas tu bolígrafo?", beispielUe: "Leihst du mir deinen Kugelschreiber?" },
+    { id: "v0703", es: "el favor",     de: "der Gefallen",    wortart: "Substantiv", beispiel: "¿Me haces un favor?", beispielUe: "Tust du mir einen Gefallen?" },
+    { id: "v0704", es: "explicar",     de: "erklären",        wortart: "Verb", beispiel: "El profesor nos explica la lección.", beispielUe: "Der Lehrer erklärt uns die Lektion." },
+    { id: "v0705", es: "contar",       de: "erzählen / zählen", wortart: "Verb", beispiel: "Te cuento una historia.", beispielUe: "Ich erzähle dir eine Geschichte." },
+    { id: "v0706", es: "enviar",       de: "schicken",        wortart: "Verb", beispiel: "Le envío un correo.", beispielUe: "Ich schicke ihm/ihr eine E-Mail." },
+    { id: "v0707", es: "el paquete",   de: "das Paket",       wortart: "Substantiv", beispiel: "Ha llegado un paquete.", beispielUe: "Ein Paket ist angekommen." },
+    { id: "v0708", es: "agradecer",    de: "danken",          wortart: "Verb", beispiel: "Te agradezco mucho la ayuda.", beispielUe: "Ich danke dir sehr für die Hilfe." },
+    { id: "v0709", es: "el cumpleaños",de: "der Geburtstag",  wortart: "Substantiv", beispiel: "Mañana es mi cumpleaños.", beispielUe: "Morgen ist mein Geburtstag." },
+    { id: "v0710", es: "devolverle",   de: "ihm zurückgeben", wortart: "Verb", beispiel: "Tengo que devolverle el dinero.", beispielUe: "Ich muss ihm das Geld zurückgeben." }
   ],
   saetze: [
     { id: "s0701", es: "Le doy las gracias a mi profesora.", de: "Ich danke meiner Lehrerin." },
@@ -389,19 +389,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 8, niveau: "A2", thema: "Im Restaurant",
   vokabeln: [
-    { id: "v0801", es: "la carta",     de: "die Speisekarte", wortart: "Substantiv", beispiel: "¿Nos trae la carta?", beispielDe: "Bringen Sie uns die Karte?" },
-    { id: "v0802", es: "el camarero",  de: "der Kellner",     wortart: "Substantiv", beispiel: "El camarero es muy simpático.", beispielDe: "Der Kellner ist sehr nett." },
-    { id: "v0803", es: "la cuenta",    de: "die Rechnung",    wortart: "Substantiv", beispiel: "La cuenta, por favor.", beispielDe: "Die Rechnung, bitte." },
-    { id: "v0804", es: "el plato",     de: "der Teller / das Gericht", wortart: "Substantiv", beispiel: "Este plato está riquísimo.", beispielDe: "Dieses Gericht ist köstlich." },
-    { id: "v0805", es: "la propina",   de: "das Trinkgeld",   wortart: "Substantiv", beispiel: "Dejamos una propina.", beispielDe: "Wir lassen ein Trinkgeld da." },
-    { id: "v0806", es: "el primero",   de: "die Vorspeise",   wortart: "Substantiv", beispiel: "De primero, una ensalada.", beispielDe: "Als Vorspeise einen Salat." },
-    { id: "v0807", es: "el postre",    de: "die Nachspeise",  wortart: "Substantiv", beispiel: "¿Qué hay de postre?", beispielDe: "Was gibt es als Nachtisch?" },
-    { id: "v0808", es: "recomendar",   de: "empfehlen",       wortart: "Verb", beispiel: "¿Qué me recomienda?", beispielDe: "Was empfehlen Sie mir?" },
-    { id: "v0809", es: "picante",      de: "scharf",          wortart: "Adjektiv", beispiel: "No me gusta muy picante.", beispielDe: "Ich mag es nicht sehr scharf." },
-    { id: "v0810", es: "reservar",     de: "reservieren",     wortart: "Verb", beispiel: "He reservado una mesa para dos.", beispielDe: "Ich habe einen Tisch für zwei reserviert." }
+    { id: "v0801", es: "la carta",     de: "die Speisekarte", wortart: "Substantiv", beispiel: "¿Nos trae la carta?", beispielUe: "Bringen Sie uns die Karte?" },
+    { id: "v0802", es: "el camarero",  de: "der Kellner",     wortart: "Substantiv", beispiel: "El camarero es muy simpático.", beispielUe: "Der Kellner ist sehr nett." },
+    { id: "v0803", es: "la cuenta",    de: "die Rechnung",    wortart: "Substantiv", beispiel: "La cuenta, por favor.", beispielUe: "Die Rechnung, bitte." },
+    { id: "v0804", es: "el plato",     de: "der Teller / das Gericht", wortart: "Substantiv", beispiel: "Este plato está riquísimo.", beispielUe: "Dieses Gericht ist köstlich." },
+    { id: "v0805", es: "la propina",   de: "das Trinkgeld",   wortart: "Substantiv", beispiel: "Dejamos una propina.", beispielUe: "Wir lassen ein Trinkgeld da." },
+    { id: "v0806", es: "el primero",   de: "die Vorspeise",   wortart: "Substantiv", beispiel: "De primero, una ensalada.", beispielUe: "Als Vorspeise einen Salat." },
+    { id: "v0807", es: "el postre",    de: "die Nachspeise",  wortart: "Substantiv", beispiel: "¿Qué hay de postre?", beispielUe: "Was gibt es als Nachtisch?" },
+    { id: "v0808", es: "recomendar",   de: "empfehlen",       wortart: "Verb", beispiel: "¿Qué me recomienda?", beispielUe: "Was empfehlen Sie mir?" },
+    { id: "v0809", es: "picante",      de: "scharf",          wortart: "Adjektiv", beispiel: "No me gusta muy picante.", beispielUe: "Ich mag es nicht sehr scharf." },
+    { id: "v0810", es: "reservar",     de: "reservieren",     wortart: "Verb", beispiel: "He reservado una mesa para dos.", beispielUe: "Ich habe einen Tisch für zwei reserviert." }
   ],
   saetze: [
     { id: "s0801", es: "¿La cuenta? Ya se la traigo.",        de: "Die Rechnung? Ich bringe sie Ihnen sofort." },
@@ -444,19 +444,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 9, niveau: "A2", thema: "Vorlieben und Freizeit",
   vokabeln: [
-    { id: "v0901", es: "encantar",     de: "sehr gefallen",   wortart: "Verb", beispiel: "Me encanta el cine español.", beispielDe: "Ich liebe das spanische Kino." },
-    { id: "v0902", es: "interesar",    de: "interessieren",   wortart: "Verb", beispiel: "Me interesa la historia.", beispielDe: "Geschichte interessiert mich." },
-    { id: "v0903", es: "molestar",     de: "stören",          wortart: "Verb", beispiel: "Me molesta el ruido.", beispielDe: "Der Lärm stört mich." },
-    { id: "v0904", es: "el ajedrez",   de: "das Schach",      wortart: "Substantiv", beispiel: "Juego al ajedrez los domingos.", beispielDe: "Sonntags spiele ich Schach." },
-    { id: "v0905", es: "el senderismo",de: "das Wandern",     wortart: "Substantiv", beispiel: "Hacemos senderismo en verano.", beispielDe: "Im Sommer wandern wir." },
-    { id: "v0906", es: "aburrirse",    de: "sich langweilen", wortart: "Verb", beispiel: "Nunca me aburro aquí.", beispielDe: "Hier langweile ich mich nie." },
-    { id: "v0907", es: "el ocio",      de: "die Freizeit",    wortart: "Substantiv", beispiel: "Tengo poco tiempo de ocio.", beispielDe: "Ich habe wenig Freizeit." },
-    { id: "v0908", es: "apetecer",     de: "Lust haben auf",  wortart: "Verb", beispiel: "¿Te apetece un café?", beispielDe: "Hast du Lust auf einen Kaffee?" },
-    { id: "v0909", es: "quedar",       de: "sich verabreden", wortart: "Verb", beispiel: "Quedamos a las siete.", beispielDe: "Wir treffen uns um sieben." },
-    { id: "v0910", es: "el aficionado",de: "der Fan",         wortart: "Substantiv", beispiel: "Soy aficionado al fútbol.", beispielDe: "Ich bin Fußballfan." }
+    { id: "v0901", es: "encantar",     de: "sehr gefallen",   wortart: "Verb", beispiel: "Me encanta el cine español.", beispielUe: "Ich liebe das spanische Kino." },
+    { id: "v0902", es: "interesar",    de: "interessieren",   wortart: "Verb", beispiel: "Me interesa la historia.", beispielUe: "Geschichte interessiert mich." },
+    { id: "v0903", es: "molestar",     de: "stören",          wortart: "Verb", beispiel: "Me molesta el ruido.", beispielUe: "Der Lärm stört mich." },
+    { id: "v0904", es: "el ajedrez",   de: "das Schach",      wortart: "Substantiv", beispiel: "Juego al ajedrez los domingos.", beispielUe: "Sonntags spiele ich Schach." },
+    { id: "v0905", es: "el senderismo",de: "das Wandern",     wortart: "Substantiv", beispiel: "Hacemos senderismo en verano.", beispielUe: "Im Sommer wandern wir." },
+    { id: "v0906", es: "aburrirse",    de: "sich langweilen", wortart: "Verb", beispiel: "Nunca me aburro aquí.", beispielUe: "Hier langweile ich mich nie." },
+    { id: "v0907", es: "el ocio",      de: "die Freizeit",    wortart: "Substantiv", beispiel: "Tengo poco tiempo de ocio.", beispielUe: "Ich habe wenig Freizeit." },
+    { id: "v0908", es: "apetecer",     de: "Lust haben auf",  wortart: "Verb", beispiel: "¿Te apetece un café?", beispielUe: "Hast du Lust auf einen Kaffee?" },
+    { id: "v0909", es: "quedar",       de: "sich verabreden", wortart: "Verb", beispiel: "Quedamos a las siete.", beispielUe: "Wir treffen uns um sieben." },
+    { id: "v0910", es: "el aficionado",de: "der Fan",         wortart: "Substantiv", beispiel: "Soy aficionado al fútbol.", beispielUe: "Ich bin Fußballfan." }
   ],
   saetze: [
     { id: "s0901", es: "Me gusta mucho el chocolate.",        de: "Ich mag Schokolade sehr." },
@@ -504,19 +504,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 10, niveau: "A2", thema: "Familie",
   vokabeln: [
-    { id: "v1001", es: "el sobrino",   de: "der Neffe",       wortart: "Substantiv", beispiel: "Mi sobrino tiene seis años.", beispielDe: "Mein Neffe ist sechs Jahre alt." },
-    { id: "v1002", es: "el cuñado",    de: "der Schwager",    wortart: "Substantiv", beispiel: "Mi cuñado vive en Sevilla.", beispielDe: "Mein Schwager wohnt in Sevilla." },
-    { id: "v1003", es: "el nieto",     de: "der Enkel",       wortart: "Substantiv", beispiel: "Tienen cuatro nietos.", beispielDe: "Sie haben vier Enkel." },
-    { id: "v1004", es: "la pareja",    de: "der Partner / das Paar", wortart: "Substantiv", beispiel: "Vengo con mi pareja.", beispielDe: "Ich komme mit meinem Partner." },
-    { id: "v1005", es: "el suegro",    de: "der Schwiegervater", wortart: "Substantiv", beispiel: "Mis suegros son muy amables.", beispielDe: "Meine Schwiegereltern sind sehr freundlich." },
-    { id: "v1006", es: "mayor",        de: "älter",           wortart: "Adjektiv", beispiel: "Mi hermano mayor tiene 40 años.", beispielDe: "Mein älterer Bruder ist 40." },
-    { id: "v1007", es: "menor",        de: "jünger",          wortart: "Adjektiv", beispiel: "Soy el menor de la familia.", beispielDe: "Ich bin der Jüngste in der Familie." },
-    { id: "v1008", es: "parecerse a",  de: "ähnlich sehen",   wortart: "Verb", beispiel: "Se parece mucho a su padre.", beispielDe: "Er sieht seinem Vater sehr ähnlich." },
-    { id: "v1009", es: "el antepasado",de: "der Vorfahre",    wortart: "Substantiv", beispiel: "Mis antepasados eran de Galicia.", beispielDe: "Meine Vorfahren kamen aus Galicien." },
-    { id: "v1010", es: "criar",        de: "großziehen",      wortart: "Verb", beispiel: "Sus abuelos lo criaron.", beispielDe: "Seine Großeltern haben ihn großgezogen." }
+    { id: "v1001", es: "el sobrino",   de: "der Neffe",       wortart: "Substantiv", beispiel: "Mi sobrino tiene seis años.", beispielUe: "Mein Neffe ist sechs Jahre alt." },
+    { id: "v1002", es: "el cuñado",    de: "der Schwager",    wortart: "Substantiv", beispiel: "Mi cuñado vive en Sevilla.", beispielUe: "Mein Schwager wohnt in Sevilla." },
+    { id: "v1003", es: "el nieto",     de: "der Enkel",       wortart: "Substantiv", beispiel: "Tienen cuatro nietos.", beispielUe: "Sie haben vier Enkel." },
+    { id: "v1004", es: "la pareja",    de: "der Partner / das Paar", wortart: "Substantiv", beispiel: "Vengo con mi pareja.", beispielUe: "Ich komme mit meinem Partner." },
+    { id: "v1005", es: "el suegro",    de: "der Schwiegervater", wortart: "Substantiv", beispiel: "Mis suegros son muy amables.", beispielUe: "Meine Schwiegereltern sind sehr freundlich." },
+    { id: "v1006", es: "mayor",        de: "älter",           wortart: "Adjektiv", beispiel: "Mi hermano mayor tiene 40 años.", beispielUe: "Mein älterer Bruder ist 40." },
+    { id: "v1007", es: "menor",        de: "jünger",          wortart: "Adjektiv", beispiel: "Soy el menor de la familia.", beispielUe: "Ich bin der Jüngste in der Familie." },
+    { id: "v1008", es: "parecerse a",  de: "ähnlich sehen",   wortart: "Verb", beispiel: "Se parece mucho a su padre.", beispielUe: "Er sieht seinem Vater sehr ähnlich." },
+    { id: "v1009", es: "el antepasado",de: "der Vorfahre",    wortart: "Substantiv", beispiel: "Mis antepasados eran de Galicia.", beispielUe: "Meine Vorfahren kamen aus Galicien." },
+    { id: "v1010", es: "criar",        de: "großziehen",      wortart: "Verb", beispiel: "Sus abuelos lo criaron.", beispielUe: "Seine Großeltern haben ihn großgezogen." }
   ],
   saetze: [
     { id: "s1001", es: "Esta es mi hermana y aquel es su marido.", de: "Das ist meine Schwester und das dort ist ihr Mann." },

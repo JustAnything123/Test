@@ -20,7 +20,16 @@ var SRS = {
     180 * 86400e3
   ],
 
-  INTERVALL_TEXT: ['4 Std', '12 Std', '1 Tag', '6 Tage', '12 Tage', '48 Tage', '96 Tage', '6 Monate'],
+  /** Wie lange dauert es bis zur naechsten Wiederholung auf dieser Stufe?
+      In der Oberflaechensprache des Kurses, z. B. "6 Tage" / "6 días". */
+  intervallText(stufe) {
+    const ms = this.INTERVALLE_MS[Math.min(stufe, this.INTERVALLE_MS.length - 1)];
+    const stunden = Math.round(ms / 3600e3);
+    if (stunden < 24) return t('zeit.stunden', { n: stunden });
+    const tage = Math.round(ms / 86400e3);
+    if (tage < 31) return t('zeit.tage', { n: tage });
+    return t('zeit.monate', { n: Math.round(tage / 30) });
+  },
 
   /** Ab so vielen Fehlern gilt ein Wort als Problemwort. */
   LEECH_GRENZE: 4,
@@ -72,21 +81,21 @@ var SRS = {
       stufe: k.stufe,
       leechNeu: !warLeech && k.leech,
       leechBefreit: warLeech && !k.leech,
-      naechsteWiederholung: this.INTERVALL_TEXT[k.stufe]
+      naechsteWiederholung: this.intervallText(k.stufe)
     };
   },
 
   /** Ist diese Karte gerade zur Wiederholung fällig? */
   istFaellig(id) {
     if (!Speicher.hatKarte(id)) return false;
-    const k = Speicher.daten.karten[id];
+    const k = Speicher.fortschritt().karten[id];
     return k.gesehen && k.faellig <= Date.now();
   },
 
   /** Alle fälligen Karten-Ids, die dringendsten zuerst. */
   faellige() {
     const jetzt = Date.now();
-    return Object.entries(Speicher.daten.karten)
+    return Object.entries(Speicher.fortschritt().karten)
       .filter(([, k]) => k.gesehen && k.faellig <= jetzt)
       .sort((a, b) => a[1].faellig - b[1].faellig)
       .map(([id]) => id);
@@ -94,7 +103,7 @@ var SRS = {
 
   /** Alle Problemwörter. Die kommen in JEDER Session dran, egal ob fällig. */
   leeches() {
-    return Object.entries(Speicher.daten.karten)
+    return Object.entries(Speicher.fortschritt().karten)
       .filter(([, k]) => k.leech)
       .sort((a, b) => b[1].falsch - a[1].falsch)
       .map(([id]) => id);
@@ -102,13 +111,13 @@ var SRS = {
 
   /** Anzahl Karten, die als "gelernt" zählen (Stufe 3 oder höher). */
   anzahlGelernt() {
-    return Object.values(Speicher.daten.karten)
+    return Object.values(Speicher.fortschritt().karten)
       .filter(k => k.gesehen && k.stufe >= this.GELERNT_AB_STUFE).length;
   },
 
   /** Anzahl Karten, die schon einmal dran waren (also "in Arbeit"). */
   anzahlInArbeit() {
-    return Object.values(Speicher.daten.karten).filter(k => k.gesehen).length;
+    return Object.values(Speicher.fortschritt().karten).filter(k => k.gesehen).length;
   },
 
   /** Welcher Übungstyp passt zur aktuellen Stufe?
@@ -116,7 +125,7 @@ var SRS = {
       Problemwörter werden immer getippt: nur so beweist du, dass du sie
       wirklich kannst und nicht nur aus vier Optionen richtig rätst. */
   typFuerStufe(id, kannHoeren) {
-    const k = Speicher.hatKarte(id) ? Speicher.daten.karten[id] : null;
+    const k = Speicher.hatKarte(id) ? Speicher.fortschritt().karten[id] : null;
     if (k && k.leech) return 'tippen';
     const stufe = k ? k.stufe : 0;
     if (stufe <= 1) return 'mc';
@@ -126,17 +135,17 @@ var SRS = {
     return 'tippen';
   },
 
-  /** Menschenlesbar: "in 3 Tagen", "jetzt fällig", ... */
+  /** Menschenlesbar: "in 3 Tg", "jetzt fällig", … — in der Kurssprache. */
   faelligText(id) {
-    if (!Speicher.hatKarte(id)) return 'neu';
-    const k = Speicher.daten.karten[id];
-    if (!k.gesehen) return 'neu';
+    if (!Speicher.hatKarte(id)) return t('hist.neu');
+    const k = Speicher.fortschritt().karten[id];
+    if (!k.gesehen) return t('hist.neu');
     const diff = k.faellig - Date.now();
-    if (diff <= 0) return 'jetzt fällig';
+    if (diff <= 0) return t('hist.jetztFaellig');
     const std = Math.round(diff / 3600e3);
-    if (std < 24) return `in ${std} Std`;
+    if (std < 24) return t('hist.inStunden', { n: std });
     const tage = Math.round(diff / 86400e3);
-    if (tage < 31) return `in ${tage} Tg`;
-    return `in ${Math.round(tage / 30)} Mon`;
+    if (tage < 31) return t('hist.inTagen', { n: tage });
+    return t('hist.inMonaten', { n: Math.round(tage / 30) });
   }
 };

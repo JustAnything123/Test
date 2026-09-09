@@ -7,16 +7,13 @@
      5. Grammatik: Erklärung lesen, dann anwenden
 
    Herauskommt eine einfache Liste von Aufgaben. Jede Aufgabe sieht so aus:
-     { typ: 'mc', karte: {...}, richtung: 'es2de', phase: 'Wiederholung' } */
+     { typ: 'mc', karte: {...}, richtung: 'nachAusgang', phase: 'Wiederholung' } */
 
 var Tagesplan = {
 
-  PHASE: {
-    problem:   'Problemwörter',
-    wdh:       'Wiederholung',
-    neu:       'Neue Wörter',
-    satz:      'Sätze',
-    grammatik: 'Grammatik'
+  /** Der Name einer Phase in der Oberflaechensprache des Kurses. */
+  phasenName(phase) {
+    return t('phase.' + phase);
   },
 
   /** Die Sitzung für heute bauen.
@@ -33,7 +30,7 @@ var Tagesplan = {
       if (!k) continue;
       aufgaben.push({
         typ: k.art === 'grammatik' ? 'luecke' : 'tippen',
-        karte: k, richtung: 'de2es', phase: 'problem'
+        karte: k, richtung: 'nachZiel', phase: 'problem'
       });
     }
 
@@ -52,7 +49,7 @@ var Tagesplan = {
         aufgaben.push({
           typ,
           karte: k,
-          richtung: typ === 'mc' ? (Math.random() < 0.5 ? 'es2de' : 'de2es') : 'de2es',
+          richtung: typ === 'mc' ? (Math.random() < 0.5 ? 'nachAusgang' : 'nachZiel') : 'nachZiel',
           phase: 'wdh'
         });
       }
@@ -61,7 +58,7 @@ var Tagesplan = {
     if (modus === 'nurWdh') return aufgaben;
 
     /* ---- 3./4./5. Die Tageslektion ---- */
-    const tag = Speicher.daten.aktuellerTag;
+    const tag = Speicher.fortschritt().aktuellerTag;
     const lektion = Daten.lektion(tag);
     if (!lektion) return aufgaben;          // alle 60 Tage durch → nur noch Wiederholung
 
@@ -72,10 +69,10 @@ var Tagesplan = {
       aufgaben.push({ typ: 'karte', karte: { ...v, art: 'vokabel' }, phase: 'neu' });
     }
     for (const v of lektion.vokabeln) {
-      aufgaben.push({ typ: 'mc', karte: { ...v, art: 'vokabel' }, richtung: 'es2de', phase: 'neu' });
+      aufgaben.push({ typ: 'mc', karte: { ...v, art: 'vokabel' }, richtung: 'nachAusgang', phase: 'neu' });
     }
     for (const v of lektion.vokabeln) {
-      aufgaben.push({ typ: 'tippen', karte: { ...v, art: 'vokabel' }, richtung: 'de2es', phase: 'neu' });
+      aufgaben.push({ typ: 'tippen', karte: { ...v, art: 'vokabel' }, richtung: 'nachZiel', phase: 'neu' });
     }
 
     // Sätze: Satzbau, ab dem zweiten Satz abwechselnd auch Hören
@@ -99,8 +96,8 @@ var Tagesplan = {
       was du schon einmal gesehen hast. Ohne Auswirkung auf den Streak,
       aber die Antworten zählen ganz normal für das Wiederholsystem. */
   speedRunde(anzahl) {
-    const bekannt = Object.keys(Speicher.daten.karten)
-      .filter(id => Speicher.daten.karten[id].gesehen);
+    const bekannt = Object.keys(Speicher.fortschritt().karten)
+      .filter(id => Speicher.fortschritt().karten[id].gesehen);
     if (bekannt.length < 4) return [];
 
     const gemischt = Uebungen.mischen(bekannt).slice(0, anzahl || 20);
@@ -110,7 +107,7 @@ var Tagesplan = {
       if (k.art === 'grammatik') return { typ: 'luecke', karte: k, phase: 'wdh' };
       return {
         typ: 'mc', karte: k,
-        richtung: Math.random() < 0.5 ? 'es2de' : 'de2es',
+        richtung: Math.random() < 0.5 ? 'nachAusgang' : 'nachZiel',
         phase: 'wdh'
       };
     }).filter(Boolean);
@@ -118,7 +115,7 @@ var Tagesplan = {
 
   /** Kurzer Überblick für die Karte auf dem Startbildschirm. */
   vorschau() {
-    const tag = Speicher.daten.aktuellerTag;
+    const tag = Speicher.fortschritt().aktuellerTag;
     const lektion = Daten.lektion(tag);
     return {
       tag,

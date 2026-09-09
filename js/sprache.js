@@ -1,12 +1,13 @@
-/* Sprachausgabe — liest spanische Wörter und Sätze vor.
+/* Sprachausgabe — liest die Zielsprache des aktiven Kurses vor.
    Wir nutzen die eingebaute Vorlesefunktion des Geräts (speechSynthesis).
    Vorteil: keine einzige Audiodatei nötig, funktioniert offline, kostet nichts.
-   Nachteil: es muss eine spanische Stimme installiert sein. Ist keine da,
-   blenden wir die Hör-Übungen automatisch aus. */
+   Nachteil: die passende Stimme muss installiert sein. Ist keine da, blenden
+   wir die Hör-Übungen automatisch aus. */
 
 var Sprache = {
   stimme: null,
   verfuegbar: false,
+  _alleStimmen: [],
 
   /** Beim App-Start aufrufen. Die Stimmenliste kommt bei manchen Browsern
       erst verzögert, deshalb hören wir zusätzlich auf 'voiceschanged'. */
@@ -19,11 +20,8 @@ var Sprache = {
     const suchen = () => {
       const stimmen = window.speechSynthesis.getVoices();
       if (!stimmen.length) return false;
-      // Bevorzugt Spanien-Spanisch, sonst irgendein Spanisch
-      this.stimme = stimmen.find(s => s.lang === 'es-ES')
-                 || stimmen.find(s => s.lang && s.lang.startsWith('es'))
-                 || null;
-      this.verfuegbar = !!this.stimme;
+      this._alleStimmen = stimmen;
+      this.fuerKursWaehlen();
       return true;
     };
 
@@ -39,6 +37,24 @@ var Sprache = {
     }
   },
 
+  /** Die passende Stimme für den aktiven Kurs heraussuchen.
+      Muss nach jedem Kurswechsel erneut aufgerufen werden — für Deutsch
+      brauchen wir eine andere Stimme als für Spanisch. */
+  fuerKursWaehlen() {
+    const kurs = Kurse.aktiv();
+    if (!kurs || !this._alleStimmen.length) { this.verfuegbar = false; return; }
+
+    // Die Wunschliste des Kurses der Reihe nach durchgehen: erst genaue
+    // Treffer (es-MX), dann Sprache ohne Region (es-…)
+    for (const wunsch of kurs.stimmen) {
+      const genau = this._alleStimmen.find(s => s.lang && s.lang.replace('_', '-') === wunsch);
+      if (genau) { this.stimme = genau; this.verfuegbar = true; return; }
+    }
+    const grob = this._alleStimmen.find(s => s.lang && s.lang.toLowerCase().startsWith(kurs.ziel));
+    this.stimme = grob || null;
+    this.verfuegbar = !!grob;
+  },
+
   /** Text vorlesen. tempo < 1 = langsamer (gut für lange Sätze). */
   sprich(text, tempo) {
     if (!this.verfuegbar || !Speicher.einstellung('ton')) return;
@@ -46,7 +62,7 @@ var Sprache = {
       window.speechSynthesis.cancel();          // laufende Ausgabe abbrechen
       const s = new SpeechSynthesisUtterance(text);
       s.voice = this.stimme;
-      s.lang = this.stimme ? this.stimme.lang : 'es-ES';
+      s.lang = this.stimme ? this.stimme.lang : (Kurse.aktiv() || {}).ziel;
       s.rate = tempo || 0.9;                    // etwas langsamer als normal
       window.speechSynthesis.speak(s);
     } catch (e) {
@@ -61,12 +77,8 @@ var Sprache = {
 
   /** Text für die Einstellungsseite. */
   statusText() {
-    if (!('speechSynthesis' in window)) return 'Dein Browser kann keine Sprachausgabe.';
-    if (!this.verfuegbar) {
-      return 'Keine spanische Stimme gefunden. Auf Android: Einstellungen → '
-           + 'System → Sprachen → Text-in-Sprache-Ausgabe → Sprache „Español" '
-           + 'herunterladen. Hör-Übungen sind bis dahin ausgeblendet.';
-    }
-    return `Stimme aktiv: ${this.stimme.name} (${this.stimme.lang}).`;
+    if (!('speechSynthesis' in window)) return t('einst.keineSprachausgabe');
+    if (!this.verfuegbar) return t('einst.stimmeFehlt');
+    return t('einst.stimmeDa', { name: this.stimme.name, sprache: this.stimme.lang });
   }
 };

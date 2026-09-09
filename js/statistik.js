@@ -8,7 +8,7 @@ var Statistik = {
       Wenn du heute noch nicht dran warst, zählt gestern als letzter Tag —
       der Streak reißt also erst, wenn ein ganzer Tag ausgelassen wurde. */
   streak() {
-    const tage = new Set(Speicher.daten.aktiveTage);
+    const tage = new Set(Speicher.fortschritt().aktiveTage);
     if (!tage.size) return 0;
 
     const alsText = d => {
@@ -28,14 +28,14 @@ var Statistik = {
     return n;
   },
 
-  aktiveTage()  { return Speicher.daten.aktiveTage.length; },
+  aktiveTage()  { return Speicher.fortschritt().aktiveTage.length; },
   gelernteWoerter() { return SRS.anzahlGelernt(); },
   problemwoerter()  { return SRS.leeches().length; },
 
   /** Trefferquote über alle Antworten hinweg. */
   genauigkeit() {
     let r = 0, f = 0;
-    for (const k of Object.values(Speicher.daten.karten)) { r += k.richtig; f += k.falsch; }
+    for (const k of Object.values(Speicher.fortschritt().karten)) { r += k.richtig; f += k.falsch; }
     if (r + f === 0) return null;
     return Math.round((r / (r + f)) * 100);
   },
@@ -60,7 +60,7 @@ var Statistik = {
       d.setDate(start.getDate() + i);
       if (d > heute) { html += '<div class="hm-tag" style="visibility:hidden"></div>'; continue; }
       const t = text(d);
-      const n = Speicher.daten.tagesUebungen[t] || 0;
+      const n = Speicher.fortschritt().tagesUebungen[t] || 0;
       const stufe = n === 0 ? '' : n < 8 ? 's1' : n < 18 ? 's2' : n < 30 ? 's3' : 's4';
       const heuteMarke = t === heuteText ? ' heute' : '';
       html += `<div class="hm-tag ${stufe}${heuteMarke}" title="${t}: ${n} Aufgaben"></div>`;
@@ -70,41 +70,41 @@ var Statistik = {
 
   /** Die Historie-Liste. filter: 'alle' | 'leech' | 'faellig' */
   zeichneHistorie(behaelter, filter) {
-    let ids = Object.keys(Speicher.daten.karten).filter(id => Speicher.daten.karten[id].gesehen);
+    let ids = Object.keys(Speicher.fortschritt().karten).filter(id => Speicher.fortschritt().karten[id].gesehen);
 
-    if (filter === 'leech')   ids = ids.filter(id => Speicher.daten.karten[id].leech);
+    if (filter === 'leech')   ids = ids.filter(id => Speicher.fortschritt().karten[id].leech);
     if (filter === 'faellig') ids = ids.filter(id => SRS.istFaellig(id));
 
     // Die problematischsten zuerst
     ids.sort((a, b) => {
-      const ka = Speicher.daten.karten[a], kb = Speicher.daten.karten[b];
+      const ka = Speicher.fortschritt().karten[a], kb = Speicher.fortschritt().karten[b];
       if (kb.leech !== ka.leech) return kb.leech - ka.leech;
       if (kb.falsch !== ka.falsch) return kb.falsch - ka.falsch;
       return ka.stufe - kb.stufe;
     });
 
     if (!ids.length) {
-      behaelter.innerHTML = '<p class="leer-hinweis">Hier ist noch nichts. Lerne erst einen Tag durch.</p>';
+      behaelter.innerHTML = `<p class="leer-hinweis">${Uebungen.escape(t('hist.leer'))}</p>`;
       return;
     }
 
     const esc = s => Uebungen.escape(s);
     behaelter.innerHTML = ids.map(id => {
-      const k = Speicher.daten.karten[id];
+      const k = Speicher.fortschritt().karten[id];
       const inhalt = Daten.karteNachId(id);
       if (!inhalt) return '';
 
-      const vorn = inhalt.art === 'grammatik' ? inhalt.loesung : inhalt.es;
+      const vorn = inhalt.art === 'grammatik' ? inhalt.loesung : Uebungen.ziel(inhalt);
       const hinten = inhalt.art === 'grammatik'
-        ? (inhalt.thema || 'Grammatik')
-        : inhalt.de;
+        ? (inhalt.thema || t('phase.grammatik'))
+        : Uebungen.ausgang(inhalt);
 
       // Stufenanzeige: 8 Balken, gefüllt bis zur erreichten Stufe
       const balken = Array.from({ length: 8 }, (_, i) =>
         `<div class="h-punkt${i <= k.stufe ? ' voll' : ''}"></div>`).join('');
 
       const letzteFehler = k.historie.filter(h => !h.korrekt && h.eingabe).slice(-2)
-        .map(h => `„${esc(h.eingabe)}"`).join(', ');
+        .map(h => `«${esc(h.eingabe)}»`).join(', ');
 
       return `
         <div class="h-zeile${k.leech ? ' ist-leech' : ''}">
@@ -114,7 +114,7 @@ var Statistik = {
             <span class="h-meta">${k.leech ? '⚠️ ' : ''}${k.richtig}✓ ${k.falsch}✗ · ${SRS.faelligText(id)}</span>
           </div>
           <div class="h-stufen">${balken}</div>
-          ${letzteFehler ? `<div class="h-letzte-fehler">Zuletzt getippt: ${letzteFehler}</div>` : ''}
+          ${letzteFehler ? `<div class="h-letzte-fehler">${esc(t('hist.zuletztGetippt', { eingaben: '' }))} ${letzteFehler}</div>` : ''}
         </div>`;
     }).join('');
   },
@@ -165,13 +165,13 @@ var Statistik = {
       `DTSTART;TZID=Europe/Berlin:${datum}T193000`,
       `DTEND;TZID=Europe/Berlin:${datum}T195000`,
       'RRULE:FREQ=DAILY',
-      'SUMMARY:🇪🇸 Spanisch lernen',
-      `DESCRIPTION:${esc('Deine Tageslektion wartet: ' + url)}`,
+      `SUMMARY:${esc((Kurse.aktiv() || {}).flagge || '📚')} ${esc(t('erin.terminName'))}`,
+      `DESCRIPTION:${esc(t('erin.terminText') + url)}`,
       `URL:${url}`,
       'BEGIN:VALARM',
       'TRIGGER:PT0M',
       'ACTION:DISPLAY',
-      'DESCRIPTION:Spanisch lernen',
+      `DESCRIPTION:${esc(t('erin.terminName'))}`,
       'END:VALARM',
       'END:VEVENT',
       'END:VCALENDAR'
@@ -182,7 +182,7 @@ var Statistik = {
     const blob = new Blob([inhalt], { type: 'text/calendar;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'spanisch-1930.ics';
+    a.download = 'lernen-1930.ics';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

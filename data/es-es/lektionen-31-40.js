@@ -1,18 +1,18 @@
 /* Tag 31–40 · Übergang A2 → B1 · Condicional, Plusquamperfekt, Passiv */
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 31, niveau: "A2", thema: "Höflich bitten",
   vokabeln: [
-    { id: "v3101", es: "el ruego",       de: "die Bitte",        wortart: "Substantiv", beispiel: "Tengo un ruego.", beispielDe: "Ich habe eine Bitte." },
-    { id: "v3102", es: "amablemente",    de: "freundlicherweise", wortart: "Adverb", beispiel: "Me ayudó amablemente.", beispielDe: "Er half mir freundlicherweise." },
-    { id: "v3103", es: "importar",       de: "etwas ausmachen",  wortart: "Verb", beispiel: "¿Le importaría esperar?", beispielDe: "Würde es Ihnen etwas ausmachen zu warten?" },
-    { id: "v3104", es: "el permiso",     de: "die Erlaubnis",    wortart: "Substantiv", beispiel: "¿Me da permiso?", beispielDe: "Erlauben Sie?" },
-    { id: "v3105", es: "atender",        de: "bedienen / betreuen", wortart: "Verb", beispiel: "Enseguida le atiendo.", beispielDe: "Ich bediene Sie sofort." },
-    { id: "v3106", es: "encantado",      de: "erfreut",          wortart: "Adjektiv", beispiel: "Encantado de ayudarle.", beispielDe: "Gerne helfe ich Ihnen." },
-    { id: "v3107", es: "disculpar",      de: "entschuldigen",    wortart: "Verb", beispiel: "Disculpe la molestia.", beispielDe: "Entschuldigen Sie die Störung." },
-    { id: "v3108", es: "el trato",       de: "der Umgang",       wortart: "Substantiv", beispiel: "El trato fue muy amable.", beispielDe: "Der Umgang war sehr freundlich." },
-    { id: "v3109", es: "agradecido",     de: "dankbar",          wortart: "Adjektiv", beispiel: "Estoy muy agradecido.", beispielDe: "Ich bin sehr dankbar." },
-    { id: "v3110", es: "la molestia",    de: "die Mühe",         wortart: "Substantiv", beispiel: "No es ninguna molestia.", beispielDe: "Das ist keine Mühe." }
+    { id: "v3101", es: "el ruego",       de: "die Bitte",        wortart: "Substantiv", beispiel: "Tengo un ruego.", beispielUe: "Ich habe eine Bitte." },
+    { id: "v3102", es: "amablemente",    de: "freundlicherweise", wortart: "Adverb", beispiel: "Me ayudó amablemente.", beispielUe: "Er half mir freundlicherweise." },
+    { id: "v3103", es: "importar",       de: "etwas ausmachen",  wortart: "Verb", beispiel: "¿Le importaría esperar?", beispielUe: "Würde es Ihnen etwas ausmachen zu warten?" },
+    { id: "v3104", es: "el permiso",     de: "die Erlaubnis",    wortart: "Substantiv", beispiel: "¿Me da permiso?", beispielUe: "Erlauben Sie?" },
+    { id: "v3105", es: "atender",        de: "bedienen / betreuen", wortart: "Verb", beispiel: "Enseguida le atiendo.", beispielUe: "Ich bediene Sie sofort." },
+    { id: "v3106", es: "encantado",      de: "erfreut",          wortart: "Adjektiv", beispiel: "Encantado de ayudarle.", beispielUe: "Gerne helfe ich Ihnen." },
+    { id: "v3107", es: "disculpar",      de: "entschuldigen",    wortart: "Verb", beispiel: "Disculpe la molestia.", beispielUe: "Entschuldigen Sie die Störung." },
+    { id: "v3108", es: "el trato",       de: "der Umgang",       wortart: "Substantiv", beispiel: "El trato fue muy amable.", beispielUe: "Der Umgang war sehr freundlich." },
+    { id: "v3109", es: "agradecido",     de: "dankbar",          wortart: "Adjektiv", beispiel: "Estoy muy agradecido.", beispielUe: "Ich bin sehr dankbar." },
+    { id: "v3110", es: "la molestia",    de: "die Mühe",         wortart: "Substantiv", beispiel: "No es ninguna molestia.", beispielUe: "Das ist keine Mühe." }
   ],
   saetze: [
     { id: "s3101", es: "¿Podrías ayudarme un momento?",         de: "Könntest du mir kurz helfen?" },
@@ -62,19 +62,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 32, niveau: "A2", thema: "Was vorher geschehen war",
   vokabeln: [
-    { id: "v3201", es: "previamente",    de: "zuvor",            wortart: "Adverb", beispiel: "Ya lo habíamos hablado previamente.", beispielDe: "Wir hatten vorher schon darüber gesprochen." },
-    { id: "v3202", es: "avisar",         de: "Bescheid geben",   wortart: "Verb", beispiel: "Nadie me había avisado.", beispielDe: "Niemand hatte mir Bescheid gegeben." },
-    { id: "v3203", es: "el aviso",       de: "der Hinweis",      wortart: "Substantiv", beispiel: "No recibí ningún aviso.", beispielDe: "Ich erhielt keinen Hinweis." },
-    { id: "v3204", es: "darse cuenta",   de: "bemerken",         wortart: "Verb", beispiel: "No me había dado cuenta.", beispielDe: "Ich hatte es nicht bemerkt." },
-    { id: "v3205", es: "antes de que",   de: "bevor",            wortart: "Konjunktion", beispiel: "Salí antes de que llegara.", beispielDe: "Ich ging, bevor er ankam." },
-    { id: "v3206", es: "el retraso",     de: "die Verzögerung",  wortart: "Substantiv", beispiel: "Hubo un retraso importante.", beispielDe: "Es gab eine erhebliche Verzögerung." },
-    { id: "v3207", es: "olvidarse",      de: "vergessen",        wortart: "Verb", beispiel: "Se me había olvidado.", beispielDe: "Ich hatte es vergessen." },
-    { id: "v3208", es: "cumplir",        de: "erfüllen",         wortart: "Verb", beispiel: "Ya había cumplido su promesa.", beispielDe: "Er hatte sein Versprechen schon erfüllt." },
-    { id: "v3209", es: "mientras tanto", de: "in der Zwischenzeit", wortart: "Adverb", beispiel: "Mientras tanto, preparé la cena.", beispielDe: "In der Zwischenzeit machte ich das Abendessen." },
-    { id: "v3210", es: "por adelantado", de: "im Voraus",        wortart: "Adverb", beispiel: "Hay que pagar por adelantado.", beispielDe: "Man muss im Voraus zahlen." }
+    { id: "v3201", es: "previamente",    de: "zuvor",            wortart: "Adverb", beispiel: "Ya lo habíamos hablado previamente.", beispielUe: "Wir hatten vorher schon darüber gesprochen." },
+    { id: "v3202", es: "avisar",         de: "Bescheid geben",   wortart: "Verb", beispiel: "Nadie me había avisado.", beispielUe: "Niemand hatte mir Bescheid gegeben." },
+    { id: "v3203", es: "el aviso",       de: "der Hinweis",      wortart: "Substantiv", beispiel: "No recibí ningún aviso.", beispielUe: "Ich erhielt keinen Hinweis." },
+    { id: "v3204", es: "darse cuenta",   de: "bemerken",         wortart: "Verb", beispiel: "No me había dado cuenta.", beispielUe: "Ich hatte es nicht bemerkt." },
+    { id: "v3205", es: "antes de que",   de: "bevor",            wortart: "Konjunktion", beispiel: "Salí antes de que llegara.", beispielUe: "Ich ging, bevor er ankam." },
+    { id: "v3206", es: "el retraso",     de: "die Verzögerung",  wortart: "Substantiv", beispiel: "Hubo un retraso importante.", beispielUe: "Es gab eine erhebliche Verzögerung." },
+    { id: "v3207", es: "olvidarse",      de: "vergessen",        wortart: "Verb", beispiel: "Se me había olvidado.", beispielUe: "Ich hatte es vergessen." },
+    { id: "v3208", es: "cumplir",        de: "erfüllen",         wortart: "Verb", beispiel: "Ya había cumplido su promesa.", beispielUe: "Er hatte sein Versprechen schon erfüllt." },
+    { id: "v3209", es: "mientras tanto", de: "in der Zwischenzeit", wortart: "Adverb", beispiel: "Mientras tanto, preparé la cena.", beispielUe: "In der Zwischenzeit machte ich das Abendessen." },
+    { id: "v3210", es: "por adelantado", de: "im Voraus",        wortart: "Adverb", beispiel: "Hay que pagar por adelantado.", beispielUe: "Man muss im Voraus zahlen." }
   ],
   saetze: [
     { id: "s3201", es: "Cuando llegué, ella ya se había ido.",  de: "Als ich ankam, war sie schon gegangen." },
@@ -123,19 +123,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 33, niveau: "A2", thema: "Nachrichten und Berichte",
   vokabeln: [
-    { id: "v3301", es: "la noticia",     de: "die Nachricht",    wortart: "Substantiv", beispiel: "La noticia fue publicada ayer.", beispielDe: "Die Nachricht wurde gestern veröffentlicht." },
-    { id: "v3302", es: "el periodista",  de: "der Journalist",   wortart: "Substantiv", beispiel: "El periodista escribió el artículo.", beispielDe: "Der Journalist schrieb den Artikel." },
-    { id: "v3303", es: "publicar",       de: "veröffentlichen",  wortart: "Verb", beispiel: "El libro fue publicado en 2020.", beispielDe: "Das Buch wurde 2020 veröffentlicht." },
-    { id: "v3304", es: "el titular",     de: "die Schlagzeile",  wortart: "Substantiv", beispiel: "El titular es muy llamativo.", beispielDe: "Die Schlagzeile ist sehr auffällig." },
-    { id: "v3305", es: "la fuente",      de: "die Quelle",       wortart: "Substantiv", beispiel: "Según fuentes oficiales…", beispielDe: "Laut offiziellen Quellen…" },
-    { id: "v3306", es: "anunciar",       de: "ankündigen",       wortart: "Verb", beispiel: "Anunciaron nuevas medidas.", beispielDe: "Sie kündigten neue Maßnahmen an." },
-    { id: "v3307", es: "la medida",      de: "die Maßnahme",     wortart: "Substantiv", beispiel: "Las medidas fueron aprobadas.", beispielDe: "Die Maßnahmen wurden genehmigt." },
-    { id: "v3308", es: "el acuerdo",     de: "das Abkommen",     wortart: "Substantiv", beispiel: "Se firmó un acuerdo.", beispielDe: "Ein Abkommen wurde unterzeichnet." },
-    { id: "v3309", es: "destruir",       de: "zerstören",        wortart: "Verb", beispiel: "El edificio fue destruido.", beispielDe: "Das Gebäude wurde zerstört." },
-    { id: "v3310", es: "el suceso",      de: "das Geschehen",    wortart: "Substantiv", beispiel: "El suceso ocurrió de noche.", beispielDe: "Das Geschehen ereignete sich nachts." }
+    { id: "v3301", es: "la noticia",     de: "die Nachricht",    wortart: "Substantiv", beispiel: "La noticia fue publicada ayer.", beispielUe: "Die Nachricht wurde gestern veröffentlicht." },
+    { id: "v3302", es: "el periodista",  de: "der Journalist",   wortart: "Substantiv", beispiel: "El periodista escribió el artículo.", beispielUe: "Der Journalist schrieb den Artikel." },
+    { id: "v3303", es: "publicar",       de: "veröffentlichen",  wortart: "Verb", beispiel: "El libro fue publicado en 2020.", beispielUe: "Das Buch wurde 2020 veröffentlicht." },
+    { id: "v3304", es: "el titular",     de: "die Schlagzeile",  wortart: "Substantiv", beispiel: "El titular es muy llamativo.", beispielUe: "Die Schlagzeile ist sehr auffällig." },
+    { id: "v3305", es: "la fuente",      de: "die Quelle",       wortart: "Substantiv", beispiel: "Según fuentes oficiales…", beispielUe: "Laut offiziellen Quellen…" },
+    { id: "v3306", es: "anunciar",       de: "ankündigen",       wortart: "Verb", beispiel: "Anunciaron nuevas medidas.", beispielUe: "Sie kündigten neue Maßnahmen an." },
+    { id: "v3307", es: "la medida",      de: "die Maßnahme",     wortart: "Substantiv", beispiel: "Las medidas fueron aprobadas.", beispielUe: "Die Maßnahmen wurden genehmigt." },
+    { id: "v3308", es: "el acuerdo",     de: "das Abkommen",     wortart: "Substantiv", beispiel: "Se firmó un acuerdo.", beispielUe: "Ein Abkommen wurde unterzeichnet." },
+    { id: "v3309", es: "destruir",       de: "zerstören",        wortart: "Verb", beispiel: "El edificio fue destruido.", beispielUe: "Das Gebäude wurde zerstört." },
+    { id: "v3310", es: "el suceso",      de: "das Geschehen",    wortart: "Substantiv", beispiel: "El suceso ocurrió de noche.", beispielUe: "Das Geschehen ereignete sich nachts." }
   ],
   saetze: [
     { id: "s3301", es: "El libro fue escrito por Cervantes.",   de: "Das Buch wurde von Cervantes geschrieben." },
@@ -181,19 +181,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 34, niveau: "B1", thema: "Was jemand gesagt hat",
   vokabeln: [
-    { id: "v3401", es: "afirmar",        de: "behaupten",        wortart: "Verb", beispiel: "Afirmó que era inocente.", beispielDe: "Er behauptete, er sei unschuldig." },
-    { id: "v3402", es: "comentar",       de: "anmerken",         wortart: "Verb", beispiel: "Comentó que llegaría tarde.", beispielDe: "Er merkte an, dass er spät kommen würde." },
-    { id: "v3403", es: "advertir",       de: "warnen",           wortart: "Verb", beispiel: "Me advirtió del peligro.", beispielDe: "Er warnte mich vor der Gefahr." },
-    { id: "v3404", es: "asegurar",       de: "versichern",       wortart: "Verb", beispiel: "Aseguró que vendría.", beispielDe: "Er versicherte, dass er kommen würde." },
-    { id: "v3405", es: "la promesa",     de: "das Versprechen",  wortart: "Substantiv", beispiel: "Cumplió su promesa.", beispielDe: "Er hielt sein Versprechen." },
-    { id: "v3406", es: "quejarse",       de: "sich beschweren",  wortart: "Verb", beispiel: "Se quejó del ruido.", beispielDe: "Er beschwerte sich über den Lärm." },
-    { id: "v3407", es: "reconocer",      de: "zugeben",          wortart: "Verb", beispiel: "Reconoció su error.", beispielDe: "Er gab seinen Fehler zu." },
-    { id: "v3408", es: "el rumor",       de: "das Gerücht",      wortart: "Substantiv", beispiel: "Es solo un rumor.", beispielDe: "Das ist nur ein Gerücht." },
-    { id: "v3409", es: "insistir",       de: "darauf bestehen",  wortart: "Verb", beispiel: "Insistió en pagar.", beispielDe: "Er bestand darauf zu zahlen." },
-    { id: "v3410", es: "el testigo",     de: "der Zeuge",        wortart: "Substantiv", beispiel: "El testigo contó lo que vio.", beispielDe: "Der Zeuge erzählte, was er sah." }
+    { id: "v3401", es: "afirmar",        de: "behaupten",        wortart: "Verb", beispiel: "Afirmó que era inocente.", beispielUe: "Er behauptete, er sei unschuldig." },
+    { id: "v3402", es: "comentar",       de: "anmerken",         wortart: "Verb", beispiel: "Comentó que llegaría tarde.", beispielUe: "Er merkte an, dass er spät kommen würde." },
+    { id: "v3403", es: "advertir",       de: "warnen",           wortart: "Verb", beispiel: "Me advirtió del peligro.", beispielUe: "Er warnte mich vor der Gefahr." },
+    { id: "v3404", es: "asegurar",       de: "versichern",       wortart: "Verb", beispiel: "Aseguró que vendría.", beispielUe: "Er versicherte, dass er kommen würde." },
+    { id: "v3405", es: "la promesa",     de: "das Versprechen",  wortart: "Substantiv", beispiel: "Cumplió su promesa.", beispielUe: "Er hielt sein Versprechen." },
+    { id: "v3406", es: "quejarse",       de: "sich beschweren",  wortart: "Verb", beispiel: "Se quejó del ruido.", beispielUe: "Er beschwerte sich über den Lärm." },
+    { id: "v3407", es: "reconocer",      de: "zugeben",          wortart: "Verb", beispiel: "Reconoció su error.", beispielUe: "Er gab seinen Fehler zu." },
+    { id: "v3408", es: "el rumor",       de: "das Gerücht",      wortart: "Substantiv", beispiel: "Es solo un rumor.", beispielUe: "Das ist nur ein Gerücht." },
+    { id: "v3409", es: "insistir",       de: "darauf bestehen",  wortart: "Verb", beispiel: "Insistió en pagar.", beispielUe: "Er bestand darauf zu zahlen." },
+    { id: "v3410", es: "el testigo",     de: "der Zeuge",        wortart: "Substantiv", beispiel: "El testigo contó lo que vio.", beispielUe: "Der Zeuge erzählte, was er sah." }
   ],
   saetze: [
     { id: "s3401", es: "Dijo que estaba muy cansado.",          de: "Er sagte, dass er sehr müde sei." },
@@ -240,19 +240,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 35, niveau: "B1", thema: "Umwelt und Natur",
   vokabeln: [
-    { id: "v3501", es: "el medio ambiente", de: "die Umwelt",    wortart: "Substantiv", beispiel: "Hay que cuidar el medio ambiente.", beispielDe: "Man muss die Umwelt schützen." },
-    { id: "v3502", es: "el residuo",     de: "der Abfall",       wortart: "Substantiv", beispiel: "Separamos los residuos.", beispielDe: "Wir trennen den Abfall." },
-    { id: "v3503", es: "reciclar",       de: "recyceln",         wortart: "Verb", beispiel: "Reciclamos el papel.", beispielDe: "Wir recyceln das Papier." },
-    { id: "v3504", es: "la sequía",      de: "die Dürre",        wortart: "Substantiv", beispiel: "La sequía afecta al sur.", beispielDe: "Die Dürre betrifft den Süden." },
-    { id: "v3505", es: "contaminar",     de: "verschmutzen",     wortart: "Verb", beispiel: "Los coches contaminan mucho.", beispielDe: "Autos verschmutzen viel." },
-    { id: "v3506", es: "el bosque",      de: "der Wald",         wortart: "Substantiv", beispiel: "El bosque está protegido.", beispielDe: "Der Wald steht unter Schutz." },
-    { id: "v3507", es: "ahorrar",        de: "sparen",           wortart: "Verb", beispiel: "Hay que ahorrar agua.", beispielDe: "Man muss Wasser sparen." },
-    { id: "v3508", es: "renovable",      de: "erneuerbar",       wortart: "Adjektiv", beispiel: "Usamos energía renovable.", beispielDe: "Wir nutzen erneuerbare Energie." },
-    { id: "v3509", es: "la especie",     de: "die Art (Tier)",   wortart: "Substantiv", beispiel: "Es una especie protegida.", beispielDe: "Das ist eine geschützte Art." },
-    { id: "v3510", es: "el desarrollo",  de: "die Entwicklung",  wortart: "Substantiv", beispiel: "El desarrollo sostenible es clave.", beispielDe: "Nachhaltige Entwicklung ist entscheidend." }
+    { id: "v3501", es: "el medio ambiente", de: "die Umwelt",    wortart: "Substantiv", beispiel: "Hay que cuidar el medio ambiente.", beispielUe: "Man muss die Umwelt schützen." },
+    { id: "v3502", es: "el residuo",     de: "der Abfall",       wortart: "Substantiv", beispiel: "Separamos los residuos.", beispielUe: "Wir trennen den Abfall." },
+    { id: "v3503", es: "reciclar",       de: "recyceln",         wortart: "Verb", beispiel: "Reciclamos el papel.", beispielUe: "Wir recyceln das Papier." },
+    { id: "v3504", es: "la sequía",      de: "die Dürre",        wortart: "Substantiv", beispiel: "La sequía afecta al sur.", beispielUe: "Die Dürre betrifft den Süden." },
+    { id: "v3505", es: "contaminar",     de: "verschmutzen",     wortart: "Verb", beispiel: "Los coches contaminan mucho.", beispielUe: "Autos verschmutzen viel." },
+    { id: "v3506", es: "el bosque",      de: "der Wald",         wortart: "Substantiv", beispiel: "El bosque está protegido.", beispielUe: "Der Wald steht unter Schutz." },
+    { id: "v3507", es: "ahorrar",        de: "sparen",           wortart: "Verb", beispiel: "Hay que ahorrar agua.", beispielUe: "Man muss Wasser sparen." },
+    { id: "v3508", es: "renovable",      de: "erneuerbar",       wortart: "Adjektiv", beispiel: "Usamos energía renovable.", beispielUe: "Wir nutzen erneuerbare Energie." },
+    { id: "v3509", es: "la especie",     de: "die Art (Tier)",   wortart: "Substantiv", beispiel: "Es una especie protegida.", beispielUe: "Das ist eine geschützte Art." },
+    { id: "v3510", es: "el desarrollo",  de: "die Entwicklung",  wortart: "Substantiv", beispiel: "El desarrollo sostenible es clave.", beispielUe: "Nachhaltige Entwicklung ist entscheidend." }
   ],
   saetze: [
     { id: "s3501", es: "Llevo tres años reciclando todo.",       de: "Ich recycle seit drei Jahren alles." },
@@ -294,19 +294,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 36, niveau: "B1", thema: "Wünsche äußern",
   vokabeln: [
-    { id: "v3601", es: "el deseo",       de: "der Wunsch",       wortart: "Substantiv", beispiel: "Es mi mayor deseo.", beispielDe: "Das ist mein größter Wunsch." },
-    { id: "v3602", es: "esperar",        de: "hoffen",           wortart: "Verb", beispiel: "Espero que estés bien.", beispielDe: "Ich hoffe, es geht dir gut." },
-    { id: "v3603", es: "ojalá",          de: "hoffentlich",      wortart: "Adverb", beispiel: "Ojalá haga buen tiempo.", beispielDe: "Hoffentlich wird das Wetter gut." },
-    { id: "v3604", es: "pedir",          de: "bitten",           wortart: "Verb", beispiel: "Te pido que me escuches.", beispielDe: "Ich bitte dich, mir zuzuhören." },
-    { id: "v3605", es: "necesitar",      de: "brauchen",         wortart: "Verb", beispiel: "Necesito que me ayudes.", beispielDe: "Ich brauche deine Hilfe." },
-    { id: "v3606", es: "el anhelo",      de: "die Sehnsucht",    wortart: "Substantiv", beispiel: "Siente un anhelo profundo.", beispielDe: "Er empfindet eine tiefe Sehnsucht." },
-    { id: "v3607", es: "preferir",       de: "vorziehen",        wortart: "Verb", beispiel: "Prefiero que vengas mañana.", beispielDe: "Mir ist lieber, du kommst morgen." },
-    { id: "v3608", es: "aconsejar",      de: "raten",            wortart: "Verb", beispiel: "Te aconsejo que descanses.", beispielDe: "Ich rate dir, dich auszuruhen." },
-    { id: "v3609", es: "exigir",         de: "verlangen",        wortart: "Verb", beispiel: "Exigen que paguemos ya.", beispielDe: "Sie verlangen, dass wir sofort zahlen." },
-    { id: "v3610", es: "rogar",          de: "inständig bitten", wortart: "Verb", beispiel: "Le ruego que me perdone.", beispielDe: "Ich bitte Sie, mir zu verzeihen." }
+    { id: "v3601", es: "el deseo",       de: "der Wunsch",       wortart: "Substantiv", beispiel: "Es mi mayor deseo.", beispielUe: "Das ist mein größter Wunsch." },
+    { id: "v3602", es: "esperar",        de: "hoffen",           wortart: "Verb", beispiel: "Espero que estés bien.", beispielUe: "Ich hoffe, es geht dir gut." },
+    { id: "v3603", es: "ojalá",          de: "hoffentlich",      wortart: "Adverb", beispiel: "Ojalá haga buen tiempo.", beispielUe: "Hoffentlich wird das Wetter gut." },
+    { id: "v3604", es: "pedir",          de: "bitten",           wortart: "Verb", beispiel: "Te pido que me escuches.", beispielUe: "Ich bitte dich, mir zuzuhören." },
+    { id: "v3605", es: "necesitar",      de: "brauchen",         wortart: "Verb", beispiel: "Necesito que me ayudes.", beispielUe: "Ich brauche deine Hilfe." },
+    { id: "v3606", es: "el anhelo",      de: "die Sehnsucht",    wortart: "Substantiv", beispiel: "Siente un anhelo profundo.", beispielUe: "Er empfindet eine tiefe Sehnsucht." },
+    { id: "v3607", es: "preferir",       de: "vorziehen",        wortart: "Verb", beispiel: "Prefiero que vengas mañana.", beispielUe: "Mir ist lieber, du kommst morgen." },
+    { id: "v3608", es: "aconsejar",      de: "raten",            wortart: "Verb", beispiel: "Te aconsejo que descanses.", beispielUe: "Ich rate dir, dich auszuruhen." },
+    { id: "v3609", es: "exigir",         de: "verlangen",        wortart: "Verb", beispiel: "Exigen que paguemos ya.", beispielUe: "Sie verlangen, dass wir sofort zahlen." },
+    { id: "v3610", es: "rogar",          de: "inständig bitten", wortart: "Verb", beispiel: "Le ruego que me perdone.", beispielUe: "Ich bitte Sie, mir zu verzeihen." }
   ],
   saetze: [
     { id: "s3601", es: "Quiero que vengas a mi fiesta.",        de: "Ich will, dass du zu meiner Party kommst." },
@@ -360,19 +360,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 37, niveau: "B1", thema: "Bitten und Wünsche an andere",
   vokabeln: [
-    { id: "v3701", es: "el encargo",     de: "der Auftrag",      wortart: "Substantiv", beispiel: "Me hizo un encargo.", beispielDe: "Er gab mir einen Auftrag." },
-    { id: "v3702", es: "permitir",       de: "erlauben",         wortart: "Verb", beispiel: "No permiten que fumemos aquí.", beispielDe: "Sie erlauben nicht, dass wir hier rauchen." },
-    { id: "v3703", es: "prohibir",       de: "verbieten",        wortart: "Verb", beispiel: "Prohíben que entren perros.", beispielDe: "Sie verbieten, dass Hunde hereinkommen." },
-    { id: "v3704", es: "sugerir",        de: "vorschlagen",      wortart: "Verb", beispiel: "Sugiero que esperemos.", beispielDe: "Ich schlage vor, dass wir warten." },
-    { id: "v3705", es: "proponer",       de: "vorschlagen",      wortart: "Verb", beispiel: "Propongo que salgamos ya.", beispielDe: "Ich schlage vor, dass wir jetzt gehen." },
-    { id: "v3706", es: "impedir",        de: "verhindern",       wortart: "Verb", beispiel: "Nada impide que lo hagas.", beispielDe: "Nichts hindert dich daran, es zu tun." },
-    { id: "v3707", es: "el requisito",   de: "die Voraussetzung", wortart: "Substantiv", beispiel: "Cumple todos los requisitos.", beispielDe: "Er erfüllt alle Voraussetzungen." },
-    { id: "v3708", es: "recomendar",     de: "empfehlen",        wortart: "Verb", beispiel: "Te recomiendo que lo pruebes.", beispielDe: "Ich empfehle dir, es zu probieren." },
-    { id: "v3709", es: "conseguir que",  de: "erreichen, dass",  wortart: "Verb", beispiel: "Consiguió que le escucharan.", beispielDe: "Er erreichte, dass man ihm zuhörte." },
-    { id: "v3710", es: "el consentimiento", de: "die Zustimmung", wortart: "Substantiv", beispiel: "Necesitamos su consentimiento.", beispielDe: "Wir brauchen seine Zustimmung." }
+    { id: "v3701", es: "el encargo",     de: "der Auftrag",      wortart: "Substantiv", beispiel: "Me hizo un encargo.", beispielUe: "Er gab mir einen Auftrag." },
+    { id: "v3702", es: "permitir",       de: "erlauben",         wortart: "Verb", beispiel: "No permiten que fumemos aquí.", beispielUe: "Sie erlauben nicht, dass wir hier rauchen." },
+    { id: "v3703", es: "prohibir",       de: "verbieten",        wortart: "Verb", beispiel: "Prohíben que entren perros.", beispielUe: "Sie verbieten, dass Hunde hereinkommen." },
+    { id: "v3704", es: "sugerir",        de: "vorschlagen",      wortart: "Verb", beispiel: "Sugiero que esperemos.", beispielUe: "Ich schlage vor, dass wir warten." },
+    { id: "v3705", es: "proponer",       de: "vorschlagen",      wortart: "Verb", beispiel: "Propongo que salgamos ya.", beispielUe: "Ich schlage vor, dass wir jetzt gehen." },
+    { id: "v3706", es: "impedir",        de: "verhindern",       wortart: "Verb", beispiel: "Nada impide que lo hagas.", beispielUe: "Nichts hindert dich daran, es zu tun." },
+    { id: "v3707", es: "el requisito",   de: "die Voraussetzung", wortart: "Substantiv", beispiel: "Cumple todos los requisitos.", beispielUe: "Er erfüllt alle Voraussetzungen." },
+    { id: "v3708", es: "recomendar",     de: "empfehlen",        wortart: "Verb", beispiel: "Te recomiendo que lo pruebes.", beispielUe: "Ich empfehle dir, es zu probieren." },
+    { id: "v3709", es: "conseguir que",  de: "erreichen, dass",  wortart: "Verb", beispiel: "Consiguió que le escucharan.", beispielUe: "Er erreichte, dass man ihm zuhörte." },
+    { id: "v3710", es: "el consentimiento", de: "die Zustimmung", wortart: "Substantiv", beispiel: "Necesitamos su consentimiento.", beispielUe: "Wir brauchen seine Zustimmung." }
   ],
   saetze: [
     { id: "s3701", es: "Quiero salir esta noche.",              de: "Ich will heute Abend ausgehen." },
@@ -420,19 +420,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 38, niveau: "B1", thema: "Gefühle ausdrücken",
   vokabeln: [
-    { id: "v3801", es: "alegrarse de",   de: "sich freuen über", wortart: "Verb", beispiel: "Me alegro de que estés aquí.", beispielDe: "Ich freue mich, dass du hier bist." },
-    { id: "v3802", es: "sentir",         de: "bedauern / fühlen", wortart: "Verb", beispiel: "Siento que no puedas venir.", beispielDe: "Es tut mir leid, dass du nicht kommen kannst." },
-    { id: "v3803", es: "temer",          de: "befürchten",       wortart: "Verb", beispiel: "Temo que sea tarde.", beispielDe: "Ich befürchte, es ist zu spät." },
-    { id: "v3804", es: "sorprender",     de: "überraschen",      wortart: "Verb", beispiel: "Me sorprende que no lo sepas.", beispielDe: "Es überrascht mich, dass du es nicht weißt." },
-    { id: "v3805", es: "la lástima",     de: "das Bedauern",     wortart: "Substantiv", beispiel: "Es una lástima que no vengas.", beispielDe: "Schade, dass du nicht kommst." },
-    { id: "v3806", es: "molestar",       de: "stören",           wortart: "Verb", beispiel: "Me molesta que hables así.", beispielDe: "Es stört mich, dass du so redest." },
-    { id: "v3807", es: "avergonzarse",   de: "sich schämen",     wortart: "Verb", beispiel: "Se avergüenza de su error.", beispielDe: "Er schämt sich für seinen Fehler." },
-    { id: "v3808", es: "el orgullo",     de: "der Stolz",        wortart: "Substantiv", beispiel: "Lo dice con orgullo.", beispielDe: "Er sagt es mit Stolz." },
-    { id: "v3809", es: "emocionante",    de: "aufregend",        wortart: "Adjektiv", beispiel: "Fue un momento emocionante.", beispielDe: "Das war ein aufregender Moment." },
-    { id: "v3810", es: "el alivio",      de: "die Erleichterung", wortart: "Substantiv", beispiel: "Qué alivio saberlo.", beispielDe: "Was für eine Erleichterung, das zu wissen." }
+    { id: "v3801", es: "alegrarse de",   de: "sich freuen über", wortart: "Verb", beispiel: "Me alegro de que estés aquí.", beispielUe: "Ich freue mich, dass du hier bist." },
+    { id: "v3802", es: "sentir",         de: "bedauern / fühlen", wortart: "Verb", beispiel: "Siento que no puedas venir.", beispielUe: "Es tut mir leid, dass du nicht kommen kannst." },
+    { id: "v3803", es: "temer",          de: "befürchten",       wortart: "Verb", beispiel: "Temo que sea tarde.", beispielUe: "Ich befürchte, es ist zu spät." },
+    { id: "v3804", es: "sorprender",     de: "überraschen",      wortart: "Verb", beispiel: "Me sorprende que no lo sepas.", beispielUe: "Es überrascht mich, dass du es nicht weißt." },
+    { id: "v3805", es: "la lástima",     de: "das Bedauern",     wortart: "Substantiv", beispiel: "Es una lástima que no vengas.", beispielUe: "Schade, dass du nicht kommst." },
+    { id: "v3806", es: "molestar",       de: "stören",           wortart: "Verb", beispiel: "Me molesta que hables así.", beispielUe: "Es stört mich, dass du so redest." },
+    { id: "v3807", es: "avergonzarse",   de: "sich schämen",     wortart: "Verb", beispiel: "Se avergüenza de su error.", beispielUe: "Er schämt sich für seinen Fehler." },
+    { id: "v3808", es: "el orgullo",     de: "der Stolz",        wortart: "Substantiv", beispiel: "Lo dice con orgullo.", beispielUe: "Er sagt es mit Stolz." },
+    { id: "v3809", es: "emocionante",    de: "aufregend",        wortart: "Adjektiv", beispiel: "Fue un momento emocionante.", beispielUe: "Das war ein aufregender Moment." },
+    { id: "v3810", es: "el alivio",      de: "die Erleichterung", wortart: "Substantiv", beispiel: "Qué alivio saberlo.", beispielUe: "Was für eine Erleichterung, das zu wissen." }
   ],
   saetze: [
     { id: "s3801", es: "Me alegro de que estés aquí.",          de: "Ich freue mich, dass du hier bist." },
@@ -486,19 +486,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 39, niveau: "B1", thema: "Zweifeln und Vermuten",
   vokabeln: [
-    { id: "v3901", es: "dudar",          de: "zweifeln",         wortart: "Verb", beispiel: "Dudo que venga.", beispielDe: "Ich bezweifle, dass er kommt." },
-    { id: "v3902", es: "la duda",        de: "der Zweifel",      wortart: "Substantiv", beispiel: "No tengo ninguna duda.", beispielDe: "Ich habe keinerlei Zweifel." },
-    { id: "v3903", es: "puede que",      de: "es kann sein, dass", wortart: "Ausdruck", beispiel: "Puede que llueva.", beispielDe: "Es kann sein, dass es regnet." },
-    { id: "v3904", es: "negar",          de: "bestreiten",       wortart: "Verb", beispiel: "Niega que sea culpa suya.", beispielDe: "Er bestreitet, dass es seine Schuld ist." },
-    { id: "v3905", es: "tal vez",        de: "vielleicht",       wortart: "Adverb", beispiel: "Tal vez tengas razón.", beispielDe: "Vielleicht hast du recht." },
-    { id: "v3906", es: "la posibilidad", de: "die Möglichkeit",  wortart: "Substantiv", beispiel: "Existe esa posibilidad.", beispielDe: "Diese Möglichkeit besteht." },
-    { id: "v3907", es: "improbable",     de: "unwahrscheinlich", wortart: "Adjektiv", beispiel: "Es improbable que gane.", beispielDe: "Es ist unwahrscheinlich, dass er gewinnt." },
-    { id: "v3908", es: "sospechar",      de: "vermuten",         wortart: "Verb", beispiel: "Sospecho que lo sabe.", beispielDe: "Ich vermute, dass er es weiß." },
-    { id: "v3909", es: "convencer",      de: "überzeugen",       wortart: "Verb", beispiel: "No me convence esa idea.", beispielDe: "Diese Idee überzeugt mich nicht." },
-    { id: "v3910", es: "el hecho",       de: "die Tatsache",     wortart: "Substantiv", beispiel: "El hecho es que no vino.", beispielDe: "Tatsache ist, dass er nicht kam." }
+    { id: "v3901", es: "dudar",          de: "zweifeln",         wortart: "Verb", beispiel: "Dudo que venga.", beispielUe: "Ich bezweifle, dass er kommt." },
+    { id: "v3902", es: "la duda",        de: "der Zweifel",      wortart: "Substantiv", beispiel: "No tengo ninguna duda.", beispielUe: "Ich habe keinerlei Zweifel." },
+    { id: "v3903", es: "puede que",      de: "es kann sein, dass", wortart: "Ausdruck", beispiel: "Puede que llueva.", beispielUe: "Es kann sein, dass es regnet." },
+    { id: "v3904", es: "negar",          de: "bestreiten",       wortart: "Verb", beispiel: "Niega que sea culpa suya.", beispielUe: "Er bestreitet, dass es seine Schuld ist." },
+    { id: "v3905", es: "tal vez",        de: "vielleicht",       wortart: "Adverb", beispiel: "Tal vez tengas razón.", beispielUe: "Vielleicht hast du recht." },
+    { id: "v3906", es: "la posibilidad", de: "die Möglichkeit",  wortart: "Substantiv", beispiel: "Existe esa posibilidad.", beispielUe: "Diese Möglichkeit besteht." },
+    { id: "v3907", es: "improbable",     de: "unwahrscheinlich", wortart: "Adjektiv", beispiel: "Es improbable que gane.", beispielUe: "Es ist unwahrscheinlich, dass er gewinnt." },
+    { id: "v3908", es: "sospechar",      de: "vermuten",         wortart: "Verb", beispiel: "Sospecho que lo sabe.", beispielUe: "Ich vermute, dass er es weiß." },
+    { id: "v3909", es: "convencer",      de: "überzeugen",       wortart: "Verb", beispiel: "No me convence esa idea.", beispielUe: "Diese Idee überzeugt mich nicht." },
+    { id: "v3910", es: "el hecho",       de: "die Tatsache",     wortart: "Substantiv", beispiel: "El hecho es que no vino.", beispielUe: "Tatsache ist, dass er nicht kam." }
   ],
   saetze: [
     { id: "s3901", es: "Creo que va a llover mañana.",          de: "Ich glaube, dass es morgen regnet." },
@@ -550,19 +550,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 40, niveau: "B1", thema: "Hoffen und Wünschen",
   vokabeln: [
-    { id: "v4001", es: "el milagro",     de: "das Wunder",       wortart: "Substantiv", beispiel: "Sería un milagro.", beispielDe: "Das wäre ein Wunder." },
-    { id: "v4002", es: "el ánimo",       de: "der Mut",          wortart: "Substantiv", beispiel: "¡Ánimo, tú puedes!", beispielDe: "Kopf hoch, du schaffst das!" },
-    { id: "v4003", es: "la suerte",      de: "das Glück",        wortart: "Substantiv", beispiel: "Ojalá tengas suerte.", beispielDe: "Hoffentlich hast du Glück." },
-    { id: "v4004", es: "mejorar",        de: "besser werden",    wortart: "Verb", beispiel: "Ojalá mejore pronto.", beispielDe: "Hoffentlich wird er bald gesund." },
-    { id: "v4005", es: "cumplirse",      de: "in Erfüllung gehen", wortart: "Verb", beispiel: "Ojalá se cumpla tu deseo.", beispielDe: "Möge dein Wunsch in Erfüllung gehen." },
-    { id: "v4006", es: "el propósito",   de: "die Absicht",      wortart: "Substantiv", beispiel: "Su propósito es ayudar.", beispielDe: "Seine Absicht ist zu helfen." },
-    { id: "v4007", es: "confiar",        de: "vertrauen",        wortart: "Verb", beispiel: "Confío en que salga bien.", beispielDe: "Ich vertraue darauf, dass es gut geht." },
-    { id: "v4008", es: "el destino",     de: "das Schicksal",    wortart: "Substantiv", beispiel: "Fue cosa del destino.", beispielDe: "Das war Schicksal." },
-    { id: "v4009", es: "la ilusión",     de: "die Vorfreude",    wortart: "Substantiv", beispiel: "Me hace mucha ilusión.", beispielDe: "Ich freue mich sehr darauf." },
-    { id: "v4010", es: "afortunadamente", de: "glücklicherweise", wortart: "Adverb", beispiel: "Afortunadamente, no pasó nada.", beispielDe: "Glücklicherweise ist nichts passiert." }
+    { id: "v4001", es: "el milagro",     de: "das Wunder",       wortart: "Substantiv", beispiel: "Sería un milagro.", beispielUe: "Das wäre ein Wunder." },
+    { id: "v4002", es: "el ánimo",       de: "der Mut",          wortart: "Substantiv", beispiel: "¡Ánimo, tú puedes!", beispielUe: "Kopf hoch, du schaffst das!" },
+    { id: "v4003", es: "la suerte",      de: "das Glück",        wortart: "Substantiv", beispiel: "Ojalá tengas suerte.", beispielUe: "Hoffentlich hast du Glück." },
+    { id: "v4004", es: "mejorar",        de: "besser werden",    wortart: "Verb", beispiel: "Ojalá mejore pronto.", beispielUe: "Hoffentlich wird er bald gesund." },
+    { id: "v4005", es: "cumplirse",      de: "in Erfüllung gehen", wortart: "Verb", beispiel: "Ojalá se cumpla tu deseo.", beispielUe: "Möge dein Wunsch in Erfüllung gehen." },
+    { id: "v4006", es: "el propósito",   de: "die Absicht",      wortart: "Substantiv", beispiel: "Su propósito es ayudar.", beispielUe: "Seine Absicht ist zu helfen." },
+    { id: "v4007", es: "confiar",        de: "vertrauen",        wortart: "Verb", beispiel: "Confío en que salga bien.", beispielUe: "Ich vertraue darauf, dass es gut geht." },
+    { id: "v4008", es: "el destino",     de: "das Schicksal",    wortart: "Substantiv", beispiel: "Fue cosa del destino.", beispielUe: "Das war Schicksal." },
+    { id: "v4009", es: "la ilusión",     de: "die Vorfreude",    wortart: "Substantiv", beispiel: "Me hace mucha ilusión.", beispielUe: "Ich freue mich sehr darauf." },
+    { id: "v4010", es: "afortunadamente", de: "glücklicherweise", wortart: "Adverb", beispiel: "Afortunadamente, no pasó nada.", beispielUe: "Glücklicherweise ist nichts passiert." }
   ],
   saetze: [
     { id: "s4001", es: "Ojalá haga buen tiempo mañana.",        de: "Hoffentlich wird morgen das Wetter gut." },

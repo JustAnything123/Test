@@ -1,18 +1,18 @@
 /* Tag 21–30 · Niveau A2 · Zukunft, Umschreibungen, Nebensätze */
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 21, niveau: "A2", thema: "Pläne machen",
   vokabeln: [
-    { id: "v2101", es: "el plan",        de: "der Plan",         wortart: "Substantiv", beispiel: "¿Tienes planes para el finde?", beispielDe: "Hast du Pläne fürs Wochenende?" },
-    { id: "v2102", es: "el propósito",   de: "der Vorsatz",      wortart: "Substantiv", beispiel: "Mi propósito es aprender español.", beispielDe: "Mein Vorsatz ist, Spanisch zu lernen." },
-    { id: "v2103", es: "apuntarse",      de: "sich anmelden",    wortart: "Verb", beispiel: "Me voy a apuntar a un curso.", beispielDe: "Ich werde mich für einen Kurs anmelden." },
-    { id: "v2104", es: "el objetivo",    de: "das Ziel",         wortart: "Substantiv", beispiel: "Tenemos un objetivo claro.", beispielDe: "Wir haben ein klares Ziel." },
-    { id: "v2105", es: "intentar",       de: "versuchen",        wortart: "Verb", beispiel: "Voy a intentarlo otra vez.", beispielDe: "Ich werde es nochmal versuchen." },
-    { id: "v2106", es: "el fin de semana", de: "das Wochenende", wortart: "Substantiv", beispiel: "El fin de semana descanso.", beispielDe: "Am Wochenende ruhe ich mich aus." },
-    { id: "v2107", es: "pronto",         de: "bald",             wortart: "Adverb", beispiel: "Nos vemos pronto.", beispielDe: "Wir sehen uns bald." },
-    { id: "v2108", es: "dentro de",      de: "in (zeitlich)",    wortart: "Präposition", beispiel: "Vuelvo dentro de dos horas.", beispielDe: "Ich komme in zwei Stunden zurück." },
-    { id: "v2109", es: "aplazar",        de: "verschieben",      wortart: "Verb", beispiel: "Vamos a aplazar la reunión.", beispielDe: "Wir werden die Sitzung verschieben." },
-    { id: "v2110", es: "la agenda",      de: "der Terminkalender", wortart: "Substantiv", beispiel: "Lo apunto en mi agenda.", beispielDe: "Ich trage es in meinen Kalender ein." }
+    { id: "v2101", es: "el plan",        de: "der Plan",         wortart: "Substantiv", beispiel: "¿Tienes planes para el finde?", beispielUe: "Hast du Pläne fürs Wochenende?" },
+    { id: "v2102", es: "el propósito",   de: "der Vorsatz",      wortart: "Substantiv", beispiel: "Mi propósito es aprender español.", beispielUe: "Mein Vorsatz ist, Spanisch zu lernen." },
+    { id: "v2103", es: "apuntarse",      de: "sich anmelden",    wortart: "Verb", beispiel: "Me voy a apuntar a un curso.", beispielUe: "Ich werde mich für einen Kurs anmelden." },
+    { id: "v2104", es: "el objetivo",    de: "das Ziel",         wortart: "Substantiv", beispiel: "Tenemos un objetivo claro.", beispielUe: "Wir haben ein klares Ziel." },
+    { id: "v2105", es: "intentar",       de: "versuchen",        wortart: "Verb", beispiel: "Voy a intentarlo otra vez.", beispielUe: "Ich werde es nochmal versuchen." },
+    { id: "v2106", es: "el fin de semana", de: "das Wochenende", wortart: "Substantiv", beispiel: "El fin de semana descanso.", beispielUe: "Am Wochenende ruhe ich mich aus." },
+    { id: "v2107", es: "pronto",         de: "bald",             wortart: "Adverb", beispiel: "Nos vemos pronto.", beispielUe: "Wir sehen uns bald." },
+    { id: "v2108", es: "dentro de",      de: "in (zeitlich)",    wortart: "Präposition", beispiel: "Vuelvo dentro de dos horas.", beispielUe: "Ich komme in zwei Stunden zurück." },
+    { id: "v2109", es: "aplazar",        de: "verschieben",      wortart: "Verb", beispiel: "Vamos a aplazar la reunión.", beispielUe: "Wir werden die Sitzung verschieben." },
+    { id: "v2110", es: "la agenda",      de: "der Terminkalender", wortart: "Substantiv", beispiel: "Lo apunto en mi agenda.", beispielUe: "Ich trage es in meinen Kalender ein." }
   ],
   saetze: [
     { id: "s2101", es: "Voy a estudiar español todos los días.", de: "Ich werde jeden Tag Spanisch lernen." },
@@ -61,19 +61,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 22, niveau: "A2", thema: "Nächstes Jahr",
   vokabeln: [
-    { id: "v2201", es: "el futuro",      de: "die Zukunft",      wortart: "Substantiv", beispiel: "Nadie conoce el futuro.", beispielDe: "Niemand kennt die Zukunft." },
-    { id: "v2202", es: "el sueldo",      de: "das Gehalt",       wortart: "Substantiv", beispiel: "El sueldo subirá el año próximo.", beispielDe: "Das Gehalt wird nächstes Jahr steigen." },
-    { id: "v2203", es: "mudarse",        de: "umziehen",         wortart: "Verb", beispiel: "Nos mudaremos a otra ciudad.", beispielDe: "Wir werden in eine andere Stadt ziehen." },
-    { id: "v2204", es: "el ahorro",      de: "die Ersparnis",    wortart: "Substantiv", beispiel: "Necesitamos más ahorros.", beispielDe: "Wir brauchen mehr Ersparnisse." },
-    { id: "v2205", es: "jubilarse",      de: "in Rente gehen",   wortart: "Verb", beispiel: "Se jubilará en cinco años.", beispielDe: "Er wird in fünf Jahren in Rente gehen." },
-    { id: "v2206", es: "probablemente",  de: "wahrscheinlich",   wortart: "Adverb", beispiel: "Probablemente vendrá.", beispielDe: "Wahrscheinlich kommt er." },
-    { id: "v2207", es: "quizás",         de: "vielleicht",       wortart: "Adverb", beispiel: "Quizás llueva mañana.", beispielDe: "Vielleicht regnet es morgen." },
-    { id: "v2208", es: "seguramente",    de: "sicherlich",       wortart: "Adverb", beispiel: "Seguramente estará en casa.", beispielDe: "Er wird sicher zu Hause sein." },
-    { id: "v2209", es: "la esperanza",   de: "die Hoffnung",     wortart: "Substantiv", beispiel: "No pierdo la esperanza.", beispielDe: "Ich verliere die Hoffnung nicht." },
-    { id: "v2210", es: "el porvenir",    de: "die Zukunft (gehoben)", wortart: "Substantiv", beispiel: "Piensa en su porvenir.", beispielDe: "Er denkt an seine Zukunft." }
+    { id: "v2201", es: "el futuro",      de: "die Zukunft",      wortart: "Substantiv", beispiel: "Nadie conoce el futuro.", beispielUe: "Niemand kennt die Zukunft." },
+    { id: "v2202", es: "el sueldo",      de: "das Gehalt",       wortart: "Substantiv", beispiel: "El sueldo subirá el año próximo.", beispielUe: "Das Gehalt wird nächstes Jahr steigen." },
+    { id: "v2203", es: "mudarse",        de: "umziehen",         wortart: "Verb", beispiel: "Nos mudaremos a otra ciudad.", beispielUe: "Wir werden in eine andere Stadt ziehen." },
+    { id: "v2204", es: "el ahorro",      de: "die Ersparnis",    wortart: "Substantiv", beispiel: "Necesitamos más ahorros.", beispielUe: "Wir brauchen mehr Ersparnisse." },
+    { id: "v2205", es: "jubilarse",      de: "in Rente gehen",   wortart: "Verb", beispiel: "Se jubilará en cinco años.", beispielUe: "Er wird in fünf Jahren in Rente gehen." },
+    { id: "v2206", es: "probablemente",  de: "wahrscheinlich",   wortart: "Adverb", beispiel: "Probablemente vendrá.", beispielUe: "Wahrscheinlich kommt er." },
+    { id: "v2207", es: "quizás",         de: "vielleicht",       wortart: "Adverb", beispiel: "Quizás llueva mañana.", beispielUe: "Vielleicht regnet es morgen." },
+    { id: "v2208", es: "seguramente",    de: "sicherlich",       wortart: "Adverb", beispiel: "Seguramente estará en casa.", beispielUe: "Er wird sicher zu Hause sein." },
+    { id: "v2209", es: "la esperanza",   de: "die Hoffnung",     wortart: "Substantiv", beispiel: "No pierdo la esperanza.", beispielUe: "Ich verliere die Hoffnung nicht." },
+    { id: "v2210", es: "el porvenir",    de: "die Zukunft (gehoben)", wortart: "Substantiv", beispiel: "Piensa en su porvenir.", beispielUe: "Er denkt an seine Zukunft." }
   ],
   saetze: [
     { id: "s2201", es: "El año que viene viviré en España.",  de: "Nächstes Jahr werde ich in Spanien leben." },
@@ -123,19 +123,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 23, niveau: "A2", thema: "Im Büro",
   vokabeln: [
-    { id: "v2301", es: "la reunión",     de: "die Besprechung",  wortart: "Substantiv", beispiel: "La reunión es a las diez.", beispielDe: "Die Besprechung ist um zehn." },
-    { id: "v2302", es: "el informe",     de: "der Bericht",      wortart: "Substantiv", beispiel: "Tengo que entregar el informe.", beispielDe: "Ich muss den Bericht abgeben." },
-    { id: "v2303", es: "el plazo",       de: "die Frist",        wortart: "Substantiv", beispiel: "El plazo termina el viernes.", beispielDe: "Die Frist endet am Freitag." },
-    { id: "v2304", es: "encargarse de",  de: "sich kümmern um",  wortart: "Verb", beispiel: "Yo me encargo de eso.", beispielDe: "Ich kümmere mich darum." },
-    { id: "v2305", es: "la empresa",     de: "die Firma",        wortart: "Substantiv", beispiel: "La empresa tiene cien empleados.", beispielDe: "Die Firma hat hundert Angestellte." },
-    { id: "v2306", es: "el correo",      de: "die E-Mail",       wortart: "Substantiv", beispiel: "Te envío un correo.", beispielDe: "Ich schicke dir eine E-Mail." },
-    { id: "v2307", es: "la factura",     de: "die Rechnung",     wortart: "Substantiv", beispiel: "Falta la factura.", beispielDe: "Die Rechnung fehlt." },
-    { id: "v2308", es: "el despacho",    de: "das Büro (Raum)",  wortart: "Substantiv", beispiel: "Está en su despacho.", beispielDe: "Er ist in seinem Büro." },
-    { id: "v2309", es: "contratar",      de: "einstellen",       wortart: "Verb", beispiel: "Van a contratar a dos personas.", beispielDe: "Sie werden zwei Leute einstellen." },
-    { id: "v2310", es: "el sueldo",      de: "das Gehalt",       wortart: "Substantiv", beispiel: "El sueldo se paga a fin de mes.", beispielDe: "Das Gehalt wird zum Monatsende gezahlt." }
+    { id: "v2301", es: "la reunión",     de: "die Besprechung",  wortart: "Substantiv", beispiel: "La reunión es a las diez.", beispielUe: "Die Besprechung ist um zehn." },
+    { id: "v2302", es: "el informe",     de: "der Bericht",      wortart: "Substantiv", beispiel: "Tengo que entregar el informe.", beispielUe: "Ich muss den Bericht abgeben." },
+    { id: "v2303", es: "el plazo",       de: "die Frist",        wortart: "Substantiv", beispiel: "El plazo termina el viernes.", beispielUe: "Die Frist endet am Freitag." },
+    { id: "v2304", es: "encargarse de",  de: "sich kümmern um",  wortart: "Verb", beispiel: "Yo me encargo de eso.", beispielUe: "Ich kümmere mich darum." },
+    { id: "v2305", es: "la empresa",     de: "die Firma",        wortart: "Substantiv", beispiel: "La empresa tiene cien empleados.", beispielUe: "Die Firma hat hundert Angestellte." },
+    { id: "v2306", es: "el correo",      de: "die E-Mail",       wortart: "Substantiv", beispiel: "Te envío un correo.", beispielUe: "Ich schicke dir eine E-Mail." },
+    { id: "v2307", es: "la factura",     de: "die Rechnung",     wortart: "Substantiv", beispiel: "Falta la factura.", beispielUe: "Die Rechnung fehlt." },
+    { id: "v2308", es: "el despacho",    de: "das Büro (Raum)",  wortart: "Substantiv", beispiel: "Está en su despacho.", beispielUe: "Er ist in seinem Büro." },
+    { id: "v2309", es: "contratar",      de: "einstellen",       wortart: "Verb", beispiel: "Van a contratar a dos personas.", beispielUe: "Sie werden zwei Leute einstellen." },
+    { id: "v2310", es: "el sueldo",      de: "das Gehalt",       wortart: "Substantiv", beispiel: "El sueldo se paga a fin de mes.", beispielUe: "Das Gehalt wird zum Monatsende gezahlt." }
   ],
   saetze: [
     { id: "s2301", es: "Trabajo aquí desde hace tres años.",  de: "Ich arbeite seit drei Jahren hier." },
@@ -183,19 +183,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 24, niveau: "A2", thema: "Meinung sagen",
   vokabeln: [
-    { id: "v2401", es: "opinar",         de: "meinen",           wortart: "Verb", beispiel: "¿Qué opinas tú?", beispielDe: "Was meinst du?" },
-    { id: "v2402", es: "estar de acuerdo", de: "einverstanden sein", wortart: "Verb", beispiel: "Estoy de acuerdo contigo.", beispielDe: "Ich bin mit dir einverstanden." },
-    { id: "v2403", es: "en cambio",      de: "hingegen",         wortart: "Adverb", beispiel: "Yo, en cambio, prefiero el té.", beispielDe: "Ich hingegen bevorzuge Tee." },
-    { id: "v2404", es: "sin embargo",    de: "jedoch",           wortart: "Adverb", beispiel: "Es caro; sin embargo, lo compro.", beispielDe: "Es ist teuer; ich kaufe es trotzdem." },
-    { id: "v2405", es: "además",         de: "außerdem",         wortart: "Adverb", beispiel: "Además, no tengo tiempo.", beispielDe: "Außerdem habe ich keine Zeit." },
-    { id: "v2406", es: "aunque",         de: "obwohl",           wortart: "Konjunktion", beispiel: "Aunque llueve, salgo.", beispielDe: "Obwohl es regnet, gehe ich raus." },
-    { id: "v2407", es: "por lo tanto",   de: "daher",            wortart: "Adverb", beispiel: "Llegó tarde; por lo tanto, esperamos.", beispielDe: "Er kam spät; daher warteten wir." },
-    { id: "v2408", es: "el punto de vista", de: "der Standpunkt", wortart: "Substantiv", beispiel: "Entiendo tu punto de vista.", beispielDe: "Ich verstehe deinen Standpunkt." },
-    { id: "v2409", es: "a mi modo de ver", de: "meiner Ansicht nach", wortart: "Adverb", beispiel: "A mi modo de ver, es correcto.", beispielDe: "Meiner Ansicht nach ist es richtig." },
-    { id: "v2410", es: "discutir",       de: "diskutieren / streiten", wortart: "Verb", beispiel: "No quiero discutir contigo.", beispielDe: "Ich will nicht mit dir streiten." }
+    { id: "v2401", es: "opinar",         de: "meinen",           wortart: "Verb", beispiel: "¿Qué opinas tú?", beispielUe: "Was meinst du?" },
+    { id: "v2402", es: "estar de acuerdo", de: "einverstanden sein", wortart: "Verb", beispiel: "Estoy de acuerdo contigo.", beispielUe: "Ich bin mit dir einverstanden." },
+    { id: "v2403", es: "en cambio",      de: "hingegen",         wortart: "Adverb", beispiel: "Yo, en cambio, prefiero el té.", beispielUe: "Ich hingegen bevorzuge Tee." },
+    { id: "v2404", es: "sin embargo",    de: "jedoch",           wortart: "Adverb", beispiel: "Es caro; sin embargo, lo compro.", beispielUe: "Es ist teuer; ich kaufe es trotzdem." },
+    { id: "v2405", es: "además",         de: "außerdem",         wortart: "Adverb", beispiel: "Además, no tengo tiempo.", beispielUe: "Außerdem habe ich keine Zeit." },
+    { id: "v2406", es: "aunque",         de: "obwohl",           wortart: "Konjunktion", beispiel: "Aunque llueve, salgo.", beispielUe: "Obwohl es regnet, gehe ich raus." },
+    { id: "v2407", es: "por lo tanto",   de: "daher",            wortart: "Adverb", beispiel: "Llegó tarde; por lo tanto, esperamos.", beispielUe: "Er kam spät; daher warteten wir." },
+    { id: "v2408", es: "el punto de vista", de: "der Standpunkt", wortart: "Substantiv", beispiel: "Entiendo tu punto de vista.", beispielUe: "Ich verstehe deinen Standpunkt." },
+    { id: "v2409", es: "a mi modo de ver", de: "meiner Ansicht nach", wortart: "Adverb", beispiel: "A mi modo de ver, es correcto.", beispielUe: "Meiner Ansicht nach ist es richtig." },
+    { id: "v2410", es: "discutir",       de: "diskutieren / streiten", wortart: "Verb", beispiel: "No quiero discutir contigo.", beispielUe: "Ich will nicht mit dir streiten." }
   ],
   saetze: [
     { id: "s2401", es: "Creo que tienes razón.",              de: "Ich glaube, du hast recht." },
@@ -241,19 +241,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 25, niveau: "A2", thema: "Beschreiben und einordnen",
   vokabeln: [
-    { id: "v2501", es: "el rasgo",       de: "das Merkmal",      wortart: "Substantiv", beispiel: "Es un rasgo típico.", beispielDe: "Das ist ein typisches Merkmal." },
-    { id: "v2502", es: "sencillo",       de: "einfach / schlicht", wortart: "Adjektiv", beispiel: "Es una solución sencilla.", beispielDe: "Das ist eine einfache Lösung." },
-    { id: "v2503", es: "el aspecto",     de: "das Aussehen",     wortart: "Substantiv", beispiel: "Tiene buen aspecto.", beispielDe: "Er sieht gut aus." },
-    { id: "v2504", es: "cuyo",           de: "dessen / deren",   wortart: "Pronomen", beispiel: "El hombre cuyo coche vimos.", beispielDe: "Der Mann, dessen Auto wir sahen." },
-    { id: "v2505", es: "el asunto",      de: "die Angelegenheit", wortart: "Substantiv", beispiel: "Es un asunto delicado.", beispielDe: "Das ist eine heikle Angelegenheit." },
-    { id: "v2506", es: "destacar",       de: "hervorstechen",    wortart: "Verb", beispiel: "Destaca por su paciencia.", beispielDe: "Er sticht durch seine Geduld hervor." },
-    { id: "v2507", es: "la calidad",     de: "die Qualität",     wortart: "Substantiv", beispiel: "La calidad es excelente.", beispielDe: "Die Qualität ist ausgezeichnet." },
-    { id: "v2508", es: "adecuado",       de: "passend",          wortart: "Adjektiv", beispiel: "No es el momento adecuado.", beispielDe: "Es ist nicht der passende Moment." },
-    { id: "v2509", es: "el conjunto",    de: "die Gesamtheit",   wortart: "Substantiv", beispiel: "En conjunto, está bien.", beispielDe: "Insgesamt ist es gut." },
-    { id: "v2510", es: "concreto",       de: "konkret",          wortart: "Adjektiv", beispiel: "Dame un ejemplo concreto.", beispielDe: "Gib mir ein konkretes Beispiel." }
+    { id: "v2501", es: "el rasgo",       de: "das Merkmal",      wortart: "Substantiv", beispiel: "Es un rasgo típico.", beispielUe: "Das ist ein typisches Merkmal." },
+    { id: "v2502", es: "sencillo",       de: "einfach / schlicht", wortart: "Adjektiv", beispiel: "Es una solución sencilla.", beispielUe: "Das ist eine einfache Lösung." },
+    { id: "v2503", es: "el aspecto",     de: "das Aussehen",     wortart: "Substantiv", beispiel: "Tiene buen aspecto.", beispielUe: "Er sieht gut aus." },
+    { id: "v2504", es: "cuyo",           de: "dessen / deren",   wortart: "Pronomen", beispiel: "El hombre cuyo coche vimos.", beispielUe: "Der Mann, dessen Auto wir sahen." },
+    { id: "v2505", es: "el asunto",      de: "die Angelegenheit", wortart: "Substantiv", beispiel: "Es un asunto delicado.", beispielUe: "Das ist eine heikle Angelegenheit." },
+    { id: "v2506", es: "destacar",       de: "hervorstechen",    wortart: "Verb", beispiel: "Destaca por su paciencia.", beispielUe: "Er sticht durch seine Geduld hervor." },
+    { id: "v2507", es: "la calidad",     de: "die Qualität",     wortart: "Substantiv", beispiel: "La calidad es excelente.", beispielUe: "Die Qualität ist ausgezeichnet." },
+    { id: "v2508", es: "adecuado",       de: "passend",          wortart: "Adjektiv", beispiel: "No es el momento adecuado.", beispielUe: "Es ist nicht der passende Moment." },
+    { id: "v2509", es: "el conjunto",    de: "die Gesamtheit",   wortart: "Substantiv", beispiel: "En conjunto, está bien.", beispielUe: "Insgesamt ist es gut." },
+    { id: "v2510", es: "concreto",       de: "konkret",          wortart: "Adjektiv", beispiel: "Dame un ejemplo concreto.", beispielUe: "Gib mir ein konkretes Beispiel." }
   ],
   saetze: [
     { id: "s2501", es: "La chica que vive aquí es mi vecina.",   de: "Das Mädchen, das hier wohnt, ist meine Nachbarin." },
@@ -305,19 +305,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 26, niveau: "A2", thema: "Verneinen",
   vokabeln: [
-    { id: "v2601", es: "nadie",          de: "niemand",          wortart: "Pronomen", beispiel: "No hay nadie en casa.", beispielDe: "Es ist niemand zu Hause." },
-    { id: "v2602", es: "nada",           de: "nichts",           wortart: "Pronomen", beispiel: "No dijo nada.", beispielDe: "Er sagte nichts." },
-    { id: "v2603", es: "nunca",          de: "nie",              wortart: "Adverb", beispiel: "Nunca he estado allí.", beispielDe: "Ich war nie dort." },
-    { id: "v2604", es: "tampoco",        de: "auch nicht",       wortart: "Adverb", beispiel: "Yo tampoco lo sé.", beispielDe: "Ich weiß es auch nicht." },
-    { id: "v2605", es: "ningún",         de: "kein",             wortart: "Adjektiv", beispiel: "No tengo ningún problema.", beispielDe: "Ich habe kein Problem." },
-    { id: "v2606", es: "jamás",          de: "niemals",          wortart: "Adverb", beispiel: "Jamás lo olvidaré.", beispielDe: "Ich werde es niemals vergessen." },
-    { id: "v2607", es: "ni siquiera",    de: "nicht einmal",     wortart: "Adverb", beispiel: "Ni siquiera me saludó.", beispielDe: "Er grüßte mich nicht einmal." },
-    { id: "v2608", es: "apenas",         de: "kaum",             wortart: "Adverb", beispiel: "Apenas lo conozco.", beispielDe: "Ich kenne ihn kaum." },
-    { id: "v2609", es: "negar",          de: "leugnen",          wortart: "Verb", beispiel: "Negó todo.", beispielDe: "Er leugnete alles." },
-    { id: "v2610", es: "sin",            de: "ohne",             wortart: "Präposition", beispiel: "Salió sin decir nada.", beispielDe: "Er ging, ohne etwas zu sagen." }
+    { id: "v2601", es: "nadie",          de: "niemand",          wortart: "Pronomen", beispiel: "No hay nadie en casa.", beispielUe: "Es ist niemand zu Hause." },
+    { id: "v2602", es: "nada",           de: "nichts",           wortart: "Pronomen", beispiel: "No dijo nada.", beispielUe: "Er sagte nichts." },
+    { id: "v2603", es: "nunca",          de: "nie",              wortart: "Adverb", beispiel: "Nunca he estado allí.", beispielUe: "Ich war nie dort." },
+    { id: "v2604", es: "tampoco",        de: "auch nicht",       wortart: "Adverb", beispiel: "Yo tampoco lo sé.", beispielUe: "Ich weiß es auch nicht." },
+    { id: "v2605", es: "ningún",         de: "kein",             wortart: "Adjektiv", beispiel: "No tengo ningún problema.", beispielUe: "Ich habe kein Problem." },
+    { id: "v2606", es: "jamás",          de: "niemals",          wortart: "Adverb", beispiel: "Jamás lo olvidaré.", beispielUe: "Ich werde es niemals vergessen." },
+    { id: "v2607", es: "ni siquiera",    de: "nicht einmal",     wortart: "Adverb", beispiel: "Ni siquiera me saludó.", beispielUe: "Er grüßte mich nicht einmal." },
+    { id: "v2608", es: "apenas",         de: "kaum",             wortart: "Adverb", beispiel: "Apenas lo conozco.", beispielUe: "Ich kenne ihn kaum." },
+    { id: "v2609", es: "negar",          de: "leugnen",          wortart: "Verb", beispiel: "Negó todo.", beispielUe: "Er leugnete alles." },
+    { id: "v2610", es: "sin",            de: "ohne",             wortart: "Präposition", beispiel: "Salió sin decir nada.", beispielUe: "Er ging, ohne etwas zu sagen." }
   ],
   saetze: [
     { id: "s2601", es: "No he visto a nadie hoy.",             de: "Ich habe heute niemanden gesehen." },
@@ -367,19 +367,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 27, niveau: "A2", thema: "Wetter und Jahreszeiten",
   vokabeln: [
-    { id: "v2701", es: "la nube",        de: "die Wolke",        wortart: "Substantiv", beispiel: "El cielo está lleno de nubes.", beispielDe: "Der Himmel ist voller Wolken." },
-    { id: "v2702", es: "la tormenta",    de: "das Gewitter",     wortart: "Substantiv", beispiel: "Se acerca una tormenta.", beispielDe: "Ein Gewitter zieht auf." },
-    { id: "v2703", es: "nevar",          de: "schneien",         wortart: "Verb", beispiel: "En enero nieva mucho.", beispielDe: "Im Januar schneit es viel." },
-    { id: "v2704", es: "el viento",      de: "der Wind",         wortart: "Substantiv", beispiel: "Hace mucho viento hoy.", beispielDe: "Heute ist es sehr windig." },
-    { id: "v2705", es: "húmedo",         de: "feucht",           wortart: "Adjektiv", beispiel: "El aire está muy húmedo.", beispielDe: "Die Luft ist sehr feucht." },
-    { id: "v2706", es: "la temporada",   de: "die Saison",       wortart: "Substantiv", beispiel: "Es temporada alta.", beispielDe: "Es ist Hochsaison." },
-    { id: "v2707", es: "despejado",      de: "wolkenlos",        wortart: "Adjektiv", beispiel: "El cielo está despejado.", beispielDe: "Der Himmel ist wolkenlos." },
-    { id: "v2708", es: "la sombra",      de: "der Schatten",     wortart: "Substantiv", beispiel: "Vamos a la sombra.", beispielDe: "Gehen wir in den Schatten." },
-    { id: "v2709", es: "el granizo",     de: "der Hagel",        wortart: "Substantiv", beispiel: "Cayó granizo ayer.", beispielDe: "Gestern fiel Hagel." },
-    { id: "v2710", es: "suave",          de: "mild / sanft",     wortart: "Adjektiv", beispiel: "El clima aquí es suave.", beispielDe: "Das Klima ist hier mild." }
+    { id: "v2701", es: "la nube",        de: "die Wolke",        wortart: "Substantiv", beispiel: "El cielo está lleno de nubes.", beispielUe: "Der Himmel ist voller Wolken." },
+    { id: "v2702", es: "la tormenta",    de: "das Gewitter",     wortart: "Substantiv", beispiel: "Se acerca una tormenta.", beispielUe: "Ein Gewitter zieht auf." },
+    { id: "v2703", es: "nevar",          de: "schneien",         wortart: "Verb", beispiel: "En enero nieva mucho.", beispielUe: "Im Januar schneit es viel." },
+    { id: "v2704", es: "el viento",      de: "der Wind",         wortart: "Substantiv", beispiel: "Hace mucho viento hoy.", beispielUe: "Heute ist es sehr windig." },
+    { id: "v2705", es: "húmedo",         de: "feucht",           wortart: "Adjektiv", beispiel: "El aire está muy húmedo.", beispielUe: "Die Luft ist sehr feucht." },
+    { id: "v2706", es: "la temporada",   de: "die Saison",       wortart: "Substantiv", beispiel: "Es temporada alta.", beispielUe: "Es ist Hochsaison." },
+    { id: "v2707", es: "despejado",      de: "wolkenlos",        wortart: "Adjektiv", beispiel: "El cielo está despejado.", beispielUe: "Der Himmel ist wolkenlos." },
+    { id: "v2708", es: "la sombra",      de: "der Schatten",     wortart: "Substantiv", beispiel: "Vamos a la sombra.", beispielUe: "Gehen wir in den Schatten." },
+    { id: "v2709", es: "el granizo",     de: "der Hagel",        wortart: "Substantiv", beispiel: "Cayó granizo ayer.", beispielUe: "Gestern fiel Hagel." },
+    { id: "v2710", es: "suave",          de: "mild / sanft",     wortart: "Adjektiv", beispiel: "El clima aquí es suave.", beispielUe: "Das Klima ist hier mild." }
   ],
   saetze: [
     { id: "s2701", es: "Hoy hace mucho calor y no hay viento.", de: "Heute ist es sehr heiß und es ist windstill." },
@@ -427,19 +427,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 28, niveau: "A2", thema: "Telefonieren und Nachfragen",
   vokabeln: [
-    { id: "v2801", es: "colgar",         de: "auflegen",         wortart: "Verb", beispiel: "No cuelgues todavía.", beispielDe: "Leg noch nicht auf." },
-    { id: "v2802", es: "marcar",         de: "wählen (Nummer)",  wortart: "Verb", beispiel: "Marcaste mal el número.", beispielDe: "Du hast die Nummer falsch gewählt." },
-    { id: "v2803", es: "el recado",      de: "die Nachricht",    wortart: "Substantiv", beispiel: "¿Quiere dejar un recado?", beispielDe: "Möchten Sie eine Nachricht hinterlassen?" },
-    { id: "v2804", es: "de parte de",    de: "im Auftrag von",   wortart: "Präposition", beispiel: "¿De parte de quién?", beispielDe: "Wer ist am Apparat?" },
-    { id: "v2805", es: "la llamada",     de: "der Anruf",        wortart: "Substantiv", beispiel: "Tengo una llamada perdida.", beispielDe: "Ich habe einen verpassten Anruf." },
-    { id: "v2806", es: "repetir",        de: "wiederholen",      wortart: "Verb", beispiel: "¿Puede repetirlo, por favor?", beispielDe: "Können Sie das wiederholen, bitte?" },
-    { id: "v2807", es: "la señal",       de: "das Signal",       wortart: "Substantiv", beispiel: "No hay señal aquí.", beispielDe: "Hier gibt es kein Signal." },
-    { id: "v2808", es: "aclarar",        de: "klarstellen",      wortart: "Verb", beispiel: "Quiero aclarar una cosa.", beispielDe: "Ich möchte eine Sache klarstellen." },
-    { id: "v2809", es: "el malentendido", de: "das Missverständnis", wortart: "Substantiv", beispiel: "Fue un malentendido.", beispielDe: "Das war ein Missverständnis." },
-    { id: "v2810", es: "enterarse",      de: "mitbekommen",      wortart: "Verb", beispiel: "No me enteré de nada.", beispielDe: "Ich habe nichts mitbekommen." }
+    { id: "v2801", es: "colgar",         de: "auflegen",         wortart: "Verb", beispiel: "No cuelgues todavía.", beispielUe: "Leg noch nicht auf." },
+    { id: "v2802", es: "marcar",         de: "wählen (Nummer)",  wortart: "Verb", beispiel: "Marcaste mal el número.", beispielUe: "Du hast die Nummer falsch gewählt." },
+    { id: "v2803", es: "el recado",      de: "die Nachricht",    wortart: "Substantiv", beispiel: "¿Quiere dejar un recado?", beispielUe: "Möchten Sie eine Nachricht hinterlassen?" },
+    { id: "v2804", es: "de parte de",    de: "im Auftrag von",   wortart: "Präposition", beispiel: "¿De parte de quién?", beispielUe: "Wer ist am Apparat?" },
+    { id: "v2805", es: "la llamada",     de: "der Anruf",        wortart: "Substantiv", beispiel: "Tengo una llamada perdida.", beispielUe: "Ich habe einen verpassten Anruf." },
+    { id: "v2806", es: "repetir",        de: "wiederholen",      wortart: "Verb", beispiel: "¿Puede repetirlo, por favor?", beispielUe: "Können Sie das wiederholen, bitte?" },
+    { id: "v2807", es: "la señal",       de: "das Signal",       wortart: "Substantiv", beispiel: "No hay señal aquí.", beispielUe: "Hier gibt es kein Signal." },
+    { id: "v2808", es: "aclarar",        de: "klarstellen",      wortart: "Verb", beispiel: "Quiero aclarar una cosa.", beispielUe: "Ich möchte eine Sache klarstellen." },
+    { id: "v2809", es: "el malentendido", de: "das Missverständnis", wortart: "Substantiv", beispiel: "Fue un malentendido.", beispielUe: "Das war ein Missverständnis." },
+    { id: "v2810", es: "enterarse",      de: "mitbekommen",      wortart: "Verb", beispiel: "No me enteré de nada.", beispielUe: "Ich habe nichts mitbekommen." }
   ],
   saetze: [
     { id: "s2801", es: "No sé dónde está mi móvil.",            de: "Ich weiß nicht, wo mein Handy ist." },
@@ -487,19 +487,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 29, niveau: "A2", thema: "Essen und Trinken",
   vokabeln: [
-    { id: "v2901", es: "la merienda",    de: "der Nachmittagsimbiss", wortart: "Substantiv", beispiel: "Los niños toman la merienda a las cinco.", beispielDe: "Die Kinder essen um fünf einen Imbiss." },
-    { id: "v2902", es: "el aperitivo",   de: "der Aperitif",     wortart: "Substantiv", beispiel: "Tomamos un aperitivo antes.", beispielDe: "Wir nehmen vorher einen Aperitif." },
-    { id: "v2903", es: "asar",           de: "braten",           wortart: "Verb", beispiel: "Vamos a asar carne.", beispielDe: "Wir werden Fleisch braten." },
-    { id: "v2904", es: "el sabor",       de: "der Geschmack",    wortart: "Substantiv", beispiel: "Tiene un sabor raro.", beispielDe: "Es hat einen komischen Geschmack." },
-    { id: "v2905", es: "soso",           de: "fad",              wortart: "Adjektiv", beispiel: "La sopa está sosa.", beispielDe: "Die Suppe ist fad." },
-    { id: "v2906", es: "el ingrediente", de: "die Zutat",        wortart: "Substantiv", beispiel: "Faltan dos ingredientes.", beispielDe: "Es fehlen zwei Zutaten." },
-    { id: "v2907", es: "probar",         de: "probieren",        wortart: "Verb", beispiel: "Prueba esta salsa.", beispielDe: "Probier diese Soße." },
-    { id: "v2908", es: "la harina",      de: "das Mehl",         wortart: "Substantiv", beispiel: "Necesito medio kilo de harina.", beispielDe: "Ich brauche ein halbes Kilo Mehl." },
-    { id: "v2909", es: "hervir",         de: "kochen (sieden)",  wortart: "Verb", beispiel: "Hierve el agua primero.", beispielDe: "Koche zuerst das Wasser." },
-    { id: "v2910", es: "el postre",      de: "der Nachtisch",    wortart: "Substantiv", beispiel: "De postre, flan.", beispielDe: "Als Nachtisch Flan." }
+    { id: "v2901", es: "la merienda",    de: "der Nachmittagsimbiss", wortart: "Substantiv", beispiel: "Los niños toman la merienda a las cinco.", beispielUe: "Die Kinder essen um fünf einen Imbiss." },
+    { id: "v2902", es: "el aperitivo",   de: "der Aperitif",     wortart: "Substantiv", beispiel: "Tomamos un aperitivo antes.", beispielUe: "Wir nehmen vorher einen Aperitif." },
+    { id: "v2903", es: "asar",           de: "braten",           wortart: "Verb", beispiel: "Vamos a asar carne.", beispielUe: "Wir werden Fleisch braten." },
+    { id: "v2904", es: "el sabor",       de: "der Geschmack",    wortart: "Substantiv", beispiel: "Tiene un sabor raro.", beispielUe: "Es hat einen komischen Geschmack." },
+    { id: "v2905", es: "soso",           de: "fad",              wortart: "Adjektiv", beispiel: "La sopa está sosa.", beispielUe: "Die Suppe ist fad." },
+    { id: "v2906", es: "el ingrediente", de: "die Zutat",        wortart: "Substantiv", beispiel: "Faltan dos ingredientes.", beispielUe: "Es fehlen zwei Zutaten." },
+    { id: "v2907", es: "probar",         de: "probieren",        wortart: "Verb", beispiel: "Prueba esta salsa.", beispielUe: "Probier diese Soße." },
+    { id: "v2908", es: "la harina",      de: "das Mehl",         wortart: "Substantiv", beispiel: "Necesito medio kilo de harina.", beispielUe: "Ich brauche ein halbes Kilo Mehl." },
+    { id: "v2909", es: "hervir",         de: "kochen (sieden)",  wortart: "Verb", beispiel: "Hierve el agua primero.", beispielUe: "Koche zuerst das Wasser." },
+    { id: "v2910", es: "el postre",      de: "der Nachtisch",    wortart: "Substantiv", beispiel: "De postre, flan.", beispielUe: "Als Nachtisch Flan." }
   ],
   saetze: [
     { id: "s2901", es: "Aquí se come muy bien.",               de: "Hier isst man sehr gut." },
@@ -545,19 +545,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 30, niveau: "A2", thema: "Wiederholung: A2 im Überblick",
   vokabeln: [
-    { id: "v3001", es: "el resumen",     de: "die Zusammenfassung", wortart: "Substantiv", beispiel: "Hago un resumen del libro.", beispielDe: "Ich mache eine Zusammenfassung des Buches." },
-    { id: "v3002", es: "repasar",        de: "wiederholen (lernen)", wortart: "Verb", beispiel: "Repaso la gramática cada semana.", beispielDe: "Ich wiederhole jede Woche die Grammatik." },
-    { id: "v3003", es: "el logro",       de: "die Leistung",     wortart: "Substantiv", beispiel: "Es un gran logro.", beispielDe: "Das ist eine große Leistung." },
-    { id: "v3004", es: "avanzar",        de: "vorankommen",      wortart: "Verb", beispiel: "Avanzo poco a poco.", beispielDe: "Ich komme nach und nach voran." },
-    { id: "v3005", es: "la duda",        de: "der Zweifel",      wortart: "Substantiv", beispiel: "Tengo una duda.", beispielDe: "Ich habe eine Frage." },
-    { id: "v3006", es: "poco a poco",    de: "nach und nach",    wortart: "Adverb", beispiel: "Poco a poco se aprende.", beispielDe: "Nach und nach lernt man es." },
-    { id: "v3007", es: "el esfuerzo",    de: "die Anstrengung",  wortart: "Substantiv", beispiel: "Vale la pena el esfuerzo.", beispielDe: "Die Anstrengung lohnt sich." },
-    { id: "v3008", es: "dominar",        de: "beherrschen",      wortart: "Verb", beispiel: "Todavía no domino el subjuntivo.", beispielDe: "Ich beherrsche den Subjuntivo noch nicht." },
-    { id: "v3009", es: "la constancia",  de: "die Beharrlichkeit", wortart: "Substantiv", beispiel: "La constancia es la clave.", beispielDe: "Beharrlichkeit ist der Schlüssel." },
-    { id: "v3010", es: "el reto",        de: "die Herausforderung", wortart: "Substantiv", beispiel: "Es un reto interesante.", beispielDe: "Das ist eine interessante Herausforderung." }
+    { id: "v3001", es: "el resumen",     de: "die Zusammenfassung", wortart: "Substantiv", beispiel: "Hago un resumen del libro.", beispielUe: "Ich mache eine Zusammenfassung des Buches." },
+    { id: "v3002", es: "repasar",        de: "wiederholen (lernen)", wortart: "Verb", beispiel: "Repaso la gramática cada semana.", beispielUe: "Ich wiederhole jede Woche die Grammatik." },
+    { id: "v3003", es: "el logro",       de: "die Leistung",     wortart: "Substantiv", beispiel: "Es un gran logro.", beispielUe: "Das ist eine große Leistung." },
+    { id: "v3004", es: "avanzar",        de: "vorankommen",      wortart: "Verb", beispiel: "Avanzo poco a poco.", beispielUe: "Ich komme nach und nach voran." },
+    { id: "v3005", es: "la duda",        de: "der Zweifel",      wortart: "Substantiv", beispiel: "Tengo una duda.", beispielUe: "Ich habe eine Frage." },
+    { id: "v3006", es: "poco a poco",    de: "nach und nach",    wortart: "Adverb", beispiel: "Poco a poco se aprende.", beispielUe: "Nach und nach lernt man es." },
+    { id: "v3007", es: "el esfuerzo",    de: "die Anstrengung",  wortart: "Substantiv", beispiel: "Vale la pena el esfuerzo.", beispielUe: "Die Anstrengung lohnt sich." },
+    { id: "v3008", es: "dominar",        de: "beherrschen",      wortart: "Verb", beispiel: "Todavía no domino el subjuntivo.", beispielUe: "Ich beherrsche den Subjuntivo noch nicht." },
+    { id: "v3009", es: "la constancia",  de: "die Beharrlichkeit", wortart: "Substantiv", beispiel: "La constancia es la clave.", beispielUe: "Beharrlichkeit ist der Schlüssel." },
+    { id: "v3010", es: "el reto",        de: "die Herausforderung", wortart: "Substantiv", beispiel: "Es un reto interesante.", beispielUe: "Das ist eine interessante Herausforderung." }
   ],
   saetze: [
     { id: "s3001", es: "Llevo un mes estudiando español.",      de: "Ich lerne seit einem Monat Spanisch." },

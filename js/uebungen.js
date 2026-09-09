@@ -59,6 +59,28 @@ var Uebungen = {
     return { korrekt: false, fast: false };
   },
 
+  /* ---- Welches Feld einer Karte ist die Zielsprache? ----
+     Eine Karte sieht so aus: { id, es: 'la casa', de: 'das Haus' }.
+     Die Feldnamen sind Sprachkuerzel. Welches davon gelernt wird, sagt der
+     Kurs: Beim Spanischkurs ist 'es' das Ziel, beim Deutschkurs 'de'.
+     So funktionieren dieselben Daten in beide Richtungen. */
+
+  zielFeld() {
+    const k = Kurse.aktiv();
+    return k ? k.ziel : 'es';
+  },
+
+  ausgangFeld() {
+    const k = Kurse.aktiv();
+    return k ? k.ausgang : 'de';
+  },
+
+  /** Der Text in der Sprache, die gelernt wird. */
+  ziel(karte) { return karte[this.zielFeld()]; },
+
+  /** Der Text in der eigenen Sprache. */
+  ausgang(karte) { return karte[this.ausgangFeld()]; },
+
   /** Liste zufällig durchmischen (Fisher-Yates). */
   mischen(liste) {
     const a = liste.slice();
@@ -72,7 +94,7 @@ var Uebungen = {
   /** Kleiner Lautsprecher-Knopf zum Anhören. */
   lautKnopf(text) {
     if (!Sprache.kannHoeren()) return '';
-    return `<button class="laut-klein" data-sprich="${this.escape(text)}" aria-label="Anhören">🔊</button>`;
+    return `<button class="laut-klein" data-sprich="${this.escape(text)}" aria-label="${this.escape(t('ueb.anhoeren'))}">🔊</button>`;
   },
 
   /** Text sicher in HTML einsetzen (verhindert kaputtes Markup). */
@@ -85,7 +107,8 @@ var Uebungen = {
 
   /** Baut eine Aufgabe auf und gibt ein Objekt mit pruefen() zurück.
       aufgabe = { typ, karte, richtung }
-      richtung: 'es2de' (Spanisch zeigen, Deutsch abfragen) oder 'de2es'. */
+      richtung: 'nachAusgang' (Zielsprache zeigen, Bedeutung abfragen)
+                oder 'nachZiel' (eigene Sprache zeigen, Zielsprache abfragen). */
   zeichnen(aufgabe, behaelter) {
     const bauer = this['typ_' + aufgabe.typ];
     if (!bauer) throw new Error('Unbekannter Übungstyp: ' + aufgabe.typ);
@@ -99,21 +122,21 @@ var Uebungen = {
     const k = a.karte;
     b.innerHTML = `
       <div class="lern-karte">
-        <div class="frage">Neues Wort</div>
-        <div class="wort-gross">${this.escape(k.es)} ${this.lautKnopf(k.es)}</div>
+        <div class="frage">${this.escape(t('ueb.neuesWort'))}</div>
+        <div class="wort-gross">${this.escape(this.ziel(k))} ${this.lautKnopf(this.ziel(k))}</div>
         ${k.wortart ? `<div class="wortart">${this.escape(k.wortart)}</div>` : ''}
         <div class="wort-mittel" style="font-size:1.15rem;font-weight:500;margin-top:.7rem">
-          ${this.escape(k.de)}
+          ${this.escape(this.ausgang(k))}
         </div>
         ${k.beispiel ? `<div class="beispiel" style="text-align:left">
             ${this.escape(k.beispiel)} ${this.lautKnopf(k.beispiel)}
-            ${k.beispielDe ? `<span class="de">${this.escape(k.beispielDe)}</span>` : ''}
+            ${k.beispielUe ? `<span class="de">${this.escape(k.beispielUe)}</span>` : ''}
           </div>` : ''}
       </div>`;
-    if (Sprache.kannHoeren()) Sprache.sprich(k.es);
+    if (Sprache.kannHoeren()) Sprache.sprich(this.ziel(k));
     return {
       nurAnsehen: true,
-      pruefen: () => ({ korrekt: true, fast: false, loesung: k.de, meins: '' })
+      pruefen: () => ({ korrekt: true, fast: false, loesung: this.ausgang(k), meins: '' })
     };
   },
 
@@ -121,17 +144,18 @@ var Uebungen = {
 
   typ_mc(a, b) {
     const k = a.karte;
-    const nachDe   = a.richtung !== 'de2es';                 // Standard: ES zeigen, DE wählen
-    const frageText = nachDe ? k.es : k.de;
-    const loesung   = nachDe ? k.de : k.es;
-    const feld      = nachDe ? 'de' : 'es';
+    // Standard: Wort in der Zielsprache zeigen, Bedeutung wählen lassen
+    const nachDe    = a.richtung !== 'nachZiel';
+    const frageText = nachDe ? this.ziel(k)   : this.ausgang(k);
+    const loesung   = nachDe ? this.ausgang(k) : this.ziel(k);
+    const feld      = nachDe ? this.ausgangFeld() : this.zielFeld();
 
     const optionen = this.mischen([loesung, ...Daten.ablenker(k, 3, feld)]);
     let gewaehlt = null;
 
     b.innerHTML = `
-      <div class="frage">${nachDe ? 'Was heißt das auf Deutsch?' : 'Wie heißt das auf Spanisch?'}</div>
-      <div class="wort-gross">${this.escape(frageText)} ${nachDe ? this.lautKnopf(k.es) : ''}</div>
+      <div class="frage">${this.escape(t(nachDe ? 'ueb.wasHeisstAusgang' : 'ueb.wasHeisstZiel'))}</div>
+      <div class="wort-gross">${this.escape(frageText)} ${nachDe ? this.lautKnopf(this.ziel(k)) : ''}</div>
       <div class="optionen">
         ${optionen.map(o => `<button class="option" data-wert="${this.escape(o)}">${this.escape(o)}</button>`).join('')}
       </div>`;
@@ -145,7 +169,7 @@ var Uebungen = {
       });
     });
 
-    if (nachDe && Sprache.kannHoeren()) Sprache.sprich(k.es);
+    if (nachDe && Sprache.kannHoeren()) Sprache.sprich(this.ziel(k));
 
     return {
       istBereit: () => gewaehlt !== null,
@@ -166,17 +190,18 @@ var Uebungen = {
 
   typ_tippen(a, b) {
     const k = a.karte;
-    const nachEs  = a.richtung !== 'es2de';                  // Standard: Deutsch zeigen, Spanisch tippen
-    const frage   = nachEs ? k.de : k.es;
-    const loesung = nachEs ? k.es : k.de;
+    // Standard: eigene Sprache zeigen, Zielsprache tippen lassen
+    const nachEs  = a.richtung !== 'nachAusgang';
+    const frage   = nachEs ? this.ausgang(k) : this.ziel(k);
+    const loesung = nachEs ? this.ziel(k)    : this.ausgang(k);
 
     b.innerHTML = `
-      <div class="frage">${nachEs ? 'Wie heißt das auf Spanisch?' : 'Wie heißt das auf Deutsch?'}</div>
-      <div class="wort-gross">${this.escape(frage)} ${nachEs ? '' : this.lautKnopf(k.es)}</div>
+      <div class="frage">${this.escape(t(nachEs ? 'ueb.wasHeisstZiel' : 'ueb.wasHeisstAusgang'))}</div>
+      <div class="wort-gross">${this.escape(frage)} ${nachEs ? '' : this.lautKnopf(this.ziel(k))}</div>
       ${k.wortart ? `<div class="wortart">${this.escape(k.wortart)}</div>` : ''}
       <input class="eingabe" id="tipp-feld" type="text" autocomplete="off"
              autocapitalize="off" autocorrect="off" spellcheck="false"
-             placeholder="${nachEs ? 'Spanisch eingeben…' : 'Deutsch eingeben…'}">
+             placeholder="${this.escape(t(nachEs ? 'ueb.eingabeZiel' : 'ueb.eingabeAusgang'))}">
       ${nachEs ? this.akzentleiste() : ''}`;
 
     const feld = b.querySelector('#tipp-feld');
@@ -200,11 +225,15 @@ var Uebungen = {
     };
   },
 
-  /** Die spanischen Sonderzeichen als Tastenreihe — auf einer deutschen
-      Handy-Tastatur kommt man sonst nur umständlich an sie heran. */
+  /** Die Sonderzeichen der Zielsprache als Tastenreihe — auf einer fremden
+      Handy-Tastatur kommt man sonst nur umständlich an sie heran.
+      Welche Zeichen das sind, steht in der Kursdefinition:
+      Spanisch á é í ó ú ñ ü ¿ ¡ · Deutsch ä ö ü ß Ä Ö Ü */
   akzentleiste() {
-    const zeichen = ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'];
-    return `<div class="akzentleiste">${
+    const kurs = Kurse.aktiv();
+    const zeichen = (kurs && kurs.sonderzeichen) || [];
+    if (!zeichen.length) return '';
+    return `<div class="akzentleiste" style="grid-template-columns:repeat(${zeichen.length},1fr)">${
       zeichen.map(z => `<button type="button" class="akzent-taste" data-zeichen="${z}">${z}</button>`).join('')
     }</div>`;
   },
@@ -225,20 +254,20 @@ var Uebungen = {
 
   typ_tapping(a, b) {
     const k = a.karte;
-    const loesung = k.es;
+    const loesung = this.ziel(k);
     const woerter = loesung.split(/\s+/);
 
     // Bei sehr kurzen Sätzen ein paar Störwörter dazulegen
     const stoerer = woerter.length <= 4
-      ? Daten.ablenker(k, 2, 'es').map(s => s.split(/\s+/)[0]).filter(Boolean)
+      ? Daten.ablenker(k, 2, this.zielFeld()).map(s => s.split(/\s+/)[0]).filter(Boolean)
       : [];
 
     const vorrat = this.mischen(woerter.concat(stoerer)
       .map((w, i) => ({ w, i })));
 
     b.innerHTML = `
-      <div class="frage">Bilde den spanischen Satz</div>
-      <div class="wort-mittel">${this.escape(k.de)}</div>
+      <div class="frage">${this.escape(t('ueb.satzBilden'))}</div>
+      <div class="wort-mittel">${this.escape(this.ausgang(k))}</div>
       <div class="tap-ziel" id="tap-ziel"></div>
       <div class="tap-vorrat" id="tap-vorrat">
         ${vorrat.map(o => `<button class="tap-wort" data-i="${o.i}">${this.escape(o.w)}</button>`).join('')}
@@ -286,14 +315,14 @@ var Uebungen = {
 
   typ_hoeren(a, b) {
     const k = a.karte;
-    const loesung = k.es;
+    const loesung = this.ziel(k);
 
     b.innerHTML = `
-      <div class="frage">Hör zu und schreib auf, was du hörst</div>
-      <button class="hoer-knopf" id="hoer-ab" aria-label="Nochmal abspielen">🔊</button>
-      <button class="btn btn-neben" id="hoer-langsam" style="width:auto;margin:0 auto;display:block">🐢 Langsamer</button>
+      <div class="frage">${this.escape(t('ueb.hoerZu'))}</div>
+      <button class="hoer-knopf" id="hoer-ab" aria-label="${this.escape(t('ueb.nochmal'))}">🔊</button>
+      <button class="btn btn-neben" id="hoer-langsam" style="width:auto;margin:0 auto;display:block">${this.escape(t('ueb.langsamer'))}</button>
       <input class="eingabe" id="tipp-feld" type="text" autocomplete="off"
-             autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Spanisch eingeben…">
+             autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="${this.escape(t('ueb.eingabeZiel'))}">
       ${this.akzentleiste()}`;
 
     const feld = b.querySelector('#tipp-feld');
@@ -313,7 +342,7 @@ var Uebungen = {
         const r = this.vergleiche(meins, loesung);
         feld.disabled = true;
         feld.classList.add(r.korrekt ? 'richtig' : 'falsch');
-        return { korrekt: r.korrekt, fast: r.fast, loesung, meins, zusatz: k.de };
+        return { korrekt: r.korrekt, fast: r.fast, loesung, meins, zusatz: this.ausgang(k) };
       }
     };
   },
@@ -325,7 +354,7 @@ var Uebungen = {
     const teile = String(u.satz).split('___');
 
     b.innerHTML = `
-      <div class="frage">Setze die richtige Form ein</div>
+      <div class="frage">${this.escape(t('ueb.luecke'))}</div>
       ${u.hinweis ? `<div class="wortart" style="margin-bottom:.6rem">${this.escape(u.hinweis)}</div>` : ''}
       <div class="luecke-satz">
         ${this.escape(teile[0])}<input class="luecke-feld" id="tipp-feld" type="text"

@@ -1,6 +1,8 @@
 /* app.js — die Ablaufsteuerung.
    Hier wird entschieden, welcher Bildschirm sichtbar ist, was passiert,
-   wenn du auf "Prüfen" tippst, und wann eine Sitzung zu Ende ist. */
+   wenn du auf "Prüfen" tippst, und wann eine Sitzung zu Ende ist.
+   Seit der Mehrsprachigkeit kommt dazu: welcher Kurs gerade läuft und in
+   welcher Sprache die Oberfläche erscheint. */
 
 var App = {
 
@@ -21,19 +23,94 @@ var App = {
     });
 
     this.knoepfeVerdrahten();
-    this.zeigeSeite('start');
-    this.startAktualisieren();
 
-    // Service Worker anmelden (nur wenn über http/https geladen, nicht bei file://)
+    // Ohne gewählten Kurs zuerst die Kursauswahl zeigen
+    if (!Speicher.daten.aktiverKurs || !Kurse.hat(Speicher.daten.aktiverKurs)) {
+      this.textePruefen();
+      this.zeigeSeite('kurse');
+    } else {
+      this.kursAnwenden();
+      this.zeigeSeite('start');
+    }
+
+    // Service Worker anmelden (nur über http/https, nicht bei file://)
     if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
       navigator.serviceWorker.register('service-worker.js')
         .catch(e => console.warn('Service Worker nicht registriert:', e));
     }
   },
 
+  /* ======================= Kurse ======================= */
+
+  /** Nach einem Kurswechsel: Oberflächensprache, Stimme und Farbe anpassen. */
+  kursAnwenden() {
+    const kurs = Kurse.aktiv();
+    if (!kurs) return;
+
+    document.documentElement.lang = kurs.ui;
+    document.documentElement.style.setProperty('--akzent-kurs', kurs.farbe);
+
+    const kopf = document.getElementById('kopf-kurs');
+    kopf.textContent = kurs.flagge + ' ' + kurs.name;
+    kopf.hidden = false;
+
+    Sprache.fuerKursWaehlen();
+    this.textePruefen();
+  },
+
+  /** Alle mit data-t markierten Stellen mit Text füllen.
+      data-t      → als reiner Text (sicher)
+      data-t-html → als HTML (nur für unsere eigenen Texte mit <strong> usw.)
+      data-t-aria → als Vorlesehilfe für Bildschirmleser */
+  textePruefen() {
+    document.querySelectorAll('[data-t]').forEach(el => {
+      el.textContent = t(el.dataset.t);
+    });
+    document.querySelectorAll('[data-t-html]').forEach(el => {
+      el.innerHTML = t(el.dataset.tHtml);
+    });
+    document.querySelectorAll('[data-t-aria]').forEach(el => {
+      el.setAttribute('aria-label', t(el.dataset.tAria));
+    });
+  },
+
+  /** Die Kursauswahl aufbauen. */
+  kurslisteZeichnen() {
+    const behaelter = document.getElementById('kursliste');
+    const aktiv = Speicher.daten.aktiverKurs;
+
+    behaelter.innerHTML = Kurse.alle().map(kurs => {
+      const s = Kurse.stand(kurs.id);
+      const zeile = s.begonnen
+        ? t('kurs.stand', { tag: s.tag, gesamt: s.tageGesamt, gelernt: s.gelernt })
+        : t('kurs.neu');
+      const anteil = s.tageGesamt ? Math.round(((s.tag - 1) / s.tageGesamt) * 100) : 0;
+
+      return `
+        <button class="kurs-karte${kurs.id === aktiv ? ' kurs-aktiv' : ''}"
+                data-kurs="${kurs.id}" style="--kursfarbe:${kurs.farbe}">
+          <span class="kurs-flagge">${kurs.flagge}</span>
+          <span class="kurs-text">
+            <span class="kurs-name">${Uebungen.escape(kurs.name)}</span>
+            <span class="kurs-unter">${Uebungen.escape(kurs.untertitel)}</span>
+            <span class="kurs-stand">${Uebungen.escape(zeile)}</span>
+            <span class="kurs-balken"><span style="width:${anteil}%"></span></span>
+          </span>
+        </button>`;
+    }).join('');
+
+    behaelter.querySelectorAll('.kurs-karte').forEach(b => {
+      b.addEventListener('click', () => {
+        Kurse.wechseln(b.dataset.kurs);
+        this.kursAnwenden();
+        this.zeigeSeite('start');
+      });
+    });
+  },
+
   /* ======================= Bildschirme ======================= */
 
-  SEITEN: ['start', 'uebung', 'fertig', 'historie', 'erinnerung', 'einstellungen'],
+  SEITEN: ['kurse', 'start', 'uebung', 'fertig', 'historie', 'erinnerung', 'einstellungen'],
 
   zeigeSeite(name) {
     this.SEITEN.forEach(s => {
@@ -45,9 +122,11 @@ var App = {
     const inUebung = name === 'uebung';
     document.getElementById('kopf-fortschritt').hidden = !inUebung;
     document.getElementById('kopf-titel').hidden = inUebung;
-    document.getElementById('btn-zurueck').hidden = (name === 'start');
+    document.getElementById('kopf-kurs').hidden = inUebung || !Kurse.aktiv();
+    document.getElementById('btn-zurueck').hidden = (name === 'start' || name === 'kurse');
     window.scrollTo(0, 0);
 
+    if (name === 'kurse')    this.kurslisteZeichnen();
     if (name === 'start')    this.startAktualisieren();
     if (name === 'historie') Statistik.zeichneHistorie(document.getElementById('historie-liste'), this.hFilter || 'alle');
     if (name === 'einstellungen') this.einstellungenAktualisieren();
@@ -57,6 +136,7 @@ var App = {
 
   startAktualisieren() {
     const g = id => document.getElementById(id);
+    if (!Kurse.aktiv()) return this.zeigeSeite('kurse');
 
     g('stat-streak').textContent      = Statistik.streak();
     g('stat-aktive-tage').textContent = Statistik.aktiveTage();
@@ -72,35 +152,33 @@ var App = {
     const gesamt = Daten.anzahlTage();
 
     if (v.lektion) {
-      g('tag-nummer').textContent = v.tag;
       g('tag-thema').textContent  = v.lektion.thema;
       g('tag-niveau').textContent = v.lektion.niveau || 'A2';
       g('tag-grammatik').textContent = v.grammatik || '–';
-      g('btn-lernen').textContent = 'Heute lernen';
+      g('btn-lernen').textContent = t('start.lernen');
       g('btn-lernen').disabled = false;
+      g('tageskarte-tag').textContent = t('start.tagVon', { tag: v.tag, gesamt });
     } else {
-      g('tag-nummer').textContent = gesamt;
-      g('tag-thema').textContent  = 'Alle Lektionen geschafft! 🏆';
-      g('tag-niveau').textContent = 'B1';
-      g('tag-grammatik').textContent = 'Jetzt hältst du dein Wissen mit Wiederholungen frisch.';
-      g('btn-lernen').textContent = 'Wiederholen';
+      g('tag-thema').textContent  = t('start.fertigThema');
+      g('tag-niveau').textContent = '★';
+      g('tag-grammatik').textContent = t('start.fertigText');
+      g('btn-lernen').textContent = t('start.wiederholen');
       g('btn-lernen').disabled = v.faellige === 0 && v.leeches === 0;
+      g('tageskarte-tag').textContent = t('start.tagVon', { tag: gesamt, gesamt });
     }
-    document.querySelector('.tageskarte-tag').innerHTML =
-      `Tag <span id="tag-nummer">${v.tag}</span> von ${gesamt}`;
 
     // Die kleine Checkliste auf der Tageskarte
     const zeilen = [
-      { an: v.leeches  > 0, txt: '⚠️ Problemwörter',   n: v.leeches },
-      { an: v.faellige > 0, txt: '🔁 Fällige Wiederholungen', n: v.faellige },
-      { an: v.neueVokabeln > 0, txt: '📖 Neue Vokabeln', n: v.neueVokabeln },
-      { an: v.neueSaetze  > 0, txt: '💬 Sätze',         n: v.neueSaetze },
-      { an: !!v.grammatik,  txt: '📐 Grammatik',        n: '' }
+      { an: v.leeches  > 0,     txt: t('plan.problem'),   n: v.leeches },
+      { an: v.faellige > 0,     txt: t('plan.faellig'),   n: v.faellige },
+      { an: v.neueVokabeln > 0, txt: t('plan.vokabeln'),  n: v.neueVokabeln },
+      { an: v.neueSaetze  > 0,  txt: t('plan.saetze'),    n: v.neueSaetze },
+      { an: !!v.grammatik,      txt: t('plan.grammatik'), n: '' }
     ];
     g('tageskarte-zeilen').innerHTML = zeilen.map(z => `
       <div class="zeile${z.an ? ' hat' : ''}">
         <span class="zeile-punkt">${z.an ? '✓' : '·'}</span>
-        <span>${z.txt}</span>
+        <span>${Uebungen.escape(z.txt)}</span>
         <span class="zeile-anzahl">${z.n}</span>
       </div>`).join('');
 
@@ -115,12 +193,12 @@ var App = {
 
   sitzungStarten(modus) {
     let aufgaben;
-    if (modus === 'speed')      aufgaben = Tagesplan.speedRunde(20);
+    if (modus === 'speed')       aufgaben = Tagesplan.speedRunde(20);
     else if (modus === 'nurWdh') aufgaben = Tagesplan.bauen('nurWdh');
     else                         aufgaben = Tagesplan.bauen('voll');
 
     if (!aufgaben.length) {
-      alert('Gerade gibt es nichts zu tun. Schau später wieder rein!');
+      alert(t('start.nichtsZuTun'));
       return;
     }
 
@@ -143,7 +221,7 @@ var App = {
     const anteil = (s.index / s.aufgaben.length) * 100;
     document.getElementById('balken-fuell').style.width = anteil + '%';
     document.getElementById('balken-text').textContent = `${s.index + 1}/${s.aufgaben.length}`;
-    document.getElementById('uebung-phase').textContent = Tagesplan.PHASE[a.phase] || '';
+    document.getElementById('uebung-phase').textContent = Tagesplan.phasenName(a.phase);
 
     // Rückmeldung vom letzten Mal ausblenden
     const rm = document.getElementById('uebung-rueckmeldung');
@@ -156,8 +234,9 @@ var App = {
     // gibt es nichts zu prüfen — direkt "Weiter" zeigen.
     const nurAnsehen = !!this.aktuell.nurAnsehen;
     document.getElementById('btn-pruefen').hidden = nurAnsehen;
-    document.getElementById('btn-weiter').hidden  = !nurAnsehen;
-    document.getElementById('btn-weiter').textContent = 'Weiter';
+    const weiter = document.getElementById('btn-weiter');
+    weiter.hidden = !nurAnsehen;
+    weiter.textContent = t('ueb.weiter');
 
     if (nurAnsehen && a.phase === 'neu') {
       // "Neues Wort angesehen" merken, damit es ins Wiederholsystem kommt
@@ -184,7 +263,7 @@ var App = {
     else {
       this.sitzung.falsch++;
       this.sitzung.fehler.push({
-        frage: a.karte.es || a.karte.satz || '',
+        frage: Uebungen.ziel(a.karte) || a.karte.satz || '',
         loesung: e.loesung,
         meins: e.meins
       });
@@ -194,7 +273,8 @@ var App = {
     document.getElementById('btn-pruefen').hidden = true;
     const weiter = document.getElementById('btn-weiter');
     weiter.hidden = false;
-    weiter.textContent = (this.sitzung.index + 1 >= this.sitzung.aufgaben.length) ? 'Abschließen' : 'Weiter';
+    weiter.textContent = (this.sitzung.index + 1 >= this.sitzung.aufgaben.length)
+      ? t('ueb.abschliessen') : t('ueb.weiter');
     weiter.focus();
   },
 
@@ -206,22 +286,22 @@ var App = {
 
     if (e.korrekt && e.fast) {
       rm.className = 'rueckmeldung fast';
-      tit.textContent = '✓ Fast perfekt — die Akzente!';
-      txt.innerHTML = `Richtig geschrieben: <b>${esc(e.loesung)}</b>`;
+      tit.textContent = t('rueck.fastTitel');
+      txt.innerHTML = t('rueck.fastText', { loesung: esc(e.loesung) });
     } else if (e.korrekt) {
       rm.className = 'rueckmeldung gut';
-      tit.textContent = ['¡Muy bien! ✓', '¡Perfecto! ✓', '¡Genial! ✓', '¡Correcto! ✓'][Math.floor(Math.random() * 4)];
+      tit.textContent = t('rueck.gutTitel');
       let z = e.zusatz ? esc(e.zusatz) : '';
-      if (srs && srs.leechBefreit) z += (z ? ' · ' : '') + '🎉 Kein Problemwort mehr!';
-      else if (srs) z += (z ? ' · ' : '') + `Wieder dran in ${srs.naechsteWiederholung}`;
+      if (srs && srs.leechBefreit) z += (z ? ' · ' : '') + t('rueck.leechWeg');
+      else if (srs) z += (z ? ' · ' : '') + t('rueck.wiederDran', { zeit: srs.naechsteWiederholung });
       txt.innerHTML = z;
     } else {
       rm.className = 'rueckmeldung schlecht';
-      tit.textContent = 'Nicht ganz';
-      let z = `Richtig wäre: <b>${esc(e.loesung)}</b>`;
-      if (e.meins) z += `<br><span class="hinweis">Du hattest: „${esc(e.meins)}"</span>`;
+      tit.textContent = t('rueck.falschTitel');
+      let z = t('rueck.richtigWaere', { loesung: esc(e.loesung) });
+      if (e.meins)  z += `<br><span class="hinweis">${t('rueck.duHattest', { meins: esc(e.meins) })}</span>`;
       if (e.zusatz) z += `<br><span class="hinweis">${esc(e.zusatz)}</span>`;
-      if (srs && srs.leechNeu) z += `<br><span class="hinweis">⚠️ Ab jetzt als Problemwort markiert — es kommt in jeder Sitzung wieder, bis es dreimal hintereinander sitzt.</span>`;
+      if (srs && srs.leechNeu) z += `<br><span class="hinweis">${t('rueck.leechNeu')}</span>`;
       txt.innerHTML = z;
     }
     rm.hidden = false;
@@ -235,12 +315,13 @@ var App = {
   sitzungBeenden() {
     const s = this.sitzung;
     const gesamt = s.richtig + s.falsch;
+    const f = Speicher.fortschritt();
 
-    // Nur eine vollständige Tageslektion zählt als "aktiver Tag" und
+    // Nur eine vollständige Tageslektion zählt als abgeschlossener Tag und
     // schiebt den Kalender weiter. Reine Wiederholung zählt für die Heatmap.
     Speicher.tagAktiv(gesamt);
-    if (s.modus === 'voll' && Daten.lektion(Speicher.daten.aktuellerTag)) {
-      Speicher.daten.aktuellerTag++;
+    if (s.modus === 'voll' && Daten.lektion(f.aktuellerTag)) {
+      f.aktuellerTag++;
       Speicher.sichern();
     }
 
@@ -251,19 +332,19 @@ var App = {
     g('fertig-streak').textContent   = Statistik.streak();
 
     g('fertig-titel').textContent =
-      gesamt === 0            ? '¡Hasta luego!' :
-      s.falsch === 0          ? '¡Perfecto! 🏆' :
-      s.richtig / gesamt > .8 ? '¡Muy bien!' : '¡Bien hecho!';
+      gesamt === 0            ? t('fertig.tschuess') :
+      s.falsch === 0          ? t('fertig.perfekt') :
+      s.richtig / gesamt > .8 ? t('fertig.sehrGut') : t('fertig.gut');
 
-    g('fertig-untertitel').textContent =
-      s.modus === 'voll' ? `Tag ${Speicher.daten.aktuellerTag - 1} abgeschlossen`
-                         : 'Wiederholung abgeschlossen';
+    g('fertig-untertitel').textContent = s.modus === 'voll'
+      ? t('fertig.tagAbgeschlossen', { tag: f.aktuellerTag - 1 })
+      : t('fertig.wdhAbgeschlossen');
 
     g('fertig-fehlerliste').innerHTML = s.fehler.length
-      ? '<h3>Das üben wir nochmal</h3>' + s.fehler.slice(0, 8).map(f => `
+      ? `<h3>${t('fertig.nochmalUeben')}</h3>` + s.fehler.slice(0, 8).map(x => `
           <div class="fehler-zeile">
-            <b>${Uebungen.escape(f.loesung)}</b>
-            ${f.meins ? ` — du hattest „${Uebungen.escape(f.meins)}"` : ''}
+            <b>${Uebungen.escape(x.loesung)}</b>
+            ${x.meins ? ' — ' + t('fertig.duHattest', { meins: Uebungen.escape(x.meins) }) : ''}
           </div>`).join('')
       : '';
 
@@ -274,9 +355,9 @@ var App = {
   /* ======================= Einstellungen ======================= */
 
   themaAnwenden() {
-    const t = Speicher.einstellung('thema');
-    if (t === 'auto') document.documentElement.removeAttribute('data-thema');
-    else document.documentElement.setAttribute('data-thema', t);
+    const th = Speicher.einstellung('thema');
+    if (th === 'auto') document.documentElement.removeAttribute('data-thema');
+    else document.documentElement.setAttribute('data-thema', th);
   },
 
   einstellungenAktualisieren() {
@@ -306,7 +387,7 @@ var App = {
       if (this.geprueft) this.weiter(); else this.antwortPruefen();
     });
 
-    // Enter/Leertaste auf dem ganzen Übungsbildschirm
+    // Enter auf dem ganzen Übungsbildschirm
     document.addEventListener('keydown', e => {
       if (this.seite !== 'uebung') return;
       if (e.key === 'Enter' && e.target.tagName !== 'INPUT') {
@@ -316,7 +397,7 @@ var App = {
       }
     });
 
-    // Lautsprecher-Knöpfe funktionieren überall (auch in dynamisch erzeugtem HTML)
+    // Lautsprecher-Knöpfe funktionieren auch in dynamisch erzeugtem HTML
     document.addEventListener('click', e => {
       const b = e.target.closest('[data-sprich]');
       if (b) Sprache.sprich(b.dataset.sprich);
@@ -327,13 +408,14 @@ var App = {
     /* --- Kopfzeile & Menü --- */
     auf('btn-zurueck', 'click', () => {
       if (this.seite === 'uebung' && this.sitzung) {
-        if (!confirm('Sitzung abbrechen? Deine bisherigen Antworten sind gespeichert.')) return;
+        if (!confirm(t('allg.abbrechen'))) return;
         // Teilfortschritt für die Heatmap sichern, Tag aber nicht weiterschalten
         Speicher.tagAktiv(this.sitzung.richtig + this.sitzung.falsch);
         this.sitzung = null;
       }
       this.zeigeSeite('start');
     });
+    auf('kopf-kurs', 'click', () => this.zeigeSeite('kurse'));
     auf('btn-menue', 'click', () => { g('menue').hidden = false; g('menue-schatten').hidden = false; });
     auf('menue-schatten', 'click', () => { g('menue').hidden = true; g('menue-schatten').hidden = true; });
     document.querySelectorAll('#menue button').forEach(b => {
@@ -369,21 +451,28 @@ var App = {
         try {
           Speicher.importieren(leser.result);
           this.themaAnwenden();
-          alert('Sicherung eingespielt.');
+          this.kursAnwenden();
+          alert(t('einst.importOk'));
           this.zeigeSeite('start');
         } catch (err) {
-          alert('Konnte nicht eingelesen werden: ' + err.message);
+          alert(t('einst.importFehler') + err.message);
         }
       };
       leser.readAsText(datei);
       e.target.value = '';
     });
+    auf('btn-reset-kurs', 'click', () => {
+      if (!confirm(t('einst.resetFrage1'))) return;
+      if (!confirm(t('einst.resetFrage2'))) return;
+      Speicher.kursZuruecksetzen();
+      this.zeigeSeite('start');
+    });
     auf('btn-reset', 'click', () => {
-      if (!confirm('Wirklich ALLES löschen? Streak, gelernte Wörter und Historie sind dann weg.')) return;
-      if (!confirm('Ganz sicher? Das lässt sich nicht rückgängig machen.')) return;
+      if (!confirm(t('einst.resetAllesFrage'))) return;
+      if (!confirm(t('einst.resetFrage2'))) return;
       Speicher.zuruecksetzen();
       this.themaAnwenden();
-      this.zeigeSeite('start');
+      this.zeigeSeite('kurse');
     });
   },
 

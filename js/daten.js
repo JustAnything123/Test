@@ -1,51 +1,66 @@
-/* Sammelbehälter für alle Lektionen.
-   Die Dateien im Ordner data/ rufen LEKTIONEN.push({...}) auf und füllen
-   diese Liste. Bewusst eine ganz normale globale Variable und keine
-   ES-Module: so funktioniert die App auch, wenn du die index.html einfach
-   per Doppelklick öffnest (bei Modulen und fetch() blockiert der Browser das). */
+/* Zugriff auf die Lektionen des gerade aktiven Kurses.
+   Die Lektionen selbst liegen in den Dateien unter data/ und melden sich
+   über LEKTION('kurs-id', {…}) bei ihrem Kurs an (siehe js/kurse.js).
 
-var LEKTIONEN = [];
+   Bewusst ganz normale globale Objekte statt ES-Module: so funktioniert die
+   App auch, wenn du die index.html einfach per Doppelklick öffnest — bei
+   Modulen und fetch() blockiert der Browser das. */
 
 var Daten = {
-  /** Alle Lektionen nach Tagnummer sortiert. */
+
+  /** Der Kurs, aus dem gerade gelesen wird. */
+  kurs() {
+    return Kurse.aktiv();
+  },
+
+  /** Alle Lektionen des aktiven Kurses nach Tagnummer sortiert. */
   alle() {
-    return LEKTIONEN.slice().sort((a, b) => a.tag - b.tag);
+    const k = this.kurs();
+    if (!k) return [];
+    return k.lektionen.slice().sort((a, b) => a.tag - b.tag);
   },
 
   /** Eine bestimmte Lektion holen, z. B. Daten.lektion(12). */
   lektion(tag) {
-    return LEKTIONEN.find(l => l.tag === tag) || null;
+    const k = this.kurs();
+    if (!k) return null;
+    return k.lektionen.find(l => l.tag === tag) || null;
   },
 
-  /** Wie viele Tage gibt es insgesamt? */
+  /** Wie viele Tage hat der aktive Kurs? */
   anzahlTage() {
-    return LEKTIONEN.length;
+    const k = this.kurs();
+    return k ? k.lektionen.length : 0;
   },
 
-  /** Alle Vokabeln aller Lektionen als eine flache Liste. */
+  /** Alle Vokabeln des Kurses als flache Liste. */
   alleVokabeln() {
     return this.alle().flatMap(l => (l.vokabeln || []).map(v => ({ ...v, tag: l.tag, art: 'vokabel' })));
   },
 
-  /** Alle Sätze aller Lektionen als eine flache Liste. */
+  /** Alle Sätze des Kurses als flache Liste. */
   alleSaetze() {
     return this.alle().flatMap(l => (l.saetze || []).map(s => ({ ...s, tag: l.tag, art: 'satz' })));
   },
 
-  /** Eine einzelne Karte (Vokabel oder Satz) über ihre id finden.
-      Wird von der Wiederholung und der Historie gebraucht. */
+  /** Eine einzelne Karte über ihre id finden.
+      Beim ersten Aufruf wird pro Kurs ein Nachschlagewerk gebaut, danach
+      geht es sehr schnell. */
   karteNachId(id) {
-    if (this._index) return this._index[id] || null;
-    // Beim ersten Aufruf ein Nachschlagewerk aufbauen (einmalig, dann schnell)
-    this._index = {};
-    for (const l of LEKTIONEN) {
-      for (const v of (l.vokabeln || [])) this._index[v.id] = { ...v, tag: l.tag, art: 'vokabel' };
-      for (const s of (l.saetze  || [])) this._index[s.id] = { ...s, tag: l.tag, art: 'satz' };
-      for (const u of ((l.grammatik && l.grammatik.uebungen) || [])) {
-        this._index[u.id] = { ...u, tag: l.tag, art: 'grammatik', thema: l.grammatik.titel };
+    const k = this.kurs();
+    if (!k) return null;
+
+    if (!k._index) {
+      k._index = {};
+      for (const l of k.lektionen) {
+        for (const v of (l.vokabeln || [])) k._index[v.id] = { ...v, tag: l.tag, art: 'vokabel' };
+        for (const s of (l.saetze  || [])) k._index[s.id] = { ...s, tag: l.tag, art: 'satz' };
+        for (const u of ((l.grammatik && l.grammatik.uebungen) || [])) {
+          k._index[u.id] = { ...u, tag: l.tag, art: 'grammatik', thema: l.grammatik.titel };
+        }
       }
     }
-    return this._index[id] || null;
+    return k._index[id] || null;
   },
 
   /** Zufällige falsche Antworten für Multiple Choice besorgen.

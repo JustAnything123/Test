@@ -394,3 +394,33 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
 @media (prefers-reduced-motion: reduce) {
   #uebung-inhalt > *, .balken-fuell { animation: none; transition: none; }
 }
+
+/* ---------------------------- Kursauswahl ---------------------------- */
+.kurs-karte {
+  display: flex; align-items: center; gap: .9rem; width: 100%;
+  padding: .9rem; margin-bottom: .7rem;
+  background: var(--flaeche); border: 1px solid var(--rand);
+  border-left: 4px solid var(--kursfarbe, var(--akzent));
+  border-radius: var(--radius); box-shadow: var(--schatten);
+  color: var(--text); font-family: inherit; text-align: left; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.kurs-karte:active { transform: translateY(1px); }
+.kurs-karte.kurs-aktiv { border-color: var(--kursfarbe, var(--akzent)); background: var(--flaeche-2); }
+.kurs-flagge { font-size: 2rem; flex: 0 0 auto; line-height: 1; }
+.kurs-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .12rem; }
+.kurs-name { font-size: 1.02rem; font-weight: 700; }
+.kurs-unter { font-size: .82rem; color: var(--text-leise); }
+.kurs-stand { font-size: .78rem; color: var(--text-leise); font-variant-numeric: tabular-nums; }
+.kurs-balken {
+  height: 5px; background: var(--flaeche-2); border-radius: 99px;
+  overflow: hidden; margin-top: .3rem;
+}
+.kurs-balken > span { display: block; height: 100%; background: var(--kursfarbe, var(--akzent)); border-radius: 99px; }
+
+/* Kursname in der Kopfzeile */
+.kopf-kurs {
+  flex: 1; min-width: 0; font-size: .82rem; color: var(--text-leise);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  cursor: pointer; padding: .3rem 0;
+}

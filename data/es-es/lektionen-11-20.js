@@ -1,18 +1,18 @@
 /* Tag 11–20 · Niveau A2 · Vergleichen, Befehlen, erste Vergangenheit */
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 11, niveau: "A2", thema: "Vergleichen",
   vokabeln: [
-    { id: "v1101", es: "el tamaño",     de: "die Größe",        wortart: "Substantiv", beispiel: "El tamaño es perfecto.", beispielDe: "Die Größe ist perfekt." },
-    { id: "v1102", es: "caro",          de: "teuer",            wortart: "Adjektiv", beispiel: "Este hotel es más caro.", beispielDe: "Dieses Hotel ist teurer." },
-    { id: "v1103", es: "la diferencia", de: "der Unterschied",  wortart: "Substantiv", beispiel: "No veo la diferencia.", beispielDe: "Ich sehe den Unterschied nicht." },
-    { id: "v1104", es: "parecido",      de: "ähnlich",          wortart: "Adjektiv", beispiel: "Son muy parecidos.", beispielDe: "Sie sind sich sehr ähnlich." },
-    { id: "v1105", es: "el doble",      de: "das Doppelte",     wortart: "Substantiv", beispiel: "Cuesta el doble.", beispielDe: "Es kostet das Doppelte." },
-    { id: "v1106", es: "mejorar",       de: "verbessern",       wortart: "Verb", beispiel: "Quiero mejorar mi español.", beispielDe: "Ich will mein Spanisch verbessern." },
-    { id: "v1107", es: "la ventaja",    de: "der Vorteil",      wortart: "Substantiv", beispiel: "Tiene muchas ventajas.", beispielDe: "Es hat viele Vorteile." },
-    { id: "v1108", es: "peor",          de: "schlechter",       wortart: "Adjektiv", beispiel: "Hoy el tiempo está peor.", beispielDe: "Heute ist das Wetter schlechter." },
-    { id: "v1109", es: "suficiente",    de: "ausreichend",      wortart: "Adjektiv", beispiel: "No tengo suficiente tiempo.", beispielDe: "Ich habe nicht genug Zeit." },
-    { id: "v1110", es: "el nivel",      de: "das Niveau",       wortart: "Substantiv", beispiel: "Mi nivel de español es A2.", beispielDe: "Mein Spanischniveau ist A2." }
+    { id: "v1101", es: "el tamaño",     de: "die Größe",        wortart: "Substantiv", beispiel: "El tamaño es perfecto.", beispielUe: "Die Größe ist perfekt." },
+    { id: "v1102", es: "caro",          de: "teuer",            wortart: "Adjektiv", beispiel: "Este hotel es más caro.", beispielUe: "Dieses Hotel ist teurer." },
+    { id: "v1103", es: "la diferencia", de: "der Unterschied",  wortart: "Substantiv", beispiel: "No veo la diferencia.", beispielUe: "Ich sehe den Unterschied nicht." },
+    { id: "v1104", es: "parecido",      de: "ähnlich",          wortart: "Adjektiv", beispiel: "Son muy parecidos.", beispielUe: "Sie sind sich sehr ähnlich." },
+    { id: "v1105", es: "el doble",      de: "das Doppelte",     wortart: "Substantiv", beispiel: "Cuesta el doble.", beispielUe: "Es kostet das Doppelte." },
+    { id: "v1106", es: "mejorar",       de: "verbessern",       wortart: "Verb", beispiel: "Quiero mejorar mi español.", beispielUe: "Ich will mein Spanisch verbessern." },
+    { id: "v1107", es: "la ventaja",    de: "der Vorteil",      wortart: "Substantiv", beispiel: "Tiene muchas ventajas.", beispielUe: "Es hat viele Vorteile." },
+    { id: "v1108", es: "peor",          de: "schlechter",       wortart: "Adjektiv", beispiel: "Hoy el tiempo está peor.", beispielUe: "Heute ist das Wetter schlechter." },
+    { id: "v1109", es: "suficiente",    de: "ausreichend",      wortart: "Adjektiv", beispiel: "No tengo suficiente tiempo.", beispielUe: "Ich habe nicht genug Zeit." },
+    { id: "v1110", es: "el nivel",      de: "das Niveau",       wortart: "Substantiv", beispiel: "Mi nivel de español es A2.", beispielUe: "Mein Spanischniveau ist A2." }
   ],
   saetze: [
     { id: "s1101", es: "Madrid es más grande que Sevilla.",     de: "Madrid ist größer als Sevilla." },
@@ -60,19 +60,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 12, niveau: "A2", thema: "Beim Arzt",
   vokabeln: [
-    { id: "v1201", es: "la receta",      de: "das Rezept",       wortart: "Substantiv", beispiel: "El médico me dio una receta.", beispielDe: "Der Arzt gab mir ein Rezept." },
-    { id: "v1202", es: "doler",          de: "wehtun",           wortart: "Verb", beispiel: "Me duele la cabeza.", beispielDe: "Mir tut der Kopf weh." },
-    { id: "v1203", es: "la fiebre",      de: "das Fieber",       wortart: "Substantiv", beispiel: "Tengo fiebre desde ayer.", beispielDe: "Ich habe seit gestern Fieber." },
-    { id: "v1204", es: "la garganta",    de: "der Hals",         wortart: "Substantiv", beispiel: "Me duele la garganta.", beispielDe: "Mir tut der Hals weh." },
-    { id: "v1205", es: "la pastilla",    de: "die Tablette",     wortart: "Substantiv", beispiel: "Toma una pastilla cada ocho horas.", beispielDe: "Nimm alle acht Stunden eine Tablette." },
-    { id: "v1206", es: "la cita",        de: "der Termin",       wortart: "Substantiv", beispiel: "Tengo cita a las diez.", beispielDe: "Ich habe um zehn einen Termin." },
-    { id: "v1207", es: "el resfriado",   de: "die Erkältung",    wortart: "Substantiv", beispiel: "Tengo un resfriado fuerte.", beispielDe: "Ich habe eine starke Erkältung." },
-    { id: "v1208", es: "toser",          de: "husten",           wortart: "Verb", beispiel: "El niño tose mucho por la noche.", beispielDe: "Das Kind hustet nachts viel." },
-    { id: "v1209", es: "la muela",       de: "der Backenzahn",   wortart: "Substantiv", beispiel: "Me duele una muela.", beispielDe: "Mir tut ein Zahn weh." },
-    { id: "v1210", es: "grave",          de: "ernst / schlimm",  wortart: "Adjektiv", beispiel: "No es nada grave.", beispielDe: "Es ist nichts Ernstes." }
+    { id: "v1201", es: "la receta",      de: "das Rezept",       wortart: "Substantiv", beispiel: "El médico me dio una receta.", beispielUe: "Der Arzt gab mir ein Rezept." },
+    { id: "v1202", es: "doler",          de: "wehtun",           wortart: "Verb", beispiel: "Me duele la cabeza.", beispielUe: "Mir tut der Kopf weh." },
+    { id: "v1203", es: "la fiebre",      de: "das Fieber",       wortart: "Substantiv", beispiel: "Tengo fiebre desde ayer.", beispielUe: "Ich habe seit gestern Fieber." },
+    { id: "v1204", es: "la garganta",    de: "der Hals",         wortart: "Substantiv", beispiel: "Me duele la garganta.", beispielUe: "Mir tut der Hals weh." },
+    { id: "v1205", es: "la pastilla",    de: "die Tablette",     wortart: "Substantiv", beispiel: "Toma una pastilla cada ocho horas.", beispielUe: "Nimm alle acht Stunden eine Tablette." },
+    { id: "v1206", es: "la cita",        de: "der Termin",       wortart: "Substantiv", beispiel: "Tengo cita a las diez.", beispielUe: "Ich habe um zehn einen Termin." },
+    { id: "v1207", es: "el resfriado",   de: "die Erkältung",    wortart: "Substantiv", beispiel: "Tengo un resfriado fuerte.", beispielUe: "Ich habe eine starke Erkältung." },
+    { id: "v1208", es: "toser",          de: "husten",           wortart: "Verb", beispiel: "El niño tose mucho por la noche.", beispielUe: "Das Kind hustet nachts viel." },
+    { id: "v1209", es: "la muela",       de: "der Backenzahn",   wortart: "Substantiv", beispiel: "Me duele una muela.", beispielUe: "Mir tut ein Zahn weh." },
+    { id: "v1210", es: "grave",          de: "ernst / schlimm",  wortart: "Adjektiv", beispiel: "No es nada grave.", beispielUe: "Es ist nichts Ernstes." }
   ],
   saetze: [
     { id: "s1201", es: "Me duele mucho la espalda.",           de: "Mir tut der Rücken sehr weh." },
@@ -107,19 +107,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 13, niveau: "A2", thema: "Wegbeschreibung",
   vokabeln: [
-    { id: "v1301", es: "la esquina",     de: "die Ecke",        wortart: "Substantiv", beispiel: "Gira en la esquina.", beispielDe: "Bieg an der Ecke ab." },
-    { id: "v1302", es: "seguir recto",   de: "geradeaus gehen", wortart: "Verb", beispiel: "Sigue recto dos calles.", beispielDe: "Geh zwei Straßen geradeaus." },
-    { id: "v1303", es: "el semáforo",    de: "die Ampel",       wortart: "Substantiv", beispiel: "Gira a la izquierda en el semáforo.", beispielDe: "Bieg an der Ampel links ab." },
-    { id: "v1304", es: "cruzar",         de: "überqueren",      wortart: "Verb", beispiel: "Cruza la plaza.", beispielDe: "Überquere den Platz." },
-    { id: "v1305", es: "enfrente de",    de: "gegenüber von",   wortart: "Präposition", beispiel: "Está enfrente del banco.", beispielDe: "Es ist gegenüber der Bank." },
-    { id: "v1306", es: "detrás de",      de: "hinter",          wortart: "Präposition", beispiel: "El parque está detrás de la iglesia.", beispielDe: "Der Park ist hinter der Kirche." },
-    { id: "v1307", es: "la parada",      de: "die Haltestelle", wortart: "Substantiv", beispiel: "La parada está allí.", beispielDe: "Die Haltestelle ist dort." },
-    { id: "v1308", es: "perderse",       de: "sich verlaufen",  wortart: "Verb", beispiel: "Me he perdido, lo siento.", beispielDe: "Ich habe mich verlaufen, tut mir leid." },
-    { id: "v1309", es: "el puente",      de: "die Brücke",      wortart: "Substantiv", beispiel: "Pasa por el puente.", beispielDe: "Geh über die Brücke." },
-    { id: "v1310", es: "acercarse",      de: "sich nähern",     wortart: "Verb", beispiel: "Nos acercamos al centro.", beispielDe: "Wir nähern uns dem Zentrum." }
+    { id: "v1301", es: "la esquina",     de: "die Ecke",        wortart: "Substantiv", beispiel: "Gira en la esquina.", beispielUe: "Bieg an der Ecke ab." },
+    { id: "v1302", es: "seguir recto",   de: "geradeaus gehen", wortart: "Verb", beispiel: "Sigue recto dos calles.", beispielUe: "Geh zwei Straßen geradeaus." },
+    { id: "v1303", es: "el semáforo",    de: "die Ampel",       wortart: "Substantiv", beispiel: "Gira a la izquierda en el semáforo.", beispielUe: "Bieg an der Ampel links ab." },
+    { id: "v1304", es: "cruzar",         de: "überqueren",      wortart: "Verb", beispiel: "Cruza la plaza.", beispielUe: "Überquere den Platz." },
+    { id: "v1305", es: "enfrente de",    de: "gegenüber von",   wortart: "Präposition", beispiel: "Está enfrente del banco.", beispielUe: "Es ist gegenüber der Bank." },
+    { id: "v1306", es: "detrás de",      de: "hinter",          wortart: "Präposition", beispiel: "El parque está detrás de la iglesia.", beispielUe: "Der Park ist hinter der Kirche." },
+    { id: "v1307", es: "la parada",      de: "die Haltestelle", wortart: "Substantiv", beispiel: "La parada está allí.", beispielUe: "Die Haltestelle ist dort." },
+    { id: "v1308", es: "perderse",       de: "sich verlaufen",  wortart: "Verb", beispiel: "Me he perdido, lo siento.", beispielUe: "Ich habe mich verlaufen, tut mir leid." },
+    { id: "v1309", es: "el puente",      de: "die Brücke",      wortart: "Substantiv", beispiel: "Pasa por el puente.", beispielUe: "Geh über die Brücke." },
+    { id: "v1310", es: "acercarse",      de: "sich nähern",     wortart: "Verb", beispiel: "Nos acercamos al centro.", beispielUe: "Wir nähern uns dem Zentrum." }
   ],
   saetze: [
     { id: "s1301", es: "Sigue recto hasta el semáforo.",    de: "Geh geradeaus bis zur Ampel." },
@@ -167,19 +167,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 14, niveau: "A2", thema: "Ratschläge und Verbote",
   vokabeln: [
-    { id: "v1401", es: "el consejo",     de: "der Rat",         wortart: "Substantiv", beispiel: "Te doy un consejo.", beispielDe: "Ich gebe dir einen Rat." },
-    { id: "v1402", es: "prohibido",      de: "verboten",        wortart: "Adjektiv", beispiel: "Está prohibido fumar aquí.", beispielDe: "Rauchen ist hier verboten." },
-    { id: "v1403", es: "preocuparse",    de: "sich sorgen",     wortart: "Verb", beispiel: "No te preocupes.", beispielDe: "Mach dir keine Sorgen." },
-    { id: "v1404", es: "el peligro",     de: "die Gefahr",      wortart: "Substantiv", beispiel: "No hay peligro.", beispielDe: "Es besteht keine Gefahr." },
-    { id: "v1405", es: "tener cuidado",  de: "aufpassen",       wortart: "Verb", beispiel: "Ten cuidado con el escalón.", beispielDe: "Pass auf die Stufe auf." },
-    { id: "v1406", es: "olvidar",        de: "vergessen",       wortart: "Verb", beispiel: "No olvides las llaves.", beispielDe: "Vergiss die Schlüssel nicht." },
-    { id: "v1407", es: "el error",       de: "der Fehler",      wortart: "Substantiv", beispiel: "Fue un error mío.", beispielDe: "Das war mein Fehler." },
-    { id: "v1408", es: "molestar",       de: "stören",          wortart: "Verb", beispiel: "No molestes a tu hermana.", beispielDe: "Stör deine Schwester nicht." },
-    { id: "v1409", es: "atreverse",      de: "sich trauen",     wortart: "Verb", beispiel: "No me atrevo a preguntar.", beispielDe: "Ich traue mich nicht zu fragen." },
-    { id: "v1410", es: "el riesgo",      de: "das Risiko",      wortart: "Substantiv", beispiel: "No quiero correr riesgos.", beispielDe: "Ich will keine Risiken eingehen." }
+    { id: "v1401", es: "el consejo",     de: "der Rat",         wortart: "Substantiv", beispiel: "Te doy un consejo.", beispielUe: "Ich gebe dir einen Rat." },
+    { id: "v1402", es: "prohibido",      de: "verboten",        wortart: "Adjektiv", beispiel: "Está prohibido fumar aquí.", beispielUe: "Rauchen ist hier verboten." },
+    { id: "v1403", es: "preocuparse",    de: "sich sorgen",     wortart: "Verb", beispiel: "No te preocupes.", beispielUe: "Mach dir keine Sorgen." },
+    { id: "v1404", es: "el peligro",     de: "die Gefahr",      wortart: "Substantiv", beispiel: "No hay peligro.", beispielUe: "Es besteht keine Gefahr." },
+    { id: "v1405", es: "tener cuidado",  de: "aufpassen",       wortart: "Verb", beispiel: "Ten cuidado con el escalón.", beispielUe: "Pass auf die Stufe auf." },
+    { id: "v1406", es: "olvidar",        de: "vergessen",       wortart: "Verb", beispiel: "No olvides las llaves.", beispielUe: "Vergiss die Schlüssel nicht." },
+    { id: "v1407", es: "el error",       de: "der Fehler",      wortart: "Substantiv", beispiel: "Fue un error mío.", beispielUe: "Das war mein Fehler." },
+    { id: "v1408", es: "molestar",       de: "stören",          wortart: "Verb", beispiel: "No molestes a tu hermana.", beispielUe: "Stör deine Schwester nicht." },
+    { id: "v1409", es: "atreverse",      de: "sich trauen",     wortart: "Verb", beispiel: "No me atrevo a preguntar.", beispielUe: "Ich traue mich nicht zu fragen." },
+    { id: "v1410", es: "el riesgo",      de: "das Risiko",      wortart: "Substantiv", beispiel: "No quiero correr riesgos.", beispielUe: "Ich will keine Risiken eingehen." }
   ],
   saetze: [
     { id: "s1401", es: "No te preocupes por eso.",           de: "Mach dir darüber keine Sorgen." },
@@ -227,19 +227,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 15, niveau: "A2", thema: "Diese Woche",
   vokabeln: [
-    { id: "v1501", es: "todavía",        de: "noch",            wortart: "Adverb", beispiel: "Todavía no he comido.", beispielDe: "Ich habe noch nicht gegessen." },
-    { id: "v1502", es: "ya",             de: "schon",           wortart: "Adverb", beispiel: "Ya he terminado.", beispielDe: "Ich bin schon fertig." },
-    { id: "v1503", es: "últimamente",    de: "in letzter Zeit", wortart: "Adverb", beispiel: "Últimamente trabajo mucho.", beispielDe: "In letzter Zeit arbeite ich viel." },
-    { id: "v1504", es: "el rato libre",  de: "die freie Zeit",  wortart: "Substantiv", beispiel: "He tenido poco rato libre.", beispielDe: "Ich hatte wenig freie Zeit." },
-    { id: "v1505", es: "conseguir",      de: "erreichen / schaffen", wortart: "Verb", beispiel: "He conseguido el trabajo.", beispielDe: "Ich habe die Stelle bekommen." },
-    { id: "v1506", es: "romper",         de: "kaputt machen",   wortart: "Verb", beispiel: "He roto un vaso.", beispielDe: "Ich habe ein Glas zerbrochen." },
-    { id: "v1507", es: "el suceso",      de: "das Ereignis",    wortart: "Substantiv", beispiel: "Fue un suceso importante.", beispielDe: "Das war ein wichtiges Ereignis." },
-    { id: "v1508", es: "por fin",        de: "endlich",         wortart: "Adverb", beispiel: "Por fin ha llegado el verano.", beispielDe: "Endlich ist der Sommer da." },
-    { id: "v1509", es: "resolver",       de: "lösen",           wortart: "Verb", beispiel: "Hemos resuelto el problema.", beispielDe: "Wir haben das Problem gelöst." },
-    { id: "v1510", es: "el cambio",      de: "die Veränderung", wortart: "Substantiv", beispiel: "Ha habido muchos cambios.", beispielDe: "Es hat viele Veränderungen gegeben." }
+    { id: "v1501", es: "todavía",        de: "noch",            wortart: "Adverb", beispiel: "Todavía no he comido.", beispielUe: "Ich habe noch nicht gegessen." },
+    { id: "v1502", es: "ya",             de: "schon",           wortart: "Adverb", beispiel: "Ya he terminado.", beispielUe: "Ich bin schon fertig." },
+    { id: "v1503", es: "últimamente",    de: "in letzter Zeit", wortart: "Adverb", beispiel: "Últimamente trabajo mucho.", beispielUe: "In letzter Zeit arbeite ich viel." },
+    { id: "v1504", es: "el rato libre",  de: "die freie Zeit",  wortart: "Substantiv", beispiel: "He tenido poco rato libre.", beispielUe: "Ich hatte wenig freie Zeit." },
+    { id: "v1505", es: "conseguir",      de: "erreichen / schaffen", wortart: "Verb", beispiel: "He conseguido el trabajo.", beispielUe: "Ich habe die Stelle bekommen." },
+    { id: "v1506", es: "romper",         de: "kaputt machen",   wortart: "Verb", beispiel: "He roto un vaso.", beispielUe: "Ich habe ein Glas zerbrochen." },
+    { id: "v1507", es: "el suceso",      de: "das Ereignis",    wortart: "Substantiv", beispiel: "Fue un suceso importante.", beispielUe: "Das war ein wichtiges Ereignis." },
+    { id: "v1508", es: "por fin",        de: "endlich",         wortart: "Adverb", beispiel: "Por fin ha llegado el verano.", beispielUe: "Endlich ist der Sommer da." },
+    { id: "v1509", es: "resolver",       de: "lösen",           wortart: "Verb", beispiel: "Hemos resuelto el problema.", beispielUe: "Wir haben das Problem gelöst." },
+    { id: "v1510", es: "el cambio",      de: "die Veränderung", wortart: "Substantiv", beispiel: "Ha habido muchos cambios.", beispielUe: "Es hat viele Veränderungen gegeben." }
   ],
   saetze: [
     { id: "s1501", es: "Hoy he trabajado mucho.",              de: "Heute habe ich viel gearbeitet." },
@@ -287,19 +287,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 16, niveau: "A2", thema: "Gestern",
   vokabeln: [
-    { id: "v1601", es: "anoche",         de: "gestern Abend",   wortart: "Adverb", beispiel: "Anoche cenamos fuera.", beispielDe: "Gestern Abend haben wir auswärts gegessen." },
-    { id: "v1602", es: "el año pasado",  de: "letztes Jahr",    wortart: "Substantiv", beispiel: "El año pasado viajé a Perú.", beispielDe: "Letztes Jahr reiste ich nach Peru." },
-    { id: "v1603", es: "de repente",     de: "plötzlich",       wortart: "Adverb", beispiel: "De repente empezó a llover.", beispielDe: "Plötzlich fing es an zu regnen." },
-    { id: "v1604", es: "entonces",       de: "dann / damals",   wortart: "Adverb", beispiel: "Entonces decidí volver.", beispielDe: "Dann entschied ich mich zurückzukehren." },
-    { id: "v1605", es: "el suceso",      de: "der Vorfall",     wortart: "Substantiv", beispiel: "Nadie explicó el suceso.", beispielDe: "Niemand erklärte den Vorfall." },
-    { id: "v1606", es: "ocurrir",        de: "geschehen",       wortart: "Verb", beispiel: "¿Qué ocurrió ayer?", beispielDe: "Was ist gestern passiert?" },
-    { id: "v1607", es: "el viaje",       de: "die Reise",       wortart: "Substantiv", beispiel: "El viaje duró ocho horas.", beispielDe: "Die Reise dauerte acht Stunden." },
-    { id: "v1608", es: "quedarse",       de: "bleiben",         wortart: "Verb", beispiel: "Nos quedamos tres días.", beispielDe: "Wir blieben drei Tage." },
-    { id: "v1609", es: "el aniversario", de: "der Jahrestag",   wortart: "Substantiv", beispiel: "Celebramos nuestro aniversario.", beispielDe: "Wir feierten unseren Jahrestag." },
-    { id: "v1610", es: "despedirse",     de: "sich verabschieden", wortart: "Verb", beispiel: "Se despidió sin decir nada.", beispielDe: "Er verabschiedete sich, ohne etwas zu sagen." }
+    { id: "v1601", es: "anoche",         de: "gestern Abend",   wortart: "Adverb", beispiel: "Anoche cenamos fuera.", beispielUe: "Gestern Abend haben wir auswärts gegessen." },
+    { id: "v1602", es: "el año pasado",  de: "letztes Jahr",    wortart: "Substantiv", beispiel: "El año pasado viajé a Perú.", beispielUe: "Letztes Jahr reiste ich nach Peru." },
+    { id: "v1603", es: "de repente",     de: "plötzlich",       wortart: "Adverb", beispiel: "De repente empezó a llover.", beispielUe: "Plötzlich fing es an zu regnen." },
+    { id: "v1604", es: "entonces",       de: "dann / damals",   wortart: "Adverb", beispiel: "Entonces decidí volver.", beispielUe: "Dann entschied ich mich zurückzukehren." },
+    { id: "v1605", es: "el suceso",      de: "der Vorfall",     wortart: "Substantiv", beispiel: "Nadie explicó el suceso.", beispielUe: "Niemand erklärte den Vorfall." },
+    { id: "v1606", es: "ocurrir",        de: "geschehen",       wortart: "Verb", beispiel: "¿Qué ocurrió ayer?", beispielUe: "Was ist gestern passiert?" },
+    { id: "v1607", es: "el viaje",       de: "die Reise",       wortart: "Substantiv", beispiel: "El viaje duró ocho horas.", beispielUe: "Die Reise dauerte acht Stunden." },
+    { id: "v1608", es: "quedarse",       de: "bleiben",         wortart: "Verb", beispiel: "Nos quedamos tres días.", beispielUe: "Wir blieben drei Tage." },
+    { id: "v1609", es: "el aniversario", de: "der Jahrestag",   wortart: "Substantiv", beispiel: "Celebramos nuestro aniversario.", beispielUe: "Wir feierten unseren Jahrestag." },
+    { id: "v1610", es: "despedirse",     de: "sich verabschieden", wortart: "Verb", beispiel: "Se despidió sin decir nada.", beispielUe: "Er verabschiedete sich, ohne etwas zu sagen." }
   ],
   saetze: [
     { id: "s1601", es: "Ayer hablé con mi jefe.",           de: "Gestern sprach ich mit meinem Chef." },
@@ -344,19 +344,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 17, niveau: "A2", thema: "Eine Reise erzählen",
   vokabeln: [
-    { id: "v1701", es: "el equipaje",    de: "das Gepäck",      wortart: "Substantiv", beispiel: "Perdimos el equipaje.", beispielDe: "Wir verloren das Gepäck." },
-    { id: "v1702", es: "el vuelo",       de: "der Flug",        wortart: "Substantiv", beispiel: "El vuelo tuvo retraso.", beispielDe: "Der Flug hatte Verspätung." },
-    { id: "v1703", es: "el retraso",     de: "die Verspätung",  wortart: "Substantiv", beispiel: "Hubo dos horas de retraso.", beispielDe: "Es gab zwei Stunden Verspätung." },
-    { id: "v1704", es: "el alojamiento", de: "die Unterkunft",  wortart: "Substantiv", beispiel: "El alojamiento estuvo bien.", beispielDe: "Die Unterkunft war gut." },
-    { id: "v1705", es: "la maleta",      de: "der Koffer",      wortart: "Substantiv", beispiel: "Hice la maleta anoche.", beispielDe: "Ich packte gestern Abend den Koffer." },
-    { id: "v1706", es: "el recuerdo",    de: "die Erinnerung / das Souvenir", wortart: "Substantiv", beispiel: "Tengo buenos recuerdos.", beispielDe: "Ich habe gute Erinnerungen." },
-    { id: "v1707", es: "el paisaje",     de: "die Landschaft",  wortart: "Substantiv", beispiel: "El paisaje fue impresionante.", beispielDe: "Die Landschaft war beeindruckend." },
-    { id: "v1708", es: "alojarse",       de: "übernachten",     wortart: "Verb", beispiel: "Nos alojamos en un hostal.", beispielDe: "Wir übernachteten in einer Pension." },
-    { id: "v1709", es: "la frontera",    de: "die Grenze",      wortart: "Substantiv", beispiel: "Cruzamos la frontera de noche.", beispielDe: "Wir überquerten nachts die Grenze." },
-    { id: "v1710", es: "merecer la pena",de: "sich lohnen",     wortart: "Verb", beispiel: "El viaje mereció la pena.", beispielDe: "Die Reise hat sich gelohnt." }
+    { id: "v1701", es: "el equipaje",    de: "das Gepäck",      wortart: "Substantiv", beispiel: "Perdimos el equipaje.", beispielUe: "Wir verloren das Gepäck." },
+    { id: "v1702", es: "el vuelo",       de: "der Flug",        wortart: "Substantiv", beispiel: "El vuelo tuvo retraso.", beispielUe: "Der Flug hatte Verspätung." },
+    { id: "v1703", es: "el retraso",     de: "die Verspätung",  wortart: "Substantiv", beispiel: "Hubo dos horas de retraso.", beispielUe: "Es gab zwei Stunden Verspätung." },
+    { id: "v1704", es: "el alojamiento", de: "die Unterkunft",  wortart: "Substantiv", beispiel: "El alojamiento estuvo bien.", beispielUe: "Die Unterkunft war gut." },
+    { id: "v1705", es: "la maleta",      de: "der Koffer",      wortart: "Substantiv", beispiel: "Hice la maleta anoche.", beispielUe: "Ich packte gestern Abend den Koffer." },
+    { id: "v1706", es: "el recuerdo",    de: "die Erinnerung / das Souvenir", wortart: "Substantiv", beispiel: "Tengo buenos recuerdos.", beispielUe: "Ich habe gute Erinnerungen." },
+    { id: "v1707", es: "el paisaje",     de: "die Landschaft",  wortart: "Substantiv", beispiel: "El paisaje fue impresionante.", beispielUe: "Die Landschaft war beeindruckend." },
+    { id: "v1708", es: "alojarse",       de: "übernachten",     wortart: "Verb", beispiel: "Nos alojamos en un hostal.", beispielUe: "Wir übernachteten in einer Pension." },
+    { id: "v1709", es: "la frontera",    de: "die Grenze",      wortart: "Substantiv", beispiel: "Cruzamos la frontera de noche.", beispielUe: "Wir überquerten nachts die Grenze." },
+    { id: "v1710", es: "merecer la pena",de: "sich lohnen",     wortart: "Verb", beispiel: "El viaje mereció la pena.", beispielUe: "Die Reise hat sich gelohnt." }
   ],
   saetze: [
     { id: "s1701", es: "Fui a Barcelona el año pasado.",     de: "Ich fuhr letztes Jahr nach Barcelona." },
@@ -405,19 +405,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 18, niveau: "A2", thema: "Als ich klein war",
   vokabeln: [
-    { id: "v1801", es: "la infancia",    de: "die Kindheit",    wortart: "Substantiv", beispiel: "Mi infancia fue feliz.", beispielDe: "Meine Kindheit war glücklich." },
-    { id: "v1802", es: "el juguete",     de: "das Spielzeug",   wortart: "Substantiv", beispiel: "Tenía muchos juguetes.", beispielDe: "Ich hatte viele Spielsachen." },
-    { id: "v1803", es: "solía",          de: "pflegte zu",      wortart: "Verb", beispiel: "Solía jugar en la calle.", beispielDe: "Ich spielte immer auf der Straße." },
-    { id: "v1804", es: "el colegio",     de: "die Schule",      wortart: "Substantiv", beispiel: "Iba al colegio a pie.", beispielDe: "Ich ging zu Fuß zur Schule." },
-    { id: "v1805", es: "a menudo",       de: "häufig",          wortart: "Adverb", beispiel: "A menudo visitábamos a los abuelos.", beispielDe: "Wir besuchten oft die Großeltern." },
-    { id: "v1806", es: "el vecindario",  de: "die Nachbarschaft", wortart: "Substantiv", beispiel: "Todo el vecindario nos conocía.", beispielDe: "Die ganze Nachbarschaft kannte uns." },
-    { id: "v1807", es: "travieso",       de: "frech",           wortart: "Adjektiv", beispiel: "Era un niño muy travieso.", beispielDe: "Ich war ein sehr frecher Junge." },
-    { id: "v1808", es: "la costumbre",   de: "die Gewohnheit",  wortart: "Substantiv", beispiel: "Era una costumbre familiar.", beispielDe: "Das war eine Familiengewohnheit." },
-    { id: "v1809", es: "el recreo",      de: "die Pause (Schule)", wortart: "Substantiv", beispiel: "En el recreo jugábamos al fútbol.", beispielDe: "In der Pause spielten wir Fußball." },
-    { id: "v1810", es: "echar de menos", de: "vermissen",       wortart: "Verb", beispiel: "Echo de menos aquellos veranos.", beispielDe: "Ich vermisse jene Sommer." }
+    { id: "v1801", es: "la infancia",    de: "die Kindheit",    wortart: "Substantiv", beispiel: "Mi infancia fue feliz.", beispielUe: "Meine Kindheit war glücklich." },
+    { id: "v1802", es: "el juguete",     de: "das Spielzeug",   wortart: "Substantiv", beispiel: "Tenía muchos juguetes.", beispielUe: "Ich hatte viele Spielsachen." },
+    { id: "v1803", es: "solía",          de: "pflegte zu",      wortart: "Verb", beispiel: "Solía jugar en la calle.", beispielUe: "Ich spielte immer auf der Straße." },
+    { id: "v1804", es: "el colegio",     de: "die Schule",      wortart: "Substantiv", beispiel: "Iba al colegio a pie.", beispielUe: "Ich ging zu Fuß zur Schule." },
+    { id: "v1805", es: "a menudo",       de: "häufig",          wortart: "Adverb", beispiel: "A menudo visitábamos a los abuelos.", beispielUe: "Wir besuchten oft die Großeltern." },
+    { id: "v1806", es: "el vecindario",  de: "die Nachbarschaft", wortart: "Substantiv", beispiel: "Todo el vecindario nos conocía.", beispielUe: "Die ganze Nachbarschaft kannte uns." },
+    { id: "v1807", es: "travieso",       de: "frech",           wortart: "Adjektiv", beispiel: "Era un niño muy travieso.", beispielUe: "Ich war ein sehr frecher Junge." },
+    { id: "v1808", es: "la costumbre",   de: "die Gewohnheit",  wortart: "Substantiv", beispiel: "Era una costumbre familiar.", beispielUe: "Das war eine Familiengewohnheit." },
+    { id: "v1809", es: "el recreo",      de: "die Pause (Schule)", wortart: "Substantiv", beispiel: "En el recreo jugábamos al fútbol.", beispielUe: "In der Pause spielten wir Fußball." },
+    { id: "v1810", es: "echar de menos", de: "vermissen",       wortart: "Verb", beispiel: "Echo de menos aquellos veranos.", beispielUe: "Ich vermisse jene Sommer." }
   ],
   saetze: [
     { id: "s1801", es: "Cuando era niño, vivía en un pueblo.", de: "Als ich ein Kind war, lebte ich in einem Dorf." },
@@ -468,19 +468,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 19, niveau: "A2", thema: "Eine Geschichte erzählen (1)",
   vokabeln: [
-    { id: "v1901", es: "mientras",       de: "während",         wortart: "Konjunktion", beispiel: "Mientras cocinaba, sonó el teléfono.", beispielDe: "Während ich kochte, klingelte das Telefon." },
-    { id: "v1902", es: "de pronto",      de: "auf einmal",      wortart: "Adverb", beispiel: "De pronto se apagó la luz.", beispielDe: "Auf einmal ging das Licht aus." },
-    { id: "v1903", es: "darse cuenta",   de: "merken",          wortart: "Verb", beispiel: "Me di cuenta muy tarde.", beispielDe: "Ich merkte es sehr spät." },
-    { id: "v1904", es: "asustarse",      de: "erschrecken",     wortart: "Verb", beispiel: "Me asusté mucho.", beispielDe: "Ich erschrak sehr." },
-    { id: "v1905", es: "el ruido",       de: "das Geräusch",    wortart: "Substantiv", beispiel: "Oí un ruido extraño.", beispielDe: "Ich hörte ein seltsames Geräusch." },
-    { id: "v1906", es: "sonar",          de: "klingeln",        wortart: "Verb", beispiel: "Sonó el despertador.", beispielDe: "Der Wecker klingelte." },
-    { id: "v1907", es: "por casualidad", de: "zufällig",        wortart: "Adverb", beispiel: "Lo encontré por casualidad.", beispielDe: "Ich fand es zufällig." },
-    { id: "v1908", es: "al final",       de: "am Ende",         wortart: "Adverb", beispiel: "Al final todo salió bien.", beispielDe: "Am Ende ging alles gut." },
-    { id: "v1909", es: "olvidarse de",   de: "vergessen",       wortart: "Verb", beispiel: "Me olvidé de las llaves.", beispielDe: "Ich vergaß die Schlüssel." },
-    { id: "v1910", es: "el susto",       de: "der Schreck",     wortart: "Substantiv", beispiel: "¡Qué susto me diste!", beispielDe: "Hast du mich erschreckt!" }
+    { id: "v1901", es: "mientras",       de: "während",         wortart: "Konjunktion", beispiel: "Mientras cocinaba, sonó el teléfono.", beispielUe: "Während ich kochte, klingelte das Telefon." },
+    { id: "v1902", es: "de pronto",      de: "auf einmal",      wortart: "Adverb", beispiel: "De pronto se apagó la luz.", beispielUe: "Auf einmal ging das Licht aus." },
+    { id: "v1903", es: "darse cuenta",   de: "merken",          wortart: "Verb", beispiel: "Me di cuenta muy tarde.", beispielUe: "Ich merkte es sehr spät." },
+    { id: "v1904", es: "asustarse",      de: "erschrecken",     wortart: "Verb", beispiel: "Me asusté mucho.", beispielUe: "Ich erschrak sehr." },
+    { id: "v1905", es: "el ruido",       de: "das Geräusch",    wortart: "Substantiv", beispiel: "Oí un ruido extraño.", beispielUe: "Ich hörte ein seltsames Geräusch." },
+    { id: "v1906", es: "sonar",          de: "klingeln",        wortart: "Verb", beispiel: "Sonó el despertador.", beispielUe: "Der Wecker klingelte." },
+    { id: "v1907", es: "por casualidad", de: "zufällig",        wortart: "Adverb", beispiel: "Lo encontré por casualidad.", beispielUe: "Ich fand es zufällig." },
+    { id: "v1908", es: "al final",       de: "am Ende",         wortart: "Adverb", beispiel: "Al final todo salió bien.", beispielUe: "Am Ende ging alles gut." },
+    { id: "v1909", es: "olvidarse de",   de: "vergessen",       wortart: "Verb", beispiel: "Me olvidé de las llaves.", beispielUe: "Ich vergaß die Schlüssel." },
+    { id: "v1910", es: "el susto",       de: "der Schreck",     wortart: "Substantiv", beispiel: "¡Qué susto me diste!", beispielUe: "Hast du mich erschreckt!" }
   ],
   saetze: [
     { id: "s1901", es: "Mientras cocinaba, sonó el teléfono.",  de: "Während ich kochte, klingelte das Telefon." },
@@ -528,19 +528,19 @@ LEKTIONEN.push({
   }
 });
 
-LEKTIONEN.push({
+LEKTION('es-es', {
   tag: 20, niveau: "A2", thema: "Eine Geschichte erzählen (2)",
   vokabeln: [
-    { id: "v2001", es: "el desenlace",   de: "der Ausgang",      wortart: "Substantiv", beispiel: "El desenlace fue inesperado.", beispielDe: "Der Ausgang war unerwartet." },
-    { id: "v2002", es: "en aquella época", de: "damals",         wortart: "Adverb", beispiel: "En aquella época yo era estudiante.", beispielDe: "Damals war ich Student." },
-    { id: "v2003", es: "durar",          de: "dauern",          wortart: "Verb", beispiel: "La reunión duró dos horas.", beispielDe: "Die Sitzung dauerte zwei Stunden." },
-    { id: "v2004", es: "enterarse",      de: "erfahren",        wortart: "Verb", beispiel: "Me enteré ayer.", beispielDe: "Ich habe es gestern erfahren." },
-    { id: "v2005", es: "el detalle",     de: "das Detail",      wortart: "Substantiv", beispiel: "No recuerdo los detalles.", beispielDe: "Ich erinnere mich nicht an die Details." },
-    { id: "v2006", es: "convertirse en", de: "werden zu",       wortart: "Verb", beispiel: "Se convirtió en un problema.", beispielDe: "Es wurde zu einem Problem." },
-    { id: "v2007", es: "mudarse",        de: "umziehen",        wortart: "Verb", beispiel: "Nos mudamos en 2018.", beispielDe: "Wir zogen 2018 um." },
-    { id: "v2008", es: "el ambiente",    de: "die Stimmung",    wortart: "Substantiv", beispiel: "El ambiente era muy bueno.", beispielDe: "Die Stimmung war sehr gut." },
-    { id: "v2009", es: "de golpe",       de: "schlagartig",     wortart: "Adverb", beispiel: "Todo cambió de golpe.", beispielDe: "Alles änderte sich schlagartig." },
-    { id: "v2010", es: "el motivo",      de: "der Grund",       wortart: "Substantiv", beispiel: "Nunca supe el motivo.", beispielDe: "Ich erfuhr nie den Grund." }
+    { id: "v2001", es: "el desenlace",   de: "der Ausgang",      wortart: "Substantiv", beispiel: "El desenlace fue inesperado.", beispielUe: "Der Ausgang war unerwartet." },
+    { id: "v2002", es: "en aquella época", de: "damals",         wortart: "Adverb", beispiel: "En aquella época yo era estudiante.", beispielUe: "Damals war ich Student." },
+    { id: "v2003", es: "durar",          de: "dauern",          wortart: "Verb", beispiel: "La reunión duró dos horas.", beispielUe: "Die Sitzung dauerte zwei Stunden." },
+    { id: "v2004", es: "enterarse",      de: "erfahren",        wortart: "Verb", beispiel: "Me enteré ayer.", beispielUe: "Ich habe es gestern erfahren." },
+    { id: "v2005", es: "el detalle",     de: "das Detail",      wortart: "Substantiv", beispiel: "No recuerdo los detalles.", beispielUe: "Ich erinnere mich nicht an die Details." },
+    { id: "v2006", es: "convertirse en", de: "werden zu",       wortart: "Verb", beispiel: "Se convirtió en un problema.", beispielUe: "Es wurde zu einem Problem." },
+    { id: "v2007", es: "mudarse",        de: "umziehen",        wortart: "Verb", beispiel: "Nos mudamos en 2018.", beispielUe: "Wir zogen 2018 um." },
+    { id: "v2008", es: "el ambiente",    de: "die Stimmung",    wortart: "Substantiv", beispiel: "El ambiente era muy bueno.", beispielUe: "Die Stimmung war sehr gut." },
+    { id: "v2009", es: "de golpe",       de: "schlagartig",     wortart: "Adverb", beispiel: "Todo cambió de golpe.", beispielUe: "Alles änderte sich schlagartig." },
+    { id: "v2010", es: "el motivo",      de: "der Grund",       wortart: "Substantiv", beispiel: "Nunca supe el motivo.", beispielUe: "Ich erfuhr nie den Grund." }
   ],
   saetze: [
     { id: "s2001", es: "Vivíamos en Madrid cuando nació mi hijo.", de: "Wir wohnten in Madrid, als mein Sohn geboren wurde." },
