@@ -644,7 +644,7 @@ LEKTION('de', {
       <em>Ich versuche, heute früh zu schlafen.</em> (con coma)</div>`,
     uebungen: [
       { id: "g4001", satz: "Ich versuche, pünktlich ___ sein.", loesung: "zu", tipps: ["zu", "-", "für"], hinweis: "versuchen → con zu", ue: "Intento ser puntual." },
-      { id: "g4002", satz: "Ich muss heute ___ arbeiten.", loesung: "", tipps: ["", "zu", "für"], hinweis: "modal → sin zu", ue: "Hoy tengo que trabajar." },
+      { id: "g4002", satz: "Ich muss heute ___. (arbeiten)", loesung: "arbeiten", tipps: ["arbeiten", "zu arbeiten", "gearbeitet"], hinweis: "modal → infinitivo sin zu", ue: "Hoy tengo que trabajar." },
       { id: "g4003", satz: "Vergiss nicht, mich an___rufen!", loesung: "zu", tipps: ["zu", "-", "ge"], hinweis: "separable → zu en medio", ue: "¡No olvides llamarme!" },
       { id: "g4004", satz: "Es ist wichtig, jeden Tag ___ üben.", loesung: "zu", tipps: ["zu", "-", "für"], hinweis: "expresión con adjetivo", ue: "Es importante practicar cada día." },
       { id: "g4005", satz: "Ich habe keine Zeit, ins Kino ___ gehen.", loesung: "zu", tipps: ["zu", "-", "für"], hinweis: "Zeit haben → con zu", ue: "No tengo tiempo de ir al cine." }
