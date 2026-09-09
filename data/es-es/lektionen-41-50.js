@@ -53,11 +53,11 @@ LEKTION('es-es', {
       <p><strong>Praktischer Test:</strong> Kannst du „dann irgendwann" hinzudenken?
       Dann Subjuntivo. Bedeutet es „jedes Mal, wenn"? Dann Indikativ.</p>`,
     uebungen: [
-      { id: "g4101", satz: "Cuando ___ (llegar, tú), llámame.", loesung: "llegues", tipps: ["llegues", "llegas", "llegaste"], hinweis: "Zukunft", de: "Wenn du ankommst, ruf mich an." },
-      { id: "g4102", satz: "Cuando ___ (llegar, yo) a casa, siempre cocino.", loesung: "llego", tipps: ["llego", "llegue", "llegara"], hinweis: "Gewohnheit", de: "Wenn ich nach Hause komme, koche ich immer." },
-      { id: "g4103", satz: "En cuanto ___ (terminar, yo), te aviso.", loesung: "termine", tipps: ["termine", "termino", "terminé"], hinweis: "Zukunft", de: "Sobald ich fertig bin, sage ich Bescheid." },
-      { id: "g4104", satz: "Espera hasta que ___ (dejar) de llover.", loesung: "deje", tipps: ["deje", "deja", "dejó"], hinweis: "Zukunft", de: "Warte, bis es aufhört zu regnen." },
-      { id: "g4105", satz: "Ayer, cuando ___ (salir, yo), llovía.", loesung: "salí", tipps: ["salí", "salga", "saliera"], hinweis: "Vergangenheit", de: "Als ich gestern rausging, regnete es." }
+      { id: "g4101", satz: "Cuando ___ (llegar, tú), llámame.", loesung: "llegues", tipps: ["llegues", "llegas", "llegaste"], hinweis: "Zukunft", ue: "Wenn du ankommst, ruf mich an." },
+      { id: "g4102", satz: "Cuando ___ (llegar, yo) a casa, siempre cocino.", loesung: "llego", tipps: ["llego", "llegue", "llegara"], hinweis: "Gewohnheit", ue: "Wenn ich nach Hause komme, koche ich immer." },
+      { id: "g4103", satz: "En cuanto ___ (terminar, yo), te aviso.", loesung: "termine", tipps: ["termine", "termino", "terminé"], hinweis: "Zukunft", ue: "Sobald ich fertig bin, sage ich Bescheid." },
+      { id: "g4104", satz: "Espera hasta que ___ (dejar) de llover.", loesung: "deje", tipps: ["deje", "deja", "dejó"], hinweis: "Zukunft", ue: "Warte, bis es aufhört zu regnen." },
+      { id: "g4105", satz: "Ayer, cuando ___ (salir, yo), llovía.", loesung: "salí", tipps: ["salí", "salga", "saliera"], hinweis: "Vergangenheit", ue: "Als ich gestern rausging, regnete es." }
     ]
   }
 });
@@ -116,11 +116,11 @@ LEKTION('es-es', {
       <p>Achte auf das Wörtchen <em>que</em>: Es ist das Signal dafür, dass ein neues Subjekt
       kommt — und damit für den Subjuntivo.</p>`,
     uebungen: [
-      { id: "g4201", satz: "Te lo digo para que lo ___ (saber, tú).", loesung: "sepas", tipps: ["sepas", "sabes", "saber"], hinweis: "para que → Subjuntivo", de: "Ich sage es dir, damit du es weißt." },
-      { id: "g4202", satz: "Estudio para ___ (aprobar, yo).", loesung: "aprobar", tipps: ["aprobar", "apruebe", "apruebo"], hinweis: "gleiche Person", de: "Ich lerne, um zu bestehen." },
-      { id: "g4203", satz: "Salió sin que nadie lo ___ (ver).", loesung: "viera", tipps: ["viera", "vio", "ve"], hinweis: "Vergangenheit → viera", de: "Er ging, ohne dass ihn jemand sah." },
-      { id: "g4204", satz: "Iré, a menos que ___ (llover).", loesung: "llueva", tipps: ["llueva", "llueve", "lloverá"], hinweis: "a menos que", de: "Ich gehe, es sei denn, es regnet." },
-      { id: "g4205", satz: "Antes de que te ___ (ir, tú), hablemos.", loesung: "vayas", tipps: ["vayas", "vas", "irás"], hinweis: "antes de que", de: "Bevor du gehst, lass uns reden." }
+      { id: "g4201", satz: "Te lo digo para que lo ___ (saber, tú).", loesung: "sepas", tipps: ["sepas", "sabes", "saber"], hinweis: "para que → Subjuntivo", ue: "Ich sage es dir, damit du es weißt." },
+      { id: "g4202", satz: "Estudio para ___ (aprobar, yo).", loesung: "aprobar", tipps: ["aprobar", "apruebe", "apruebo"], hinweis: "gleiche Person", ue: "Ich lerne, um zu bestehen." },
+      { id: "g4203", satz: "Salió sin que nadie lo ___ (ver).", loesung: "viera", tipps: ["viera", "vio", "ve"], hinweis: "Vergangenheit → viera", ue: "Er ging, ohne dass ihn jemand sah." },
+      { id: "g4204", satz: "Iré, a menos que ___ (llover).", loesung: "llueva", tipps: ["llueva", "llueve", "lloverá"], hinweis: "a menos que", ue: "Ich gehe, es sei denn, es regnet." },
+      { id: "g4205", satz: "Antes de que te ___ (ir, tú), hablemos.", loesung: "vayas", tipps: ["vayas", "vas", "irás"], hinweis: "antes de que", ue: "Bevor du gehst, lass uns reden." }
     ]
   }
 });
@@ -176,11 +176,11 @@ LEKTION('es-es', {
       <p><strong>Signalverben für den Subjuntivo hier:</strong> <em>buscar, necesitar,
       querer, ¿hay…?, no hay, no conozco</em>.</p>`,
     uebungen: [
-      { id: "g4301", satz: "Busco un piso que ___ (tener) terraza.", loesung: "tenga", tipps: ["tenga", "tiene", "tendrá"], hinweis: "noch nicht gefunden", de: "Ich suche eine Wohnung mit Terrasse." },
-      { id: "g4302", satz: "Tengo un piso que ___ (tener) terraza.", loesung: "tiene", tipps: ["tiene", "tenga", "tendría"], hinweis: "existiert", de: "Ich habe eine Wohnung mit Terrasse." },
-      { id: "g4303", satz: "No conozco a nadie que ___ (hablar) ruso.", loesung: "hable", tipps: ["hable", "habla", "hablará"], hinweis: "Verneinung", de: "Ich kenne niemanden, der Russisch spricht." },
-      { id: "g4304", satz: "¿Hay alguien que ___ (poder) ayudarme?", loesung: "pueda", tipps: ["pueda", "puede", "podrá"], hinweis: "Frage nach Unbekanntem", de: "Gibt es jemanden, der mir helfen kann?" },
-      { id: "g4305", satz: "Este es el hombre que ___ (vivir) al lado.", loesung: "vive", tipps: ["vive", "viva", "viviera"], hinweis: "bekannte Person", de: "Das ist der Mann, der nebenan wohnt." }
+      { id: "g4301", satz: "Busco un piso que ___ (tener) terraza.", loesung: "tenga", tipps: ["tenga", "tiene", "tendrá"], hinweis: "noch nicht gefunden", ue: "Ich suche eine Wohnung mit Terrasse." },
+      { id: "g4302", satz: "Tengo un piso que ___ (tener) terraza.", loesung: "tiene", tipps: ["tiene", "tenga", "tendría"], hinweis: "existiert", ue: "Ich habe eine Wohnung mit Terrasse." },
+      { id: "g4303", satz: "No conozco a nadie que ___ (hablar) ruso.", loesung: "hable", tipps: ["hable", "habla", "hablará"], hinweis: "Verneinung", ue: "Ich kenne niemanden, der Russisch spricht." },
+      { id: "g4304", satz: "¿Hay alguien que ___ (poder) ayudarme?", loesung: "pueda", tipps: ["pueda", "puede", "podrá"], hinweis: "Frage nach Unbekanntem", ue: "Gibt es jemanden, der mir helfen kann?" },
+      { id: "g4305", satz: "Este es el hombre que ___ (vivir) al lado.", loesung: "vive", tipps: ["vive", "viva", "viviera"], hinweis: "bekannte Person", ue: "Das ist der Mann, der nebenan wohnt." }
     ]
   }
 });
@@ -238,11 +238,11 @@ LEKTION('es-es', {
             <em>sentad + os → <strong>sentaos</strong></em> (setzt euch)</li>
       </ul>`,
     uebungen: [
-      { id: "g4401", satz: "___ (sentarse, usted) aquí, por favor.", loesung: "Siéntese", tipps: ["Siéntese", "Siéntate", "Se siente"], hinweis: "usted + angehängt", de: "Setzen Sie sich bitte hierhin." },
-      { id: "g4402", satz: "No me lo ___ (decir, tú) ahora.", loesung: "digas", tipps: ["digas", "dices", "di"], hinweis: "verneint", de: "Sag es mir jetzt nicht." },
-      { id: "g4403", satz: "___ (rellenar, usted) el formulario.", loesung: "Rellene", tipps: ["Rellene", "Rellena", "Rellenad"], hinweis: "usted", de: "Füllen Sie das Formular aus." },
-      { id: "g4404", satz: "¡___ (irse, nosotros)! (gehen wir)", loesung: "Vámonos", tipps: ["Vámonos", "Vayamosnos", "Vamos"], hinweis: "-s fällt weg", de: "Gehen wir!" },
-      { id: "g4405", satz: "___ (comer, vosotros) todo.", loesung: "Comed", tipps: ["Comed", "Coméis", "Coman"], hinweis: "-r wird -d", de: "Esst alles auf." }
+      { id: "g4401", satz: "___ (sentarse, usted) aquí, por favor.", loesung: "Siéntese", tipps: ["Siéntese", "Siéntate", "Se siente"], hinweis: "usted + angehängt", ue: "Setzen Sie sich bitte hierhin." },
+      { id: "g4402", satz: "No me lo ___ (decir, tú) ahora.", loesung: "digas", tipps: ["digas", "dices", "di"], hinweis: "verneint", ue: "Sag es mir jetzt nicht." },
+      { id: "g4403", satz: "___ (rellenar, usted) el formulario.", loesung: "Rellene", tipps: ["Rellene", "Rellena", "Rellenad"], hinweis: "usted", ue: "Füllen Sie das Formular aus." },
+      { id: "g4404", satz: "¡___ (irse, nosotros)! (gehen wir)", loesung: "Vámonos", tipps: ["Vámonos", "Vayamosnos", "Vamos"], hinweis: "-s fällt weg", ue: "Gehen wir!" },
+      { id: "g4405", satz: "___ (comer, vosotros) todo.", loesung: "Comed", tipps: ["Comed", "Coméis", "Coman"], hinweis: "-r wird -d", ue: "Esst alles auf." }
     ]
   }
 });
@@ -301,11 +301,11 @@ LEKTION('es-es', {
       Modus versteht dich jeder. Der Subjuntivo wächst mit dem Sprachgefühl — die Regeln
       sind das Gerüst, das du am Anfang brauchst und später kaum noch bemerkst.</div>`,
     uebungen: [
-      { id: "g4501", satz: "No creo que ___ (ser) buena idea.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "verneinte Feststellung", de: "Ich glaube nicht, dass das gut ist." },
-      { id: "g4502", satz: "Es evidente que ___ (necesitar, nosotros) ayuda.", loesung: "necesitamos", tipps: ["necesitamos", "necesitemos"], hinweis: "Tatsache", de: "Offensichtlich brauchen wir Hilfe." },
-      { id: "g4503", satz: "Quiero que ___ (venir, tú) conmigo.", loesung: "vengas", tipps: ["vengas", "vienes", "venir"], hinweis: "Wunsch", de: "Ich will, dass du mitkommst." },
-      { id: "g4504", satz: "Cuando ___ (llegar, tú), cenamos.", loesung: "llegues", tipps: ["llegues", "llegas", "llegaste"], hinweis: "Zukunft", de: "Wenn du ankommst, essen wir." },
-      { id: "g4505", satz: "Está claro que ___ (haber) un problema.", loesung: "hay", tipps: ["hay", "haya", "habrá"], hinweis: "Tatsache", de: "Es ist klar, dass es ein Problem gibt." }
+      { id: "g4501", satz: "No creo que ___ (ser) buena idea.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "verneinte Feststellung", ue: "Ich glaube nicht, dass das gut ist." },
+      { id: "g4502", satz: "Es evidente que ___ (necesitar, nosotros) ayuda.", loesung: "necesitamos", tipps: ["necesitamos", "necesitemos"], hinweis: "Tatsache", ue: "Offensichtlich brauchen wir Hilfe." },
+      { id: "g4503", satz: "Quiero que ___ (venir, tú) conmigo.", loesung: "vengas", tipps: ["vengas", "vienes", "venir"], hinweis: "Wunsch", ue: "Ich will, dass du mitkommst." },
+      { id: "g4504", satz: "Cuando ___ (llegar, tú), cenamos.", loesung: "llegues", tipps: ["llegues", "llegas", "llegaste"], hinweis: "Zukunft", ue: "Wenn du ankommst, essen wir." },
+      { id: "g4505", satz: "Está claro que ___ (haber) un problema.", loesung: "hay", tipps: ["hay", "haya", "habrá"], hinweis: "Tatsache", ue: "Es ist klar, dass es ein Problem gibt." }
     ]
   }
 });
@@ -364,11 +364,11 @@ LEKTION('es-es', {
       (es sei denn) — diese verlangen allerdings den Subjuntivo, weil sie nicht
       <em>si</em> sind.</p>`,
     uebungen: [
-      { id: "g4601", satz: "Si ___ (tener, yo) tiempo, iré contigo.", loesung: "tengo", tipps: ["tengo", "tenga", "tendré"], hinweis: "nach si: Presente!", de: "Wenn ich Zeit habe, komme ich mit." },
-      { id: "g4602", satz: "Si ___ (llover), nos quedamos en casa.", loesung: "llueve", tipps: ["llueve", "llueva", "lloverá"], hinweis: "nach si: Presente!", de: "Wenn es regnet, bleiben wir zu Hause." },
-      { id: "g4603", satz: "Si me llamas, te lo ___ (explicar, yo).", loesung: "explico", tipps: ["explico", "explique", "explicaría"], hinweis: "Hauptsatz Presente", de: "Wenn du anrufst, erkläre ich es dir." },
-      { id: "g4604", satz: "Si no vienes, ___ (avisar, tú) por favor.", loesung: "avísame", tipps: ["avísame", "avises", "avisas"], hinweis: "Imperativ + Pronomen", de: "Wenn du nicht kommst, sag mir Bescheid." },
-      { id: "g4605", satz: "Si ___ (poder, nosotros), lo haremos hoy.", loesung: "podemos", tipps: ["podemos", "podamos", "podremos"], hinweis: "nach si: Presente!", de: "Wenn wir können, machen wir es heute." }
+      { id: "g4601", satz: "Si ___ (tener, yo) tiempo, iré contigo.", loesung: "tengo", tipps: ["tengo", "tenga", "tendré"], hinweis: "nach si: Presente!", ue: "Wenn ich Zeit habe, komme ich mit." },
+      { id: "g4602", satz: "Si ___ (llover), nos quedamos en casa.", loesung: "llueve", tipps: ["llueve", "llueva", "lloverá"], hinweis: "nach si: Presente!", ue: "Wenn es regnet, bleiben wir zu Hause." },
+      { id: "g4603", satz: "Si me llamas, te lo ___ (explicar, yo).", loesung: "explico", tipps: ["explico", "explique", "explicaría"], hinweis: "Hauptsatz Presente", ue: "Wenn du anrufst, erkläre ich es dir." },
+      { id: "g4604", satz: "Si no vienes, ___ (avisar, tú) por favor.", loesung: "avísame", tipps: ["avísame", "avises", "avisas"], hinweis: "Imperativ + Pronomen", ue: "Wenn du nicht kommst, sag mir Bescheid." },
+      { id: "g4605", satz: "Si ___ (poder, nosotros), lo haremos hoy.", loesung: "podemos", tipps: ["podemos", "podamos", "podremos"], hinweis: "nach si: Presente!", ue: "Wenn wir können, machen wir es heute." }
     ]
   }
 });
@@ -425,11 +425,11 @@ LEKTION('es-es', {
       <em>aún</em> (mit Akzent) = noch (= <em>todavía</em>)<br>
       <em>Aún no ha llegado.</em> — Er ist noch nicht angekommen.</div>`,
     uebungen: [
-      { id: "g4701", satz: "Aunque ___ (llover) ahora, salgo igual.", loesung: "llueve", tipps: ["llueve", "llueva", "lloverá"], hinweis: "Tatsache", de: "Obwohl es jetzt regnet, gehe ich trotzdem." },
-      { id: "g4702", satz: "Aunque ___ (llover) mañana, iré.", loesung: "llueva", tipps: ["llueva", "llueve", "lloverá"], hinweis: "noch offen", de: "Auch wenn es morgen regnen sollte, gehe ich." },
-      { id: "g4703", satz: "Por mucho que ___ (estudiar, yo), olvido cosas.", loesung: "estudie", tipps: ["estudie", "estudio", "estudiaré"], hinweis: "por mucho que", de: "So viel ich auch lerne, ich vergesse Dinge." },
-      { id: "g4704", satz: "A pesar ___ que llovía, salimos.", loesung: "de", tipps: ["de", "a", "en"], hinweis: "feste Wendung", de: "Obwohl es regnete, gingen wir raus." },
-      { id: "g4705", satz: "___ no ha llegado. (noch nicht)", loesung: "Aún", tipps: ["Aún", "Aun", "Ya"], hinweis: "noch = mit Akzent", de: "Er ist noch nicht angekommen." }
+      { id: "g4701", satz: "Aunque ___ (llover) ahora, salgo igual.", loesung: "llueve", tipps: ["llueve", "llueva", "lloverá"], hinweis: "Tatsache", ue: "Obwohl es jetzt regnet, gehe ich trotzdem." },
+      { id: "g4702", satz: "Aunque ___ (llover) mañana, iré.", loesung: "llueva", tipps: ["llueva", "llueve", "lloverá"], hinweis: "noch offen", ue: "Auch wenn es morgen regnen sollte, gehe ich." },
+      { id: "g4703", satz: "Por mucho que ___ (estudiar, yo), olvido cosas.", loesung: "estudie", tipps: ["estudie", "estudio", "estudiaré"], hinweis: "por mucho que", ue: "So viel ich auch lerne, ich vergesse Dinge." },
+      { id: "g4704", satz: "A pesar ___ que llovía, salimos.", loesung: "de", tipps: ["de", "a", "en"], hinweis: "feste Wendung", ue: "Obwohl es regnete, gingen wir raus." },
+      { id: "g4705", satz: "___ no ha llegado. (noch nicht)", loesung: "Aún", tipps: ["Aún", "Aun", "Ya"], hinweis: "noch = mit Akzent", ue: "Er ist noch nicht angekommen." }
     ]
   }
 });
@@ -490,11 +490,11 @@ LEKTION('es-es', {
       <p>Genau so baut man eine B1-Prüfungsantwort auf: Einleitung, zwei Argumente,
       ein Einwand, ein Beispiel, ein Fazit.</p>`,
     uebungen: [
-      { id: "g4801", satz: "Es caro. ___, lo compro. (jedoch)", loesung: "Sin embargo", tipps: ["Sin embargo", "Por lo tanto", "Además"], hinweis: "Gegensatz", de: "Es ist teuer. Dennoch kaufe ich es." },
-      { id: "g4802", satz: "Llovía. ___, cancelamos. (daher)", loesung: "Por lo tanto", tipps: ["Por lo tanto", "Sin embargo", "Es decir"], hinweis: "Folge", de: "Es regnete. Daher sagten wir ab." },
-      { id: "g4803", satz: "___, quiero agradecer su ayuda. (zunächst)", loesung: "En primer lugar", tipps: ["En primer lugar", "Por último", "De hecho"], hinweis: "Anfang", de: "Zunächst möchte ich für Ihre Hilfe danken." },
-      { id: "g4804", satz: "___, la situación ha mejorado. (zusammenfassend)", loesung: "En resumen", tipps: ["En resumen", "Además", "En cambio"], hinweis: "Abschluss", de: "Zusammenfassend hat sich die Lage verbessert." },
-      { id: "g4805", satz: "Es necesario que todos ___ (participar).", loesung: "participen", tipps: ["participen", "participan", "participar"], hinweis: "es necesario que", de: "Es ist nötig, dass alle mitmachen." }
+      { id: "g4801", satz: "Es caro. ___, lo compro. (jedoch)", loesung: "Sin embargo", tipps: ["Sin embargo", "Por lo tanto", "Además"], hinweis: "Gegensatz", ue: "Es ist teuer. Dennoch kaufe ich es." },
+      { id: "g4802", satz: "Llovía. ___, cancelamos. (daher)", loesung: "Por lo tanto", tipps: ["Por lo tanto", "Sin embargo", "Es decir"], hinweis: "Folge", ue: "Es regnete. Daher sagten wir ab." },
+      { id: "g4803", satz: "___, quiero agradecer su ayuda. (zunächst)", loesung: "En primer lugar", tipps: ["En primer lugar", "Por último", "De hecho"], hinweis: "Anfang", ue: "Zunächst möchte ich für Ihre Hilfe danken." },
+      { id: "g4804", satz: "___, la situación ha mejorado. (zusammenfassend)", loesung: "En resumen", tipps: ["En resumen", "Además", "En cambio"], hinweis: "Abschluss", ue: "Zusammenfassend hat sich die Lage verbessert." },
+      { id: "g4805", satz: "Es necesario que todos ___ (participar).", loesung: "participen", tipps: ["participen", "participan", "participar"], hinweis: "es necesario que", ue: "Es ist nötig, dass alle mitmachen." }
     ]
   }
 });
@@ -555,11 +555,11 @@ LEKTION('es-es', {
       <em><strong>Lo</strong> mejor de todo fue la comida.</em> — Das Beste war das Essen.<br>
       Diese Wendung gibt es im Deutschen nicht in dieser Form — sie klingt sehr idiomatisch.</div>`,
     uebungen: [
-      { id: "g4901", satz: "La comida estaba ___ (rico + ísimo).", loesung: "riquísima", tipps: ["riquísima", "ricísima", "riquísimo"], hinweis: "c → qu, weiblich", de: "Das Essen war köstlich." },
-      { id: "g4902", satz: "___ más practico, más aprendo.", loesung: "Cuanto", tipps: ["Cuanto", "Cuando", "Tanto"], hinweis: "je … desto", de: "Je mehr ich übe, desto mehr lerne ich." },
-      { id: "g4903", satz: "___ difícil es empezar.", loesung: "Lo", tipps: ["Lo", "El", "La"], hinweis: "Adjektiv wird Substantiv", de: "Das Schwierige ist der Anfang." },
-      { id: "g4904", satz: "Es un libro ___ (interesante + ísimo).", loesung: "interesantísimo", tipps: ["interesantísimo", "interesantemente"], hinweis: "Endvokal weg", de: "Das ist ein hochinteressantes Buch." },
-      { id: "g4905", satz: "No es tan difícil ___ parece.", loesung: "como", tipps: ["como", "que", "de"], hinweis: "tan … ?", de: "Es ist nicht so schwer, wie es scheint." }
+      { id: "g4901", satz: "La comida estaba ___ (rico + ísimo).", loesung: "riquísima", tipps: ["riquísima", "ricísima", "riquísimo"], hinweis: "c → qu, weiblich", ue: "Das Essen war köstlich." },
+      { id: "g4902", satz: "___ más practico, más aprendo.", loesung: "Cuanto", tipps: ["Cuanto", "Cuando", "Tanto"], hinweis: "je … desto", ue: "Je mehr ich übe, desto mehr lerne ich." },
+      { id: "g4903", satz: "___ difícil es empezar.", loesung: "Lo", tipps: ["Lo", "El", "La"], hinweis: "Adjektiv wird Substantiv", ue: "Das Schwierige ist der Anfang." },
+      { id: "g4904", satz: "Es un libro ___ (interesante + ísimo).", loesung: "interesantísimo", tipps: ["interesantísimo", "interesantemente"], hinweis: "Endvokal weg", ue: "Das ist ein hochinteressantes Buch." },
+      { id: "g4905", satz: "No es tan difícil ___ parece.", loesung: "como", tipps: ["como", "que", "de"], hinweis: "tan … ?", ue: "Es ist nicht so schwer, wie es scheint." }
     ]
   }
 });
@@ -615,11 +615,11 @@ LEKTION('es-es', {
       <em>al final</em> (schließlich), <em>desde entonces</em> (seitdem),
       <em>de repente</em> (plötzlich).</p>`,
     uebungen: [
-      { id: "g5001", satz: "___ (ser) de noche y llovía.", loesung: "Era", tipps: ["Era", "Fue", "Ha sido"], hinweis: "Kulisse", de: "Es war Nacht und es regnete." },
-      { id: "g5002", satz: "___ (olvidar, yo) el paraguas antes de salir.", loesung: "Había olvidado", tipps: ["Había olvidado", "Olvidé", "He olvidado"], hinweis: "davor geschehen", de: "Ich hatte den Schirm vergessen." },
-      { id: "g5003", satz: "Entonces ___ (coger, yo) un taxi.", loesung: "cogí", tipps: ["cogí", "cogía", "he cogido"], hinweis: "Handlung", de: "Dann nahm ich ein Taxi." },
-      { id: "g5004", satz: "Desde entonces no lo ___ (ver, yo).", loesung: "he visto", tipps: ["he visto", "vi", "veía"], hinweis: "Bezug zu heute", de: "Seitdem habe ich ihn nicht gesehen." },
-      { id: "g5005", satz: "Mientras ___ (esperar, yo), vi a un amigo.", loesung: "esperaba", tipps: ["esperaba", "esperé", "he esperado"], hinweis: "mientras → Kulisse", de: "Während ich wartete, sah ich einen Freund." }
+      { id: "g5001", satz: "___ (ser) de noche y llovía.", loesung: "Era", tipps: ["Era", "Fue", "Ha sido"], hinweis: "Kulisse", ue: "Es war Nacht und es regnete." },
+      { id: "g5002", satz: "___ (olvidar, yo) el paraguas antes de salir.", loesung: "Había olvidado", tipps: ["Había olvidado", "Olvidé", "He olvidado"], hinweis: "davor geschehen", ue: "Ich hatte den Schirm vergessen." },
+      { id: "g5003", satz: "Entonces ___ (coger, yo) un taxi.", loesung: "cogí", tipps: ["cogí", "cogía", "he cogido"], hinweis: "Handlung", ue: "Dann nahm ich ein Taxi." },
+      { id: "g5004", satz: "Desde entonces no lo ___ (ver, yo).", loesung: "he visto", tipps: ["he visto", "vi", "veía"], hinweis: "Bezug zu heute", ue: "Seitdem habe ich ihn nicht gesehen." },
+      { id: "g5005", satz: "Mientras ___ (esperar, yo), vi a un amigo.", loesung: "esperaba", tipps: ["esperaba", "esperé", "he esperado"], hinweis: "mientras → Kulisse", ue: "Während ich wartete, sah ich einen Freund." }
     ]
   }
 });

@@ -52,11 +52,11 @@ LEKTION('es-es', {
       wofür Deutsch das Wort „gerade" braucht — und steht immer im Präsens, obwohl es
       Vergangenheit ausdrückt.</div>`,
     uebungen: [
-      { id: "g2101", satz: "Yo ___ a estudiar esta tarde.", loesung: "voy", tipps: ["voy", "vas", "va"], hinweis: "yo → ?", de: "Ich werde heute Nachmittag lernen." },
-      { id: "g2102", satz: "Nosotros vamos ___ viajar en julio.", loesung: "a", tipps: ["a", "de", "que"], hinweis: "das kleine Wörtchen", de: "Wir werden im Juli reisen." },
-      { id: "g2103", satz: "___ de llegar. (ich, gerade eben)", loesung: "Acabo", tipps: ["Acabo", "Voy", "Suelo"], hinweis: "gerade eben", de: "Ich bin gerade angekommen." },
-      { id: "g2104", satz: "___ cenar muy tarde. (ich pflege)", loesung: "Suelo", tipps: ["Suelo", "Voy", "Acabo"], hinweis: "gewohnheitsmäßig", de: "Ich esse gewöhnlich sehr spät." },
-      { id: "g2105", satz: "Ella ___ a llamarte mañana.", loesung: "va", tipps: ["va", "van", "vas"], hinweis: "ella → ?", de: "Sie wird dich morgen anrufen." }
+      { id: "g2101", satz: "Yo ___ a estudiar esta tarde.", loesung: "voy", tipps: ["voy", "vas", "va"], hinweis: "yo → ?", ue: "Ich werde heute Nachmittag lernen." },
+      { id: "g2102", satz: "Nosotros vamos ___ viajar en julio.", loesung: "a", tipps: ["a", "de", "que"], hinweis: "das kleine Wörtchen", ue: "Wir werden im Juli reisen." },
+      { id: "g2103", satz: "___ de llegar. (ich, gerade eben)", loesung: "Acabo", tipps: ["Acabo", "Voy", "Suelo"], hinweis: "gerade eben", ue: "Ich bin gerade angekommen." },
+      { id: "g2104", satz: "___ cenar muy tarde. (ich pflege)", loesung: "Suelo", tipps: ["Suelo", "Voy", "Acabo"], hinweis: "gewohnheitsmäßig", ue: "Ich esse gewöhnlich sehr spät." },
+      { id: "g2105", satz: "Ella ___ a llamarte mañana.", loesung: "va", tipps: ["va", "van", "vas"], hinweis: "ella → ?", ue: "Sie wird dich morgen anrufen." }
     ]
   }
 });
@@ -114,11 +114,11 @@ LEKTION('es-es', {
       <em>ir a</em> für konkrete Pläne. Das Futuro klingt förmlicher und passt zu
       Vorhersagen, Versprechen und Vermutungen.</p>`,
     uebungen: [
-      { id: "g2201", satz: "Mañana ___ (hablar, yo) con el jefe.", loesung: "hablaré", tipps: ["hablaré", "hablará", "hablaría"], hinweis: "yo → -é", de: "Morgen werde ich mit dem Chef sprechen." },
-      { id: "g2202", satz: "¿Qué ___ (hacer, tú) mañana?", loesung: "harás", tipps: ["harás", "hacerás", "harías"], hinweis: "Stamm har-", de: "Was wirst du morgen machen?" },
-      { id: "g2203", satz: "Nosotros ___ (tener) que esperar.", loesung: "tendremos", tipps: ["tendremos", "teneremos"], hinweis: "Stamm tendr-", de: "Wir werden warten müssen." },
-      { id: "g2204", satz: "___ (ser) las tres, más o menos.", loesung: "Serán", tipps: ["Serán", "Son", "Fueron"], hinweis: "Vermutung", de: "Es wird ungefähr drei sein." },
-      { id: "g2205", satz: "Ellos ___ (venir) el sábado.", loesung: "vendrán", tipps: ["vendrán", "venirán", "vinieron"], hinweis: "Stamm vendr-", de: "Sie werden am Samstag kommen." }
+      { id: "g2201", satz: "Mañana ___ (hablar, yo) con el jefe.", loesung: "hablaré", tipps: ["hablaré", "hablará", "hablaría"], hinweis: "yo → -é", ue: "Morgen werde ich mit dem Chef sprechen." },
+      { id: "g2202", satz: "¿Qué ___ (hacer, tú) mañana?", loesung: "harás", tipps: ["harás", "hacerás", "harías"], hinweis: "Stamm har-", ue: "Was wirst du morgen machen?" },
+      { id: "g2203", satz: "Nosotros ___ (tener) que esperar.", loesung: "tendremos", tipps: ["tendremos", "teneremos"], hinweis: "Stamm tendr-", ue: "Wir werden warten müssen." },
+      { id: "g2204", satz: "___ (ser) las tres, más o menos.", loesung: "Serán", tipps: ["Serán", "Son", "Fueron"], hinweis: "Vermutung", ue: "Es wird ungefähr drei sein." },
+      { id: "g2205", satz: "Ellos ___ (venir) el sábado.", loesung: "vendrán", tipps: ["vendrán", "venirán", "vinieron"], hinweis: "Stamm vendr-", ue: "Sie werden am Samstag kommen." }
     ]
   }
 });
@@ -174,11 +174,11 @@ LEKTION('es-es', {
       <p><strong>Feste Wendungen mit para:</strong> <em>para siempre</em> (für immer),
       <em>para nada</em> (überhaupt nicht), <em>estar para</em> (kurz davor sein).</p>`,
     uebungen: [
-      { id: "g2301", satz: "Este regalo es ___ ti.", loesung: "para", tipps: ["para", "por"], hinweis: "Empfänger", de: "Dieses Geschenk ist für dich." },
-      { id: "g2302", satz: "Gracias ___ tu ayuda.", loesung: "por", tipps: ["por", "para"], hinweis: "Grund", de: "Danke für deine Hilfe." },
-      { id: "g2303", satz: "Estudio mucho ___ aprobar el examen.", loesung: "para", tipps: ["para", "por"], hinweis: "Zweck", de: "Ich lerne viel, um die Prüfung zu bestehen." },
-      { id: "g2304", satz: "Lo compré ___ veinte euros.", loesung: "por", tipps: ["por", "para"], hinweis: "Preis", de: "Ich kaufte es für zwanzig Euro." },
-      { id: "g2305", satz: "El informe es ___ el viernes.", loesung: "para", tipps: ["para", "por"], hinweis: "Frist", de: "Der Bericht ist für Freitag." }
+      { id: "g2301", satz: "Este regalo es ___ ti.", loesung: "para", tipps: ["para", "por"], hinweis: "Empfänger", ue: "Dieses Geschenk ist für dich." },
+      { id: "g2302", satz: "Gracias ___ tu ayuda.", loesung: "por", tipps: ["por", "para"], hinweis: "Grund", ue: "Danke für deine Hilfe." },
+      { id: "g2303", satz: "Estudio mucho ___ aprobar el examen.", loesung: "para", tipps: ["para", "por"], hinweis: "Zweck", ue: "Ich lerne viel, um die Prüfung zu bestehen." },
+      { id: "g2304", satz: "Lo compré ___ veinte euros.", loesung: "por", tipps: ["por", "para"], hinweis: "Preis", ue: "Ich kaufte es für zwanzig Euro." },
+      { id: "g2305", satz: "El informe es ___ el viernes.", loesung: "para", tipps: ["para", "por"], hinweis: "Frist", ue: "Der Bericht ist für Freitag." }
     ]
   }
 });
@@ -232,11 +232,11 @@ LEKTION('es-es', {
       </ul>
       <p>Verneint (<em>No creo que…</em>) ändert sich das — dazu kommen wir ab Tag 45.</p>`,
     uebungen: [
-      { id: "g2401", satz: "No salgo ___ está lloviendo.", loesung: "porque", tipps: ["porque", "por qué", "aunque"], hinweis: "weil", de: "Ich gehe nicht raus, weil es regnet." },
-      { id: "g2402", satz: "¿___ no vienes con nosotros?", loesung: "Por qué", tipps: ["Por qué", "Porque", "Como"], hinweis: "Frage: warum", de: "Warum kommst du nicht mit?" },
-      { id: "g2403", satz: "___ es difícil, lo intento.", loesung: "Aunque", tipps: ["Aunque", "Porque", "Así que"], hinweis: "obwohl", de: "Obwohl es schwierig ist, versuche ich es." },
-      { id: "g2404", satz: "Estoy cansado, ___ me voy a casa.", loesung: "así que", tipps: ["así que", "porque", "aunque"], hinweis: "Folge", de: "Ich bin müde, also gehe ich nach Hause." },
-      { id: "g2405", satz: "Es caro; ___, lo compro.", loesung: "sin embargo", tipps: ["sin embargo", "porque", "además"], hinweis: "Gegensatz", de: "Es ist teuer; trotzdem kaufe ich es." }
+      { id: "g2401", satz: "No salgo ___ está lloviendo.", loesung: "porque", tipps: ["porque", "por qué", "aunque"], hinweis: "weil", ue: "Ich gehe nicht raus, weil es regnet." },
+      { id: "g2402", satz: "¿___ no vienes con nosotros?", loesung: "Por qué", tipps: ["Por qué", "Porque", "Como"], hinweis: "Frage: warum", ue: "Warum kommst du nicht mit?" },
+      { id: "g2403", satz: "___ es difícil, lo intento.", loesung: "Aunque", tipps: ["Aunque", "Porque", "Así que"], hinweis: "obwohl", ue: "Obwohl es schwierig ist, versuche ich es." },
+      { id: "g2404", satz: "Estoy cansado, ___ me voy a casa.", loesung: "así que", tipps: ["así que", "porque", "aunque"], hinweis: "Folge", ue: "Ich bin müde, also gehe ich nach Hause." },
+      { id: "g2405", satz: "Es caro; ___, lo compro.", loesung: "sin embargo", tipps: ["sin embargo", "porque", "además"], hinweis: "Gegensatz", ue: "Es ist teuer; trotzdem kaufe ich es." }
     ]
   }
 });
@@ -296,11 +296,11 @@ LEKTION('es-es', {
       <p><em>cuyo</em> richtet sich nach dem <strong>Besitz</strong>, nicht nach dem Besitzer:
       <em>el hombre <strong>cuya</strong> hija conozco</em> (hija ist weiblich).</p>`,
     uebungen: [
-      { id: "g2501", satz: "El libro ___ leí era muy bueno.", loesung: "que", tipps: ["que", "quien", "donde"], hinweis: "Standardfall", de: "Das Buch, das ich las, war sehr gut." },
-      { id: "g2502", satz: "Esta es la ciudad ___ nací.", loesung: "donde", tipps: ["donde", "que", "quien"], hinweis: "Ort", de: "Das ist die Stadt, wo ich geboren wurde." },
-      { id: "g2503", satz: "La mujer con ___ hablé es médica.", loesung: "quien", tipps: ["quien", "que", "cuyo"], hinweis: "Person nach Präposition", de: "Die Frau, mit der ich sprach, ist Ärztin." },
-      { id: "g2504", satz: "El autor ___ novela leí es español.", loesung: "cuya", tipps: ["cuya", "cuyo", "que"], hinweis: "la novela = weiblich", de: "Der Autor, dessen Roman ich las, ist Spanier." },
-      { id: "g2505", satz: "Los amigos ___ vinieron ayer son de Perú.", loesung: "que", tipps: ["que", "quienes", "cuyos"], hinweis: "ohne Präposition", de: "Die Freunde, die gestern kamen, sind aus Peru." }
+      { id: "g2501", satz: "El libro ___ leí era muy bueno.", loesung: "que", tipps: ["que", "quien", "donde"], hinweis: "Standardfall", ue: "Das Buch, das ich las, war sehr gut." },
+      { id: "g2502", satz: "Esta es la ciudad ___ nací.", loesung: "donde", tipps: ["donde", "que", "quien"], hinweis: "Ort", ue: "Das ist die Stadt, wo ich geboren wurde." },
+      { id: "g2503", satz: "La mujer con ___ hablé es médica.", loesung: "quien", tipps: ["quien", "que", "cuyo"], hinweis: "Person nach Präposition", ue: "Die Frau, mit der ich sprach, ist Ärztin." },
+      { id: "g2504", satz: "El autor ___ novela leí es español.", loesung: "cuya", tipps: ["cuya", "cuyo", "que"], hinweis: "la novela = weiblich", ue: "Der Autor, dessen Roman ich las, ist Spanier." },
+      { id: "g2505", satz: "Los amigos ___ vinieron ayer son de Perú.", loesung: "que", tipps: ["que", "quienes", "cuyos"], hinweis: "ohne Präposition", ue: "Die Freunde, die gestern kamen, sind aus Peru." }
     ]
   }
 });
@@ -358,11 +358,11 @@ LEKTION('es-es', {
       <p><strong>Die Gegenstücke:</strong> <em>alguien</em> (jemand), <em>algo</em> (etwas),
       <em>siempre</em> (immer), <em>también</em> (auch), <em>algún</em> (irgendein).</p>`,
     uebungen: [
-      { id: "g2601", satz: "___ veo a nadie.", loesung: "No", tipps: ["No", "Nunca", "Nada"], hinweis: "nadie steht hinten", de: "Ich sehe niemanden." },
-      { id: "g2602", satz: "___ viene nadie los domingos.", loesung: "No", tipps: ["No", "Nadie", "Tampoco"], hinweis: "nadie steht hinten", de: "Sonntags kommt niemand." },
-      { id: "g2603", satz: "No tengo ___ problema.", loesung: "ningún", tipps: ["ningún", "ninguno", "nada"], hinweis: "vor Substantiv", de: "Ich habe kein Problem." },
-      { id: "g2604", satz: "Yo ___ quiero ir. (auch nicht)", loesung: "tampoco", tipps: ["tampoco", "también", "nunca"], hinweis: "auch nicht", de: "Ich will auch nicht hingehen." },
-      { id: "g2605", satz: "No quiero ___ café ___ té.", loesung: "ni", tipps: ["ni", "no", "o"], hinweis: "weder … noch", de: "Ich möchte weder Kaffee noch Tee." }
+      { id: "g2601", satz: "___ veo a nadie.", loesung: "No", tipps: ["No", "Nunca", "Nada"], hinweis: "nadie steht hinten", ue: "Ich sehe niemanden." },
+      { id: "g2602", satz: "___ viene nadie los domingos.", loesung: "No", tipps: ["No", "Nadie", "Tampoco"], hinweis: "nadie steht hinten", ue: "Sonntags kommt niemand." },
+      { id: "g2603", satz: "No tengo ___ problema.", loesung: "ningún", tipps: ["ningún", "ninguno", "nada"], hinweis: "vor Substantiv", ue: "Ich habe kein Problem." },
+      { id: "g2604", satz: "Yo ___ quiero ir. (auch nicht)", loesung: "tampoco", tipps: ["tampoco", "también", "nunca"], hinweis: "auch nicht", ue: "Ich will auch nicht hingehen." },
+      { id: "g2605", satz: "No quiero ___ café ___ té.", loesung: "ni", tipps: ["ni", "no", "o"], hinweis: "weder … noch", ue: "Ich möchte weder Kaffee noch Tee." }
     ]
   }
 });
@@ -418,11 +418,11 @@ LEKTION('es-es', {
         <li>mit <em>hay</em>: <em>hay niebla / tormenta / nubes</em></li>
       </ul>`,
     uebungen: [
-      { id: "g2701", satz: "Habla muy ___ (lento).", loesung: "lentamente", tipps: ["lentamente", "lentomente", "lento"], hinweis: "weibl. Form + mente", de: "Er spricht sehr langsam." },
-      { id: "g2702", satz: "Lo hizo ___ (fácil).", loesung: "fácilmente", tipps: ["fácilmente", "fácilamente"], hinweis: "endet nicht auf -o", de: "Er machte es leicht." },
-      { id: "g2703", satz: "Hoy ___ mucho frío.", loesung: "hace", tipps: ["hace", "está", "hay"], hinweis: "frío → welches Verb?", de: "Heute ist es sehr kalt." },
-      { id: "g2704", satz: "El cielo ___ nublado.", loesung: "está", tipps: ["está", "hace", "hay"], hinweis: "nublado → welches Verb?", de: "Der Himmel ist bewölkt." },
-      { id: "g2705", satz: "Ella canta muy ___. (gut)", loesung: "bien", tipps: ["bien", "buena", "bueno"], hinweis: "Handlung → Adverb", de: "Sie singt sehr gut." }
+      { id: "g2701", satz: "Habla muy ___ (lento).", loesung: "lentamente", tipps: ["lentamente", "lentomente", "lento"], hinweis: "weibl. Form + mente", ue: "Er spricht sehr langsam." },
+      { id: "g2702", satz: "Lo hizo ___ (fácil).", loesung: "fácilmente", tipps: ["fácilmente", "fácilamente"], hinweis: "endet nicht auf -o", ue: "Er machte es leicht." },
+      { id: "g2703", satz: "Hoy ___ mucho frío.", loesung: "hace", tipps: ["hace", "está", "hay"], hinweis: "frío → welches Verb?", ue: "Heute ist es sehr kalt." },
+      { id: "g2704", satz: "El cielo ___ nublado.", loesung: "está", tipps: ["está", "hace", "hay"], hinweis: "nublado → welches Verb?", ue: "Der Himmel ist bewölkt." },
+      { id: "g2705", satz: "Ella canta muy ___. (gut)", loesung: "bien", tipps: ["bien", "buena", "bueno"], hinweis: "Handlung → Adverb", ue: "Sie singt sehr gut." }
     ]
   }
 });
@@ -478,11 +478,11 @@ LEKTION('es-es', {
       <em>¿Puedes decirme…?</em>, <em>Quiero saber…</em>, <em>No entiendo…</em>,
       <em>Dime…</em>.</p>`,
     uebungen: [
-      { id: "g2801", satz: "No sé ___ está mi móvil.", loesung: "dónde", tipps: ["dónde", "donde", "que"], hinweis: "Fragewort mit Akzent", de: "Ich weiß nicht, wo mein Handy ist." },
-      { id: "g2802", satz: "Me pregunto ___ vendrá mañana.", loesung: "si", tipps: ["si", "sí", "que"], hinweis: "Ja-/Nein-Frage", de: "Ich frage mich, ob er morgen kommt." },
-      { id: "g2803", satz: "Dime ___ cuesta el billete.", loesung: "cuánto", tipps: ["cuánto", "cuanto", "qué"], hinweis: "wie viel", de: "Sag mir, was die Fahrkarte kostet." },
-      { id: "g2804", satz: "No entiendo ___ quiere decir.", loesung: "qué", tipps: ["qué", "que", "cuál"], hinweis: "was", de: "Ich verstehe nicht, was er sagen will." },
-      { id: "g2805", satz: "¿Sabes ___ llega el tren?", loesung: "cuándo", tipps: ["cuándo", "cuando", "dónde"], hinweis: "wann", de: "Weißt du, wann der Zug ankommt?" }
+      { id: "g2801", satz: "No sé ___ está mi móvil.", loesung: "dónde", tipps: ["dónde", "donde", "que"], hinweis: "Fragewort mit Akzent", ue: "Ich weiß nicht, wo mein Handy ist." },
+      { id: "g2802", satz: "Me pregunto ___ vendrá mañana.", loesung: "si", tipps: ["si", "sí", "que"], hinweis: "Ja-/Nein-Frage", ue: "Ich frage mich, ob er morgen kommt." },
+      { id: "g2803", satz: "Dime ___ cuesta el billete.", loesung: "cuánto", tipps: ["cuánto", "cuanto", "qué"], hinweis: "wie viel", ue: "Sag mir, was die Fahrkarte kostet." },
+      { id: "g2804", satz: "No entiendo ___ quiere decir.", loesung: "qué", tipps: ["qué", "que", "cuál"], hinweis: "was", ue: "Ich verstehe nicht, was er sagen will." },
+      { id: "g2805", satz: "¿Sabes ___ llega el tren?", loesung: "cuándo", tipps: ["cuándo", "cuando", "dónde"], hinweis: "wann", ue: "Weißt du, wann der Zug ankommt?" }
     ]
   }
 });
@@ -536,11 +536,11 @@ LEKTION('es-es', {
       3. statt <em>le</em>: <em><strong>Se</strong> lo doy.</em> (ich gebe es ihm, Tag 8)<br>
       Welches gemeint ist, verrät immer der Satzbau.</div>`,
     uebungen: [
-      { id: "g2901", satz: "Aquí ___ come muy bien.", loesung: "se", tipps: ["se", "te", "uno"], hinweis: "man", de: "Hier isst man sehr gut." },
-      { id: "g2902", satz: "___ venden pisos aquí.", loesung: "Se", tipps: ["Se", "Son", "Hay"], hinweis: "man verkauft", de: "Hier werden Wohnungen verkauft." },
-      { id: "g2903", satz: "Se ___ (necesitar) dos huevos.", loesung: "necesitan", tipps: ["necesitan", "necesita"], hinweis: "dos huevos = Mehrzahl", de: "Man braucht zwei Eier." },
-      { id: "g2904", satz: "Se ___ (hablar) español aquí.", loesung: "habla", tipps: ["habla", "hablan"], hinweis: "español = Einzahl", de: "Hier spricht man Spanisch." },
-      { id: "g2905", satz: "¿Cómo ___ dice esto en español?", loesung: "se", tipps: ["se", "te", "lo"], hinweis: "wie sagt man", de: "Wie sagt man das auf Spanisch?" }
+      { id: "g2901", satz: "Aquí ___ come muy bien.", loesung: "se", tipps: ["se", "te", "uno"], hinweis: "man", ue: "Hier isst man sehr gut." },
+      { id: "g2902", satz: "___ venden pisos aquí.", loesung: "Se", tipps: ["Se", "Son", "Hay"], hinweis: "man verkauft", ue: "Hier werden Wohnungen verkauft." },
+      { id: "g2903", satz: "Se ___ (necesitar) dos huevos.", loesung: "necesitan", tipps: ["necesitan", "necesita"], hinweis: "dos huevos = Mehrzahl", ue: "Man braucht zwei Eier." },
+      { id: "g2904", satz: "Se ___ (hablar) español aquí.", loesung: "habla", tipps: ["habla", "hablan"], hinweis: "español = Einzahl", ue: "Hier spricht man Spanisch." },
+      { id: "g2905", satz: "¿Cómo ___ dice esto en español?", loesung: "se", tipps: ["se", "te", "lo"], hinweis: "wie sagt man", ue: "Wie sagt man das auf Spanisch?" }
     ]
   }
 });
@@ -589,11 +589,11 @@ LEKTION('es-es', {
       <strong>Subjuntivo</strong>. Der wirkt erst fremd, folgt aber klaren Regeln — und
       ohne ihn klingt Spanisch nie ganz erwachsen.</p>`,
     uebungen: [
-      { id: "g3001", satz: "Hoy ___ (trabajar, yo) mucho.", loesung: "he trabajado", tipps: ["he trabajado", "trabajé", "trabajaba"], hinweis: "hoy = läuft noch", de: "Heute habe ich viel gearbeitet." },
-      { id: "g3002", satz: "Ayer ___ (trabajar, yo) mucho.", loesung: "trabajé", tipps: ["trabajé", "he trabajado", "trabajaba"], hinweis: "ayer = abgeschlossen", de: "Gestern arbeitete ich viel." },
-      { id: "g3003", satz: "Antes ___ (trabajar, yo) los sábados.", loesung: "trabajaba", tipps: ["trabajaba", "trabajé", "trabajo"], hinweis: "antes = Gewohnheit", de: "Früher arbeitete ich samstags." },
-      { id: "g3004", satz: "Ahora mismo ___ (estar, yo) trabajando.", loesung: "estoy", tipps: ["estoy", "soy", "estaba"], hinweis: "gerade jetzt", de: "Gerade jetzt arbeite ich." },
-      { id: "g3005", satz: "Mañana ___ (ir, yo) a trabajar temprano.", loesung: "voy", tipps: ["voy", "iré", "fui"], hinweis: "konkreter Plan", de: "Morgen werde ich früh arbeiten gehen." }
+      { id: "g3001", satz: "Hoy ___ (trabajar, yo) mucho.", loesung: "he trabajado", tipps: ["he trabajado", "trabajé", "trabajaba"], hinweis: "hoy = läuft noch", ue: "Heute habe ich viel gearbeitet." },
+      { id: "g3002", satz: "Ayer ___ (trabajar, yo) mucho.", loesung: "trabajé", tipps: ["trabajé", "he trabajado", "trabajaba"], hinweis: "ayer = abgeschlossen", ue: "Gestern arbeitete ich viel." },
+      { id: "g3003", satz: "Antes ___ (trabajar, yo) los sábados.", loesung: "trabajaba", tipps: ["trabajaba", "trabajé", "trabajo"], hinweis: "antes = Gewohnheit", ue: "Früher arbeitete ich samstags." },
+      { id: "g3004", satz: "Ahora mismo ___ (estar, yo) trabajando.", loesung: "estoy", tipps: ["estoy", "soy", "estaba"], hinweis: "gerade jetzt", ue: "Gerade jetzt arbeite ich." },
+      { id: "g3005", satz: "Mañana ___ (ir, yo) a trabajar temprano.", loesung: "voy", tipps: ["voy", "iré", "fui"], hinweis: "konkreter Plan", ue: "Morgen werde ich früh arbeiten gehen." }
     ]
   }
 });

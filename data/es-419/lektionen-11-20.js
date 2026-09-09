@@ -51,11 +51,11 @@ LEKTION('es-419', {
       <div class="merke"><strong>Bonus:</strong> Die Endung <em>-ísimo</em> heißt „ganz besonders":
       <em>guapo → guapísimo</em>, <em>fácil → facilísimo</em>. Sehr spanisch und sehr nützlich.</div>`,
     uebungen: [
-      { id: "g1101", satz: "Madrid es más grande ___ Sevilla.", loesung: "que", tipps: ["que", "como", "de"], hinweis: "más … ?", de: "Madrid ist größer als Sevilla." },
-      { id: "g1102", satz: "Soy tan alto ___ mi padre.", loesung: "como", tipps: ["como", "que", "de"], hinweis: "tan … ?", de: "Ich bin so groß wie mein Vater." },
-      { id: "g1103", satz: "Este vino es ___ que el otro. (bueno)", loesung: "mejor", tipps: ["mejor", "más bueno"], hinweis: "unregelmäßig!", de: "Dieser Wein ist besser als der andere." },
-      { id: "g1104", satz: "Tengo ___ libros como tú.", loesung: "tantos", tipps: ["tantos", "tanto", "tan"], hinweis: "libros = Mehrzahl männl.", de: "Ich habe so viele Bücher wie du." },
-      { id: "g1105", satz: "Es la mejor playa ___ España.", loesung: "de", tipps: ["de", "en", "que"], hinweis: "Superlativ + ?", de: "Es ist der schönste Strand Spaniens." }
+      { id: "g1101", satz: "Madrid es más grande ___ Sevilla.", loesung: "que", tipps: ["que", "como", "de"], hinweis: "más … ?", ue: "Madrid ist größer als Sevilla." },
+      { id: "g1102", satz: "Soy tan alto ___ mi padre.", loesung: "como", tipps: ["como", "que", "de"], hinweis: "tan … ?", ue: "Ich bin so groß wie mein Vater." },
+      { id: "g1103", satz: "Este vino es ___ que el otro. (bueno)", loesung: "mejor", tipps: ["mejor", "más bueno"], hinweis: "unregelmäßig!", ue: "Dieser Wein ist besser als der andere." },
+      { id: "g1104", satz: "Tengo ___ libros como tú.", loesung: "tantos", tipps: ["tantos", "tanto", "tan"], hinweis: "libros = Mehrzahl männl.", ue: "Ich habe so viele Bücher wie du." },
+      { id: "g1105", satz: "Es la mejor playa ___ España.", loesung: "de", tipps: ["de", "en", "que"], hinweis: "Superlativ + ?", ue: "Es ist der schönste Strand Spaniens." }
     ]
   }
 });
@@ -98,11 +98,11 @@ LEKTION('es-419', {
       </table>
       <p><em>hay que</em> ist unpersönlich und wird nie gebeugt — genau wie <em>hay</em>.</p>`,
     uebungen: [
-      { id: "g1201", satz: "Me ___ la cabeza.", loesung: "duele", tipps: ["duele", "duelen"], hinweis: "la cabeza = Einzahl", de: "Mir tut der Kopf weh." },
-      { id: "g1202", satz: "Me ___ los pies.", loesung: "duelen", tipps: ["duelen", "duele"], hinweis: "los pies = Mehrzahl", de: "Mir tun die Füße weh." },
-      { id: "g1203", satz: "___ que ir al médico. (man muss)", loesung: "Hay", tipps: ["Hay", "Tengo", "Debo"], hinweis: "unpersönlich", de: "Man muss zum Arzt gehen." },
-      { id: "g1204", satz: "Yo ___ que trabajar mañana.", loesung: "tengo", tipps: ["tengo", "hay", "debo"], hinweis: "ich persönlich", de: "Ich muss morgen arbeiten." },
-      { id: "g1205", satz: "A Ana le ___ la garganta.", loesung: "duele", tipps: ["duele", "duelen"], hinweis: "la garganta = Einzahl", de: "Ana tut der Hals weh." }
+      { id: "g1201", satz: "Me ___ la cabeza.", loesung: "duele", tipps: ["duele", "duelen"], hinweis: "la cabeza = Einzahl", ue: "Mir tut der Kopf weh." },
+      { id: "g1202", satz: "Me ___ los pies.", loesung: "duelen", tipps: ["duelen", "duele"], hinweis: "los pies = Mehrzahl", ue: "Mir tun die Füße weh." },
+      { id: "g1203", satz: "___ que ir al médico. (man muss)", loesung: "Hay", tipps: ["Hay", "Tengo", "Debo"], hinweis: "unpersönlich", ue: "Man muss zum Arzt gehen." },
+      { id: "g1204", satz: "Yo ___ que trabajar mañana.", loesung: "tengo", tipps: ["tengo", "hay", "debo"], hinweis: "ich persönlich", ue: "Ich muss morgen arbeiten." },
+      { id: "g1205", satz: "A Ana le ___ la garganta.", loesung: "duele", tipps: ["duele", "duelen"], hinweis: "la garganta = Einzahl", ue: "Ana tut der Hals weh." }
     ]
   }
 });
@@ -158,11 +158,11 @@ LEKTION('es-419', {
         <li><em>Dí<strong>me</strong>lo.</em> (Sag es mir.) · <em>Levánta<strong>te</strong>.</em> (Steh auf.)</li>
       </ul>`,
     uebungen: [
-      { id: "g1301", satz: "___ recto hasta el final. (seguir, tú)", loesung: "Sigue", tipps: ["Sigue", "Sigues", "Siga"], hinweis: "él-Form nehmen", de: "Geh geradeaus bis zum Ende." },
-      { id: "g1302", satz: "¡___ la puerta! (cerrar, tú)", loesung: "Cierra", tipps: ["Cierra", "Cierre", "Cerra"], hinweis: "e → ie", de: "Mach die Tür zu!" },
-      { id: "g1303", satz: "¡___ aquí! (venir, tú)", loesung: "Ven", tipps: ["Ven", "Viene", "Vení"], hinweis: "Ausnahme", de: "Komm her!" },
-      { id: "g1304", satz: "¡___ los deberes! (hacer, tú)", loesung: "Haz", tipps: ["Haz", "Hace", "Haga"], hinweis: "Ausnahme", de: "Mach die Hausaufgaben!" },
-      { id: "g1305", satz: "¡Dí___ la verdad! (mir)", loesung: "me", tipps: ["me", "te", "lo"], hinweis: "angehängtes Pronomen", de: "Sag mir die Wahrheit!" }
+      { id: "g1301", satz: "___ recto hasta el final. (seguir, tú)", loesung: "Sigue", tipps: ["Sigue", "Sigues", "Siga"], hinweis: "él-Form nehmen", ue: "Geh geradeaus bis zum Ende." },
+      { id: "g1302", satz: "¡___ la puerta! (cerrar, tú)", loesung: "Cierra", tipps: ["Cierra", "Cierre", "Cerra"], hinweis: "e → ie", ue: "Mach die Tür zu!" },
+      { id: "g1303", satz: "¡___ aquí! (venir, tú)", loesung: "Ven", tipps: ["Ven", "Viene", "Vení"], hinweis: "Ausnahme", ue: "Komm her!" },
+      { id: "g1304", satz: "¡___ los deberes! (hacer, tú)", loesung: "Haz", tipps: ["Haz", "Hace", "Haga"], hinweis: "Ausnahme", ue: "Mach die Hausaufgaben!" },
+      { id: "g1305", satz: "¡Dí___ la verdad! (mir)", loesung: "me", tipps: ["me", "te", "lo"], hinweis: "angehängtes Pronomen", ue: "Sag mir die Wahrheit!" }
     ]
   }
 });
@@ -218,11 +218,11 @@ LEKTION('es-419', {
       angehängt, beim verneinten davor.<br>
       <em>¡Dímelo!</em> ↔ <em>¡No <strong>me lo</strong> digas!</em></div>`,
     uebungen: [
-      { id: "g1401", satz: "¡No ___ tan rápido! (hablar, tú)", loesung: "hables", tipps: ["hables", "hablas", "habla"], hinweis: "-ar bekommt e", de: "Sprich nicht so schnell!" },
-      { id: "g1402", satz: "¡No ___ tanto! (comer, tú)", loesung: "comas", tipps: ["comas", "comes", "come"], hinweis: "-er bekommt a", de: "Iss nicht so viel!" },
-      { id: "g1403", satz: "¡No ___ tarde! (venir, tú)", loesung: "vengas", tipps: ["vengas", "vienes", "ven"], hinweis: "yo-Form vengo → ?", de: "Komm nicht zu spät!" },
-      { id: "g1404", satz: "¡No te ___! (preocuparse, tú)", loesung: "preocupes", tipps: ["preocupes", "preocupas", "preocupa"], hinweis: "Pronomen steht davor", de: "Mach dir keine Sorgen!" },
-      { id: "g1405", satz: "¡No ___ ahí! (ir, tú)", loesung: "vayas", tipps: ["vayas", "vas", "ve"], hinweis: "echte Ausnahme", de: "Geh da nicht hin!" }
+      { id: "g1401", satz: "¡No ___ tan rápido! (hablar, tú)", loesung: "hables", tipps: ["hables", "hablas", "habla"], hinweis: "-ar bekommt e", ue: "Sprich nicht so schnell!" },
+      { id: "g1402", satz: "¡No ___ tanto! (comer, tú)", loesung: "comas", tipps: ["comas", "comes", "come"], hinweis: "-er bekommt a", ue: "Iss nicht so viel!" },
+      { id: "g1403", satz: "¡No ___ tarde! (venir, tú)", loesung: "vengas", tipps: ["vengas", "vienes", "ven"], hinweis: "yo-Form vengo → ?", ue: "Komm nicht zu spät!" },
+      { id: "g1404", satz: "¡No te ___! (preocuparse, tú)", loesung: "preocupes", tipps: ["preocupes", "preocupas", "preocupa"], hinweis: "Pronomen steht davor", ue: "Mach dir keine Sorgen!" },
+      { id: "g1405", satz: "¡No ___ ahí! (ir, tú)", loesung: "vayas", tipps: ["vayas", "vas", "ve"], hinweis: "echte Ausnahme", ue: "Geh da nicht hin!" }
     ]
   }
 });
@@ -289,11 +289,11 @@ LEKTION('es-419', {
       <p>Signalwörter dafür: <em>ya, todavía no, nunca, alguna vez, últimamente,
       siempre</em>.</p>`,
     uebungen: [
-      { id: "g1501", satz: "Nunca ___ estado en Perú. (yo)", loesung: "he", tipps: ["he", "ha", "has"], hinweis: "yo → ?", de: "Ich war noch nie in Peru." },
-      { id: "g1502", satz: "¿___ visto la película? (tú)", loesung: "Has", tipps: ["Has", "Ha", "He"], hinweis: "tú → ?", de: "Hast du den Film gesehen?" },
-      { id: "g1503", satz: "Hemos ___ (hacer) la compra.", loesung: "hecho", tipps: ["hecho", "hacido", "hacho"], hinweis: "unregelmäßig", de: "Wir haben eingekauft." },
-      { id: "g1504", satz: "Ella ha ___ (escribir) un correo.", loesung: "escrito", tipps: ["escrito", "escribido"], hinweis: "unregelmäßig", de: "Sie hat eine E-Mail geschrieben." },
-      { id: "g1505", satz: "Todavía no ___ llegado. (ellos)", loesung: "han", tipps: ["han", "ha", "hemos"], hinweis: "ellos → ?", de: "Sie sind noch nicht angekommen." }
+      { id: "g1501", satz: "Nunca ___ estado en Perú. (yo)", loesung: "he", tipps: ["he", "ha", "has"], hinweis: "yo → ?", ue: "Ich war noch nie in Peru." },
+      { id: "g1502", satz: "¿___ visto la película? (tú)", loesung: "Has", tipps: ["Has", "Ha", "He"], hinweis: "tú → ?", ue: "Hast du den Film gesehen?" },
+      { id: "g1503", satz: "Hemos ___ (hacer) la compra.", loesung: "hecho", tipps: ["hecho", "hacido", "hacho"], hinweis: "unregelmäßig", ue: "Wir haben eingekauft." },
+      { id: "g1504", satz: "Ella ha ___ (escribir) un correo.", loesung: "escrito", tipps: ["escrito", "escribido"], hinweis: "unregelmäßig", ue: "Sie hat eine E-Mail geschrieben." },
+      { id: "g1505", satz: "Todavía no ___ llegado. (ellos)", loesung: "han", tipps: ["han", "ha", "hemos"], hinweis: "ellos → ?", ue: "Sie sind noch nicht angekommen." }
     ]
   }
 });
@@ -351,11 +351,11 @@ LEKTION('es-419', {
       einer Minute oder vor zehn Jahren — nimm das Indefinido. Nur bei Erfahrungen ohne
       Zeitbezug (<em>nunca, alguna vez</em>) greifst du zum Perfecto.</p>`,
     uebungen: [
-      { id: "g1601", satz: "Ayer ___ (hablar, yo) con Ana.", loesung: "hablé", tipps: ["hablé", "hablo", "habló"], hinweis: "yo mit Akzent", de: "Gestern sprach ich mit Ana." },
-      { id: "g1602", satz: "Él ___ (comer) en casa.", loesung: "comió", tipps: ["comió", "comí", "come"], hinweis: "él → -ió", de: "Er aß zu Hause." },
-      { id: "g1603", satz: "Nosotros ___ (vivir) allí dos años.", loesung: "vivimos", tipps: ["vivimos", "vivíamos", "vivieron"], hinweis: "nosotros -ir", de: "Wir lebten zwei Jahre dort." },
-      { id: "g1604", satz: "¿___ (salir, tú) anoche?", loesung: "Saliste", tipps: ["Saliste", "Salió", "Sales"], hinweis: "tú → -iste", de: "Bist du gestern Abend ausgegangen?" },
-      { id: "g1605", satz: "Ellos ___ (trabajar) todo el día.", loesung: "trabajaron", tipps: ["trabajaron", "trabajamos", "trabajaban"], hinweis: "ellos -ar", de: "Sie arbeiteten den ganzen Tag." }
+      { id: "g1601", satz: "Ayer ___ (hablar, yo) con Ana.", loesung: "hablé", tipps: ["hablé", "hablo", "habló"], hinweis: "yo mit Akzent", ue: "Gestern sprach ich mit Ana." },
+      { id: "g1602", satz: "Él ___ (comer) en casa.", loesung: "comió", tipps: ["comió", "comí", "come"], hinweis: "él → -ió", ue: "Er aß zu Hause." },
+      { id: "g1603", satz: "Nosotros ___ (vivir) allí dos años.", loesung: "vivimos", tipps: ["vivimos", "vivíamos", "vivieron"], hinweis: "nosotros -ir", ue: "Wir lebten zwei Jahre dort." },
+      { id: "g1604", satz: "¿___ (salir, tú) anoche?", loesung: "Saliste", tipps: ["Saliste", "Salió", "Sales"], hinweis: "tú → -iste", ue: "Bist du gestern Abend ausgegangen?" },
+      { id: "g1605", satz: "Ellos ___ (trabajar) todo el día.", loesung: "trabajaron", tipps: ["trabajaron", "trabajamos", "trabajaban"], hinweis: "ellos -ar", ue: "Sie arbeiteten den ganzen Tag." }
     ]
   }
 });
@@ -412,11 +412,11 @@ LEKTION('es-419', {
       </table>
       <p><em>dar</em> nimmt die <em>-er</em>-Endungen: <em>di, diste, dio, dimos, disteis, dieron</em>.</p>`,
     uebungen: [
-      { id: "g1701", satz: "Ayer ___ (tener, yo) mucho trabajo.", loesung: "tuve", tipps: ["tuve", "tení", "tenía"], hinweis: "Stamm tuv-", de: "Gestern hatte ich viel Arbeit." },
-      { id: "g1702", satz: "Ella ___ (hacer) la comida.", loesung: "hizo", tipps: ["hizo", "hació", "hice"], hinweis: "él → hizo mit z", de: "Sie machte das Essen." },
-      { id: "g1703", satz: "___ (ir, yo) a Barcelona en mayo.", loesung: "Fui", tipps: ["Fui", "Fue", "Iba"], hinweis: "ir = ser im Indefinido", de: "Ich fuhr im Mai nach Barcelona." },
-      { id: "g1704", satz: "No ___ (poder, nosotros) entrar.", loesung: "pudimos", tipps: ["pudimos", "podimos", "podíamos"], hinweis: "Stamm pud-", de: "Wir konnten nicht hinein." },
-      { id: "g1705", satz: "Ellos ___ (decir) la verdad.", loesung: "dijeron", tipps: ["dijeron", "dijieron", "decieron"], hinweis: "nach j kein i", de: "Sie sagten die Wahrheit." }
+      { id: "g1701", satz: "Ayer ___ (tener, yo) mucho trabajo.", loesung: "tuve", tipps: ["tuve", "tení", "tenía"], hinweis: "Stamm tuv-", ue: "Gestern hatte ich viel Arbeit." },
+      { id: "g1702", satz: "Ella ___ (hacer) la comida.", loesung: "hizo", tipps: ["hizo", "hació", "hice"], hinweis: "él → hizo mit z", ue: "Sie machte das Essen." },
+      { id: "g1703", satz: "___ (ir, yo) a Barcelona en mayo.", loesung: "Fui", tipps: ["Fui", "Fue", "Iba"], hinweis: "ir = ser im Indefinido", ue: "Ich fuhr im Mai nach Barcelona." },
+      { id: "g1704", satz: "No ___ (poder, nosotros) entrar.", loesung: "pudimos", tipps: ["pudimos", "podimos", "podíamos"], hinweis: "Stamm pud-", ue: "Wir konnten nicht hinein." },
+      { id: "g1705", satz: "Ellos ___ (decir) la verdad.", loesung: "dijeron", tipps: ["dijeron", "dijieron", "decieron"], hinweis: "nach j kein i", ue: "Sie sagten die Wahrheit." }
     ]
   }
 });
@@ -474,11 +474,11 @@ LEKTION('es-419', {
       <p><strong>Signalwörter:</strong> <em>antes, siempre, todos los días, cada verano,
       normalmente, mientras, cuando era niño, a menudo</em>.</p>`,
     uebungen: [
-      { id: "g1801", satz: "Cuando ___ (ser, yo) niño, jugaba mucho.", loesung: "era", tipps: ["era", "fui", "estaba"], hinweis: "ser unregelmäßig", de: "Als ich ein Kind war, spielte ich viel." },
-      { id: "g1802", satz: "Todos los días ___ (ir, nosotros) al parque.", loesung: "íbamos", tipps: ["íbamos", "fuimos", "vamos"], hinweis: "ir unregelmäßig", de: "Jeden Tag gingen wir in den Park." },
-      { id: "g1803", satz: "Mi abuela ___ (cocinar) muy bien.", loesung: "cocinaba", tipps: ["cocinaba", "cocinó", "cocina"], hinweis: "-ar → -aba", de: "Meine Großmutter kochte sehr gut." },
-      { id: "g1804", satz: "Antes no ___ (haber) celulares.", loesung: "había", tipps: ["había", "hubo", "hay"], hinweis: "hay im Imperfecto", de: "Früher gab es keine Handys." },
-      { id: "g1805", satz: "Ellos ___ (vivir) en Sevilla entonces.", loesung: "vivían", tipps: ["vivían", "vivieron", "viven"], hinweis: "-ir → -ía", de: "Sie lebten damals in Sevilla." }
+      { id: "g1801", satz: "Cuando ___ (ser, yo) niño, jugaba mucho.", loesung: "era", tipps: ["era", "fui", "estaba"], hinweis: "ser unregelmäßig", ue: "Als ich ein Kind war, spielte ich viel." },
+      { id: "g1802", satz: "Todos los días ___ (ir, nosotros) al parque.", loesung: "íbamos", tipps: ["íbamos", "fuimos", "vamos"], hinweis: "ir unregelmäßig", ue: "Jeden Tag gingen wir in den Park." },
+      { id: "g1803", satz: "Mi abuela ___ (cocinar) muy bien.", loesung: "cocinaba", tipps: ["cocinaba", "cocinó", "cocina"], hinweis: "-ar → -aba", ue: "Meine Großmutter kochte sehr gut." },
+      { id: "g1804", satz: "Antes no ___ (haber) celulares.", loesung: "había", tipps: ["había", "hubo", "hay"], hinweis: "hay im Imperfecto", ue: "Früher gab es keine Handys." },
+      { id: "g1805", satz: "Ellos ___ (vivir) en Sevilla entonces.", loesung: "vivían", tipps: ["vivían", "vivieron", "viven"], hinweis: "-ir → -ía", ue: "Sie lebten damals in Sevilla." }
     ]
   }
 });
@@ -534,11 +534,11 @@ LEKTION('es-419', {
       <div class="merke"><strong>Testfrage im Zweifel:</strong> „Beschreibe ich, wie es war,
       oder erzähle ich, was passierte?" — Beschreibung → Imperfecto. Ereignis → Indefinido.</div>`,
     uebungen: [
-      { id: "g1901", satz: "Mientras ___ (cocinar, yo), sonó el teléfono.", loesung: "cocinaba", tipps: ["cocinaba", "cociné"], hinweis: "Kulisse", de: "Während ich kochte, klingelte das Telefon." },
-      { id: "g1902", satz: "Ayer ___ (ir, yo) al cine con Ana.", loesung: "fui", tipps: ["fui", "iba"], hinweis: "einmaliges Ereignis", de: "Gestern ging ich mit Ana ins Kino." },
-      { id: "g1903", satz: "___ (ser) las ocho cuando llegó.", loesung: "Eran", tipps: ["Eran", "Fueron"], hinweis: "Uhrzeit = Kulisse", de: "Es war acht, als er ankam." },
-      { id: "g1904", satz: "De repente ___ (empezar) a llover.", loesung: "empezó", tipps: ["empezó", "empezaba"], hinweis: "de repente = Handlung", de: "Plötzlich fing es an zu regnen." },
-      { id: "g1905", satz: "Antes ___ (jugar, nosotros) todos los días.", loesung: "jugábamos", tipps: ["jugábamos", "jugamos"], hinweis: "Gewohnheit", de: "Früher spielten wir jeden Tag." }
+      { id: "g1901", satz: "Mientras ___ (cocinar, yo), sonó el teléfono.", loesung: "cocinaba", tipps: ["cocinaba", "cociné"], hinweis: "Kulisse", ue: "Während ich kochte, klingelte das Telefon." },
+      { id: "g1902", satz: "Ayer ___ (ir, yo) al cine con Ana.", loesung: "fui", tipps: ["fui", "iba"], hinweis: "einmaliges Ereignis", ue: "Gestern ging ich mit Ana ins Kino." },
+      { id: "g1903", satz: "___ (ser) las ocho cuando llegó.", loesung: "Eran", tipps: ["Eran", "Fueron"], hinweis: "Uhrzeit = Kulisse", ue: "Es war acht, als er ankam." },
+      { id: "g1904", satz: "De repente ___ (empezar) a llover.", loesung: "empezó", tipps: ["empezó", "empezaba"], hinweis: "de repente = Handlung", ue: "Plötzlich fing es an zu regnen." },
+      { id: "g1905", satz: "Antes ___ (jugar, nosotros) todos los días.", loesung: "jugábamos", tipps: ["jugábamos", "jugamos"], hinweis: "Gewohnheit", ue: "Früher spielten wir jeden Tag." }
     ]
   }
 });
@@ -595,11 +595,11 @@ LEKTION('es-419', {
       Indefinido kommt dazwischen:<br>
       <em>Dormía tranquilamente cuando <strong>sonó</strong> el despertador.</em></p>`,
     uebungen: [
-      { id: "g2001", satz: "___ (vivir, yo) allí cinco años.", loesung: "Viví", tipps: ["Viví", "Vivía"], hinweis: "begrenzter Zeitraum", de: "Ich lebte fünf Jahre dort." },
-      { id: "g2002", satz: "La reunión ___ (durar) dos horas.", loesung: "duró", tipps: ["duró", "duraba"], hinweis: "abgeschlossener Block", de: "Die Sitzung dauerte zwei Stunden." },
-      { id: "g2003", satz: "___ (conocer, yo) a mi mujer en 2010.", loesung: "Conocí", tipps: ["Conocí", "Conocía"], hinweis: "kennenlernen = Ereignis", de: "Ich lernte meine Frau 2010 kennen." },
-      { id: "g2004", satz: "Yo no ___ (saber) nada del asunto.", loesung: "sabía", tipps: ["sabía", "supe"], hinweis: "Zustand des Wissens", de: "Ich wusste nichts von der Sache." },
-      { id: "g2005", satz: "Dormía cuando ___ (sonar) el teléfono.", loesung: "sonó", tipps: ["sonó", "sonaba"], hinweis: "Unterbrechung", de: "Ich schlief, als das Telefon klingelte." }
+      { id: "g2001", satz: "___ (vivir, yo) allí cinco años.", loesung: "Viví", tipps: ["Viví", "Vivía"], hinweis: "begrenzter Zeitraum", ue: "Ich lebte fünf Jahre dort." },
+      { id: "g2002", satz: "La reunión ___ (durar) dos horas.", loesung: "duró", tipps: ["duró", "duraba"], hinweis: "abgeschlossener Block", ue: "Die Sitzung dauerte zwei Stunden." },
+      { id: "g2003", satz: "___ (conocer, yo) a mi mujer en 2010.", loesung: "Conocí", tipps: ["Conocí", "Conocía"], hinweis: "kennenlernen = Ereignis", ue: "Ich lernte meine Frau 2010 kennen." },
+      { id: "g2004", satz: "Yo no ___ (saber) nada del asunto.", loesung: "sabía", tipps: ["sabía", "supe"], hinweis: "Zustand des Wissens", ue: "Ich wusste nichts von der Sache." },
+      { id: "g2005", satz: "Dormía cuando ___ (sonar) el teléfono.", loesung: "sonó", tipps: ["sonó", "sonaba"], hinweis: "Unterbrechung", ue: "Ich schlief, als das Telefon klingelte." }
     ]
   }
 });

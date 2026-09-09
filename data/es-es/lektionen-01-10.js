@@ -48,11 +48,11 @@ LEKTION('es-es', {
       <div class="merke"><strong>Bedeutungswechsel:</strong> <em>ser aburrido</em> = langweilig
       sein (als Person) · <em>estar aburrido</em> = sich langweilen (gerade jetzt).</div>`,
     uebungen: [
-      { id: "g0101", satz: "Yo ___ de Alemania.",         loesung: "soy",   tipps: ["soy", "estoy"],   hinweis: "Herkunft", de: "Ich komme aus Deutschland." },
-      { id: "g0102", satz: "Nosotros ___ en el hotel.",    loesung: "estamos", tipps: ["somos", "estamos"], hinweis: "Ort", de: "Wir sind im Hotel." },
-      { id: "g0103", satz: "Mi hermana ___ enfermera.",    loesung: "es",    tipps: ["es", "está"],     hinweis: "Beruf", de: "Meine Schwester ist Krankenschwester." },
-      { id: "g0104", satz: "¿Cómo ___ (tú) hoy?",          loesung: "estás", tipps: ["eres", "estás"],  hinweis: "Befinden", de: "Wie geht es dir heute?" },
-      { id: "g0105", satz: "Los niños ___ cansados.",      loesung: "están", tipps: ["son", "están"],   hinweis: "vorübergehender Zustand", de: "Die Kinder sind müde." }
+      { id: "g0101", satz: "Yo ___ de Alemania.",         loesung: "soy",   tipps: ["soy", "estoy"],   hinweis: "Herkunft", ue: "Ich komme aus Deutschland." },
+      { id: "g0102", satz: "Nosotros ___ en el hotel.",    loesung: "estamos", tipps: ["somos", "estamos"], hinweis: "Ort", ue: "Wir sind im Hotel." },
+      { id: "g0103", satz: "Mi hermana ___ enfermera.",    loesung: "es",    tipps: ["es", "está"],     hinweis: "Beruf", ue: "Meine Schwester ist Krankenschwester." },
+      { id: "g0104", satz: "¿Cómo ___ (tú) hoy?",          loesung: "estás", tipps: ["eres", "estás"],  hinweis: "Befinden", ue: "Wie geht es dir heute?" },
+      { id: "g0105", satz: "Los niños ___ cansados.",      loesung: "están", tipps: ["son", "están"],   hinweis: "vorübergehender Zustand", ue: "Die Kinder sind müde." }
     ]
   }
 });
@@ -99,11 +99,11 @@ LEKTION('es-es', {
       <div class="merke"><strong>Nie:</strong> <s>Hay el banco</s> — bestimmter Artikel und
       <em>hay</em> vertragen sich nicht.</div>`,
     uebungen: [
-      { id: "g0201", satz: "___ un problema con la nevera.", loesung: "Hay",  tipps: ["Hay", "Está"], hinweis: "un → ?", de: "Es gibt ein Problem mit dem Kühlschrank." },
-      { id: "g0202", satz: "El baño ___ al lado de la cocina.", loesung: "está", tipps: ["hay", "está"], hinweis: "El → ?", de: "Das Bad ist neben der Küche." },
-      { id: "g0203", satz: "¿Cuántas personas ___ en la fiesta?", loesung: "hay", tipps: ["hay", "están"], hinweis: "Anzahl", de: "Wie viele Leute sind auf der Party?" },
-      { id: "g0204", satz: "Mis padres ___ en Valencia.", loesung: "están", tipps: ["hay", "están"], hinweis: "Mis → ?", de: "Meine Eltern sind in Valencia." },
-      { id: "g0205", satz: "No ___ leche en casa.", loesung: "hay", tipps: ["hay", "está"], hinweis: "kein Artikel", de: "Es ist keine Milch im Haus." }
+      { id: "g0201", satz: "___ un problema con la nevera.", loesung: "Hay",  tipps: ["Hay", "Está"], hinweis: "un → ?", ue: "Es gibt ein Problem mit dem Kühlschrank." },
+      { id: "g0202", satz: "El baño ___ al lado de la cocina.", loesung: "está", tipps: ["hay", "está"], hinweis: "El → ?", ue: "Das Bad ist neben der Küche." },
+      { id: "g0203", satz: "¿Cuántas personas ___ en la fiesta?", loesung: "hay", tipps: ["hay", "están"], hinweis: "Anzahl", ue: "Wie viele Leute sind auf der Party?" },
+      { id: "g0204", satz: "Mis padres ___ en Valencia.", loesung: "están", tipps: ["hay", "están"], hinweis: "Mis → ?", ue: "Meine Eltern sind in Valencia." },
+      { id: "g0205", satz: "No ___ leche en casa.", loesung: "hay", tipps: ["hay", "está"], hinweis: "kein Artikel", ue: "Es ist keine Milch im Haus." }
     ]
   }
 });
@@ -153,11 +153,11 @@ LEKTION('es-es', {
       <div class="merke"><strong>Merke:</strong> Welche Verben den Vokal wechseln, verrät kein
       Muster — das lernst du Wort für Wort. Gute Nachricht: es sind immer dieselben.</div>`,
     uebungen: [
-      { id: "g0301", satz: "Yo ___ (empezar) a las ocho.", loesung: "empiezo", tipps: ["empiezo", "empezo"], hinweis: "e → ie", de: "Ich fange um acht an." },
-      { id: "g0302", satz: "Nosotros ___ (volver) tarde.", loesung: "volvemos", tipps: ["volvemos", "vuelvemos"], hinweis: "nosotros bleibt regelmäßig!", de: "Wir kommen spät zurück." },
-      { id: "g0303", satz: "Ella ___ (dormir) poco.", loesung: "duerme", tipps: ["duerme", "dorme"], hinweis: "o → ue", de: "Sie schläft wenig." },
-      { id: "g0304", satz: "Yo ___ (salir) ahora.", loesung: "salgo", tipps: ["salgo", "salo"], hinweis: "nur yo unregelmäßig", de: "Ich gehe jetzt raus." },
-      { id: "g0305", satz: "¿Qué ___ (pedir) vosotros?", loesung: "pedís", tipps: ["pedís", "pidéis"], hinweis: "vosotros bleibt regelmäßig!", de: "Was bestellt ihr?" }
+      { id: "g0301", satz: "Yo ___ (empezar) a las ocho.", loesung: "empiezo", tipps: ["empiezo", "empezo"], hinweis: "e → ie", ue: "Ich fange um acht an." },
+      { id: "g0302", satz: "Nosotros ___ (volver) tarde.", loesung: "volvemos", tipps: ["volvemos", "vuelvemos"], hinweis: "nosotros bleibt regelmäßig!", ue: "Wir kommen spät zurück." },
+      { id: "g0303", satz: "Ella ___ (dormir) poco.", loesung: "duerme", tipps: ["duerme", "dorme"], hinweis: "o → ue", ue: "Sie schläft wenig." },
+      { id: "g0304", satz: "Yo ___ (salir) ahora.", loesung: "salgo", tipps: ["salgo", "salo"], hinweis: "nur yo unregelmäßig", ue: "Ich gehe jetzt raus." },
+      { id: "g0305", satz: "¿Qué ___ (pedir) vosotros?", loesung: "pedís", tipps: ["pedís", "pidéis"], hinweis: "vosotros bleibt regelmäßig!", ue: "Was bestellt ihr?" }
     ]
   }
 });
@@ -209,11 +209,11 @@ LEKTION('es-es', {
       <em>Me lavo <strong>las</strong> manos.</em> — wörtlich „Ich wasche mir die Hände".
       <s>Me lavo mis manos.</s> ist falsch.</div>`,
     uebungen: [
-      { id: "g0401", satz: "Yo ___ levanto temprano.", loesung: "me", tipps: ["me", "te", "se"], hinweis: "yo → ?", de: "Ich stehe früh auf." },
-      { id: "g0402", satz: "Nosotros ___ acostamos tarde.", loesung: "nos", tipps: ["nos", "os", "se"], hinweis: "nosotros → ?", de: "Wir gehen spät ins Bett." },
-      { id: "g0403", satz: "¿A qué hora ___ despiertas?", loesung: "te", tipps: ["te", "me", "se"], hinweis: "tú → ?", de: "Wann wachst du auf?" },
-      { id: "g0404", satz: "Ella se lava ___ dientes.", loesung: "los", tipps: ["los", "sus"], hinweis: "Körperteil → Artikel!", de: "Sie putzt sich die Zähne." },
-      { id: "g0405", satz: "Los niños ___ visten solos.", loesung: "se", tipps: ["se", "nos", "os"], hinweis: "ellos → ?", de: "Die Kinder ziehen sich allein an." }
+      { id: "g0401", satz: "Yo ___ levanto temprano.", loesung: "me", tipps: ["me", "te", "se"], hinweis: "yo → ?", ue: "Ich stehe früh auf." },
+      { id: "g0402", satz: "Nosotros ___ acostamos tarde.", loesung: "nos", tipps: ["nos", "os", "se"], hinweis: "nosotros → ?", ue: "Wir gehen spät ins Bett." },
+      { id: "g0403", satz: "¿A qué hora ___ despiertas?", loesung: "te", tipps: ["te", "me", "se"], hinweis: "tú → ?", ue: "Wann wachst du auf?" },
+      { id: "g0404", satz: "Ella se lava ___ dientes.", loesung: "los", tipps: ["los", "sus"], hinweis: "Körperteil → Artikel!", ue: "Sie putzt sich die Zähne." },
+      { id: "g0405", satz: "Los niños ___ visten solos.", loesung: "se", tipps: ["se", "nos", "os"], hinweis: "ellos → ?", ue: "Die Kinder ziehen sich allein an." }
     ]
   }
 });
@@ -266,11 +266,11 @@ LEKTION('es-es', {
       man das <strong>nicht</strong>. „Ich fahre morgen nach Madrid" heißt
       <em>Mañana voy a Madrid</em> — niemals <s>estoy yendo</s>.</div>`,
     uebungen: [
-      { id: "g0501", satz: "Estoy ___ (trabajar) ahora.", loesung: "trabajando", tipps: ["trabajando", "trabajendo"], hinweis: "-ar → -ando", de: "Ich arbeite gerade." },
-      { id: "g0502", satz: "Los niños están ___ (dormir).", loesung: "durmiendo", tipps: ["durmiendo", "dormiendo"], hinweis: "o → u", de: "Die Kinder schlafen gerade." },
-      { id: "g0503", satz: "¿Qué estás ___ (leer)?", loesung: "leyendo", tipps: ["leyendo", "leiendo"], hinweis: "i → y nach Vokal", de: "Was liest du gerade?" },
-      { id: "g0504", satz: "Estamos ___ (comer) paella.", loesung: "comiendo", tipps: ["comiendo", "comando"], hinweis: "-er → -iendo", de: "Wir essen gerade Paella." },
-      { id: "g0505", satz: "Sigo ___ (esperar) su respuesta.", loesung: "esperando", tipps: ["esperando", "esperiendo"], hinweis: "-ar → -ando", de: "Ich warte weiterhin auf seine Antwort." }
+      { id: "g0501", satz: "Estoy ___ (trabajar) ahora.", loesung: "trabajando", tipps: ["trabajando", "trabajendo"], hinweis: "-ar → -ando", ue: "Ich arbeite gerade." },
+      { id: "g0502", satz: "Los niños están ___ (dormir).", loesung: "durmiendo", tipps: ["durmiendo", "dormiendo"], hinweis: "o → u", ue: "Die Kinder schlafen gerade." },
+      { id: "g0503", satz: "¿Qué estás ___ (leer)?", loesung: "leyendo", tipps: ["leyendo", "leiendo"], hinweis: "i → y nach Vokal", ue: "Was liest du gerade?" },
+      { id: "g0504", satz: "Estamos ___ (comer) paella.", loesung: "comiendo", tipps: ["comiendo", "comando"], hinweis: "-er → -iendo", ue: "Wir essen gerade Paella." },
+      { id: "g0505", satz: "Sigo ___ (esperar) su respuesta.", loesung: "esperando", tipps: ["esperando", "esperiendo"], hinweis: "-ar → -ando", ue: "Ich warte weiterhin auf seine Antwort." }
     ]
   }
 });
@@ -325,11 +325,11 @@ LEKTION('es-es', {
       das es ersetzt — <em>el pan</em> ist männlich, also <em>lo</em>, auch wenn Brot im
       Deutschen sächlich ist.</div>`,
     uebungen: [
-      { id: "g0601", satz: "¿El periódico? ___ leo cada día.", loesung: "Lo", tipps: ["Lo", "La", "Los"], hinweis: "el periódico → ?", de: "Die Zeitung? Ich lese sie jeden Tag." },
-      { id: "g0602", satz: "¿La ventana? No ___ abro.", loesung: "la", tipps: ["la", "lo", "las"], hinweis: "la ventana → ?", de: "Das Fenster? Ich mache es nicht auf." },
-      { id: "g0603", satz: "¿Las llaves? ___ tengo yo.", loesung: "Las", tipps: ["Las", "Los", "La"], hinweis: "las llaves → ?", de: "Die Schlüssel? Ich habe sie." },
-      { id: "g0604", satz: "Voy a comprar___ mañana.", loesung: "lo", tipps: ["lo", "le", "la"], hinweis: "an den Infinitiv angehängt", de: "Ich kaufe es morgen." },
-      { id: "g0605", satz: "¿Me ayudas? Sí, ___ ayudo.", loesung: "te", tipps: ["te", "me", "lo"], hinweis: "dir/dich → ?", de: "Hilfst du mir? Ja, ich helfe dir." }
+      { id: "g0601", satz: "¿El periódico? ___ leo cada día.", loesung: "Lo", tipps: ["Lo", "La", "Los"], hinweis: "el periódico → ?", ue: "Die Zeitung? Ich lese sie jeden Tag." },
+      { id: "g0602", satz: "¿La ventana? No ___ abro.", loesung: "la", tipps: ["la", "lo", "las"], hinweis: "la ventana → ?", ue: "Das Fenster? Ich mache es nicht auf." },
+      { id: "g0603", satz: "¿Las llaves? ___ tengo yo.", loesung: "Las", tipps: ["Las", "Los", "La"], hinweis: "las llaves → ?", ue: "Die Schlüssel? Ich habe sie." },
+      { id: "g0604", satz: "Voy a comprar___ mañana.", loesung: "lo", tipps: ["lo", "le", "la"], hinweis: "an den Infinitiv angehängt", ue: "Ich kaufe es morgen." },
+      { id: "g0605", satz: "¿Me ayudas? Sí, ___ ayudo.", loesung: "te", tipps: ["te", "me", "lo"], hinweis: "dir/dich → ?", ue: "Hilfst du mir? Ja, ich helfe dir." }
     ]
   }
 });
@@ -380,11 +380,11 @@ LEKTION('es-es', {
       <em>escribir</em> (schreiben), <em>explicar</em> (erklären), <em>preguntar</em> (fragen),
       <em>regalar</em> (schenken), <em>prestar</em> (leihen), <em>enviar</em> (schicken).</p>`,
     uebungen: [
-      { id: "g0701", satz: "___ doy el libro a María.", loesung: "Le", tipps: ["Le", "La", "Lo"], hinweis: "a María = wem?", de: "Ich gebe María das Buch." },
-      { id: "g0702", satz: "¿___ prestas tu coche? (a mí)", loesung: "Me", tipps: ["Me", "Te", "Le"], hinweis: "mir", de: "Leihst du mir dein Auto?" },
-      { id: "g0703", satz: "___ escribo a mis padres.", loesung: "Les", tipps: ["Les", "Le", "Los"], hinweis: "Mehrzahl", de: "Ich schreibe meinen Eltern." },
-      { id: "g0704", satz: "El guía ___ explica todo a nosotros.", loesung: "nos", tipps: ["nos", "os", "les"], hinweis: "uns", de: "Der Führer erklärt uns alles." },
-      { id: "g0705", satz: "¿Qué ___ regalas a tu hermano?", loesung: "le", tipps: ["le", "lo", "les"], hinweis: "a tu hermano = einer Person", de: "Was schenkst du deinem Bruder?" }
+      { id: "g0701", satz: "___ doy el libro a María.", loesung: "Le", tipps: ["Le", "La", "Lo"], hinweis: "a María = wem?", ue: "Ich gebe María das Buch." },
+      { id: "g0702", satz: "¿___ prestas tu coche? (a mí)", loesung: "Me", tipps: ["Me", "Te", "Le"], hinweis: "mir", ue: "Leihst du mir dein Auto?" },
+      { id: "g0703", satz: "___ escribo a mis padres.", loesung: "Les", tipps: ["Les", "Le", "Los"], hinweis: "Mehrzahl", ue: "Ich schreibe meinen Eltern." },
+      { id: "g0704", satz: "El guía ___ explica todo a nosotros.", loesung: "nos", tipps: ["nos", "os", "les"], hinweis: "uns", ue: "Der Führer erklärt uns alles." },
+      { id: "g0705", satz: "¿Qué ___ regalas a tu hermano?", loesung: "le", tipps: ["le", "lo", "les"], hinweis: "a tu hermano = einer Person", ue: "Was schenkst du deinem Bruder?" }
     ]
   }
 });
@@ -435,11 +435,11 @@ LEKTION('es-es', {
       <p>Beim Anhängen an einen Infinitiv rücken beide zusammen ans Ende und es kommt ein
       Akzent dazu: <em>Voy a dár<strong>selo</strong>.</em></p>`,
     uebungen: [
-      { id: "g0801", satz: "¿El libro a Juan? ___ lo doy mañana.", loesung: "Se", tipps: ["Se", "Le", "Lo"], hinweis: "le + lo → ?", de: "Das Buch für Juan? Ich gebe es ihm morgen." },
-      { id: "g0802", satz: "¿La carta? El camarero ___ la trae.", loesung: "nos", tipps: ["nos", "se", "les"], hinweis: "uns", de: "Die Karte? Der Kellner bringt sie uns." },
-      { id: "g0803", satz: "Me ___ explicó muy bien. (el problema)", loesung: "lo", tipps: ["lo", "la", "le"], hinweis: "el problema → ?", de: "Er hat es mir sehr gut erklärt." },
-      { id: "g0804", satz: "¿Las fotos? Te ___ envío hoy.", loesung: "las", tipps: ["las", "los", "la"], hinweis: "las fotos → ?", de: "Die Fotos? Ich schicke sie dir heute." },
-      { id: "g0805", satz: "Voy a pedír___ al camarero. (se + lo)", loesung: "selo", tipps: ["selo", "lose", "sele"], hinweis: "beide angehängt", de: "Ich werde es beim Kellner bestellen." }
+      { id: "g0801", satz: "¿El libro a Juan? ___ lo doy mañana.", loesung: "Se", tipps: ["Se", "Le", "Lo"], hinweis: "le + lo → ?", ue: "Das Buch für Juan? Ich gebe es ihm morgen." },
+      { id: "g0802", satz: "¿La carta? El camarero ___ la trae.", loesung: "nos", tipps: ["nos", "se", "les"], hinweis: "uns", ue: "Die Karte? Der Kellner bringt sie uns." },
+      { id: "g0803", satz: "Me ___ explicó muy bien. (el problema)", loesung: "lo", tipps: ["lo", "la", "le"], hinweis: "el problema → ?", ue: "Er hat es mir sehr gut erklärt." },
+      { id: "g0804", satz: "¿Las fotos? Te ___ envío hoy.", loesung: "las", tipps: ["las", "los", "la"], hinweis: "las fotos → ?", ue: "Die Fotos? Ich schicke sie dir heute." },
+      { id: "g0805", satz: "Voy a pedír___ al camarero. (se + lo)", loesung: "selo", tipps: ["selo", "lose", "sele"], hinweis: "beide angehängt", ue: "Ich werde es beim Kellner bestellen." }
     ]
   }
 });
@@ -495,11 +495,11 @@ LEKTION('es-es', {
       <div class="merke"><strong>Nie:</strong> <s>Yo gusto el café</s> — das hieße
       „Ich schmecke nach Kaffee".</div>`,
     uebungen: [
-      { id: "g0901", satz: "Me ___ los libros de historia.", loesung: "gustan", tipps: ["gustan", "gusta"], hinweis: "los libros = Mehrzahl", de: "Ich mag Geschichtsbücher." },
-      { id: "g0902", satz: "A Juan ___ gusta el fútbol.", loesung: "le", tipps: ["le", "lo", "se"], hinweis: "a Juan → ?", de: "Juan mag Fußball." },
-      { id: "g0903", satz: "Nos ___ mucho viajar.", loesung: "encanta", tipps: ["encanta", "encantan"], hinweis: "viajar = ein Infinitiv", de: "Wir reisen für unser Leben gern." },
-      { id: "g0904", satz: "¿Te ___ el ruido? (molestar)", loesung: "molesta", tipps: ["molesta", "molestan"], hinweis: "el ruido = Einzahl", de: "Stört dich der Lärm?" },
-      { id: "g0905", satz: "A ellos ___ interesa el arte.", loesung: "les", tipps: ["les", "le", "los"], hinweis: "a ellos → ?", de: "Sie interessieren sich für Kunst." }
+      { id: "g0901", satz: "Me ___ los libros de historia.", loesung: "gustan", tipps: ["gustan", "gusta"], hinweis: "los libros = Mehrzahl", ue: "Ich mag Geschichtsbücher." },
+      { id: "g0902", satz: "A Juan ___ gusta el fútbol.", loesung: "le", tipps: ["le", "lo", "se"], hinweis: "a Juan → ?", ue: "Juan mag Fußball." },
+      { id: "g0903", satz: "Nos ___ mucho viajar.", loesung: "encanta", tipps: ["encanta", "encantan"], hinweis: "viajar = ein Infinitiv", ue: "Wir reisen für unser Leben gern." },
+      { id: "g0904", satz: "¿Te ___ el ruido? (molestar)", loesung: "molesta", tipps: ["molesta", "molestan"], hinweis: "el ruido = Einzahl", ue: "Stört dich der Lärm?" },
+      { id: "g0905", satz: "A ellos ___ interesa el arte.", loesung: "les", tipps: ["les", "le", "los"], hinweis: "a ellos → ?", ue: "Sie interessieren sich für Kunst." }
     ]
   }
 });
@@ -554,11 +554,11 @@ LEKTION('es-es', {
       <div class="merke"><strong>Eselsbrücke:</strong> <em>este</em> hat ein <em>t</em>
       wie „this" — und wie <em>aquí</em> (hier) gehört es zu dir.</div>`,
     uebungen: [
-      { id: "g1001", satz: "___ padres viven en Berlín. (mein)", loesung: "Mis", tipps: ["Mis", "Mi", "Míos"], hinweis: "padres = Mehrzahl", de: "Meine Eltern wohnen in Berlin." },
-      { id: "g1002", satz: "___ casa es muy grande. (unser)", loesung: "Nuestra", tipps: ["Nuestra", "Nuestro", "Nuestras"], hinweis: "la casa = weiblich", de: "Unser Haus ist sehr groß." },
-      { id: "g1003", satz: "___ libro de aquí es mío.", loesung: "Este", tipps: ["Este", "Ese", "Aquel"], hinweis: "de aquí = hier", de: "Dieses Buch hier gehört mir." },
-      { id: "g1004", satz: "¿Ves ___ montaña allí a lo lejos?", loesung: "aquella", tipps: ["aquella", "esta", "esa"], hinweis: "a lo lejos = weit weg", de: "Siehst du jenen Berg dort in der Ferne?" },
-      { id: "g1005", satz: "¿Es ___ este bolígrafo? (dein)", loesung: "tuyo", tipps: ["tuyo", "tu", "tuya"], hinweis: "allein stehend → lange Form", de: "Ist das dein Kugelschreiber?" }
+      { id: "g1001", satz: "___ padres viven en Berlín. (mein)", loesung: "Mis", tipps: ["Mis", "Mi", "Míos"], hinweis: "padres = Mehrzahl", ue: "Meine Eltern wohnen in Berlin." },
+      { id: "g1002", satz: "___ casa es muy grande. (unser)", loesung: "Nuestra", tipps: ["Nuestra", "Nuestro", "Nuestras"], hinweis: "la casa = weiblich", ue: "Unser Haus ist sehr groß." },
+      { id: "g1003", satz: "___ libro de aquí es mío.", loesung: "Este", tipps: ["Este", "Ese", "Aquel"], hinweis: "de aquí = hier", ue: "Dieses Buch hier gehört mir." },
+      { id: "g1004", satz: "¿Ves ___ montaña allí a lo lejos?", loesung: "aquella", tipps: ["aquella", "esta", "esa"], hinweis: "a lo lejos = weit weg", ue: "Siehst du jenen Berg dort in der Ferne?" },
+      { id: "g1005", satz: "¿Es ___ este bolígrafo? (dein)", loesung: "tuyo", tipps: ["tuyo", "tu", "tuya"], hinweis: "allein stehend → lange Form", ue: "Ist das dein Kugelschreiber?" }
     ]
   }
 });

@@ -54,11 +54,11 @@ LEKTION('es-419', {
       Argentinien — auch unter Freunden. Im Zweifel: siezen und abwarten, ob dein
       Gegenüber zum Duzen übergeht.</div>`,
     uebungen: [
-      { id: "g8101", satz: "Le ___ (agradecer, yo) que me confirmara la cita.", loesung: "agradecería", tipps: ["agradecería", "agradezco", "agradeceré"], hinweis: "höflich → Condicional", de: "Ich wäre dankbar, wenn Sie den Termin bestätigen." },
-      { id: "g8102", satz: "___ tan amable de ayudarme? (ser, usted)", loesung: "Sería", tipps: ["Sería", "Es", "Fuera"], hinweis: "sehr förmlich", de: "Wären Sie so freundlich, mir zu helfen?" },
-      { id: "g8103", satz: "Quedo a la ___ de su respuesta.", loesung: "espera", tipps: ["espera", "esperanza", "esperando"], hinweis: "feste Wendung", de: "Ich verbleibe in Erwartung Ihrer Antwort." },
-      { id: "g8104", satz: "Me ___ (gustar) reservar una mesa.", loesung: "gustaría", tipps: ["gustaría", "gusta", "gustará"], hinweis: "höflicher Wunsch", de: "Ich würde gern einen Tisch reservieren." },
-      { id: "g8105", satz: "Estimada señora___ (Satzzeichen nach der Anrede)", loesung: ":", tipps: [":", ",", ";"], hinweis: "spanische Briefnorm", de: "Sehr geehrte Frau …:" }
+      { id: "g8101", satz: "Le ___ (agradecer, yo) que me confirmara la cita.", loesung: "agradecería", tipps: ["agradecería", "agradezco", "agradeceré"], hinweis: "höflich → Condicional", ue: "Ich wäre dankbar, wenn Sie den Termin bestätigen." },
+      { id: "g8102", satz: "___ tan amable de ayudarme? (ser, usted)", loesung: "Sería", tipps: ["Sería", "Es", "Fuera"], hinweis: "sehr förmlich", ue: "Wären Sie so freundlich, mir zu helfen?" },
+      { id: "g8103", satz: "Quedo a la ___ de su respuesta.", loesung: "espera", tipps: ["espera", "esperanza", "esperando"], hinweis: "feste Wendung", ue: "Ich verbleibe in Erwartung Ihrer Antwort." },
+      { id: "g8104", satz: "Me ___ (gustar) reservar una mesa.", loesung: "gustaría", tipps: ["gustaría", "gusta", "gustará"], hinweis: "höflicher Wunsch", ue: "Ich würde gern einen Tisch reservieren." },
+      { id: "g8105", satz: "Estimada señora___ (Satzzeichen nach der Anrede)", loesung: ":", tipps: [":", ",", ";"], hinweis: "spanische Briefnorm", ue: "Sehr geehrte Frau …:" }
     ]
   }
 });
@@ -121,11 +121,11 @@ LEKTION('es-419', {
       gebräuchlich. Wendungen wie <em>ser la caña</em> oder <em>molar</em> sind rein
       spanisch — in Mexiko sagt man <em>estar padre</em>, in Kolumbien <em>ser bacano</em>.</div>`,
     uebungen: [
-      { id: "g8201", satz: "Me costó un ___ de la cara.", loesung: "ojo", tipps: ["ojo", "brazo", "diente"], hinweis: "ein Vermögen", de: "Es kostete mich ein Vermögen." },
-      { id: "g8202", satz: "Diste en el ___ con esa idea.", loesung: "clavo", tipps: ["clavo", "punto", "centro"], hinweis: "ins Schwarze treffen", de: "Du hast mit dieser Idee ins Schwarze getroffen." },
-      { id: "g8203", satz: "No tires la ___ ahora.", loesung: "toalla", tipps: ["toalla", "cuerda", "moneda"], hinweis: "aufgeben", de: "Gib jetzt nicht auf." },
-      { id: "g8204", satz: "¿Me echas una ___ con esto?", loesung: "mano", tipps: ["mano", "ayuda", "vista"], hinweis: "zur Hand gehen", de: "Gehst du mir hiermit zur Hand?" },
-      { id: "g8205", satz: "El examen fue ___ comido.", loesung: "pan", tipps: ["pan", "queso", "todo"], hinweis: "Kinderspiel", de: "Die Prüfung war ein Kinderspiel." }
+      { id: "g8201", satz: "Me costó un ___ de la cara.", loesung: "ojo", tipps: ["ojo", "brazo", "diente"], hinweis: "ein Vermögen", ue: "Es kostete mich ein Vermögen." },
+      { id: "g8202", satz: "Diste en el ___ con esa idea.", loesung: "clavo", tipps: ["clavo", "punto", "centro"], hinweis: "ins Schwarze treffen", ue: "Du hast mit dieser Idee ins Schwarze getroffen." },
+      { id: "g8203", satz: "No tires la ___ ahora.", loesung: "toalla", tipps: ["toalla", "cuerda", "moneda"], hinweis: "aufgeben", ue: "Gib jetzt nicht auf." },
+      { id: "g8204", satz: "¿Me echas una ___ con esto?", loesung: "mano", tipps: ["mano", "ayuda", "vista"], hinweis: "zur Hand gehen", ue: "Gehst du mir hiermit zur Hand?" },
+      { id: "g8205", satz: "El examen fue ___ comido.", loesung: "pan", tipps: ["pan", "queso", "todo"], hinweis: "Kinderspiel", ue: "Die Prüfung war ein Kinderspiel." }
     ]
   }
 });
@@ -187,11 +187,11 @@ LEKTION('es-419', {
         <li><em>Si bien es difícil predecir…</em> — auch wenn schwer vorherzusagen ist</li>
       </ul>`,
     uebungen: [
-      { id: "g8301", satz: "Es probable que ___ (haber) cambios.", loesung: "haya", tipps: ["haya", "hay", "habrá"], hinweis: "probable → Subjuntivo", de: "Wahrscheinlich gibt es Veränderungen." },
-      { id: "g8302", satz: "Estoy seguro de que ___ (funcionar).", loesung: "funciona", tipps: ["funciona", "funcione", "funcionara"], hinweis: "sicher → Indikativ", de: "Ich bin sicher, dass es funktioniert." },
-      { id: "g8303", satz: "Todo apunta a que la tendencia ___ (seguir).", loesung: "seguirá", tipps: ["seguirá", "siga", "siguiera"], hinweis: "apuntar a que → Indikativ", de: "Alles deutet darauf hin, dass der Trend anhält." },
-      { id: "g8304", satz: "___ seguir así, empeorará todo.", loesung: "De", tipps: ["De", "Si", "Con"], hinweis: "de + Infinitiv", de: "Wenn es so weitergeht, wird alles schlimmer." },
-      { id: "g8305", satz: "Es cuestión de tiempo que se ___ (notar).", loesung: "note", tipps: ["note", "nota", "notará"], hinweis: "cuestión de tiempo que", de: "Es ist eine Frage der Zeit, bis man es merkt." }
+      { id: "g8301", satz: "Es probable que ___ (haber) cambios.", loesung: "haya", tipps: ["haya", "hay", "habrá"], hinweis: "probable → Subjuntivo", ue: "Wahrscheinlich gibt es Veränderungen." },
+      { id: "g8302", satz: "Estoy seguro de que ___ (funcionar).", loesung: "funciona", tipps: ["funciona", "funcione", "funcionara"], hinweis: "sicher → Indikativ", ue: "Ich bin sicher, dass es funktioniert." },
+      { id: "g8303", satz: "Todo apunta a que la tendencia ___ (seguir).", loesung: "seguirá", tipps: ["seguirá", "siga", "siguiera"], hinweis: "apuntar a que → Indikativ", ue: "Alles deutet darauf hin, dass der Trend anhält." },
+      { id: "g8304", satz: "___ seguir así, empeorará todo.", loesung: "De", tipps: ["De", "Si", "Con"], hinweis: "de + Infinitiv", ue: "Wenn es so weitergeht, wird alles schlimmer." },
+      { id: "g8305", satz: "Es cuestión de tiempo que se ___ (notar).", loesung: "note", tipps: ["note", "nota", "notará"], hinweis: "cuestión de tiempo que", ue: "Es ist eine Frage der Zeit, bis man es merkt." }
     ]
   }
 });
@@ -251,11 +251,11 @@ LEKTION('es-419', {
       <em>Tienes razón en parte.</em> · <em>Lo reviso y te digo.</em> ·
       <em>Es un buen punto.</em></p>`,
     uebungen: [
-      { id: "g8401", satz: "Quizá ___ (convenir) revisar ese punto.", loesung: "convendría", tipps: ["convendría", "conviene", "convenga"], hinweis: "abschwächend → Condicional", de: "Vielleicht wäre es ratsam, den Punkt zu prüfen." },
-      { id: "g8402", satz: "No ___ (acabar, yo) de verlo claro.", loesung: "acabo", tipps: ["acabo", "acabé", "acabaría"], hinweis: "sanfte Ablehnung", de: "Ich sehe es nicht ganz klar." },
-      { id: "g8403", satz: "___ (haber) que pulirlo un poco más.", loesung: "Habría", tipps: ["Habría", "Hay", "Haya"], hinweis: "höflicher als hay que", de: "Man müsste es etwas mehr polieren." },
-      { id: "g8404", satz: "Puede que ___ (haber) otra lectura.", loesung: "haya", tipps: ["haya", "hay", "habrá"], hinweis: "puede que → Subjuntivo", de: "Vielleicht gibt es eine andere Lesart." },
-      { id: "g8405", satz: "Se ___ (agradecer) el esfuerzo.", loesung: "agradece", tipps: ["agradece", "agradecen", "agradezco"], hinweis: "unpersönliches se", de: "Der Aufwand ist anerkennenswert." }
+      { id: "g8401", satz: "Quizá ___ (convenir) revisar ese punto.", loesung: "convendría", tipps: ["convendría", "conviene", "convenga"], hinweis: "abschwächend → Condicional", ue: "Vielleicht wäre es ratsam, den Punkt zu prüfen." },
+      { id: "g8402", satz: "No ___ (acabar, yo) de verlo claro.", loesung: "acabo", tipps: ["acabo", "acabé", "acabaría"], hinweis: "sanfte Ablehnung", ue: "Ich sehe es nicht ganz klar." },
+      { id: "g8403", satz: "___ (haber) que pulirlo un poco más.", loesung: "Habría", tipps: ["Habría", "Hay", "Haya"], hinweis: "höflicher als hay que", ue: "Man müsste es etwas mehr polieren." },
+      { id: "g8404", satz: "Puede que ___ (haber) otra lectura.", loesung: "haya", tipps: ["haya", "hay", "habrá"], hinweis: "puede que → Subjuntivo", ue: "Vielleicht gibt es eine andere Lesart." },
+      { id: "g8405", satz: "Se ___ (agradecer) el esfuerzo.", loesung: "agradece", tipps: ["agradece", "agradecen", "agradezco"], hinweis: "unpersönliches se", ue: "Der Aufwand ist anerkennenswert." }
     ]
   }
 });
@@ -316,11 +316,11 @@ LEKTION('es-419', {
       das <strong>Präsens</strong>, auch wenn der Text alt ist:
       <em>Cervantes <strong>describe</strong> una sociedad en crisis.</em></div>`,
     uebungen: [
-      { id: "g8501", satz: "El autor ___ (sostener) que el cambio es urgente.", loesung: "sostiene", tipps: ["sostiene", "sostuvo", "sostenga"], hinweis: "Wiedergabe → Präsens", de: "Der Autor vertritt, dass der Wandel dringend ist." },
-      { id: "g8502", satz: "A ___ de conclusión, cabe señalar lo siguiente.", loesung: "modo", tipps: ["modo", "manera", "forma"], hinweis: "feste Wendung", de: "Abschließend ist Folgendes festzuhalten." },
-      { id: "g8503", satz: "En resumidas ___, la propuesta convence.", loesung: "cuentas", tipps: ["cuentas", "palabras", "líneas"], hinweis: "alles in allem", de: "Alles in allem überzeugt der Vorschlag." },
-      { id: "g8504", satz: "El texto ___ (abordar) tres cuestiones.", loesung: "aborda", tipps: ["aborda", "abordó", "aborde"], hinweis: "Präsens", de: "Der Text behandelt drei Fragen." },
-      { id: "g8505", satz: "Cabe ___ (subrayar) la claridad del planteo.", loesung: "subrayar", tipps: ["subrayar", "subraya", "subrayando"], hinweis: "cabe + Infinitiv", de: "Hervorzuheben ist die Klarheit der Darlegung." }
+      { id: "g8501", satz: "El autor ___ (sostener) que el cambio es urgente.", loesung: "sostiene", tipps: ["sostiene", "sostuvo", "sostenga"], hinweis: "Wiedergabe → Präsens", ue: "Der Autor vertritt, dass der Wandel dringend ist." },
+      { id: "g8502", satz: "A ___ de conclusión, cabe señalar lo siguiente.", loesung: "modo", tipps: ["modo", "manera", "forma"], hinweis: "feste Wendung", ue: "Abschließend ist Folgendes festzuhalten." },
+      { id: "g8503", satz: "En resumidas ___, la propuesta convence.", loesung: "cuentas", tipps: ["cuentas", "palabras", "líneas"], hinweis: "alles in allem", ue: "Alles in allem überzeugt der Vorschlag." },
+      { id: "g8504", satz: "El texto ___ (abordar) tres cuestiones.", loesung: "aborda", tipps: ["aborda", "abordó", "aborde"], hinweis: "Präsens", ue: "Der Text behandelt drei Fragen." },
+      { id: "g8505", satz: "Cabe ___ (subrayar) la claridad del planteo.", loesung: "subrayar", tipps: ["subrayar", "subraya", "subrayando"], hinweis: "cabe + Infinitiv", ue: "Hervorzuheben ist die Klarheit der Darlegung." }
     ]
   }
 });
@@ -379,11 +379,11 @@ LEKTION('es-419', {
       <em><strong>cualquier</strong> día</em>, <em><strong>cualquier</strong> persona</em><br>
       Allein stehend bleibt es voll: <em>Puede venir <strong>cualquiera</strong>.</em></div>`,
     uebungen: [
-      { id: "g8601", satz: "Por muy difícil que ___ (ser), lo intento.", loesung: "sea", tipps: ["sea", "es", "fuera"], hinweis: "por muy … que", de: "So schwer es auch ist, ich versuche es." },
-      { id: "g8602", satz: "Sea cual ___ el motivo, lo respeto.", loesung: "sea", tipps: ["sea", "es", "fuera"], hinweis: "Verdopplung", de: "Was auch der Grund ist, ich respektiere ihn." },
-      { id: "g8603", satz: "Dondequiera que ___ (estar, tú), te encontraré.", loesung: "estés", tipps: ["estés", "estás", "estarás"], hinweis: "-quiera que → Subjuntivo", de: "Wo du auch bist, ich finde dich." },
-      { id: "g8604", satz: "Puede venir ___ persona interesada.", loesung: "cualquier", tipps: ["cualquier", "cualquiera", "cualesquier"], hinweis: "vor Substantiv verkürzt", de: "Jede interessierte Person kann kommen." },
-      { id: "g8605", satz: "Cueste lo que ___ (costar), lo haremos.", loesung: "cueste", tipps: ["cueste", "cuesta", "costará"], hinweis: "Verdopplung", de: "Koste es, was es wolle, wir tun es." }
+      { id: "g8601", satz: "Por muy difícil que ___ (ser), lo intento.", loesung: "sea", tipps: ["sea", "es", "fuera"], hinweis: "por muy … que", ue: "So schwer es auch ist, ich versuche es." },
+      { id: "g8602", satz: "Sea cual ___ el motivo, lo respeto.", loesung: "sea", tipps: ["sea", "es", "fuera"], hinweis: "Verdopplung", ue: "Was auch der Grund ist, ich respektiere ihn." },
+      { id: "g8603", satz: "Dondequiera que ___ (estar, tú), te encontraré.", loesung: "estés", tipps: ["estés", "estás", "estarás"], hinweis: "-quiera que → Subjuntivo", ue: "Wo du auch bist, ich finde dich." },
+      { id: "g8604", satz: "Puede venir ___ persona interesada.", loesung: "cualquier", tipps: ["cualquier", "cualquiera", "cualesquier"], hinweis: "vor Substantiv verkürzt", ue: "Jede interessierte Person kann kommen." },
+      { id: "g8605", satz: "Cueste lo que ___ (costar), lo haremos.", loesung: "cueste", tipps: ["cueste", "cuesta", "costará"], hinweis: "Verdopplung", ue: "Koste es, was es wolle, wir tun es." }
     ]
   }
 });
@@ -440,11 +440,11 @@ LEKTION('es-419', {
       ist riskant — sie wird leicht als Unhöflichkeit verstanden. Erkennen solltest du sie
       unbedingt; selbst einsetzen erst, wenn du die Person und den Ton gut kennst.</div>`,
     uebungen: [
-      { id: "g8701", satz: "¡___ sorpresa me diste! (was für eine)", loesung: "Vaya", tipps: ["Vaya", "Qué", "Menudo"], hinweis: "überrascht", de: "Was für eine Überraschung!" },
-      { id: "g8702", satz: "¡___ lío se armó! (was für ein)", loesung: "Menudo", tipps: ["Menudo", "Vaya", "Qué"], hinweis: "verstärkend, männlich", de: "Was für ein Durcheinander!" },
-      { id: "g8703", satz: "¡Ni que ___ (ser) millonario!", loesung: "fuera", tipps: ["fuera", "es", "sea"], hinweis: "ni que → Imperfecto Subj.", de: "Als ob er Millionär wäre!" },
-      { id: "g8704", satz: "¡___ que hay que oír! (was man alles)", loesung: "Lo", tipps: ["Lo", "El", "Qué"], hinweis: "Entrüstung", de: "Was man alles hören muss!" },
-      { id: "g8705", satz: "¡___ bonito quedó! (wie)", loesung: "Qué", tipps: ["Qué", "Vaya", "Menudo"], hinweis: "vor Adjektiv", de: "Wie schön das geworden ist!" }
+      { id: "g8701", satz: "¡___ sorpresa me diste! (was für eine)", loesung: "Vaya", tipps: ["Vaya", "Qué", "Menudo"], hinweis: "überrascht", ue: "Was für eine Überraschung!" },
+      { id: "g8702", satz: "¡___ lío se armó! (was für ein)", loesung: "Menudo", tipps: ["Menudo", "Vaya", "Qué"], hinweis: "verstärkend, männlich", ue: "Was für ein Durcheinander!" },
+      { id: "g8703", satz: "¡Ni que ___ (ser) millonario!", loesung: "fuera", tipps: ["fuera", "es", "sea"], hinweis: "ni que → Imperfecto Subj.", ue: "Als ob er Millionär wäre!" },
+      { id: "g8704", satz: "¡___ que hay que oír! (was man alles)", loesung: "Lo", tipps: ["Lo", "El", "Qué"], hinweis: "Entrüstung", ue: "Was man alles hören muss!" },
+      { id: "g8705", satz: "¡___ bonito quedó! (wie)", loesung: "Qué", tipps: ["Qué", "Vaya", "Menudo"], hinweis: "vor Adjektiv", ue: "Wie schön das geworden ist!" }
     ]
   }
 });
@@ -508,11 +508,11 @@ LEKTION('es-419', {
       (melde dich einfach) und <em>¿me regalas un minuto?</em> (hast du kurz Zeit?) —
       alles alltäglich im Berufsleben und in Spanien so nicht gebräuchlich.</div>`,
     uebungen: [
-      { id: "g8801", satz: "¿Te parece si lo ___ (ver, nosotros) mañana?", loesung: "vemos", tipps: ["vemos", "veamos", "veríamos"], hinweis: "¿te parece si? → Indikativ", de: "Wäre es dir recht, wenn wir es morgen anschauen?" },
-      { id: "g8802", satz: "Propongo que lo ___ (dejar, nosotros) para el lunes.", loesung: "dejemos", tipps: ["dejemos", "dejamos", "dejaríamos"], hinweis: "proponer que → Subjuntivo", de: "Ich schlage vor, wir verschieben es auf Montag." },
-      { id: "g8803", satz: "___ (quedar, nosotros) en que tú lo preparas.", loesung: "Quedamos", tipps: ["Quedamos", "Quedemos", "Quedaríamos"], hinweis: "Vereinbarung → Indikativ", de: "Wir vereinbaren, dass du es vorbereitest." },
-      { id: "g8804", satz: "Te comparto el archivo en cuanto lo ___ (tener, yo).", loesung: "tenga", tipps: ["tenga", "tengo", "tendré"], hinweis: "en cuanto + Zukunft", de: "Ich teile die Datei, sobald ich sie habe." },
-      { id: "g8805", satz: "___ (dejar, tú) me revisarlo y te confirmo.", loesung: "Déjame", tipps: ["Déjame", "Dejas", "Dejarme"], hinweis: "Imperativ + Pronomen", de: "Lass es mich prüfen und ich bestätige dir." }
+      { id: "g8801", satz: "¿Te parece si lo ___ (ver, nosotros) mañana?", loesung: "vemos", tipps: ["vemos", "veamos", "veríamos"], hinweis: "¿te parece si? → Indikativ", ue: "Wäre es dir recht, wenn wir es morgen anschauen?" },
+      { id: "g8802", satz: "Propongo que lo ___ (dejar, nosotros) para el lunes.", loesung: "dejemos", tipps: ["dejemos", "dejamos", "dejaríamos"], hinweis: "proponer que → Subjuntivo", ue: "Ich schlage vor, wir verschieben es auf Montag." },
+      { id: "g8803", satz: "___ (quedar, nosotros) en que tú lo preparas.", loesung: "Quedamos", tipps: ["Quedamos", "Quedemos", "Quedaríamos"], hinweis: "Vereinbarung → Indikativ", ue: "Wir vereinbaren, dass du es vorbereitest." },
+      { id: "g8804", satz: "Te comparto el archivo en cuanto lo ___ (tener, yo).", loesung: "tenga", tipps: ["tenga", "tengo", "tendré"], hinweis: "en cuanto + Zukunft", ue: "Ich teile die Datei, sobald ich sie habe." },
+      { id: "g8805", satz: "___ (dejar, tú) me revisarlo y te confirmo.", loesung: "Déjame", tipps: ["Déjame", "Dejas", "Dejarme"], hinweis: "Imperativ + Pronomen", ue: "Lass es mich prüfen und ich bestätige dir." }
     ]
   }
 });
@@ -572,11 +572,11 @@ LEKTION('es-419', {
       einen Einwand ein — nicht „jetzt gut“. <em>Ahora bien, habría que considerar los
       costos.</em></p>`,
     uebungen: [
-      { id: "g8901", satz: "Es cierto que ___ (haber) dificultades.", loesung: "hay", tipps: ["hay", "haya", "habría"], hinweis: "behauptend → Indikativ", de: "Es stimmt, dass es Schwierigkeiten gibt." },
-      { id: "g8902", satz: "Ello no significa que ___ (ser) imposible.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "verneint → Subjuntivo", de: "Das heißt nicht, dass es unmöglich ist." },
-      { id: "g8903", satz: "De ahí que ___ (convenir) actuar pronto.", loesung: "convenga", tipps: ["convenga", "conviene", "convendrá"], hinweis: "de ahí que", de: "Deshalb ist rasches Handeln geboten." },
-      { id: "g8904", satz: "___ (caber) preguntarse quién se beneficia.", loesung: "Cabría", tipps: ["Cabría", "Cabe", "Quepa"], hinweis: "vorsichtiger: Condicional", de: "Man müsste fragen, wer profitiert." },
-      { id: "g8905", satz: "___ bien, habría que considerar los costos.", loesung: "Ahora", tipps: ["Ahora", "Si", "Más"], hinweis: "nun aber", de: "Nun aber müsste man die Kosten bedenken." }
+      { id: "g8901", satz: "Es cierto que ___ (haber) dificultades.", loesung: "hay", tipps: ["hay", "haya", "habría"], hinweis: "behauptend → Indikativ", ue: "Es stimmt, dass es Schwierigkeiten gibt." },
+      { id: "g8902", satz: "Ello no significa que ___ (ser) imposible.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "verneint → Subjuntivo", ue: "Das heißt nicht, dass es unmöglich ist." },
+      { id: "g8903", satz: "De ahí que ___ (convenir) actuar pronto.", loesung: "convenga", tipps: ["convenga", "conviene", "convendrá"], hinweis: "de ahí que", ue: "Deshalb ist rasches Handeln geboten." },
+      { id: "g8904", satz: "___ (caber) preguntarse quién se beneficia.", loesung: "Cabría", tipps: ["Cabría", "Cabe", "Quepa"], hinweis: "vorsichtiger: Condicional", ue: "Man müsste fragen, wer profitiert." },
+      { id: "g8905", satz: "___ bien, habría que considerar los costos.", loesung: "Ahora", tipps: ["Ahora", "Si", "Más"], hinweis: "nun aber", ue: "Nun aber müsste man die Kosten bedenken." }
     ]
   }
 });
@@ -645,11 +645,11 @@ LEKTION('es-419', {
       <span style="font-size:.95rem;color:var(--text-leise)">Glückwunsch — du bist am Ziel.
       Und jetzt fängt das Spanische erst richtig an.</span></p>`,
     uebungen: [
-      { id: "g9001", satz: "Ojalá ___ (seguir, tú) leyendo cada día.", loesung: "sigas", tipps: ["sigas", "sigues", "seguirás"], hinweis: "ojalá → Subjuntivo", de: "Hoffentlich liest du weiterhin jeden Tag." },
-      { id: "g9002", satz: "No es que lo ___ (saber, tú) todo ya.", loesung: "sepas", tipps: ["sepas", "sabes", "sabrás"], hinweis: "no es que → Subjuntivo", de: "Nicht dass du schon alles wüsstest." },
-      { id: "g9003", satz: "Has ___ (recorrer) un trecho considerable.", loesung: "recorrido", tipps: ["recorrido", "recorriendo", "recorrer"], hinweis: "Partizip", de: "Du hast eine beachtliche Strecke zurückgelegt." },
-      { id: "g9004", satz: "De aquí en ___, lo que cuenta es el uso.", loesung: "adelante", tipps: ["adelante", "delante", "frente"], hinweis: "von jetzt an", de: "Von jetzt an zählt der Gebrauch." },
-      { id: "g9005", satz: "Para el año próximo ___ (haber, tú) mejorado mucho.", loesung: "habrás", tipps: ["habrás", "habrías", "hubieras"], hinweis: "Futuro Perfecto", de: "Bis nächstes Jahr wirst du dich stark verbessert haben." }
+      { id: "g9001", satz: "Ojalá ___ (seguir, tú) leyendo cada día.", loesung: "sigas", tipps: ["sigas", "sigues", "seguirás"], hinweis: "ojalá → Subjuntivo", ue: "Hoffentlich liest du weiterhin jeden Tag." },
+      { id: "g9002", satz: "No es que lo ___ (saber, tú) todo ya.", loesung: "sepas", tipps: ["sepas", "sabes", "sabrás"], hinweis: "no es que → Subjuntivo", ue: "Nicht dass du schon alles wüsstest." },
+      { id: "g9003", satz: "Has ___ (recorrer) un trecho considerable.", loesung: "recorrido", tipps: ["recorrido", "recorriendo", "recorrer"], hinweis: "Partizip", ue: "Du hast eine beachtliche Strecke zurückgelegt." },
+      { id: "g9004", satz: "De aquí en ___, lo que cuenta es el uso.", loesung: "adelante", tipps: ["adelante", "delante", "frente"], hinweis: "von jetzt an", ue: "Von jetzt an zählt der Gebrauch." },
+      { id: "g9005", satz: "Para el año próximo ___ (haber, tú) mejorado mucho.", loesung: "habrás", tipps: ["habrás", "habrías", "hubieras"], hinweis: "Futuro Perfecto", ue: "Bis nächstes Jahr wirst du dich stark verbessert haben." }
     ]
   }
 });

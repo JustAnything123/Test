@@ -52,11 +52,11 @@ LEKTION('es-419', {
       <p>Auch nach Zeitkonjunktionen mit Zukunftsbezug: <em>Cuando <strong>hayas
       terminado</strong>, avísame.</em> — Wenn du fertig bist, sag Bescheid.</p>`,
     uebungen: [
-      { id: "g6101", satz: "Me alegra que ___ (haber, tú) venido.", loesung: "hayas", tipps: ["hayas", "has", "hubieras"], hinweis: "tú → ?", de: "Ich freue mich, dass du gekommen bist." },
-      { id: "g6102", satz: "No creo que ___ (haber, ellos) llegado.", loesung: "hayan", tipps: ["hayan", "han", "hubieran"], hinweis: "ellos → ?", de: "Ich glaube nicht, dass sie angekommen sind." },
-      { id: "g6103", satz: "Espero que todo ___ (haber) salido bien.", loesung: "haya", tipps: ["haya", "ha", "hubiera"], hinweis: "todo → 3. Person", de: "Ich hoffe, alles ist gut gelaufen." },
-      { id: "g6104", satz: "Cuando ___ (haber, tú) terminado, avísame.", loesung: "hayas", tipps: ["hayas", "has", "habrás"], hinweis: "Zukunft + abgeschlossen", de: "Wenn du fertig bist, sag Bescheid." },
-      { id: "g6105", satz: "Dudo que se ___ (haber, ellos) dado cuenta.", loesung: "hayan", tipps: ["hayan", "han", "hubieran"], hinweis: "dudar + abgeschlossen", de: "Ich bezweifle, dass sie es bemerkt haben." }
+      { id: "g6101", satz: "Me alegra que ___ (haber, tú) venido.", loesung: "hayas", tipps: ["hayas", "has", "hubieras"], hinweis: "tú → ?", ue: "Ich freue mich, dass du gekommen bist." },
+      { id: "g6102", satz: "No creo que ___ (haber, ellos) llegado.", loesung: "hayan", tipps: ["hayan", "han", "hubieran"], hinweis: "ellos → ?", ue: "Ich glaube nicht, dass sie angekommen sind." },
+      { id: "g6103", satz: "Espero que todo ___ (haber) salido bien.", loesung: "haya", tipps: ["haya", "ha", "hubiera"], hinweis: "todo → 3. Person", ue: "Ich hoffe, alles ist gut gelaufen." },
+      { id: "g6104", satz: "Cuando ___ (haber, tú) terminado, avísame.", loesung: "hayas", tipps: ["hayas", "has", "habrás"], hinweis: "Zukunft + abgeschlossen", ue: "Wenn du fertig bist, sag Bescheid." },
+      { id: "g6105", satz: "Dudo que se ___ (haber, ellos) dado cuenta.", loesung: "hayan", tipps: ["hayan", "han", "hubieran"], hinweis: "dudar + abgeschlossen", ue: "Ich bezweifle, dass sie es bemerkt haben." }
     ]
   }
 });
@@ -112,11 +112,11 @@ LEKTION('es-419', {
       komplett. Vier Formen decken jede Zeitlage ab — und sie folgen alle denselben
       Auslösern, die du seit Tag 37 kennst.</div>`,
     uebungen: [
-      { id: "g6201", satz: "Ojalá ___ (haber, yo) estudiado más.", loesung: "hubiera", tipps: ["hubiera", "haya", "había"], hinweis: "Bedauern", de: "Hätte ich doch mehr gelernt." },
-      { id: "g6202", satz: "No creía que ___ (haber) pasado tanto tiempo.", loesung: "hubiera", tipps: ["hubiera", "haya", "había"], hinweis: "creía → Vergangenheit", de: "Ich glaubte nicht, dass so viel Zeit vergangen war." },
-      { id: "g6203", satz: "Me molestó que no me ___ (haber, ellos) avisado.", loesung: "hubieran", tipps: ["hubieran", "hayan", "habían"], hinweis: "ellos + Vergangenheit", de: "Es ärgerte mich, dass sie mich nicht informiert hatten." },
-      { id: "g6204", satz: "Espero que ___ (haber, tú) descansado ayer.", loesung: "hayas", tipps: ["hayas", "hubieras", "has"], hinweis: "Hauptsatz Gegenwart!", de: "Ich hoffe, du hast dich gestern ausgeruht." },
-      { id: "g6205", satz: "Era imposible que ya ___ (haber) terminado.", loesung: "hubiera", tipps: ["hubiera", "haya", "había"], hinweis: "era → Vergangenheit", de: "Es war unmöglich, dass er schon fertig war." }
+      { id: "g6201", satz: "Ojalá ___ (haber, yo) estudiado más.", loesung: "hubiera", tipps: ["hubiera", "haya", "había"], hinweis: "Bedauern", ue: "Hätte ich doch mehr gelernt." },
+      { id: "g6202", satz: "No creía que ___ (haber) pasado tanto tiempo.", loesung: "hubiera", tipps: ["hubiera", "haya", "había"], hinweis: "creía → Vergangenheit", ue: "Ich glaubte nicht, dass so viel Zeit vergangen war." },
+      { id: "g6203", satz: "Me molestó que no me ___ (haber, ellos) avisado.", loesung: "hubieran", tipps: ["hubieran", "hayan", "habían"], hinweis: "ellos + Vergangenheit", ue: "Es ärgerte mich, dass sie mich nicht informiert hatten." },
+      { id: "g6204", satz: "Espero que ___ (haber, tú) descansado ayer.", loesung: "hayas", tipps: ["hayas", "hubieras", "has"], hinweis: "Hauptsatz Gegenwart!", ue: "Ich hoffe, du hast dich gestern ausgeruht." },
+      { id: "g6205", satz: "Era imposible que ya ___ (haber) terminado.", loesung: "hubiera", tipps: ["hubiera", "haya", "había"], hinweis: "era → Vergangenheit", ue: "Es war unmöglich, dass er schon fertig war." }
     ]
   }
 });
@@ -170,11 +170,11 @@ LEKTION('es-419', {
       <p>Das Futuro in Vorschriften (<em>deberá, tendrá que</em>) drückt eine Verpflichtung
       aus, keine Zukunft — genau wie das deutsche „ist vorzulegen".</p>`,
     uebungen: [
-      { id: "g6301", satz: "___ venden departamentos aquí.", loesung: "Se", tipps: ["Se", "Son", "Están"], hinweis: "se-Passiv", de: "Hier werden Wohnungen verkauft." },
-      { id: "g6302", satz: "Me ___ (robar, ellos) la cartera ayer.", loesung: "robaron", tipps: ["robaron", "robé", "fue robada"], hinweis: "3. Person Mehrzahl", de: "Mir wurde gestern die Brieftasche gestohlen." },
-      { id: "g6303", satz: "___ prohibido fumar aquí. (Zustand)", loesung: "Está", tipps: ["Está", "Es", "Se"], hinweis: "Ergebnis", de: "Rauchen ist hier verboten." },
-      { id: "g6304", satz: "Se ___ (rogar) no usar el celular.", loesung: "ruega", tipps: ["ruega", "ruegan", "rogar"], hinweis: "unpersönlich", de: "Es wird gebeten, kein Handy zu benutzen." },
-      { id: "g6305", satz: "El acuerdo ___ (ser) firmado en marzo.", loesung: "fue", tipps: ["fue", "estuvo", "se"], hinweis: "Vorgang + Zeitpunkt", de: "Das Abkommen wurde im März unterzeichnet." }
+      { id: "g6301", satz: "___ venden departamentos aquí.", loesung: "Se", tipps: ["Se", "Son", "Están"], hinweis: "se-Passiv", ue: "Hier werden Wohnungen verkauft." },
+      { id: "g6302", satz: "Me ___ (robar, ellos) la cartera ayer.", loesung: "robaron", tipps: ["robaron", "robé", "fue robada"], hinweis: "3. Person Mehrzahl", ue: "Mir wurde gestern die Brieftasche gestohlen." },
+      { id: "g6303", satz: "___ prohibido fumar aquí. (Zustand)", loesung: "Está", tipps: ["Está", "Es", "Se"], hinweis: "Ergebnis", ue: "Rauchen ist hier verboten." },
+      { id: "g6304", satz: "Se ___ (rogar) no usar el celular.", loesung: "ruega", tipps: ["ruega", "ruegan", "rogar"], hinweis: "unpersönlich", ue: "Es wird gebeten, kein Handy zu benutzen." },
+      { id: "g6305", satz: "El acuerdo ___ (ser) firmado en marzo.", loesung: "fue", tipps: ["fue", "estuvo", "se"], hinweis: "Vorgang + Zeitpunkt", ue: "Das Abkommen wurde im März unterzeichnet." }
     ]
   }
 });
@@ -229,11 +229,11 @@ LEKTION('es-419', {
       <p><strong>Keine Verschiebung</strong> gibt es, wenn das Gesagte weiterhin gilt:
       <em>Dijo que Madrid <strong>es</strong> la capital.</em> — das bleibt wahr.</p>`,
     uebungen: [
-      { id: "g6401", satz: "«Ven mañana» → Me dijo que ___ (venir) al día siguiente.", loesung: "viniera", tipps: ["viniera", "venía", "vendría"], hinweis: "Befehl → Subjuntivo", de: "Er sagte, ich solle am nächsten Tag kommen." },
-      { id: "g6402", satz: "«Vendré» → Dijo que ___ (venir).", loesung: "vendría", tipps: ["vendría", "viniera", "venía"], hinweis: "Futuro → Condicional", de: "Er sagte, er werde kommen." },
-      { id: "g6403", satz: "«Ya lo resolví» → Aseguró que lo ___ (haber) resuelto.", loesung: "había", tipps: ["había", "haya", "habría"], hinweis: "Indefinido → Pluscuamperfecto", de: "Er versicherte, er habe es gelöst." },
-      { id: "g6404", satz: "«No digas nada» → Me pidió que no ___ (decir) nada.", loesung: "dijera", tipps: ["dijera", "decía", "diría"], hinweis: "Bitte → Subjuntivo", de: "Er bat mich, nichts zu sagen." },
-      { id: "g6405", satz: "«¿Recibieron el correo?» → Preguntó ___ lo habíamos recibido.", loesung: "si", tipps: ["si", "sí", "que"], hinweis: "Ja-/Nein-Frage", de: "Er fragte, ob wir es erhalten hätten." }
+      { id: "g6401", satz: "«Ven mañana» → Me dijo que ___ (venir) al día siguiente.", loesung: "viniera", tipps: ["viniera", "venía", "vendría"], hinweis: "Befehl → Subjuntivo", ue: "Er sagte, ich solle am nächsten Tag kommen." },
+      { id: "g6402", satz: "«Vendré» → Dijo que ___ (venir).", loesung: "vendría", tipps: ["vendría", "viniera", "venía"], hinweis: "Futuro → Condicional", ue: "Er sagte, er werde kommen." },
+      { id: "g6403", satz: "«Ya lo resolví» → Aseguró que lo ___ (haber) resuelto.", loesung: "había", tipps: ["había", "haya", "habría"], hinweis: "Indefinido → Pluscuamperfecto", ue: "Er versicherte, er habe es gelöst." },
+      { id: "g6404", satz: "«No digas nada» → Me pidió que no ___ (decir) nada.", loesung: "dijera", tipps: ["dijera", "decía", "diría"], hinweis: "Bitte → Subjuntivo", ue: "Er bat mich, nichts zu sagen." },
+      { id: "g6405", satz: "«¿Recibieron el correo?» → Preguntó ___ lo habíamos recibido.", loesung: "si", tipps: ["si", "sí", "que"], hinweis: "Ja-/Nein-Frage", ue: "Er fragte, ob wir es erhalten hätten." }
     ]
   }
 });
@@ -295,11 +295,11 @@ LEKTION('es-419', {
       Gerundio kein Substantiv beschreiben. <s>una caja conteniendo libros</s> ist falsch —
       richtig ist <em>una caja <strong>que contiene</strong> libros</em>.</div>`,
     uebungen: [
-      { id: "g6501", satz: "El informe ___ (presentar) ayer tiene errores.", loesung: "presentado", tipps: ["presentado", "presentando", "presenta"], hinweis: "Partizip als Adjektiv", de: "Der gestern vorgelegte Bericht hat Fehler." },
-      { id: "g6502", satz: "Las personas ___ (interesar) deben inscribirse.", loesung: "interesadas", tipps: ["interesadas", "interesando", "interesados"], hinweis: "personas = weiblich Mehrzahl", de: "Interessierte Personen müssen sich anmelden." },
-      { id: "g6503", satz: "___ (terminar) la reunión, nos fuimos.", loesung: "Terminada", tipps: ["Terminada", "Terminado", "Terminando"], hinweis: "la reunión = weiblich", de: "Nach Ende der Sitzung gingen wir." },
-      { id: "g6504", satz: "Una vez ___ (revisar) el texto, lo enviamos.", loesung: "revisado", tipps: ["revisado", "revisando", "revisada"], hinweis: "el texto = männlich", de: "Sobald der Text geprüft ist, schicken wir ihn." },
-      { id: "g6505", satz: "Salió ___ (correr) de la oficina.", loesung: "corriendo", tipps: ["corriendo", "corrido", "correr"], hinweis: "Art und Weise → Gerundio", de: "Er lief aus dem Büro." }
+      { id: "g6501", satz: "El informe ___ (presentar) ayer tiene errores.", loesung: "presentado", tipps: ["presentado", "presentando", "presenta"], hinweis: "Partizip als Adjektiv", ue: "Der gestern vorgelegte Bericht hat Fehler." },
+      { id: "g6502", satz: "Las personas ___ (interesar) deben inscribirse.", loesung: "interesadas", tipps: ["interesadas", "interesando", "interesados"], hinweis: "personas = weiblich Mehrzahl", ue: "Interessierte Personen müssen sich anmelden." },
+      { id: "g6503", satz: "___ (terminar) la reunión, nos fuimos.", loesung: "Terminada", tipps: ["Terminada", "Terminado", "Terminando"], hinweis: "la reunión = weiblich", ue: "Nach Ende der Sitzung gingen wir." },
+      { id: "g6504", satz: "Una vez ___ (revisar) el texto, lo enviamos.", loesung: "revisado", tipps: ["revisado", "revisando", "revisada"], hinweis: "el texto = männlich", ue: "Sobald der Text geprüft ist, schicken wir ihn." },
+      { id: "g6505", satz: "Salió ___ (correr) de la oficina.", loesung: "corriendo", tipps: ["corriendo", "corrido", "correr"], hinweis: "Art und Weise → Gerundio", ue: "Er lief aus dem Büro." }
     ]
   }
 });
@@ -355,11 +355,11 @@ LEKTION('es-419', {
             <em>No sabe ni quiere.</em></li>
       </ul>`,
     uebungen: [
-      { id: "g6601", satz: "No solo es caro, ___ que tarda mucho.", loesung: "sino", tipps: ["sino", "si no", "pero"], hinweis: "sondern", de: "Es ist nicht nur teuer, sondern dauert lange." },
-      { id: "g6602", satz: "___ tú como yo lo sabemos.", loesung: "Tanto", tipps: ["Tanto", "Tan", "Ni"], hinweis: "sowohl … als auch", de: "Sowohl du als auch ich wissen es." },
-      { id: "g6603", satz: "___ sabe ___ quiere saber.", loesung: "Ni", tipps: ["Ni", "No", "O"], hinweis: "weder … noch", de: "Er weiß es weder, noch will er es wissen." },
-      { id: "g6604", satz: "No es rojo ___ azul.", loesung: "sino", tipps: ["sino", "si no", "pero"], hinweis: "sondern", de: "Es ist nicht rot, sondern blau." },
-      { id: "g6605", satz: "___ no vienes, me voy solo.", loesung: "Si", tipps: ["Si", "Sino", "Sí"], hinweis: "wenn nicht", de: "Wenn du nicht kommst, gehe ich allein." }
+      { id: "g6601", satz: "No solo es caro, ___ que tarda mucho.", loesung: "sino", tipps: ["sino", "si no", "pero"], hinweis: "sondern", ue: "Es ist nicht nur teuer, sondern dauert lange." },
+      { id: "g6602", satz: "___ tú como yo lo sabemos.", loesung: "Tanto", tipps: ["Tanto", "Tan", "Ni"], hinweis: "sowohl … als auch", ue: "Sowohl du als auch ich wissen es." },
+      { id: "g6603", satz: "___ sabe ___ quiere saber.", loesung: "Ni", tipps: ["Ni", "No", "O"], hinweis: "weder … noch", ue: "Er weiß es weder, noch will er es wissen." },
+      { id: "g6604", satz: "No es rojo ___ azul.", loesung: "sino", tipps: ["sino", "si no", "pero"], hinweis: "sondern", ue: "Es ist nicht rot, sondern blau." },
+      { id: "g6605", satz: "___ no vienes, me voy solo.", loesung: "Si", tipps: ["Si", "Sino", "Sí"], hinweis: "wenn nicht", ue: "Wenn du nicht kommst, gehe ich allein." }
     ]
   }
 });
@@ -412,11 +412,11 @@ LEKTION('es-419', {
       <em><strong>Estudiando</strong> más, aprobarías.</em> — Wenn du mehr lernen würdest,
       würdest du bestehen.</p>`,
     uebungen: [
-      { id: "g6701", satz: "Te ayudo siempre que ___ (cumplir, tú).", loesung: "cumplas", tipps: ["cumplas", "cumples", "cumplirás"], hinweis: "siempre que → Subjuntivo", de: "Ich helfe dir, sofern du dich daran hältst." },
-      { id: "g6702", satz: "___ haber sabido, no habría venido.", loesung: "De", tipps: ["De", "Si", "Con"], hinweis: "de + Infinitiv", de: "Hätte ich es gewusst, wäre ich nicht gekommen." },
-      { id: "g6703", satz: "Iré, a menos que ___ (llover).", loesung: "llueva", tipps: ["llueva", "llueve", "lloverá"], hinweis: "a menos que", de: "Ich gehe, es sei denn, es regnet." },
-      { id: "g6704", satz: "___ no llegues a tiempo, me voy sin ti.", loesung: "Como", tipps: ["Como", "Si", "Cuando"], hinweis: "Warnung + Subjuntivo", de: "Wenn du nicht pünktlich kommst, gehe ich ohne dich." },
-      { id: "g6705", satz: "En caso de que ___ (surgir) un problema, llámame.", loesung: "surja", tipps: ["surja", "surge", "surgirá"], hinweis: "en caso de que", de: "Falls ein Problem auftaucht, ruf mich an." }
+      { id: "g6701", satz: "Te ayudo siempre que ___ (cumplir, tú).", loesung: "cumplas", tipps: ["cumplas", "cumples", "cumplirás"], hinweis: "siempre que → Subjuntivo", ue: "Ich helfe dir, sofern du dich daran hältst." },
+      { id: "g6702", satz: "___ haber sabido, no habría venido.", loesung: "De", tipps: ["De", "Si", "Con"], hinweis: "de + Infinitiv", ue: "Hätte ich es gewusst, wäre ich nicht gekommen." },
+      { id: "g6703", satz: "Iré, a menos que ___ (llover).", loesung: "llueva", tipps: ["llueva", "llueve", "lloverá"], hinweis: "a menos que", ue: "Ich gehe, es sei denn, es regnet." },
+      { id: "g6704", satz: "___ no llegues a tiempo, me voy sin ti.", loesung: "Como", tipps: ["Como", "Si", "Cuando"], hinweis: "Warnung + Subjuntivo", ue: "Wenn du nicht pünktlich kommst, gehe ich ohne dich." },
+      { id: "g6705", satz: "En caso de que ___ (surgir) un problema, llámame.", loesung: "surja", tipps: ["surja", "surge", "surgirá"], hinweis: "en caso de que", ue: "Falls ein Problem auftaucht, ruf mich an." }
     ]
   }
 });
@@ -477,11 +477,11 @@ LEKTION('es-419', {
       Satzende (nicht wahr?), <em>ahorita</em> (gleich / gerade eben, je nach Land),
       <em>¡órale!</em> (Mexiko: los! / krass!), <em>¡dale!</em> (Argentinien: mach!).</p>`,
     uebungen: [
-      { id: "g6801", satz: "—¿Por qué no viniste? —___ que estaba enfermo.", loesung: "Es", tipps: ["Es", "Ya", "Pues"], hinweis: "leitet Erklärung ein", de: "Warum bist du nicht gekommen? Ich war krank." },
-      { id: "g6802", satz: "No es que ___ (ser) difícil, es que no tengo tiempo.", loesung: "sea", tipps: ["sea", "es", "sería"], hinweis: "no es que → Subjuntivo", de: "Es ist nicht schwierig, ich habe nur keine Zeit." },
-      { id: "g6803", satz: "___ lo sé, no hace falta repetirlo.", loesung: "Ya", tipps: ["Ya", "Pues", "Bueno"], hinweis: "schon", de: "Ich weiß es schon, das muss man nicht wiederholen." },
-      { id: "g6804", satz: "___, tampoco es para tanto.", loesung: "Bueno", tipps: ["Bueno", "Ya", "Total"], hinweis: "naja, abschwächend", de: "Naja, so schlimm ist es auch nicht." },
-      { id: "g6805", satz: "___ sea, que al final no vienen.", loesung: "O", tipps: ["O", "Ya", "Es"], hinweis: "das heißt", de: "Das heißt, sie kommen am Ende nicht." }
+      { id: "g6801", satz: "—¿Por qué no viniste? —___ que estaba enfermo.", loesung: "Es", tipps: ["Es", "Ya", "Pues"], hinweis: "leitet Erklärung ein", ue: "Warum bist du nicht gekommen? Ich war krank." },
+      { id: "g6802", satz: "No es que ___ (ser) difícil, es que no tengo tiempo.", loesung: "sea", tipps: ["sea", "es", "sería"], hinweis: "no es que → Subjuntivo", ue: "Es ist nicht schwierig, ich habe nur keine Zeit." },
+      { id: "g6803", satz: "___ lo sé, no hace falta repetirlo.", loesung: "Ya", tipps: ["Ya", "Pues", "Bueno"], hinweis: "schon", ue: "Ich weiß es schon, das muss man nicht wiederholen." },
+      { id: "g6804", satz: "___, tampoco es para tanto.", loesung: "Bueno", tipps: ["Bueno", "Ya", "Total"], hinweis: "naja, abschwächend", ue: "Naja, so schlimm ist es auch nicht." },
+      { id: "g6805", satz: "___ sea, que al final no vienen.", loesung: "O", tipps: ["O", "Ya", "Es"], hinweis: "das heißt", ue: "Das heißt, sie kommen am Ende nicht." }
     ]
   }
 });
@@ -543,11 +543,11 @@ LEKTION('es-419', {
       <div class="merke"><strong>Für dich beim Sprechen:</strong> Übertreib es nicht.
       Nominalstil gehört in geschriebene Texte. Im Gespräch klingen Verben lebendiger.</div>`,
     uebungen: [
-      { id: "g6901", satz: "Tras la ___ (publicar) de los datos, hubo debate.", loesung: "publicación", tipps: ["publicación", "publicamiento", "publicado"], hinweis: "-ción", de: "Nach der Veröffentlichung der Daten gab es eine Debatte." },
-      { id: "g6902", satz: "El ___ (conocer) del tema es fundamental.", loesung: "conocimiento", tipps: ["conocimiento", "conocición", "conocido"], hinweis: "-miento", de: "Das Wissen über das Thema ist grundlegend." },
-      { id: "g6903", satz: "Existe la ___ (posible) de ampliarlo.", loesung: "posibilidad", tipps: ["posibilidad", "posibleza", "posibilización"], hinweis: "-dad", de: "Es besteht die Möglichkeit, es zu erweitern." },
-      { id: "g6904", satz: "___ destacar la calidad del trabajo.", loesung: "Cabe", tipps: ["Cabe", "Cabo", "Cabemos"], hinweis: "feste Wendung", de: "Hervorzuheben ist die Qualität der Arbeit." },
-      { id: "g6905", satz: "La ___ (faltar) de recursos dificultó todo.", loesung: "falta", tipps: ["falta", "faltación", "faltamiento"], hinweis: "unregelmäßig kurz", de: "Der Mangel an Mitteln erschwerte alles." }
+      { id: "g6901", satz: "Tras la ___ (publicar) de los datos, hubo debate.", loesung: "publicación", tipps: ["publicación", "publicamiento", "publicado"], hinweis: "-ción", ue: "Nach der Veröffentlichung der Daten gab es eine Debatte." },
+      { id: "g6902", satz: "El ___ (conocer) del tema es fundamental.", loesung: "conocimiento", tipps: ["conocimiento", "conocición", "conocido"], hinweis: "-miento", ue: "Das Wissen über das Thema ist grundlegend." },
+      { id: "g6903", satz: "Existe la ___ (posible) de ampliarlo.", loesung: "posibilidad", tipps: ["posibilidad", "posibleza", "posibilización"], hinweis: "-dad", ue: "Es besteht die Möglichkeit, es zu erweitern." },
+      { id: "g6904", satz: "___ destacar la calidad del trabajo.", loesung: "Cabe", tipps: ["Cabe", "Cabo", "Cabemos"], hinweis: "feste Wendung", ue: "Hervorzuheben ist die Qualität der Arbeit." },
+      { id: "g6905", satz: "La ___ (faltar) de recursos dificultó todo.", loesung: "falta", tipps: ["falta", "faltación", "faltamiento"], hinweis: "unregelmäßig kurz", ue: "Der Mangel an Mitteln erschwerte alles." }
     ]
   }
 });
@@ -611,11 +611,11 @@ LEKTION('es-419', {
       spricht man <em>c</em> vor e/i und <em>z</em> wie ein s (<em>seseo</em>) — nicht wie
       das englische „th" wie in Spanien. <em>cinco</em> klingt also wie „sinko".</p>`,
     uebungen: [
-      { id: "g7001", satz: "En Lateinamerika: ___ tomamos el bus.", loesung: "nosotros", tipps: ["nosotros", "vosotros"], hinweis: "vosotros gibt es nicht", de: "Wir nehmen den Bus." },
-      { id: "g7002", satz: "Voy a ___ el autobús. (nehmen, LatAm)", loesung: "tomar", tipps: ["tomar", "coger", "llevar"], hinweis: "coger vermeiden!", de: "Ich nehme den Bus." },
-      { id: "g7003", satz: "¿De dónde ___ ustedes? (ser)", loesung: "son", tipps: ["son", "sois", "somos"], hinweis: "ustedes = 3. Person Mehrzahl", de: "Woher kommt ihr?" },
-      { id: "g7004", satz: "En Argentina: ___ tenés razón.", loesung: "vos", tipps: ["vos", "tú", "usted"], hinweis: "voseo", de: "Du hast recht." },
-      { id: "g7005", satz: "___ casa es muy bonita. (euer)", loesung: "Su", tipps: ["Su", "Vuestra", "Suya"], hinweis: "kein vuestro in LatAm", de: "Euer Haus ist sehr schön." }
+      { id: "g7001", satz: "En Lateinamerika: ___ tomamos el bus.", loesung: "nosotros", tipps: ["nosotros", "vosotros"], hinweis: "vosotros gibt es nicht", ue: "Wir nehmen den Bus." },
+      { id: "g7002", satz: "Voy a ___ el autobús. (nehmen, LatAm)", loesung: "tomar", tipps: ["tomar", "coger", "llevar"], hinweis: "coger vermeiden!", ue: "Ich nehme den Bus." },
+      { id: "g7003", satz: "¿De dónde ___ ustedes? (ser)", loesung: "son", tipps: ["son", "sois", "somos"], hinweis: "ustedes = 3. Person Mehrzahl", ue: "Woher kommt ihr?" },
+      { id: "g7004", satz: "En Argentina: ___ tenés razón.", loesung: "vos", tipps: ["vos", "tú", "usted"], hinweis: "voseo", ue: "Du hast recht." },
+      { id: "g7005", satz: "___ casa es muy bonita. (euer)", loesung: "Su", tipps: ["Su", "Vuestra", "Suya"], hinweis: "kein vuestro in LatAm", ue: "Euer Haus ist sehr schön." }
     ]
   }
 });

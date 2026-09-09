@@ -53,11 +53,11 @@ LEKTION('es-es', {
       <em>Querría un café.</em> / <em>Me gustaría un café.</em> = Ich hätte gern … (höflich)<br>
       Im Restaurant nimmt man immer die zweite Variante.</div>`,
     uebungen: [
-      { id: "g3101", satz: "¿___ (poder, tú) ayudarme?", loesung: "Podrías", tipps: ["Podrías", "Puedes", "Podrás"], hinweis: "Stamm podr- + ías", de: "Könntest du mir helfen?" },
-      { id: "g3102", satz: "Me ___ (gustar) un café, por favor.", loesung: "gustaría", tipps: ["gustaría", "gusta", "gustará"], hinweis: "höflicher Wunsch", de: "Ich hätte gern einen Kaffee." },
-      { id: "g3103", satz: "Yo que tú, ___ (hablar) con él.", loesung: "hablaría", tipps: ["hablaría", "hablaré", "hablo"], hinweis: "Rat", de: "An deiner Stelle würde ich mit ihm sprechen." },
-      { id: "g3104", satz: "___ (deber, tú) descansar más.", loesung: "Deberías", tipps: ["Deberías", "Debes", "Deberás"], hinweis: "du solltest", de: "Du solltest dich mehr ausruhen." },
-      { id: "g3105", satz: "Nosotros ___ (tener) que salir antes.", loesung: "tendríamos", tipps: ["tendríamos", "teneríamos", "tendremos"], hinweis: "Stamm tendr-", de: "Wir müssten früher losgehen." }
+      { id: "g3101", satz: "¿___ (poder, tú) ayudarme?", loesung: "Podrías", tipps: ["Podrías", "Puedes", "Podrás"], hinweis: "Stamm podr- + ías", ue: "Könntest du mir helfen?" },
+      { id: "g3102", satz: "Me ___ (gustar) un café, por favor.", loesung: "gustaría", tipps: ["gustaría", "gusta", "gustará"], hinweis: "höflicher Wunsch", ue: "Ich hätte gern einen Kaffee." },
+      { id: "g3103", satz: "Yo que tú, ___ (hablar) con él.", loesung: "hablaría", tipps: ["hablaría", "hablaré", "hablo"], hinweis: "Rat", ue: "An deiner Stelle würde ich mit ihm sprechen." },
+      { id: "g3104", satz: "___ (deber, tú) descansar más.", loesung: "Deberías", tipps: ["Deberías", "Debes", "Deberás"], hinweis: "du solltest", ue: "Du solltest dich mehr ausruhen." },
+      { id: "g3105", satz: "Nosotros ___ (tener) que salir antes.", loesung: "tendríamos", tipps: ["tendríamos", "teneríamos", "tendremos"], hinweis: "Stamm tendr-", ue: "Wir müssten früher losgehen." }
     ]
   }
 });
@@ -114,11 +114,11 @@ LEKTION('es-es', {
       <p>Sehr häufig auch in der indirekten Rede: <em>Me dijo que <strong>había
       perdido</strong> las llaves.</em> — Er sagte mir, dass er die Schlüssel verloren hatte.</p>`,
     uebungen: [
-      { id: "g3201", satz: "Cuando llegué, ella ya se ___ ido.", loesung: "había", tipps: ["había", "ha", "habría"], hinweis: "ella → ?", de: "Als ich ankam, war sie schon gegangen." },
-      { id: "g3202", satz: "Nunca ___ (haber, yo) visto algo así.", loesung: "había", tipps: ["había", "he", "habría"], hinweis: "yo → ?", de: "Ich hatte nie so etwas gesehen." },
-      { id: "g3203", satz: "Ellos ___ terminado antes de las seis.", loesung: "habían", tipps: ["habían", "habrán", "han"], hinweis: "ellos → ?", de: "Sie waren vor sechs fertig gewesen." },
-      { id: "g3204", satz: "Me dijo que había ___ (perder) las llaves.", loesung: "perdido", tipps: ["perdido", "perdiendo", "perdió"], hinweis: "Partizip", de: "Er sagte, er habe die Schlüssel verloren." },
-      { id: "g3205", satz: "No sabía que ___ (haber, tú) estado allí.", loesung: "habías", tipps: ["habías", "has", "habrías"], hinweis: "tú → ?", de: "Ich wusste nicht, dass du dort gewesen warst." }
+      { id: "g3201", satz: "Cuando llegué, ella ya se ___ ido.", loesung: "había", tipps: ["había", "ha", "habría"], hinweis: "ella → ?", ue: "Als ich ankam, war sie schon gegangen." },
+      { id: "g3202", satz: "Nunca ___ (haber, yo) visto algo así.", loesung: "había", tipps: ["había", "he", "habría"], hinweis: "yo → ?", ue: "Ich hatte nie so etwas gesehen." },
+      { id: "g3203", satz: "Ellos ___ terminado antes de las seis.", loesung: "habían", tipps: ["habían", "habrán", "han"], hinweis: "ellos → ?", ue: "Sie waren vor sechs fertig gewesen." },
+      { id: "g3204", satz: "Me dijo que había ___ (perder) las llaves.", loesung: "perdido", tipps: ["perdido", "perdiendo", "perdió"], hinweis: "Partizip", ue: "Er sagte, er habe die Schlüssel verloren." },
+      { id: "g3205", satz: "No sabía que ___ (haber, tú) estado allí.", loesung: "habías", tipps: ["habías", "has", "habrías"], hinweis: "tú → ?", ue: "Ich wusste nicht, dass du dort gewesen warst." }
     ]
   }
 });
@@ -172,11 +172,11 @@ LEKTION('es-es', {
       <em>ser … por</em>. Wenn er egal oder unbekannt ist — was meistens der Fall ist —
       nimm das <em>se</em>-Passiv. Das klingt natürlicher.</div>`,
     uebungen: [
-      { id: "g3301", satz: "El libro ___ escrito por Cervantes.", loesung: "fue", tipps: ["fue", "estuvo", "se"], hinweis: "Vorgang + Urheber", de: "Das Buch wurde von Cervantes geschrieben." },
-      { id: "g3302", satz: "La puerta ___ cerrada. (Zustand)", loesung: "está", tipps: ["está", "fue", "se"], hinweis: "Ergebnis", de: "Die Tür ist geschlossen." },
-      { id: "g3303", satz: "La casa fue ___ (construir) en 1920.", loesung: "construida", tipps: ["construida", "construido", "construir"], hinweis: "la casa = weiblich", de: "Das Haus wurde 1920 gebaut." },
-      { id: "g3304", satz: "___ firmó el acuerdo ayer.", loesung: "Se", tipps: ["Se", "Fue", "Está"], hinweis: "se-Passiv", de: "Das Abkommen wurde gestern unterzeichnet." },
-      { id: "g3305", satz: "Los documentos ___ (ser) enviados ayer.", loesung: "fueron", tipps: ["fueron", "fue", "estuvieron"], hinweis: "Mehrzahl", de: "Die Dokumente wurden gestern verschickt." }
+      { id: "g3301", satz: "El libro ___ escrito por Cervantes.", loesung: "fue", tipps: ["fue", "estuvo", "se"], hinweis: "Vorgang + Urheber", ue: "Das Buch wurde von Cervantes geschrieben." },
+      { id: "g3302", satz: "La puerta ___ cerrada. (Zustand)", loesung: "está", tipps: ["está", "fue", "se"], hinweis: "Ergebnis", ue: "Die Tür ist geschlossen." },
+      { id: "g3303", satz: "La casa fue ___ (construir) en 1920.", loesung: "construida", tipps: ["construida", "construido", "construir"], hinweis: "la casa = weiblich", ue: "Das Haus wurde 1920 gebaut." },
+      { id: "g3304", satz: "___ firmó el acuerdo ayer.", loesung: "Se", tipps: ["Se", "Fue", "Está"], hinweis: "se-Passiv", ue: "Das Abkommen wurde gestern unterzeichnet." },
+      { id: "g3305", satz: "Los documentos ___ (ser) enviados ayer.", loesung: "fueron", tipps: ["fueron", "fue", "estuvieron"], hinweis: "Mehrzahl", ue: "Die Dokumente wurden gestern verschickt." }
     ]
   }
 });
@@ -231,11 +231,11 @@ LEKTION('es-es', {
       </table>
       <p><em>„Mañana vendré aquí“</em> → <em>Dijo que al día siguiente iría allí.</em></p>`,
     uebungen: [
-      { id: "g3401", satz: "„Estoy cansado“ → Dijo que ___ cansado.", loesung: "estaba", tipps: ["estaba", "está", "estuvo"], hinweis: "Presente → Imperfecto", de: "Er sagte, dass er müde sei." },
-      { id: "g3402", satz: "„Viajé a Cuba“ → Contó que ___ viajado.", loesung: "había", tipps: ["había", "ha", "habría"], hinweis: "Indefinido → Pluscuamperfecto", de: "Er erzählte, dass er nach Kuba gereist war." },
-      { id: "g3403", satz: "„Llegaré tarde“ → Dijo que ___ tarde.", loesung: "llegaría", tipps: ["llegaría", "llegará", "llegaba"], hinweis: "Futuro → Condicional", de: "Er sagte, dass er spät käme." },
-      { id: "g3404", satz: "„¿Vienes?“ → Preguntó ___ venía.", loesung: "si", tipps: ["si", "sí", "que"], hinweis: "Frage ohne Fragewort", de: "Er fragte, ob ich käme." },
-      { id: "g3405", satz: "„¿Dónde vives?“ → Preguntó dónde ___.", loesung: "vivía", tipps: ["vivía", "vives", "viví"], hinweis: "Presente → Imperfecto", de: "Er fragte, wo ich wohnte." }
+      { id: "g3401", satz: "„Estoy cansado“ → Dijo que ___ cansado.", loesung: "estaba", tipps: ["estaba", "está", "estuvo"], hinweis: "Presente → Imperfecto", ue: "Er sagte, dass er müde sei." },
+      { id: "g3402", satz: "„Viajé a Cuba“ → Contó que ___ viajado.", loesung: "había", tipps: ["había", "ha", "habría"], hinweis: "Indefinido → Pluscuamperfecto", ue: "Er erzählte, dass er nach Kuba gereist war." },
+      { id: "g3403", satz: "„Llegaré tarde“ → Dijo que ___ tarde.", loesung: "llegaría", tipps: ["llegaría", "llegará", "llegaba"], hinweis: "Futuro → Condicional", ue: "Er sagte, dass er spät käme." },
+      { id: "g3404", satz: "„¿Vienes?“ → Preguntó ___ venía.", loesung: "si", tipps: ["si", "sí", "que"], hinweis: "Frage ohne Fragewort", ue: "Er fragte, ob ich käme." },
+      { id: "g3405", satz: "„¿Dónde vives?“ → Preguntó dónde ___.", loesung: "vivía", tipps: ["vivía", "vives", "viví"], hinweis: "Presente → Imperfecto", ue: "Er fragte, wo ich wohnte." }
     ]
   }
 });
@@ -285,11 +285,11 @@ LEKTION('es-es', {
       <p><strong>Verneint</strong> bedeutet <em>llevar</em> „seit … nicht“:
       <em>Llevo dos días sin dormir.</em> — Ich habe seit zwei Tagen nicht geschlafen.</p>`,
     uebungen: [
-      { id: "g3501", satz: "___ tres años estudiando español.", loesung: "Llevo", tipps: ["Llevo", "Hace", "Estoy"], hinweis: "seit … tun", de: "Ich lerne seit drei Jahren Spanisch." },
-      { id: "g3502", satz: "___ de llegar a casa. (gerade)", loesung: "Acabo", tipps: ["Acabo", "Llevo", "Sigo"], hinweis: "gerade eben", de: "Ich bin gerade nach Hause gekommen." },
-      { id: "g3503", satz: "___ lloviendo desde ayer. (weiterhin)", loesung: "Sigue", tipps: ["Sigue", "Acaba", "Lleva"], hinweis: "weiter tun", de: "Es regnet seit gestern weiter." },
-      { id: "g3504", satz: "___ de fumar hace un año.", loesung: "Dejé", tipps: ["Dejé", "Volví", "Acabé"], hinweis: "aufhören", de: "Ich hörte vor einem Jahr auf zu rauchen." },
-      { id: "g3505", satz: "___ a llamar más tarde. (wieder)", loesung: "Volví", tipps: ["Volví", "Dejé", "Acabé"], hinweis: "nochmal tun", de: "Ich rief später wieder an." }
+      { id: "g3501", satz: "___ tres años estudiando español.", loesung: "Llevo", tipps: ["Llevo", "Hace", "Estoy"], hinweis: "seit … tun", ue: "Ich lerne seit drei Jahren Spanisch." },
+      { id: "g3502", satz: "___ de llegar a casa. (gerade)", loesung: "Acabo", tipps: ["Acabo", "Llevo", "Sigo"], hinweis: "gerade eben", ue: "Ich bin gerade nach Hause gekommen." },
+      { id: "g3503", satz: "___ lloviendo desde ayer. (weiterhin)", loesung: "Sigue", tipps: ["Sigue", "Acaba", "Lleva"], hinweis: "weiter tun", ue: "Es regnet seit gestern weiter." },
+      { id: "g3504", satz: "___ de fumar hace un año.", loesung: "Dejé", tipps: ["Dejé", "Volví", "Acabé"], hinweis: "aufhören", ue: "Ich hörte vor einem Jahr auf zu rauchen." },
+      { id: "g3505", satz: "___ a llamar más tarde. (wieder)", loesung: "Volví", tipps: ["Volví", "Dejé", "Acabé"], hinweis: "nochmal tun", ue: "Ich rief später wieder an." }
     ]
   }
 });
@@ -351,11 +351,11 @@ LEKTION('es-es', {
       <em><strong>s</strong>er → sea</em> · <em><strong>h</strong>aber → haya</em> ·
       <em><strong>e</strong>star → esté</em> · <em><strong>s</strong>aber → sepa</em></p>`,
     uebungen: [
-      { id: "g3601", satz: "Quiero que ___ (hablar, tú) con él.", loesung: "hables", tipps: ["hables", "hablas", "hable"], hinweis: "-ar bekommt e", de: "Ich will, dass du mit ihm sprichst." },
-      { id: "g3602", satz: "Espero que ___ (comer, vosotros) bien.", loesung: "comáis", tipps: ["comáis", "coméis", "coman"], hinweis: "-er bekommt a", de: "Ich hoffe, ihr esst gut." },
-      { id: "g3603", satz: "Quiero que ___ (tener, tú) cuidado.", loesung: "tengas", tipps: ["tengas", "tienes", "tenga"], hinweis: "yo-Form tengo → ?", de: "Ich will, dass du aufpasst." },
-      { id: "g3604", satz: "Espero que ___ (ser) verdad.", loesung: "sea", tipps: ["sea", "es", "sería"], hinweis: "Ausnahme", de: "Ich hoffe, das stimmt." },
-      { id: "g3605", satz: "Ojalá ___ (ir, él) al médico.", loesung: "vaya", tipps: ["vaya", "va", "iría"], hinweis: "Ausnahme", de: "Hoffentlich geht er zum Arzt." }
+      { id: "g3601", satz: "Quiero que ___ (hablar, tú) con él.", loesung: "hables", tipps: ["hables", "hablas", "hable"], hinweis: "-ar bekommt e", ue: "Ich will, dass du mit ihm sprichst." },
+      { id: "g3602", satz: "Espero que ___ (comer, vosotros) bien.", loesung: "comáis", tipps: ["comáis", "coméis", "coman"], hinweis: "-er bekommt a", ue: "Ich hoffe, ihr esst gut." },
+      { id: "g3603", satz: "Quiero que ___ (tener, tú) cuidado.", loesung: "tengas", tipps: ["tengas", "tienes", "tenga"], hinweis: "yo-Form tengo → ?", ue: "Ich will, dass du aufpasst." },
+      { id: "g3604", satz: "Espero que ___ (ser) verdad.", loesung: "sea", tipps: ["sea", "es", "sería"], hinweis: "Ausnahme", ue: "Ich hoffe, das stimmt." },
+      { id: "g3605", satz: "Ojalá ___ (ir, él) al médico.", loesung: "vaya", tipps: ["vaya", "va", "iría"], hinweis: "Ausnahme", ue: "Hoffentlich geht er zum Arzt." }
     ]
   }
 });
@@ -411,11 +411,11 @@ LEKTION('es-es', {
       <em>No <strong>me</strong> dejan <strong>salir</strong>.</em> = <em>No dejan que
       <strong>salga</strong>.</em> — beides korrekt.</div>`,
     uebungen: [
-      { id: "g3701", satz: "Quiero ___ (salir, yo) esta noche.", loesung: "salir", tipps: ["salir", "salga", "salgo"], hinweis: "gleiche Person!", de: "Ich will heute Abend ausgehen." },
-      { id: "g3702", satz: "Quiero que ___ (salir, tú) esta noche.", loesung: "salgas", tipps: ["salgas", "sales", "salir"], hinweis: "zwei Personen", de: "Ich will, dass du heute Abend ausgehst." },
-      { id: "g3703", satz: "Te pido que ___ (tener) paciencia.", loesung: "tengas", tipps: ["tengas", "tienes", "tener"], hinweis: "yo-Form tengo", de: "Ich bitte dich, geduldig zu sein." },
-      { id: "g3704", satz: "Espero que ___ (venir, ellos) pronto.", loesung: "vengan", tipps: ["vengan", "vienen", "venir"], hinweis: "yo-Form vengo", de: "Ich hoffe, dass sie bald kommen." },
-      { id: "g3705", satz: "No permiten que ___ (fumar, nosotros).", loesung: "fumemos", tipps: ["fumemos", "fumamos", "fumar"], hinweis: "-ar → -emos", de: "Sie erlauben nicht, dass wir rauchen." }
+      { id: "g3701", satz: "Quiero ___ (salir, yo) esta noche.", loesung: "salir", tipps: ["salir", "salga", "salgo"], hinweis: "gleiche Person!", ue: "Ich will heute Abend ausgehen." },
+      { id: "g3702", satz: "Quiero que ___ (salir, tú) esta noche.", loesung: "salgas", tipps: ["salgas", "sales", "salir"], hinweis: "zwei Personen", ue: "Ich will, dass du heute Abend ausgehst." },
+      { id: "g3703", satz: "Te pido que ___ (tener) paciencia.", loesung: "tengas", tipps: ["tengas", "tienes", "tener"], hinweis: "yo-Form tengo", ue: "Ich bitte dich, geduldig zu sein." },
+      { id: "g3704", satz: "Espero que ___ (venir, ellos) pronto.", loesung: "vengan", tipps: ["vengan", "vienen", "venir"], hinweis: "yo-Form vengo", ue: "Ich hoffe, dass sie bald kommen." },
+      { id: "g3705", satz: "No permiten que ___ (fumar, nosotros).", loesung: "fumemos", tipps: ["fumemos", "fumamos", "fumar"], hinweis: "-ar → -emos", ue: "Sie erlauben nicht, dass wir rauchen." }
     ]
   }
 });
@@ -477,11 +477,11 @@ LEKTION('es-es', {
       <em>Es importante <strong>descansar</strong>.</em> (allgemein)<br>
       <em>Es importante que <strong>descanses</strong>.</em> (du konkret)</p>`,
     uebungen: [
-      { id: "g3801", satz: "Me alegro de que ___ (estar, tú) aquí.", loesung: "estés", tipps: ["estés", "estás", "estar"], hinweis: "Gefühl", de: "Ich freue mich, dass du hier bist." },
-      { id: "g3802", satz: "Es importante que ___ (descansar, tú).", loesung: "descanses", tipps: ["descanses", "descansas", "descansar"], hinweis: "Wertung", de: "Es ist wichtig, dass du dich ausruhst." },
-      { id: "g3803", satz: "Es verdad que él ___ (venir) hoy.", loesung: "viene", tipps: ["viene", "venga", "vendría"], hinweis: "Tatsache → Indikativ", de: "Es stimmt, dass er heute kommt." },
-      { id: "g3804", satz: "Es una lástima que no ___ (poder, tú) venir.", loesung: "puedas", tipps: ["puedas", "puedes", "poder"], hinweis: "Wertung", de: "Schade, dass du nicht kommen kannst." },
-      { id: "g3805", satz: "Me sorprende que no lo ___ (saber, tú).", loesung: "sepas", tipps: ["sepas", "sabes", "saber"], hinweis: "saber → sepa", de: "Es überrascht mich, dass du es nicht weißt." }
+      { id: "g3801", satz: "Me alegro de que ___ (estar, tú) aquí.", loesung: "estés", tipps: ["estés", "estás", "estar"], hinweis: "Gefühl", ue: "Ich freue mich, dass du hier bist." },
+      { id: "g3802", satz: "Es importante que ___ (descansar, tú).", loesung: "descanses", tipps: ["descanses", "descansas", "descansar"], hinweis: "Wertung", ue: "Es ist wichtig, dass du dich ausruhst." },
+      { id: "g3803", satz: "Es verdad que él ___ (venir) hoy.", loesung: "viene", tipps: ["viene", "venga", "vendría"], hinweis: "Tatsache → Indikativ", ue: "Es stimmt, dass er heute kommt." },
+      { id: "g3804", satz: "Es una lástima que no ___ (poder, tú) venir.", loesung: "puedas", tipps: ["puedas", "puedes", "poder"], hinweis: "Wertung", ue: "Schade, dass du nicht kommen kannst." },
+      { id: "g3805", satz: "Me sorprende que no lo ___ (saber, tú).", loesung: "sepas", tipps: ["sepas", "sabes", "saber"], hinweis: "saber → sepa", ue: "Es überrascht mich, dass du es nicht weißt." }
     ]
   }
 });
@@ -541,11 +541,11 @@ LEKTION('es-es', {
       Wunsch, Zweifel, Bewertung. Je unsicherer die Aussage, desto wahrscheinlicher der
       Subjuntivo.</div>`,
     uebungen: [
-      { id: "g3901", satz: "Creo que ___ (venir, él) mañana.", loesung: "viene", tipps: ["viene", "venga", "vendrá"], hinweis: "bejaht → Indikativ", de: "Ich glaube, er kommt morgen." },
-      { id: "g3902", satz: "No creo que ___ (venir, él) mañana.", loesung: "venga", tipps: ["venga", "viene", "vendrá"], hinweis: "verneint → Subjuntivo", de: "Ich glaube nicht, dass er morgen kommt." },
-      { id: "g3903", satz: "Dudo que ___ (ser) verdad.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "dudar → immer Subjuntivo", de: "Ich bezweifle, dass das stimmt." },
-      { id: "g3904", satz: "Es posible que ___ (haber) un error.", loesung: "haya", tipps: ["haya", "hay", "habrá"], hinweis: "hay → haya", de: "Möglicherweise gibt es einen Fehler." },
-      { id: "g3905", satz: "Quizás ___ (tener, tú) razón.", loesung: "tengas", tipps: ["tengas", "tienes", "tendrás"], hinweis: "quizás → Subjuntivo", de: "Vielleicht hast du recht." }
+      { id: "g3901", satz: "Creo que ___ (venir, él) mañana.", loesung: "viene", tipps: ["viene", "venga", "vendrá"], hinweis: "bejaht → Indikativ", ue: "Ich glaube, er kommt morgen." },
+      { id: "g3902", satz: "No creo que ___ (venir, él) mañana.", loesung: "venga", tipps: ["venga", "viene", "vendrá"], hinweis: "verneint → Subjuntivo", ue: "Ich glaube nicht, dass er morgen kommt." },
+      { id: "g3903", satz: "Dudo que ___ (ser) verdad.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "dudar → immer Subjuntivo", ue: "Ich bezweifle, dass das stimmt." },
+      { id: "g3904", satz: "Es posible que ___ (haber) un error.", loesung: "haya", tipps: ["haya", "hay", "habrá"], hinweis: "hay → haya", ue: "Möglicherweise gibt es einen Fehler." },
+      { id: "g3905", satz: "Quizás ___ (tener, tú) razón.", loesung: "tengas", tipps: ["tengas", "tienes", "tendrás"], hinweis: "quizás → Subjuntivo", ue: "Vielleicht hast du recht." }
     ]
   }
 });
@@ -600,11 +600,11 @@ LEKTION('es-es', {
       lernen und sofort benutzen — sie sind der schnellste Weg, natürlich zu klingen.
       Und nebenbei trainierst du den Subjuntivo, ohne darüber nachzudenken.</div>`,
     uebungen: [
-      { id: "g4001", satz: "Ojalá ___ (hacer) buen tiempo mañana.", loesung: "haga", tipps: ["haga", "hace", "hará"], hinweis: "ojalá → Subjuntivo", de: "Hoffentlich wird morgen schönes Wetter." },
-      { id: "g4002", satz: "¡Que ___ (tener, tú) un buen viaje!", loesung: "tengas", tipps: ["tengas", "tienes", "tendrás"], hinweis: "Wunschformel", de: "Gute Reise!" },
-      { id: "g4003", satz: "Espero que todo ___ (salir) bien.", loesung: "salga", tipps: ["salga", "sale", "saldrá"], hinweis: "esperar que", de: "Ich hoffe, alles geht gut." },
-      { id: "g4004", satz: "¡Que ___ (descansar, tú)!", loesung: "descanses", tipps: ["descanses", "descansas", "descansar"], hinweis: "Schlaf gut", de: "Schlaf gut!" },
-      { id: "g4005", satz: "Ojalá ___ (poder, nosotros) ir juntos.", loesung: "podamos", tipps: ["podamos", "podemos", "podremos"], hinweis: "yo-Form puedo → pued-", de: "Hoffentlich können wir zusammen gehen." }
+      { id: "g4001", satz: "Ojalá ___ (hacer) buen tiempo mañana.", loesung: "haga", tipps: ["haga", "hace", "hará"], hinweis: "ojalá → Subjuntivo", ue: "Hoffentlich wird morgen schönes Wetter." },
+      { id: "g4002", satz: "¡Que ___ (tener, tú) un buen viaje!", loesung: "tengas", tipps: ["tengas", "tienes", "tendrás"], hinweis: "Wunschformel", ue: "Gute Reise!" },
+      { id: "g4003", satz: "Espero que todo ___ (salir) bien.", loesung: "salga", tipps: ["salga", "sale", "saldrá"], hinweis: "esperar que", ue: "Ich hoffe, alles geht gut." },
+      { id: "g4004", satz: "¡Que ___ (descansar, tú)!", loesung: "descanses", tipps: ["descanses", "descansas", "descansar"], hinweis: "Schlaf gut", ue: "Schlaf gut!" },
+      { id: "g4005", satz: "Ojalá ___ (poder, nosotros) ir juntos.", loesung: "podamos", tipps: ["podamos", "podemos", "podremos"], hinweis: "yo-Form puedo → pued-", ue: "Hoffentlich können wir zusammen gehen." }
     ]
   }
 });

@@ -350,7 +350,7 @@ var Uebungen = {
   /* ================= 6. Lückentext (Grammatik) ================= */
 
   typ_luecke(a, b) {
-    const u = a.karte;                       // { id, satz, loesung, tipps, hinweis, de }
+    const u = a.karte;                       // { id, satz, loesung, tipps, hinweis, ue }
     const teile = String(u.satz).split('___');
 
     b.innerHTML = `
@@ -361,7 +361,7 @@ var Uebungen = {
           autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
           size="10">${this.escape(teile[1] || '')}
       </div>
-      ${u.de ? `<div class="wortart" style="margin-top:.5rem">${this.escape(u.de)}</div>` : ''}
+      ${u.ue ? `<div class="wortart" style="margin-top:.5rem">${this.escape(u.ue)}</div>` : ''}
       ${(u.tipps && u.tipps.length) ? `<div class="tipp-reihe">${
         this.mischen(u.tipps).map(t => `<button class="tipp-btn" data-t="${this.escape(t)}">${this.escape(t)}</button>`).join('')
       }</div>` : ''}

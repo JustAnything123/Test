@@ -51,11 +51,11 @@ LEKTION('es-419', {
       klingt aber literarischer. Für dich reicht die <em>-ra</em>-Form völlig —
       erkennen solltest du die andere trotzdem.</div>`,
     uebungen: [
-      { id: "g5101", satz: "Si ___ (tener, yo) tiempo, iría contigo.", loesung: "tuviera", tipps: ["tuviera", "tenía", "tendría"], hinweis: "tuvieron → tuvie-", de: "Wenn ich Zeit hätte, käme ich mit." },
-      { id: "g5102", satz: "Si ___ (ser, yo) tú, no lo haría.", loesung: "fuera", tipps: ["fuera", "era", "sería"], hinweis: "fueron → fue-", de: "Wenn ich du wäre, würde ich es nicht tun." },
-      { id: "g5103", satz: "Ojalá ___ (poder, nosotros) ayudar.", loesung: "pudiéramos", tipps: ["pudiéramos", "podríamos", "podemos"], hinweis: "pudieron → pudie-", de: "Wenn wir doch helfen könnten." },
-      { id: "g5104", satz: "Si ___ (saber, yo) la respuesta, te la diría.", loesung: "supiera", tipps: ["supiera", "sabría", "sabía"], hinweis: "supieron → supie-", de: "Wenn ich die Antwort wüsste, sagte ich sie dir." },
-      { id: "g5105", satz: "Me gustaría que me lo ___ (explicar, ellos).", loesung: "explicaran", tipps: ["explicaran", "explican", "explicarían"], hinweis: "explicaron → explica-", de: "Ich hätte gern, dass sie es mir erklären." }
+      { id: "g5101", satz: "Si ___ (tener, yo) tiempo, iría contigo.", loesung: "tuviera", tipps: ["tuviera", "tenía", "tendría"], hinweis: "tuvieron → tuvie-", ue: "Wenn ich Zeit hätte, käme ich mit." },
+      { id: "g5102", satz: "Si ___ (ser, yo) tú, no lo haría.", loesung: "fuera", tipps: ["fuera", "era", "sería"], hinweis: "fueron → fue-", ue: "Wenn ich du wäre, würde ich es nicht tun." },
+      { id: "g5103", satz: "Ojalá ___ (poder, nosotros) ayudar.", loesung: "pudiéramos", tipps: ["pudiéramos", "podríamos", "podemos"], hinweis: "pudieron → pudie-", ue: "Wenn wir doch helfen könnten." },
+      { id: "g5104", satz: "Si ___ (saber, yo) la respuesta, te la diría.", loesung: "supiera", tipps: ["supiera", "sabría", "sabía"], hinweis: "supieron → supie-", ue: "Wenn ich die Antwort wüsste, sagte ich sie dir." },
+      { id: "g5105", satz: "Me gustaría que me lo ___ (explicar, ellos).", loesung: "explicaran", tipps: ["explicaran", "explican", "explicarían"], hinweis: "explicaron → explica-", ue: "Ich hätte gern, dass sie es mir erklären." }
     ]
   }
 });
@@ -118,11 +118,11 @@ LEKTION('es-419', {
       <p><em>como si</em> steht <strong>immer</strong> mit dem Imperfecto de Subjuntivo —
       auch im Präsens, weil ein Vergleich mit etwas Unwirklichem gezogen wird.</p>`,
     uebungen: [
-      { id: "g5201", satz: "Si ___ (tener, yo) dinero, viajaría.", loesung: "tuviera", tipps: ["tuviera", "tengo", "tendría"], hinweis: "nach si: Imperfecto Subj.", de: "Wenn ich Geld hätte, würde ich reisen." },
-      { id: "g5202", satz: "Si tuviera dinero, ___ (viajar, yo) más.", loesung: "viajaría", tipps: ["viajaría", "viajara", "viajaré"], hinweis: "Folge: Condicional", de: "Wenn ich Geld hätte, würde ich mehr reisen." },
-      { id: "g5203", satz: "¿Qué ___ (hacer, tú) si fueras rico?", loesung: "harías", tipps: ["harías", "hicieras", "harás"], hinweis: "Folge: Condicional", de: "Was würdest du tun, wenn du reich wärst?" },
-      { id: "g5204", satz: "Habla como si ___ (ser) experto.", loesung: "fuera", tipps: ["fuera", "es", "sería"], hinweis: "como si → immer Subj.", de: "Er redet, als ob er Experte wäre." },
-      { id: "g5205", satz: "Si ___ (vivir, yo) allí, hablaría mejor.", loesung: "viviera", tipps: ["viviera", "vivo", "viviría"], hinweis: "nach si", de: "Wenn ich dort lebte, würde ich besser sprechen." }
+      { id: "g5201", satz: "Si ___ (tener, yo) dinero, viajaría.", loesung: "tuviera", tipps: ["tuviera", "tengo", "tendría"], hinweis: "nach si: Imperfecto Subj.", ue: "Wenn ich Geld hätte, würde ich reisen." },
+      { id: "g5202", satz: "Si tuviera dinero, ___ (viajar, yo) más.", loesung: "viajaría", tipps: ["viajaría", "viajara", "viajaré"], hinweis: "Folge: Condicional", ue: "Wenn ich Geld hätte, würde ich mehr reisen." },
+      { id: "g5203", satz: "¿Qué ___ (hacer, tú) si fueras rico?", loesung: "harías", tipps: ["harías", "hicieras", "harás"], hinweis: "Folge: Condicional", ue: "Was würdest du tun, wenn du reich wärst?" },
+      { id: "g5204", satz: "Habla como si ___ (ser) experto.", loesung: "fuera", tipps: ["fuera", "es", "sería"], hinweis: "como si → immer Subj.", ue: "Er redet, als ob er Experte wäre." },
+      { id: "g5205", satz: "Si ___ (vivir, yo) allí, hablaría mejor.", loesung: "viviera", tipps: ["viviera", "vivo", "viviría"], hinweis: "nach si", ue: "Wenn ich dort lebte, würde ich besser sprechen." }
     ]
   }
 });
@@ -184,11 +184,11 @@ LEKTION('es-419', {
         <li><em><strong>Tendría que haber</strong> llamado.</em> — Ich hätte anrufen müssen.</li>
       </ul>`,
     uebungen: [
-      { id: "g5301", satz: "Si ___ (haber, yo) estudiado, habría aprobado.", loesung: "hubiera", tipps: ["hubiera", "habría", "había"], hinweis: "nach si", de: "Hätte ich gelernt, hätte ich bestanden." },
-      { id: "g5302", satz: "Si hubiera estudiado, ___ (haber, yo) aprobado.", loesung: "habría", tipps: ["habría", "hubiera", "había"], hinweis: "Folge: Condicional", de: "Hätte ich gelernt, hätte ich bestanden." },
-      { id: "g5303", satz: "Ojalá ___ (haber, yo) venido con ustedes.", loesung: "hubiera", tipps: ["hubiera", "habría", "he"], hinweis: "ojalá + Bedauern", de: "Wäre ich doch mitgekommen." },
-      { id: "g5304", satz: "___ (deber, tú) haberme avisado.", loesung: "Deberías", tipps: ["Deberías", "Debiste", "Debes"], hinweis: "du hättest sollen", de: "Du hättest mich informieren sollen." },
-      { id: "g5305", satz: "___ (poder) haber sido peor.", loesung: "Podría", tipps: ["Podría", "Puede", "Pudo"], hinweis: "es hätte können", de: "Es hätte schlimmer sein können." }
+      { id: "g5301", satz: "Si ___ (haber, yo) estudiado, habría aprobado.", loesung: "hubiera", tipps: ["hubiera", "habría", "había"], hinweis: "nach si", ue: "Hätte ich gelernt, hätte ich bestanden." },
+      { id: "g5302", satz: "Si hubiera estudiado, ___ (haber, yo) aprobado.", loesung: "habría", tipps: ["habría", "hubiera", "había"], hinweis: "Folge: Condicional", ue: "Hätte ich gelernt, hätte ich bestanden." },
+      { id: "g5303", satz: "Ojalá ___ (haber, yo) venido con ustedes.", loesung: "hubiera", tipps: ["hubiera", "habría", "he"], hinweis: "ojalá + Bedauern", ue: "Wäre ich doch mitgekommen." },
+      { id: "g5304", satz: "___ (deber, tú) haberme avisado.", loesung: "Deberías", tipps: ["Deberías", "Debiste", "Debes"], hinweis: "du hättest sollen", ue: "Du hättest mich informieren sollen." },
+      { id: "g5305", satz: "___ (poder) haber sido peor.", loesung: "Podría", tipps: ["Podría", "Puede", "Pudo"], hinweis: "es hätte können", ue: "Es hätte schlimmer sein können." }
     ]
   }
 });
@@ -245,11 +245,11 @@ LEKTION('es-419', {
       Zukunft, <em>Imperfecto</em> für Vergangenheit und Irreales, <em>hubiera + Partizip</em>
       für Verpasstes.</p>`,
     uebungen: [
-      { id: "g5401", satz: "Quería que ___ (venir, tú) conmigo.", loesung: "vinieras", tipps: ["vinieras", "vengas", "vienes"], hinweis: "Hauptsatz Vergangenheit", de: "Ich wollte, dass du mitkommst." },
-      { id: "g5402", satz: "Me dijo que ___ (descansar, yo) más.", loesung: "descansara", tipps: ["descansara", "descanse", "descanso"], hinweis: "dijo → Imperfecto Subj.", de: "Er sagte, ich solle mich mehr ausruhen." },
-      { id: "g5403", satz: "Era importante que ___ (dormir, él) bien.", loesung: "durmiera", tipps: ["durmiera", "duerma", "dormía"], hinweis: "durmieron → durmie-", de: "Es war wichtig, dass er gut schlief." },
-      { id: "g5404", satz: "No creía que ___ (ser) tan grave.", loesung: "fuera", tipps: ["fuera", "sea", "era"], hinweis: "creía → Imperfecto Subj.", de: "Ich glaubte nicht, dass es so ernst wäre." },
-      { id: "g5405", satz: "Me gustaría que ___ (venir, ustedes).", loesung: "vinieran", tipps: ["vinieran", "vengan", "vienen"], hinweis: "Condicional → Imperfecto Subj.", de: "Ich hätte gern, dass ihr kommt." }
+      { id: "g5401", satz: "Quería que ___ (venir, tú) conmigo.", loesung: "vinieras", tipps: ["vinieras", "vengas", "vienes"], hinweis: "Hauptsatz Vergangenheit", ue: "Ich wollte, dass du mitkommst." },
+      { id: "g5402", satz: "Me dijo que ___ (descansar, yo) más.", loesung: "descansara", tipps: ["descansara", "descanse", "descanso"], hinweis: "dijo → Imperfecto Subj.", ue: "Er sagte, ich solle mich mehr ausruhen." },
+      { id: "g5403", satz: "Era importante que ___ (dormir, él) bien.", loesung: "durmiera", tipps: ["durmiera", "duerma", "dormía"], hinweis: "durmieron → durmie-", ue: "Es war wichtig, dass er gut schlief." },
+      { id: "g5404", satz: "No creía que ___ (ser) tan grave.", loesung: "fuera", tipps: ["fuera", "sea", "era"], hinweis: "creía → Imperfecto Subj.", ue: "Ich glaubte nicht, dass es so ernst wäre." },
+      { id: "g5405", satz: "Me gustaría que ___ (venir, ustedes).", loesung: "vinieran", tipps: ["vinieran", "vengan", "vienen"], hinweis: "Condicional → Imperfecto Subj.", ue: "Ich hätte gern, dass ihr kommt." }
     ]
   }
 });
@@ -312,11 +312,11 @@ LEKTION('es-419', {
       aus Tag 6 (<em>Lo compro</em> = ich kaufe es). Das neutrale <em>lo</em> steht immer vor
       einem Adjektiv, vor <em>que</em> oder vor <em>de</em>.</div>`,
     uebungen: [
-      { id: "g5501", satz: "___ que más me gusta es viajar.", loesung: "Lo", tipps: ["Lo", "El", "La"], hinweis: "das, was", de: "Was mir am besten gefällt, ist Reisen." },
-      { id: "g5502", satz: "___ bueno es que tenemos tiempo.", loesung: "Lo", tipps: ["Lo", "El", "Es"], hinweis: "lo + Adjektiv", de: "Das Gute ist, dass wir Zeit haben." },
-      { id: "g5503", satz: "No entiendo lo ___ dices.", loesung: "que", tipps: ["que", "de", "cual"], hinweis: "das, was", de: "Ich verstehe nicht, was du sagst." },
-      { id: "g5504", satz: "Lo ___ ayer fue un error.", loesung: "de", tipps: ["de", "que", "en"], hinweis: "die Sache von", de: "Die Sache von gestern war ein Fehler." },
-      { id: "g5505", satz: "No sabes lo difícil ___ es.", loesung: "que", tipps: ["que", "de", "como"], hinweis: "wie schwer es ist", de: "Du weißt nicht, wie schwer das ist." }
+      { id: "g5501", satz: "___ que más me gusta es viajar.", loesung: "Lo", tipps: ["Lo", "El", "La"], hinweis: "das, was", ue: "Was mir am besten gefällt, ist Reisen." },
+      { id: "g5502", satz: "___ bueno es que tenemos tiempo.", loesung: "Lo", tipps: ["Lo", "El", "Es"], hinweis: "lo + Adjektiv", ue: "Das Gute ist, dass wir Zeit haben." },
+      { id: "g5503", satz: "No entiendo lo ___ dices.", loesung: "que", tipps: ["que", "de", "cual"], hinweis: "das, was", ue: "Ich verstehe nicht, was du sagst." },
+      { id: "g5504", satz: "Lo ___ ayer fue un error.", loesung: "de", tipps: ["de", "que", "en"], hinweis: "die Sache von", ue: "Die Sache von gestern war ein Fehler." },
+      { id: "g5505", satz: "No sabes lo difícil ___ es.", loesung: "que", tipps: ["que", "de", "como"], hinweis: "wie schwer es ist", ue: "Du weißt nicht, wie schwer das ist." }
     ]
   }
 });
@@ -375,11 +375,11 @@ LEKTION('es-419', {
       acabar, ocurrir</em>.<br>
       <em>Se me ocurrió una idea.</em> — Mir kam eine Idee.</p>`,
     uebungen: [
-      { id: "g5601", satz: "___ vemos mañana. (wir uns)", loesung: "Nos", tipps: ["Nos", "Se", "Os"], hinweis: "nosotros", de: "Wir sehen uns morgen." },
-      { id: "g5602", satz: "Ellos ___ ayudan mutuamente.", loesung: "se", tipps: ["se", "nos", "os"], hinweis: "ellos", de: "Sie helfen einander." },
-      { id: "g5603", satz: "Se ___ olvidó llamarte. (mir)", loesung: "me", tipps: ["me", "te", "le"], hinweis: "mir", de: "Ich habe vergessen, dich anzurufen." },
-      { id: "g5604", satz: "Se me ___ (romper) el celular ayer.", loesung: "rompió", tipps: ["rompió", "rompieron", "rompí"], hinweis: "el celular = Einzahl", de: "Mir ging gestern das Handy kaputt." },
-      { id: "g5605", satz: "Se me ___ (olvidar) las llaves.", loesung: "olvidaron", tipps: ["olvidaron", "olvidó", "olvidé"], hinweis: "las llaves = Mehrzahl", de: "Ich habe die Schlüssel vergessen." }
+      { id: "g5601", satz: "___ vemos mañana. (wir uns)", loesung: "Nos", tipps: ["Nos", "Se", "Os"], hinweis: "nosotros", ue: "Wir sehen uns morgen." },
+      { id: "g5602", satz: "Ellos ___ ayudan mutuamente.", loesung: "se", tipps: ["se", "nos", "os"], hinweis: "ellos", ue: "Sie helfen einander." },
+      { id: "g5603", satz: "Se ___ olvidó llamarte. (mir)", loesung: "me", tipps: ["me", "te", "le"], hinweis: "mir", ue: "Ich habe vergessen, dich anzurufen." },
+      { id: "g5604", satz: "Se me ___ (romper) el celular ayer.", loesung: "rompió", tipps: ["rompió", "rompieron", "rompí"], hinweis: "el celular = Einzahl", ue: "Mir ging gestern das Handy kaputt." },
+      { id: "g5605", satz: "Se me ___ (olvidar) las llaves.", loesung: "olvidaron", tipps: ["olvidaron", "olvidó", "olvidé"], hinweis: "las llaves = Mehrzahl", ue: "Ich habe die Schlüssel vergessen." }
     ]
   }
 });
@@ -440,11 +440,11 @@ LEKTION('es-419', {
         <li><em>En cierto modo…</em> — In gewisser Weise…</li>
       </ul>`,
     uebungen: [
-      { id: "g5701", satz: "___ que esperar un poco. (man müsste)", loesung: "Habría", tipps: ["Habría", "Hay", "Habrá"], hinweis: "höflich = Condicional", de: "Man müsste ein wenig warten." },
-      { id: "g5702", satz: "___ (deber, nosotros) pensarlo mejor.", loesung: "Deberíamos", tipps: ["Deberíamos", "Debemos", "Debimos"], hinweis: "wir sollten", de: "Wir sollten besser darüber nachdenken." },
-      { id: "g5703", satz: "Entiendo tu punto, ___ no lo comparto.", loesung: "pero", tipps: ["pero", "porque", "así que"], hinweis: "Gegensatz", de: "Ich verstehe dich, teile es aber nicht." },
-      { id: "g5704", satz: "Yo ___ (decir) que es mejor esperar.", loesung: "diría", tipps: ["diría", "digo", "dije"], hinweis: "ich würde sagen", de: "Ich würde sagen, es ist besser zu warten." },
-      { id: "g5705", satz: "Hay que tener ___ cuenta otros factores.", loesung: "en", tipps: ["en", "a", "de"], hinweis: "feste Wendung", de: "Man muss andere Faktoren berücksichtigen." }
+      { id: "g5701", satz: "___ que esperar un poco. (man müsste)", loesung: "Habría", tipps: ["Habría", "Hay", "Habrá"], hinweis: "höflich = Condicional", ue: "Man müsste ein wenig warten." },
+      { id: "g5702", satz: "___ (deber, nosotros) pensarlo mejor.", loesung: "Deberíamos", tipps: ["Deberíamos", "Debemos", "Debimos"], hinweis: "wir sollten", ue: "Wir sollten besser darüber nachdenken." },
+      { id: "g5703", satz: "Entiendo tu punto, ___ no lo comparto.", loesung: "pero", tipps: ["pero", "porque", "así que"], hinweis: "Gegensatz", ue: "Ich verstehe dich, teile es aber nicht." },
+      { id: "g5704", satz: "Yo ___ (decir) que es mejor esperar.", loesung: "diría", tipps: ["diría", "digo", "dije"], hinweis: "ich würde sagen", ue: "Ich würde sagen, es ist besser zu warten." },
+      { id: "g5705", satz: "Hay que tener ___ cuenta otros factores.", loesung: "en", tipps: ["en", "a", "de"], hinweis: "feste Wendung", ue: "Man muss andere Faktoren berücksichtigen." }
     ]
   }
 });
@@ -506,11 +506,11 @@ LEKTION('es-419', {
       nicht Wort für Wort aus dem Deutschen übersetzen. Sie einzeln zu lernen bringt mehr
       als zwanzig neue Einzelvokabeln — sie kommen in jedem Gespräch vor.</div>`,
     uebungen: [
-      { id: "g5801", satz: "Me ___ igual, decide tú.", loesung: "da", tipps: ["da", "dan", "doy"], hinweis: "unpersönlich", de: "Mir ist es egal, entscheide du." },
-      { id: "g5802", satz: "Me ___ (costar) mucho madrugar.", loesung: "cuesta", tipps: ["cuesta", "cuestan", "cuesto"], hinweis: "madrugar = eine Sache", de: "Es fällt mir schwer, früh aufzustehen." },
-      { id: "g5803", satz: "Me ___ (quedar) dos días de vacaciones.", loesung: "quedan", tipps: ["quedan", "queda", "quedo"], hinweis: "dos días = Mehrzahl", de: "Mir bleiben zwei Urlaubstage." },
-      { id: "g5804", satz: "Tengo ___ de verte. (Lust)", loesung: "ganas", tipps: ["ganas", "gana", "ganos"], hinweis: "feste Wendung", de: "Ich habe Lust, dich zu sehen." },
-      { id: "g5805", satz: "¿Me ___ (echar, tú) una mano?", loesung: "echas", tipps: ["echas", "echa", "echo"], hinweis: "tú-Form", de: "Gehst du mir zur Hand?" }
+      { id: "g5801", satz: "Me ___ igual, decide tú.", loesung: "da", tipps: ["da", "dan", "doy"], hinweis: "unpersönlich", ue: "Mir ist es egal, entscheide du." },
+      { id: "g5802", satz: "Me ___ (costar) mucho madrugar.", loesung: "cuesta", tipps: ["cuesta", "cuestan", "cuesto"], hinweis: "madrugar = eine Sache", ue: "Es fällt mir schwer, früh aufzustehen." },
+      { id: "g5803", satz: "Me ___ (quedar) dos días de vacaciones.", loesung: "quedan", tipps: ["quedan", "queda", "quedo"], hinweis: "dos días = Mehrzahl", ue: "Mir bleiben zwei Urlaubstage." },
+      { id: "g5804", satz: "Tengo ___ de verte. (Lust)", loesung: "ganas", tipps: ["ganas", "gana", "ganos"], hinweis: "feste Wendung", ue: "Ich habe Lust, dich zu sehen." },
+      { id: "g5805", satz: "¿Me ___ (echar, tú) una mano?", loesung: "echas", tipps: ["echas", "echa", "echo"], hinweis: "tú-Form", ue: "Gehst du mir zur Hand?" }
     ]
   }
 });
@@ -571,11 +571,11 @@ LEKTION('es-419', {
         <li><em>Voy mejorando poco a poco.</em> — Ich werde allmählich besser.</li>
       </ul>`,
     uebungen: [
-      { id: "g5901", satz: "Se ___ rojo de vergüenza. (spontan)", loesung: "puso", tipps: ["puso", "volvió", "hizo"], hinweis: "kurzes Gefühl", de: "Er wurde rot vor Scham." },
-      { id: "g5902", satz: "Se ___ médico después de estudiar.", loesung: "hizo", tipps: ["hizo", "puso", "quedó"], hinweis: "Beruf, selbst gewählt", de: "Er wurde Arzt, nachdem er studiert hatte." },
-      { id: "g5903", satz: "Con los años se ___ más serio.", loesung: "volvió", tipps: ["volvió", "puso", "hizo"], hinweis: "Charakter, dauerhaft", de: "Mit den Jahren wurde er ernster." },
-      { id: "g5904", satz: "___ dos meses estudiando cada día.", loesung: "Llevo", tipps: ["Llevo", "Hace", "Estoy"], hinweis: "seit … tun", de: "Ich lerne seit zwei Monaten täglich." },
-      { id: "g5905", satz: "Cada vez me ___ (salir) mejor.", loesung: "sale", tipps: ["sale", "salgo", "salen"], hinweis: "es gelingt mir", de: "Es gelingt mir immer besser." }
+      { id: "g5901", satz: "Se ___ rojo de vergüenza. (spontan)", loesung: "puso", tipps: ["puso", "volvió", "hizo"], hinweis: "kurzes Gefühl", ue: "Er wurde rot vor Scham." },
+      { id: "g5902", satz: "Se ___ médico después de estudiar.", loesung: "hizo", tipps: ["hizo", "puso", "quedó"], hinweis: "Beruf, selbst gewählt", ue: "Er wurde Arzt, nachdem er studiert hatte." },
+      { id: "g5903", satz: "Con los años se ___ más serio.", loesung: "volvió", tipps: ["volvió", "puso", "hizo"], hinweis: "Charakter, dauerhaft", ue: "Mit den Jahren wurde er ernster." },
+      { id: "g5904", satz: "___ dos meses estudiando cada día.", loesung: "Llevo", tipps: ["Llevo", "Hace", "Estoy"], hinweis: "seit … tun", ue: "Ich lerne seit zwei Monaten täglich." },
+      { id: "g5905", satz: "Cada vez me ___ (salir) mejor.", loesung: "sale", tipps: ["sale", "salgo", "salen"], hinweis: "es gelingt mir", ue: "Es gelingt mir immer besser." }
     ]
   }
 });
@@ -642,11 +642,11 @@ LEKTION('es-419', {
       <span style="font-size:.95rem;color:var(--text-leise)">Glückwunsch — du bist am Ziel.
       Und jetzt fängt das Spanische erst richtig an.</span></p>`,
     uebungen: [
-      { id: "g6001", satz: "He aprendido más ___ lo que esperaba.", loesung: "de", tipps: ["de", "que", "como"], hinweis: "más de lo que", de: "Ich habe mehr gelernt, als ich erwartete." },
-      { id: "g6002", satz: "Si ___ (seguir, yo) así, mejoraré mucho.", loesung: "sigo", tipps: ["sigo", "siga", "seguiría"], hinweis: "realer Bedingungssatz", de: "Wenn ich so weitermache, werde ich viel besser." },
-      { id: "g6003", satz: "Ojalá ___ (poder, yo) usarlo pronto.", loesung: "pueda", tipps: ["pueda", "puedo", "podría"], hinweis: "ojalá", de: "Hoffentlich kann ich es bald nutzen." },
-      { id: "g6004", satz: "___ mejor ha sido la constancia.", loesung: "Lo", tipps: ["Lo", "El", "La"], hinweis: "neutrales lo", de: "Das Beste war die Beständigkeit." },
-      { id: "g6005", satz: "Me alegro de que ___ (haber, tú) llegado hasta aquí.", loesung: "hayas", tipps: ["hayas", "has", "habías"], hinweis: "Gefühl → Subjuntivo", de: "Ich freue mich, dass du es bis hierher geschafft hast." }
+      { id: "g6001", satz: "He aprendido más ___ lo que esperaba.", loesung: "de", tipps: ["de", "que", "como"], hinweis: "más de lo que", ue: "Ich habe mehr gelernt, als ich erwartete." },
+      { id: "g6002", satz: "Si ___ (seguir, yo) así, mejoraré mucho.", loesung: "sigo", tipps: ["sigo", "siga", "seguiría"], hinweis: "realer Bedingungssatz", ue: "Wenn ich so weitermache, werde ich viel besser." },
+      { id: "g6003", satz: "Ojalá ___ (poder, yo) usarlo pronto.", loesung: "pueda", tipps: ["pueda", "puedo", "podría"], hinweis: "ojalá", ue: "Hoffentlich kann ich es bald nutzen." },
+      { id: "g6004", satz: "___ mejor ha sido la constancia.", loesung: "Lo", tipps: ["Lo", "El", "La"], hinweis: "neutrales lo", ue: "Das Beste war die Beständigkeit." },
+      { id: "g6005", satz: "Me alegro de que ___ (haber, tú) llegado hasta aquí.", loesung: "hayas", tipps: ["hayas", "has", "habías"], hinweis: "Gefühl → Subjuntivo", ue: "Ich freue mich, dass du es bis hierher geschafft hast." }
     ]
   }
 });

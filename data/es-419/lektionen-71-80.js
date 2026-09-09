@@ -60,11 +60,11 @@ LEKTION('es-419', {
       <em>habría</em> = hätte (irreal, höflich)<br>
       <em>hubiera</em> = Subjuntivo, nach <em>si</em> und nach Auslösern</div>`,
     uebungen: [
-      { id: "g7101", satz: "Para el viernes ___ (haber, yo) terminado.", loesung: "habré", tipps: ["habré", "habría", "hubiera"], hinweis: "Zukunft", de: "Bis Freitag werde ich fertig sein." },
-      { id: "g7102", satz: "No vino: ___ (haber) tenido un problema.", loesung: "habrá", tipps: ["habrá", "habría", "hubiera"], hinweis: "Vermutung", de: "Er kam nicht: Er wird wohl ein Problem gehabt haben." },
-      { id: "g7103", satz: "Si hubiera podido, ___ (haber, yo) ido.", loesung: "habría", tipps: ["habría", "habré", "hubiera"], hinweis: "Folge Typ 3", de: "Wenn ich gekonnt hätte, wäre ich gegangen." },
-      { id: "g7104", satz: "Cuando llegues, ya ___ (haber, nosotros) salido.", loesung: "habremos", tipps: ["habremos", "habríamos", "hubiéramos"], hinweis: "Zukunft", de: "Wenn du ankommst, sind wir schon weg." },
-      { id: "g7105", satz: "___ (haber, yo) preferido saberlo antes.", loesung: "Habría", tipps: ["Habría", "Habré", "Hubiera"], hinweis: "höfliche Rückschau", de: "Ich hätte es lieber früher gewusst." }
+      { id: "g7101", satz: "Para el viernes ___ (haber, yo) terminado.", loesung: "habré", tipps: ["habré", "habría", "hubiera"], hinweis: "Zukunft", ue: "Bis Freitag werde ich fertig sein." },
+      { id: "g7102", satz: "No vino: ___ (haber) tenido un problema.", loesung: "habrá", tipps: ["habrá", "habría", "hubiera"], hinweis: "Vermutung", ue: "Er kam nicht: Er wird wohl ein Problem gehabt haben." },
+      { id: "g7103", satz: "Si hubiera podido, ___ (haber, yo) ido.", loesung: "habría", tipps: ["habría", "habré", "hubiera"], hinweis: "Folge Typ 3", ue: "Wenn ich gekonnt hätte, wäre ich gegangen." },
+      { id: "g7104", satz: "Cuando llegues, ya ___ (haber, nosotros) salido.", loesung: "habremos", tipps: ["habremos", "habríamos", "hubiéramos"], hinweis: "Zukunft", ue: "Wenn du ankommst, sind wir schon weg." },
+      { id: "g7105", satz: "___ (haber, yo) preferido saberlo antes.", loesung: "Habría", tipps: ["Habría", "Habré", "Hubiera"], hinweis: "höfliche Rückschau", ue: "Ich hätte es lieber früher gewusst." }
     ]
   }
 });
@@ -123,11 +123,11 @@ LEKTION('es-419', {
       <em>Quienes <strong>lleguen</strong> tarde…</em> (wer auch immer zu spät kommt)<br>
       gegenüber <em>Los que <strong>llegaron</strong> tarde…</em> (die, die zu spät kamen)</p>`,
     uebungen: [
-      { id: "g7201", satz: "Es el barrio en ___ que vivo.", loesung: "el", tipps: ["el", "la", "lo"], hinweis: "el barrio = männlich", de: "Das ist das Viertel, in dem ich wohne." },
-      { id: "g7202", satz: "Llegó tarde, ___ cual molestó a todos.", loesung: "lo", tipps: ["lo", "el", "la"], hinweis: "bezieht sich auf den ganzen Satz", de: "Er kam zu spät, was alle störte." },
-      { id: "g7203", satz: "El autor ___ obra leímos es chileno.", loesung: "cuya", tipps: ["cuya", "cuyo", "que"], hinweis: "la obra = weiblich", de: "Der Autor, dessen Werk wir lasen, ist Chilene." },
-      { id: "g7204", satz: "___ lleguen tarde no podrán entrar.", loesung: "Quienes", tipps: ["Quienes", "Quien", "Los cuales"], hinweis: "Mehrzahl, ohne Bezugswort", de: "Wer zu spät kommt, kann nicht hinein." },
-      { id: "g7205", satz: "La razón por la ___ renunció es un misterio.", loesung: "cual", tipps: ["cual", "que", "cuya"], hinweis: "förmlich", de: "Der Grund, weshalb er kündigte, ist ein Rätsel." }
+      { id: "g7201", satz: "Es el barrio en ___ que vivo.", loesung: "el", tipps: ["el", "la", "lo"], hinweis: "el barrio = männlich", ue: "Das ist das Viertel, in dem ich wohne." },
+      { id: "g7202", satz: "Llegó tarde, ___ cual molestó a todos.", loesung: "lo", tipps: ["lo", "el", "la"], hinweis: "bezieht sich auf den ganzen Satz", ue: "Er kam zu spät, was alle störte." },
+      { id: "g7203", satz: "El autor ___ obra leímos es chileno.", loesung: "cuya", tipps: ["cuya", "cuyo", "que"], hinweis: "la obra = weiblich", ue: "Der Autor, dessen Werk wir lasen, ist Chilene." },
+      { id: "g7204", satz: "___ lleguen tarde no podrán entrar.", loesung: "Quienes", tipps: ["Quienes", "Quien", "Los cuales"], hinweis: "Mehrzahl, ohne Bezugswort", ue: "Wer zu spät kommt, kann nicht hinein." },
+      { id: "g7205", satz: "La razón por la ___ renunció es un misterio.", loesung: "cual", tipps: ["cual", "que", "cuya"], hinweis: "förmlich", ue: "Der Grund, weshalb er kündigte, ist ein Rätsel." }
     ]
   }
 });
@@ -185,11 +185,11 @@ LEKTION('es-419', {
       Gegenposition zuerst einräumt und dann widerlegt, wirkt deutlich überzeugender als
       eines, das sie ignoriert. Genau dafür sind diese Wendungen da.</div>`,
     uebungen: [
-      { id: "g7301", satz: "Por más que lo ___ (intentar, yo), no lo logro.", loesung: "intente", tipps: ["intente", "intento", "intentaré"], hinweis: "por más que → Subjuntivo", de: "So sehr ich es versuche, ich schaffe es nicht." },
-      { id: "g7302", satz: "Si bien ___ (ser) caro, es necesario.", loesung: "es", tipps: ["es", "sea", "fuera"], hinweis: "si bien → Indikativ", de: "Zwar ist es teuer, aber notwendig." },
-      { id: "g7303", satz: "Aun cuando ___ (ser) cierto, no cambia nada.", loesung: "fuera", tipps: ["fuera", "es", "sea"], hinweis: "hypothetisch", de: "Selbst wenn es wahr wäre, ändert es nichts." },
-      { id: "g7304", satz: "___ a las dificultades, seguimos adelante.", loesung: "Pese", tipps: ["Pese", "Aunque", "Si bien"], hinweis: "+ Substantiv", de: "Trotz der Schwierigkeiten machten wir weiter." },
-      { id: "g7305", satz: "Por mucho que ___ (decir, ellos), no me convence.", loesung: "digan", tipps: ["digan", "dicen", "dirán"], hinweis: "por mucho que", de: "So viel sie auch sagen, es überzeugt mich nicht." }
+      { id: "g7301", satz: "Por más que lo ___ (intentar, yo), no lo logro.", loesung: "intente", tipps: ["intente", "intento", "intentaré"], hinweis: "por más que → Subjuntivo", ue: "So sehr ich es versuche, ich schaffe es nicht." },
+      { id: "g7302", satz: "Si bien ___ (ser) caro, es necesario.", loesung: "es", tipps: ["es", "sea", "fuera"], hinweis: "si bien → Indikativ", ue: "Zwar ist es teuer, aber notwendig." },
+      { id: "g7303", satz: "Aun cuando ___ (ser) cierto, no cambia nada.", loesung: "fuera", tipps: ["fuera", "es", "sea"], hinweis: "hypothetisch", ue: "Selbst wenn es wahr wäre, ändert es nichts." },
+      { id: "g7304", satz: "___ a las dificultades, seguimos adelante.", loesung: "Pese", tipps: ["Pese", "Aunque", "Si bien"], hinweis: "+ Substantiv", ue: "Trotz der Schwierigkeiten machten wir weiter." },
+      { id: "g7305", satz: "Por mucho que ___ (decir, ellos), no me convence.", loesung: "digan", tipps: ["digan", "dicen", "dirán"], hinweis: "por mucho que", ue: "So viel sie auch sagen, es überzeugt mich nicht." }
     ]
   }
 });
@@ -247,11 +247,11 @@ LEKTION('es-419', {
       eine Tatsache. Erst verneint kippen sie in den Subjuntivo:
       <em>No está comprobado que <strong>sea</strong> así.</em></p>`,
     uebungen: [
-      { id: "g7401", satz: "___ dice que la novela es autobiográfica.", loesung: "Se", tipps: ["Se", "Le", "Lo"], hinweis: "man sagt", de: "Man sagt, der Roman sei autobiografisch." },
-      { id: "g7402", satz: "El autor ___ (haber) escrito el final después.", loesung: "habría", tipps: ["habría", "habrá", "hubiera"], hinweis: "unbestätigt → Condicional", de: "Der Autor soll das Ende später geschrieben haben." },
-      { id: "g7403", satz: "Al ___, nunca terminó la obra.", loesung: "parecer", tipps: ["parecer", "parece", "pareciendo"], hinweis: "feste Wendung", de: "Offenbar beendete er das Werk nie." },
-      { id: "g7404", satz: "No cabe duda de que ___ (ser) un gran autor.", loesung: "es", tipps: ["es", "sea", "fuera"], hinweis: "bejaht → Indikativ", de: "Zweifellos ist er ein großer Autor." },
-      { id: "g7405", satz: "No está comprobado que ___ (ser) cierto.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "verneint → Subjuntivo", de: "Es ist nicht erwiesen, dass es stimmt." }
+      { id: "g7401", satz: "___ dice que la novela es autobiográfica.", loesung: "Se", tipps: ["Se", "Le", "Lo"], hinweis: "man sagt", ue: "Man sagt, der Roman sei autobiografisch." },
+      { id: "g7402", satz: "El autor ___ (haber) escrito el final después.", loesung: "habría", tipps: ["habría", "habrá", "hubiera"], hinweis: "unbestätigt → Condicional", ue: "Der Autor soll das Ende später geschrieben haben." },
+      { id: "g7403", satz: "Al ___, nunca terminó la obra.", loesung: "parecer", tipps: ["parecer", "parece", "pareciendo"], hinweis: "feste Wendung", ue: "Offenbar beendete er das Werk nie." },
+      { id: "g7404", satz: "No cabe duda de que ___ (ser) un gran autor.", loesung: "es", tipps: ["es", "sea", "fuera"], hinweis: "bejaht → Indikativ", ue: "Zweifellos ist er ein großer Autor." },
+      { id: "g7405", satz: "No está comprobado que ___ (ser) cierto.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "verneint → Subjuntivo", ue: "Es ist nicht erwiesen, dass es stimmt." }
     ]
   }
 });
@@ -308,11 +308,11 @@ LEKTION('es-419', {
       <p>Das ist die höflichste Art, eine Bitte zu formulieren — deutlich zurückhaltender
       als <em>Quiero que…</em>.</p>`,
     uebungen: [
-      { id: "g7501", satz: "Más vale que lo ___ (hablar, nosotros) hoy.", loesung: "hablemos", tipps: ["hablemos", "hablamos", "hablaremos"], hinweis: "más vale que", de: "Besser, wir sprechen heute darüber." },
-      { id: "g7502", satz: "Te agradecería que me lo ___ (explicar, tú).", loesung: "explicaras", tipps: ["explicaras", "expliques", "explicas"], hinweis: "Condicional → Imperfecto Subj.", de: "Ich wäre dankbar, wenn du es erklärtest." },
-      { id: "g7503", satz: "Pase lo que ___ (pasar), estoy contigo.", loesung: "pase", tipps: ["pase", "pasa", "pasará"], hinweis: "Verdopplung", de: "Was auch passiert, ich bin bei dir." },
-      { id: "g7504", satz: "Que yo ___ (saber), no ha venido nadie.", loesung: "sepa", tipps: ["sepa", "sé", "sabía"], hinweis: "feste Wendung", de: "Soweit ich weiß, ist niemand gekommen." },
-      { id: "g7505", satz: "No vaya a ser que se ___ (enojar, ellos).", loesung: "enojen", tipps: ["enojen", "enojan", "enojarán"], hinweis: "Befürchtung", de: "Nicht dass sie sich noch ärgern." }
+      { id: "g7501", satz: "Más vale que lo ___ (hablar, nosotros) hoy.", loesung: "hablemos", tipps: ["hablemos", "hablamos", "hablaremos"], hinweis: "más vale que", ue: "Besser, wir sprechen heute darüber." },
+      { id: "g7502", satz: "Te agradecería que me lo ___ (explicar, tú).", loesung: "explicaras", tipps: ["explicaras", "expliques", "explicas"], hinweis: "Condicional → Imperfecto Subj.", ue: "Ich wäre dankbar, wenn du es erklärtest." },
+      { id: "g7503", satz: "Pase lo que ___ (pasar), estoy contigo.", loesung: "pase", tipps: ["pase", "pasa", "pasará"], hinweis: "Verdopplung", ue: "Was auch passiert, ich bin bei dir." },
+      { id: "g7504", satz: "Que yo ___ (saber), no ha venido nadie.", loesung: "sepa", tipps: ["sepa", "sé", "sabía"], hinweis: "feste Wendung", ue: "Soweit ich weiß, ist niemand gekommen." },
+      { id: "g7505", satz: "No vaya a ser que se ___ (enojar, ellos).", loesung: "enojen", tipps: ["enojen", "enojan", "enojarán"], hinweis: "Befürchtung", ue: "Nicht dass sie sich noch ärgern." }
     ]
   }
 });
@@ -369,11 +369,11 @@ LEKTION('es-419', {
       und wird nie gebeugt. <s>Se tratan de</s> ist falsch, auch bei mehreren Dingen:
       <em>Se trata de dos problemas distintos.</em></div>`,
     uebungen: [
-      { id: "g7601", satz: "Los precios subieron; ___ afectó al consumo.", loesung: "ello", tipps: ["ello", "eso", "esto"], hinweis: "schriftsprachlich", de: "Die Preise stiegen; das wirkte sich auf den Konsum aus." },
-      { id: "g7602", satz: "___ enfoque resulta insuficiente. (der genannte)", loesung: "Dicho", tipps: ["Dicho", "Ello", "Tal"], hinweis: "el enfoque = männlich", de: "Der genannte Ansatz ist unzureichend." },
-      { id: "g7603", satz: "___ trata de un problema estructural.", loesung: "Se", tipps: ["Se", "Es", "Son"], hinweis: "es handelt sich um", de: "Es handelt sich um ein strukturelles Problem." },
-      { id: "g7604", satz: "Cabe ___ (preguntar) si es realmente necesario.", loesung: "preguntarse", tipps: ["preguntarse", "preguntar", "preguntando"], hinweis: "reflexiv", de: "Es fragt sich, ob das wirklich nötig ist." },
-      { id: "g7605", satz: "No hay datos ___ respecto.", loesung: "al", tipps: ["al", "el", "a"], hinweis: "feste Wendung", de: "Es gibt dazu keine Daten." }
+      { id: "g7601", satz: "Los precios subieron; ___ afectó al consumo.", loesung: "ello", tipps: ["ello", "eso", "esto"], hinweis: "schriftsprachlich", ue: "Die Preise stiegen; das wirkte sich auf den Konsum aus." },
+      { id: "g7602", satz: "___ enfoque resulta insuficiente. (der genannte)", loesung: "Dicho", tipps: ["Dicho", "Ello", "Tal"], hinweis: "el enfoque = männlich", ue: "Der genannte Ansatz ist unzureichend." },
+      { id: "g7603", satz: "___ trata de un problema estructural.", loesung: "Se", tipps: ["Se", "Es", "Son"], hinweis: "es handelt sich um", ue: "Es handelt sich um ein strukturelles Problem." },
+      { id: "g7604", satz: "Cabe ___ (preguntar) si es realmente necesario.", loesung: "preguntarse", tipps: ["preguntarse", "preguntar", "preguntando"], hinweis: "reflexiv", ue: "Es fragt sich, ob das wirklich nötig ist." },
+      { id: "g7605", satz: "No hay datos ___ respecto.", loesung: "al", tipps: ["al", "el", "a"], hinweis: "feste Wendung", ue: "Es gibt dazu keine Daten." }
     ]
   }
 });
@@ -426,11 +426,11 @@ LEKTION('es-419', {
       <p><strong>Und eine nützliche Höflichkeitsformel:</strong> <em>¿Te viene bien…?</em> —
       „Passt es dir…?" ist die übliche Art, einen Termin vorzuschlagen.</p>`,
     uebungen: [
-      { id: "g7701", satz: "Nos ___ (quedar) sin batería en el camino.", loesung: "quedamos", tipps: ["quedamos", "quedó", "quedaron"], hinweis: "nosotros", de: "Uns ging unterwegs der Akku aus." },
-      { id: "g7702", satz: "Se ___ hizo tarde y perdí el bus. (mir)", loesung: "me", tipps: ["me", "te", "le"], hinweis: "mir", de: "Es wurde mir zu spät und ich verpasste den Bus." },
-      { id: "g7703", satz: "Se me ___ (antojar) unos tacos.", loesung: "antojaron", tipps: ["antojaron", "antojó", "antoja"], hinweis: "unos tacos = Mehrzahl", de: "Ich bekam Lust auf Tacos." },
-      { id: "g7704", satz: "Se le ___ (ocurrir) una idea genial.", loesung: "ocurrió", tipps: ["ocurrió", "ocurrieron", "ocurre"], hinweis: "una idea = Einzahl", de: "Ihm kam eine geniale Idee." },
-      { id: "g7705", satz: "¿Te ___ bien el martes? (venir)", loesung: "viene", tipps: ["viene", "vienes", "vienen"], hinweis: "el martes = Einzahl", de: "Passt dir Dienstag?" }
+      { id: "g7701", satz: "Nos ___ (quedar) sin batería en el camino.", loesung: "quedamos", tipps: ["quedamos", "quedó", "quedaron"], hinweis: "nosotros", ue: "Uns ging unterwegs der Akku aus." },
+      { id: "g7702", satz: "Se ___ hizo tarde y perdí el bus. (mir)", loesung: "me", tipps: ["me", "te", "le"], hinweis: "mir", ue: "Es wurde mir zu spät und ich verpasste den Bus." },
+      { id: "g7703", satz: "Se me ___ (antojar) unos tacos.", loesung: "antojaron", tipps: ["antojaron", "antojó", "antoja"], hinweis: "unos tacos = Mehrzahl", ue: "Ich bekam Lust auf Tacos." },
+      { id: "g7704", satz: "Se le ___ (ocurrir) una idea genial.", loesung: "ocurrió", tipps: ["ocurrió", "ocurrieron", "ocurre"], hinweis: "una idea = Einzahl", ue: "Ihm kam eine geniale Idee." },
+      { id: "g7705", satz: "¿Te ___ bien el martes? (venir)", loesung: "viene", tipps: ["viene", "vienes", "vienen"], hinweis: "el martes = Einzahl", ue: "Passt dir Dienstag?" }
     ]
   }
 });
@@ -490,11 +490,11 @@ LEKTION('es-419', {
       <em>Cabe señalar que…</em> beginnt, mit <em>No obstante…</em> einschränkt und mit
       <em>De ahí que…</em> schließt, ist genau der Aufbau, den B2-Prüfungen sehen wollen.</div>`,
     uebungen: [
-      { id: "g7801", satz: "De ahí que ___ (ser) tan importante.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "de ahí que → Subjuntivo", de: "Deshalb ist es so wichtig." },
-      { id: "g7802", satz: "Es tan caro que nadie lo ___ (comprar).", loesung: "compra", tipps: ["compra", "compre", "comprara"], hinweis: "tan… que → Indikativ", de: "Es ist so teuer, dass niemand es kauft." },
-      { id: "g7803", satz: "___ de mejorar, la situación empeoró.", loesung: "Lejos", tipps: ["Lejos", "Cerca", "Antes"], hinweis: "weit davon entfernt", de: "Weit davon entfernt sich zu bessern, wurde es schlimmer." },
-      { id: "g7804", satz: "Por poco que ___ (hacer, tú), ayuda.", loesung: "hagas", tipps: ["hagas", "haces", "harás"], hinweis: "por poco que", de: "So wenig du auch tust, es hilft." },
-      { id: "g7805", satz: "¡Ni que ___ (ser) tan difícil!", loesung: "fuera", tipps: ["fuera", "es", "sea"], hinweis: "als ob, ironisch", de: "Als ob das so schwer wäre!" }
+      { id: "g7801", satz: "De ahí que ___ (ser) tan importante.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "de ahí que → Subjuntivo", ue: "Deshalb ist es so wichtig." },
+      { id: "g7802", satz: "Es tan caro que nadie lo ___ (comprar).", loesung: "compra", tipps: ["compra", "compre", "comprara"], hinweis: "tan… que → Indikativ", ue: "Es ist so teuer, dass niemand es kauft." },
+      { id: "g7803", satz: "___ de mejorar, la situación empeoró.", loesung: "Lejos", tipps: ["Lejos", "Cerca", "Antes"], hinweis: "weit davon entfernt", ue: "Weit davon entfernt sich zu bessern, wurde es schlimmer." },
+      { id: "g7804", satz: "Por poco que ___ (hacer, tú), ayuda.", loesung: "hagas", tipps: ["hagas", "haces", "harás"], hinweis: "por poco que", ue: "So wenig du auch tust, es hilft." },
+      { id: "g7805", satz: "¡Ni que ___ (ser) tan difícil!", loesung: "fuera", tipps: ["fuera", "es", "sea"], hinweis: "als ob, ironisch", ue: "Als ob das so schwer wäre!" }
     ]
   }
 });
@@ -551,11 +551,11 @@ LEKTION('es-419', {
       <em>quedar en</em> = vereinbaren · <em>quedarse</em> = bleiben ·
       <em>quedar</em> (wie gustar) = übrig sein, stehen: <em>Te queda bien esa camisa.</em></div>`,
     uebungen: [
-      { id: "g7901", satz: "No ___ (dejar) de sorprenderme.", loesung: "deja", tipps: ["deja", "dejo", "dejan"], hinweis: "es/das → 3. Person", de: "Es hört nicht auf, mich zu überraschen." },
-      { id: "g7902", satz: "___ (acabar, él) por aceptar la oferta.", loesung: "Acabó", tipps: ["Acabó", "Acaba", "Acabará"], hinweis: "am Ende doch", de: "Am Ende nahm er das Angebot an." },
-      { id: "g7903", satz: "___ (venir, yo) diciéndolo desde hace años.", loesung: "Vengo", tipps: ["Vengo", "Vine", "Vendré"], hinweis: "seit länger bis jetzt", de: "Ich sage das seit Jahren." },
-      { id: "g7904", satz: "Se ___ (echar) a reír de repente.", loesung: "echó", tipps: ["echó", "puso", "empezó"], hinweis: "plötzlich, unwillkürlich", de: "Er fing plötzlich an zu lachen." },
-      { id: "g7905", satz: "___ (quedar, nosotros) en vernos el lunes.", loesung: "Quedamos", tipps: ["Quedamos", "Nos quedamos", "Quedaremos"], hinweis: "vereinbaren", de: "Wir haben uns für Montag verabredet." }
+      { id: "g7901", satz: "No ___ (dejar) de sorprenderme.", loesung: "deja", tipps: ["deja", "dejo", "dejan"], hinweis: "es/das → 3. Person", ue: "Es hört nicht auf, mich zu überraschen." },
+      { id: "g7902", satz: "___ (acabar, él) por aceptar la oferta.", loesung: "Acabó", tipps: ["Acabó", "Acaba", "Acabará"], hinweis: "am Ende doch", ue: "Am Ende nahm er das Angebot an." },
+      { id: "g7903", satz: "___ (venir, yo) diciéndolo desde hace años.", loesung: "Vengo", tipps: ["Vengo", "Vine", "Vendré"], hinweis: "seit länger bis jetzt", ue: "Ich sage das seit Jahren." },
+      { id: "g7904", satz: "Se ___ (echar) a reír de repente.", loesung: "echó", tipps: ["echó", "puso", "empezó"], hinweis: "plötzlich, unwillkürlich", ue: "Er fing plötzlich an zu lachen." },
+      { id: "g7905", satz: "___ (quedar, nosotros) en vernos el lunes.", loesung: "Quedamos", tipps: ["Quedamos", "Nos quedamos", "Quedaremos"], hinweis: "vereinbaren", ue: "Wir haben uns für Montag verabredet." }
     ]
   }
 });
@@ -618,11 +618,11 @@ LEKTION('es-419', {
       In den letzten zehn Tagen geht es um Feinschliff: Register, Redewendungen und die
       Fähigkeit, längere Texte zu bauen.</p>`,
     uebungen: [
-      { id: "g8001", satz: "Me alegra que ___ (haber, tú) llegado tan lejos.", loesung: "hayas", tipps: ["hayas", "hubieras", "has"], hinweis: "Gegenwart + abgeschlossen", de: "Ich freue mich, dass du so weit gekommen bist." },
-      { id: "g8002", satz: "___ haber empezado antes, hablarías mejor.", loesung: "De", tipps: ["De", "Si", "Con"], hinweis: "de + Infinitiv", de: "Hättest du früher angefangen, sprächest du besser." },
-      { id: "g8003", satz: "Por más que ___ (practicar, tú), habrá más.", loesung: "practiques", tipps: ["practiques", "practicas", "practicarás"], hinweis: "por más que", de: "So viel du auch übst, es gibt mehr." },
-      { id: "g8004", satz: "No es que ___ (ser) fácil, sino que vale la pena.", loesung: "sea", tipps: ["sea", "es", "fuera"], hinweis: "no es que", de: "Es ist nicht leicht, aber es lohnt sich." },
-      { id: "g8005", satz: "Para diciembre ___ (haber, tú) mejorado mucho.", loesung: "habrás", tipps: ["habrás", "habrías", "hubieras"], hinweis: "Futuro Perfecto", de: "Bis Dezember wirst du dich stark verbessert haben." }
+      { id: "g8001", satz: "Me alegra que ___ (haber, tú) llegado tan lejos.", loesung: "hayas", tipps: ["hayas", "hubieras", "has"], hinweis: "Gegenwart + abgeschlossen", ue: "Ich freue mich, dass du so weit gekommen bist." },
+      { id: "g8002", satz: "___ haber empezado antes, hablarías mejor.", loesung: "De", tipps: ["De", "Si", "Con"], hinweis: "de + Infinitiv", ue: "Hättest du früher angefangen, sprächest du besser." },
+      { id: "g8003", satz: "Por más que ___ (practicar, tú), habrá más.", loesung: "practiques", tipps: ["practiques", "practicas", "practicarás"], hinweis: "por más que", ue: "So viel du auch übst, es gibt mehr." },
+      { id: "g8004", satz: "No es que ___ (ser) fácil, sino que vale la pena.", loesung: "sea", tipps: ["sea", "es", "fuera"], hinweis: "no es que", ue: "Es ist nicht leicht, aber es lohnt sich." },
+      { id: "g8005", satz: "Para diciembre ___ (haber, tú) mejorado mucho.", loesung: "habrás", tipps: ["habrás", "habrías", "hubieras"], hinweis: "Futuro Perfecto", ue: "Bis Dezember wirst du dich stark verbessert haben." }
     ]
   }
 });
