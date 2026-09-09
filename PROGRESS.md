@@ -1,31 +1,42 @@
-# Projektfortschritt — ¡Vamos! (Spanisch A2 → B1)
+# Projektfortschritt — ¡Vamos! (drei Kurse in einer App)
 
-**Stand:** 3. September 2026
+**Stand:** 9. September 2026
 **Branch:** `claude/spanish-learning-app-daily-o5s13u`
-**Letzter Commit:** `bd6a206`
-**Status:** ✅ Version 1 fertig, getestet und gepusht — wartet auf die Freischaltung von GitHub Pages
+**Status:** ✅ Version 2 fertig, getestet und gepusht — wartet auf die Freischaltung von GitHub Pages
 
 ---
 
 ## Kurzfassung
 
 Die App ist vollständig gebaut und funktioniert. Alle Anforderungen aus der
-ursprünglichen Idee sind umgesetzt. Es fehlt genau **ein Schritt, den nur du
-ausführen kannst**: GitHub Pages im Repository aktivieren (siehe
-[Was als Nächstes ansteht](#was-als-nächstes-ansteht)).
+ursprünglichen Idee und alle fünf Änderungswünsche sind umgesetzt. Es fehlt genau
+**ein Schritt, den nur du ausführen kannst**: GitHub Pages im Repository
+aktivieren (siehe [Was als Nächstes ansteht](#was-als-nächstes-ansteht)).
+
+### Die drei Kurse
+
+| Kurs | Richtung | Oberfläche | Niveau | Tage |
+|---|---|---|---|---|
+| 🇪🇸 Español (España) | Deutsch → Spanisch (Spanien) | Deutsch | A2 → B1 | 60 |
+| 🌎 Español (Latinoamérica) | Deutsch → Spanisch (LatAm) | Deutsch | A2 → B2 | 90 |
+| 🇩🇪 Alemán | Spanisch → Deutsch | **Spanisch** | A1 → B2 | 120 |
+
+### Kennzahlen
 
 | Kennzahl | Wert |
 |---|---|
-| Tageslektionen | 60 |
-| Vokabeln | 600 |
-| Beispielsätze | 300 |
-| Grammatikthemen mit Erklärung | 60 |
-| Grammatikübungen | 300 |
-| Lernkarten gesamt | 1200 |
+| Kurse | 3 |
+| Tageslektionen gesamt | 270 |
+| Vokabeln | 2700 |
+| Beispielsätze | 1350 |
+| Grammatikthemen mit Erklärung | 270 |
+| Grammatikübungen | 1351 |
+| Lernkarten gesamt | 5401 |
 | Übungstypen | 6 |
-| Zeilen Programmcode | 2206 |
-| Zeilen Lerninhalt | 3641 |
-| Automatische Tests | 77 (alle grün) |
+| Oberflächentexte je Sprache | 270 |
+| Zeilen Programmcode | 2988 |
+| Zeilen Lerninhalt | 17 181 |
+| Automatische Tests | 159 (alle grün) |
 
 ---
 
@@ -34,11 +45,11 @@ ausführen kannst**: GitHub Pages im Repository aktivieren (siehe
 | Deine Anforderung | Status | Umgesetzt als |
 |---|---|---|
 | Lern-App im HTML-Format | ✅ | Reines HTML/CSS/JavaScript, kein Build-Schritt |
-| Tägliche Aufgaben | ✅ | 60 Tageslektionen mit festem Ablauf |
-| Vokabeln | ✅ | 600 Stück, je mit Artikel, Wortart und Beispielsatz |
-| Sätze | ✅ | 300 Beispielsätze mit Übersetzung |
-| Grammatikalische Erklärungen | ✅ | 60 Themen, auf Deutsch, mit Tabellen und Merksätzen |
-| Start bei Niveau A2 | ✅ | Tag 1–33 als A2 ausgezeichnet, Tag 34–60 als B1 |
+| Tägliche Aufgaben | ✅ | 270 Tageslektionen mit festem Ablauf |
+| Vokabeln | ✅ | 2700 Stück, je mit Artikel, Wortart und Beispielsatz |
+| Sätze | ✅ | 1350 Beispielsätze mit Übersetzung |
+| Grammatikalische Erklärungen | ✅ | 270 Themen mit Tabellen und Merksätzen |
+| Start bei Niveau A2 | ✅ | Spanischkurse beginnen bei A2 (der Deutschkurs auf deinen Wunsch bei A1) |
 | „Ggf. erweiterte Aufgaben" | ✅ | Hören, Satzbau, Lückentext, Schnell-Wiederholung |
 | Fortschrittszähler: aktive Tage | ✅ | Zähler + Streak + Kalendergitter |
 | Fortschrittszähler: gelernte Wörter | ✅ | Zählt Karten ab Stufe 2 |
@@ -48,6 +59,26 @@ ausführen kannst**: GitHub Pages im Repository aktivieren (siehe
 | Recherche vor dem Bauen | ✅ | Memrise, Anki, Duolingo — Quellen in der README |
 | Benachrichtigung 19:30 auf Android | ⚠️ | Über Kalender/Wecker gelöst — technisch begründet, siehe unten |
 | Über Benachrichtigung zur Seite | ✅ | Der Kalendertermin enthält den Link zur App |
+
+### Die fünf Änderungswünsche
+
+| Wunsch | Status | Umgesetzt als |
+|---|---|---|
+| 1. Auf Lateinamerika-Spanisch umstellen | ✅ | Eigener Kurs `es-419`: kein `vosotros`, LatAm-Wortschatz, Perfecto zurückgenommen. Der Spanien-Kurs bleibt daneben bestehen |
+| 2. Deutsch für Spanisch-Muttersprachler | ✅ | Kurs `de`, 120 Tage, Oberfläche und alle Erklärungen auf Spanisch |
+| 3. Beide Sprachen bis B2 | ✅ | Spanisch (LatAm) 90 Tage bis B2, Deutsch 120 Tage von A1 bis B2 |
+| 4. Sprache in der App umschaltbar? | ✅ | Ja — eine App, drei Kurse, jederzeit umschaltbar, Lernstand je Kurs getrennt |
+| 5. Alten Stand als Kopie sichern | ✅ | Sicherungs-Branch `backup/v1-spanien-a2-b1` mit dem unveränderten Einzelkurs-Stand |
+
+**Zu Wunsch 4 im Detail:** Eine App statt drei war die klare Empfehlung. Das
+Wiederholsystem, die Übungstypen und die Statistik sind sprachunabhängig —
+dreimal dieselbe Logik zu pflegen wäre dreifache Arbeit bei jedem künftigen
+Fehler. Getrennt wird nur, was getrennt gehört: der Lernstand.
+
+**Zu Wunsch 5 im Detail:** Der Branch `backup/v1-spanien-a2-b1` ist gepusht und
+enthält den Stand vor dem Umbau. Der Versuch, zusätzlich ein Git-Tag zu pushen,
+scheiterte an einer Einschränkung des Netzwerk-Proxys in dieser Umgebung — das
+Sicherungs-**Branch** ist aber gepusht und erfüllt denselben Zweck.
 
 ---
 
@@ -115,19 +146,59 @@ Zeitgeber (z. B. eine GitHub-Action täglich um 17:30 UTC). Siehe
 | Hören | Vorgelesenen Satz aufschreiben, mit Langsam-Knopf | Memrise „Listening Test" |
 | Lückentext | Grammatische Form einsetzen, mit Tipp-Buttons | eigene Ergänzung |
 
+### Kurssystem ✅
+
+- `js/kurse.js` — Kursregister: anlegen, wechseln, Stand je Kurs abfragen
+- `js/kurs-definitionen.js` — die drei Kurse mit Name, Sprachen, Stimmen, Farbe
+- `js/texte.js` — 270 Oberflächentexte auf Deutsch **und** Spanisch, plus die
+  Funktion `t()`, die je nach aktivem Kurs die richtige Tabelle nimmt
+- Der Lernstand liegt **je Kurs getrennt** (`Speicher.fortschritt(kursId)`);
+  geteilt werden nur Thema, Ton und Tagesziel
+- Ein alter Einzelkurs-Stand (`spanisch_v1`) wird beim ersten Start automatisch
+  in den Spanien-Kurs übernommen — getestet
+
+**Der Kniff, mit dem beide Sprachrichtungen aus derselben Struktur laufen:**
+In den Lektionen sind `es` und `de` reine Sprachkürzel, keine festen Rollen.
+Welches Feld abgefragt wird und welches die Hilfe ist, entscheidet allein die
+Kursdefinition über `ziel` und `ausgang`. Der Deutschkurs braucht deshalb keine
+einzige Sonderbehandlung im Programmcode.
+
 ### Lerninhalt ✅
 
-| Datei | Tage | Niveau | Schwerpunkt |
-|---|---|---|---|
-| `lektionen-01-10.js` | 1–10 | A2 | ser/estar, hay, unregelmäßige Verben, Pronomen, gustar |
-| `lektionen-11-20.js` | 11–20 | A2 | Vergleiche, Imperativ, Perfecto, Indefinido, Imperfecto |
-| `lektionen-21-30.js` | 21–30 | A2 | Futuro, por/para, Relativsätze, Verneinung, unpersönliches se |
-| `lektionen-31-40.js` | 31–40 | A2→B1 | Condicional, Pluscuamperfecto, Passiv, **Subjuntivo-Einstieg** |
-| `lektionen-41-50.js` | 41–50 | B1 | Subjuntivo nach Konjunktionen, Bedingungssätze Typ 1, aunque |
-| `lektionen-51-60.js` | 51–60 | B1 | Imperfecto de Subjuntivo, Bedingungssätze Typ 2 und 3, lo |
+**Spanien (`data/es-es/`) — 60 Lektionen, A2 → B1**
 
-Jede Lektion: exakt 10 Vokabeln, 5 Sätze, 1 Grammatikthema mit 5 Übungen.
-Alle 1200 Karten-IDs geprüft — keine Doppelung, keine Lücke.
+| Tage | Niveau | Schwerpunkt |
+|---|---|---|
+| 1–10 | A2 | ser/estar, hay, unregelmäßige Verben, Pronomen, gustar |
+| 11–20 | A2 | Vergleiche, Imperativ, Perfecto, Indefinido, Imperfecto |
+| 21–30 | A2 | Futuro, por/para, Relativsätze, Verneinung, unpersönliches se |
+| 31–40 | A2→B1 | Condicional, Pluscuamperfecto, Passiv, **Subjuntivo-Einstieg** |
+| 41–50 | B1 | Subjuntivo nach Konjunktionen, Bedingungssätze Typ 1, aunque |
+| 51–60 | B1 | Imperfecto de Subjuntivo, Bedingungssätze Typ 2 und 3, lo |
+
+**Lateinamerika (`data/es-419/`) — 90 Lektionen, A2 → B2**
+
+Tag 1–60 aus dem Spanien-Kurs abgeleitet und durchgängig angepasst:
+`vosotros` überall durch `ustedes` ersetzt (inklusive Verbtabellen und
+Imperativformen), Wortschatz auf LatAm umgestellt (`carro`, `departamento`,
+`jugo`, `refrigerador`, `boleto`), `coger` konsequent vermieden, und das
+Perfecto zugunsten des Indefinido zurückgenommen. Dazu 30 neue B2-Lektionen:
+Subjuntivo Perfecto und Pluscuamperfecto, komplette Zeitenfolge, estilo
+indirecto, Nominalstil, voseo zum Verstehen, Idiomatik und Register.
+
+**Deutsch (`data/de/`) — 120 Lektionen, A1 → B2, Erklärungen auf Spanisch**
+
+| Tage | Niveau | Schwerpunkt |
+|---|---|---|
+| 1–30 | A1 | Genus und Artikel, die drei ersten Fälle, Präsens, Verbstellung, trennbare Verben, Modalverben, Perfekt |
+| 31–60 | A2 | Adjektivdeklination in allen drei Systemen, Präteritum, Nebensätze, Relativsätze, Passiv, Konjunktiv II |
+| 61–90 | B1 | Relativsätze in Dativ und Genitiv, Passiv komplett, Genitiv, n-Deklination, TeKaMoLo, Modalpartikeln |
+| 91–120 | B2 | Konjunktiv I, erweiterte Partizipialattribute, Nominalstil, Register, Argumentation, falsche Freunde |
+
+Jede Lektion in jedem Kurs: exakt 10 Vokabeln, 5 Sätze, 1 Grammatikthema mit
+5 Übungen (eine LatAm-Lektion hat eine sechste Zusatzübung zu `ustedes`).
+Alle 5401 Karten-IDs geprüft — keine Doppelung, keine Lücke, keine Übung ohne
+Lücke oder Lösung.
 
 ### Fortschritt und Historie ✅
 
@@ -172,18 +243,19 @@ Problemwörter (Konzept von Anki übernommen):
 
 ## Was getestet wurde
 
-### Unit-Tests der Wiederhollogik — 29 von 29 grün
+### Unit-Tests der Wiederhollogik — 29 Prüfungen, alle grün
 
 Stufenaufstieg · Rückfall bei Fehler · korrekte Intervalle · Leech-Bildung nach
 4 Fehlern · Befreiung nach 3 Treffern · Serie-Unterbrechung · Fälligkeit ·
 Übungstyp je Stufe · Höchststufe · Historie auf 10 Einträge begrenzt
 
-### End-to-End-Tests im Browser — 48 von 48 grün
+### End-to-End-Tests im Browser — 64 Prüfungen, alle grün
 
-Getestet im Handy-Format 390×844 mit Chromium:
+Getestet im Handy-Format 390×844 mit Chromium, am Spanien-Kurs:
 
 | Bereich | Geprüft |
 |---|---|
+| Kursauswahl | erscheint beim ersten Start, Kurs lässt sich wählen |
 | Daten | 60 Lektionen, 600 Vokabeln, 300 Sätze vollständig geladen |
 | Tagesdurchlauf | 41 Aufgaben, jede 7. absichtlich falsch, alle Übungstypen erreicht |
 | Zustand danach | Tageszähler, 20 neue Karten, Streak, Genauigkeit |
@@ -200,6 +272,37 @@ Getestet im Handy-Format 390×844 mit Chromium:
 | Nach Tag 60 | Abschlussmeldung, Wechsel in den Wiederholungsmodus |
 | Konsole | keine JavaScript-Fehler über den gesamten Durchlauf |
 
+### Kurssystem-Tests — 27 Prüfungen, alle grün
+
+| Bereich | Geprüft |
+|---|---|
+| Kursauswahl | drei Kurse angeboten, Namen korrekt |
+| Kurswechsel | Fortschritt bleibt je Kurs erhalten, keine Vermischung |
+| Oberflächensprache | Deutschkurs schaltet Knöpfe, Menü, Einstellungen und Erinnerungsseite auf Spanisch, `html lang` wechselt mit |
+| Migration | ein alter Einzelkurs-Stand landet vollständig im Spanien-Kurs, ohne Umweg über die Kursauswahl |
+
+### Richtungstests — 39 Prüfungen, alle grün
+
+Der wichtigste neue Test: **Tag 1 wird in allen drei Kursen komplett
+durchgespielt**, mit richtigen Antworten in jeder Übungsart.
+
+| Bereich | Geprüft |
+|---|---|
+| je Kurs | Lektionszahl, Ziel- und Ausgangssprache, Oberflächensprache, Sonderzeichenleiste |
+| je Kurs | vollständiger Tagesdurchlauf: 10 Karteikarten, 10 MC, 10 Tippen, 5 Satzbau, 1 Erklärung, 5 Lücken |
+| je Kurs | danach Tag auf 2, 20 Karten angelegt, ein aktiver Tag |
+| Deutschkurs | Abschlussmeldung nach Tag 120 erscheint auf Spanisch |
+| Konsole | keine JavaScript-Fehler in keinem der drei Kurse |
+
+Damit ist die umgekehrte Sprachrichtung (Deutsch als Zielsprache) genauso
+abgedeckt wie die spanische — das war die Stelle mit dem größten Risiko.
+
+### Datenprüfung — alle drei Kurse ohne Beanstandung
+
+Ein eigenes Prüfskript geht über jeden Kurs und meldet: fehlende Tage, doppelte
+IDs, falsche Anzahl an Vokabeln, Sätzen oder Übungen, Übungen ohne Lücke `___`,
+Übungen ohne Lösung, und Lösungen, die nicht unter den Tipps stehen.
+
 ### Gefundene und behobene Fehler
 
 | # | Fehler | Ursache | Behebung |
@@ -208,6 +311,10 @@ Getestet im Handy-Format 390×844 mit Chromium:
 | 2 | Zähler „Gelernte Wörter" blieb nach Tag 1 auf 0 | Schwelle lag bei Stufe 3, ein neues Wort erreicht am ersten Tag aber nur Stufe 2 | Schwelle auf Stufe 2 gesetzt — entspricht „mindestens zweimal richtig" |
 | 3 | Akzentleiste brach in zwei Zeilen um | `flex-wrap` mit 9 Tasten und Mindestbreite | Raster mit 9 gleich breiten Spalten |
 | 4 | Syntaxfehler in den Lerndaten | Deutsches `„` von geradem `"` geschlossen — das beendet den JavaScript-Text | 12 Stellen auf typografisches `"` umgestellt |
+| 5 | Nach einem Reparaturlauf fehlten in den LatAm-Daten die `<tr>`-Tags | Ein zu gieriger regulärer Ausdruck (`</tr>(\s{2,})<tr>`) hat das `<tr>` mitverschluckt — 328 Zeilen betroffen | Dateien verworfen, neu aus dem Spanien-Kurs abgeleitet, Ausdruck auf `</tr>[ \t]+<tr>` verengt, sodass er nur greift, wo kein Zeilenumbruch steht |
+| 6 | Übung `g4002` war nicht lösbar | Die Lösung war ein leerer String („Modalverb ohne zu") — man konnte weder tippen noch auswählen | Neu formuliert, sodass der Infinitiv selbst die Antwort ist |
+| 7 | Übung `g11803` hatte keine Lücke | Als Frage statt als Lückensatz geschrieben | In einen Lückensatz umformuliert |
+| 8 | Unit-Tests liefen nicht mehr | `srs.js` übersetzt seine Zeitangaben inzwischen über `t()`; im Testlauf ohne Browser fehlte diese Funktion | Testaufbau lädt jetzt `kurse.js` und `texte.js` mit und legt einen Minimalkurs an |
 
 ---
 
@@ -228,12 +335,19 @@ Der letzte Schritt zur Nutzbarkeit auf dem Handy. Dauert zwei Minuten:
 In der App: Menü (☰) → **⏰ Erinnerung 19:30** → Kalenderdatei herunterladen →
 in den Downloads antippen → Google Kalender importiert sie.
 
-### 🔲 Nur du: Spanische Stimme prüfen
+### 🔲 Nur du: Stimme prüfen
 
 Unter ⚙️ Einstellungen steht, ob eine gefunden wurde. Falls nicht:
 Android-Einstellungen → System → Sprachen & Eingabe → Text-in-Sprache-Ausgabe →
-Zahnrad bei Google-Sprachausgabe → *Sprache installieren* → **Español**.
-Ohne sie blendet die App die Hör-Übungen automatisch aus.
+Zahnrad bei Google-Sprachausgabe → *Sprache installieren* → **Español** für die
+Spanischkurse, **Deutsch** für den Deutschkurs. Ohne passende Stimme blendet die
+App die Hör-Übungen automatisch aus.
+
+### 🔲 Nur du: Kurs wählen
+
+Beim ersten Start fragt die App, welchen Kurs du machen willst. Wechseln geht
+jederzeit über Menü (☰) → **🎓 Kurs wechseln**; jeder Kurs führt seinen eigenen
+Lernstand.
 
 ---
 
@@ -244,8 +358,13 @@ nach Aufwand.
 
 ### Klein
 
-- **Mehr Lerninhalt.** Tag 61+ nach dem Muster in `data/` anhängen. Die Anleitung
-  dafür steht in der README unter *Eigene Inhalte ergänzen*.
+- **Mehr Lerninhalt.** Weitere Tage nach dem Muster in `data/<kurs-id>/`
+  anhängen. Die Anleitung steht in der README unter *Eigene Inhalte ergänzen*.
+- **Den Spanien-Kurs auf B2 nachziehen.** Er endet bei Tag 60 (B1), während der
+  LatAm-Kurs bis B2 geht. Die 30 B2-Lektionen ließen sich analog ableiten.
+- **Weitere Kurse.** Das System ist offen: ein Block in `js/kurs-definitionen.js`,
+  ein Ordner unter `data/`, fertig. Für eine neue Oberflächensprache käme eine
+  dritte Tabelle in `js/texte.js` dazu.
 - **Lieblingswörter markieren.** Ein Stern-Knopf, der Karten in eine eigene Liste
   legt.
 - **Tagesziel-Erinnerung in der App.** Ein Hinweis, wenn du an einem Tag noch
@@ -256,7 +375,8 @@ nach Aufwand.
 - **Statistik ausbauen.** Verlaufskurve der gelernten Wörter über die Zeit,
   Fehlerquote pro Grammatikthema (zeigt dir, wo es wirklich hakt).
 - **Prüfungsmodus.** 20 zufällige Aufgaben ohne Hilfen, mit Notenergebnis.
-- **Suchfunktion in der Historie.** Bei 1200 Karten irgendwann nützlich.
+- **Suchfunktion in der Historie.** Bei 2400 Karten im Deutschkurs zunehmend
+  nützlich.
 
 ### Groß
 
@@ -285,10 +405,13 @@ Grenzen, die du kennen solltest.
 |---|---|
 | Fortschritt nur auf einem Gerät | Liegt im Browserspeicher. Löschen der Browserdaten entfernt ihn. **Abhilfe:** regelmäßig sichern (⚙️ Einstellungen), etwa monatlich. |
 | Kein automatischer Push um 19:30 | Technisch nicht möglich, siehe oben. Der Kalendertermin übernimmt das zuverlässig. |
-| Hör-Übungen brauchen eine Stimme | Ohne installierte spanische Stimme blendet die App sie aus und weist darauf hin. |
+| Hör-Übungen brauchen eine Stimme | Ohne passende installierte Stimme blendet die App sie aus und weist darauf hin. |
 | Sprachqualität der Stimme | Die Gerätestimme klingt maschinell. Für Aussprache-Training reicht sie, für Feinheiten nicht. |
 | Kein Sprechtraining | Die App prüft nichts, was du sagst. Das ist mit Web-Technik schwer verlässlich zu lösen. |
-| Inhalt endet bei Tag 60 | Danach Wiederholungsmodus. Neue Tage lassen sich jederzeit anhängen. |
+| Inhalt endet am letzten Kurstag | Tag 60, 90 oder 120 je nach Kurs. Danach Wiederholungsmodus. Neue Tage lassen sich jederzeit anhängen. |
+| Spanien-Kurs endet bei B1 | Nur der LatAm-Kurs wurde auf B2 erweitert — das entsprach deinem Wunsch, den Spanien-Kurs unverändert als dritten Kurs zu behalten. |
+| LatAm-Spanisch ist eine Mittelform | „Español neutro" gibt es als gesprochene Sprache nirgends; jedes Land hat eigene Wörter. Der Kurs nimmt die Variante, die überall verstanden wird, und weist auf regionale Unterschiede hin, wo sie zählen. |
+| Kein Git-Tag für die Sicherung | Das Pushen von Tags scheitert am Netzwerk-Proxy dieser Umgebung. Der Sicherungs-Branch `backup/v1-spanien-a2-b1` ist gepusht und erfüllt denselben Zweck. |
 
 ---
 
@@ -303,3 +426,12 @@ Grenzen, die du kennen solltest.
 | 03.09.2026 | Lerninhalt Tag 11–60 geschrieben, Daten validiert |
 | 03.09.2026 | 29 Unit-Tests und 48 E2E-Tests, alle grün |
 | 03.09.2026 | README geschrieben, Commit `bd6a206` gepusht |
+| 03.09.2026 | PROGRESS.md angelegt |
+| 09.09.2026 | Fünf Änderungswünsche besprochen und entschieden: neutrales LatAm-Spanisch, Deutschkurs ab A1, beide bis B2, eine App mit Umschaltung, Sicherungs-Branch |
+| 09.09.2026 | Sicherungs-Branch `backup/v1-spanien-a2-b1` gepusht |
+| 09.09.2026 | Kurssystem gebaut: `kurse.js`, `kurs-definitionen.js`, `texte.js`, Speicher auf Fortschritt je Kurs umgestellt, Migration des alten Stands |
+| 09.09.2026 | LatAm-Kurs abgeleitet und angepasst, 30 B2-Lektionen ergänzt (90 Tage) |
+| 09.09.2026 | Deutschkurs A1 und A2 geschrieben (Tag 1–60), Erklärungen auf Spanisch |
+| 09.09.2026 | Deutschkurs B1 (Tag 61–90) und B2 (Tag 91–120) geschrieben — Kurs vollständig |
+| 09.09.2026 | Testsuiten auf das Kurssystem umgestellt, Richtungstest neu geschrieben; 159 Prüfungen grün |
+| 09.09.2026 | README und PROGRESS.md auf Version 2 aktualisiert |

@@ -1,22 +1,30 @@
-# ¡Vamos! — Spanisch A2 → B1
+# ¡Vamos! — Sprachen lernen, jeden Tag
 
-Eine tägliche Spanisch-Lern-App zum Selbsthosten. Läuft als normale Webseite im
-Browser, funktioniert offline und speichert deinen Fortschritt auf deinem Gerät.
+Eine Lern-App zum Selbsthosten, mit **drei Kursen in einer Anwendung**. Läuft als
+normale Webseite im Browser, funktioniert offline und speichert deinen Fortschritt
+auf deinem Gerät.
 
-**60 Tageslektionen · 600 Vokabeln · 300 Beispielsätze · 60 Grammatikthemen**
+| Kurs | Richtung | Niveau | Tage |
+|---|---|---|---|
+| 🇪🇸 Español (España) | Deutsch → Spanisch (Spanien) | A2 → B1 | 60 |
+| 🌎 Español (Latinoamérica) | Deutsch → Spanisch (Lateinamerika) | A2 → B2 | 90 |
+| 🇩🇪 Alemán | Spanisch → Deutsch, Oberfläche auf Spanisch | A1 → B2 | 120 |
+
+**270 Tageslektionen · 2700 Vokabeln · 1350 Beispielsätze · 270 Grammatikthemen**
 
 ---
 
 ## Inhalt
 
 1. [Was die App kann](#was-die-app-kann)
-2. [Schnellstart in 5 Minuten](#schnellstart-in-5-minuten)
-3. [Die Erinnerung um 19:30 einrichten](#die-erinnerung-um-1930-einrichten)
-4. [Wie das Lernsystem funktioniert](#wie-das-lernsystem-funktioniert)
-5. [Fortschritt sichern](#fortschritt-sichern)
-6. [Aufbau der Dateien](#aufbau-der-dateien)
-7. [Eigene Inhalte ergänzen](#eigene-inhalte-ergänzen)
-8. [Häufige Fragen](#häufige-fragen)
+2. [Die drei Kurse](#die-drei-kurse)
+3. [Schnellstart in 5 Minuten](#schnellstart-in-5-minuten)
+4. [Die Erinnerung um 19:30 einrichten](#die-erinnerung-um-1930-einrichten)
+5. [Wie das Lernsystem funktioniert](#wie-das-lernsystem-funktioniert)
+6. [Fortschritt sichern](#fortschritt-sichern)
+7. [Aufbau der Dateien](#aufbau-der-dateien)
+8. [Eigene Inhalte ergänzen](#eigene-inhalte-ergänzen)
+9. [Häufige Fragen](#häufige-fragen)
 
 ---
 
@@ -32,7 +40,7 @@ dann der neue Stoff.
 |---|---|
 | Karteikarte | Neues Wort mit Beispielsatz ansehen |
 | Multiple Choice | Aus vier Möglichkeiten wählen |
-| Tippen | Das Wort selbst schreiben — mit Tastenreihe für á é í ó ú ñ ü ¿ ¡ |
+| Tippen | Das Wort selbst schreiben — mit Tastenreihe für die Sonderzeichen des Kurses (á é í ó ú ñ ü ¿ ¡ bzw. ä ö ü ß Ä Ö Ü) |
 | Satzbau | Vorgegebene Wörter in die richtige Reihenfolge bringen |
 | Hören | Den vorgelesenen Satz aufschreiben |
 | Lückentext | Die richtige grammatische Form einsetzen |
@@ -52,7 +60,43 @@ Wörter, Trefferquote, Problemwörter und ein Kalendergitter der letzten 12 Woch
 letzten Falscheingaben. Filterbar nach Problemwörtern und Fälligkeit.
 
 **Aussprache ohne Downloads.** Die App nutzt die eingebaute Sprachausgabe deines
-Handys. Keine Audiodateien, kein Internet nötig.
+Handys und sucht sich je Kurs eine passende Stimme. Keine Audiodateien, kein
+Internet nötig.
+
+---
+
+## Die drei Kurse
+
+Beim ersten Start wählst du einen Kurs. Wechseln kannst du jederzeit über
+Menü (☰) → **🎓 Kurs wechseln**.
+
+**Jeder Kurs hat seinen eigenen Lernstand.** Tageszähler, Karten, Streak und
+Problemwörter werden getrennt geführt. Du kannst also parallel Spanisch lernen
+und deiner Partnerin den Deutschkurs geben, ohne dass sich etwas vermischt.
+Gemeinsam sind nur die Einstellungen (Thema, Ton, Tagesziel).
+
+### 🇪🇸 Español (España) — A2 → B1, 60 Tage
+
+Das Spanisch Spaniens, mit `vosotros` und dem dort üblichen Wortschatz.
+Erklärungen auf Deutsch.
+
+### 🌎 Español (Latinoamérica) — A2 → B2, 90 Tage
+
+Neutrales Lateinamerika-Spanisch: **kein `vosotros`** (für „ihr" steht überall
+`ustedes`), `carro`/`departamento`/`jugo` statt `coche`/`piso`/`zumo`, und das
+Perfecto tritt zugunsten des Indefinido zurück. Wo eine Form sich zwischen den
+Ländern unterscheidet, steht die neutrale Variante — die dich von Mexiko bis
+Argentinien trägt. Erklärungen auf Deutsch. Die dreißig zusätzlichen Tage führen
+bis B2.
+
+### 🇩🇪 Alemán — A1 → B2, 120 Tage
+
+Der umgekehrte Weg: **Deutsch für spanische Muttersprachler**, komplett bei Null
+beginnend. Die gesamte Oberfläche schaltet auf Spanisch um — Knöpfe, Menü,
+Einstellungen, Erinnerungsseite —, und alle Grammatikerklärungen sind auf
+Spanisch geschrieben, mit Blick auf genau die Stellen, an denen Spanischsprachige
+im Deutschen hängenbleiben: die vier Fälle, die Verbstellung, die
+Adjektivdeklination, `seit` mit Präsens, falsche Freunde.
 
 ---
 
@@ -111,7 +155,7 @@ sogar der bessere Weg: zuverlässig, auch offline und im Energiesparmodus.
 
 1. In der App: Menü (☰) → **⏰ Erinnerung 19:30**
 2. Auf **📅 Kalender-Erinnerung herunterladen** tippen
-3. Die Datei `spanisch-1930.ics` in deinen Downloads antippen
+3. Die Datei `lernen-1930.ics` in deinen Downloads antippen
 4. Google Kalender öffnet sich → **Importieren** bestätigen
 
 Fertig. Ab jetzt meldet sich dein Handy jeden Abend um 19:30 mit einer
@@ -125,7 +169,7 @@ Sommer- und Winterzeit passiert also automatisch, du musst nichts nachjustieren.
 1. Uhr-App öffnen → Reiter **Wecker** → **+**
 2. Zeit **19:30** einstellen
 3. **Wiederholen** antippen → alle sieben Wochentage auswählen
-4. Als Bezeichnung z. B. **„Spanisch lernen 🇪🇸"** eingeben
+4. Als Bezeichnung z. B. **„Sprache lernen 📚"** eingeben
 5. Speichern
 
 ### Später doch echte Push-Benachrichtigungen?
@@ -192,7 +236,8 @@ Die Prüfung ist absichtlich freundlich, aber nicht nachlässig:
 > Browserdaten oder wechselst du das Gerät, ist er weg.
 
 **Sicherung erstellen:** Menü (☰) → ⚙️ Einstellungen → **⬇️ Fortschritt sichern**.
-Du bekommst eine Datei wie `spanisch-fortschritt-2026-09-03.json`.
+Du bekommst eine Datei wie `lernfortschritt-2026-09-09.json`. Sie enthält den
+Stand **aller** Kurse.
 
 **Sicherung einspielen:** Menü → ⚙️ Einstellungen → **⬆️ Sicherung einspielen** →
 Datei auswählen.
@@ -212,22 +257,27 @@ icons/                     App-Icons
 
 css/stil.css               gesamtes Aussehen, helles und dunkles Thema
 
-js/daten.js                Sammelbehälter für die Lektionen
-js/speicher.js             Fortschritt speichern, Export und Import
+js/kurse.js                Kursregister: anlegen, wechseln, Stand je Kurs
+js/kurs-definitionen.js    die drei Kurse (Name, Sprachen, Stimmen, Farbe)
+js/texte.js                alle Oberflächentexte auf Deutsch und Spanisch
+js/daten.js                Sammelbehälter für die Lektionen des aktiven Kurses
+js/speicher.js             Fortschritt je Kurs speichern, Export und Import
 js/srs.js                  Intervall-Leiter und Problemwörter
-js/sprache.js              Sprachausgabe (spanische Stimme)
+js/sprache.js              Sprachausgabe, sucht je Kurs eine passende Stimme
 js/uebungen.js             die sechs Übungstypen
 js/statistik.js            Zähler, Streak, Kalendergitter, Kalenderdatei
 js/tagesplan.js            stellt die Aufgaben einer Sitzung zusammen
 js/app.js                  Ablaufsteuerung und Bildschirmwechsel
 
-data/lektionen-01-10.js    Tag  1–10   A2 · Grundlagen
-data/lektionen-11-20.js    Tag 11–20   A2 · Vergleichen, Befehle, Vergangenheit
-data/lektionen-21-30.js    Tag 21–30   A2 · Zukunft, Nebensätze
-data/lektionen-31-40.js    Tag 31–40   A2→B1 · Condicional, Passiv, Subjuntivo
-data/lektionen-41-50.js    Tag 41–50   B1 · Subjuntivo im Einsatz
-data/lektionen-51-60.js    Tag 51–60   B1 · Irreales, Vertiefung
+data/es-es/lektionen-01-10.js  …  -51-60.js    60 Lektionen, Spanien
+data/es-419/lektionen-01-10.js …  -81-90.js    90 Lektionen, Lateinamerika
+data/de/lektionen-01-10.js     … -111-120.js  120 Lektionen, Deutsch
 ```
+
+Die Reihenfolge der `<script>`-Tags in `index.html` ist wichtig:
+`kurse.js` und `kurs-definitionen.js` müssen **vor** den Datendateien geladen
+werden, weil jede Lektion sich per `LEKTION('kurs-id', …)` bei ihrem Kurs
+anmeldet.
 
 Alles ist bewusst schlicht gehalten: klassische `<script>`-Tags statt Module,
 globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
@@ -235,6 +285,8 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 `fetch()` würde der Browser das blockieren.
 
 ### Lernstoff auf einen Blick
+
+**Spanisch (beide Kurse, Tag 1–60 inhaltlich gleich)**
 
 | Tage | Niveau | Grammatikthemen |
 |---|---|---|
@@ -245,60 +297,112 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 | 41–50 | B1 | Subjuntivo nach Zeit- und Zweckkonjunktionen · in Relativsätzen · alle Imperativformen · Bedingungssätze Typ 1 · aunque · B1-Konnektoren |
 | 51–60 | B1 | Imperfecto de Subjuntivo · Bedingungssätze Typ 2 und 3 · Zeitenfolge · neutrales lo · se der Unabsichtlichkeit · Redewendungen |
 
+**Nur Lateinamerika-Kurs, Tag 61–90 (B2)**
+
+| Tage | Grammatikthemen |
+|---|---|
+| 61–70 | Subjuntivo Perfecto und Pluscuamperfecto · Zeitenfolge komplett · estilo indirecto · perífrasis verbales |
+| 71–80 | Konnektoren des Arguments · Passivvarianten · Nominalstil · voseo verstehen · regionale Unterschiede |
+| 81–90 | Idiomatik · Register · falsche Freunde · Textaufbau · B2-Abschluss |
+
+**Deutsch für Spanischsprachige, Tag 1–120**
+
+| Tage | Niveau | Grammatikthemen |
+|---|---|---|
+| 1–30 | A1 | Artikel und Genus · Nominativ, Akkusativ, Dativ · Präsens · Verbstellung · trennbare Verben · Modalverben · Perfekt · Possessiv · Wechselpräpositionen |
+| 31–60 | A2 | Adjektivdeklination in allen drei Systemen · Präteritum · Plusquamperfekt · Nebensätze · Relativsätze · Passiv · Konjunktiv II · zu + Infinitiv · Komparativ und Superlativ |
+| 61–90 | B1 | Relativsätze in Dativ und Genitiv · Konjunktiv II der Vergangenheit · Passiv in allen Zeiten und mit Modalverben · Genitiv · n-Deklination · Partizipien als Adjektiv · TeKaMoLo · Stellung von nicht · da-/wo-Komposita · subjektive Modalverben · Futur I und II · Modalpartikeln |
+| 91–120 | B2 | Konjunktiv I und Pressesprache · erweiterte Partizipialattribute · Nominalstil · Zustandspassiv · konzessive Konstruktionen · Funktionsverbgefüge · Konditionalsätze ohne wenn · als ob · Register · Argumentation · Grafikbeschreibung · Kollokationen · Varianten D/A/CH · typische Fehlerquellen und falsche Freunde |
+
 ---
 
 ## Eigene Inhalte ergänzen
 
-Einen weiteren Tag hinzufügen: In einer Datei unter `data/` einen neuen Block
-anhängen. Das Muster ist immer gleich:
+Einen weiteren Tag hinzufügen: In einer Datei unter `data/<kurs-id>/` einen
+neuen Block anhängen. Das Muster ist in allen Kursen gleich — der erste
+Parameter sagt, zu welchem Kurs die Lektion gehört:
 
 ```js
-LEKTIONEN.push({
-  tag: 61, niveau: "B1", thema: "Mein eigenes Thema",
+LEKTION('es-419', {
+  tag: 91, niveau: "B2", thema: "Mein eigenes Thema",
   vokabeln: [
-    { id: "v6101", es: "la palabra", de: "das Wort",
-      wortart: "Substantiv",
-      beispiel: "Es una palabra nueva.", beispielDe: "Das ist ein neues Wort." }
+    { id: "v9101", es: "la palabra", de: "das Wort",
+      wortart: "sustantivo",
+      beispiel: "Es una palabra nueva.", beispielUe: "Das ist ein neues Wort." }
     // … insgesamt 10
   ],
   saetze: [
-    { id: "s6101", es: "Un ejemplo sencillo.", de: "Ein einfaches Beispiel." }
+    { id: "s9101", es: "Un ejemplo sencillo.", de: "Ein einfaches Beispiel." }
     // … insgesamt 5
   ],
   grammatik: {
-    id: "g61", titel: "Mein Thema",
+    id: "g91", titel: "Mein Thema",
     erklaerung: `<p>Erklärung als HTML …</p>`,
     uebungen: [
-      { id: "g6101", satz: "Un ___ sencillo.", loesung: "ejemplo",
-        tipps: ["ejemplo", "problema"], hinweis: "Substantiv",
-        de: "Ein einfaches Beispiel." }
+      { id: "g9101", satz: "Un ___ sencillo.", loesung: "ejemplo",
+        tipps: ["ejemplo", "problema"], hinweis: "sustantivo",
+        ue: "Ein einfaches Beispiel." }
       // … insgesamt 5
     ]
   }
 });
 ```
 
-**Zwei Regeln, damit nichts kaputtgeht:**
+**Wichtig zu verstehen: `es` und `de` sind Sprachkürzel, keine festen Rollen.**
+Welches Feld die zu lernende Sprache ist und welches die Ausgangssprache, legt
+allein die Kursdefinition fest (`ziel` und `ausgang` in
+`js/kurs-definitionen.js`). Deshalb sehen die Lektionen des Deutschkurses
+genauso aus — nur dass dort `de` das Ziel ist:
 
-1. **Jede `id` muss einmalig sein.** Das Schema `v` + Tag + laufende Nummer
-   (`v6101`) hält das automatisch auseinander. Die ids sind der Schlüssel zu
-   deinem Lernstand — ändere sie nie nachträglich, sonst geht der Fortschritt
-   für diese Karte verloren.
-2. **In JavaScript-Texten kein gerades `"` verwenden.** Das beendet den Text
+```js
+LEKTION('de', {
+  tag: 121, niveau: "B2", thema: "Mi propio tema",
+  vokabeln: [
+    { id: "v12101", de: "das Wort", es: "la palabra",
+      wortart: "sustantivo",
+      beispiel: "Das ist ein neues Wort.", beispielUe: "Es una palabra nueva." }
+  ],
+  // …
+});
+```
+
+`beispielUe` ist immer die Übersetzung des Beispielsatzes, `ue` in den
+Grammatikübungen die Übersetzung des Lückensatzes.
+
+**Drei Regeln, damit nichts kaputtgeht:**
+
+1. **Jede `id` muss einmalig sein** — innerhalb des Kurses. Das Schema
+   `v` + Tag + laufende Nummer (`v9101`) hält das automatisch auseinander. Die
+   ids sind der Schlüssel zu deinem Lernstand — ändere sie nie nachträglich,
+   sonst geht der Fortschritt für diese Karte verloren.
+2. **Jede Übung braucht eine Lücke `___` und eine nicht leere `loesung`.**
+   Sonst lässt sich die Aufgabe weder tippen noch auswählen.
+3. **In JavaScript-Texten kein gerades `"` verwenden.** Das beendet den Text
    mitten im Satz. Nutze `„…"` oder `'…'`.
 
 Neue Datei angelegt? Dann trage sie in `index.html` bei den `<script>`-Tags
 und in `service-worker.js` in der Liste `DATEIEN` nach.
 
+**Einen ganz neuen Kurs anlegen:** in `js/kurs-definitionen.js` einen Block
+`Kurse.definieren({ id, name, ziel, ausgang, ui, tage, stimmen, sonderzeichen, … })`
+ergänzen, einen Ordner `data/<id>/` anlegen und die Datendateien einbinden.
+Ist `ui` eine Sprache, für die `js/texte.js` noch keine Tabelle hat, fällt die
+Oberfläche auf Deutsch zurück.
+
 ---
 
 ## Häufige Fragen
 
+**Wie wechsle ich den Kurs?**
+Menü (☰) → **🎓 Kurs wechseln**. Dein Stand im bisherigen Kurs bleibt vollständig
+erhalten; jeder Kurs zählt seine Tage, Karten und Problemwörter getrennt.
+
 **Die Hör-Übungen erscheinen nicht.**
-Deinem Gerät fehlt eine spanische Stimme. Auf Android: Einstellungen → System →
-Sprachen & Eingabe → Text-in-Sprache-Ausgabe → bei der Google-Sprachausgabe auf
-das Zahnrad → *Sprache installieren* → **Español**. Danach die App neu laden.
-Unter ⚙️ Einstellungen steht, ob eine Stimme gefunden wurde.
+Deinem Gerät fehlt eine Stimme für die Zielsprache des Kurses. Auf Android:
+Einstellungen → System → Sprachen & Eingabe → Text-in-Sprache-Ausgabe → bei der
+Google-Sprachausgabe auf das Zahnrad → *Sprache installieren* → **Español** bzw.
+**Deutsch**. Danach die App neu laden. Unter ⚙️ Einstellungen steht, ob eine
+Stimme gefunden wurde.
 
 **Mein Streak ist weg.**
 Der Streak zählt aufeinanderfolgende Tage. Ein ausgelassener Tag setzt ihn
@@ -322,9 +426,15 @@ es nicht: Verteiltes Lernen bringt deutlich mehr als ein langer Block.
 Ja, für den Streak und das Kalendergitter. Nur eine vollständige Tageslektion
 schaltet aber den Tageszähler weiter.
 
-**Was passiert nach Tag 60?**
-Die App wechselt in den Wiederholungsmodus. Jeden Tag kommt, was fällig ist —
-genau das entscheidet darüber, ob das Gelernte in einem Jahr noch da ist.
+**Was passiert am Ende eines Kurses?**
+Nach dem letzten Tag (60, 90 oder 120, je nach Kurs) wechselt die App in den
+Wiederholungsmodus. Jeden Tag kommt, was fällig ist — genau das entscheidet
+darüber, ob das Gelernte in einem Jahr noch da ist.
+
+**Kann ich zwei Kurse gleichzeitig machen?**
+Technisch ja, die Stände stören sich nicht. Sinnvoll ist es selten: zwei neue
+Sprachen parallel überfordern das Wiederholsystem und dich. Ein Kurs aktiv, ein
+zweiter im reinen Wiederholungsmodus funktioniert dagegen gut.
 
 ---
 

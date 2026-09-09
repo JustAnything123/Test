@@ -422,5 +422,8 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
 .kopf-kurs {
   flex: 1; min-width: 0; font-size: .82rem; color: var(--text-leise);
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  cursor: pointer; padding: .3rem 0;
+  cursor: pointer; padding: .3rem 0 .3rem .5rem;
+  /* Der farbige Strich zeigt auf einen Blick, in welchem Kurs man gerade ist.
+     Die Bedienfarbe der App bleibt bewusst überall gleich. */
+  border-left: 3px solid var(--akzent-kurs, var(--akzent));
 }
