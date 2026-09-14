@@ -355,7 +355,7 @@ IDs, falsche Anzahl an Vokabeln, Sätzen oder Übungen, Übungen ohne Lücke `__
 | 6 | Übung `g4002` war nicht lösbar | Die Lösung war ein leerer String („Modalverb ohne zu") — man konnte weder tippen noch auswählen | Neu formuliert, sodass der Infinitiv selbst die Antwort ist |
 | 7 | Übung `g11803` hatte keine Lücke | Als Frage statt als Lückensatz geschrieben | In einen Lückensatz umformuliert |
 | 8 | Unit-Tests liefen nicht mehr | `srs.js` übersetzt seine Zeitangaben inzwischen über `t()`; im Testlauf ohne Browser fehlte diese Funktion | Testaufbau lädt jetzt `kurse.js` und `texte.js` mit und legt einen Minimalkurs an |
-| 9 | Lückensatz mit **zwei** Lücken verliert den Text hinter der zweiten | `Uebungen.typ_luecke` teilt den Satz am `___` und zeigt nur die ersten beiden Teile an — alles nach der zweiten Lücke fällt weg | Im neuen Pfad beim Schreiben vermieden und einmal korrigiert. In vier älteren Übungen steht das noch offen, siehe Bekannte Grenzen |
+| 9 | Lückensatz mit **zwei** Lücken verliert den Text hinter der zweiten | `Uebungen.typ_luecke` teilt den Satz am `___` und zeigt nur die ersten beiden Teile an — alles nach der zweiten Lücke fällt weg | Alle vier betroffenen Übungen umformuliert: der eine Teil steht jetzt im Satz, gefragt ist der andere. Das Prüfskript meldet zwei Lücken ab sofort als Fehler |
 | 10 | Schildchen „Lernpfad" klebte am Kursnamen | Das Schildchen stand innerhalb von `.kurs-name`, dadurch las sich der Name im DOM als „Alemán en el trabajoLernpfad" | Eigene Zeile `.kurs-kopfzeile` um Name und Schildchen gelegt |
 
 ---
@@ -459,7 +459,7 @@ Grenzen, die du kennen solltest.
 | Spanien-Kurs endet bei B1 | Nur der LatAm-Kurs wurde auf B2 erweitert — das entsprach deinem Wunsch, den Spanien-Kurs unverändert als dritten Kurs zu behalten. |
 | LatAm-Spanisch ist eine Mittelform | „Español neutro" gibt es als gesprochene Sprache nirgends; jedes Land hat eigene Wörter. Der Kurs nimmt die Variante, die überall verstanden wird, und weist auf regionale Unterschiede hin, wo sie zählen. |
 | Kein Git-Tag für die Sicherung | Das Pushen von Tags scheitert am Netzwerk-Proxy dieser Umgebung. Der Sicherungs-Branch `backup/v1-spanien-a2-b1` ist gepusht und erfüllt denselben Zweck. |
-| Vier Übungen mit zwei Lücken | `g0901` (Deutsch), `g2605` (Spanien), `g2605` und `g6603` (LatAm) enthalten zwei `___`. Die App zeigt nur bis zur zweiten Lücke, der Rest des Satzes fehlt auf dem Bildschirm. Lösbar bleiben sie, weil die erste Lücke die gefragte ist. Nicht angefasst, weil es außerhalb dieses Auftrags lag — auf Zuruf in einem Zug behoben. |
+| Eine Lücke je Übung | `Uebungen.typ_luecke` zeigt genau ein Eingabefeld an. Ein Satz mit zwei `___` würde hinter der zweiten Lücke abgeschnitten. Das Prüfskript meldet das jetzt als Fehler, sodass es beim Ergänzen eigener Inhalte auffällt. |
 
 ---
 
@@ -488,3 +488,4 @@ Grenzen, die du kennen solltest.
 | 14.09.2026 | Lernpfad „Deutsch im Beruf" geschrieben: 30 Lektionen, 300 Vokabeln, 150 Sätze, 150 Redemittelübungen |
 | 14.09.2026 | Kurs- und Richtungstest auf vier Kurse erweitert; 173 Prüfungen grün, Datenprüfung ohne Beanstandung |
 | 14.09.2026 | README und PROGRESS.md auf Version 3 aktualisiert |
+| 14.09.2026 | Vier ältere Übungen mit zwei Lücken umformuliert; Prüfskript erkennt zwei Lücken jetzt selbst |

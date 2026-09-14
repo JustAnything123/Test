@@ -360,7 +360,7 @@ LEKTION('es-419', {
       { id: "g2602", satz: "___ viene nadie los domingos.", loesung: "No", tipps: ["No", "Nadie", "Tampoco"], hinweis: "nadie steht hinten", ue: "Sonntags kommt niemand." },
       { id: "g2603", satz: "No tengo ___ problema.", loesung: "ningún", tipps: ["ningún", "ninguno", "nada"], hinweis: "vor Substantiv", ue: "Ich habe kein Problem." },
       { id: "g2604", satz: "Yo ___ quiero ir. (auch nicht)", loesung: "tampoco", tipps: ["tampoco", "también", "nunca"], hinweis: "auch nicht", ue: "Ich will auch nicht hingehen." },
-      { id: "g2605", satz: "No quiero ___ café ___ té.", loesung: "ni", tipps: ["ni", "no", "o"], hinweis: "weder … noch", ue: "Ich möchte weder Kaffee noch Tee." }
+      { id: "g2605", satz: "No quiero ni café ___ té.", loesung: "ni", tipps: ["ni", "no", "o"], hinweis: "ni … ni = weder … noch", ue: "Ich möchte weder Kaffee noch Tee." }
     ]
   }
 });

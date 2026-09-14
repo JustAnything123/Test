@@ -573,7 +573,7 @@ LEKTION('de', {
       Compara: <em>Ich <strong>stehe</strong> früh <strong>auf</strong>.</em> (sin modal,
       separado)</div>`,
     uebungen: [
-      { id: "g0901", satz: "Ich ___ um sieben ___. (aufstehen)", loesung: "stehe", tipps: ["stehe", "aufstehe", "steh"], hinweis: "la parte conjugada", ue: "Me levanto a las siete." },
+      { id: "g0901", satz: "Ich ___ um sieben auf. (aufstehen)", loesung: "stehe", tipps: ["stehe", "aufstehe", "steh"], hinweis: "la parte conjugada va en posición 2", ue: "Me levanto a las siete." },
       { id: "g0902", satz: "Ich stehe um sieben ___. (aufstehen)", loesung: "auf", tipps: ["auf", "an", "aus"], hinweis: "el prefijo al final", ue: "Me levanto a las siete." },
       { id: "g0903", satz: "___ du heute mit? (mitkommen)", loesung: "Kommst", tipps: ["Kommst", "Mitkommst", "Komm"], hinweis: "du → ?", ue: "¿Vienes hoy?" },
       { id: "g0904", satz: "Ich muss früh ___. (aufstehen)", loesung: "aufstehen", tipps: ["aufstehen", "auf stehen", "stehen auf"], hinweis: "con modal queda entero", ue: "Tengo que levantarme temprano." },

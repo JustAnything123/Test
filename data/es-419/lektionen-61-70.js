@@ -357,7 +357,7 @@ LEKTION('es-419', {
     uebungen: [
       { id: "g6601", satz: "No solo es caro, ___ que tarda mucho.", loesung: "sino", tipps: ["sino", "si no", "pero"], hinweis: "sondern", ue: "Es ist nicht nur teuer, sondern dauert lange." },
       { id: "g6602", satz: "___ tú como yo lo sabemos.", loesung: "Tanto", tipps: ["Tanto", "Tan", "Ni"], hinweis: "sowohl … als auch", ue: "Sowohl du als auch ich wissen es." },
-      { id: "g6603", satz: "___ sabe ___ quiere saber.", loesung: "Ni", tipps: ["Ni", "No", "O"], hinweis: "weder … noch", ue: "Er weiß es weder, noch will er es wissen." },
+      { id: "g6603", satz: "Ni sabe ___ quiere saber.", loesung: "ni", tipps: ["ni", "no", "o"], hinweis: "ni … ni = weder … noch", ue: "Er weiß es weder, noch will er es wissen." },
       { id: "g6604", satz: "No es rojo ___ azul.", loesung: "sino", tipps: ["sino", "si no", "pero"], hinweis: "sondern", ue: "Es ist nicht rot, sondern blau." },
       { id: "g6605", satz: "___ no vienes, me voy solo.", loesung: "Si", tipps: ["Si", "Sino", "Sí"], hinweis: "wenn nicht", ue: "Wenn du nicht kommst, gehe ich allein." }
     ]
