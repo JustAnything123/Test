@@ -86,13 +86,22 @@ var App = {
         : t('kurs.neu');
       const anteil = s.tageGesamt ? Math.round(((s.tag - 1) / s.tageGesamt) * 100) : 0;
 
+      // Ein Lernpfad (z. B. "Deutsch im Beruf") gehoert zu einem Hauptkurs.
+      // Er wird eingerueckt gezeigt, bekommt ein Schildchen und zeigt seinen
+      // Hinweis mit an, damit klar ist, was er ist und wann er sich lohnt.
+      const istPfad = !!kurs.gehoertZu;
+      const schild  = istPfad ? `<span class="kurs-schild">${Uebungen.escape(t('kurs.pfad'))}</span>` : '';
+      const notiz   = istPfad && kurs.hinweis
+        ? `<span class="kurs-notiz">${Uebungen.escape(kurs.hinweis)}</span>` : '';
+
       return `
-        <button class="kurs-karte${kurs.id === aktiv ? ' kurs-aktiv' : ''}"
+        <button class="kurs-karte${kurs.id === aktiv ? ' kurs-aktiv' : ''}${istPfad ? ' kurs-pfad' : ''}"
                 data-kurs="${kurs.id}" style="--kursfarbe:${kurs.farbe}">
           <span class="kurs-flagge">${kurs.flagge}</span>
           <span class="kurs-text">
-            <span class="kurs-name">${Uebungen.escape(kurs.name)}</span>
+            <span class="kurs-kopfzeile"><span class="kurs-name">${Uebungen.escape(kurs.name)}</span>${schild}</span>
             <span class="kurs-unter">${Uebungen.escape(kurs.untertitel)}</span>
+            ${notiz}
             <span class="kurs-stand">${Uebungen.escape(zeile)}</span>
             <span class="kurs-balken"><span style="width:${anteil}%"></span></span>
           </span>

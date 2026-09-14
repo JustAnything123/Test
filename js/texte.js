@@ -18,6 +18,7 @@ var TEXTE = {
     'kurs.titel': 'Welche Sprache?',
     'kurs.hinweis': 'Jeder Kurs hat seinen eigenen Fortschritt. Du kannst jederzeit wechseln.',
     'kurs.wechseln': 'Kurs wechseln',
+    'kurs.pfad': 'Lernpfad',
     'kurs.neu': 'noch nicht begonnen',
     'kurs.stand': 'Tag {tag} von {gesamt} · {gelernt} Wörter',
 
@@ -185,6 +186,7 @@ var TEXTE = {
     'kurs.titel': '¿Qué idioma?',
     'kurs.hinweis': 'Cada curso guarda su propio progreso. Puedes cambiar cuando quieras.',
     'kurs.wechseln': 'Cambiar de curso',
+    'kurs.pfad': 'Ruta temática',
     'kurs.neu': 'aún sin empezar',
     'kurs.stand': 'Día {tag} de {gesamt} · {gelernt} palabras',
 

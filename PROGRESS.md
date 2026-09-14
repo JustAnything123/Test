@@ -1,42 +1,42 @@
-# Projektfortschritt — ¡Vamos! (drei Kurse in einer App)
+# Projektfortschritt — ¡Vamos! (vier Kurse in einer App)
 
-**Stand:** 9. September 2026
+**Stand:** 14. September 2026
 **Branch:** `claude/spanish-learning-app-daily-o5s13u`
-**Status:** ✅ Version 2 fertig, getestet und gepusht — wartet auf die Freischaltung von GitHub Pages
+**Status:** ✅ Version 3 fertig, getestet und gepusht
 
 ---
 
 ## Kurzfassung
 
 Die App ist vollständig gebaut und funktioniert. Alle Anforderungen aus der
-ursprünglichen Idee und alle fünf Änderungswünsche sind umgesetzt. Es fehlt genau
-**ein Schritt, den nur du ausführen kannst**: GitHub Pages im Repository
-aktivieren (siehe [Was als Nächstes ansteht](#was-als-nächstes-ansteht)).
+ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
+„Deutsch im Beruf" sind umgesetzt.
 
-### Die drei Kurse
+### Die vier Kurse
 
 | Kurs | Richtung | Oberfläche | Niveau | Tage |
 |---|---|---|---|---|
 | 🇪🇸 Español (España) | Deutsch → Spanisch (Spanien) | Deutsch | A2 → B1 | 60 |
 | 🌎 Español (Latinoamérica) | Deutsch → Spanisch (LatAm) | Deutsch | A2 → B2 | 90 |
 | 🇩🇪 Alemán | Spanisch → Deutsch | **Spanisch** | A1 → B2 | 120 |
+| 🍽️ Alemán en el trabajo | Spanisch → Deutsch, Lernpfad des Deutschkurses | **Spanisch** | A2 → B2 | 30 |
 
 ### Kennzahlen
 
 | Kennzahl | Wert |
 |---|---|
-| Kurse | 3 |
-| Tageslektionen gesamt | 270 |
-| Vokabeln | 2700 |
-| Beispielsätze | 1350 |
-| Grammatikthemen mit Erklärung | 270 |
-| Grammatikübungen | 1351 |
-| Lernkarten gesamt | 5401 |
+| Kurse (davon 1 Themen-Lernpfad) | 4 |
+| Tageslektionen gesamt | 300 |
+| Vokabeln | 3000 |
+| Beispielsätze | 1500 |
+| Grammatik- und Redemittelthemen | 300 |
+| Übungen dazu | 1501 |
+| Lernkarten gesamt | 6001 |
 | Übungstypen | 6 |
-| Oberflächentexte je Sprache | 270 |
-| Zeilen Programmcode | 2988 |
-| Zeilen Lerninhalt | 17 181 |
-| Automatische Tests | 159 (alle grün) |
+| Oberflächentexte je Sprache | 140 |
+| Zeilen Programmcode | 3045 |
+| Zeilen Lerninhalt | 18 850 |
+| Automatische Tests | 173 (alle grün) |
 
 ---
 
@@ -79,6 +79,26 @@ Fehler. Getrennt wird nur, was getrennt gehört: der Lernstand.
 enthält den Stand vor dem Umbau. Der Versuch, zusätzlich ein Git-Tag zu pushen,
 scheiterte an einer Einschränkung des Netzwerk-Proxys in dieser Umgebung — das
 Sicherungs-**Branch** ist aber gepusht und erfüllt denselben Zweck.
+
+### Nachtrag vom 14.09.2026
+
+| Wunsch | Status | Umgesetzt als |
+|---|---|---|
+| 6. App-Name und Beschreibung an die Kurse anpassen | ✅ | `manifest.json`: Name „¡Vamos! — Spanisch & Deutsch lernen", Beschreibung nennt alle vier Kurse. Das ist der Text, den jemand sieht, der die App zum Startbildschirm hinzufügt |
+| 7. Themen-Lernpfad „Deutsch im Beruf" | ✅ | Kurs `de-beruf`, 30 Tage, Küche · Restaurant · Hotel · Ernährung, mit Redemitteln statt reiner Grammatik |
+
+**Warum der Pfad ein eigener Kurseintrag ist und nicht Tag 121 ff. des
+Deutschkurses:** Wer im Hotel oder Restaurant arbeitet, braucht die Wörter des
+Dienstes *jetzt* und nicht nach 120 Tagen. Als eigener Eintrag mit eigenem
+Lernstand lässt sich der Pfad parallel zum langen Kurs machen — abends die
+Tageslektion, und der Pfad, wenn eine Schicht ansteht.
+
+**Warum er trotzdem nicht wie eine vierte Sprache aussieht:** Die
+Kursdefinition trägt das neue Feld `gehoertZu: 'de'`. Die Kursauswahl rückt
+solche Einträge ein, setzt das Schildchen *Lernpfad* (spanisch *Ruta temática*)
+daneben und zeigt den Hinweistext als Notiz an. Im Code kostet das zwölf Zeilen
+in `app.js`, drei Regeln im Stylesheet und zwei Oberflächentexte — die
+Lernlogik selbst blieb unberührt.
 
 ---
 
@@ -195,10 +215,30 @@ indirecto, Nominalstil, voseo zum Verstehen, Idiomatik und Register.
 | 61–90 | B1 | Relativsätze in Dativ und Genitiv, Passiv komplett, Genitiv, n-Deklination, TeKaMoLo, Modalpartikeln |
 | 91–120 | B2 | Konjunktiv I, erweiterte Partizipialattribute, Nominalstil, Register, Argumentation, falsche Freunde |
 
-Jede Lektion in jedem Kurs: exakt 10 Vokabeln, 5 Sätze, 1 Grammatikthema mit
-5 Übungen (eine LatAm-Lektion hat eine sechste Zusatzübung zu `ustedes`).
-Alle 5401 Karten-IDs geprüft — keine Doppelung, keine Lücke, keine Übung ohne
-Lücke oder Lösung.
+**Deutsch im Beruf (`data/de-beruf/`) — 30 Lektionen, A2 → B2, Erklärungen auf Spanisch**
+
+Ein Themen-Lernpfad des Deutschkurses für Hotel und Restaurant. Eigener
+Lernstand, dadurch parallel zum langen Kurs nutzbar.
+
+| Tage | Niveau | Schwerpunkt |
+|---|---|---|
+| 1–8 | A2–B1 | Küche: Geräte, Schneiden, Garmethoden, Fleisch und Fisch, Gemüse, Mengen, Mise en place, Hygiene und HACCP |
+| 9–16 | A2–B1 | Service: Gedeck, Speisekarte, Getränke, Bestellung, Servieren, Reklamation, Bezahlen, Telefon |
+| 17–24 | A2–B1 | Hotel: Berufe, Zimmerarten, Check-in, Check-out, Housekeeping, Auskunft, Defekte, Frühstück |
+| 25–30 | B1–B2 | Allergene, Ernährungsformen, Nährstoffe, Arbeitssicherheit, Vertrag und Schichten, Vorstellungsgespräch |
+
+Besonderheit: Das Feld `grammatik` trägt hier **Redemittel** — feste
+Formulierungen für wiederkehrende Situationen (Bestellung abrufen, Beschwerde
+aufnehmen, Schicht übergeben, Allergiefrage beantworten). Die Struktur ist
+identisch, deshalb laufen alle sechs Übungstypen unverändert. Die
+Grammatikpunkte stecken in den Redemitteln drin: Imperativ, Konjunktiv II der
+Höflichkeit, Passiv, trennbare Verben, `schmecken` + Dativ, Mengenangaben ohne
+„von".
+
+Jede Lektion in jedem Kurs: exakt 10 Vokabeln, 5 Sätze, 1 Grammatik- bzw.
+Redemittelthema mit 5 Übungen (eine LatAm-Lektion hat eine sechste Zusatzübung
+zu `ustedes`). Alle 6001 Karten-IDs geprüft — keine Doppelung, keine Lücke,
+keine Übung ohne Lücke oder Lösung.
 
 ### Fortschritt und Historie ✅
 
@@ -272,18 +312,18 @@ Getestet im Handy-Format 390×844 mit Chromium, am Spanien-Kurs:
 | Nach Tag 60 | Abschlussmeldung, Wechsel in den Wiederholungsmodus |
 | Konsole | keine JavaScript-Fehler über den gesamten Durchlauf |
 
-### Kurssystem-Tests — 27 Prüfungen, alle grün
+### Kurssystem-Tests — 29 Prüfungen, alle grün
 
 | Bereich | Geprüft |
 |---|---|
-| Kursauswahl | drei Kurse angeboten, Namen korrekt |
+| Kursauswahl | vier Kurse angeboten, Namen korrekt, genau ein Lernpfad und der gehört zum Deutschkurs |
 | Kurswechsel | Fortschritt bleibt je Kurs erhalten, keine Vermischung |
 | Oberflächensprache | Deutschkurs schaltet Knöpfe, Menü, Einstellungen und Erinnerungsseite auf Spanisch, `html lang` wechselt mit |
 | Migration | ein alter Einzelkurs-Stand landet vollständig im Spanien-Kurs, ohne Umweg über die Kursauswahl |
 
-### Richtungstests — 39 Prüfungen, alle grün
+### Richtungstests — 51 Prüfungen, alle grün
 
-Der wichtigste neue Test: **Tag 1 wird in allen drei Kursen komplett
+Der wichtigste Test: **Tag 1 wird in allen vier Kursen komplett
 durchgespielt**, mit richtigen Antworten in jeder Übungsart.
 
 | Bereich | Geprüft |
@@ -292,12 +332,12 @@ durchgespielt**, mit richtigen Antworten in jeder Übungsart.
 | je Kurs | vollständiger Tagesdurchlauf: 10 Karteikarten, 10 MC, 10 Tippen, 5 Satzbau, 1 Erklärung, 5 Lücken |
 | je Kurs | danach Tag auf 2, 20 Karten angelegt, ein aktiver Tag |
 | Deutschkurs | Abschlussmeldung nach Tag 120 erscheint auf Spanisch |
-| Konsole | keine JavaScript-Fehler in keinem der drei Kurse |
+| Konsole | keine JavaScript-Fehler in keinem der vier Kurse |
 
 Damit ist die umgekehrte Sprachrichtung (Deutsch als Zielsprache) genauso
 abgedeckt wie die spanische — das war die Stelle mit dem größten Risiko.
 
-### Datenprüfung — alle drei Kurse ohne Beanstandung
+### Datenprüfung — alle vier Kurse ohne Beanstandung
 
 Ein eigenes Prüfskript geht über jeden Kurs und meldet: fehlende Tage, doppelte
 IDs, falsche Anzahl an Vokabeln, Sätzen oder Übungen, Übungen ohne Lücke `___`,
@@ -315,19 +355,26 @@ IDs, falsche Anzahl an Vokabeln, Sätzen oder Übungen, Übungen ohne Lücke `__
 | 6 | Übung `g4002` war nicht lösbar | Die Lösung war ein leerer String („Modalverb ohne zu") — man konnte weder tippen noch auswählen | Neu formuliert, sodass der Infinitiv selbst die Antwort ist |
 | 7 | Übung `g11803` hatte keine Lücke | Als Frage statt als Lückensatz geschrieben | In einen Lückensatz umformuliert |
 | 8 | Unit-Tests liefen nicht mehr | `srs.js` übersetzt seine Zeitangaben inzwischen über `t()`; im Testlauf ohne Browser fehlte diese Funktion | Testaufbau lädt jetzt `kurse.js` und `texte.js` mit und legt einen Minimalkurs an |
+| 9 | Lückensatz mit **zwei** Lücken verliert den Text hinter der zweiten | `Uebungen.typ_luecke` teilt den Satz am `___` und zeigt nur die ersten beiden Teile an — alles nach der zweiten Lücke fällt weg | Im neuen Pfad beim Schreiben vermieden und einmal korrigiert. In vier älteren Übungen steht das noch offen, siehe Bekannte Grenzen |
+| 10 | Schildchen „Lernpfad" klebte am Kursnamen | Das Schildchen stand innerhalb von `.kurs-name`, dadurch las sich der Name im DOM als „Alemán en el trabajoLernpfad" | Eigene Zeile `.kurs-kopfzeile` um Name und Schildchen gelegt |
 
 ---
 
 ## Was als Nächstes ansteht
 
-### 🔲 Nur du: GitHub Pages aktivieren
+### ☑️ GitHub Pages — offenbar schon aktiv
 
-Der letzte Schritt zur Nutzbarkeit auf dem Handy. Dauert zwei Minuten:
+Das Repository meldet inzwischen `has_pages: true`, die Seite dürfte also unter
+`https://justanything123.github.io/Test/` erreichbar sein. Nachprüfen konnte ich
+das aus dieser Umgebung nicht, weil das Netz hier `github.io` blockiert — bitte
+einmal selbst aufrufen.
+
+Falls die Adresse doch nicht lädt:
 
 1. Repository auf github.com → **Settings** → links **Pages**
 2. *Source*: **Deploy from a branch**
 3. *Branch*: `claude/spanish-learning-app-daily-o5s13u`, Ordner `/ (root)` → **Save**
-4. 1–2 Minuten warten → Adresse: `https://justanything123.github.io/Test/`
+4. 1–2 Minuten warten
 5. Auf dem Handy in Chrome öffnen → Menü (⋮) → **Zum Startbildschirm hinzufügen**
 
 ### 🔲 Nur du: Erinnerung einrichten
@@ -412,6 +459,7 @@ Grenzen, die du kennen solltest.
 | Spanien-Kurs endet bei B1 | Nur der LatAm-Kurs wurde auf B2 erweitert — das entsprach deinem Wunsch, den Spanien-Kurs unverändert als dritten Kurs zu behalten. |
 | LatAm-Spanisch ist eine Mittelform | „Español neutro" gibt es als gesprochene Sprache nirgends; jedes Land hat eigene Wörter. Der Kurs nimmt die Variante, die überall verstanden wird, und weist auf regionale Unterschiede hin, wo sie zählen. |
 | Kein Git-Tag für die Sicherung | Das Pushen von Tags scheitert am Netzwerk-Proxy dieser Umgebung. Der Sicherungs-Branch `backup/v1-spanien-a2-b1` ist gepusht und erfüllt denselben Zweck. |
+| Vier Übungen mit zwei Lücken | `g0901` (Deutsch), `g2605` (Spanien), `g2605` und `g6603` (LatAm) enthalten zwei `___`. Die App zeigt nur bis zur zweiten Lücke, der Rest des Satzes fehlt auf dem Bildschirm. Lösbar bleiben sie, weil die erste Lücke die gefragte ist. Nicht angefasst, weil es außerhalb dieses Auftrags lag — auf Zuruf in einem Zug behoben. |
 
 ---
 
@@ -435,3 +483,8 @@ Grenzen, die du kennen solltest.
 | 09.09.2026 | Deutschkurs B1 (Tag 61–90) und B2 (Tag 91–120) geschrieben — Kurs vollständig |
 | 09.09.2026 | Testsuiten auf das Kurssystem umgestellt, Richtungstest neu geschrieben; 159 Prüfungen grün |
 | 09.09.2026 | README und PROGRESS.md auf Version 2 aktualisiert |
+| 14.09.2026 | App-Name und Beschreibung im `manifest.json` auf alle Kurse umgestellt |
+| 14.09.2026 | Kurssystem um Themen-Lernpfade erweitert (`gehoertZu`, Schildchen, eingerückte Kachel) |
+| 14.09.2026 | Lernpfad „Deutsch im Beruf" geschrieben: 30 Lektionen, 300 Vokabeln, 150 Sätze, 150 Redemittelübungen |
+| 14.09.2026 | Kurs- und Richtungstest auf vier Kurse erweitert; 173 Prüfungen grün, Datenprüfung ohne Beanstandung |
+| 14.09.2026 | README und PROGRESS.md auf Version 3 aktualisiert |

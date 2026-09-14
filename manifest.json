@@ -1,7 +1,7 @@
 {
-  "name": "¡Vamos! — Spanisch A2 bis B1",
+  "name": "¡Vamos! — Spanisch & Deutsch lernen",
   "short_name": "¡Vamos!",
-  "description": "Tägliche Spanisch-Lektionen mit Vokabeln, Sätzen und Grammatik.",
+  "description": "Vier Kurse mit täglichen Lektionen aus Vokabeln, Sätzen und Grammatik: Spanisch (Spanien), Spanisch (Lateinamerika), Deutsch für Spanischsprachige und Deutsch im Beruf für Hotel und Restaurant. · Cuatro cursos con lecciones diarias de vocabulario, frases y gramática.",
   "lang": "de",
   "start_url": "./index.html",
   "scope": "./",

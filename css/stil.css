@@ -418,6 +418,19 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
 }
 .kurs-balken > span { display: block; height: 100%; background: var(--kursfarbe, var(--akzent)); border-radius: 99px; }
 
+/* Ein Lernpfad gehoert zu einem Hauptkurs: leicht eingerueckt, mit Schildchen
+   am Namen und einer kurzen Notiz darunter. */
+.kurs-karte.kurs-pfad { margin-left: 1.1rem; }
+.kurs-kopfzeile { display: flex; align-items: baseline; gap: .45rem; flex-wrap: wrap; }
+.kurs-schild {
+  display: inline-block; padding: .08rem .4rem;
+  border: 1px solid var(--kursfarbe, var(--akzent)); border-radius: 99px;
+  font-size: .66rem; font-weight: 600; letter-spacing: .02em;
+  color: var(--kursfarbe, var(--akzent)); vertical-align: .08em;
+  white-space: nowrap;
+}
+.kurs-notiz { font-size: .76rem; color: var(--text-leise); line-height: 1.35; margin-top: .1rem; }
+
 /* Kursname in der Kopfzeile */
 .kopf-kurs {
   flex: 1; min-width: 0; font-size: .82rem; color: var(--text-leise);

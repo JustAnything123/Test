@@ -1,6 +1,6 @@
 # ¡Vamos! — Sprachen lernen, jeden Tag
 
-Eine Lern-App zum Selbsthosten, mit **drei Kursen in einer Anwendung**. Läuft als
+Eine Lern-App zum Selbsthosten, mit **vier Kursen in einer Anwendung**. Läuft als
 normale Webseite im Browser, funktioniert offline und speichert deinen Fortschritt
 auf deinem Gerät.
 
@@ -9,15 +9,17 @@ auf deinem Gerät.
 | 🇪🇸 Español (España) | Deutsch → Spanisch (Spanien) | A2 → B1 | 60 |
 | 🌎 Español (Latinoamérica) | Deutsch → Spanisch (Lateinamerika) | A2 → B2 | 90 |
 | 🇩🇪 Alemán | Spanisch → Deutsch, Oberfläche auf Spanisch | A1 → B2 | 120 |
+| 🍽️ Alemán en el trabajo | Themen-Lernpfad des Deutschkurses: Hotel, Restaurant, Küche | A2 → B2 | 30 |
 
-**270 Tageslektionen · 2700 Vokabeln · 1350 Beispielsätze · 270 Grammatikthemen**
+**300 Tageslektionen · 3000 Vokabeln · 1500 Beispielsätze · 300 Grammatik- und
+Redemittelthemen**
 
 ---
 
 ## Inhalt
 
 1. [Was die App kann](#was-die-app-kann)
-2. [Die drei Kurse](#die-drei-kurse)
+2. [Die vier Kurse](#die-vier-kurse)
 3. [Schnellstart in 5 Minuten](#schnellstart-in-5-minuten)
 4. [Die Erinnerung um 19:30 einrichten](#die-erinnerung-um-1930-einrichten)
 5. [Wie das Lernsystem funktioniert](#wie-das-lernsystem-funktioniert)
@@ -65,7 +67,7 @@ Internet nötig.
 
 ---
 
-## Die drei Kurse
+## Die vier Kurse
 
 Beim ersten Start wählst du einen Kurs. Wechseln kannst du jederzeit über
 Menü (☰) → **🎓 Kurs wechseln**.
@@ -97,6 +99,36 @@ Einstellungen, Erinnerungsseite —, und alle Grammatikerklärungen sind auf
 Spanisch geschrieben, mit Blick auf genau die Stellen, an denen Spanischsprachige
 im Deutschen hängenbleiben: die vier Fälle, die Verbstellung, die
 Adjektivdeklination, `seit` mit Präsens, falsche Freunde.
+
+### 🍽️ Alemán en el trabajo — A2 → B2, 30 Tage
+
+Ein **Themen-Lernpfad des Deutschkurses** für alle, die im Hotel oder im
+Restaurant arbeiten. Kein eigener Sprachkurs, sondern der Fachwortschatz und die
+Redemittel eines kompletten Arbeitstages — von der Küche über den Service bis zur
+Rezeption. Oberfläche und Erklärungen sind wie im Deutschkurs auf Spanisch.
+
+In der Kursauswahl steht er eingerückt unter dem Deutschkurs und trägt das
+Schildchen **Lernpfad** (spanisch: *Ruta temática*). Er hat einen eigenen
+Lernstand, lässt sich also **parallel** zum langen Deutschkurs machen: der lange
+Kurs liefert die Grammatik, der Pfad die Wörter, die man im Dienst sofort
+braucht.
+
+**Empfehlung:** ab etwa Tag 30 des Deutschkurses (Niveau A2). Wer schon im Beruf
+steht, kann auch direkt einsteigen — die Redemittel sind als feste Bausteine
+erklärt und funktionieren auch ohne vollständige Grammatik.
+
+| Block | Tage | Inhalt |
+|---|---|---|
+| Küche | 1–8 | Geräte · Schneiden und Vorbereiten · Garmethoden · Fleisch und Fisch · Gemüse und Kräuter · Mengen und Rezepte · Mise en place und Schichtübergabe · Hygiene und HACCP |
+| Service | 9–16 | Gedeck und Begrüßung · Speisekarte · Getränke · Bestellung aufnehmen · Servieren · Reklamationen · Bezahlen und Trinkgeld · Reservierung am Telefon |
+| Hotel | 17–24 | Bereiche und Berufe · Zimmerarten · Check-in · Check-out und Rechnung · Housekeeping · Auskunft und Wegbeschreibung · Probleme und Defekte · Frühstück und Etagenservice |
+| Ernährung und Beruf | 25–30 | Allergene · Ernährungsformen · Nährstoffe · Arbeitssicherheit · Vertrag, Schichten, Urlaub · Vorstellungsgespräch und Abschluss |
+
+Das Feld `grammatik` trägt in diesem Pfad **Redemittel** statt reiner Grammatik:
+fertige Formulierungen für wiederkehrende Situationen — die Bestellung abrufen,
+eine Beschwerde aufnehmen, die Schicht übergeben, eine Allergiefrage sicher
+beantworten. Technisch ist es dieselbe Struktur, deshalb funktionieren alle
+Übungstypen unverändert.
 
 ---
 
@@ -258,7 +290,7 @@ icons/                     App-Icons
 css/stil.css               gesamtes Aussehen, helles und dunkles Thema
 
 js/kurse.js                Kursregister: anlegen, wechseln, Stand je Kurs
-js/kurs-definitionen.js    die drei Kurse (Name, Sprachen, Stimmen, Farbe)
+js/kurs-definitionen.js    die vier Kurse (Name, Sprachen, Stimmen, Farbe)
 js/texte.js                alle Oberflächentexte auf Deutsch und Spanisch
 js/daten.js                Sammelbehälter für die Lektionen des aktiven Kurses
 js/speicher.js             Fortschritt je Kurs speichern, Export und Import
@@ -272,6 +304,7 @@ js/app.js                  Ablaufsteuerung und Bildschirmwechsel
 data/es-es/lektionen-01-10.js  …  -51-60.js    60 Lektionen, Spanien
 data/es-419/lektionen-01-10.js …  -81-90.js    90 Lektionen, Lateinamerika
 data/de/lektionen-01-10.js     … -111-120.js  120 Lektionen, Deutsch
+data/de-beruf/lektionen-01-08.js … -25-30.js    30 Lektionen, Deutsch im Beruf
 ```
 
 Die Reihenfolge der `<script>`-Tags in `index.html` ist wichtig:
@@ -313,6 +346,15 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 | 31–60 | A2 | Adjektivdeklination in allen drei Systemen · Präteritum · Plusquamperfekt · Nebensätze · Relativsätze · Passiv · Konjunktiv II · zu + Infinitiv · Komparativ und Superlativ |
 | 61–90 | B1 | Relativsätze in Dativ und Genitiv · Konjunktiv II der Vergangenheit · Passiv in allen Zeiten und mit Modalverben · Genitiv · n-Deklination · Partizipien als Adjektiv · TeKaMoLo · Stellung von nicht · da-/wo-Komposita · subjektive Modalverben · Futur I und II · Modalpartikeln |
 | 91–120 | B2 | Konjunktiv I und Pressesprache · erweiterte Partizipialattribute · Nominalstil · Zustandspassiv · konzessive Konstruktionen · Funktionsverbgefüge · Konditionalsätze ohne wenn · als ob · Register · Argumentation · Grafikbeschreibung · Kollokationen · Varianten D/A/CH · typische Fehlerquellen und falsche Freunde |
+
+**Deutsch im Beruf, Tag 1–30 — Redemittel statt reiner Grammatik**
+
+| Tage | Niveau | Redemittel |
+|---|---|---|
+| 1–8 | A2–B1 | Anweisungen in der Küche verstehen (Imperativ) · Arbeitsanweisung bestätigen und wiederholen · Garstufen und Zeiten · Bestellung im Pass abrufen · Ware annehmen und prüfen · Mengen und Maße ohne „von" · Schichtübergabe mit Passiv und Modalverb · Temperaturen dokumentieren |
+| 9–16 | A2–B1 | Gäste begrüßen und platzieren · Gerichte erklären und empfehlen (Passiv) · Getränke empfehlen und servieren · höflich fragen mit Konjunktiv II · am Tisch nachfragen (schmecken + Dativ) · entschuldigen und Lösung anbieten · abrechnen, Trinkgeld, Beträge · telefonieren und buchstabieren |
+| 17–24 | A2–B1 | sich vorstellen und Zuständigkeit nennen · Zimmer beschreiben (haben + Akkusativ, mit + Dativ) · Check-in in sechs Schritten · Rechnungspositionen erklären · Zimmerstatus melden und Fundsachen · Weg beschreiben · Problem aufnehmen und weiterleiten · Frühstück und Etagenservice mit trennbaren Verben |
+| 25–30 | B1–B2 | Allergiefragen sicher beantworten (die 14 Allergene) · Alternativen anbieten (ersetzen durch, verzichten auf) · Nährwerte (viel/viele, reich an) · Gefahr melden und Unfall dokumentieren · mit dem Chef sprechen (Konjunktiv II, Krankmeldung, Urlaubsantrag) · Vorstellungsgespräch |
 
 ---
 
@@ -389,6 +431,11 @@ ergänzen, einen Ordner `data/<id>/` anlegen und die Datendateien einbinden.
 Ist `ui` eine Sprache, für die `js/texte.js` noch keine Tabelle hat, fällt die
 Oberfläche auf Deutsch zurück.
 
+**Einen Themen-Lernpfad anlegen:** genauso wie einen neuen Kurs, aber mit dem
+zusätzlichen Feld `gehoertZu: 'de'` (die id des Hauptkurses). Die Kursauswahl
+rückt die Kachel dann ein, setzt das Schildchen *Lernpfad* daneben und zeigt den
+Text aus `hinweis` als kurze Notiz an. So ist „Deutsch im Beruf" gebaut.
+
 ---
 
 ## Häufige Fragen
@@ -426,8 +473,22 @@ es nicht: Verteiltes Lernen bringt deutlich mehr als ein langer Block.
 Ja, für den Streak und das Kalendergitter. Nur eine vollständige Tageslektion
 schaltet aber den Tageszähler weiter.
 
+**Was ist der Unterschied zwischen einem Kurs und einem Lernpfad?**
+Technisch keiner — ein Lernpfad ist ein ganz normaler Kurs mit eigenem Lernstand.
+Die Kennzeichnung `gehoertZu` sagt der App nur, dass er inhaltlich zu einem
+Hauptkurs gehört, damit sie ihn eingerückt darunter anzeigt. Du kannst also den
+langen Deutschkurs und „Deutsch im Beruf" **gleichzeitig** laufen lassen; die
+beiden Lernstände stören sich nicht.
+
+**Sollte ich erst den Deutschkurs machen oder gleich den Berufspfad?**
+Wer noch bei Null anfängt, beginnt beim langen Kurs — ohne Grundgrammatik
+bleiben die Redemittel auswendig gelernte Brocken. Wer schon etwa Niveau A2 hat
+(ungefähr Tag 30) oder bereits im Hotel bzw. Restaurant arbeitet, kann beide
+parallel machen: abends die Tageslektion des langen Kurses, und den Pfad, wenn
+gerade eine Schicht ansteht.
+
 **Was passiert am Ende eines Kurses?**
-Nach dem letzten Tag (60, 90 oder 120, je nach Kurs) wechselt die App in den
+Nach dem letzten Tag (30, 60, 90 oder 120, je nach Kurs) wechselt die App in den
 Wiederholungsmodus. Jeden Tag kommt, was fällig ist — genau das entscheidet
 darüber, ob das Gelernte in einem Jahr noch da ist.
 
