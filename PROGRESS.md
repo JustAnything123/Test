@@ -306,6 +306,10 @@ Problemwörter (Konzept von Anki übernommen):
 
 ## Was getestet wurde
 
+Die Skripte dazu liegen seit dem 22.09.2026 im Repository unter `tests/` —
+wie man sie startet und was beim Übernehmen angepasst werden musste, steht
+weiter unten im Abschnitt [Tests im Repository](#tests-im-repository).
+
 ### Unit-Tests der Wiederhollogik — 29 Prüfungen, alle grün
 
 Stufenaufstieg · Rückfall bei Fehler · korrekte Intervalle · Leech-Bildung nach
@@ -489,7 +493,27 @@ Grenzen, die du kennen solltest.
 ## Tests im Repository
 
 Bis zum 22.09.2026 lagen die Prüfskripte nur im Arbeitsverzeichnis der jeweiligen
-Sitzung und waren danach weg. Jetzt liegen sie unter `tests/` im Repository.
+Sitzung und waren danach weg. Jetzt liegen sie unter `tests/` im Repository und
+überleben damit jede Sitzung.
+
+```
+tests/alle.sh                 startet alles mit einem Befehl
+tests/umgebung.js             gemeinsame Einstellungen
+tests/01-daten.js … 07-luecken.js
+tests/README.md               Anleitung
+tests/package.json            nur für Playwright
+```
+
+### Der eine Befehl
+
+```bash
+bash tests/alle.sh
+```
+
+Startet den Webserver selbst, lässt alle sieben Prüfungen laufen und beendet den
+Server danach wieder. Dauer rund zwei bis drei Minuten.
+
+### Was die sieben Tests prüfen
 
 | Datei | Browser | Prüft |
 |---|---|---|
@@ -501,22 +525,101 @@ Sitzung und waren danach weg. Jetzt liegen sie unter `tests/` im Repository.
 | `06-fachwortschatz.js` | ja | Vertiefungstage 31–45: Erklärung mit Tabelle, jede Lücke sichtbar und lösbar |
 | `07-luecken.js` | ja | Nachkontrolle der vier früher zweilückigen Übungen |
 
-**Was beim Übernehmen angepasst werden musste:** Die Skripte enthielten feste
-Pfade — den Sitzungsordner für Bildschirmfotos, `/home/user/Test` für die
-Quelldateien, `/opt/pw-browsers/chromium-1194/…` für den Browser und
-`localhost:8765` für den Server. Das alles steht jetzt ausschließlich in
-`tests/umgebung.js` und lässt sich über die Umgebungsvariablen `VAMOS_URL`,
-`VAMOS_PORT` und `VAMOS_CHROMIUM` ändern. Die Testlogik selbst wurde nicht
-angefasst.
+`02` bis `05` enthalten zusammen 173 einzelne Prüfungen, dazu kommen die
+inhaltlichen Kontrollen aus `01`, `06` und `07`.
 
-**Ein Fehler im Starter, gefunden beim Prüfen:** `alle.sh` startete den Server in
-einer Subshell und merkte sich deren Prozessnummer. Beim Aufräumen wurde damit
-die Subshell beendet, der Server lief aber weiter. Behoben mit `exec`, sodass die
-gemerkte Nummer wirklich die des Servers ist. Nachgewiesen: Vor dem Lauf kein
-Server, nach dem Lauf wieder keiner.
+### Das Problem beim Übernehmen: feste Pfade
 
-Playwright ist keine Abhängigkeit der App. `tests/package.json` deklariert es nur
-für die Tests; eine globale Installation wird ebenfalls gefunden.
+Die Skripte waren für *eine bestimmte Sitzung* geschrieben und steckten voller
+Pfade, die es nur auf diesem einen Rechner gab:
+
+| Fest verdrahtet war | Jetzt |
+|---|---|
+| Sitzungsordner für Bildschirmfotos | `tests/ausgabe/` |
+| `/home/user/Test/js/srs.js` | relativ zum Testordner gefunden |
+| `/opt/pw-browsers/chromium-1194/…` | automatisch gesucht |
+| `http://localhost:8765` | über `VAMOS_URL` änderbar |
+
+Auf jedem anderen Rechner wären sie sofort gescheitert. Deshalb gibt es jetzt
+das gemeinsame Modul **`tests/umgebung.js`**: Alles, was vom Rechner abhängt,
+steht ausschließlich dort. Die Testskripte selbst wissen nichts mehr über ihre
+Umgebung.
+
+Das ist das Prinzip dahinter und der Grund, warum man so etwas überhaupt zentral
+auslagert: Ändert sich der Rechner, ändert man **eine** Datei statt sieben. Über
+Umgebungsvariablen geht es sogar ganz ohne Codeänderung:
+
+```bash
+VAMOS_URL=http://localhost:9000/index.html node tests/03-ablauf.js
+VAMOS_PORT=9000 bash tests/alle.sh
+VAMOS_CHROMIUM=/usr/bin/chromium node tests/04-kurssystem.js
+```
+
+Nachgewiesen wurde das, indem die Tests aus `/tmp` heraus gestartet wurden, also
+von völlig außerhalb des Projekts — alle sieben bestanden. An der Testlogik
+selbst wurde nichts geändert, nur an Pfaden und Konfiguration.
+
+### Ein Fehler im Starter, gefunden beim Prüfen
+
+Die erste Fassung von `alle.sh` hat den Server nicht wieder beendet. Der Grund
+ist lehrreich:
+
+```bash
+( cd "$PROJEKT" && python3 -m http.server 8765 ) &
+SERVER_PID=$!        # ← das ist die Klammer, nicht der Server
+```
+
+`$!` liefert die Nummer der **Subshell** — also der runden Klammer —, nicht die
+von Python. Beim Aufräumen wurde die Klammer beendet, Python lief als Waise
+weiter. Behoben mit `exec`, das die Subshell durch Python *ersetzt*, sodass die
+gemerkte Nummer wirklich die des Servers ist:
+
+```bash
+( cd "$PROJEKT" && exec python3 -m http.server 8765 ) &
+SERVER_PID=$!
+```
+
+Gegengeprobt: vor dem Lauf kein Server, nach dem Lauf keiner.
+
+### Der Test für den Alltag
+
+Beim Schreiben eigener Vokabeln ist **ein** Test der wichtige. Er braucht weder
+Browser noch Server und ist in zwei Sekunden durch:
+
+```bash
+node tests/01-daten.js
+```
+
+Er prüft alle Lerndaten aller Kurse auf doppelte IDs, fehlende Felder, Lücken in
+der Tagesnummerierung und Übungen mit mehr als einer Lücke — genau die
+Tippfehler, die einem beim Lesen entgehen.
+
+### Wenn ein Test fehlschlägt
+
+Jede fehlgeschlagene Prüfung wird mit gefundenem und erwartetem Wert
+ausgeschrieben:
+
+```
+x Lektionen geladen: 45 — erwartet 30
+```
+
+Links steht, was gefunden wurde, rechts, was erwartet war. Dann gibt es zwei
+Möglichkeiten: Entweder hat die App einen Fehler — oder die Erwartung ist
+veraltet. Im Beispiel war Letzteres der Fall: Der Kurs wurde absichtlich von 30
+auf 45 Tage verlängert, nur der Test wusste es noch nicht.
+
+Der Unterschied ist wichtig. Eine Erwartung anzupassen ist richtig, wenn die
+Änderung gewollt war — und falsch, wenn man damit nur einen echten Fehler
+stummschaltet.
+
+### Abgrenzung
+
+Playwright ist **keine** Abhängigkeit der App. `tests/package.json` deklariert es
+nur für die Browsertests; eine globale Installation wird ebenfalls gefunden.
+Zwei Dinge landen bewusst nicht im Repository und stehen in der `.gitignore`:
+die Bildschirmfotos unter `tests/ausgabe/` und `node_modules/`.
+
+Wer den Ordner `tests/` löscht, ändert am Lernen nichts.
 
 ---
 
