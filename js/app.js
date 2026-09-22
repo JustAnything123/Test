@@ -15,6 +15,7 @@ var App = {
      Pruefung anders laeuft: aufgabenweise statt frageweise, und ohne
      Rueckmeldung bis zum Schluss. */
   pruefung: null,    // { def, aufgaben, index, antworten, begonnen }
+  pruefauftrag: null, // im Prüfer-Modus: das entpackte Paket aus dem Link
 
   /* ======================= Start ======================= */
 
@@ -29,6 +30,25 @@ var App = {
 
     this.knoepfeVerdrahten();
 
+    // Ein Link, der sich nur hinter dem # unterscheidet, laedt die Seite
+    // NICHT neu — der Browser wechselt bloss das Fragment. Wer einen
+    // Pruef- oder Ruecklink antippt, waehrend die App schon offen ist,
+    // wuerde sonst gar nichts sehen. Der Horcher muss deshalb stehen,
+    // BEVOR der erste Link verarbeitet wird: Sonst gaebe es ihn nicht mehr,
+    // wenn die App gleich beim Start ueber einen Link geoeffnet wurde.
+    window.addEventListener('hashchange', () => this.linkVerarbeiten());
+
+    // Service Worker anmelden (nur über http/https, nicht bei file://)
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      navigator.serviceWorker.register('service-worker.js')
+        .catch(e => console.warn('Service Worker nicht registriert:', e));
+    }
+
+    // Bringt die Adresse etwas mit? Das geht vor der normalen Anzeige, denn
+    // ein Prüfauftrag soll auch bei jemandem aufgehen, der die App noch nie
+    // benutzt hat und deshalb gar keinen Kurs gewählt hat.
+    if (this.linkVerarbeiten()) return;
+
     // Ohne gewählten Kurs zuerst die Kursauswahl zeigen
     if (!Speicher.daten.aktiverKurs || !Kurse.hat(Speicher.daten.aktiverKurs)) {
       this.textePruefen();
@@ -36,12 +56,6 @@ var App = {
     } else {
       this.kursAnwenden();
       this.zeigeSeite('start');
-    }
-
-    // Service Worker anmelden (nur über http/https, nicht bei file://)
-    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-      navigator.serviceWorker.register('service-worker.js')
-        .catch(e => console.warn('Service Worker nicht registriert:', e));
     }
   },
 
@@ -125,7 +139,7 @@ var App = {
   /* ======================= Bildschirme ======================= */
 
   SEITEN: ['kurse', 'start', 'uebung', 'fertig', 'historie', 'erinnerung', 'einstellungen',
-           'pruefung-info', 'pruefung', 'pruefung-ergebnis'],
+           'pruefung-info', 'pruefung', 'pruefung-ergebnis', 'pruefer'],
 
   zeigeSeite(name) {
     this.SEITEN.forEach(s => {
@@ -137,12 +151,15 @@ var App = {
     // In der Prüfung ist der Kopf so leer wie in der Übung — aber der
     // Lektionszähler gehört nicht hierher: Die Prüfung hat ihre eigene
     // Fortschrittsleiste, sonst stünde dort 0/0.
-    const inUebung  = name === 'uebung';
+    const inUebung   = name === 'uebung';
     const inPruefung = name === 'pruefung';
-    const schlank   = inUebung || inPruefung;
+    const beimPruefer = name === 'pruefer';
+    const schlank    = inUebung || inPruefung;
     document.getElementById('kopf-fortschritt').hidden = !inUebung;
     document.getElementById('kopf-titel').hidden = schlank;
-    document.getElementById('kopf-kurs').hidden = schlank || !Kurse.aktiv();
+    // Der Prüfer ist nicht der Lernende: Seine Kopfzeile darf nicht in
+    // dessen Kursauswahl führen.
+    document.getElementById('kopf-kurs').hidden = schlank || beimPruefer || !Kurse.aktiv();
     document.getElementById('btn-zurueck').hidden = (name === 'start' || name === 'kurse');
     window.scrollTo(0, 0);
 
@@ -383,6 +400,20 @@ var App = {
   /** Die Karte auf dem Startbildschirm — zeigt die nächste offene Prüfung
       oder, wenn alles bestanden ist, gar nichts. */
   pruefkarteAktualisieren() {
+    // Streifen für Schreibaufgaben, die noch niemand bewertet hat. Ohne ihn
+    // käme man nach dem Bestehen nicht mehr an die Prüfung heran, um sie
+    // zu verschicken oder die Bewertung anzusehen.
+    const warten  = Pruefungen.offeneBewertungen();
+    const streifen = document.getElementById('wartestreifen');
+    if (streifen) {
+      streifen.hidden = warten.length === 0;
+      if (warten.length) {
+        document.getElementById('wartestreifen-text').textContent =
+          (warten.length === 1 ? t('start.bewertungOffen', { n: 1 })
+                               : t('start.bewertungOffenMehr', { n: warten.length }));
+      }
+    }
+
     const karte = document.getElementById('pruefkarte');
     if (!karte) return;
     const p = Pruefungen.offen();
@@ -523,26 +554,59 @@ var App = {
         <span class="pruef-teilpunkte">${x.punkte}/${x.max}</span>
       </div>`).join('');
 
-    // Offene Aufgaben: ehrlich als noch nicht bewertet ausweisen.
+    // Offene Aufgaben: entweder die Bewertung eines Menschen — oder ehrlich
+    // als noch nicht bewertet ausgewiesen, mit dem Weg dorthin.
+    const esc = x => Uebungen.escape(x);
+    const urteilsNamen = { richtig: t('pruefer.richtig'), teilweise: t('pruefer.teilweise'), falsch: t('pruefer.falsch') };
+    const bewertungen = e.bewertungen || {};
+
     g('perg-offen').innerHTML = e.offen.length ? `
-      <h3 class="abschnitt-titel">${Uebungen.escape(t('pruef.offeneAufgaben'))}</h3>
-      <div class="pruef-warnung">${Uebungen.escape(t('pruef.offenErklaerung'))}</div>
-      ${e.offen.map(o => `
+      <h3 class="abschnitt-titel">${esc(t('pruef.offeneAufgaben'))}</h3>
+      <div class="pruef-warnung">${esc(t('pruef.offenErklaerung'))}</div>
+      ${e.offen.map(o => {
+        const b = bewertungen[o.frageId];
+        return `
         <div class="pruef-offen-block">
-          <p class="pruef-frage">${Uebungen.escape(o.auftrag)}</p>
+          <p class="pruef-frage">${esc(o.auftrag)}</p>
           <div class="pruef-deine-antwort">${
-            o.antwort ? Uebungen.escape(o.antwort).replace(/\n/g, '<br>')
-                      : '<em>' + Uebungen.escape(t('pruef.nichtsGeschrieben')) + '</em>'
+            o.antwort ? esc(o.antwort).replace(/\n/g, '<br>')
+                      : '<em>' + esc(t('pruef.nichtsGeschrieben')) + '</em>'
           }</div>
+          ${b ? `
+            <div class="pruef-bewertung urteil-${esc(b.urteil)}">
+              <div class="pruef-bewertung-kopf">
+                <span class="pruef-urteil-schild">${esc(urteilsNamen[b.urteil] || b.urteil)}</span>
+                <span class="pruef-bewertung-von">${esc(t('teilen.bewertungDa'))}${
+                  b.von ? ' ' + esc(t('teilen.vonWem', { von: b.von })) : ''
+                } · ${esc(b.datum || '')}</span>
+              </div>
+              ${b.hinweis ? `<p class="pruef-bewertung-hinweis">${esc(b.hinweis).replace(/\n/g, '<br>')}</p>` : ''}
+            </div>` : ''}
           ${o.kriterien.length ? `
-            <p class="pruef-kriterien-titel">${Uebungen.escape(t('pruef.kriterien'))}</p>
-            <ul class="pruef-kriterien">${o.kriterien.map(k => `<li>${Uebungen.escape(k)}</li>`).join('')}</ul>` : ''}
+            <p class="pruef-kriterien-titel">${esc(t('pruef.kriterien'))}</p>
+            <ul class="pruef-kriterien">${o.kriterien.map(k => `<li>${esc(k)}</li>`).join('')}</ul>` : ''}
           ${o.muster ? `
             <details class="pruef-muster">
-              <summary>${Uebungen.escape(t('pruef.musterZeigen'))}</summary>
-              <div>${Uebungen.escape(o.muster).replace(/\n/g, '<br>')}</div>
+              <summary>${esc(t('pruef.musterZeigen'))}</summary>
+              <div>${esc(o.muster).replace(/\n/g, '<br>')}</div>
             </details>` : ''}
-        </div>`).join('')}` : '';
+          <div class="pruef-teilen-knoepfe">
+            <button type="button" class="btn btn-teilen" data-teilen="${esc(e.id || '')}">${
+              esc(b ? t('teilen.nochmalSchicken') : t('teilen.zurBewertung'))
+            }</button>
+            <button type="button" class="btn btn-neben btn-schmal" data-selbst="${esc(e.id || '')}">${
+              esc(t('teilen.selbstEintragen'))
+            }</button>
+          </div>
+        </div>`;
+      }).join('')}` : '';
+
+    // Die beiden Knöpfe je offener Aufgabe verdrahten
+    g('perg-offen').querySelectorAll('[data-teilen]').forEach(k =>
+      k.addEventListener('click', () => this.zurBewertungGeben(e)));
+    g('perg-offen').querySelectorAll('[data-selbst]').forEach(k =>
+      k.addEventListener('click', () =>
+        this.prueferModusStarten(Teilen.auftragPacken(e), true)));
 
     // Durchsicht: jede Frage mit der richtigen Loesung. Kommt nach dem
     // Ergebnis, nie vorher — vorher waere es keine Pruefung mehr.
@@ -573,6 +637,231 @@ var App = {
             }</span>
           </div>`).join('')}
       </div>`).join('');
+  },
+
+  /* ======================= Teilen und Prüfer ======================= */
+
+  /* Der Rundlauf ohne Server:
+       du  →  Link mit deiner Antwort   →  Prüfer
+       du  ←  Link mit seiner Bewertung ←  Prüfer
+     Siehe js/teilen.js für das Verpacken. */
+
+  /** Beim Start: Steht etwas hinter dem # in der Adresse?
+      Gibt true zurück, wenn der Link die Anzeige übernommen hat. */
+  linkVerarbeiten() {
+    if (!location.hash) return false;
+    const inhalt = Teilen.ausAdresse();
+
+    if (!inhalt) {
+      // Es stand etwas hinter dem #, aber nichts Lesbares. Das ist der
+      // typische Fall eines unterwegs abgeschnittenen Links.
+      if (/[#&](pruefen|bewertung)=/.test(location.hash)) {
+        Teilen.adresseSaeubern();
+        this.kursAnwenden();
+        this.zeigeSeite('start');
+        alert(t('teilen.linkKaputt'));
+        return true;
+      }
+      return false;
+    }
+
+    Teilen.adresseSaeubern();
+    if (inhalt.art === 'auftrag')   return this.prueferModusStarten(inhalt.daten);
+    if (inhalt.art === 'bewertung') return this.bewertungEinlesen(inhalt.daten);
+    return false;
+  },
+
+  /* ---- Prüfer-Seite ---------------------------------------------------- */
+
+  /** Der Prüfer öffnet den Link. Wichtig: Hier wird NICHTS am Lernstand des
+      Prüfers verändert — er könnte selbst gerade einen Kurs machen. Wir
+      wechseln nicht einmal den aktiven Kurs, sondern erzwingen nur die
+      Sprache der Oberfläche. */
+  prueferModusStarten(auftrag, selbstModus) {
+    const kurs = KURSE[auftrag.kurs];
+    const def  = kurs ? (PRUEFUNGEN[auftrag.kurs] || []).find(p => p.id === auftrag.pruefung) : null;
+
+    // Der Prüfer spricht die Zielsprache des Kurses — er bewertet ja einen
+    // Text darin. Die Oberfläche erscheint deshalb in dieser Sprache, nicht
+    // in der Lernsprache des Schülers.
+    TEXTE_ZWANG = selbstModus ? null : (kurs ? kurs.ziel : null);
+
+    this.pruefauftrag  = auftrag;
+    this.prueferUrteile = {};
+    this.prueferSelbst = !!selbstModus;
+
+    const g = id => document.getElementById(id);
+    g('pruefer-titel').textContent = t('pruefer.betreff') + (def ? ' · ' + def.name : '');
+    g('pruefer-einleitung').textContent = selbstModus ? t('pruefer.selbstModus') : t('pruefer.einleitung', {
+      ziel: kurs ? (TEXTE[TEXTE_ZWANG || 'de'].sprachen[kurs.ziel] || '') : ''
+    });
+    g('pruefer-kennung').textContent = t('pruefer.kennung') + ': ' + auftrag.id;
+    g('pruefer-name-label').textContent = t('pruefer.name');
+    g('btn-pruefer-senden').textContent = selbstModus ? t('pruefer.gespeichert').replace('.', '') : t('pruefer.zurueckschicken');
+    g('btn-pruefer-abbrechen').textContent = t('pruefer.abbrechen');
+    g('pruefer-name').parentElement.hidden = !!selbstModus;
+    g('pruefer-meldung').hidden = true;
+
+    // Zu jeder mitgeschickten Antwort die Aufgabe aus der eigenen App holen.
+    // Es reist nur der Text — Aufgabenstellung, Kriterien und Musterlösung
+    // hat der Prüfer schon, weil er dieselbe App öffnet.
+    const alle = def ? Pruefungen.fragen(def) : [];
+    g('pruefer-aufgaben').innerHTML = auftrag.antworten.map(a => {
+      const treffer = alle.find(f => f.frage.id === a.fid);
+      const f = treffer ? treffer.frage : null;
+      const zielSprache = !selbstModus;
+
+      const auftragText = f ? ((zielSprache && f.auftragZiel) || f.auftrag) : t('pruefer.nichtGefunden');
+      const punkte      = f ? ((zielSprache && f.punkteZiel) || f.punkte || []) : [];
+      const kriterien   = f ? ((zielSprache && f.kriterienZiel) || f.kriterien || []) : [];
+      const muster      = f ? f.muster : '';
+      const e = x => Uebungen.escape(x);
+
+      return `
+        <div class="pruefer-block" data-frage="${e(a.fid)}">
+          <h3>${e(t('pruefer.dieAufgabe'))}</h3>
+          <div class="pruefer-auftrag">
+            <p>${e(auftragText)}</p>
+            ${punkte.length ? `<ul>${punkte.map(x => `<li>${e(x)}</li>`).join('')}</ul>` : ''}
+          </div>
+
+          <h3>${e(t('pruefer.dieAntwort'))}</h3>
+          <div class="pruefer-antwort">${
+            a.text ? e(a.text).replace(/\n/g, '<br>') : '<em>—</em>'
+          }</div>
+
+          ${kriterien.length ? `
+            <h3>${e(t('pruefer.woraufAchten'))}</h3>
+            <ul class="pruefer-kriterien">${kriterien.map(k => `
+              <li><label><input type="checkbox"> <span>${e(k)}</span></label></li>`).join('')}
+            </ul>` : ''}
+
+          ${muster ? `
+            <details class="pruef-muster">
+              <summary>${e(t('pruefer.musterZeigen'))}</summary>
+              <div>${e(muster).replace(/\n/g, '<br>')}</div>
+            </details>` : ''}
+
+          <h3>${e(t('pruefer.bitteBewerten'))}</h3>
+          <div class="pruefer-urteile" data-frage="${e(a.fid)}">
+            <button type="button" class="pruefer-urteil" data-urteil="richtig">${e(t('pruefer.richtig'))}</button>
+            <button type="button" class="pruefer-urteil" data-urteil="teilweise">${e(t('pruefer.teilweise'))}</button>
+            <button type="button" class="pruefer-urteil" data-urteil="falsch">${e(t('pruefer.falsch'))}</button>
+          </div>
+          <label class="pruefer-feld">
+            <span>${e(t('pruefer.hinweis'))}</span>
+            <textarea rows="3" class="pruefer-hinweis" data-frage="${e(a.fid)}"
+                      placeholder="${e(t('pruefer.hinweisPlatzhalter'))}"></textarea>
+          </label>
+        </div>`;
+    }).join('');
+
+    // Urteilsknöpfe: einer je Aufgabe, umwählbar
+    g('pruefer-aufgaben').querySelectorAll('.pruefer-urteile').forEach(gruppe => {
+      const fid = gruppe.dataset.frage;
+      gruppe.querySelectorAll('.pruefer-urteil').forEach(knopf => {
+        knopf.addEventListener('click', () => {
+          this.prueferUrteile[fid] = knopf.dataset.urteil;
+          gruppe.querySelectorAll('.pruefer-urteil').forEach(k =>
+            k.classList.toggle('gewaehlt', k.dataset.urteil === this.prueferUrteile[fid]));
+        });
+      });
+    });
+    // Kriterien-Häkchen sind nur eine Lesehilfe und werden nicht mitgeschickt.
+    g('pruefer-aufgaben').querySelectorAll('.pruefer-kriterien label').forEach(l => {
+      l.addEventListener('click', () => setTimeout(() =>
+        l.classList.toggle('abgehakt', l.querySelector('input').checked), 0));
+    });
+
+    this.zeigeSeite('pruefer');
+    return true;
+  },
+
+  /** Der Prüfer ist fertig: Bewertungen einsammeln und zurückschicken —
+      oder, im Selbst-Modus, direkt beim eigenen Versuch ablegen. */
+  async prueferAbschicken() {
+    const auftrag = this.pruefauftrag;
+    if (!auftrag) return;
+
+    const offen = auftrag.antworten.filter(a => !this.prueferUrteile[a.fid]);
+    if (offen.length) { alert(t('pruefer.keinUrteil')); return; }
+
+    const bewertungen = {};
+    for (const a of auftrag.antworten) {
+      const feld = document.querySelector(`.pruefer-hinweis[data-frage="${a.fid}"]`);
+      bewertungen[a.fid] = {
+        urteil:  this.prueferUrteile[a.fid],
+        hinweis: feld ? feld.value.trim() : ''
+      };
+    }
+
+    if (this.prueferSelbst) {
+      const paket = Teilen.bewertungPacken(auftrag, bewertungen, '');
+      Pruefungen.bewertungSpeichern(paket);
+      TEXTE_ZWANG = null;
+      this.pruefauftrag = null;
+      this.zeigeSeite('start');
+      alert(t('pruefer.gespeichert'));
+      return;
+    }
+
+    const name = (document.getElementById('pruefer-name').value || '').trim();
+    const link = Teilen.bewertungLink(auftrag, bewertungen, name);
+    const wie  = await Teilen.verschicken(t('pruefer.betreff'), link);
+
+    const meldung = document.getElementById('pruefer-meldung');
+    meldung.hidden = false;
+    meldung.textContent =
+      wie === 'geteilt' ? t('pruefer.fertig') :
+      wie === 'kopiert' ? t('teilen.kopiert') :
+      wie === 'abgebrochen' ? '' : t('teilen.fehlgeschlagen');
+    meldung.hidden = !meldung.textContent;
+  },
+
+  prueferVerlassen() {
+    TEXTE_ZWANG = null;
+    this.pruefauftrag = null;
+    this.kursAnwenden();
+    this.zeigeSeite('start');
+  },
+
+  /* ---- Rückweg: die Bewertung kommt an --------------------------------- */
+
+  bewertungEinlesen(paket) {
+    const fund = Pruefungen.bewertungSpeichern(paket);
+    this.kursAnwenden();
+    if (!fund) {
+      this.zeigeSeite('start');
+      alert(t('teilen.unbekannt'));
+      return true;
+    }
+    // Zum Ergebnis des betroffenen Versuchs springen
+    if (fund.kursId !== Kurse.aktiveId()) { Kurse.wechseln(fund.kursId); this.kursAnwenden(); }
+    this.letztesErgebnis = fund.versuch;
+    this.pruefErgebnisZeichnen(fund.versuch);
+    this.zeigeSeite('pruefung-ergebnis');
+    alert(t('teilen.eingetroffen'));
+    return true;
+  },
+
+  /* ---- Hinweg: die Aufgabe zum Prüfer schicken ------------------------- */
+
+  async zurBewertungGeben(versuch) {
+    const def  = Pruefungen.nachId(versuch.pruefungId);
+    const link = Teilen.auftragLink(versuch);
+
+    // Zu lang für einen Link? Dann den Textblock nehmen — der kommt überall
+    // durch, der Prüfer antwortet formlos, und die Bewertung wird später von
+    // Hand eingetragen.
+    if (!Teilen.linkTraegt(link)) {
+      const wie = await Teilen.verschicken(t('pruefer.betreff'), Teilen.auftragAlsText(versuch, def));
+      alert(t('teilen.zuLang'));
+      return wie;
+    }
+    const wie = await Teilen.verschicken(t('pruefer.betreff'), link);
+    if (wie === 'kopiert') alert(t('teilen.kopiert'));
+    else if (wie === 'fehlgeschlagen') alert(t('teilen.fehlgeschlagen'));
+    return wie;
   },
 
   /* ======================= Einstellungen ======================= */
@@ -640,8 +929,20 @@ var App = {
     auf('btn-pruef-aufgeben',     'click', () => this.pruefungAufgeben());
     auf('btn-perg-zurueck',       'click', () => this.zeigeSeite('start'));
 
+    /* ---- Prüfer und Teilen ---- */
+    auf('btn-pruefer-senden',     'click', () => this.prueferAbschicken());
+    auf('btn-pruefer-abbrechen',  'click', () => this.prueferVerlassen());
+    auf('wartestreifen',          'click', () => {
+      const warten = Pruefungen.offeneBewertungen();
+      if (!warten.length) return;
+      this.letztesErgebnis = warten[warten.length - 1];
+      this.pruefErgebnisZeichnen(this.letztesErgebnis);
+      this.zeigeSeite('pruefung-ergebnis');
+    });
+
     /* --- Kopfzeile & Menü --- */
     auf('btn-zurueck', 'click', () => {
+      if (this.seite === 'pruefer') return this.prueferVerlassen();
       if (this.seite === 'uebung' && this.sitzung) {
         if (!confirm(t('allg.abbrechen'))) return;
         // Teilfortschritt für die Heatmap sichern, Tag aber nicht weiterschalten

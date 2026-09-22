@@ -104,6 +104,16 @@ var Pruefungen = {
     return String(antwort) === String(frage.loesung);
   },
 
+  /** Kurze, gut vorlesbare Kennung für einen Versuch.
+      Ohne I, O, 0 und 1, damit man sie notfalls abtippen kann, ohne sich zu
+      vertun. */
+  neueId() {
+    const zeichen = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let s = '';
+    for (let i = 0; i < 6; i++) s += zeichen[Math.floor(Math.random() * zeichen.length)];
+    return s;
+  },
+
   /** Einen Versuch auswerten.
       antworten: { frageId: gegebeneAntwort }
       Ergebnis enthält die Punkte je Teil, die Gesamtpunktzahl, ob bestanden,
@@ -153,6 +163,7 @@ var Pruefungen = {
     const prozent = max ? Math.round(punkte / max * 100) : 0;
 
     return {
+      id: this.neueId(),
       pruefungId: def.id,
       datum: Speicher.heute(),
       punkte, max, prozent,
@@ -203,6 +214,64 @@ var Pruefungen = {
 
   bestanden(pruefungId, kursId) {
     return this.versuche(pruefungId, kursId).some(v => v.bestanden);
+  },
+
+  /* ---- Bewertung durch einen Menschen ---------------------------------- */
+
+  /** Einen Versuch über seine Kennung finden — in allen Kursen und allen
+      Prüfungen. Die zurückkommende Bewertung nennt nur diese Kennung. */
+  versuchNachId(versuchId) {
+    for (const kursId of Object.keys(Speicher.daten.kurse || {})) {
+      const lager = (Speicher.fortschritt(kursId).pruefungen) || {};
+      for (const pruefungId of Object.keys(lager)) {
+        for (const v of lager[pruefungId].versuche || []) {
+          if (v.id === versuchId) return { versuch: v, kursId, pruefungId };
+        }
+      }
+    }
+    return null;
+  },
+
+  /** Eine eingetroffene Bewertung beim richtigen Versuch ablegen.
+      Gibt den Fundort zurück oder null, wenn die Kennung unbekannt ist —
+      etwa weil die Bewertung auf einem anderen Gerät ankommt als dem, auf
+      dem die Prüfung geschrieben wurde. */
+  bewertungSpeichern(paket) {
+    const fund = this.versuchNachId(paket.id);
+    if (!fund) return null;
+
+    const v = fund.versuch;
+    if (!v.bewertungen) v.bewertungen = {};
+    for (const eintrag of paket.b || []) {
+      v.bewertungen[eintrag.fid] = {
+        urteil:  eintrag.urteil,
+        hinweis: eintrag.hinweis || '',
+        von:     paket.von || '',
+        datum:   paket.datum || Speicher.heute()
+      };
+    }
+    Speicher.sichern();
+    return fund;
+  },
+
+  /** Hat dieser Versuch offene Aufgaben, die noch niemand bewertet hat? */
+  wartetAufBewertung(versuch) {
+    if (!versuch.offen || !versuch.offen.length) return false;
+    const b = versuch.bewertungen || {};
+    return versuch.offen.some(o => !b[o.frageId]);
+  },
+
+  /** Alle Versuche mit offenen Aufgaben — egal ob schon verschickt oder
+      noch nicht. Daraus wird der Hinweis auf dem Startbildschirm. */
+  offeneBewertungen(kursId) {
+    const raus = [];
+    const lager = this._lager(kursId);
+    for (const pruefungId of Object.keys(lager)) {
+      for (const v of lager[pruefungId].versuche || []) {
+        if (this.wartetAufBewertung(v)) raus.push(v);
+      }
+    }
+    return raus;
   },
 
   /* ---- Hörverstehen: geht das auf diesem Gerät? ------------------------ */

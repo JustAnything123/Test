@@ -1,6 +1,6 @@
 # Tests
 
-Acht Prüfungen, die nachsehen, ob die App noch tut, was sie soll. Alle laufen
+Neun Prüfungen, die nachsehen, ob die App noch tut, was sie soll. Alle laufen
 automatisch und melden sich am Ende entweder mit „bestanden" oder mit einer Liste
 der Stellen, die nicht stimmen.
 
@@ -58,9 +58,10 @@ node tests/05-sprachrichtungen.js
 | `06-fachwortschatz.js` | ja | Die Vertiefungstage 31–45 von „Deutsch im Beruf": Redemittel-Erklärung mit Tabelle, jede Lückenübung sichtbar bis zum Satzende und lösbar |
 | `07-luecken.js` | ja | Gezielte Nachkontrolle der vier Übungen, die früher zwei Lücken hatten und deshalb abgeschnitten dargestellt wurden |
 | `08-pruefung.js` | ja | Das Prüfungssystem: Freischaltung am richtigen Tag, Prüfungsregeln (keine Hilfe, keine Rückmeldung, Antworten überleben das Blättern), Durchlauf alles richtig und alles falsch, Bestehensgrenze, gespeicherte Versuche, und das Verhalten auf einem Gerät ohne Sprachausgabe |
+| `09-pruefer.js` | ja | Der komplette Prüfer-Rundlauf in **zwei getrennten Browserkontexten**: Link erzeugen, in einem Fenster ohne jeden Lernstand öffnen, bewerten, Rücklink einlesen. Dazu Umlaute und Akzente im Link, erzwungene Oberflächensprache, unberührter Lernstand des Prüfers, kaputte und fremde Links, Eintragen von Hand |
 
-Zusammen sind das **207 einzelne Prüfungen** in `02` bis `05` und `08`, plus
-die inhaltlichen Kontrollen aus `01`, `06` und `07`.
+Zusammen sind das **253 einzelne Prüfungen** in `02` bis `05`, `08` und `09`,
+plus die inhaltlichen Kontrollen aus `01`, `06` und `07`.
 
 ### Der wichtigste Test für dich
 

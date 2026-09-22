@@ -60,6 +60,11 @@
       <p class="hinweis" id="hinweis-fertig" hidden data-t="start.erledigt"></p>
     </div>
 
+    <button class="wartestreifen" id="wartestreifen" hidden>
+      <span class="wartestreifen-text" id="wartestreifen-text"></span>
+      <span class="wartestreifen-pfeil">›</span>
+    </button>
+
     <div class="pruefkarte" id="pruefkarte" hidden>
       <div class="pruefkarte-kopf">
         <span class="pruef-chip" id="pruefkarte-niveau">A2</span>
@@ -170,6 +175,26 @@
     <div id="perg-durchsicht"></div>
 
     <button class="btn btn-gross" id="btn-perg-zurueck" data-t="fertig.zurueck"></button>
+  </section>
+
+  <!-- ---------- Prüfer: jemand bewertet einen fremden Text ---------- -->
+  <section class="seite" id="seite-pruefer" hidden>
+    <div class="pruefer-kopf">
+      <h2 id="pruefer-titel">—</h2>
+      <p class="pruefer-einleitung" id="pruefer-einleitung"></p>
+      <p class="pruefer-kennung" id="pruefer-kennung"></p>
+    </div>
+
+    <div id="pruefer-aufgaben"></div>
+
+    <label class="pruefer-feld">
+      <span id="pruefer-name-label"></span>
+      <input type="text" id="pruefer-name" autocomplete="name">
+    </label>
+
+    <p class="hinweis" id="pruefer-meldung" hidden></p>
+    <button class="btn btn-gross" id="btn-pruefer-senden"></button>
+    <button class="btn btn-neben" id="btn-pruefer-abbrechen"></button>
   </section>
 
   <section class="seite" id="seite-historie" hidden>
@@ -328,6 +353,7 @@
 <script src="js/uebungen.js"></script>
 <script src="js/statistik.js"></script>
 <script src="js/tagesplan.js"></script>
+<script src="js/teilen.js"></script>
 <script src="js/pruefungen.js"></script>
 <script src="js/pruefung-ui.js"></script>
 <script src="data/pruefungen/es-es-a2.js"></script>

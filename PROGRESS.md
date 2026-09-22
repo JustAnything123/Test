@@ -2,7 +2,7 @@
 
 **Stand:** 22. September 2026
 **Branch:** `claude/spanish-learning-app-daily-o5s13u`
-**Status:** ✅ Version 3.2 fertig, getestet und gepusht
+**Status:** ✅ Version 3.3 fertig, getestet und gepusht
 
 ---
 
@@ -37,7 +37,7 @@ ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 | Zeilen Programmcode | 3050 |
 | Zeilen Lerninhalt | 19 673 |
 | Prüfungen (Zwischenstopps) | 1 von 11 fertig |
-| Automatische Tests | 207 (alle grün), im Repository unter `tests/` |
+| Automatische Tests | 253 (alle grün), im Repository unter `tests/` |
 
 ---
 
@@ -90,7 +90,7 @@ Sicherungs-**Branch** ist aber gepusht und erfüllt denselben Zweck.
 | 8. Fachwörter im Detail statt Oberbegriffe | ✅ | 15 Vertiefungstage (31–45) mit 150 Fachwörtern: Messer-, Teller-, Besteck-, Glas-, Zimmer- und Wäschearten, Fleischteile, Schnitttechniken, Menüfolge. Dazu die Wortbildungsregel, mit der man ein Fachwort selbst bauen kann |
 | 9. Tests ins Repository legen | ✅ | Ordner `tests/` mit sieben Prüfungen, gemeinsamem Umgebungsmodul ohne feste Pfade, Starter `alle.sh` und eigener Anleitung |
 | 10. Sprachprüfungen mit zuverlässiger Bewertung | ✅ (Pilot) | Prüfungssystem mit fünf Aufgabenarten und die Prüfung A2 für Spanisch (Spanien) nach DELE-Vorbild. Die übrigen zehn Zwischenstopps folgen demselben Bauplan |
-| 11. Schreibaufgaben an einen Prüfer schicken | 🔲 geplant | Nächster Schritt: Link-Rundlauf mit Prüfer-Modus in derselben App |
+| 11. Schreibaufgaben an einen Prüfer schicken | ✅ | Rundlauf über den Fragment-Teil eines Links, Prüfer-Modus in derselben App, Ersatzwege Textblock und Eintragen von Hand |
 
 **Warum die Fachwörter eigene Tage bekommen und nicht in die alten Lektionen
 wandern:** Tag 1 lehrt „das Messer" — das ist richtig so, ein Anfänger braucht
@@ -586,6 +586,74 @@ Messenger sieht den Text im Link.
 
 ---
 
+## Prüfer-Rundlauf
+
+Schreibaufgaben kann die App nicht bewerten. Sie gehen deshalb an einen
+Menschen — ohne Server, ohne Konto, ohne Hochladen.
+
+### Das Verfahren
+
+Die Aufgabe reist im **Fragment-Teil** der Adresse (alles hinter dem `#`). Den
+liest nur der Browser; an den Webserver wird er nicht geschickt. Der Prüfer
+tippt auf den Link und ist in derselben App, im Prüfer-Modus.
+
+```
+du  →  #pruefen=…   (deine Antwort)      →  Prüfer
+du  ←  #bewertung=… (Urteil + Hinweis)   ←  Prüfer
+```
+
+**Klein bleibt das Paket dadurch, dass nur die Antwort mitreist.**
+Aufgabenstellung, Kriterien und Musterlösung hat der Prüfer schon — er öffnet
+ja dieselbe App und schlägt sie über `pruefung` und `fid` nach. Gemessen: eine
+A2-Schreibaufgabe ergibt 453 Zeichen, der Rückweg 365. Die Grenze liegt bei
+4000; darüber schaltet die App selbst auf den Textblock um.
+
+### Drei Entscheidungen, die den Unterschied machen
+
+**Die Oberfläche des Prüfers läuft in der Zielsprache, nicht in der
+Lernsprache.** Wer einen spanischen Text bewerten soll, ist Spanischsprecher.
+Eine deutsche Oberfläche wäre für ihn unbrauchbar. Dafür gibt es `TEXTE_ZWANG`
+in `texte.js` und die Datenfelder `auftragZiel`, `punkteZiel`, `kriterienZiel`.
+
+**Die Kriterienliste macht aus einem Laien einen brauchbaren Prüfer.** Der
+Prüfer ist Muttersprachler, aber kein Lehrer; „bewerte mal" überfordert. Mit
+Häkchenliste weiß er, worauf er achten soll. Die Häkchen sind reine Lesehilfe
+und werden nicht mitgeschickt.
+
+**Beim Prüfer wird nichts gespeichert.** Kein Kurswechsel, kein Schreibzugriff
+auf seinen Lernstand — er könnte die App selbst benutzen. Der Test weist das
+in einem zweiten Browserkontext ausdrücklich nach.
+
+### Der Fehler, der das Verfahren fast unbrauchbar gemacht hätte
+
+Ein Link, der sich vom aktuellen nur **hinter dem `#`** unterscheidet, löst
+keinen Seitenneuaufbau aus — der Browser tauscht nur das Fragment. `App.starten()`
+läuft also nicht noch einmal. Hat der Lernende die App gerade offen und tippt
+auf den Rücklink, passiert ohne Gegenmaßnahme **gar nichts**.
+
+Behoben mit einem `hashchange`-Horcher. Wichtig dabei die Reihenfolge: Der
+Horcher muss stehen, *bevor* der erste Link verarbeitet wird — sonst gäbe es
+ihn nicht, wenn die App gleich beim Start über einen Link geöffnet wurde.
+
+Gefunden wurde das erst im Test, weil die Bewertung zwar den Ergebnisbildschirm
+zeigte (der stand noch vom vorherigen Zustand), aber nichts speicherte.
+
+### Zwei weitere Fehler aus dem Bildschirmfoto
+
+Der Prüfer-Bildschirm zeigte die **Kurszeile des Lernenden** im Kopf — ein Tipp
+darauf hätte den Prüfer in eine fremde Kursauswahl geführt. Und der
+**Zurück-Pfeil** hätte ihn mit noch erzwungener Sprache in der App des
+Lernenden zurückgelassen. Beides behoben und im Test abgesichert.
+
+### Ehrliche Grenzen
+
+Nicht fälschungssicher — der Lernende könnte seine eigene Bewertung ändern.
+Für eine Lern-App unerheblich, für etwas Offizielles untauglich. Und der
+Messenger sieht den Text im Link: Der Fragment-Teil erreicht den Webserver
+nicht, verschlüsselt ist aber nichts.
+
+---
+
 ## Tests im Repository
 
 Bis zum 22.09.2026 lagen die Prüfskripte nur im Arbeitsverzeichnis der jeweiligen
@@ -621,6 +689,7 @@ Server danach wieder. Dauer rund zwei bis drei Minuten.
 | `06-fachwortschatz.js` | ja | Vertiefungstage 31–45: Erklärung mit Tabelle, jede Lücke sichtbar und lösbar |
 | `07-luecken.js` | ja | Nachkontrolle der vier früher zweilückigen Übungen |
 | `08-pruefung.js` | ja | Prüfungssystem: Freischaltung, Prüfungsregeln, Durchlauf richtig und falsch, Bestehensgrenze, gespeicherte Versuche, Gerät ohne Sprachausgabe |
+| `09-pruefer.js` | ja | Prüfer-Rundlauf in zwei getrennten Browserkontexten: Link, fremdes Gerät ohne Lernstand, Bewertung, Rücklink, kaputte Links, Eintragen von Hand |
 
 `02` bis `05` enthalten zusammen 173 einzelne Prüfungen, dazu kommen die
 inhaltlichen Kontrollen aus `01`, `06` und `07`.
@@ -754,3 +823,6 @@ Wer den Ordner `tests/` löscht, ändert am Lernen nichts.
 | 22.09.2026 | Prüfungssystem gebaut: `pruefungen.js`, `pruefung-ui.js`, drei Bildschirme, fünf Aufgabenarten, 42 Oberflächentexte je Sprache |
 | 22.09.2026 | Prüfung A2 für Spanisch (Spanien) geschrieben: 4 Teile, 7 Aufgaben, 36 Fragen, 35 automatisch bewertet |
 | 22.09.2026 | Validator um Prüfungsdaten erweitert, Test `08-pruefung.js` mit 34 Prüfungen; 207 Prüfungen grün |
+| 22.09.2026 | Prüfer-Rundlauf gebaut: `teilen.js`, Prüfer-Bildschirm, Link-Erkennung, 35 Oberflächentexte je Sprache |
+| 22.09.2026 | Fehler gefunden: Ein Link, der sich nur im Fragment unterscheidet, lädt die Seite nicht neu — `hashchange` ergänzt |
+| 22.09.2026 | Test `09-pruefer.js` mit 46 Prüfungen in zwei Browserkontexten; 253 Prüfungen grün |

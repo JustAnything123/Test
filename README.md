@@ -311,6 +311,7 @@ data/es-419/lektionen-01-10.js …  -81-90.js    90 Lektionen, Lateinamerika
 data/de/lektionen-01-10.js     … -111-120.js  120 Lektionen, Deutsch
 data/de-beruf/lektionen-01-08.js … -43-45.js    45 Lektionen, Deutsch im Beruf
 
+js/teilen.js               Prüfauftrag und Bewertung in einen Link packen
 js/pruefungen.js           Prüfungen: Register, Punkte, Bestehensgrenze
 js/pruefung-ui.js          die fünf Prüfungs-Aufgabentypen
 data/pruefungen/es-es-a2.js  Prüfung A2 Spanisch (Zwischenstopp nach Tag 33)
@@ -418,9 +419,8 @@ Die App bewertet **nur, was sie zuverlässig bewerten kann**:
 (`Uebungen.vergleiche()`). Für einen frei geschriebenen Brief gibt es tausende
 richtige Formulierungen — ein Textvergleich würde gute Antworten als falsch
 werten. Die Aufgabe wird deshalb gestellt und gespeichert, aber nicht benotet.
-Stattdessen gibt es eine Kriterienliste und eine Musterlösung zum Vergleichen.
-Eine Teilen-Funktion, mit der ein Mensch den Text bewerten kann, ist in
-Vorbereitung.
+Dafür gibt es eine Kriterienliste, eine Musterlösung — und den Weg zu einem
+Menschen (siehe nächster Abschnitt).
 
 **Ohne Sprachausgabe fällt der Hörteil weg.** Ist auf dem Gerät keine passende
 Stimme installiert, wird der Hörteil übersprungen und zählt auch nicht mit —
@@ -436,6 +436,59 @@ sonst wäre es keine Prüfung.
 Das Ergebnis ist eine **Selbsteinschätzung, kein Zertifikat**. Jeder Versuch
 wird gespeichert, wiederholen ist beliebig oft möglich, und das beste Ergebnis
 bleibt stehen.
+
+### Schreibaufgaben von einem Menschen bewerten lassen
+
+Die App hat keinen Server — es gibt also keinen Ort, an dem eine Aufgabe
+liegen könnte, während sie auf Bewertung wartet. Sie reist deshalb **im Link**:
+
+```
+https://…/Test/#pruefen=eyJ2IjoxLCJhcnQiOiJhdWZ0cmFn…
+                        └────── deine Antwort ──────┘
+```
+
+Alles hinter dem `#` ist der *Fragment-Teil*. Den liest nur der Browser; an den
+Webserver wird er nicht geschickt.
+
+| # | Wer | Was passiert |
+|---|---|---|
+| 1 | du | Auf dem Ergebnisbildschirm **„Zur Bewertung geben"** antippen |
+| 2 | du | Das Teilen-Menü geht auf — WhatsApp, Mail, Signal, egal |
+| 3 | Prüfer | Tippt auf den Link und ist in derselben App, im **Prüfer-Modus** |
+| 4 | Prüfer | Bewertet: richtig / teilweise richtig / falsch, dazu ein Hinweis |
+| 5 | Prüfer | **„Bewertung zurückschicken"** → wieder das Teilen-Menü |
+| 6 | du | Rücklink antippen → die Bewertung steht in deinem Ergebnis |
+
+Kein Konto, keine Installation, kein Hochladen.
+
+**Der Prüfer sieht alles in der Zielsprache des Kurses.** Wer einen spanischen
+Text bewerten soll, ist Spanischsprecher — er bekommt Aufgabenstellung,
+Kriterien und Bedienung auf Spanisch, nicht auf Deutsch. Dafür tragen die
+Schreibaufgaben die Felder `auftragZiel`, `punkteZiel` und `kriterienZiel`.
+
+**Die Kriterienliste ist der eigentliche Trick.** Dein Prüfer ist vermutlich
+Muttersprachler, aber kein Lehrer — „bewerte mal" überfordert. Mit einer
+Häkchenliste („Anrede vorhanden? Alle drei Punkte behandelt?") weiß er sofort,
+worauf er achten soll. Die Häkchen sind nur eine Lesehilfe und werden nicht
+mitgeschickt.
+
+**Beim Prüfer wird nichts gespeichert.** Er öffnet, bewertet, schickt zurück,
+fertig — sein eigener Lernstand bleibt unberührt, falls er die App selbst nutzt.
+
+**Wenn der Link nicht durchkommt.** Wird der Text zu lang (über 4000 Zeichen),
+schaltet die App selbst auf einen **Textblock zum Kopieren** um: Der Prüfer
+antwortet formlos, und du trägst die Bewertung über **„Bewertung von Hand
+eintragen"** selbst ein. Derselbe Weg hilft, wenn der Prüfer kein Smartphone
+mag. Zum Vergleich: Eine übliche A2-Schreibaufgabe ergibt einen Link von rund
+450 Zeichen.
+
+**Die ehrlichen Grenzen.** Das Verfahren ist **nicht fälschungssicher** — du
+könntest deine eigene Bewertung ändern. Für eine Lern-App ist das kein Problem,
+für etwas Offizielles taugt es nicht. Und: Der Messenger, mit dem du den Link
+verschickst, **sieht den Text**. Der Fragment-Teil erreicht zwar den Webserver
+nicht, verschlüsselt ist hier aber nichts.
+
+---
 
 ### Eine eigene Prüfung anlegen
 
@@ -469,7 +522,7 @@ Frage, deren Lösung fehlt, wäre nicht schwer — sie wäre unlösbar.
 
 ## Tests
 
-Im Ordner `tests/` liegen acht automatische Prüfungen. Alle auf einmal:
+Im Ordner `tests/` liegen neun automatische Prüfungen. Alle auf einmal:
 
 ```bash
 bash tests/alle.sh

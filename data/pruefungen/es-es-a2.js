@@ -207,6 +207,26 @@ Ana`,
                 'Frag ihn, wie das Wetter in Madrid im Sommer ist.'
               ],
               umfang: 'Schreibe 60–80 Wörter.',
+
+              /* Dieselbe Aufgabe auf Spanisch. Der Prüfer ist Spanisch-
+                 sprecher und bekommt den Prüfer-Bildschirm in seiner
+                 Sprache — mit einer deutschen Aufgabenstellung könnte er
+                 nicht beurteilen, ob der Text zur Aufgabe passt. */
+              auftragZiel: 'Tu amigo Miguel, de Madrid, te ha escrito y te ha invitado a visitarlo en verano. Respóndele.',
+              punkteZiel: [
+                'Dale las gracias por la invitación.',
+                'Dile cuándo puedes ir.',
+                'Pregúntale qué tiempo hace en Madrid en verano.'
+              ],
+              umfangZiel: 'Entre 60 y 80 palabras.',
+              kriterienZiel: [
+                'Hay saludo y despedida.',
+                'Se tratan los tres puntos.',
+                'El texto tiene al menos 60 palabras.',
+                'Se entiende sin tener que preguntar.',
+                'Los tiempos verbales encajan (presente y futuro con ir a + infinitivo).'
+              ],
+
               kriterien: [
                 'Anrede und Grußformel sind vorhanden.',
                 'Alle drei Punkte sind behandelt.',

@@ -702,3 +702,116 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
   .pruef-optionen { flex-direction: column; }
   .pruef-optionen-kurz { flex-direction: row; }
 }
+
+/* ===================================================================
+   Prüfer-Rundlauf — eine Schreibaufgabe geht an einen Menschen
+   =================================================================== */
+
+/* Streifen auf dem Startbildschirm: eine Bewertung ist unterwegs */
+.wartestreifen {
+  display: flex; align-items: center; gap: .6rem;
+  width: 100%;
+  padding: .7rem .9rem;
+  margin-bottom: 1rem;
+  background: color-mix(in srgb, var(--gold) 16%, var(--flaeche));
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, var(--flaeche));
+  border-radius: var(--radius);
+  color: var(--text);
+  font: inherit; font-size: .88rem; text-align: left;
+  cursor: pointer;
+}
+.wartestreifen-text { flex: 1; }
+.wartestreifen-pfeil { font-size: 1.2rem; color: var(--text-leise); }
+
+/* Bewertung im Ergebnis */
+.pruef-bewertung {
+  border-left: 3px solid var(--rand);
+  border-radius: 8px;
+  padding: .6rem .8rem;
+  margin: .6rem 0;
+  background: var(--flaeche-2);
+}
+.pruef-bewertung.urteil-richtig   { border-left-color: var(--gruen); background: var(--gruen-hell); }
+.pruef-bewertung.urteil-teilweise { border-left-color: var(--gold); background: color-mix(in srgb, var(--gold) 14%, var(--flaeche)); }
+.pruef-bewertung.urteil-falsch    { border-left-color: var(--rot); background: var(--rot-hell); }
+.pruef-bewertung-kopf { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.pruef-urteil-schild { font-weight: 700; font-size: .9rem; }
+.pruef-bewertung-von { font-size: .76rem; color: var(--text-leise); }
+.pruef-bewertung-hinweis { margin: .45rem 0 0; font-size: .88rem; line-height: 1.55; }
+
+.pruef-teilen-knoepfe { margin-top: .8rem; }
+.btn-teilen { width: 100%; background: var(--blau); color: #fff; }
+
+/* ---- Der Bildschirm des Prüfers ---- */
+.pruefer-kopf {
+  background: var(--flaeche-2);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+}
+.pruefer-kopf h2 { margin: 0 0 .4rem; }
+.pruefer-einleitung { margin: 0 0 .5rem; font-size: .9rem; line-height: 1.55; color: var(--text-leise); }
+.pruefer-kennung { margin: 0; font-size: .75rem; color: var(--text-leise); letter-spacing: .05em; }
+
+.pruefer-block {
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+}
+.pruefer-block h3 {
+  margin: 1.1rem 0 .4rem;
+  font-size: .75rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--blau);
+}
+.pruefer-block h3:first-child { margin-top: 0; }
+
+.pruefer-auftrag { font-size: .92rem; line-height: 1.55; }
+.pruefer-auftrag p { margin: 0 0 .4rem; }
+.pruefer-auftrag ul { margin: 0; padding-left: 1.2rem; }
+
+.pruefer-antwort {
+  background: var(--flaeche-2);
+  border-radius: 8px;
+  padding: .8rem .9rem;
+  font-size: .95rem; line-height: 1.65;
+}
+
+.pruefer-kriterien { list-style: none; margin: 0; padding: 0; }
+.pruefer-kriterien li { margin-bottom: .3rem; }
+.pruefer-kriterien label {
+  display: flex; align-items: flex-start; gap: .5rem;
+  font-size: .88rem; line-height: 1.45; cursor: pointer;
+}
+.pruefer-kriterien input { margin-top: .15rem; flex: 0 0 auto; }
+.pruefer-kriterien label.abgehakt span { color: var(--text-leise); text-decoration: line-through; }
+
+.pruefer-urteile { display: flex; flex-direction: column; gap: .5rem; }
+.pruefer-urteil {
+  padding: .7rem .8rem;
+  background: var(--flaeche);
+  border: 1.5px solid var(--rand);
+  border-radius: 10px;
+  color: var(--text);
+  font: inherit; font-size: .95rem;
+  cursor: pointer;
+}
+.pruefer-urteil[data-urteil="richtig"].gewaehlt   { border-color: var(--gruen); background: var(--gruen-hell); font-weight: 700; }
+.pruefer-urteil[data-urteil="teilweise"].gewaehlt { border-color: var(--gold);  background: color-mix(in srgb, var(--gold) 16%, var(--flaeche)); font-weight: 700; }
+.pruefer-urteil[data-urteil="falsch"].gewaehlt    { border-color: var(--rot);   background: var(--rot-hell); font-weight: 700; }
+
+.pruefer-feld { display: block; margin: 1rem 0; }
+.pruefer-feld > span { display: block; font-size: .82rem; color: var(--text-leise); margin-bottom: .3rem; }
+.pruefer-feld input, .pruefer-feld textarea {
+  width: 100%;
+  padding: .7rem .8rem;
+  border: 1.5px solid var(--rand);
+  border-radius: 10px;
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit; line-height: 1.55;
+  resize: vertical;
+}
+.pruefer-feld input:focus, .pruefer-feld textarea:focus { outline: none; border-color: var(--blau); }

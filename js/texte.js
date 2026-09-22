@@ -215,6 +215,48 @@ var TEXTE = {
     'pruef.durchsicht': 'Durchsicht',
     'pruef.richtigWaere': 'Lösung: {loesung}',
 
+    /* Teilen und Bewertung durch einen Menschen */
+    'teilen.zurBewertung': 'Zur Bewertung geben',
+    'teilen.nochmalSchicken': 'Noch einmal schicken',
+    'teilen.selbstEintragen': 'Bewertung von Hand eintragen',
+    'teilen.unterwegs': 'Beim Prüfer',
+    'teilen.geteilt': 'Der Link ist auf dem Weg.',
+    'teilen.kopiert': 'Der Link liegt in der Zwischenablage — jetzt einfügen und verschicken.',
+    'teilen.textKopiert': 'Der Text liegt in der Zwischenablage.',
+    'teilen.zuLang': 'Der Text ist zu lang für einen Link. Stattdessen wurde der Textblock vorbereitet — der Prüfer antwortet dann formlos, und du trägst die Bewertung von Hand ein.',
+    'teilen.fehlgeschlagen': 'Das hat nicht geklappt. Du kannst den Text auch von Hand kopieren.',
+    'teilen.bewertungDa': 'Bewertung',
+    'teilen.vonWem': 'von {von}',
+    'teilen.eingetroffen': 'Die Bewertung ist eingetroffen.',
+    'teilen.unbekannt': 'Zu dieser Bewertung gibt es auf diesem Gerät keine Prüfung. Wurde sie vielleicht auf einem anderen Gerät geschrieben?',
+    'teilen.linkKaputt': 'Der Link ist unvollständig angekommen. Lass ihn dir noch einmal schicken.',
+    'start.bewertungOffen': '{n} Schreibaufgabe wartet auf Bewertung',
+    'start.bewertungOffenMehr': '{n} Schreibaufgaben warten auf Bewertung',
+    'start.ansehen': 'ansehen',
+
+    /* Prüfer-Bildschirm */
+    'pruefer.betreff': 'Bewertung erbeten',
+    'pruefer.kennung': 'Kennung',
+    'pruefer.einleitung': 'Jemand lernt {ziel} und bittet dich um eine kurze Rückmeldung zu diesem Text. Es dauert zwei Minuten. Du musst nichts installieren und dich nirgends anmelden.',
+    'pruefer.dieAufgabe': 'Die Aufgabe war',
+    'pruefer.dieAntwort': 'Der Text',
+    'pruefer.woraufAchten': 'Worauf du achten kannst',
+    'pruefer.musterZeigen': 'Beispiel für eine gute Lösung',
+    'pruefer.bitteBewerten': 'Deine Bewertung',
+    'pruefer.richtig': 'richtig',
+    'pruefer.teilweise': 'teilweise richtig',
+    'pruefer.falsch': 'falsch',
+    'pruefer.hinweis': 'Hinweis',
+    'pruefer.hinweisPlatzhalter': 'Freiwillig: Was war gut, was könnte besser sein?',
+    'pruefer.name': 'Dein Name (freiwillig)',
+    'pruefer.zurueckschicken': 'Bewertung zurückschicken',
+    'pruefer.keinUrteil': 'Bitte wähle zuerst eine Bewertung aus.',
+    'pruefer.fertig': 'Danke! Schick den Link jetzt zurück.',
+    'pruefer.gespeichert': 'Bewertung gespeichert.',
+    'pruefer.nichtGefunden': 'Diese Prüfung kennt die App nicht. Vielleicht ist sie neuer als diese Version.',
+    'pruefer.selbstModus': 'Du trägst hier die Bewertung ein, die du bekommen hast.',
+    'pruefer.abbrechen': 'Abbrechen',
+
     /* Sonstiges */
     'allg.zurueck': 'Zurück',
     'allg.menue': 'Menü',
@@ -417,6 +459,48 @@ var TEXTE = {
     'pruef.durchsicht': 'Revisión',
     'pruef.richtigWaere': 'Solución: {loesung}',
 
+    /* Compartir y evaluación por una persona */
+    'teilen.zurBewertung': 'Enviar para evaluar',
+    'teilen.nochmalSchicken': 'Enviar otra vez',
+    'teilen.selbstEintragen': 'Anotar la evaluación a mano',
+    'teilen.unterwegs': 'Con el evaluador',
+    'teilen.geteilt': 'El enlace va de camino.',
+    'teilen.kopiert': 'El enlace está en el portapapeles — pégalo y envíalo.',
+    'teilen.textKopiert': 'El texto está en el portapapeles.',
+    'teilen.zuLang': 'El texto es demasiado largo para un enlace. En su lugar se ha preparado el bloque de texto — la persona responde libremente y tú anotas la evaluación a mano.',
+    'teilen.fehlgeschlagen': 'No ha funcionado. También puedes copiar el texto a mano.',
+    'teilen.bewertungDa': 'Evaluación',
+    'teilen.vonWem': 'de {von}',
+    'teilen.eingetroffen': 'La evaluación ha llegado.',
+    'teilen.unbekannt': 'En este dispositivo no hay ningún examen para esta evaluación. ¿Se escribió quizá en otro dispositivo?',
+    'teilen.linkKaputt': 'El enlace ha llegado incompleto. Pide que te lo envíen otra vez.',
+    'start.bewertungOffen': '{n} tarea de escritura espera evaluación',
+    'start.bewertungOffenMehr': '{n} tareas de escritura esperan evaluación',
+    'start.ansehen': 'ver',
+
+    /* Pantalla del evaluador */
+    'pruefer.betreff': 'Se pide una evaluación',
+    'pruefer.kennung': 'Código',
+    'pruefer.einleitung': 'Alguien está aprendiendo {ziel} y te pide una valoración breve de este texto. Son dos minutos. No tienes que instalar nada ni registrarte.',
+    'pruefer.dieAufgabe': 'La tarea era',
+    'pruefer.dieAntwort': 'El texto',
+    'pruefer.woraufAchten': 'En qué te puedes fijar',
+    'pruefer.musterZeigen': 'Ejemplo de una buena respuesta',
+    'pruefer.bitteBewerten': 'Tu valoración',
+    'pruefer.richtig': 'correcto',
+    'pruefer.teilweise': 'parcialmente correcto',
+    'pruefer.falsch': 'incorrecto',
+    'pruefer.hinweis': 'Comentario',
+    'pruefer.hinweisPlatzhalter': 'Opcional: ¿qué estuvo bien, qué se podría mejorar?',
+    'pruefer.name': 'Tu nombre (opcional)',
+    'pruefer.zurueckschicken': 'Devolver la evaluación',
+    'pruefer.keinUrteil': 'Elige primero una valoración.',
+    'pruefer.fertig': '¡Gracias! Envía ahora el enlace de vuelta.',
+    'pruefer.gespeichert': 'Evaluación guardada.',
+    'pruefer.nichtGefunden': 'La aplicación no conoce este examen. Quizá es más nuevo que esta versión.',
+    'pruefer.selbstModus': 'Aquí anotas la evaluación que has recibido.',
+    'pruefer.abbrechen': 'Cancelar',
+
     'allg.zurueck': 'Atrás',
     'allg.menue': 'Menú',
     'allg.abbrechen': '¿Salir de la sesión? Tus respuestas ya están guardadas.'
@@ -429,9 +513,14 @@ var TEXTE = {
    gefüllt, alles andere kannst du selbst mitgeben:
        t('start.tagVon', { tag: 5, gesamt: 60 })
    --------------------------------------------------------------------------- */
+var TEXTE_ZWANG = null;   // siehe Prüfer-Modus in js/app.js
+
 function t(schluessel, werte) {
   const kurs = (typeof Kurse !== 'undefined' && Kurse.aktiv()) || null;
-  const sprache = (kurs && kurs.ui) || 'de';
+  // Im Prüfer-Modus erzwingen wir die Zielsprache des Kurses: Wer einen
+  // spanischen Text bewerten soll, ist Spanischsprecher und kann mit einer
+  // deutschen Oberfläche nichts anfangen.
+  const sprache = TEXTE_ZWANG || (kurs && kurs.ui) || 'de';
   const tabelle = TEXTE[sprache] || TEXTE.de;
 
   let text = tabelle[schluessel];
