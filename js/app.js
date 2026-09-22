@@ -39,10 +39,7 @@ var App = {
     window.addEventListener('hashchange', () => this.linkVerarbeiten());
 
     // Service Worker anmelden (nur über http/https, nicht bei file://)
-    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-      navigator.serviceWorker.register('service-worker.js')
-        .catch(e => console.warn('Service Worker nicht registriert:', e));
-    }
+    this.serviceWorkerAnmelden();
 
     // Bringt die Adresse etwas mit? Das geht vor der normalen Anzeige, denn
     // ein Prüfauftrag soll auch bei jemandem aufgehen, der die App noch nie
@@ -693,6 +690,59 @@ var App = {
       </div>`).join('');
   },
 
+  /* ======================= Neue Fassung ======================= */
+
+  /* Die App funktioniert offline, weil der Service Worker alle Dateien
+     zwischenspeichert und sie beim nächsten Mal von dort ausliefert — erst
+     Zwischenspeicher, dann Netz. Das ist schnell und macht die App im Zug
+     benutzbar, hat aber eine Kehrseite: Eine neue Fassung wird zwar im
+     Hintergrund geladen, greift aber erst beim NÄCHSTEN Aufruf. Wer die App
+     einmal öffnet, sieht also noch den alten Stand und weiß nicht, warum.
+
+     Deshalb sagt die App jetzt selbst Bescheid, sobald eine neue Fassung
+     bereitliegt, und bietet einen Knopf zum Neuladen an. */
+
+  serviceWorkerAnmelden() {
+    if (!('serviceWorker' in navigator) || !location.protocol.startsWith('http')) return;
+
+    navigator.serviceWorker.register('service-worker.js').then(reg => {
+      this.swRegistrierung = reg;
+
+      /* Einen neu hereinkommenden Service Worker beobachten. Steht er auf
+         'installed' UND gibt es bereits einen Controller, dann ist es ein
+         Update und keine Erstinstallation — nur dann ist die Meldung
+         sinnvoll. Beim allerersten Besuch wäre sie unsinnig. */
+      const beobachten = arbeiter => {
+        if (!arbeiter) return;
+        arbeiter.addEventListener('statechange', () => {
+          if (arbeiter.state === 'installed' && navigator.serviceWorker.controller) {
+            this.neueFassungMelden();
+          }
+        });
+      };
+
+      // Falls schon eine Fassung wartet, als die Seite geladen wurde
+      if (reg.waiting && navigator.serviceWorker.controller) this.neueFassungMelden();
+      beobachten(reg.installing);
+      reg.addEventListener('updatefound', () => beobachten(reg.installing));
+
+      // Aktiv nachsehen — der Browser tut das von sich aus nur gelegentlich
+      reg.update().catch(() => {});
+
+      // Und noch einmal, wenn die App nach einer Pause wieder in den
+      // Vordergrund kommt. Genau dann hat man sie oft tagelang offen gehabt.
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) reg.update().catch(() => {});
+      });
+    }).catch(e => console.warn('Service Worker nicht registriert:', e));
+  },
+
+  neueFassungMelden() {
+    const streifen = document.getElementById('neue-fassung');
+    if (!streifen || !streifen.hidden) return;         // schon sichtbar
+    streifen.hidden = false;
+  },
+
   /* ======================= Teilen und Prüfer ======================= */
 
   /* Der Rundlauf ohne Server:
@@ -998,6 +1048,8 @@ var App = {
     auf('btn-perg-zurueck',       'click', () => this.zeigeSeite('start'));
 
     /* ---- Prüfer und Teilen ---- */
+    auf('btn-fassung-laden',  'click', () => location.reload());
+    auf('btn-fassung-spaeter','click', () => { g('neue-fassung').hidden = true; });
     auf('btn-pruefer-senden',     'click', () => this.prueferAbschicken());
     auf('btn-pruefer-abbrechen',  'click', () => this.prueferVerlassen());
     auf('wartestreifen',          'click', () => {

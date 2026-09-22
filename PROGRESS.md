@@ -2,7 +2,7 @@
 
 **Stand:** 22. September 2026
 **Branch:** `claude/spanish-learning-app-daily-o5s13u`
-**Status:** ✅ Version 3.4 fertig, getestet und gepusht
+**Status:** ✅ Version 3.5 fertig, getestet und gepusht
 
 ---
 
@@ -37,7 +37,7 @@ ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 | Zeilen Programmcode | 3050 |
 | Zeilen Lerninhalt | 19 673 |
 | Prüfungen (Zwischenstopps) | 11 von 11 fertig · 396 Prüfungsfragen |
-| Automatische Tests | 267 (alle grün), im Repository unter `tests/` |
+| Automatische Tests | 288 (alle grün), im Repository unter `tests/` |
 
 ---
 
@@ -693,6 +693,58 @@ nicht, verschlüsselt ist aber nichts.
 
 ---
 
+## Die Meldung „Neue Fassung verfügbar"
+
+Anlass war die Rückfrage „Ich sehe die Prüfungen nicht". Eine der beiden
+Ursachen war der Offline-Speicher, und die lässt sich abstellen.
+
+### Warum das Problem überhaupt entsteht
+
+Der Service Worker arbeitet nach dem Prinzip **erst Zwischenspeicher, dann
+Netz**. Das macht die App schnell und im Zug benutzbar, hat aber eine
+Kehrseite: Eine neue Fassung wird zwar im Hintergrund geladen, greift aber erst
+beim *nächsten* Aufruf. Wer die App einmal öffnet, sieht noch den alten Stand —
+und weiß nicht, warum.
+
+### Die Lösung
+
+Die App beobachtet ihre eigene Aktualisierung und blendet unten einen Streifen
+ein: *Neue Fassung verfügbar · Neu laden · Später*.
+
+Die entscheidende Bedingung steht in `App.serviceWorkerAnmelden()`:
+
+```js
+if (arbeiter.state === 'installed' && navigator.serviceWorker.controller) {
+  this.neueFassungMelden();
+}
+```
+
+`installed` allein genügt nicht — das trifft auch auf die **Erstinstallation**
+zu, und dort wäre die Meldung unsinnig. Erst zusammen mit einem vorhandenen
+`controller` steht fest: Es läuft bereits eine Fassung, und eine neue liegt
+daneben.
+
+Zusätzlich fragt die App aktiv nach (`reg.update()`) — einmal beim Start und
+noch einmal, wenn sie nach einer Pause wieder in den Vordergrund kommt. Genau
+dann hat man sie oft tagelang offen gehabt.
+
+### Der Test musste echt sein
+
+Ein Update lässt sich nicht sinnvoll simulieren. `tests/10-update.js` ändert
+deshalb wirklich `service-worker.js` auf der Platte, stößt die Prüfung an und
+stellt die Datei in einem `finally` wieder her — mit anschließender Kontrolle,
+dass sie unverändert ist. Geprüft wird auch der Fall, der leicht untergeht:
+**beim allerersten Besuch darf keine Meldung kommen.**
+
+### Ein Fehler im Test-Starter, dabei gefunden
+
+`alle.sh` suchte die Tests mit dem Muster `0*.js`. Damit wäre `10-update.js`
+stillschweigend übersprungen worden — und jeder weitere Test ab Nummer 10
+ebenfalls. Aufgefallen ist es nur, weil der Gesamtlauf neun statt zehn Tests
+meldete. Muster jetzt `[0-9]*.js`.
+
+---
+
 ## Tests im Repository
 
 Bis zum 22.09.2026 lagen die Prüfskripte nur im Arbeitsverzeichnis der jeweiligen
@@ -729,6 +781,7 @@ Server danach wieder. Dauer rund zwei bis drei Minuten.
 | `07-luecken.js` | ja | Nachkontrolle der vier früher zweilückigen Übungen |
 | `08-pruefung.js` | ja | Prüfungssystem: Freischaltung, Prüfungsregeln, Durchlauf richtig und falsch, Bestehensgrenze, gespeicherte Versuche, Gerät ohne Sprachausgabe |
 | `09-pruefer.js` | ja | Prüfer-Rundlauf in zwei getrennten Browserkontexten: Link, fremdes Gerät ohne Lernstand, Bewertung, Rücklink, kaputte Links, Eintragen von Hand |
+| `10-update.js` | ja | Meldung „Neue Fassung verfügbar" über einen echten Update-Vorgang des Service Workers |
 
 `02` bis `05` enthalten zusammen 173 einzelne Prüfungen, dazu kommen die
 inhaltlichen Kontrollen aus `01`, `06` und `07`.
@@ -869,3 +922,5 @@ Wer den Ordner `tests/` löscht, ändert am Lernen nichts.
 | 22.09.2026 | Mangel behoben: Alle freigeschalteten Prüfungen sind jetzt über eine Liste erreichbar |
 | 22.09.2026 | Test spielt jede einzelne Prüfung komplett durch; 267 Prüfungen grün |
 | 22.09.2026 | Entwurfsfehler behoben: Prüfungen waren vor dem Stichtag unsichtbar statt gesperrt sichtbar; dazu Inhaltsstand in den Einstellungen |
+| 22.09.2026 | Meldung „Neue Fassung verfügbar" gebaut, mit echtem Update-Test |
+| 22.09.2026 | Fehler im Test-Starter: Muster `0*.js` hätte Test 10 und alle weiteren stillschweigend übersprungen |

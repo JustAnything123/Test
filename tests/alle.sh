@@ -32,7 +32,9 @@ else
 fi
 
 ROT=0
-for TEST in "$HIER"/0*.js; do
+# Muster bewusst [0-9]* und nicht 0*: Mit 0* waere Test 10 stillschweigend
+# uebersprungen worden — und jeder weitere ab 10 auch.
+for TEST in "$HIER"/[0-9]*.js; do
   NAME="$(basename "$TEST")"
   echo
   echo "=============================================================="

@@ -838,3 +838,29 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
 .pruefkarte.gesperrt { border-left-color: var(--rand); opacity: .75; }
 .pruefkarte.gesperrt .pruef-chip { background: var(--text-leise); }
 .pruefkarte.gesperrt .btn { background: var(--flaeche-2); color: var(--text-leise); cursor: default; }
+
+/* Meldung, wenn eine neue Fassung bereitliegt.
+   Sitzt unten fest, damit sie nichts verschiebt und auch dann zu sehen ist,
+   wenn man gerade mitten in einer Übung steckt. */
+#neue-fassung {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
+  padding: .7rem 1rem;
+  padding-bottom: calc(.7rem + env(safe-area-inset-bottom, 0px));
+  background: var(--text);
+  color: var(--grund);
+  font-size: .88rem;
+  box-shadow: 0 -2px 12px rgba(0,0,0,.18);
+}
+#neue-fassung > span { flex: 1; min-width: 8rem; }
+.btn-fassung {
+  padding: .45rem .9rem;
+  background: var(--akzent); color: #fff;
+  border: none; border-radius: 8px;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.btn-fassung-leise {
+  padding: .45rem .7rem;
+  background: none; color: var(--grund);
+  border: none; font: inherit; opacity: .7; cursor: pointer;
+}
