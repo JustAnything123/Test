@@ -173,6 +173,8 @@ var TEXTE = {
 
     /* Prüfung */
     'pruef.starten': 'Zur Prüfung',
+    'pruef.alle': 'Alle freigeschalteten Prüfungen',
+    'pruef.bestandenMit': 'bestanden mit {prozent}%',
     'pruef.nachVorbild': 'nach dem Vorbild von {vorbild}',
     'pruef.nochNicht': 'noch nicht versucht',
     'pruef.besterVersuch': 'bisher bestes Ergebnis: {prozent}%',
@@ -417,6 +419,8 @@ var TEXTE = {
 
     /* Examen */
     'pruef.starten': 'Al examen',
+    'pruef.alle': 'Todos los exámenes disponibles',
+    'pruef.bestandenMit': 'aprobado con {prozent}%',
     'pruef.nachVorbild': 'siguiendo el modelo de {vorbild}',
     'pruef.nochNicht': 'todavía sin intentar',
     'pruef.besterVersuch': 'mejor resultado hasta ahora: {prozent}%',

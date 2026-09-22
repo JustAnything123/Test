@@ -2,7 +2,7 @@
 
 **Stand:** 22. September 2026
 **Branch:** `claude/spanish-learning-app-daily-o5s13u`
-**Status:** ✅ Version 3.3 fertig, getestet und gepusht
+**Status:** ✅ Version 3.4 fertig, getestet und gepusht
 
 ---
 
@@ -36,8 +36,8 @@ ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 | Oberflächentexte je Sprache | 140 |
 | Zeilen Programmcode | 3050 |
 | Zeilen Lerninhalt | 19 673 |
-| Prüfungen (Zwischenstopps) | 1 von 11 fertig |
-| Automatische Tests | 253 (alle grün), im Repository unter `tests/` |
+| Prüfungen (Zwischenstopps) | 11 von 11 fertig · 396 Prüfungsfragen |
+| Automatische Tests | 267 (alle grün), im Repository unter `tests/` |
 
 ---
 
@@ -89,7 +89,7 @@ Sicherungs-**Branch** ist aber gepusht und erfüllt denselben Zweck.
 | 7. Themen-Lernpfad „Deutsch im Beruf" | ✅ | Kurs `de-beruf`, 30 Tage, Küche · Restaurant · Hotel · Ernährung, mit Redemitteln statt reiner Grammatik |
 | 8. Fachwörter im Detail statt Oberbegriffe | ✅ | 15 Vertiefungstage (31–45) mit 150 Fachwörtern: Messer-, Teller-, Besteck-, Glas-, Zimmer- und Wäschearten, Fleischteile, Schnitttechniken, Menüfolge. Dazu die Wortbildungsregel, mit der man ein Fachwort selbst bauen kann |
 | 9. Tests ins Repository legen | ✅ | Ordner `tests/` mit sieben Prüfungen, gemeinsamem Umgebungsmodul ohne feste Pfade, Starter `alle.sh` und eigener Anleitung |
-| 10. Sprachprüfungen mit zuverlässiger Bewertung | ✅ (Pilot) | Prüfungssystem mit fünf Aufgabenarten und die Prüfung A2 für Spanisch (Spanien) nach DELE-Vorbild. Die übrigen zehn Zwischenstopps folgen demselben Bauplan |
+| 10. Sprachprüfungen mit zuverlässiger Bewertung | ✅ | Prüfungssystem mit fünf Aufgabenarten und alle elf Zwischenstopps: DELE für die Spanischkurse, Goethe-Zertifikat für Deutsch, telc Beruf für den Lernpfad |
 | 11. Schreibaufgaben an einen Prüfer schicken | ✅ | Rundlauf über den Fragment-Teil eines Links, Prüfer-Modus in derselben App, Ersatzwege Textblock und Eintragen von Hand |
 
 **Warum die Fachwörter eigene Tage bekommen und nicht in die alten Lektionen
@@ -545,12 +545,31 @@ fünf Fragen gehört auf eine Seite, sonst müsste man den Text fünfmal lesen.
 
 ### Zwischenstopps
 
-| Kurs | Tage | Stand |
-|---|---|---|
-| Spanisch (Spanien) | 33 → A2, 60 → B1 | A2 fertig |
-| Spanisch (Lateinamerika) | 33 → A2, 60 → B1, 90 → B2 | offen |
-| Deutsch | 30 → A1, 60 → A2, 90 → B1, 120 → B2 | offen |
-| Deutsch im Beruf | 30, 45 (themenbezogen) | offen |
+| Kurs | Tage | Vorbild | Stand |
+|---|---|---|---|
+| Spanisch (Spanien) | 33 → A2, 60 → B1 | DELE | ✅ |
+| Spanisch (Lateinamerika) | 33 → A2, 60 → B1, 90 → B2 | DELE | ✅ |
+| Deutsch | 30 → A1, 60 → A2, 90 → B1, 120 → B2 | Goethe-Zertifikat | ✅ |
+| Deutsch im Beruf | 30 → Arbeitstag, 45 → Fachwortschatz | telc Deutsch B1·B2 Beruf | ✅ |
+
+Alle elf haben denselben Bauplan: vier Teile, sieben Aufgaben, 36 Fragen,
+davon 35 automatisch bewertet, bestanden ab 60 %. Das macht sie untereinander
+vergleichbar — man sieht am Ergebnis, ob man auf dem nächsten Niveau wirklich
+angekommen ist.
+
+**Der Inhalt richtet sich nach dem, was der Kurs bis dahin gebracht hat.** Die
+Sprachbausteine der de-B1-Prüfung verlangen Passiv, Konjunktiv II und
+erweiterte Partizipien, weil genau das in den Tagen 61–90 steht; die A1-Prüfung
+bleibt bei Verbstellung, Perfekt und Wechselpräpositionen. Beim LatAm-Kurs ist
+auch der Wortschatz anders: *el carro*, *la papa*, *el jugo*, *el celular*,
+*el departamento*, *ustedes*.
+
+**Ein Mangel, der erst beim Ausprobieren auffiel:** Die Karte auf dem
+Startbildschirm zeigte immer nur die *erste noch nicht bestandene* Prüfung. Wer
+im Deutschkurs an Tag 120 steht und die A1-Prüfung nie gemacht hat, bekam A1
+angeboten und wäre an die B2-Prüfung nie herangekommen. Jetzt steht unter der
+Karte eine Liste aller freigeschalteten Prüfungen mit ihrem Stand, jede direkt
+anwählbar.
 
 Bei `de-beruf` richten sich die Stopps nach Themenblöcken statt nach Niveau,
 weil der Lernpfad zwischen A2 und B2 springt — er ist themen-, nicht
@@ -826,3 +845,6 @@ Wer den Ordner `tests/` löscht, ändert am Lernen nichts.
 | 22.09.2026 | Prüfer-Rundlauf gebaut: `teilen.js`, Prüfer-Bildschirm, Link-Erkennung, 35 Oberflächentexte je Sprache |
 | 22.09.2026 | Fehler gefunden: Ein Link, der sich nur im Fragment unterscheidet, lädt die Seite nicht neu — `hashchange` ergänzt |
 | 22.09.2026 | Test `09-pruefer.js` mit 46 Prüfungen in zwei Browserkontexten; 253 Prüfungen grün |
+| 22.09.2026 | Die zehn übrigen Zwischenstopp-Prüfungen geschrieben — 11 Prüfungen, 396 Fragen |
+| 22.09.2026 | Mangel behoben: Alle freigeschalteten Prüfungen sind jetzt über eine Liste erreichbar |
+| 22.09.2026 | Test spielt jede einzelne Prüfung komplett durch; 267 Prüfungen grün |

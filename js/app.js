@@ -429,6 +429,34 @@ var App = {
     g('pruefkarte-stand').textContent = bestes === null
       ? t('pruef.nochNicht')
       : t('pruef.besterVersuch', { prozent: bestes });
+
+    // Sind mehrere Prüfungen freigeschaltet, muss man auch an die anderen
+    // herankommen. Sonst bekäme jemand an Tag 120 des Deutschkurses die
+    // A1-Prüfung angeboten und käme an die B2-Prüfung nie heran.
+    const alle = Pruefungen.freigeschaltet();
+    const liste = g('pruefliste');
+    if (alle.length < 2) { liste.hidden = true; return; }
+
+    liste.hidden = false;
+    liste.innerHTML = `<h3 class="abschnitt-titel">${Uebungen.escape(t('pruef.alle'))}</h3>` +
+      alle.map(x => {
+        const b = Pruefungen.bestesErgebnis(x.id);
+        const stand = b === null ? t('pruef.nochNicht')
+                    : Pruefungen.bestanden(x.id) ? t('pruef.bestandenMit', { prozent: b })
+                    : t('pruef.besterVersuch', { prozent: b });
+        return `
+          <button class="pruefzeile${Pruefungen.bestanden(x.id) ? ' erledigt' : ''}" data-pruefung="${Uebungen.escape(x.id)}">
+            <span class="pruef-chip">${Uebungen.escape(x.niveau)}</span>
+            <span class="pruefzeile-name">${Uebungen.escape(x.name)}</span>
+            <span class="pruefzeile-stand">${Uebungen.escape(stand)}</span>
+          </button>`;
+      }).join('');
+
+    liste.querySelectorAll('[data-pruefung]').forEach(k =>
+      k.addEventListener('click', () => {
+        this.pruefungGewaehlt = Pruefungen.nachId(k.dataset.pruefung);
+        if (this.pruefungGewaehlt) this.zeigeSeite('pruefung-info');
+      }));
   },
 
   /** Übersicht vor dem Start: Teile, Punkte, Regeln. */

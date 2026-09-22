@@ -4,14 +4,19 @@
    Kalender bzw. Wecker des Handys. Dieser Service Worker ist aber die
    Grundlage, falls du das später einmal nachrüsten willst. */
 
-const CACHE = 'vamos-v6';
+const CACHE = 'vamos-v7';
 
 const DATEIEN = [
   './', './index.html', './manifest.json', './css/stil.css', './js/speicher.js',
   './js/kurse.js', './js/texte.js', './js/kurs-definitionen.js', './js/daten.js',
   './js/srs.js', './js/sprache.js', './js/uebungen.js', './js/statistik.js',
   './js/tagesplan.js', './js/teilen.js', './js/pruefungen.js', './js/pruefung-ui.js',
-  './data/pruefungen/es-es-a2.js', './js/app.js', './data/de/lektionen-01-10.js',
+  './data/pruefungen/de-a1.js', './data/pruefungen/de-a2.js',
+  './data/pruefungen/de-b1.js', './data/pruefungen/de-b2.js',
+  './data/pruefungen/de-beruf-1.js', './data/pruefungen/de-beruf-2.js',
+  './data/pruefungen/es-419-a2.js', './data/pruefungen/es-419-b1.js',
+  './data/pruefungen/es-419-b2.js', './data/pruefungen/es-es-a2.js',
+  './data/pruefungen/es-es-b1.js', './js/app.js', './data/de/lektionen-01-10.js',
   './data/de/lektionen-101-110.js', './data/de/lektionen-11-20.js',
   './data/de/lektionen-111-120.js', './data/de/lektionen-21-30.js',
   './data/de/lektionen-31-40.js', './data/de/lektionen-41-50.js',

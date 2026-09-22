@@ -314,7 +314,7 @@ data/de-beruf/lektionen-01-08.js … -43-45.js    45 Lektionen, Deutsch im Beruf
 js/teilen.js               Prüfauftrag und Bewertung in einen Link packen
 js/pruefungen.js           Prüfungen: Register, Punkte, Bestehensgrenze
 js/pruefung-ui.js          die fünf Prüfungs-Aufgabentypen
-data/pruefungen/es-es-a2.js  Prüfung A2 Spanisch (Zwischenstopp nach Tag 33)
+data/pruefungen/es-es-a2.js … de-beruf-2.js   11 Prüfungen
 
 tests/alle.sh              startet Server, laesst alle Tests laufen, raeumt auf
 tests/umgebung.js          gemeinsame Einstellungen (Pfade, Adresse, Browser)
@@ -383,15 +383,21 @@ An festen Punkten im Kurs steht ein **Zwischenstopp**: eine Prüfung nach dem
 Vorbild der echten Sprachzertifikate. Sie erscheint automatisch auf dem
 Startbildschirm, sobald der Tag erreicht ist.
 
-| Kurs | Zwischenstopps |
-|---|---|
-| Spanisch (Spanien) | Tag 33 → **A2** · Tag 60 → B1 |
-| Spanisch (Lateinamerika) | Tag 33 → A2 · Tag 60 → B1 · Tag 90 → B2 |
-| Deutsch | Tag 30 → A1 · Tag 60 → A2 · Tag 90 → B1 · Tag 120 → B2 |
-| Deutsch im Beruf | Tag 30 → Grundpfad · Tag 45 → Fachwortschatz |
+| Kurs | Zwischenstopps | Vorbild |
+|---|---|---|
+| Spanisch (Spanien) | Tag 33 → A2 · Tag 60 → B1 | DELE |
+| Spanisch (Lateinamerika) | Tag 33 → A2 · Tag 60 → B1 · Tag 90 → B2 | DELE |
+| Deutsch | Tag 30 → A1 · Tag 60 → A2 · Tag 90 → B1 · Tag 120 → B2 | Goethe-Zertifikat |
+| Deutsch im Beruf | Tag 30 → Arbeitstag · Tag 45 → Fachwortschatz | telc Deutsch B1·B2 Beruf |
 
-Fertig ist bisher die **Prüfung A2 für Spanisch (Spanien)** nach DELE-Vorbild.
-Die übrigen folgen demselben Bauplan.
+**Alle elf sind fertig.** Jede hat denselben Bauplan: vier Teile, sieben
+Aufgaben, 36 Fragen, davon 35 automatisch bewertet. Verlangt wird nur, was
+bis zum jeweiligen Stopp im Kurs vorkam.
+
+Sind mehrere Prüfungen freigeschaltet, stehen sie als Liste unter der Karte.
+So kommt man auch an eine spätere Prüfung heran, ohne die frühere bestanden zu
+haben — sonst bekäme jemand an Tag 120 des Deutschkurses die A1-Prüfung
+angeboten und käme an die B2-Prüfung nie heran.
 
 ### Eine Prüfung ist keine Lektion
 

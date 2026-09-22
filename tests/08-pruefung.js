@@ -217,6 +217,72 @@ async function durchspielen(page, wahl) {
 
   await page.screenshot({ path: U.bild('p1-ergebnis.png'), fullPage: true });
 
+  /* ---------- 8. Jede einzelne Prüfung wirklich durchspielen ---------- */
+  console.log('\n=== Alle Prüfungen durchspielen ===');
+  const alleP = await page.evaluate(() =>
+    Object.keys(PRUEFUNGEN).flatMap(k => PRUEFUNGEN[k].map(p =>
+      ({ kurs: k, id: p.id, name: p.name, tag: p.nachTag, niveau: p.niveau }))));
+  pruefe('elf Prüfungen angemeldet', alleP.length, 11);
+
+  for (const P of alleP) {
+    await page.evaluate(({ kurs, tag }) => {
+      localStorage.clear(); Speicher.laden(); Kurse.wechseln(kurs);
+      const f = Speicher.fortschritt(); f.aktuellerTag = tag + 1; Speicher.sichern();
+    }, P);
+    await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(200);
+    await page.evaluate(() => { Sprache.kannHoeren = () => true; });
+
+    const sichtbar = await page.isVisible('#pruefkarte');
+    if (!sichtbar) { pruefe(`${P.id}: Karte erscheint`, sichtbar, true); continue; }
+
+    await durchspielen(page, 'richtig');
+    const r = await page.evaluate(() => App.letztesErgebnis);
+    const ok = r.punkte === 35 && r.max === 35 && r.bestanden && r.offen.length === 1
+               && r.teile.length === 4;
+    if (ok) console.log(`  + ${P.kurs} · Tag ${String(P.tag).padStart(3)} · ${P.niveau} · ${P.name} — 35/35, bestanden`);
+    else {
+      fehler.push(P.id);
+      console.log(`  x ${P.id}: ${r.punkte}/${r.max}, bestanden ${r.bestanden}, offen ${r.offen.length}, Teile ${r.teile.length}`);
+    }
+  }
+
+  /* ---------- 8b. Alle freigeschalteten Prüfungen sind erreichbar ---------- */
+  console.log('\n=== Erreichbarkeit ===');
+  await page.evaluate(() => {
+    // Deutschkurs ganz am Ende, aber keine einzige Prüfung abgelegt.
+    localStorage.clear(); Speicher.laden(); Kurse.wechseln('de');
+    const f = Speicher.fortschritt(); f.aktuellerTag = 121; Speicher.sichern();
+  });
+  await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(250);
+
+  pruefe('Karte zeigt die erste offene Prüfung',
+         (await page.textContent('#pruefkarte-name')).trim(), 'Examen A1');
+  pruefe('Liste der freigeschalteten Prüfungen erscheint', await page.isVisible('#pruefliste'), true);
+  const zeilen = await page.evaluate(() =>
+    Array.from(document.querySelectorAll('#pruefliste .pruefzeile-name')).map(x => x.textContent));
+  pruefe('alle vier Prüfungen des Deutschkurses gelistet', zeilen,
+         ['Examen A1', 'Examen A2', 'Examen B1', 'Examen B2']);
+
+  // Die B2-Prüfung muss direkt anwählbar sein, ohne A1 bestehen zu müssen.
+  await page.click('#pruefliste [data-pruefung="p-de-b2"]'); await page.waitForTimeout(250);
+  pruefe('B2 ist direkt erreichbar', (await page.textContent('#pinfo-name')).trim(), 'Examen B2');
+  await page.click('#btn-pruefung-abbrechen'); await page.waitForTimeout(150);
+
+  /* ---------- 9. Kein Zahlendreher zwischen den Prüfungen ---------- */
+  console.log('\n=== Trennschärfe ===');
+  const kreuz = await page.evaluate(() => {
+    // Die Lösungen einer Prüfung dürfen in keiner anderen zufällig passen:
+    // Jede Frage-ID kommt genau einmal vor.
+    const alle = [];
+    for (const k of Object.keys(PRUEFUNGEN))
+      for (const p of PRUEFUNGEN[k])
+        for (const f of Pruefungen.fragen(p)) alle.push(f.frage.id);
+    const doppelt = alle.filter((x, i) => alle.indexOf(x) !== i);
+    return { gesamt: alle.length, doppelt };
+  });
+  pruefe('396 Fragen insgesamt', kreuz.gesamt, 396);
+  pruefe('keine doppelte Frage-ID', kreuz.doppelt, []);
+
   /* ---------- Konsole ---------- */
   console.log('\n=== Konsole ===');
   pruefe('keine JavaScript-Fehler', konsole, []);

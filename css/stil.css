@@ -815,3 +815,21 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
   resize: vertical;
 }
 .pruefer-feld input:focus, .pruefer-feld textarea:focus { outline: none; border-color: var(--blau); }
+
+/* Liste aller freigeschalteten Prüfungen unter der Prüfkarte */
+.pruefzeile {
+  display: flex; align-items: center; gap: .6rem;
+  width: 100%;
+  padding: .65rem .8rem;
+  margin-bottom: .4rem;
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: 10px;
+  color: var(--text);
+  font: inherit; font-size: .88rem; text-align: left;
+  cursor: pointer;
+}
+.pruefzeile.erledigt { border-color: color-mix(in srgb, var(--gruen) 40%, var(--rand)); }
+.pruefzeile-name  { flex: 1; font-weight: 600; }
+.pruefzeile-stand { font-size: .78rem; color: var(--text-leise); white-space: nowrap; }
+.pruefzeile.erledigt .pruefzeile-stand { color: var(--gruen); }
