@@ -1,0 +1,12 @@
+{
+  "name": "vamos-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Automatische Tests fuer die Lern-App ¡Vamos!. Nur fuer die Tests noetig — die App selbst braucht keine Abhaengigkeiten.",
+  "scripts": {
+    "test": "bash alle.sh"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}

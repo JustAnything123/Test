@@ -36,7 +36,7 @@ ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 | Oberflächentexte je Sprache | 140 |
 | Zeilen Programmcode | 3050 |
 | Zeilen Lerninhalt | 19 673 |
-| Automatische Tests | 173 (alle grün) |
+| Automatische Tests | 173 (alle grün), im Repository unter `tests/` |
 
 ---
 
@@ -87,6 +87,7 @@ Sicherungs-**Branch** ist aber gepusht und erfüllt denselben Zweck.
 | 6. App-Name und Beschreibung an die Kurse anpassen | ✅ | `manifest.json`: Name „¡Vamos! — Spanisch & Deutsch lernen", Beschreibung nennt alle vier Kurse. Das ist der Text, den jemand sieht, der die App zum Startbildschirm hinzufügt |
 | 7. Themen-Lernpfad „Deutsch im Beruf" | ✅ | Kurs `de-beruf`, 30 Tage, Küche · Restaurant · Hotel · Ernährung, mit Redemitteln statt reiner Grammatik |
 | 8. Fachwörter im Detail statt Oberbegriffe | ✅ | 15 Vertiefungstage (31–45) mit 150 Fachwörtern: Messer-, Teller-, Besteck-, Glas-, Zimmer- und Wäschearten, Fleischteile, Schnitttechniken, Menüfolge. Dazu die Wortbildungsregel, mit der man ein Fachwort selbst bauen kann |
+| 9. Tests ins Repository legen | ✅ | Ordner `tests/` mit sieben Prüfungen, gemeinsamem Umgebungsmodul ohne feste Pfade, Starter `alle.sh` und eigener Anleitung |
 
 **Warum die Fachwörter eigene Tage bekommen und nicht in die alten Lektionen
 wandern:** Tag 1 lehrt „das Messer" — das ist richtig so, ein Anfänger braucht
@@ -485,6 +486,40 @@ Grenzen, die du kennen solltest.
 
 ---
 
+## Tests im Repository
+
+Bis zum 22.09.2026 lagen die Prüfskripte nur im Arbeitsverzeichnis der jeweiligen
+Sitzung und waren danach weg. Jetzt liegen sie unter `tests/` im Repository.
+
+| Datei | Browser | Prüft |
+|---|---|---|
+| `01-daten.js` | nein | alle Lerndaten aller Kurse: fehlende Felder, doppelte oder fehlende IDs, Tageslücken, Übungen mit mehr als einer Lücke |
+| `02-lernsystem.js` | nein | Intervallleiter, Rückfall auf Stufe 0, Problemwörter, Übungstyp je Stufe |
+| `03-ablauf.js` | ja | komplette Tagessitzung, alle sechs Übungstypen, Historie, Dunkelmodus, Kalenderdatei, Offline |
+| `04-kurssystem.js` | ja | Kurswechsel, getrennter Lernstand, Oberflächensprache, Lernpfad-Darstellung |
+| `05-sprachrichtungen.js` | ja | Tag 1 in allen vier Kursen, Ziel- und Ausgangssprache, Sonderzeichen |
+| `06-fachwortschatz.js` | ja | Vertiefungstage 31–45: Erklärung mit Tabelle, jede Lücke sichtbar und lösbar |
+| `07-luecken.js` | ja | Nachkontrolle der vier früher zweilückigen Übungen |
+
+**Was beim Übernehmen angepasst werden musste:** Die Skripte enthielten feste
+Pfade — den Sitzungsordner für Bildschirmfotos, `/home/user/Test` für die
+Quelldateien, `/opt/pw-browsers/chromium-1194/…` für den Browser und
+`localhost:8765` für den Server. Das alles steht jetzt ausschließlich in
+`tests/umgebung.js` und lässt sich über die Umgebungsvariablen `VAMOS_URL`,
+`VAMOS_PORT` und `VAMOS_CHROMIUM` ändern. Die Testlogik selbst wurde nicht
+angefasst.
+
+**Ein Fehler im Starter, gefunden beim Prüfen:** `alle.sh` startete den Server in
+einer Subshell und merkte sich deren Prozessnummer. Beim Aufräumen wurde damit
+die Subshell beendet, der Server lief aber weiter. Behoben mit `exec`, sodass die
+gemerkte Nummer wirklich die des Servers ist. Nachgewiesen: Vor dem Lauf kein
+Server, nach dem Lauf wieder keiner.
+
+Playwright ist keine Abhängigkeit der App. `tests/package.json` deklariert es nur
+für die Tests; eine globale Installation wird ebenfalls gefunden.
+
+---
+
 ## Chronik
 
 | Datum | Was passiert ist |
@@ -515,3 +550,4 @@ Grenzen, die du kennen solltest.
 | 22.09.2026 | 15 Vertiefungstage (31–45) geschrieben: 150 Fachwörter, 75 Sätze, 75 Redemittelübungen |
 | 22.09.2026 | Neue Dateien eingebunden, Offline-Cache auf `vamos-v4` hochgezählt, Untertitel auf 45 Tage |
 | 22.09.2026 | 13 Vertiefungstage im Browser durchgespielt; 173 Prüfungen grün, Datenprüfung ohne Beanstandung |
+| 22.09.2026 | Testskripte aus dem Sitzungsordner ins Repository übernommen: `tests/` mit sieben Prüfungen, `umgebung.js`, `alle.sh` und Anleitung |

@@ -25,8 +25,9 @@ Redemittelthemen**
 5. [Wie das Lernsystem funktioniert](#wie-das-lernsystem-funktioniert)
 6. [Fortschritt sichern](#fortschritt-sichern)
 7. [Aufbau der Dateien](#aufbau-der-dateien)
-8. [Eigene Inhalte ergänzen](#eigene-inhalte-ergänzen)
-9. [Häufige Fragen](#häufige-fragen)
+8. [Tests](#tests)
+9. [Eigene Inhalte ergänzen](#eigene-inhalte-ergänzen)
+10. [Häufige Fragen](#häufige-fragen)
 
 ---
 
@@ -308,6 +309,12 @@ data/es-es/lektionen-01-10.js  …  -51-60.js    60 Lektionen, Spanien
 data/es-419/lektionen-01-10.js …  -81-90.js    90 Lektionen, Lateinamerika
 data/de/lektionen-01-10.js     … -111-120.js  120 Lektionen, Deutsch
 data/de-beruf/lektionen-01-08.js … -43-45.js    45 Lektionen, Deutsch im Beruf
+
+tests/alle.sh              startet Server, laesst alle Tests laufen, raeumt auf
+tests/umgebung.js          gemeinsame Einstellungen (Pfade, Adresse, Browser)
+tests/01-daten.js          prueft alle Lerndaten — braucht keinen Browser
+tests/02-lernsystem.js  …  -07-luecken.js   sechs weitere Pruefungen
+tests/README.md            was jeder Test prueft und wie man ihn startet
 ```
 
 Die Reihenfolge der `<script>`-Tags in `index.html` ist wichtig:
@@ -361,6 +368,35 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 | 31–37 | B1–B2 | **Wortbildung: wie ein Fachwort gebaut wird** · wohin/wo (Wechselpräpositionen) · Werkzeug benennen (mit + Dativ, zum + Infinitiv) · Verb + Nomen (Schneidebrett, Bratpfanne) · Adjektivendungen am Gericht · Pluralformen der Speisekarte · Geschmack und Geruch (schmecken nach, passen zu) |
 | 38–42 | B1–B2 | Hausstandard erklären (Passiv Präsens) · Reihenfolge des Gedecks (Ordnungszahlen, von außen nach innen) · nach dem richtigen Teil fragen (welcher/welches/welche) · Getränke vergleichen und empfehlen (Komparativ) · Gangfolge erzählen (zuerst, danach, zum Schluss) |
 | 43–45 | B1–B2 | erklären, was im Preis steckt (enthalten, bestehen aus, inbegriffen, betragen) · wer was bekommt (Dativ vor Akkusativ) · Abschluss-Repaso: das Fachwort selbst bauen |
+
+---
+
+## Tests
+
+Im Ordner `tests/` liegen sieben automatische Prüfungen. Alle auf einmal:
+
+```bash
+bash tests/alle.sh
+```
+
+Das startet den Testserver selbst, lässt alles laufen und räumt danach wieder
+auf. Dauer etwa zwei bis drei Minuten.
+
+Der wichtigste für den Alltag ist `tests/01-daten.js`: Er prüft **alle**
+Lerndaten aller Kurse auf fehlende Felder, doppelte IDs, Lücken in der
+Tagesnummerierung und Übungen mit mehr als einer Lücke. Er braucht weder Browser
+noch Server und ist in zwei Sekunden durch:
+
+```bash
+node tests/01-daten.js
+```
+
+Wenn du eigene Vokabeln schreibst (siehe nächster Abschnitt), lass ihn danach
+einmal laufen — er findet Tippfehler, die einem beim Lesen entgehen.
+
+Die fünf Browsertests brauchen **Playwright**; `tests/README.md` erklärt die
+Installation und was jeder einzelne Test abdeckt. Der Testordner gehört nicht
+zur App: Wer ihn löscht, ändert am Lernen nichts.
 
 ---
 

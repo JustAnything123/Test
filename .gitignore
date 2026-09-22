@@ -9,3 +9,10 @@ Thumbs.db
 
 # Persönliche Sicherungen des Lernfortschritts
 spanisch-fortschritt-*.json
+
+# Testergebnisse (Bildschirmfotos der Browsertests)
+tests/ausgabe/
+
+# Abhängigkeiten der Tests — die App selbst braucht keine
+node_modules/
+package-lock.json
