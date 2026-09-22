@@ -4,7 +4,7 @@
    Kalender bzw. Wecker des Handys. Dieser Service Worker ist aber die
    Grundlage, falls du das später einmal nachrüsten willst. */
 
-const CACHE = 'vamos-v3';
+const CACHE = 'vamos-v4';
 
 const DATEIEN = [
   './', './index.html', './manifest.json', './css/stil.css', './js/speicher.js',
@@ -19,6 +19,8 @@ const DATEIEN = [
   './data/de/lektionen-91-100.js',
   './data/de-beruf/lektionen-01-08.js', './data/de-beruf/lektionen-09-16.js',
   './data/de-beruf/lektionen-17-24.js', './data/de-beruf/lektionen-25-30.js',
+  './data/de-beruf/lektionen-31-37.js', './data/de-beruf/lektionen-38-42.js',
+  './data/de-beruf/lektionen-43-45.js',
   './data/es-419/lektionen-01-10.js',
   './data/es-419/lektionen-11-20.js', './data/es-419/lektionen-21-30.js',
   './data/es-419/lektionen-31-40.js', './data/es-419/lektionen-41-50.js',

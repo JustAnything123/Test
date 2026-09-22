@@ -1,8 +1,8 @@
 # Projektfortschritt — ¡Vamos! (vier Kurse in einer App)
 
-**Stand:** 14. September 2026
+**Stand:** 22. September 2026
 **Branch:** `claude/spanish-learning-app-daily-o5s13u`
-**Status:** ✅ Version 3 fertig, getestet und gepusht
+**Status:** ✅ Version 3.1 fertig, getestet und gepusht
 
 ---
 
@@ -26,16 +26,16 @@ ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 | Kennzahl | Wert |
 |---|---|
 | Kurse (davon 1 Themen-Lernpfad) | 4 |
-| Tageslektionen gesamt | 300 |
-| Vokabeln | 3000 |
-| Beispielsätze | 1500 |
-| Grammatik- und Redemittelthemen | 300 |
-| Übungen dazu | 1501 |
-| Lernkarten gesamt | 6001 |
+| Tageslektionen gesamt | 315 |
+| Vokabeln | 3150 |
+| Beispielsätze | 1575 |
+| Grammatik- und Redemittelthemen | 315 |
+| Übungen dazu | 1576 |
+| Lernkarten gesamt | 6301 |
 | Übungstypen | 6 |
 | Oberflächentexte je Sprache | 140 |
-| Zeilen Programmcode | 3045 |
-| Zeilen Lerninhalt | 18 850 |
+| Zeilen Programmcode | 3050 |
+| Zeilen Lerninhalt | 19 673 |
 | Automatische Tests | 173 (alle grün) |
 
 ---
@@ -86,6 +86,25 @@ Sicherungs-**Branch** ist aber gepusht und erfüllt denselben Zweck.
 |---|---|---|
 | 6. App-Name und Beschreibung an die Kurse anpassen | ✅ | `manifest.json`: Name „¡Vamos! — Spanisch & Deutsch lernen", Beschreibung nennt alle vier Kurse. Das ist der Text, den jemand sieht, der die App zum Startbildschirm hinzufügt |
 | 7. Themen-Lernpfad „Deutsch im Beruf" | ✅ | Kurs `de-beruf`, 30 Tage, Küche · Restaurant · Hotel · Ernährung, mit Redemitteln statt reiner Grammatik |
+| 8. Fachwörter im Detail statt Oberbegriffe | ✅ | 15 Vertiefungstage (31–45) mit 150 Fachwörtern: Messer-, Teller-, Besteck-, Glas-, Zimmer- und Wäschearten, Fleischteile, Schnitttechniken, Menüfolge. Dazu die Wortbildungsregel, mit der man ein Fachwort selbst bauen kann |
+
+**Warum die Fachwörter eigene Tage bekommen und nicht in die alten Lektionen
+wandern:** Tag 1 lehrt „das Messer" — das ist richtig so, ein Anfänger braucht
+erst den Oberbegriff. Acht Messerarten am ersten Tag wären unlernbar. Die
+Vertiefung kommt deshalb hinten, als eigener Block ab Tag 31, und liegt damit
+genau dort, wo ein Berufsschulbuch sie auch hätte. Ein zweiter Grund ist
+praktisch: Hätte ich die alten Tage von 10 auf 20 Wörter aufgebläht, wäre jede
+Tagessitzung von rund 40 auf 65 Aufgaben gewachsen — und der Lernstand von
+jemandem, der schon dabei ist, hätte plötzlich nicht mehr gestimmt.
+
+**Die eigentliche Lehre von Tag 31** ist nicht die Wortliste, sondern die
+Bauregel: Das wichtige Wort steht hinten, es bestimmt den Artikel, und vor einem
+Nomen kann auch ein Verbstamm stehen. Wer das verstanden hat, liest
+„Sanitärreiniger" oder „Gästehandtuch" richtig, ohne die Wörter je gelernt zu
+haben. Tag 45 prüft genau das noch einmal ab. Ehrliche Einschränkung: Bei den
+Hausberufen greift die Regel nicht — *Chef de Rang*, *Commis*, *Sommelier*,
+*Sous-Chef* sind französisch und müssen einzeln gelernt werden. Das steht auch
+so in der Erklärung.
 
 **Warum der Pfad ein eigener Kurseintrag ist und nicht Tag 121 ff. des
 Deutschkurses:** Wer im Hotel oder Restaurant arbeitet, braucht die Wörter des
@@ -215,7 +234,7 @@ indirecto, Nominalstil, voseo zum Verstehen, Idiomatik und Register.
 | 61–90 | B1 | Relativsätze in Dativ und Genitiv, Passiv komplett, Genitiv, n-Deklination, TeKaMoLo, Modalpartikeln |
 | 91–120 | B2 | Konjunktiv I, erweiterte Partizipialattribute, Nominalstil, Register, Argumentation, falsche Freunde |
 
-**Deutsch im Beruf (`data/de-beruf/`) — 30 Lektionen, A2 → B2, Erklärungen auf Spanisch**
+**Deutsch im Beruf (`data/de-beruf/`) — 45 Lektionen, A2 → B2, Erklärungen auf Spanisch**
 
 Ein Themen-Lernpfad des Deutschkurses für Hotel und Restaurant. Eigener
 Lernstand, dadurch parallel zum langen Kurs nutzbar.
@@ -226,6 +245,9 @@ Lernstand, dadurch parallel zum langen Kurs nutzbar.
 | 9–16 | A2–B1 | Service: Gedeck, Speisekarte, Getränke, Bestellung, Servieren, Reklamation, Bezahlen, Telefon |
 | 17–24 | A2–B1 | Hotel: Berufe, Zimmerarten, Check-in, Check-out, Housekeeping, Auskunft, Defekte, Frühstück |
 | 25–30 | B1–B2 | Allergene, Ernährungsformen, Nährstoffe, Arbeitssicherheit, Vertrag und Schichten, Vorstellungsgespräch |
+| 31–37 | B1–B2 | Fachwortschatz Küche: Messerarten, Töpfe und Großküchengeräte, Küchenhelfer, Schnitttechniken, Fleischteile und Garstufen, Fisch und Meeresfrüchte, Gemüse und Gewürze |
+| 38–42 | B1–B2 | Fachwortschatz Service: Tellerarten, Besteckarten, Gläserkunde, Wein/Bier/Kaffee, Menüfolge vom Aperitif bis zum Digestif |
+| 43–45 | B1–B2 | Fachwortschatz Hotel: Zimmertypen und Betten, Bettwäsche und Bad, Reinigung, Zimmerstatus und Hausberufe |
 
 Besonderheit: Das Feld `grammatik` trägt hier **Redemittel** — feste
 Formulierungen für wiederkehrende Situationen (Bestellung abrufen, Beschwerde
@@ -489,3 +511,7 @@ Grenzen, die du kennen solltest.
 | 14.09.2026 | Kurs- und Richtungstest auf vier Kurse erweitert; 173 Prüfungen grün, Datenprüfung ohne Beanstandung |
 | 14.09.2026 | README und PROGRESS.md auf Version 3 aktualisiert |
 | 14.09.2026 | Vier ältere Übungen mit zwei Lücken umformuliert; Prüfskript erkennt zwei Lücken jetzt selbst |
+| 22.09.2026 | Wortschatz von „Deutsch im Beruf" geprüft: alle 300 Begriffe waren Oberbegriffe, keine Fachdifferenzierung |
+| 22.09.2026 | 15 Vertiefungstage (31–45) geschrieben: 150 Fachwörter, 75 Sätze, 75 Redemittelübungen |
+| 22.09.2026 | Neue Dateien eingebunden, Offline-Cache auf `vamos-v4` hochgezählt, Untertitel auf 45 Tage |
+| 22.09.2026 | 13 Vertiefungstage im Browser durchgespielt; 173 Prüfungen grün, Datenprüfung ohne Beanstandung |

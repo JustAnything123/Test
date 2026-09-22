@@ -9,9 +9,9 @@ auf deinem Gerät.
 | 🇪🇸 Español (España) | Deutsch → Spanisch (Spanien) | A2 → B1 | 60 |
 | 🌎 Español (Latinoamérica) | Deutsch → Spanisch (Lateinamerika) | A2 → B2 | 90 |
 | 🇩🇪 Alemán | Spanisch → Deutsch, Oberfläche auf Spanisch | A1 → B2 | 120 |
-| 🍽️ Alemán en el trabajo | Themen-Lernpfad des Deutschkurses: Hotel, Restaurant, Küche | A2 → B2 | 30 |
+| 🍽️ Alemán en el trabajo | Themen-Lernpfad des Deutschkurses: Hotel, Restaurant, Küche | A2 → B2 | 45 |
 
-**300 Tageslektionen · 3000 Vokabeln · 1500 Beispielsätze · 300 Grammatik- und
+**315 Tageslektionen · 3150 Vokabeln · 1575 Beispielsätze · 315 Grammatik- und
 Redemittelthemen**
 
 ---
@@ -100,7 +100,7 @@ Spanisch geschrieben, mit Blick auf genau die Stellen, an denen Spanischsprachig
 im Deutschen hängenbleiben: die vier Fälle, die Verbstellung, die
 Adjektivdeklination, `seit` mit Präsens, falsche Freunde.
 
-### 🍽️ Alemán en el trabajo — A2 → B2, 30 Tage
+### 🍽️ Alemán en el trabajo — A2 → B2, 45 Tage
 
 Ein **Themen-Lernpfad des Deutschkurses** für alle, die im Hotel oder im
 Restaurant arbeiten. Kein eigener Sprachkurs, sondern der Fachwortschatz und die
@@ -123,6 +123,9 @@ erklärt und funktionieren auch ohne vollständige Grammatik.
 | Service | 9–16 | Gedeck und Begrüßung · Speisekarte · Getränke · Bestellung aufnehmen · Servieren · Reklamationen · Bezahlen und Trinkgeld · Reservierung am Telefon |
 | Hotel | 17–24 | Bereiche und Berufe · Zimmerarten · Check-in · Check-out und Rechnung · Housekeeping · Auskunft und Wegbeschreibung · Probleme und Defekte · Frühstück und Etagenservice |
 | Ernährung und Beruf | 25–30 | Allergene · Ernährungsformen · Nährstoffe · Arbeitssicherheit · Vertrag, Schichten, Urlaub · Vorstellungsgespräch und Abschluss |
+| Fachwortschatz Küche | 31–37 | Messerarten · Töpfe, Pfannen und Großküchengeräte · Küchenhelfer · Schnitttechniken · Fleischteile und Garstufen · Fisch und Meeresfrüchte · Gemüse, Kräuter und Gewürze |
+| Fachwortschatz Service | 38–42 | Tellerarten · Besteckarten · Gläserkunde · Wein, Bier und Kaffee · Menüfolge vom Aperitif bis zum Digestif |
+| Fachwortschatz Hotel | 43–45 | Zimmertypen, Betten, Verpflegungsarten · Bettwäsche, Handtücher, Bad · Reinigung, Zimmerstatus und Hausberufe |
 
 Das Feld `grammatik` trägt in diesem Pfad **Redemittel** statt reiner Grammatik:
 fertige Formulierungen für wiederkehrende Situationen — die Bestellung abrufen,
@@ -304,7 +307,7 @@ js/app.js                  Ablaufsteuerung und Bildschirmwechsel
 data/es-es/lektionen-01-10.js  …  -51-60.js    60 Lektionen, Spanien
 data/es-419/lektionen-01-10.js …  -81-90.js    90 Lektionen, Lateinamerika
 data/de/lektionen-01-10.js     … -111-120.js  120 Lektionen, Deutsch
-data/de-beruf/lektionen-01-08.js … -25-30.js    30 Lektionen, Deutsch im Beruf
+data/de-beruf/lektionen-01-08.js … -43-45.js    45 Lektionen, Deutsch im Beruf
 ```
 
 Die Reihenfolge der `<script>`-Tags in `index.html` ist wichtig:
@@ -347,7 +350,7 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 | 61–90 | B1 | Relativsätze in Dativ und Genitiv · Konjunktiv II der Vergangenheit · Passiv in allen Zeiten und mit Modalverben · Genitiv · n-Deklination · Partizipien als Adjektiv · TeKaMoLo · Stellung von nicht · da-/wo-Komposita · subjektive Modalverben · Futur I und II · Modalpartikeln |
 | 91–120 | B2 | Konjunktiv I und Pressesprache · erweiterte Partizipialattribute · Nominalstil · Zustandspassiv · konzessive Konstruktionen · Funktionsverbgefüge · Konditionalsätze ohne wenn · als ob · Register · Argumentation · Grafikbeschreibung · Kollokationen · Varianten D/A/CH · typische Fehlerquellen und falsche Freunde |
 
-**Deutsch im Beruf, Tag 1–30 — Redemittel statt reiner Grammatik**
+**Deutsch im Beruf, Tag 1–45 — Redemittel statt reiner Grammatik**
 
 | Tage | Niveau | Redemittel |
 |---|---|---|
@@ -355,6 +358,9 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 | 9–16 | A2–B1 | Gäste begrüßen und platzieren · Gerichte erklären und empfehlen (Passiv) · Getränke empfehlen und servieren · höflich fragen mit Konjunktiv II · am Tisch nachfragen (schmecken + Dativ) · entschuldigen und Lösung anbieten · abrechnen, Trinkgeld, Beträge · telefonieren und buchstabieren |
 | 17–24 | A2–B1 | sich vorstellen und Zuständigkeit nennen · Zimmer beschreiben (haben + Akkusativ, mit + Dativ) · Check-in in sechs Schritten · Rechnungspositionen erklären · Zimmerstatus melden und Fundsachen · Weg beschreiben · Problem aufnehmen und weiterleiten · Frühstück und Etagenservice mit trennbaren Verben |
 | 25–30 | B1–B2 | Allergiefragen sicher beantworten (die 14 Allergene) · Alternativen anbieten (ersetzen durch, verzichten auf) · Nährwerte (viel/viele, reich an) · Gefahr melden und Unfall dokumentieren · mit dem Chef sprechen (Konjunktiv II, Krankmeldung, Urlaubsantrag) · Vorstellungsgespräch |
+| 31–37 | B1–B2 | **Wortbildung: wie ein Fachwort gebaut wird** · wohin/wo (Wechselpräpositionen) · Werkzeug benennen (mit + Dativ, zum + Infinitiv) · Verb + Nomen (Schneidebrett, Bratpfanne) · Adjektivendungen am Gericht · Pluralformen der Speisekarte · Geschmack und Geruch (schmecken nach, passen zu) |
+| 38–42 | B1–B2 | Hausstandard erklären (Passiv Präsens) · Reihenfolge des Gedecks (Ordnungszahlen, von außen nach innen) · nach dem richtigen Teil fragen (welcher/welches/welche) · Getränke vergleichen und empfehlen (Komparativ) · Gangfolge erzählen (zuerst, danach, zum Schluss) |
+| 43–45 | B1–B2 | erklären, was im Preis steckt (enthalten, bestehen aus, inbegriffen, betragen) · wer was bekommt (Dativ vor Akkusativ) · Abschluss-Repaso: das Fachwort selbst bauen |
 
 ---
 

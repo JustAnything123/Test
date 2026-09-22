@@ -63,7 +63,7 @@ Kurse.definieren({
   gehoertZu: 'de',                              // Lernpfad des Deutschkurses
   name: 'Alemán en el trabajo',
   nameUi: 'Deutsch im Beruf (Hotel & Restaurant)',
-  untertitel: 'Cocina · Restaurante · Hotel · 30 días',
+  untertitel: 'Cocina · Restaurante · Hotel · 45 días',
   flagge: '🍽️',
   ziel: 'de',
   ausgang: 'es',
