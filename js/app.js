@@ -11,6 +11,11 @@ var App = {
   aktuell: null,     // das Objekt, das Uebungen.zeichnen() zurückgegeben hat
   geprueft: false,   // wurde die aktuelle Aufgabe schon bewertet?
 
+  /* Zustand einer laufenden Pruefung. Getrennt von `sitzung`, weil eine
+     Pruefung anders laeuft: aufgabenweise statt frageweise, und ohne
+     Rueckmeldung bis zum Schluss. */
+  pruefung: null,    // { def, aufgaben, index, antworten, begonnen }
+
   /* ======================= Start ======================= */
 
   starten() {
@@ -119,7 +124,8 @@ var App = {
 
   /* ======================= Bildschirme ======================= */
 
-  SEITEN: ['kurse', 'start', 'uebung', 'fertig', 'historie', 'erinnerung', 'einstellungen'],
+  SEITEN: ['kurse', 'start', 'uebung', 'fertig', 'historie', 'erinnerung', 'einstellungen',
+           'pruefung-info', 'pruefung', 'pruefung-ergebnis'],
 
   zeigeSeite(name) {
     this.SEITEN.forEach(s => {
@@ -128,10 +134,15 @@ var App = {
     });
     this.seite = name;
 
-    const inUebung = name === 'uebung';
+    // In der Prüfung ist der Kopf so leer wie in der Übung — aber der
+    // Lektionszähler gehört nicht hierher: Die Prüfung hat ihre eigene
+    // Fortschrittsleiste, sonst stünde dort 0/0.
+    const inUebung  = name === 'uebung';
+    const inPruefung = name === 'pruefung';
+    const schlank   = inUebung || inPruefung;
     document.getElementById('kopf-fortschritt').hidden = !inUebung;
-    document.getElementById('kopf-titel').hidden = inUebung;
-    document.getElementById('kopf-kurs').hidden = inUebung || !Kurse.aktiv();
+    document.getElementById('kopf-titel').hidden = schlank;
+    document.getElementById('kopf-kurs').hidden = schlank || !Kurse.aktiv();
     document.getElementById('btn-zurueck').hidden = (name === 'start' || name === 'kurse');
     window.scrollTo(0, 0);
 
@@ -139,6 +150,7 @@ var App = {
     if (name === 'start')    this.startAktualisieren();
     if (name === 'historie') Statistik.zeichneHistorie(document.getElementById('historie-liste'), this.hFilter || 'alle');
     if (name === 'einstellungen') this.einstellungenAktualisieren();
+    if (name === 'pruefung-info') this.pruefungInfoZeichnen();
   },
 
   /* ======================= Startbildschirm ======================= */
@@ -195,6 +207,7 @@ var App = {
     g('btn-nur-wdh').disabled = (v.faellige + v.leeches) === 0;
     g('btn-speed').disabled   = SRS.anzahlInArbeit() < 4;
 
+    this.pruefkarteAktualisieren();
     Statistik.zeichneHeatmap(g('heatmap'));
   },
 
@@ -361,6 +374,207 @@ var App = {
     this.zeigeSeite('fertig');
   },
 
+  /* ======================= Prüfung ======================= */
+
+  /* Eine Prüfung ist ein Zwischenstopp im Kurs. Sie wird freigeschaltet,
+     sobald der Lerntag erreicht ist, und läuft bewusst anders als eine
+     Lektion: keine Hilfe, keine Rückmeldung, Auswertung erst am Ende. */
+
+  /** Die Karte auf dem Startbildschirm — zeigt die nächste offene Prüfung
+      oder, wenn alles bestanden ist, gar nichts. */
+  pruefkarteAktualisieren() {
+    const karte = document.getElementById('pruefkarte');
+    if (!karte) return;
+    const p = Pruefungen.offen();
+    if (!p) { karte.hidden = true; return; }
+
+    const g = id => document.getElementById(id);
+    karte.hidden = false;
+    g('pruefkarte-niveau').textContent  = p.niveau;
+    g('pruefkarte-name').textContent    = p.name;
+    g('pruefkarte-vorbild').textContent = t('pruef.nachVorbild', { vorbild: p.vorbild });
+
+    const bestes = Pruefungen.bestesErgebnis(p.id);
+    g('pruefkarte-stand').textContent = bestes === null
+      ? t('pruef.nochNicht')
+      : t('pruef.besterVersuch', { prozent: bestes });
+  },
+
+  /** Übersicht vor dem Start: Teile, Punkte, Regeln. */
+  pruefungInfoZeichnen() {
+    const p = this.pruefungGewaehlt;
+    if (!p) return this.zeigeSeite('start');
+    const g = id => document.getElementById(id);
+
+    g('pinfo-niveau').textContent  = p.niveau;
+    g('pinfo-name').textContent    = p.name;
+    g('pinfo-vorbild').textContent = t('pruef.nachVorbild', { vorbild: p.vorbild });
+
+    // Ohne Stimme faellt der Hoerteil weg — sonst gaebe es dafuer 0 Punkte,
+    // obwohl niemand etwas falsch gemacht hat.
+    const wirklich = Pruefungen.ohneHoeren(p);
+    g('pinfo-hoerwarnung').hidden = !wirklich._hoerenFehlt;
+
+    g('pinfo-teile').innerHTML = wirklich.teile.map(teil => {
+      const max = Pruefungen.maxPunkteTeil(teil);
+      return `
+        <div class="pruef-teilzeile">
+          <span class="pruef-teilname">${Uebungen.escape(teil.name)}</span>
+          <span class="pruef-teilpunkte">${max ? t('pruef.punkte', { n: max }) : t('pruef.durchMensch')}</span>
+        </div>`;
+    }).join('');
+
+    const bestes = Pruefungen.bestesErgebnis(p.id);
+    const frueher = g('pinfo-frueher');
+    if (bestes === null) {
+      frueher.hidden = true;
+    } else {
+      frueher.hidden = false;
+      frueher.textContent = t('pruef.frueherErgebnis', {
+        anzahl:  Pruefungen.versuche(p.id).length,
+        prozent: bestes
+      });
+    }
+  },
+
+  /** Prüfung starten. */
+  pruefungStarten() {
+    const def = Pruefungen.ohneHoeren(this.pruefungGewaehlt);
+    this.pruefung = {
+      def,
+      aufgaben:  Pruefungen.aufgaben(def),
+      index:     0,
+      antworten: {},
+      begonnen:  Date.now()
+    };
+    this.zeigeSeite('pruefung');
+    this.pruefAufgabeZeigen();
+  },
+
+  pruefAufgabeZeigen() {
+    const p = this.pruefung;
+    if (!p) return;
+    const eintrag = p.aufgaben[p.index];
+    PruefungUI.zeichnen(eintrag, document.getElementById('pruef-inhalt'), p.antworten);
+
+    const g = id => document.getElementById(id);
+    g('pruef-fortschritt-text').textContent = t('pruef.aufgabeVon', {
+      n: p.index + 1, gesamt: p.aufgaben.length
+    });
+    g('pruef-balken-innen').style.width = ((p.index + 1) / p.aufgaben.length * 100) + '%';
+    g('btn-pruef-zurueck').disabled = p.index === 0;
+    g('btn-pruef-weiter').textContent = p.index === p.aufgaben.length - 1
+      ? t('pruef.abgeben') : t('pruef.weiter');
+    window.scrollTo(0, 0);
+  },
+
+  pruefBlaettern(richtung) {
+    const p = this.pruefung;
+    if (!p) return;
+    const neu = p.index + richtung;
+    if (neu < 0) return;
+    if (neu >= p.aufgaben.length) return this.pruefungAbgeben();
+    p.index = neu;
+    this.pruefAufgabeZeigen();
+  },
+
+  /** Abgeben — erst hier wird überhaupt bewertet. */
+  pruefungAbgeben() {
+    const p = this.pruefung;
+    if (!p) return;
+
+    // Unbeantwortete Fragen sind in einer Prüfung erlaubt, aber man sollte
+    // es wissen, bevor abgegeben wird.
+    const offen = Pruefungen.fragen(p.def)
+      .filter(f => f.aufgabe.art !== 'schreiben')
+      .filter(f => p.antworten[f.frage.id] === undefined).length;
+    if (offen && !confirm(t('pruef.nochOffen', { n: offen }))) return;
+
+    const ergebnis = Pruefungen.auswerten(p.def, p.antworten);
+    ergebnis.dauerMinuten = Math.round((Date.now() - p.begonnen) / 60000);
+    Pruefungen.ergebnisSpeichern(ergebnis);
+    this.pruefung = null;
+    this.letztesErgebnis = ergebnis;
+    this.pruefErgebnisZeichnen(ergebnis);
+    this.zeigeSeite('pruefung-ergebnis');
+  },
+
+  pruefungAufgeben() {
+    if (!confirm(t('pruef.wirklichAufgeben'))) return;
+    this.pruefung = null;
+    this.zeigeSeite('start');
+  },
+
+  pruefErgebnisZeichnen(e) {
+    const g   = id => document.getElementById(id);
+    const def = Pruefungen.nachId(e.pruefungId);
+
+    g('perg-kopf').className = 'pruef-ergebnis-kopf ' + (e.bestanden ? 'bestanden' : 'nicht-bestanden');
+    g('perg-prozent').textContent = e.prozent + '%';
+    g('perg-urteil').textContent  = e.bestanden ? t('pruef.bestanden') : t('pruef.nichtBestanden');
+    g('perg-punkte').textContent  = t('pruef.punkteVon', {
+      punkte: e.punkte, max: e.max, grenze: e.grenze
+    });
+
+    g('perg-teile').innerHTML = e.teile.filter(x => x.max > 0).map(x => `
+      <div class="pruef-teilzeile">
+        <span class="pruef-teilname">${Uebungen.escape(x.name)}</span>
+        <span class="pruef-teilbalken"><span style="width:${x.prozent}%"></span></span>
+        <span class="pruef-teilpunkte">${x.punkte}/${x.max}</span>
+      </div>`).join('');
+
+    // Offene Aufgaben: ehrlich als noch nicht bewertet ausweisen.
+    g('perg-offen').innerHTML = e.offen.length ? `
+      <h3 class="abschnitt-titel">${Uebungen.escape(t('pruef.offeneAufgaben'))}</h3>
+      <div class="pruef-warnung">${Uebungen.escape(t('pruef.offenErklaerung'))}</div>
+      ${e.offen.map(o => `
+        <div class="pruef-offen-block">
+          <p class="pruef-frage">${Uebungen.escape(o.auftrag)}</p>
+          <div class="pruef-deine-antwort">${
+            o.antwort ? Uebungen.escape(o.antwort).replace(/\n/g, '<br>')
+                      : '<em>' + Uebungen.escape(t('pruef.nichtsGeschrieben')) + '</em>'
+          }</div>
+          ${o.kriterien.length ? `
+            <p class="pruef-kriterien-titel">${Uebungen.escape(t('pruef.kriterien'))}</p>
+            <ul class="pruef-kriterien">${o.kriterien.map(k => `<li>${Uebungen.escape(k)}</li>`).join('')}</ul>` : ''}
+          ${o.muster ? `
+            <details class="pruef-muster">
+              <summary>${Uebungen.escape(t('pruef.musterZeigen'))}</summary>
+              <div>${Uebungen.escape(o.muster).replace(/\n/g, '<br>')}</div>
+            </details>` : ''}
+        </div>`).join('')}` : '';
+
+    // Durchsicht: jede Frage mit der richtigen Loesung. Kommt nach dem
+    // Ergebnis, nie vorher — vorher waere es keine Pruefung mehr.
+    const alle = def ? Pruefungen.fragen(def) : [];
+    const texte = {}, loesungstexte = {};
+    for (const f of alle) {
+      texte[f.frage.id] = f.frage.text || f.frage.auftrag || '';
+      // "richtig: a" hilft niemandem weiter. Wenn die Option einen Wortlaut
+      // hat, gehoert der dazu: "richtig: a) fui".
+      const optionen = f.frage.optionen || (f.aufgabe.art === 'zuordnen' ? f.aufgabe.optionen : null);
+      const treffer  = optionen && optionen.find(o => String(o.wert) === String(f.frage.loesung));
+      loesungstexte[f.frage.id] = treffer && treffer.text && treffer.text !== treffer.wert
+        ? `${treffer.wert}) ${treffer.text}`
+        : { r: t('pruef.richtig'), f: t('pruef.falsch') }[String(f.frage.loesung)]
+          || String(f.frage.loesung);
+    }
+
+    g('perg-durchsicht').innerHTML = e.teile.filter(x => x.max > 0).map(x => `
+      <div class="pruef-durchsicht-teil">
+        <h4>${Uebungen.escape(x.name)}</h4>
+        ${x.details.map((d, i) => `
+          <div class="pruef-durchsicht-zeile ${d.richtig ? 'ok' : 'weg'}">
+            <span class="pdz-nr">${i + 1}</span>
+            <span class="pdz-text">${Uebungen.escape(texte[d.frageId] || d.frageId)}</span>
+            <span class="pdz-loesung">${
+              d.richtig ? '✓'
+                        : Uebungen.escape(t('pruef.richtigWaere', { loesung: loesungstexte[d.frageId] || d.loesung }))
+            }</span>
+          </div>`).join('')}
+      </div>`).join('');
+  },
+
   /* ======================= Einstellungen ======================= */
 
   themaAnwenden() {
@@ -413,6 +627,18 @@ var App = {
     });
 
     auf('btn-fertig-zurueck', 'click', () => this.zeigeSeite('start'));
+
+    /* ---- Prüfung ---- */
+    auf('btn-pruefung', 'click', () => {
+      this.pruefungGewaehlt = Pruefungen.offen();
+      if (this.pruefungGewaehlt) this.zeigeSeite('pruefung-info');
+    });
+    auf('btn-pruefung-los',       'click', () => this.pruefungStarten());
+    auf('btn-pruefung-abbrechen', 'click', () => this.zeigeSeite('start'));
+    auf('btn-pruef-weiter',       'click', () => this.pruefBlaettern(1));
+    auf('btn-pruef-zurueck',      'click', () => this.pruefBlaettern(-1));
+    auf('btn-pruef-aufgeben',     'click', () => this.pruefungAufgeben());
+    auf('btn-perg-zurueck',       'click', () => this.zeigeSeite('start'));
 
     /* --- Kopfzeile & Menü --- */
     auf('btn-zurueck', 'click', () => {

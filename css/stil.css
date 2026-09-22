@@ -440,3 +440,265 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
      Die Bedienfarbe der App bleibt bewusst überall gleich. */
   border-left: 3px solid var(--akzent-kurs, var(--akzent));
 }
+
+/* ===================================================================
+   Prüfung — Zwischenstopps im Kursverlauf
+   Bewusst etwas nüchterner als die Lernkarten: kein Spielcharakter,
+   keine bunten Rückmeldungen. Eine Prüfung soll sich nach Prüfung
+   anfühlen.
+   =================================================================== */
+
+/* ---- Karte auf dem Startbildschirm ---- */
+.pruefkarte {
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-left: 4px solid var(--blau);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--schatten);
+}
+.pruefkarte-kopf { display: flex; align-items: center; justify-content: space-between; margin-bottom: .4rem; }
+.pruefkarte h2 { margin: .1rem 0 .2rem; }
+.pruefkarte-vorbild { font-size: .85rem; color: var(--text-leise); margin: 0 0 .9rem; }
+.pruefkarte-stand { font-size: .8rem; color: var(--text-leise); }
+
+.pruef-chip {
+  display: inline-block; padding: .12rem .5rem;
+  background: var(--blau); color: #fff;
+  border-radius: 99px; font-size: .72rem; font-weight: 700; letter-spacing: .03em;
+}
+
+/* ---- Übersicht vor dem Start ---- */
+.pruef-info-kopf { text-align: center; margin: .5rem 0 1.2rem; }
+.pruef-info-kopf h2 { margin: .5rem 0 .2rem; }
+.pruef-vorbild { color: var(--text-leise); font-size: .9rem; margin: 0; }
+
+.pruef-regeln {
+  background: var(--flaeche-2);
+  border-radius: var(--radius);
+  padding: .9rem 1rem;
+  margin-bottom: 1.2rem;
+}
+.pruef-regeln h3 { margin: 0 0 .5rem; font-size: .95rem; }
+.pruef-regeln ul { margin: 0; padding-left: 1.1rem; }
+.pruef-regeln li { font-size: .88rem; line-height: 1.5; color: var(--text-leise); }
+
+.pruef-teilzeile {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .6rem .2rem;
+  border-bottom: 1px solid var(--rand);
+  font-size: .92rem;
+}
+.pruef-teilzeile:last-child { border-bottom: none; }
+.pruef-teilname { flex: 1; }
+.pruef-teilpunkte { color: var(--text-leise); font-size: .85rem; white-space: nowrap; }
+.pruef-teilbalken {
+  flex: 0 0 80px; height: 7px; background: var(--flaeche-2);
+  border-radius: 99px; overflow: hidden;
+}
+.pruef-teilbalken > span { display: block; height: 100%; background: var(--blau); }
+
+/* ---- Laufende Prüfung ---- */
+.pruef-leiste {
+  display: flex; align-items: center; gap: .7rem;
+  font-size: .8rem; color: var(--text-leise);
+  margin-bottom: 1rem;
+}
+.pruef-balken { flex: 1; height: 5px; background: var(--flaeche-2); border-radius: 99px; overflow: hidden; }
+.pruef-balken > span { display: block; height: 100%; background: var(--blau); transition: width .2s; }
+
+.pruef-kopf { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: .3rem; }
+.pruef-teil { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blau); }
+.pruef-nummer { font-size: .78rem; color: var(--text-leise); }
+.pruef-anweisung { font-size: .95rem; font-weight: 600; margin: 0 0 .9rem; line-height: 1.45; }
+
+.pruef-text {
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: var(--radius);
+  padding: .9rem 1rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.65;
+}
+.pruef-text p { margin: 0 0 .7rem; }
+.pruef-text p:last-child { margin-bottom: 0; }
+
+.pruef-luecke {
+  display: inline-block; min-width: 1.6rem; text-align: center;
+  background: var(--blau); color: #fff;
+  border-radius: 4px; padding: 0 .25rem;
+  font-size: .8rem; font-weight: 700; vertical-align: .05em;
+}
+
+.pruef-fragen { list-style: none; margin: 0; padding: 0; counter-reset: pf; }
+.pruef-fragen > li {
+  counter-increment: pf;
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--rand);
+}
+.pruef-fragen > li:last-child { border-bottom: none; }
+.pruef-frage { margin: 0 0 .55rem; line-height: 1.45; }
+/* Nur in der Frageliste nummerieren. Ohne die Einschraenkung auf > li
+   griffe die Regel auch im Ergebnisblock, wo kein Zaehler laeuft — dort
+   stuende dann "0." vor dem Schreibauftrag. */
+.pruef-fragen > li > .pruef-frage::before {
+  content: counter(pf) ". ";
+  font-weight: 700; color: var(--text-leise);
+}
+
+.pruef-optionen { display: flex; gap: .5rem; flex-wrap: wrap; }
+.pruef-optionen-unter { flex-direction: column; }
+.pruef-optionen-kurz .pruef-option { min-width: 3rem; flex: 0 0 auto; }
+
+.pruef-option {
+  flex: 1; min-width: 5rem;
+  padding: .6rem .7rem;
+  background: var(--flaeche);
+  border: 1.5px solid var(--rand);
+  border-radius: 10px;
+  color: var(--text);
+  font: inherit; font-size: .9rem; text-align: left;
+  cursor: pointer;
+}
+.pruef-option.gewaehlt {
+  border-color: var(--blau);
+  background: color-mix(in srgb, var(--blau) 12%, var(--flaeche));
+  font-weight: 600;
+}
+
+/* Bausteine: Nummer vor der Auswahl, damit klar ist, welche Lücke gemeint ist */
+.pruef-bausteine > li { display: flex; align-items: center; gap: .7rem; }
+.pruef-bausteine .pruef-optionen { flex: 1; }
+.pruef-luecke-nr {
+  flex: 0 0 1.7rem; height: 1.7rem;
+  display: grid; place-items: center;
+  background: var(--blau); color: #fff;
+  border-radius: 50%; font-size: .8rem; font-weight: 700;
+}
+.pruef-fragen.pruef-bausteine { counter-reset: none; }
+.pruef-bausteine .pruef-frage::before { content: none; }
+
+/* Zuordnungsaufgabe: die Anzeigen */
+.pruef-anzeigen { margin-bottom: 1.1rem; }
+.pruef-anzeige {
+  display: flex; gap: .6rem;
+  padding: .6rem .7rem;
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: 10px;
+  margin-bottom: .45rem;
+  font-size: .9rem; line-height: 1.45;
+}
+.pruef-buchstabe {
+  flex: 0 0 1.5rem; height: 1.5rem;
+  display: grid; place-items: center;
+  background: var(--flaeche-2); border-radius: 6px;
+  font-weight: 700; font-size: .85rem;
+}
+
+/* Hörverstehen */
+.pruef-hoeren { text-align: center; margin-bottom: 1.1rem; }
+.pruef-hoeren .btn { margin-bottom: .4rem; }
+.btn-hoeren { background: var(--blau); color: #fff; }
+
+/* Schreibaufgabe */
+.pruef-auftrag {
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: var(--radius);
+  padding: .9rem 1rem;
+  margin-bottom: .9rem;
+  line-height: 1.55;
+}
+.pruef-auftrag p { margin: 0 0 .5rem; }
+.pruef-auftrag ul { margin: 0 0 .4rem; padding-left: 1.2rem; }
+.pruef-schreibfeld {
+  width: 100%;
+  padding: .8rem;
+  border: 1.5px solid var(--rand);
+  border-radius: 10px;
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit; line-height: 1.6;
+  resize: vertical;
+}
+.pruef-schreibfeld:focus { outline: none; border-color: var(--blau); }
+.pruef-zaehler { font-size: .8rem; color: var(--text-leise); text-align: right; margin: .3rem 0 0; }
+
+.pruef-warnung {
+  background: color-mix(in srgb, var(--gold) 16%, var(--flaeche));
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: .6rem .8rem;
+  font-size: .85rem; line-height: 1.5;
+  margin-bottom: .9rem;
+}
+
+/* Navigation unten */
+.pruef-navigation { display: flex; gap: .6rem; align-items: stretch; margin-top: 1.2rem; }
+.pruef-navigation .btn-neben { flex: 0 0 35%; }
+.pruef-navigation .btn-gross { flex: 1; margin: 0; }
+.btn-schmal { width: 100%; margin-top: .8rem; font-size: .85rem; padding: .5rem; }
+
+/* ---- Ergebnis ---- */
+.pruef-ergebnis-kopf {
+  text-align: center;
+  padding: 1.4rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.4rem;
+}
+.pruef-ergebnis-kopf.bestanden      { background: var(--gruen-hell); }
+.pruef-ergebnis-kopf.nicht-bestanden { background: var(--rot-hell); }
+.perg-prozent { font-size: 2.6rem; font-weight: 800; line-height: 1; }
+.pruef-ergebnis-kopf.bestanden      .perg-prozent,
+.pruef-ergebnis-kopf.bestanden      .perg-urteil { color: var(--gruen); }
+.pruef-ergebnis-kopf.nicht-bestanden .perg-prozent,
+.pruef-ergebnis-kopf.nicht-bestanden .perg-urteil { color: var(--rot); }
+.perg-urteil { font-size: 1.05rem; font-weight: 700; margin-top: .3rem; }
+.perg-punkte { font-size: .85rem; color: var(--text-leise); margin-top: .35rem; }
+
+.pruef-offen-block {
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: var(--radius);
+  padding: .9rem 1rem;
+  margin-bottom: .9rem;
+}
+.pruef-deine-antwort {
+  background: var(--flaeche-2);
+  border-radius: 8px;
+  padding: .7rem .8rem;
+  margin: .5rem 0 .7rem;
+  font-size: .9rem; line-height: 1.6;
+}
+.pruef-kriterien-titel { font-size: .85rem; font-weight: 700; margin: .6rem 0 .3rem; }
+.pruef-kriterien { margin: 0; padding-left: 1.1rem; font-size: .85rem; color: var(--text-leise); line-height: 1.55; }
+.pruef-muster summary { cursor: pointer; font-size: .88rem; font-weight: 600; color: var(--blau); margin-top: .7rem; }
+.pruef-muster > div {
+  background: var(--flaeche-2); border-radius: 8px;
+  padding: .7rem .8rem; margin-top: .5rem;
+  font-size: .88rem; line-height: 1.6;
+}
+
+.pruef-durchsicht-teil { margin-bottom: 1.2rem; }
+.pruef-durchsicht-teil h4 { margin: 0 0 .4rem; font-size: .92rem; }
+.pruef-durchsicht-zeile {
+  display: flex; gap: .6rem; align-items: flex-start;
+  padding: .5rem .6rem;
+  border-radius: 8px;
+  font-size: .85rem; line-height: 1.45;
+  margin-bottom: .3rem;
+}
+.pruef-durchsicht-zeile.ok  { background: var(--gruen-hell); }
+.pruef-durchsicht-zeile.weg { background: var(--rot-hell); }
+.pdz-nr { flex: 0 0 1.2rem; font-weight: 700; color: var(--text-leise); }
+.pdz-text { flex: 1; }
+.pdz-loesung { flex: 0 0 auto; font-weight: 700; white-space: nowrap; }
+.pruef-durchsicht-zeile.ok  .pdz-loesung { color: var(--gruen); }
+.pruef-durchsicht-zeile.weg .pdz-loesung { color: var(--rot); }
+
+@media (max-width: 380px) {
+  .pruef-optionen { flex-direction: column; }
+  .pruef-optionen-kurz { flex-direction: row; }
+}

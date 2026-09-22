@@ -25,9 +25,10 @@ Redemittelthemen**
 5. [Wie das Lernsystem funktioniert](#wie-das-lernsystem-funktioniert)
 6. [Fortschritt sichern](#fortschritt-sichern)
 7. [Aufbau der Dateien](#aufbau-der-dateien)
-8. [Tests](#tests)
-9. [Eigene Inhalte ergänzen](#eigene-inhalte-ergänzen)
-10. [Häufige Fragen](#häufige-fragen)
+8. [Prüfungen](#prüfungen)
+9. [Tests](#tests)
+10. [Eigene Inhalte ergänzen](#eigene-inhalte-ergänzen)
+11. [Häufige Fragen](#häufige-fragen)
 
 ---
 
@@ -310,6 +311,10 @@ data/es-419/lektionen-01-10.js …  -81-90.js    90 Lektionen, Lateinamerika
 data/de/lektionen-01-10.js     … -111-120.js  120 Lektionen, Deutsch
 data/de-beruf/lektionen-01-08.js … -43-45.js    45 Lektionen, Deutsch im Beruf
 
+js/pruefungen.js           Prüfungen: Register, Punkte, Bestehensgrenze
+js/pruefung-ui.js          die fünf Prüfungs-Aufgabentypen
+data/pruefungen/es-es-a2.js  Prüfung A2 Spanisch (Zwischenstopp nach Tag 33)
+
 tests/alle.sh              startet Server, laesst alle Tests laufen, raeumt auf
 tests/umgebung.js          gemeinsame Einstellungen (Pfade, Adresse, Browser)
 tests/01-daten.js          prueft alle Lerndaten — braucht keinen Browser
@@ -371,9 +376,100 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 
 ---
 
+## Prüfungen
+
+An festen Punkten im Kurs steht ein **Zwischenstopp**: eine Prüfung nach dem
+Vorbild der echten Sprachzertifikate. Sie erscheint automatisch auf dem
+Startbildschirm, sobald der Tag erreicht ist.
+
+| Kurs | Zwischenstopps |
+|---|---|
+| Spanisch (Spanien) | Tag 33 → **A2** · Tag 60 → B1 |
+| Spanisch (Lateinamerika) | Tag 33 → A2 · Tag 60 → B1 · Tag 90 → B2 |
+| Deutsch | Tag 30 → A1 · Tag 60 → A2 · Tag 90 → B1 · Tag 120 → B2 |
+| Deutsch im Beruf | Tag 30 → Grundpfad · Tag 45 → Fachwortschatz |
+
+Fertig ist bisher die **Prüfung A2 für Spanisch (Spanien)** nach DELE-Vorbild.
+Die übrigen folgen demselben Bauplan.
+
+### Eine Prüfung ist keine Lektion
+
+| | Lektion | Prüfung |
+|---|---|---|
+| Hilfen | Tipps und Hinweise | keine |
+| Rückmeldung | sofort nach jeder Aufgabe | erst am Ende |
+| Blättern | vorwärts | vor und zurück, Antworten änderbar |
+| Ergebnis | Quote | Punkte je Teil, bestanden ab 60 % |
+
+### Was bewertet wird — und was nicht
+
+Die App bewertet **nur, was sie zuverlässig bewerten kann**:
+
+| Aufgabenart | Beispiel | Automatisch bewertet |
+|---|---|---|
+| Richtig/falsch | Aussagen zu einem Lesetext | ✅ |
+| Multiple Choice | a, b oder c | ✅ |
+| Zuordnen | fünf Personen zu sechs Anzeigen | ✅ |
+| Sprachbausteine | Lücke im Text, drei Vorgaben | ✅ |
+| Hörverstehen | vorgelesener Text, dann ankreuzen | ✅ (wenn eine Stimme da ist) |
+| Schreiben | freier Text | ❌ |
+
+**Warum Schreiben nicht:** Die Bewertung ist ein Textvergleich
+(`Uebungen.vergleiche()`). Für einen frei geschriebenen Brief gibt es tausende
+richtige Formulierungen — ein Textvergleich würde gute Antworten als falsch
+werten. Die Aufgabe wird deshalb gestellt und gespeichert, aber nicht benotet.
+Stattdessen gibt es eine Kriterienliste und eine Musterlösung zum Vergleichen.
+Eine Teilen-Funktion, mit der ein Mensch den Text bewerten kann, ist in
+Vorbereitung.
+
+**Ohne Sprachausgabe fällt der Hörteil weg.** Ist auf dem Gerät keine passende
+Stimme installiert, wird der Hörteil übersprungen und zählt auch nicht mit —
+sonst gäbe es dafür 0 Punkte, obwohl niemand etwas falsch gemacht hat. Auf dem
+Übersichtsbildschirm steht dann ein Hinweis.
+
+### Was das Ergebnis bedeutet
+
+Bestanden ab 60 %, wie bei Goethe, telc und DELE. Nach der Abgabe kommt die
+**Durchsicht**: jede Frage mit der richtigen Lösung im Wortlaut. Vorher nie —
+sonst wäre es keine Prüfung.
+
+Das Ergebnis ist eine **Selbsteinschätzung, kein Zertifikat**. Jeder Versuch
+wird gespeichert, wiederholen ist beliebig oft möglich, und das beste Ergebnis
+bleibt stehen.
+
+### Eine eigene Prüfung anlegen
+
+Eine Datei unter `data/pruefungen/` anlegen und in `index.html` sowie
+`service-worker.js` eintragen. Der Aufbau:
+
+```js
+PRUEFUNG('es-es', {
+  id: 'p-es-es-b1', nachTag: 60, niveau: 'B1',
+  name: 'Prüfung B1', vorbild: 'DELE B1', bestehen: 60,
+  teile: [{
+    id: 't1', art: 'lesen', name: 'Leseverstehen',
+    aufgaben: [{
+      id: 't1a1', art: 'rf', nummer: 'Aufgabe 1',
+      anweisung: 'Lies den Text. Richtig oder falsch?',
+      text: 'Hier steht der Lesetext …',
+      fragen: [{ id: 'q1101', text: 'Eine Aussage.', loesung: 'r' }]
+    }]
+  }]
+});
+```
+
+Die Arbeitsanweisungen stehen in der **Oberflächensprache des Kurses** — bei
+den Spanischkursen auf Deutsch, bei den Deutschkursen auf Spanisch.
+
+Danach `node tests/01-daten.js` laufen lassen: Der Validator prüft unter
+anderem, ob jede Lösung überhaupt unter den angebotenen Antworten steht. Eine
+Frage, deren Lösung fehlt, wäre nicht schwer — sie wäre unlösbar.
+
+---
+
 ## Tests
 
-Im Ordner `tests/` liegen sieben automatische Prüfungen. Alle auf einmal:
+Im Ordner `tests/` liegen acht automatische Prüfungen. Alle auf einmal:
 
 ```bash
 bash tests/alle.sh

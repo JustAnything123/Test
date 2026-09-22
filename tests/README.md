@@ -1,6 +1,6 @@
 # Tests
 
-Sieben Prüfungen, die nachsehen, ob die App noch tut, was sie soll. Alle laufen
+Acht Prüfungen, die nachsehen, ob die App noch tut, was sie soll. Alle laufen
 automatisch und melden sich am Ende entweder mit „bestanden" oder mit einer Liste
 der Stellen, die nicht stimmen.
 
@@ -57,16 +57,18 @@ node tests/05-sprachrichtungen.js
 | `05-sprachrichtungen.js` | ja | Spielt in **jedem** der vier Kurse Tag 1 komplett durch und prüft Ziel- und Ausgangssprache, Sonderzeichenleiste und Aufgabenverteilung |
 | `06-fachwortschatz.js` | ja | Die Vertiefungstage 31–45 von „Deutsch im Beruf": Redemittel-Erklärung mit Tabelle, jede Lückenübung sichtbar bis zum Satzende und lösbar |
 | `07-luecken.js` | ja | Gezielte Nachkontrolle der vier Übungen, die früher zwei Lücken hatten und deshalb abgeschnitten dargestellt wurden |
+| `08-pruefung.js` | ja | Das Prüfungssystem: Freischaltung am richtigen Tag, Prüfungsregeln (keine Hilfe, keine Rückmeldung, Antworten überleben das Blättern), Durchlauf alles richtig und alles falsch, Bestehensgrenze, gespeicherte Versuche, und das Verhalten auf einem Gerät ohne Sprachausgabe |
 
-Zusammen sind das **173 einzelne Prüfungen** in `02` bis `05`, plus die
-inhaltlichen Kontrollen aus `01`, `06` und `07`.
+Zusammen sind das **207 einzelne Prüfungen** in `02` bis `05` und `08`, plus
+die inhaltlichen Kontrollen aus `01`, `06` und `07`.
 
 ### Der wichtigste Test für dich
 
 `01-daten.js`. Immer wenn du eigene Vokabeln oder Übungen schreibst, sagt dir
 dieser Test in zwei Sekunden, ob etwas übersehen wurde — eine doppelte ID, ein
-vergessenes Feld, eine Übung mit zwei Lücken. Er braucht weder Browser noch
-Server:
+vergessenes Feld, eine Übung mit zwei Lücken. Bei Prüfungen prüft er zusätzlich,
+ob jede Lösung überhaupt unter den angebotenen Antworten steht. Er braucht weder
+Browser noch Server:
 
 ```bash
 node tests/01-daten.js

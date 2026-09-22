@@ -60,6 +60,16 @@
       <p class="hinweis" id="hinweis-fertig" hidden data-t="start.erledigt"></p>
     </div>
 
+    <div class="pruefkarte" id="pruefkarte" hidden>
+      <div class="pruefkarte-kopf">
+        <span class="pruef-chip" id="pruefkarte-niveau">A2</span>
+        <span class="pruefkarte-stand" id="pruefkarte-stand"></span>
+      </div>
+      <h2 id="pruefkarte-name">—</h2>
+      <p class="pruefkarte-vorbild" id="pruefkarte-vorbild"></p>
+      <button class="btn btn-gross" id="btn-pruefung" data-t="pruef.starten"></button>
+    </div>
+
     <div class="zusatz-knoepfe">
       <button class="btn btn-neben" id="btn-speed" data-t="start.speed"></button>
       <button class="btn btn-neben" id="btn-nur-wdh" data-t="start.nurWdh"></button>
@@ -101,6 +111,67 @@
   </section>
 
   <!-- ---------- Historie ---------- -->
+  <!-- ---------- Prüfung: Übersicht vor dem Start ---------- -->
+  <section class="seite" id="seite-pruefung-info" hidden>
+    <div class="pruef-info-kopf">
+      <span class="pruef-chip" id="pinfo-niveau">A2</span>
+      <h2 id="pinfo-name">—</h2>
+      <p class="pruef-vorbild" id="pinfo-vorbild"></p>
+    </div>
+
+    <div class="pruef-regeln">
+      <h3 data-t="pruef.soLaeuftAb"></h3>
+      <ul>
+        <li data-t="pruef.regel1"></li>
+        <li data-t="pruef.regel2"></li>
+        <li data-t="pruef.regel3"></li>
+        <li data-t="pruef.regel4"></li>
+      </ul>
+    </div>
+
+    <h3 class="abschnitt-titel" data-t="pruef.teile"></h3>
+    <div id="pinfo-teile"></div>
+
+    <div class="pruef-warnung" id="pinfo-hoerwarnung" hidden data-t="pruef.ohneStimme"></div>
+    <p class="hinweis" id="pinfo-frueher" hidden></p>
+
+    <button class="btn btn-gross" id="btn-pruefung-los" data-t="pruef.jetztStarten"></button>
+    <button class="btn btn-neben" id="btn-pruefung-abbrechen" data-t="pruef.zurueck"></button>
+  </section>
+
+  <!-- ---------- Prüfung: laufende Aufgaben ---------- -->
+  <section class="seite" id="seite-pruefung" hidden>
+    <div class="pruef-leiste">
+      <span id="pruef-fortschritt-text"></span>
+      <span class="pruef-balken"><span id="pruef-balken-innen"></span></span>
+    </div>
+    <div id="pruef-inhalt"></div>
+    <div class="pruef-navigation">
+      <button class="btn btn-neben" id="btn-pruef-zurueck" data-t="pruef.zurueckAufgabe"></button>
+      <button class="btn btn-gross" id="btn-pruef-weiter" data-t="pruef.weiter"></button>
+    </div>
+    <button class="btn btn-gefahr btn-schmal" id="btn-pruef-aufgeben" data-t="pruef.aufgeben"></button>
+  </section>
+
+  <!-- ---------- Prüfung: Ergebnis ---------- -->
+  <section class="seite" id="seite-pruefung-ergebnis" hidden>
+    <div class="pruef-ergebnis-kopf" id="perg-kopf">
+      <div class="perg-prozent" id="perg-prozent">0%</div>
+      <div class="perg-urteil" id="perg-urteil"></div>
+      <div class="perg-punkte" id="perg-punkte"></div>
+    </div>
+
+    <h3 class="abschnitt-titel" data-t="pruef.ergebnisTeile"></h3>
+    <div id="perg-teile"></div>
+
+    <div id="perg-offen"></div>
+
+    <h3 class="abschnitt-titel" data-t="pruef.durchsicht"></h3>
+    <div id="perg-durchsicht"></div>
+
+    <button class="btn btn-gross" id="btn-perg-zurueck" data-t="fertig.zurueck"></button>
+  </section>
+
   <section class="seite" id="seite-historie" hidden>
     <h2 data-t="hist.titel"></h2>
     <p class="hinweis" data-t="hist.hinweis"></p>
@@ -257,6 +328,9 @@
 <script src="js/uebungen.js"></script>
 <script src="js/statistik.js"></script>
 <script src="js/tagesplan.js"></script>
+<script src="js/pruefungen.js"></script>
+<script src="js/pruefung-ui.js"></script>
+<script src="data/pruefungen/es-es-a2.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

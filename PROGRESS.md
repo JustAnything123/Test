@@ -2,7 +2,7 @@
 
 **Stand:** 22. September 2026
 **Branch:** `claude/spanish-learning-app-daily-o5s13u`
-**Status:** ✅ Version 3.1 fertig, getestet und gepusht
+**Status:** ✅ Version 3.2 fertig, getestet und gepusht
 
 ---
 
@@ -36,7 +36,8 @@ ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 | Oberflächentexte je Sprache | 140 |
 | Zeilen Programmcode | 3050 |
 | Zeilen Lerninhalt | 19 673 |
-| Automatische Tests | 173 (alle grün), im Repository unter `tests/` |
+| Prüfungen (Zwischenstopps) | 1 von 11 fertig |
+| Automatische Tests | 207 (alle grün), im Repository unter `tests/` |
 
 ---
 
@@ -88,6 +89,8 @@ Sicherungs-**Branch** ist aber gepusht und erfüllt denselben Zweck.
 | 7. Themen-Lernpfad „Deutsch im Beruf" | ✅ | Kurs `de-beruf`, 30 Tage, Küche · Restaurant · Hotel · Ernährung, mit Redemitteln statt reiner Grammatik |
 | 8. Fachwörter im Detail statt Oberbegriffe | ✅ | 15 Vertiefungstage (31–45) mit 150 Fachwörtern: Messer-, Teller-, Besteck-, Glas-, Zimmer- und Wäschearten, Fleischteile, Schnitttechniken, Menüfolge. Dazu die Wortbildungsregel, mit der man ein Fachwort selbst bauen kann |
 | 9. Tests ins Repository legen | ✅ | Ordner `tests/` mit sieben Prüfungen, gemeinsamem Umgebungsmodul ohne feste Pfade, Starter `alle.sh` und eigener Anleitung |
+| 10. Sprachprüfungen mit zuverlässiger Bewertung | ✅ (Pilot) | Prüfungssystem mit fünf Aufgabenarten und die Prüfung A2 für Spanisch (Spanien) nach DELE-Vorbild. Die übrigen zehn Zwischenstopps folgen demselben Bauplan |
+| 11. Schreibaufgaben an einen Prüfer schicken | 🔲 geplant | Nächster Schritt: Link-Rundlauf mit Prüfer-Modus in derselben App |
 
 **Warum die Fachwörter eigene Tage bekommen und nicht in die alten Lektionen
 wandern:** Tag 1 lehrt „das Messer" — das ist richtig so, ein Anfänger braucht
@@ -490,6 +493,99 @@ Grenzen, die du kennen solltest.
 
 ---
 
+## Prüfungssystem
+
+Entstanden aus der Frage: „Können wir Sprachprüfungsaufgaben einbauen, die
+zuverlässig funktionieren (die Prüfung)?" Der Zusatz in Klammern war der
+entscheidende Punkt.
+
+### Die Trennlinie: was bewertbar ist
+
+Die Bewertung der App ist ein Textvergleich (`Uebungen.vergleiche()`). Er ist
+robust, solange es eine **abzählbare Menge richtiger Antworten** gibt. Bei
+freiem Schreiben gibt es die nicht: Für einen Brief existieren tausende
+korrekte Formulierungen, und ein Textvergleich würde gute Antworten als falsch
+werten. Das wäre schlimmer als keine Prüfung.
+
+Der Glücksfall: Die echten Prüfungen von Goethe, telc und DELE bestehen in
+Lesen, Hören und Sprachbausteinen ohnehin fast nur aus ankreuzbaren Aufgaben.
+
+| Aufgabenart | Automatisch bewertet | Warum |
+|---|---|---|
+| Richtig/falsch | ✅ | zwei Möglichkeiten, eine richtig |
+| Multiple Choice | ✅ | Antwort ist ein Optionsschlüssel |
+| Zuordnen | ✅ | Antwort ist ein Buchstabe |
+| Sprachbausteine | ✅ | drei Vorgaben je Lücke |
+| Hörverstehen | ✅ mit Einschränkung | braucht eine installierte Stimme |
+| Schreiben | ❌ | keine abzählbare Menge richtiger Antworten |
+
+Die Bewertung vergleicht deshalb **keine Texte**, sondern Schlüssel:
+`String(antwort) === String(frage.loesung)`. Damit kann sie nicht danebenliegen.
+
+### Die Schutzfunktion beim Hörverstehen
+
+Ohne installierte Stimme kann der Hörteil nicht stattfinden. Würde er trotzdem
+gestellt, gäbe es dafür 0 Punkte, obwohl niemand etwas falsch gemacht hat.
+`Pruefungen.ohneHoeren()` entfernt ihn deshalb komplett aus der Prüfung — er
+zählt dann auch nicht in die Gesamtpunktzahl (35 → 25 Punkte), und auf der
+Übersicht steht ein Hinweis. Der Testbrowser hat keine einzige Stimme
+installiert, deshalb prüft `08-pruefung.js` beide Fälle.
+
+### Aufbau
+
+| Datei | Aufgabe |
+|---|---|
+| `js/pruefungen.js` | Register, Auswertung, Bestehensgrenze, Versuche speichern |
+| `js/pruefung-ui.js` | die fünf Aufgabenarten zeichnen |
+| `js/app.js` | Info-, Prüfungs- und Ergebnisbildschirm |
+| `data/pruefungen/*.js` | der Inhalt, je Prüfung eine Datei |
+
+Eine Prüfung blättert **aufgabenweise**, nicht frageweise: Ein Lesetext mit
+fünf Fragen gehört auf eine Seite, sonst müsste man den Text fünfmal lesen.
+
+### Zwischenstopps
+
+| Kurs | Tage | Stand |
+|---|---|---|
+| Spanisch (Spanien) | 33 → A2, 60 → B1 | A2 fertig |
+| Spanisch (Lateinamerika) | 33 → A2, 60 → B1, 90 → B2 | offen |
+| Deutsch | 30 → A1, 60 → A2, 90 → B1, 120 → B2 | offen |
+| Deutsch im Beruf | 30, 45 (themenbezogen) | offen |
+
+Bei `de-beruf` richten sich die Stopps nach Themenblöcken statt nach Niveau,
+weil der Lernpfad zwischen A2 und B2 springt — er ist themen-, nicht
+niveaugesteuert.
+
+### Zwei Fehler, gefunden erst am Bildschirmfoto
+
+**„0." vor der Schreibaufgabe.** Die Fragennummerierung hing an
+`.pruef-frage::before` mit `counter(pf)`. Im Ergebnisblock läuft dieser Zähler
+nicht, also stand dort `0.`. Behoben, indem die Regel auf
+`.pruef-fragen > li > .pruef-frage` eingegrenzt wurde.
+
+**„Lösung: a" in der Durchsicht.** Der reine Optionsschlüssel hilft niemandem
+weiter, wer sich den Wortlaut nicht gemerkt hat, lernt daraus nichts. Die
+Durchsicht zeigt jetzt den Wortlaut mit (`Lösung: a) Porque es la hora de
+comer.`), bei Richtig/falsch das ausgeschriebene Wort.
+
+Beides wäre in keinem Test aufgefallen — die Tests prüften Punkte und Logik,
+nicht die Lesbarkeit. Deshalb lohnt der Blick auf das gerenderte Bild.
+
+### Nächster Schritt: Bewertung durch einen Menschen
+
+Schreibaufgaben werden gestellt, gespeichert und mit Kriterien und
+Musterlösung angezeigt — aber nicht benotet. Geplant ist ein Rundlauf **ohne
+Server**: Die Antwort reist im Fragment-Teil eines Links (`#pruefen=…`), der
+Prüfer öffnet dieselbe App in einem Prüfer-Modus, bewertet mit
+richtig / teilweise richtig / falsch plus Hinweis und schickt einen Rücklink.
+Als Ersatzwege sind eine Datei und ein Textblock zum Abtippen vorgesehen.
+
+Ehrliche Grenzen, die dokumentiert bleiben müssen: Das Verfahren ist nicht
+fälschungssicher und taugt nicht für etwas Offizielles, und der verwendete
+Messenger sieht den Text im Link.
+
+---
+
 ## Tests im Repository
 
 Bis zum 22.09.2026 lagen die Prüfskripte nur im Arbeitsverzeichnis der jeweiligen
@@ -524,6 +620,7 @@ Server danach wieder. Dauer rund zwei bis drei Minuten.
 | `05-sprachrichtungen.js` | ja | Tag 1 in allen vier Kursen, Ziel- und Ausgangssprache, Sonderzeichen |
 | `06-fachwortschatz.js` | ja | Vertiefungstage 31–45: Erklärung mit Tabelle, jede Lücke sichtbar und lösbar |
 | `07-luecken.js` | ja | Nachkontrolle der vier früher zweilückigen Übungen |
+| `08-pruefung.js` | ja | Prüfungssystem: Freischaltung, Prüfungsregeln, Durchlauf richtig und falsch, Bestehensgrenze, gespeicherte Versuche, Gerät ohne Sprachausgabe |
 
 `02` bis `05` enthalten zusammen 173 einzelne Prüfungen, dazu kommen die
 inhaltlichen Kontrollen aus `01`, `06` und `07`.
@@ -654,3 +751,6 @@ Wer den Ordner `tests/` löscht, ändert am Lernen nichts.
 | 22.09.2026 | Neue Dateien eingebunden, Offline-Cache auf `vamos-v4` hochgezählt, Untertitel auf 45 Tage |
 | 22.09.2026 | 13 Vertiefungstage im Browser durchgespielt; 173 Prüfungen grün, Datenprüfung ohne Beanstandung |
 | 22.09.2026 | Testskripte aus dem Sitzungsordner ins Repository übernommen: `tests/` mit sieben Prüfungen, `umgebung.js`, `alle.sh` und Anleitung |
+| 22.09.2026 | Prüfungssystem gebaut: `pruefungen.js`, `pruefung-ui.js`, drei Bildschirme, fünf Aufgabenarten, 42 Oberflächentexte je Sprache |
+| 22.09.2026 | Prüfung A2 für Spanisch (Spanien) geschrieben: 4 Teile, 7 Aufgaben, 36 Fragen, 35 automatisch bewertet |
+| 22.09.2026 | Validator um Prüfungsdaten erweitert, Test `08-pruefung.js` mit 34 Prüfungen; 207 Prüfungen grün |
