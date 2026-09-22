@@ -833,3 +833,8 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
 .pruefzeile-name  { flex: 1; font-weight: 600; }
 .pruefzeile-stand { font-size: .78rem; color: var(--text-leise); white-space: nowrap; }
 .pruefzeile.erledigt .pruefzeile-stand { color: var(--gruen); }
+
+/* Prüfkarte, solange die Prüfung noch nicht freigeschaltet ist */
+.pruefkarte.gesperrt { border-left-color: var(--rand); opacity: .75; }
+.pruefkarte.gesperrt .pruef-chip { background: var(--text-leise); }
+.pruefkarte.gesperrt .btn { background: var(--flaeche-2); color: var(--text-leise); cursor: default; }

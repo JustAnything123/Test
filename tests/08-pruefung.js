@@ -92,7 +92,13 @@ async function durchspielen(page, wahl) {
     const f = Speicher.fortschritt(); f.aktuellerTag = 10; Speicher.sichern();
   });
   await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(250);
-  pruefe('vor Tag 33 keine Prüfkarte', await page.isVisible('#pruefkarte'), false);
+  // Die Prüfung erscheint vor dem Stichtag gesperrt, nicht gar nicht: Sonst
+  // wüsste niemand, dass es überhaupt Prüfungen gibt.
+  pruefe('vor dem Stichtag ist die Karte da', await page.isVisible('#pruefkarte'), true);
+  pruefe('aber gesperrt', await page.evaluate(() => document.getElementById('btn-pruefung').disabled), true);
+  pruefe('mit Hinweis auf den Tag', (await page.textContent('#pruefkarte-stand')).trim(), 'ab Tag 34');
+  pruefe('und der Zahl der fehlenden Tage',
+         (await page.textContent('#btn-pruefung')).includes('24'), true);
 
   await vorbereiten(page, { leeren: true });
   pruefe('ab Tag 34 ist die Prüfung da', await page.isVisible('#pruefkarte'), true);
@@ -212,8 +218,12 @@ async function durchspielen(page, wahl) {
   pruefe('als bestanden vermerkt', stand.bestanden, true);
 
   await page.goto(URL, { waitUntil: 'networkidle' }); await page.waitForTimeout(250);
-  pruefe('bestandene Prüfung verschwindet vom Startbildschirm',
-         await page.isVisible('#pruefkarte'), false);
+  // Nach bestandener A2 ist die nächste (B1, ab Tag 61) noch gesperrt —
+  // die Karte bleibt also sichtbar, aber nicht anklickbar.
+  pruefe('nach bestandener Prüfung zeigt die Karte die nächste',
+         (await page.textContent('#pruefkarte-name')).trim(), 'Prüfung B1');
+  pruefe('und die ist gesperrt',
+         await page.evaluate(() => document.getElementById('btn-pruefung').disabled), true);
 
   await page.screenshot({ path: U.bild('p1-ergebnis.png'), fullPage: true });
 

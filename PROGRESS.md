@@ -664,6 +664,26 @@ darauf hätte den Prüfer in eine fremde Kursauswahl geführt. Und der
 **Zurück-Pfeil** hätte ihn mit noch erzwungener Sprache in der App des
 Lernenden zurückgelassen. Beides behoben und im Test abgesichert.
 
+### Ein Entwurfsfehler, gemeldet vom Nutzer
+
+„Ich sehe die Prüfungen nicht." — Zwei Ursachen, beide behoben:
+
+**Die Prüfung war vor dem Stichtag komplett unsichtbar.** `Pruefungen.offen()`
+gibt nur freigeschaltete Prüfungen zurück, und die Karte wurde sonst
+ausgeblendet. Wer an Tag 1 steht, sah also nichts und konnte nicht wissen, dass
+es überhaupt Prüfungen gibt. Jetzt erscheint die nächste Prüfung gesperrt, mit
+Stichtag und Restzahl der Tage. Dafür gibt es `Pruefungen.naechste()`.
+
+**Der Offline-Speicher kann eine alte Fassung festhalten.** Der Service Worker
+arbeitet nach dem Prinzip „erst Zwischenspeicher, dann Netz". Eine neue Fassung
+wird zwar im Hintergrund geladen, greift aber erst beim *nächsten* Aufruf. Wer
+die App einmal öffnet, sieht also noch den alten Stand. Damit man das erkennen
+kann, steht unter *Einstellungen* jetzt der Stand der Inhalte
+(„4 Kurse · 315 Tageslektionen · 11 Prüfungen"). Stimmt die Zahl nicht, hilft
+ein Neuladen.
+
+---
+
 ### Ehrliche Grenzen
 
 Nicht fälschungssicher — der Lernende könnte seine eigene Bewertung ändern.
@@ -848,3 +868,4 @@ Wer den Ordner `tests/` löscht, ändert am Lernen nichts.
 | 22.09.2026 | Die zehn übrigen Zwischenstopp-Prüfungen geschrieben — 11 Prüfungen, 396 Fragen |
 | 22.09.2026 | Mangel behoben: Alle freigeschalteten Prüfungen sind jetzt über eine Liste erreichbar |
 | 22.09.2026 | Test spielt jede einzelne Prüfung komplett durch; 267 Prüfungen grün |
+| 22.09.2026 | Entwurfsfehler behoben: Prüfungen waren vor dem Stichtag unsichtbar statt gesperrt sichtbar; dazu Inhaltsstand in den Einstellungen |

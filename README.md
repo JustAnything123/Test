@@ -394,6 +394,25 @@ Startbildschirm, sobald der Tag erreicht ist.
 Aufgaben, 36 Fragen, davon 35 automatisch bewertet. Verlangt wird nur, was
 bis zum jeweiligen Stopp im Kurs vorkam.
 
+### Wann eine Prüfung erscheint
+
+**Automatisch, sobald du den Tag erreicht hast.** Vorher steht sie schon auf
+dem Startbildschirm, aber gesperrt: „Prüfung A2 · ab Tag 34 · 🔒 noch 33 Tage".
+So weißt du, dass sie kommt, auch wenn du sie noch nicht machen kannst.
+
+| Kurs | freigeschaltet ab |
+|---|---|
+| Spanisch (Spanien) | Tag 34 (A2) · Tag 61 (B1) |
+| Spanisch (Lateinamerika) | Tag 34 · Tag 61 · Tag 91 |
+| Deutsch | Tag 31 · Tag 61 · Tag 91 · Tag 121 |
+| Deutsch im Beruf | Tag 31 · Tag 46 |
+
+**Du siehst keine Prüfung, obwohl du weit genug bist?** Dann lädt dein Gerät
+noch eine ältere, offline gespeicherte Fassung. Unter *Einstellungen* ganz
+unten steht der Stand der Inhalte — dort muss **11 Prüfungen** stehen. Wenn
+nicht: Seite einmal neu laden (bei der App vom Startbildschirm: schließen und
+wieder öffnen).
+
 Sind mehrere Prüfungen freigeschaltet, stehen sie als Liste unter der Karte.
 So kommt man auch an eine spätere Prüfung heran, ohne die frühere bestanden zu
 haben — sonst bekäme jemand an Tag 120 des Deutschkurses die A1-Prüfung

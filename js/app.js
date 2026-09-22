@@ -415,12 +415,38 @@ var App = {
     }
 
     const karte = document.getElementById('pruefkarte');
+    const liste = document.getElementById('pruefliste');
     if (!karte) return;
-    const p = Pruefungen.offen();
-    if (!p) { karte.hidden = true; return; }
-
     const g = id => document.getElementById(id);
+
+    const p = Pruefungen.offen();
+    if (!p) {
+      // Keine offene Prüfung. Zwei Fälle: Entweder ist noch keine
+      // freigeschaltet — dann zeigen wir sie trotzdem, gesperrt, damit man
+      // überhaupt weiß, dass eine kommt. Oder alle sind bestanden, dann ist
+      // hier nichts mehr zu tun.
+      const kommt = Pruefungen.naechste();
+      if (liste) liste.hidden = true;
+      if (!kommt) { karte.hidden = true; return; }
+
+      const tag  = Speicher.fortschritt().aktuellerTag;
+      const rest = kommt.nachTag + 1 - tag;
+      karte.hidden = false;
+      karte.classList.add('gesperrt');
+      g('pruefkarte-niveau').textContent  = kommt.niveau;
+      g('pruefkarte-name').textContent    = kommt.name;
+      g('pruefkarte-vorbild').textContent = t('pruef.nachVorbild', { vorbild: kommt.vorbild });
+      g('pruefkarte-stand').textContent   = t('pruef.abTag', { tag: kommt.nachTag + 1 });
+      const knopf = g('btn-pruefung');
+      knopf.disabled    = true;
+      knopf.textContent = rest === 1 ? t('pruef.nochEinTag') : t('pruef.nochTage', { n: rest });
+      return;
+    }
+
     karte.hidden = false;
+    karte.classList.remove('gesperrt');
+    g('btn-pruefung').disabled    = false;
+    g('btn-pruefung').textContent = t('pruef.starten');
     g('pruefkarte-niveau').textContent  = p.niveau;
     g('pruefkarte-name').textContent    = p.name;
     g('pruefkarte-vorbild').textContent = t('pruef.nachVorbild', { vorbild: p.vorbild });
@@ -434,7 +460,7 @@ var App = {
     // herankommen. Sonst bekäme jemand an Tag 120 des Deutschkurses die
     // A1-Prüfung angeboten und käme an die B2-Prüfung nie heran.
     const alle = Pruefungen.freigeschaltet();
-    const liste = g('pruefliste');
+    if (!liste) return;
     if (alle.length < 2) { liste.hidden = true; return; }
 
     liste.hidden = false;
@@ -900,11 +926,25 @@ var App = {
     else document.documentElement.setAttribute('data-thema', th);
   },
 
+  /** Was steckt in dieser Fassung? Zwei Zahlen genügen, um zu erkennen, ob
+      die App wirklich aktuell ist — bei einer offline zwischengespeicherten
+      alten Fassung stünde hier eine kleinere Zahl. */
+  inhaltsStand() {
+    let lektionen = 0, pruefungen = 0;
+    for (const k of Kurse.alle()) {
+      lektionen  += k.lektionen.length;
+      pruefungen += (PRUEFUNGEN[k.id] || []).length;
+    }
+    return t('einst.standText', { kurse: Kurse.alle().length, lektionen, pruefungen });
+  },
+
   einstellungenAktualisieren() {
     document.getElementById('ein-ton').checked  = !!Speicher.einstellung('ton');
     document.getElementById('ein-thema').value  = Speicher.einstellung('thema');
     document.getElementById('ein-ziel').value   = String(Speicher.einstellung('tagesziel'));
     document.getElementById('stimme-status').textContent = Sprache.statusText();
+    const stand = document.getElementById('inhalt-stand');
+    if (stand) stand.textContent = this.inhaltsStand();
   },
 
   /* ======================= Knöpfe ======================= */

@@ -44,6 +44,14 @@ var Pruefungen = {
     return this.fuerKurs(kursId).find(p => tag > p.nachTag && !this.bestanden(p.id, kursId)) || null;
   },
 
+  /** Die nächste Prüfung, die noch NICHT freigeschaltet ist.
+      Damit kann die App zeigen, dass überhaupt eine kommt — sonst wüsste
+      niemand, dass es Prüfungen gibt, bevor er den Tag erreicht. */
+  naechste(kursId) {
+    const tag = Speicher.fortschritt(kursId).aktuellerTag;
+    return this.fuerKurs(kursId).find(p => tag <= p.nachTag) || null;
+  },
+
   /** Alle Prüfungen, die der Lernstand schon freigeschaltet hat. */
   freigeschaltet(kursId) {
     const tag = Speicher.fortschritt(kursId).aktuellerTag;
