@@ -408,10 +408,10 @@ So weißt du, dass sie kommt, auch wenn du sie noch nicht machen kannst.
 | Deutsch im Beruf | Tag 31 · Tag 46 |
 
 **Du siehst keine Prüfung, obwohl du weit genug bist?** Dann lädt dein Gerät
-noch eine ältere, offline gespeicherte Fassung. Unter *Einstellungen* ganz
-unten steht der Stand der Inhalte — dort muss **11 Prüfungen** stehen. Wenn
-nicht: Seite einmal neu laden (bei der App vom Startbildschirm: schließen und
-wieder öffnen).
+noch eine ältere, offline gespeicherte Fassung. Die App meldet sich in dem Fall
+inzwischen selbst mit einem Streifen am unteren Rand: *Neue Fassung verfügbar ·
+Neu laden*. Nachsehen kannst du es außerdem unter *Einstellungen* ganz unten,
+beim Stand der Inhalte — dort muss **11 Prüfungen** stehen.
 
 Sind mehrere Prüfungen freigeschaltet, stehen sie als Liste unter der Karte.
 So kommt man auch an eine spätere Prüfung heran, ohne die frühere bestanden zu
@@ -547,7 +547,7 @@ Frage, deren Lösung fehlt, wäre nicht schwer — sie wäre unlösbar.
 
 ## Tests
 
-Im Ordner `tests/` liegen neun automatische Prüfungen. Alle auf einmal:
+Im Ordner `tests/` liegen zehn automatische Prüfungen. Alle auf einmal:
 
 ```bash
 bash tests/alle.sh
