@@ -16,7 +16,13 @@
 
    Klein gehalten wird das Paket dadurch, dass nur die ANTWORT mitreist.
    Aufgabenstellung, Kriterien und Musterlösung stecken schon in der App des
-   Prüfers — er öffnet ja dieselbe. */
+   Prüfers — er öffnet ja dieselbe.
+
+   Sprachaufnahmen passen in keinen Link (eine Minute ≈ 0,5 MB, ein Link
+   trägt etwa 4 KB). Sie reisen deshalb als eigene Audiodatei in DERSELBEN
+   Nachricht mit: Das Teilen-Menü des Handys kann Text und Datei zusammen
+   an WhatsApp, Signal, Mail usw. übergeben. Im Link steht nur, DASS es
+   eine Aufnahme gibt, wie lang sie ist und wie die Datei heißt. */
 
 var Teilen = {
 
@@ -67,8 +73,70 @@ var Teilen = {
       kurs: kursId || Kurse.aktiveId(),
       pruefung: versuch.pruefungId,
       datum: versuch.datum,
-      antworten: versuch.offen.map(o => ({ fid: o.frageId, text: o.antwort || '' }))
+      antworten: versuch.offen.map(o => o.art === 'sprechen'
+        ? { fid: o.frageId, ton: this.hatAufnahme(o)
+              ? { s: o.antwort.dauer || 0, d: this.aufnahmeName(versuch, o) }
+              : { s: 0 } }
+        : { fid: o.frageId, text: o.antwort || '' })
     };
+  },
+
+  /* ---- Sprachaufnahmen ---------------------------------------------------- */
+
+  /** Hat diese offene Aufgabe eine Aufnahme? */
+  hatAufnahme(offen) {
+    return !!(offen && offen.antwort && typeof offen.antwort === 'object' && offen.antwort.aufnahme);
+  },
+
+  /** Dateiname, unter dem die Aufnahme verschickt wird. Er nennt Prüfung,
+      Kennung und Aufgabe — so ordnet der Prüfer sie sicher zu, auch wenn
+      mehrere Aufnahmen im Chat liegen. */
+  aufnahmeName(versuch, offen) {
+    const pruefung = String(versuch.pruefungId || '').replace(/^p-/, '');
+    const mime = offen.antwort && offen.antwort.mime;
+    return `vamos-${pruefung}-${versuch.id}-${offen.frageId}.${Aufnahme.endung(mime)}`;
+  },
+
+  /** Die Aufnahmen eines Versuchs als Dateien zum Verschicken.
+      fehlen = Aufnahmen, die auf diesem Gerät nicht (mehr) da sind. */
+  async aufnahmeDateien(versuch) {
+    const dateien = [];
+    let fehlen = 0;
+    for (const o of versuch.offen || []) {
+      if (!this.hatAufnahme(o)) continue;
+      const blob = await Aufnahme.holen(o.antwort.aufnahme);
+      if (!blob) { fehlen++; continue; }
+      // Ohne Zusatz wie ";codecs=opus" — manche Teilen-Ziele lehnen ihn ab
+      const typ = String(blob.type || o.antwort.mime || '').split(';')[0] || 'audio/mp4';
+      dateien.push(new File([blob], this.aufnahmeName(versuch, o), { type: typ }));
+    }
+    return { dateien, fehlen };
+  },
+
+  /** Kann das Teilen-Menü diese Dateien mitnehmen? Gibt die Dateien in einer
+      Form zurück, die es annimmt — oder null.
+      Hintergrund: Chrome auf Android lässt nur bestimmte Dateitypen zu und
+      kennt M4A-Aufnahmen unter "audio/x-m4a", nicht unter "audio/mp4". */
+  teilbareDateien(dateien) {
+    if (!dateien || !dateien.length || !navigator.canShare) return null;
+    const geht = liste => { try { return navigator.canShare({ files: liste }); } catch (e) { return false; } };
+    if (geht(dateien)) return dateien;
+    const umbenannt = dateien.map(d => /mp4|aac|m4a/.test(d.type)
+      ? new File([d], d.name, { type: 'audio/x-m4a' }) : d);
+    return geht(umbenannt) ? umbenannt : null;
+  },
+
+  /** Ersatzweg ohne Teilen-Menü (Rechner): Dateien herunterladen. */
+  herunterladen(dateien) {
+    for (const d of dateien || []) {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(d);
+      a.download = d.name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 30000);
+    }
   },
 
   auftragLink(versuch, kursId) {
@@ -131,8 +199,15 @@ var Teilen = {
       zeilen.push('--- ' + t('pruefer.dieAufgabe') + ' ---');
       zeilen.push(o.auftrag);
       zeilen.push('');
-      zeilen.push('--- ' + t('pruefer.dieAntwort') + ' ---');
-      zeilen.push(o.antwort || '(' + t('pruef.nichtsGeschrieben') + ')');
+      if (o.art === 'sprechen') {
+        zeilen.push('--- ' + t('pruefer.dieAufnahme') + ' ---');
+        zeilen.push(this.hatAufnahme(o)
+          ? t('pruefer.aufnahmeDatei', { dauer: Aufnahme.dauerText(o.antwort.dauer), datei: this.aufnahmeName(versuch, o) })
+          : '(' + t('pruef.nichtsAufgenommen') + ')');
+      } else {
+        zeilen.push('--- ' + t('pruefer.dieAntwort') + ' ---');
+        zeilen.push(o.antwort || '(' + t('pruef.nichtsGeschrieben') + ')');
+      }
       zeilen.push('');
       if (o.kriterien && o.kriterien.length) {
         zeilen.push('--- ' + t('pruefer.woraufAchten') + ' ---');
@@ -151,7 +226,29 @@ var Teilen = {
   /** Über das Teilen-Menü des Geräts verschicken. Gibt es das nicht
       (Rechner-Browser), landet der Text in der Zwischenablage. Gibt zurück,
       was passiert ist, damit die Oberfläche es sagen kann. */
-  async verschicken(titel, text) {
+  async verschicken(titel, text, dateien) {
+    // Mit Aufnahme: Text und Datei möglichst in EINER Nachricht
+    if (dateien && dateien.length) {
+      const teilbar = this.teilbareDateien(dateien);
+      if (teilbar) {
+        try {
+          await navigator.share({ title: titel, text, files: teilbar });
+          return 'geteilt';
+        } catch (e) {
+          if (e && e.name === 'AbortError') return 'abgebrochen';
+          // sonst weiter zum Ersatzweg
+        }
+      }
+      // Kein Teilen-Menü für Dateien: Datei herunterladen, Text kopieren
+      this.herunterladen(dateien);
+      try {
+        await navigator.clipboard.writeText(text);
+        return 'kopiertMitDatei';
+      } catch (e) {
+        return 'nurDatei';
+      }
+    }
+
     if (navigator.share) {
       try {
         await navigator.share({ title: titel, text });

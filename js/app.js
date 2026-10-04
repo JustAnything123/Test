@@ -141,6 +141,7 @@ var App = {
   zeigeSeite(name) {
     // Wer die Übung verlässt (Menü, Zurück), lässt auch das Mikrofon los
     if (this.seite === 'uebung' && name !== 'uebung') this.aufgabeAufraeumen();
+    if (this.seite === 'pruefung' && name !== 'pruefung') PruefungUI.aufraeumen();
     this.SEITEN.forEach(s => {
       const el = document.getElementById('seite-' + s);
       if (el) el.hidden = (s !== name);
@@ -505,8 +506,10 @@ var App = {
 
     // Ohne Stimme faellt der Hoerteil weg — sonst gaebe es dafuer 0 Punkte,
     // obwohl niemand etwas falsch gemacht hat.
-    const wirklich = Pruefungen.ohneHoeren(p);
+    const wirklich = Pruefungen.fuerGeraet(p);
     g('pinfo-hoerwarnung').hidden = !wirklich._hoerenFehlt;
+    // Ohne Mikrofon faellt der Sprechteil weg (er zaehlt ohnehin nicht in die Punkte)
+    g('pinfo-sprechwarnung').hidden = !wirklich._sprechenFehlt;
 
     g('pinfo-teile').innerHTML = wirklich.teile.map(teil => {
       const max = Pruefungen.maxPunkteTeil(teil);
@@ -532,7 +535,7 @@ var App = {
 
   /** Prüfung starten. */
   pruefungStarten() {
-    const def = Pruefungen.ohneHoeren(this.pruefungGewaehlt);
+    const def = Pruefungen.fuerGeraet(this.pruefungGewaehlt);
     this.pruefung = {
       def,
       aufgaben:  Pruefungen.aufgaben(def),
@@ -561,11 +564,16 @@ var App = {
     window.scrollTo(0, 0);
   },
 
-  pruefBlaettern(richtung) {
+  async pruefBlaettern(richtung) {
     const p = this.pruefung;
-    if (!p) return;
+    if (!p || this._blaettert) return;
     const neu = p.index + richtung;
     if (neu < 0) return;
+    // Läuft gerade eine Sprachaufnahme, wird sie erst beendet und abgelegt.
+    // Ohne das Warten fehlte sie, wenn man direkt auf „Abgeben" tippt.
+    this._blaettert = true;
+    try { await PruefungUI.fertigstellen(); } finally { this._blaettert = false; }
+    if (this.pruefung !== p) return;               // inzwischen abgebrochen
     if (neu >= p.aufgaben.length) return this.pruefungAbgeben();
     p.index = neu;
     this.pruefAufgabeZeigen();
@@ -594,6 +602,9 @@ var App = {
 
   pruefungAufgeben() {
     if (!confirm(t('pruef.wirklichAufgeben'))) return;
+    PruefungUI.aufraeumen();
+    // Aufnahmen eines abgebrochenen Versuchs braucht niemand mehr
+    if (this.pruefung) Pruefungen.aufnahmeSchluessel(this.pruefung.antworten).forEach(k => Aufnahme.entfernen(k));
     this.pruefung = null;
     this.zeigeSeite('start');
   },
@@ -630,10 +641,17 @@ var App = {
         return `
         <div class="pruef-offen-block">
           <p class="pruef-frage">${esc(o.auftrag)}</p>
+          ${o.art === 'sprechen' ? `
+          <div class="pruef-deine-antwort pruef-ton">${
+            Teilen.hatAufnahme(o)
+              ? `<div class="wortart">${esc(t('pruef.deineAufnahme', { dauer: Aufnahme.dauerText(o.antwort.dauer) }))}</div>
+                 <audio controls preload="metadata" data-aufnahme="${esc(o.antwort.aufnahme)}"></audio>`
+              : '<em>' + esc(t('pruef.nichtsAufgenommen')) + '</em>'
+          }</div>` : `
           <div class="pruef-deine-antwort">${
             o.antwort ? esc(o.antwort).replace(/\n/g, '<br>')
                       : '<em>' + esc(t('pruef.nichtsGeschrieben')) + '</em>'
-          }</div>
+          }</div>`}
           ${b ? `
             <div class="pruef-bewertung urteil-${esc(b.urteil)}">
               <div class="pruef-bewertung-kopf">
@@ -652,18 +670,41 @@ var App = {
               <summary>${esc(t('pruef.musterZeigen'))}</summary>
               <div>${esc(o.muster).replace(/\n/g, '<br>')}</div>
             </details>` : ''}
-          <div class="pruef-teilen-knoepfe">
-            <button type="button" class="btn btn-teilen" data-teilen="${esc(e.id || '')}">${
-              esc(b ? t('teilen.nochmalSchicken') : t('teilen.zurBewertung'))
-            }</button>
-            <button type="button" class="btn btn-neben btn-schmal" data-selbst="${esc(e.id || '')}">${
-              esc(t('teilen.selbstEintragen'))
-            }</button>
-          </div>
         </div>`;
-      }).join('')}` : '';
+      }).join('')}
+      <div class="pruef-teilen-knoepfe">
+        <button type="button" class="btn btn-teilen" data-teilen="${esc(e.id || '')}">${
+          esc(Object.keys(bewertungen).length ? t('teilen.nochmalSchicken') : t('teilen.zurBewertung'))
+        }</button>
+        <button type="button" class="btn btn-neben btn-schmal" data-selbst="${esc(e.id || '')}">${
+          esc(t('teilen.selbstEintragen'))
+        }</button>
+        ${e.offen.some(o => Teilen.hatAufnahme(o))
+          ? `<p class="hinweis">${esc(t('teilen.mitAufnahme'))}</p>` : ''}
+      </div>` : '';
 
-    // Die beiden Knöpfe je offener Aufgabe verdrahten
+    // Eigene Aufnahmen zum Anhören laden. Sie liegen in der Geräte-Ablage;
+    // fehlt eine (anderes Gerät, Browserdaten gelöscht), steht das da.
+    g('perg-offen').querySelectorAll('audio[data-aufnahme]').forEach(audio => {
+      Aufnahme.holen(audio.dataset.aufnahme).then(blob => {
+        if (blob) { audio.src = URL.createObjectURL(blob); return; }
+        const hinweis = document.createElement('em');
+        hinweis.textContent = t('pruef.aufnahmeFehlt');
+        audio.replaceWith(hinweis);
+      });
+    });
+    // Und schon einmal als Dateien zum Verschicken bereitlegen: Das
+    // Teilen-Menü öffnet sich nur direkt nach dem Antippen — wer erst lange
+    // lädt, bekommt auf dem iPhone eine Fehlermeldung statt des Menüs.
+    const vorrat = { id: e.id, ergebnis: null };
+    this._vorgeladen = vorrat;
+    if (e.offen.some(o => Teilen.hatAufnahme(o))) {
+      Teilen.aufnahmeDateien(e).then(r => { vorrat.ergebnis = r; });
+    } else {
+      vorrat.ergebnis = { dateien: [], fehlen: 0 };
+    }
+
+    // Die beiden Knöpfe verdrahten (einmal für alle offenen Aufgaben)
     g('perg-offen').querySelectorAll('[data-teilen]').forEach(k =>
       k.addEventListener('click', () => this.zurBewertungGeben(e)));
     g('perg-offen').querySelectorAll('[data-selbst]').forEach(k =>
@@ -840,10 +881,22 @@ var App = {
             ${punkte.length ? `<ul>${punkte.map(x => `<li>${e(x)}</li>`).join('')}</ul>` : ''}
           </div>
 
+          ${a.ton ? `
+          <h3>${e(t('pruefer.dieAufnahme'))}</h3>
+          <div class="pruefer-antwort pruefer-ton" data-frage="${e(a.fid)}">${
+            a.ton.d ? `
+              <p>🎙️ ${e(t('pruefer.aufnahmeDatei', { dauer: Aufnahme.dauerText(a.ton.s), datei: a.ton.d }))}</p>
+              <p class="hinweis pruefer-ton-hinweis">${e(t('pruefer.aufnahmeHinweis'))}</p>
+              <audio controls preload="metadata" hidden></audio>
+              <label class="btn btn-neben pruefer-datei">${e(t('pruefer.aufnahmeOeffnen'))}
+                <input type="file" accept="audio/*,.m4a,.webm,.ogg" hidden>
+              </label>`
+            : `<em>${e(t('pruef.nichtsAufgenommen'))}</em>`
+          }</div>` : `
           <h3>${e(t('pruefer.dieAntwort'))}</h3>
           <div class="pruefer-antwort">${
             a.text ? e(a.text).replace(/\n/g, '<br>') : '<em>—</em>'
-          }</div>
+          }</div>`}
 
           ${kriterien.length ? `
             <h3>${e(t('pruefer.woraufAchten'))}</h3>
@@ -882,6 +935,32 @@ var App = {
         });
       });
     });
+    // Aufnahmen: Der Prüfer hat die Datei in seinem Messenger und kann sie
+    // dort anhören — oder hier öffnen, um sie neben den Kriterien zu haben.
+    // Beim Selbst-Eintragen liegt die Aufnahme ohnehin auf diesem Gerät.
+    const versuchHier = selbstModus ? Pruefungen.versuchNachId(auftrag.id) : null;
+    g('pruefer-aufgaben').querySelectorAll('.pruefer-ton').forEach(block => {
+      const audio = block.querySelector('audio');
+      const datei = block.querySelector('input[type="file"]');
+      if (!audio || !datei) return;
+      const abspielen = blob => {
+        if (audio.dataset.url) URL.revokeObjectURL(audio.dataset.url);
+        audio.dataset.url = URL.createObjectURL(blob);
+        audio.src = audio.dataset.url;
+        audio.hidden = false;
+      };
+      datei.addEventListener('change', () => { if (datei.files[0]) abspielen(datei.files[0]); });
+      const o = versuchHier && (versuchHier.versuch.offen || []).find(x => x.frageId === block.dataset.frage);
+      if (o && Teilen.hatAufnahme(o)) {
+        Aufnahme.holen(o.antwort.aufnahme).then(blob => {
+          if (!blob) return;
+          abspielen(blob);
+          block.querySelector('.pruefer-datei').hidden = true;
+          block.querySelector('.pruefer-ton-hinweis').hidden = true;
+        });
+      }
+    });
+
     // Kriterien-Häkchen sind nur eine Lesehilfe und werden nicht mitgeschickt.
     g('pruefer-aufgaben').querySelectorAll('.pruefer-kriterien label').forEach(l => {
       l.addEventListener('click', () => setTimeout(() =>
@@ -965,17 +1044,27 @@ var App = {
     const def  = Pruefungen.nachId(versuch.pruefungId);
     const link = Teilen.auftragLink(versuch);
 
+    // Sprachaufnahmen reisen als Datei in derselben Nachricht mit.
+    // Meist liegen sie schon bereit (siehe pruefErgebnisZeichnen).
+    const v = this._vorgeladen;
+    const { dateien, fehlen } = (v && v.id === versuch.id && v.ergebnis) || await Teilen.aufnahmeDateien(versuch);
+
     // Zu lang für einen Link? Dann den Textblock nehmen — der kommt überall
     // durch, der Prüfer antwortet formlos, und die Bewertung wird später von
     // Hand eingetragen.
-    if (!Teilen.linkTraegt(link)) {
-      const wie = await Teilen.verschicken(t('pruefer.betreff'), Teilen.auftragAlsText(versuch, def));
-      alert(t('teilen.zuLang'));
-      return wie;
-    }
-    const wie = await Teilen.verschicken(t('pruefer.betreff'), link);
-    if (wie === 'kopiert') alert(t('teilen.kopiert'));
-    else if (wie === 'fehlgeschlagen') alert(t('teilen.fehlgeschlagen'));
+    const langerText = !Teilen.linkTraegt(link);
+    const wie = await Teilen.verschicken(t('pruefer.betreff'),
+      langerText ? Teilen.auftragAlsText(versuch, def) : link, dateien);
+
+    const meldungen = {
+      kopiert: 'teilen.kopiert', kopiertMitDatei: 'teilen.kopiertMitDatei',
+      nurDatei: 'teilen.nurDatei', fehlgeschlagen: 'teilen.fehlgeschlagen'
+    };
+    const zeilen = [];
+    if (langerText) zeilen.push(t('teilen.zuLang'));
+    else if (meldungen[wie]) zeilen.push(t(meldungen[wie]));
+    if (fehlen && wie !== 'abgebrochen') zeilen.push(t('teilen.aufnahmeFehlt'));
+    if (zeilen.length) alert(zeilen.join('\n\n'));
     return wie;
   },
 
@@ -1131,6 +1220,8 @@ var App = {
     auf('btn-reset-kurs', 'click', () => {
       if (!confirm(t('einst.resetFrage1'))) return;
       if (!confirm(t('einst.resetFrage2'))) return;
+      // Die Sprachaufnahmen der Prüfungen dieses Kurses gleich mit
+      Pruefungen.alleAufnahmen().forEach(k => Aufnahme.entfernen(k));
       Speicher.kursZuruecksetzen();
       this.zeigeSeite('start');
     });
@@ -1138,6 +1229,7 @@ var App = {
       if (!confirm(t('einst.resetAllesFrage'))) return;
       if (!confirm(t('einst.resetFrage2'))) return;
       Speicher.zuruecksetzen();
+      Aufnahme.allesLoeschen();                // auch alle Sprachaufnahmen
       this.themaAnwenden();
       this.zeigeSeite('kurse');
     });

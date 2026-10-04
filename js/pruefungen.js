@@ -9,9 +9,9 @@
 
    Ganz bewusst bewertet die App nur, was sie zuverlässig bewerten KANN:
    Ankreuzen, Zuordnen und Lücken mit vorgegebener Auswahl. Freies Schreiben
-   hat keine abzählbare Menge richtiger Antworten — solche Aufgaben werden
-   gestellt und gespeichert, aber nicht automatisch benotet. Sie gehen später
-   über die Teilen-Funktion an einen Menschen.
+   und freies Sprechen haben keine abzählbare Menge richtiger Antworten —
+   solche Aufgaben werden gestellt und gespeichert, aber nicht automatisch
+   benotet. Sie gehen später über die Teilen-Funktion an einen Menschen.
 
    Eine Prüfung meldet sich über PRUEFUNG('kurs-id', {…}) an, genau wie eine
    Lektion über LEKTION(). */
@@ -303,5 +303,45 @@ var Pruefungen = {
       teile: def.teile.filter(t => t.art !== 'hoeren'),
       _hoerenFehlt: true
     });
+  },
+
+  /* ---- Sprechen: geht das auf diesem Gerät? ----------------------------- */
+
+  /** Ohne Mikrofon-Zugang (z. B. index.html per Doppelklick geöffnet) kann
+      der Sprechteil nicht stattfinden. Er fällt dann weg — Punkte kostet das
+      nicht, denn Sprechen bewertet ohnehin ein Mensch. */
+  ohneSprechen(def) {
+    const hatSprechen = def.teile.some(t => t.art === 'sprechen');
+    if (!hatSprechen || Aufnahme.moeglich()) return def;
+    return Object.assign({}, def, {
+      teile: def.teile.filter(t => t.art !== 'sprechen'),
+      _sprechenFehlt: true
+    });
+  },
+
+  /** Die Prüfung so, wie sie auf diesem Gerät stattfinden kann. */
+  fuerGeraet(def) {
+    return this.ohneSprechen(this.ohneHoeren(def));
+  },
+
+  /** Die Aufnahme-Schlüssel eines Versuchs (oder einer laufenden Prüfung). */
+  aufnahmeSchluessel(antworten) {
+    return Object.values(antworten || {})
+      .filter(a => a && typeof a === 'object' && a.aufnahme)
+      .map(a => a.aufnahme);
+  },
+
+  /** Alle Aufnahme-Schlüssel aller Versuche eines Kurses. */
+  alleAufnahmen(kursId) {
+    const raus = [];
+    const lager = this._lager(kursId);
+    for (const pruefungId of Object.keys(lager)) {
+      for (const v of lager[pruefungId].versuche || []) {
+        for (const o of v.offen || []) {
+          if (o.antwort && typeof o.antwort === 'object' && o.antwort.aufnahme) raus.push(o.antwort.aufnahme);
+        }
+      }
+    }
+    return raus;
   }
 };

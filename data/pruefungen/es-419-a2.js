@@ -226,6 +226,41 @@ Dennis`
           ]
         }
       ]
-    }
+    },
+    { id: 't5', art: 'sprechen', name: 'Sprechen', aufgaben: [
+      { id: 'la5a1', art: 'sprechen', nummer: 'Aufgabe 8',
+        anweisung: 'Sprich auf Spanisch und nimm dich auf. Diese Aufgabe wird nicht automatisch bewertet.',
+        fragen: [ {
+          id: 'la5101', dauer: 150,
+          auftrag: 'Sprich über dein Viertel, wie im ersten Teil der mündlichen DELE-Prüfung.',
+          punkte: [ 'Wo liegt es, und seit wann wohnst du dort?', 'Was gibt es dort (Geschäfte, Parks, Verkehrsmittel)?', 'Was gefällt dir, was nicht?', 'Wie war dein Viertel, als du ein Kind warst? (imperfecto)' ],
+          umfang: 'Sprich 1 bis 2 Minuten.',
+          auftragZiel: 'Habla de tu barrio, como en la primera parte de la prueba oral del DELE.',
+          punkteZiel: [ '¿Dónde está y desde cuándo vives allí?', '¿Qué hay (tiendas, parques, transporte)?', '¿Qué te gusta y qué no?', '¿Cómo era tu barrio cuando eras niño o niña?' ],
+          umfangZiel: 'Habla entre 1 y 2 minutos.',
+          kriterienZiel: [
+            'Aparecen los cuatro puntos.',
+            'Se distingue bien hay / está (hay un parque – el parque está cerca).',
+            'Gustar se usa bien (me gusta / me gustan).',
+            'La infancia se cuenta en imperfecto (era, había, jugaba).',
+            'Se entiende todo sin tener que preguntar.'
+          ],
+          kriterien: [
+            'Alle vier Punkte kommen vor.',
+            'hay und está werden richtig unterschieden (hay un parque – el parque está cerca).',
+            'gustar wird richtig gebildet (me gusta / me gustan).',
+            'Die Kindheit steht im imperfecto (era, había, jugaba).',
+            'Man versteht alles ohne Nachfragen.'
+          ],
+          muster:
+`Vivo en Palermo, un barrio de Buenos Aires. Vivo allí desde hace tres años.
+
+En mi barrio hay muchas tiendas pequeñas, cafés y una plaza con árboles. La estación de subte está a cinco cuadras, así que es fácil llegar al centro.
+
+Me gusta mucho el ambiente, porque siempre hay gente en la calle. No me gustan los ruidos de la noche, sobre todo los fines de semana.
+
+Cuando era niño, vivía en un barrio muy tranquilo. Había pocos autos y jugábamos al fútbol en la calle todas las tardes.`
+        } ] }
+    ] }
   ]
 });

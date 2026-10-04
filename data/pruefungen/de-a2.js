@@ -160,6 +160,41 @@ Vielen Dank für Ihre Hilfe.
 Mit freundlichen Grüßen
 Dennis Z.`
         } ] }
+    ] },
+    { id: 't5', art: 'sprechen', name: 'Expresión oral', aufgaben: [
+      { id: 'db5a1', art: 'sprechen', nummer: 'Tarea 8',
+        anweisung: 'Habla en alemán y grábate. Esta tarea no se evalúa automáticamente.',
+        fragen: [ {
+          id: 'db5101', dauer: 120,
+          auftrag: 'Habla de un fin de semana normal en tu vida.',
+          punkte: [ '¿Qué haces el sábado por la mañana?', '¿Con quién pasas el tiempo?', '¿Qué hiciste el fin de semana pasado? (Perfekt)', '¿Qué te gustaría hacer el próximo fin de semana?' ],
+          umfang: 'Habla aproximadamente un minuto.',
+          auftragZiel: 'Erzähl von einem normalen Wochenende in deinem Leben.',
+          punkteZiel: [ 'Was machst du am Samstagvormittag?', 'Mit wem verbringst du die Zeit?', 'Was hast du letztes Wochenende gemacht? (Perfekt)', 'Was möchtest du nächstes Wochenende machen?' ],
+          umfangZiel: 'Sprich etwa eine Minute.',
+          kriterienZiel: [
+            'Alle vier Fragen werden beantwortet.',
+            'Das letzte Wochenende steht im Perfekt (habe … gemacht, bin … gefahren).',
+            'Zeitangaben ordnen das Erzählte (zuerst, dann, am Abend).',
+            'Die Sätze sind mit und, aber, denn verbunden.',
+            'Man versteht alles ohne Nachfragen.'
+          ],
+          kriterien: [
+            'Se responden las cuatro preguntas.',
+            'El fin de semana pasado va en Perfekt (habe … gemacht, bin … gefahren).',
+            'Las expresiones de tiempo ordenan el relato (zuerst, dann, am Abend).',
+            'Las frases se unen con und, aber, denn.',
+            'Se entiende todo sin tener que preguntar.'
+          ],
+          muster:
+`Am Samstagvormittag schlafe ich lange. Dann gehe ich auf den Markt und kaufe Obst und Brot.
+
+Die meiste Zeit verbringe ich mit meiner Familie oder mit Freunden.
+
+Letztes Wochenende habe ich meine Schwester besucht. Am Sonntag sind wir an den See gefahren und haben gegrillt. Das war sehr schön, aber am Abend hat es geregnet.
+
+Nächstes Wochenende möchte ich ins Kino gehen, denn es gibt einen neuen Film aus Mexiko.`
+        } ] }
     ] }
   ]
 });

@@ -121,8 +121,8 @@ async function durchspielen(page, wahl) {
   const teilzeilen = await page.evaluate(() =>
     Array.from(document.querySelectorAll('#pinfo-teile .pruef-teilzeile'))
          .map(z => z.querySelector('.pruef-teilname').textContent));
-  pruefe('alle vier Teile aufgeführt', teilzeilen,
-         ['Leseverstehen', 'Hörverstehen', 'Sprachbausteine', 'Schreiben']);
+  pruefe('alle fünf Teile aufgeführt', teilzeilen,
+         ['Leseverstehen', 'Hörverstehen', 'Sprachbausteine', 'Schreiben', 'Sprechen']);
 
   /* ---------- 3. Eine Prüfung ist keine Übung ---------- */
   console.log('\n=== Prüfungsregeln ===');
@@ -170,7 +170,7 @@ async function durchspielen(page, wahl) {
   const ohneStimme = await page.evaluate(() =>
     Array.from(document.querySelectorAll('#pinfo-teile .pruef-teilname')).map(z => z.textContent));
   pruefe('Hörverstehen fehlt in der Liste', ohneStimme.includes('Hörverstehen'), false);
-  pruefe('die anderen Teile bleiben', ohneStimme, ['Leseverstehen', 'Sprachbausteine', 'Schreiben']);
+  pruefe('die anderen Teile bleiben', ohneStimme, ['Leseverstehen', 'Sprachbausteine', 'Schreiben', 'Sprechen']);
   pruefe('Punkte sinken auf 25',
          await page.evaluate(id => Pruefungen.maxPunkte(Pruefungen.ohneHoeren(Pruefungen.nachId(id))), ERSTE.id), 25);
 
@@ -196,9 +196,11 @@ async function durchspielen(page, wahl) {
   pruefe('volle Punktzahl', [e.punkte, e.max], [35, 35]);
   pruefe('100 Prozent', e.prozent, 100);
   pruefe('bestanden', e.bestanden, true);
-  pruefe('Schreibaufgabe bleibt offen', e.offen.length, 1);
+  // Offen bleiben Schreiben und Sprechen: beides bewertet ein Mensch
+  pruefe('Schreib- und Sprechaufgabe bleiben offen', e.offen.map(o => o.art), ['schreiben', 'sprechen']);
   pruefe('Schreibtext wurde mitgenommen', e.offen[0].antwort.startsWith('Querido Mateo'), true);
   pruefe('Schreiben zählt nicht in die Punkte', e.teile.find(x => x.id === 't4').max, 0);
+  pruefe('Sprechen zählt nicht in die Punkte', e.teile.find(x => x.id === 't5').max, 0);
   pruefe('Urteil im Kopf', (await page.textContent('#perg-urteil')).trim(), 'Bestanden');
 
   /* ---------- 6. Die Bestehensgrenze ---------- */
@@ -261,8 +263,8 @@ async function durchspielen(page, wahl) {
 
     await durchspielen(page, 'richtig');
     const r = await page.evaluate(() => App.letztesErgebnis);
-    const ok = r.punkte === 35 && r.max === 35 && r.bestanden && r.offen.length === 1
-               && r.teile.length === 4;
+    const ok = r.punkte === 35 && r.max === 35 && r.bestanden && r.offen.length === 2
+               && r.teile.length === 5;
     if (ok) console.log(`  + ${P.kurs} · Tag ${String(P.tag).padStart(3)} · ${P.niveau} · ${P.name} — 35/35, bestanden`);
     else {
       fehler.push(P.id);

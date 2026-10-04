@@ -117,7 +117,8 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   const oberflaeche = await p.evaluate(() => ({
     zwang: TEXTE_ZWANG,
     bewerten: document.querySelector('.pruefer-block h3:nth-of-type(1)') ? null : null,
-    urteile: Array.from(document.querySelectorAll('.pruefer-urteil')).map(k => k.textContent.trim()),
+    // Erster Block = Schreibaufgabe (der zweite ist der Sprechteil)
+    urteile: Array.from(document.querySelector('.pruefer-block').querySelectorAll('.pruefer-urteil')).map(k => k.textContent.trim()),
     senden: document.getElementById('btn-pruefer-senden').textContent.trim()
   }));
   pruefe('Oberfläche auf Spanisch erzwungen', oberflaeche.zwang, 'es');
@@ -128,7 +129,7 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   const inhalt = await p.evaluate(() => ({
     auftrag:  document.querySelector('.pruefer-auftrag p').textContent.trim(),
     antwort:  document.querySelector('.pruefer-antwort').innerText.trim(),
-    kriterien: Array.from(document.querySelectorAll('.pruefer-kriterien span')).map(x => x.textContent.trim()),
+    kriterien: Array.from(document.querySelector('.pruefer-block').querySelectorAll('.pruefer-kriterien span')).map(x => x.textContent.trim()),
     kennung:  document.getElementById('pruefer-kennung').textContent.trim()
   }));
   pruefe('Aufgabenstellung auf Spanisch', inhalt.auftrag, P.auftragZiel);
@@ -153,6 +154,11 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   await p.click('.pruefer-urteil[data-urteil="teilweise"]'); await p.waitForTimeout(80);
   pruefe('Urteil ist markiert',
          await p.evaluate(() => document.querySelector('.pruefer-urteil.gewaehlt').dataset.urteil), 'teilweise');
+  // Der zweite Block ist der Sprechteil — hier ohne Aufnahme abgegeben
+  pruefe('zwei Blöcke: Text und Aufnahme', await p.$$eval('.pruefer-block', b => b.length), 2);
+  pruefe('ohne Aufnahme steht das beim Prüfer da',
+         (await p.textContent('.pruefer-ton')).trim(), 'No has grabado nada.');
+  await p.click('.pruefer-urteile >> nth=1 >> [data-urteil="falsch"]'); await p.waitForTimeout(80);
 
   await p.fill('.pruefer-hinweis', 'Muy bien. Cuidado: «voy a ir» está bien, pero falta el saludo final.');
   await p.fill('#pruefer-name', 'María');
@@ -251,7 +257,8 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   pruefe('Namensfeld ausgeblendet',
          await a.evaluate(() => document.getElementById('pruefer-name').parentElement.hidden), true);
 
-  await a.click('.pruefer-urteil[data-urteil="richtig"]'); await a.waitForTimeout(80);
+  await a.click('.pruefer-urteile >> nth=0 >> [data-urteil="richtig"]');
+  await a.click('.pruefer-urteile >> nth=1 >> [data-urteil="richtig"]'); await a.waitForTimeout(80);
   await a.evaluate(() => App.prueferAbschicken());
   await a.waitForTimeout(300);
   pruefe('von Hand eingetragene Bewertung ist gespeichert',

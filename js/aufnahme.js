@@ -76,7 +76,11 @@ var Aufnahme = {
     const mime = this.format();
     let rec;
     try {
-      rec = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+      // 64 kbit/s reichen für Sprache völlig und halten die Datei klein:
+      // etwa 0,5 MB je Minute — gut zu verschicken, auch über Mobilfunk.
+      const opt = { audioBitsPerSecond: 64000 };
+      if (mime) opt.mimeType = mime;
+      rec = new MediaRecorder(stream, opt);
     } catch (e) {
       rec = new MediaRecorder(stream);          // Format doch nicht nehmbar
     }
@@ -126,5 +130,104 @@ var Aufnahme = {
     }
   },
 
-  _laufend: null
+  _laufend: null,
+
+  /** Sekunden als "1:05". */
+  dauerText(sekunden) {
+    const s = Math.max(0, Math.round(Number(sekunden) || 0));
+    return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+  },
+
+  /* ---- Ablage auf dem Gerät (für die Prüfung) ---------------------------
+
+     Die Aufnahme einer Prüfung muss bleiben, bis sie verschickt ist — auch
+     wenn man die App zwischendurch schließt. In den normalen Lernstand
+     (localStorage) passt sie nicht: Der fasst nur wenige MB und nur Text.
+
+     Deshalb liegt sie in der IndexedDB, einer Datenbank, die jeder Browser
+     mitbringt und die auch größere Dateien aufnimmt. Gespeichert werden die
+     rohen Bytes plus Format, nicht das Blob-Objekt selbst — ältere iPhones
+     konnten Blobs in der IndexedDB nicht zuverlässig ablegen.
+
+     Im Lernstand steht nur ein kurzer Schlüssel, der auf die Aufnahme zeigt.
+     WICHTIG: Die Sicherungsdatei (Export) enthält die Aufnahmen nicht. */
+
+  DB_NAME: 'vamos-aufnahmen',
+  DB_TABELLE: 'aufnahmen',
+
+  /* Zusätzlich im Arbeitsspeicher, solange die App offen ist. Falls die
+     IndexedDB nicht geht (manche private Fenster), klappt das Verschicken
+     direkt nach der Prüfung trotzdem. */
+  _fluechtig: {},
+
+  _db() {
+    if (this._dbVersprechen) return this._dbVersprechen;
+    this._dbVersprechen = new Promise((ok, fehler) => {
+      if (!window.indexedDB) return fehler(new Error('IndexedDB fehlt'));
+      const anfrage = indexedDB.open(this.DB_NAME, 1);
+      anfrage.onupgradeneeded = () => anfrage.result.createObjectStore(this.DB_TABELLE);
+      anfrage.onsuccess = () => ok(anfrage.result);
+      anfrage.onerror   = () => fehler(anfrage.error);
+    });
+    // Schlägt das Öffnen fehl, beim nächsten Mal neu versuchen
+    this._dbVersprechen.catch(() => { this._dbVersprechen = null; });
+    return this._dbVersprechen;
+  },
+
+  /** Ein Vorgang in der Datenbank, verpackt als Promise. */
+  async _vorgang(modus, arbeit) {
+    const db = await this._db();
+    return new Promise((ok, fehler) => {
+      const tx = db.transaction(this.DB_TABELLE, modus);
+      const anfrage = arbeit(tx.objectStore(this.DB_TABELLE));
+      tx.oncomplete = () => ok(anfrage ? anfrage.result : undefined);
+      tx.onerror = tx.onabort = () => fehler(tx.error);
+    });
+  },
+
+  /** Neuer, eindeutiger Schlüssel für eine Aufnahme. */
+  neuerSchluessel() {
+    return 'a' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  },
+
+  /** Aufnahme ablegen. Gibt true zurück, wenn sie dauerhaft gespeichert ist. */
+  async ablegen(schluessel, blob) {
+    this._fluechtig[schluessel] = blob;
+    try {
+      const daten = await blob.arrayBuffer();
+      await this._vorgang('readwrite', tab => tab.put({ daten, mime: blob.type }, schluessel));
+      return true;
+    } catch (e) {
+      console.warn('Aufnahme nicht dauerhaft gespeichert:', e);
+      return false;
+    }
+  },
+
+  /** Aufnahme holen — als Blob, oder null, wenn es sie hier nicht gibt. */
+  async holen(schluessel) {
+    if (!schluessel) return null;
+    if (this._fluechtig[schluessel]) return this._fluechtig[schluessel];
+    try {
+      const e = await this._vorgang('readonly', tab => tab.get(schluessel));
+      if (!e || !e.daten) return null;
+      const blob = new Blob([e.daten], { type: e.mime || '' });
+      this._fluechtig[schluessel] = blob;
+      return blob;
+    } catch (e) {
+      return null;
+    }
+  },
+
+  /** Aufnahme löschen (z. B. beim Neu-Aufnehmen oder Abbrechen). */
+  async entfernen(schluessel) {
+    if (!schluessel) return;
+    delete this._fluechtig[schluessel];
+    try { await this._vorgang('readwrite', tab => tab.delete(schluessel)); } catch (e) { /* war nicht da */ }
+  },
+
+  /** Alle Aufnahmen löschen — beim Zurücksetzen der App. */
+  async allesLoeschen() {
+    this._fluechtig = {};
+    try { await this._vorgang('readwrite', tab => tab.clear()); } catch (e) { /* nichts da */ }
+  }
 };

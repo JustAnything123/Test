@@ -178,6 +178,45 @@ Meld dich, wenn etwas unklar ist.
 Viele Grüße
 Dennis`
         } ] }
+    ] },
+    { id: 't5', art: 'sprechen', name: 'Expresión oral', aufgaben: [
+      { id: 'bb5a1', art: 'sprechen', nummer: 'Tarea 8',
+        anweisung: 'Habla en alemán y grábate. Esta tarea no se evalúa automáticamente.',
+        fragen: [ {
+          id: 'bb5101', dauer: 180,
+          auftrag: 'Presenta a una mesa de clientes el menú degustación de cuatro platos y recomienda una bebida.',
+          punkte: [ 'Saluda y nombra los platos: entrante, sopa, plato principal, postre.', 'Describe cada plato con su técnica de cocción (p. ej. pochiert, geschmort, gratiniert).', 'Recomienda una bebida para el plato principal y explica por qué.', 'Pregunta por alergias o preferencias y ofrece una alternativa.' ],
+          umfang: 'Habla entre 2 y 3 minutos.',
+          auftragZiel: 'Stell einem Tisch das Degustationsmenü mit vier Gängen vor und empfiehl ein Getränk dazu.',
+          punkteZiel: [ 'Begrüße die Gäste und nenne die Gänge: Vorspeise, Suppe, Hauptgang, Dessert.', 'Beschreib jedes Gericht mit seiner Garmethode (z. B. pochiert, geschmort, gratiniert).', 'Empfiehl ein Getränk zum Hauptgang und begründe die Wahl.', 'Frag nach Allergien oder Vorlieben und biete eine Alternative an.' ],
+          umfangZiel: 'Sprich 2 bis 3 Minuten.',
+          kriterienZiel: [
+            'Alle Gänge sind genannt, in der richtigen Reihenfolge.',
+            'Garmethoden und Fachbegriffe stimmen (geschmort, Jus, Beurre blanc …).',
+            'Die Getränkeempfehlung ist begründet (passt zu …, weil …).',
+            'Der Ton ist gastorientiert: Sie-Form, höflich, einladend.',
+            'Die Beschreibung macht Appetit, statt nur aufzuzählen.'
+          ],
+          kriterien: [
+            'Se nombran todos los platos, en el orden correcto.',
+            'Las técnicas de cocción y los términos son correctos (geschmort, Jus, Beurre blanc …).',
+            'La recomendación de bebida está justificada (passt zu …, weil …).',
+            'El tono está orientado al cliente: trato de usted, amable, invitador.',
+            'La descripción abre el apetito, no se limita a enumerar.'
+          ],
+          muster:
+`Guten Abend und herzlich willkommen! Darf ich Ihnen unser Degustationsmenü vorstellen?
+
+Als Vorspeise servieren wir ein Carpaccio vom Rind mit Rucola und gehobeltem Parmesan. Danach folgt eine klare Tomatenessenz mit Kräuternocken.
+
+Im Hauptgang gibt es geschmorte Kalbsbäckchen auf Selleriepüree mit glasierten Karotten und einer kräftigen Jus. Das Fleisch schmort sechs Stunden und ist deshalb besonders zart.
+
+Zum Dessert bieten wir ein lauwarmes Schokoladenküchlein mit Vanilleeis an.
+
+Zu den Kalbsbäckchen empfehle ich einen Spätburgunder aus Baden. Er ist fruchtig und nicht zu schwer und passt deshalb gut zur Sauce.
+
+Haben Sie Allergien oder Unverträglichkeiten? Für Gäste, die kein Fleisch essen, bereiten wir den Hauptgang gern mit gebratenem Zander und Beurre blanc zu.`
+        } ] }
     ] }
   ]
 });

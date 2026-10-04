@@ -162,6 +162,45 @@ Ich schlage daher vor, die Sperrung zunächst an Wochenenden zu erproben und nac
 Mit freundlichen Grüßen
 Dennis Z.`
         } ] }
+    ] },
+    { id: 't5', art: 'sprechen', name: 'Expresión oral', aufgaben: [
+      { id: 'dd5a1', art: 'sprechen', nummer: 'Tarea 8',
+        anweisung: 'Habla en alemán y grábate. Esta tarea no se evalúa automáticamente.',
+        fragen: [ {
+          id: 'dd5101', dauer: 240,
+          auftrag: 'Haz una breve exposición sobre el tema «Teletrabajo: ¿el modelo de trabajo del futuro?».',
+          punkte: [ 'Describe distintas formas de teletrabajo.', 'Explica una de ellas con más detalle.', 'Expón ventajas y desventajas con argumentos y ejemplos.', 'Da tu opinión fundamentada y saca una conclusión.' ],
+          umfang: 'Habla unos 3 minutos.',
+          auftragZiel: 'Halte einen kurzen Vortrag zum Thema „Homeoffice – das Arbeitsmodell der Zukunft?“.',
+          punkteZiel: [ 'Beschreib verschiedene Formen von Homeoffice.', 'Erkläre eine davon genauer.', 'Stell Vor- und Nachteile mit Argumenten und Beispielen dar.', 'Begründe deine Meinung und ziehe ein Fazit.' ],
+          umfangZiel: 'Sprich etwa 3 Minuten.',
+          kriterienZiel: [
+            'Der Vortrag ist klar gegliedert: Einleitung, Hauptteil, Schluss.',
+            'Argumente werden mit Beispielen gestützt.',
+            'Gegenüberstellungen sind sprachlich markiert (einerseits … andererseits, im Gegensatz dazu).',
+            'Nebensätze und Konnektoren sitzen (obwohl, während, sodass).',
+            'Der Wortschatz ist präzise und abwechslungsreich; Fehler stören das Verständnis kaum.'
+          ],
+          kriterien: [
+            'La exposición tiene una estructura clara: introducción, desarrollo, conclusión.',
+            'Los argumentos se apoyan con ejemplos.',
+            'Las comparaciones están marcadas (einerseits … andererseits, im Gegensatz dazu).',
+            'Las subordinadas y los conectores se usan con seguridad (obwohl, während, sodass).',
+            'El vocabulario es preciso y variado; los errores apenas dificultan la comprensión.'
+          ],
+          muster:
+`In meinem Vortrag geht es um die Frage, ob Homeoffice das Arbeitsmodell der Zukunft ist. Ich stelle zuerst verschiedene Formen vor, gehe dann auf Vor- und Nachteile ein und ziehe am Ende ein Fazit.
+
+Grundsätzlich gibt es drei Formen: Man arbeitet ausschließlich von zu Hause, man arbeitet hybrid, also einige Tage im Büro und einige zu Hause, oder man arbeitet mobil, zum Beispiel im Zug oder im Café.
+
+Besonders verbreitet ist inzwischen das hybride Modell. In meiner Firma sind wir zum Beispiel dienstags und donnerstags im Büro. An diesen Tagen finden alle Besprechungen statt, während die übrigen Tage für konzentrierte Arbeit reserviert sind.
+
+Einerseits spart man sich den Arbeitsweg, was Zeit und Geld spart und die Umwelt entlastet. Außerdem können viele Menschen Beruf und Familie besser vereinbaren. Andererseits fehlt der spontane Austausch mit Kollegen, sodass neue Mitarbeiter oft langsamer eingearbeitet werden. Hinzu kommt, dass die Grenze zwischen Arbeit und Freizeit verschwimmt.
+
+Obwohl ich die Vorteile sehr schätze, halte ich reines Homeoffice nicht für die Lösung. Meiner Ansicht nach wird sich das hybride Modell durchsetzen, weil es die Stärken beider Welten verbindet – vorausgesetzt, die Teams vereinbaren klare Regeln.
+
+Vielen Dank für Ihre Aufmerksamkeit.`
+        } ] }
     ] }
   ]
 });

@@ -153,6 +153,45 @@ Ich habe mit vierunddreißig angefangen, Spanisch zu lernen. Am Anfang war ich f
 
 Mein Rat wäre deshalb: nicht auf den perfekten Kurs warten, sondern jeden Tag eine kleine Einheit machen. Regelmäßigkeit bringt mehr als lange Abende alle vierzehn Tage.`
         } ] }
+    ] },
+    { id: 't5', art: 'sprechen', name: 'Expresión oral', aufgaben: [
+      { id: 'dc5a1', art: 'sprechen', nummer: 'Tarea 8',
+        anweisung: 'Habla en alemán y grábate. Esta tarea no se evalúa automáticamente.',
+        fragen: [ {
+          id: 'dc5101', dauer: 180,
+          auftrag: 'Presenta el tema «¿Comprar por internet o en la tienda?». Imagina que hablas ante un grupo pequeño.',
+          punkte: [ 'Presenta el tema y la estructura de tu exposición.', 'Cuenta tu experiencia personal.', 'Describe la situación en tu país.', 'Nombra ventajas y desventajas y da tu opinión.', 'Termina y da las gracias.' ],
+          umfang: 'Habla entre 2 y 3 minutos.',
+          auftragZiel: 'Präsentiere das Thema „Online einkaufen oder im Geschäft?“. Stell dir vor, du sprichst vor einer kleinen Gruppe.',
+          punkteZiel: [ 'Stell das Thema und den Aufbau deiner Präsentation vor.', 'Berichte von deiner persönlichen Erfahrung.', 'Beschreib die Situation in deinem Heimatland.', 'Nenne Vor- und Nachteile und sag deine Meinung.', 'Schließe ab und bedanke dich.' ],
+          umfangZiel: 'Sprich 2 bis 3 Minuten.',
+          kriterienZiel: [
+            'Alle fünf Teile kommen in einer klaren Reihenfolge vor.',
+            'Überleitungen führen durch den Vortrag (zuerst, außerdem, zum Schluss).',
+            'Vor- und Nachteile werden begründet (weil, deshalb), nicht nur aufgezählt.',
+            'Die eigene Meinung ist klar erkennbar.',
+            'Das Sprechtempo ist ruhig; Pausen stören das Verständnis nicht.'
+          ],
+          kriterien: [
+            'Aparecen las cinco partes en un orden claro.',
+            'Hay transiciones que guían la exposición (zuerst, außerdem, zum Schluss).',
+            'Las ventajas y desventajas se justifican (weil, deshalb), no solo se enumeran.',
+            'La opinión propia se reconoce claramente.',
+            'El ritmo es tranquilo; las pausas no dificultan la comprensión.'
+          ],
+          muster:
+`Ich möchte heute über das Thema „Online einkaufen oder im Geschäft?“ sprechen. Zuerst erzähle ich von meiner Erfahrung, dann von der Situation in meinem Land, und zum Schluss sage ich meine Meinung.
+
+Ich selbst kaufe Kleidung fast nur online, weil ich wenig Zeit habe. Lebensmittel kaufe ich aber lieber im Supermarkt, denn ich möchte das Obst sehen, bevor ich es kaufe.
+
+In Mexiko kaufen immer mehr Leute im Internet, vor allem in den großen Städten. Auf dem Land sind die kleinen Läden aber noch sehr wichtig.
+
+Ein Vorteil beim Online-Kauf ist, dass man Preise schnell vergleichen kann. Ein Nachteil ist, dass man viel zurückschicken muss, wenn etwas nicht passt. Außerdem verlieren die Geschäfte in der Innenstadt ihre Kunden.
+
+Meiner Meinung nach ist eine Mischung am besten: Was man anprobieren muss, kauft man im Geschäft, alles andere online.
+
+Vielen Dank fürs Zuhören! Haben Sie noch Fragen?`
+        } ] }
     ] }
   ]
 });

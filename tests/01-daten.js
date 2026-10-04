@@ -106,10 +106,15 @@ for (const [kursId, pruefungen] of Object.entries(PRUEFUNGEN)) {
           if (alleFrageIds.has(f.id)) p.push(`${f.id}: doppelte Frage-ID`);
           alleFrageIds.add(f.id);
 
-          if (a.art === 'schreiben') {
+          if (a.art === 'schreiben' || a.art === 'sprechen') {
             if (!f.auftrag)   p.push(`${f.id}: Auftrag fehlt`);
             if (!f.kriterien || !f.kriterien.length) p.push(`${f.id}: keine Bewertungskriterien`);
             if (!f.muster)    p.push(`${f.id}: keine Musterlösung`);
+            // Der Prüfer sieht Aufgabe und Kriterien in SEINER Sprache
+            if (!f.auftragZiel) p.push(`${f.id}: Auftrag in der Zielsprache fehlt`);
+            if (!f.kriterienZiel || f.kriterienZiel.length !== (f.kriterien || []).length)
+              p.push(`${f.id}: Kriterien in der Zielsprache fehlen oder sind nicht gleich viele`);
+            if (a.art === 'sprechen' && !(f.dauer > 0)) p.push(`${f.id}: keine Höchstdauer für die Aufnahme`);
             continue;
           }
 
@@ -130,6 +135,10 @@ for (const [kursId, pruefungen] of Object.entries(PRUEFUNGEN)) {
         }
       }
     }
+
+    // Jede Prüfung hat seit Oktober 2026 einen Sprechteil (Stufe 2)
+    const sprechteile = (def.teile || []).filter(t => t.art === 'sprechen').length;
+    if (sprechteile !== 1) p.push(`${sprechteile} Sprechteile statt genau einem`);
 
     console.log(`\n=== Prüfung ${def.id} (${kursId}) ===`);
     console.log(`  ${def.teile.length} Teile · ${fragen} Fragen · ${auto} automatisch bewertet · bestanden ab ${def.bestehen || 60}%`);

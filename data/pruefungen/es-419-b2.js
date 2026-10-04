@@ -174,6 +174,43 @@ Propongo, por lo tanto, que el cierre se aplique primero los fines de semana y q
 Atentamente,
 Dennis Z.`
         } ] }
+    ] },
+    { id: 't5', art: 'sprechen', name: 'Sprechen', aufgaben: [
+      { id: 'lc5a1', art: 'sprechen', nummer: 'Aufgabe 8',
+        anweisung: 'Sprich auf Spanisch und nimm dich auf. Diese Aufgabe wird nicht automatisch bewertet.',
+        fragen: [ {
+          id: 'lc5101', dauer: 240,
+          auftrag: 'Eine Stadtverwaltung will den Plastikmüll verringern und schlägt dreierlei vor: (1) Einwegplastik im Handel verbieten, (2) Pfand auf alle Flaschen, (3) eine Steuer auf verpackte Lebensmittel. Bewerte die Vorschläge.',
+          punkte: [ 'Stell das Problem kurz vor.', 'Bewerte jeden Vorschlag mit Vor- und Nachteilen.', 'Sag, welcher dir am sinnvollsten erscheint, und begründe es.', 'Ergänze einen eigenen Vorschlag.' ],
+          umfang: 'Sprich etwa 3 Minuten.',
+          auftragZiel: 'Un municipio quiere reducir los residuos de plástico y propone tres medidas: (1) prohibir el plástico de un solo uso en los comercios, (2) un depósito retornable en todas las botellas, (3) un impuesto a los alimentos envasados. Valora las propuestas.',
+          punkteZiel: [ 'Presenta brevemente el problema.', 'Valora cada propuesta con ventajas e inconvenientes.', 'Di cuál te parece más acertada y por qué.', 'Añade una propuesta propia.' ],
+          umfangZiel: 'Habla unos 3 minutos.',
+          kriterienZiel: [
+            'Se valoran las tres propuestas, no solo una.',
+            'Las valoraciones usan el subjuntivo (no creo que…, me parece bien que…, sería mejor que…).',
+            'Los argumentos se apoyan con ejemplos o consecuencias.',
+            'Los conectores ordenan el discurso (en primer lugar, sin embargo, por lo tanto, en definitiva).',
+            'La propuesta propia es concreta y está justificada.'
+          ],
+          kriterien: [
+            'Alle drei Vorschläge werden bewertet, nicht nur einer.',
+            'Bewertungen stehen im subjuntivo (no creo que…, me parece bien que…, sería mejor que…).',
+            'Argumente sind mit Beispielen oder Folgen gestützt.',
+            'Konnektoren gliedern die Rede (en primer lugar, sin embargo, por lo tanto, en definitiva).',
+            'Der eigene Vorschlag ist konkret und begründet.'
+          ],
+          muster:
+`El plástico es uno de los grandes problemas de nuestras ciudades: tapa los desagües, llega a los ríos y tarda siglos en desaparecer. Por eso me parece muy bien que el municipio quiera actuar.
+
+En primer lugar, la prohibición del plástico de un solo uso es una medida clara y fácil de controlar. Sin embargo, no creo que funcione si no hay alternativas baratas, porque los pequeños comercios no podrían pagar envases más caros.
+
+En segundo lugar, el depósito en las botellas ya funciona en otros países. La gente devuelve las botellas porque recupera su dinero, y además se recicla mucho más. El inconveniente es que los supermercados necesitan máquinas y espacio.
+
+En cuanto al impuesto a los alimentos envasados, me parece injusto, ya que afectaría sobre todo a las familias con menos recursos.
+
+En definitiva, la medida más acertada me parece el depósito, porque premia a quien recicla en lugar de castigar a quien compra. Yo propondría, además, que las ferias y los mercados ofrezcan descuentos a quienes traigan su propia bolsa o su propio recipiente.`
+        } ] }
     ] }
   ]
 });

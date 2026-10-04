@@ -224,5 +224,141 @@ var PruefungUI = {
     };
     feld.addEventListener('input', zaehlen);
     zaehlen();
+  },
+
+  /* ---- 7. Sprechen (wird NICHT automatisch bewertet) -------------------
+     Die Aufnahme kommt sofort in die Ablage des Geräts (Aufnahme.ablegen).
+     In den Antworten steht nur ein Verweis: { aufnahme, dauer, mime }.
+     So übersteht sie Vor- und Zurückblättern und auch das Schließen der App
+     nach der Abgabe — bis sie an den Prüfer verschickt ist. */
+
+  _laufend: null,       // { r: laufende Aufnahme, fertig: Promise }
+  _uhr: null,           // Zeitanzeige während der Aufnahme
+
+  art_sprechen(eintrag, b, antworten) {
+    const a = eintrag.aufgabe;
+    const f = a.fragen[0];
+    const maxSek = f.dauer || 120;
+    const esc = s => this.esc(s);
+
+    b.innerHTML = this.kopf(eintrag)
+      + `<div class="pruef-auftrag">
+           <p>${esc(f.auftrag)}</p>
+           <ul>${(f.punkte || []).map(p => `<li>${esc(p)}</li>`).join('')}</ul>
+           ${f.umfang ? `<p class="hinweis">${esc(f.umfang)}</p>` : ''}
+         </div>
+         <div class="pruef-warnung">${esc(t('pruef.nichtAutomatisch'))}</div>
+         ${Aufnahme.moeglich() ? `
+         <div class="pruef-sprechen">
+           <button type="button" class="sprech-knopf" id="pruef-aufnehmen">${esc(t('pruef.aufnehmen'))}</button>
+           <div class="sprech-status" id="pruef-sprech-status" hidden></div>
+           <div class="sprech-meldung" id="pruef-sprech-meldung" hidden></div>
+           <div class="sprech-ergebnis" id="pruef-sprech-ergebnis" hidden>
+             <div class="wortart" id="pruef-sprech-info"></div>
+             <audio id="pruef-sprech-audio" controls preload="auto"></audio>
+           </div>
+           <p class="hinweis">${esc(t('pruef.sprechHinweis', { max: Aufnahme.dauerText(maxSek) }))}</p>
+         </div>` : `<div class="sprech-meldung">${esc(t('pruef.ohneMikrofon'))}</div>`}`;
+
+    if (!Aufnahme.moeglich()) return;
+
+    const $ = id => b.querySelector('#' + id);
+    const knopf = $('pruef-aufnehmen');
+    const meldung = text => { const m = $('pruef-sprech-meldung'); m.hidden = !text; m.textContent = text || ''; };
+
+    // Vorhandene Aufnahme (nach dem Zurückblättern) wieder anzeigen
+    const zeigen = async ant => {
+      if (!b.isConnected) return;
+      if (!ant || !ant.aufnahme) { $('pruef-sprech-ergebnis').hidden = true; return; }
+      const blob = await Aufnahme.holen(ant.aufnahme);
+      if (!b.isConnected) return;
+      if (!blob) { meldung(t('pruef.aufnahmeFehlt')); return; }
+      const audio = $('pruef-sprech-audio');
+      if (audio.dataset.url) URL.revokeObjectURL(audio.dataset.url);
+      audio.dataset.url = URL.createObjectURL(blob);
+      audio.src = audio.dataset.url;
+      $('pruef-sprech-info').textContent = t('pruef.deineAufnahme', { dauer: Aufnahme.dauerText(ant.dauer) });
+      $('pruef-sprech-ergebnis').hidden = false;
+      knopf.textContent = t('pruef.neuAufnehmen');
+    };
+    zeigen(antworten[f.id]);
+
+    // Fertige Aufnahme ablegen. Die alte wird erst gelöscht, wenn die neue
+    // sicher da ist — ein Fehler soll nie BEIDE kosten.
+    const ablegen = async erg => {
+      this._uhrStoppen();
+      if (b.isConnected) {
+        knopf.classList.remove('nimmt-auf');
+        knopf.textContent = t('pruef.aufnehmen');
+        $('pruef-sprech-status').hidden = true;
+      }
+      if (!erg || !erg.blob || !erg.blob.size) { if (b.isConnected) meldung(t('sprech.leer')); return; }
+      const alt = antworten[f.id] && antworten[f.id].aufnahme;
+      const schluessel = Aufnahme.neuerSchluessel();
+      antworten[f.id] = { aufnahme: schluessel, dauer: Math.round(erg.dauer), mime: erg.mime };
+      await Aufnahme.ablegen(schluessel, erg.blob);
+      if (alt) Aufnahme.entfernen(alt);
+      zeigen(antworten[f.id]);
+    };
+
+    knopf.addEventListener('click', async () => {
+      if (this._laufend) { this._laufend.r.stoppen(); return; }   // zweiter Tipp = Stopp
+      meldung('');
+      $('pruef-sprech-audio').pause();
+      knopf.disabled = true;                                       // bis das Mikrofon da ist
+      let r;
+      try {
+        r = await Aufnahme.starten(maxSek);
+      } catch (e) {
+        knopf.disabled = false;
+        meldung(Aufnahme.fehlertext(e));
+        return;
+      }
+      knopf.disabled = false;
+      const laufend = { r };
+      // Verworfen wird nur beim Abbrechen der Prüfung — dann soll nichts
+      // mehr abgelegt werden, was gleich danach gelöscht würde.
+      laufend.fertig = r.ergebnis.then(erg => laufend.verworfen ? null : ablegen(erg)).finally(() => {
+        if (this._laufend === laufend) this._laufend = null;
+      });
+      this._laufend = laufend;
+      knopf.classList.add('nimmt-auf');
+      knopf.textContent = t('pruef.stopp');
+      const status = $('pruef-sprech-status');
+      const beginn = Date.now();
+      const anzeigen = () => {
+        status.textContent = t('pruef.laeuft', {
+          zeit: Aufnahme.dauerText((Date.now() - beginn) / 1000), max: Aufnahme.dauerText(maxSek)
+        });
+      };
+      anzeigen();
+      status.hidden = false;
+      this._uhrStoppen();
+      this._uhr = setInterval(anzeigen, 250);
+    });
+  },
+
+  _uhrStoppen() {
+    if (this._uhr) { clearInterval(this._uhr); this._uhr = null; }
+  },
+
+  /** Vor dem Blättern und vor der Abgabe: Läuft noch eine Aufnahme, wird
+      sie beendet UND abgelegt. Erst danach geht es weiter — sonst fehlte
+      die Aufnahme in der Abgabe, wenn man direkt auf „Abgeben" tippt. */
+  async fertigstellen() {
+    const l = this._laufend;
+    if (l) { l.r.stoppen(); await l.fertig; }
+    this._uhrStoppen();
+    document.querySelectorAll('#pruef-inhalt audio').forEach(a => a.pause());
+  },
+
+  /** Beim Verlassen der Prüfung (Abbrechen, Menü): Mikrofon sofort los. */
+  aufraeumen() {
+    const l = this._laufend;
+    this._laufend = null;
+    if (l) { l.verworfen = true; l.r.abbrechen(); }
+    this._uhrStoppen();
+    Aufnahme.allesFreigeben();
+    document.querySelectorAll('#pruef-inhalt audio').forEach(a => a.pause());
   }
 };

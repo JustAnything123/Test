@@ -775,7 +775,15 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
 .pruef-bewertung-hinweis { margin: .45rem 0 0; font-size: .88rem; line-height: 1.55; }
 
 .pruef-teilen-knoepfe { margin-top: .8rem; }
+.pruef-teilen-knoepfe .hinweis { margin: .5rem 0 0; font-size: .82rem; }
 .btn-teilen { width: 100%; background: var(--blau); color: #fff; }
+
+/* Sprechteil der Prüfung und Aufnahme beim Prüfer */
+.pruef-sprechen { margin-top: .8rem; }
+.pruef-sprechen .hinweis { font-size: .82rem; }
+.pruef-ton audio, .pruefer-ton audio { display: block; width: 100%; margin-top: .4rem; }
+.pruefer-ton p { margin: 0 0 .4rem; }
+.pruefer-datei { display: block; margin-top: .6rem; }
 
 /* ---- Der Bildschirm des Prüfers ---- */
 .pruefer-kopf {

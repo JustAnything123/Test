@@ -165,6 +165,41 @@ Ich würde mich freuen, Sie wieder bei uns begrüßen zu dürfen.
 Mit freundlichen Grüßen
 D. Z., Restaurantleitung`
         } ] }
+    ] },
+    { id: 't5', art: 'sprechen', name: 'Expresión oral', aufgaben: [
+      { id: 'ba5a1', art: 'sprechen', nummer: 'Tarea 8',
+        anweisung: 'Habla en alemán y grábate. Esta tarea no se evalúa automáticamente.',
+        fragen: [ {
+          id: 'ba5101', dauer: 150,
+          auftrag: 'Al empezar el turno informas al equipo de servicio (briefing). Habla como si estuvieras delante de ellos.',
+          punkte: [ 'Saluda y di cuántas reservas hay y cuándo llega el grupo grande.', 'Presenta el plato del día y di qué se ha agotado ya.', 'Avisa de un alérgeno importante en un plato.', 'Reparte las tareas (zonas, barra, terraza).' ],
+          umfang: 'Habla entre 1 y 2 minutos.',
+          auftragZiel: 'Zu Schichtbeginn informierst du das Serviceteam (Briefing). Sprich so, als stündest du vor ihnen.',
+          punkteZiel: [ 'Begrüße das Team und sag, wie viele Reservierungen es gibt und wann die große Gruppe kommt.', 'Stell das Tagesgericht vor und sag, was schon aus ist.', 'Weise auf ein wichtiges Allergen in einem Gericht hin.', 'Verteile die Aufgaben (Stationen, Bar, Terrasse).' ],
+          umfangZiel: 'Sprich 1 bis 2 Minuten.',
+          kriterienZiel: [
+            'Alle vier Punkte kommen vor.',
+            'Die Fachwörter stimmen (Reservierung, Tagesgericht, Allergen, Station …).',
+            'Uhrzeiten und Zahlen sind klar und richtig.',
+            'Die Anweisungen sind höflich, aber eindeutig.',
+            'Nach dem Briefing könnte das Team sofort loslegen.'
+          ],
+          kriterien: [
+            'Aparecen los cuatro puntos.',
+            'Los términos técnicos son correctos (Reservierung, Tagesgericht, Allergen, Station …).',
+            'Las horas y los números son claros y correctos.',
+            'Las instrucciones son amables pero inequívocas.',
+            'Tras el briefing, el equipo podría empezar a trabajar enseguida.'
+          ],
+          muster:
+`Guten Morgen zusammen! Kurz zum Mittagsservice: Wir haben 42 Reservierungen, und um halb eins kommt eine Gruppe mit 14 Personen in den Wintergarten.
+
+Tagesgericht ist Rinderroulade mit Rotkohl und Kartoffelklößen. Die Kürbissuppe ist schon aus – bitte nicht mehr anbieten.
+
+Achtung beim Dessert: In der Mousse sind Haselnüsse. Bitte fragt jeden Gast nach Allergien und gebt es sofort an die Küche weiter.
+
+Maria, du übernimmst Station 1 und die Gruppe. Jonas, du machst die Bar. Ich bin auf der Terrasse. Gibt es noch Fragen? Dann los – einen guten Service!`
+        } ] }
     ] }
   ]
 });

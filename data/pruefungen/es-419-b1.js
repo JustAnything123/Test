@@ -156,6 +156,45 @@ Muchas gracias por su apoyo.
 Saludos cordiales,
 Dennis Z.`
         } ] }
+    ] },
+    { id: 't5', art: 'sprechen', name: 'Sprechen', aufgaben: [
+      { id: 'lb5a1', art: 'sprechen', nummer: 'Aufgabe 8',
+        anweisung: 'Sprich auf Spanisch und nimm dich auf. Diese Aufgabe wird nicht automatisch bewertet.',
+        fragen: [ {
+          id: 'lb5101', dauer: 180,
+          auftrag: 'Präsentiere das Thema „Die sozialen Netzwerke in meinem Leben“.',
+          punkte: [ 'Welche Netzwerke nutzt du, wofür und wie oft?', 'Erzähl ein Erlebnis, gut oder schlecht (indefinido und imperfecto).', 'Welche Vor- und Nachteile siehst du?', 'Was würdest du jungen Leuten raten? (te recomiendo que + subjuntivo)' ],
+          umfang: 'Sprich 2 bis 3 Minuten.',
+          auftragZiel: 'Presenta el tema «Las redes sociales en mi vida».',
+          punkteZiel: [ '¿Qué redes usas, para qué y con qué frecuencia?', 'Cuenta una experiencia, buena o mala.', '¿Qué ventajas y desventajas ves?', '¿Qué les recomendarías a los jóvenes?' ],
+          umfangZiel: 'Habla entre 2 y 3 minutos.',
+          kriterienZiel: [
+            'La presentación tiene introducción, desarrollo y cierre.',
+            'La experiencia combina bien indefinido e imperfecto.',
+            'Las ventajas y desventajas se justifican (porque, por eso, sin embargo).',
+            'La recomendación usa el subjuntivo (te recomiendo que…).',
+            'El ritmo es tranquilo y se entiende todo sin preguntar.'
+          ],
+          kriterien: [
+            'Der Vortrag hat Einleitung, Hauptteil und Schluss.',
+            'Das Erlebnis wechselt richtig zwischen indefinido und imperfecto.',
+            'Vor- und Nachteile werden begründet (porque, por eso, sin embargo).',
+            'Die Empfehlung nutzt den subjuntivo (te recomiendo que…).',
+            'Das Tempo ist ruhig, und man versteht alles ohne Nachfragen.'
+          ],
+          muster:
+`Hoy quiero hablar de las redes sociales en mi vida. Primero voy a contar cómo las uso, después una experiencia personal y, al final, qué ventajas y desventajas veo.
+
+Uso WhatsApp todos los días para hablar con mi familia y con mis compañeros de trabajo. Instagram lo miro casi todas las noches, sobre todo para ver fotos de viajes.
+
+El año pasado tuve una experiencia muy bonita: estaba buscando un departamento en Lima y una amiga compartió mi mensaje en un grupo. A los dos días, una señora me escribió y así encontré mi casa actual.
+
+La gran ventaja es que podemos estar en contacto con personas que viven lejos. Sin embargo, también perdemos mucho tiempo y a veces comparamos nuestra vida con la de los demás. Por eso muchas personas se sienten mal.
+
+A los jóvenes les recomiendo que usen las redes con un horario fijo y que no crean todo lo que ven.
+
+Muchas gracias por escucharme.`
+        } ] }
     ] }
   ]
 });

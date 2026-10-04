@@ -162,6 +162,43 @@ Was kann ich mitbringen? Soll ich einen Kuchen machen?
 Bis Samstag!
 Ana`
         } ] }
+    ] },
+    { id: 't5', art: 'sprechen', name: 'Expresión oral', aufgaben: [
+      { id: 'da5a1', art: 'sprechen', nummer: 'Tarea 8',
+        anweisung: 'Habla en alemán y grábate. Esta tarea no se evalúa automáticamente.',
+        fragen: [ {
+          id: 'da5101', dauer: 90,
+          auftrag: 'Preséntate en alemán, como en la primera parte del examen oral.',
+          punkte: [ 'Nombre y edad', 'País y ciudad donde vives', 'Idiomas que hablas', 'Profesión o estudios', 'Aficiones' ],
+          umfang: 'Habla entre 30 y 60 segundos.',
+          auftragZiel: 'Stell dich auf Deutsch vor, wie im ersten Teil der mündlichen Prüfung.',
+          punkteZiel: [ 'Name und Alter', 'Land und Wohnort', 'Sprachen', 'Beruf oder Studium', 'Hobbys' ],
+          umfangZiel: 'Sprich 30 bis 60 Sekunden.',
+          kriterienZiel: [
+            'Alle fünf Punkte kommen vor.',
+            'Die Sätze sind einfach, aber vollständig (Verb an zweiter Position).',
+            'Zahlen wie das Alter sind richtig gesagt.',
+            'Die Aussprache stört das Verständnis nicht (z. B. „ich“, „ü“, „ö“).',
+            'Man versteht alles ohne Nachfragen.'
+          ],
+          kriterien: [
+            'Aparecen los cinco puntos.',
+            'Las frases son sencillas pero completas (verbo en segunda posición).',
+            'Los números, como la edad, se dicen bien.',
+            'La pronunciación no dificulta la comprensión (p. ej. «ich», «ü», «ö»).',
+            'Se entiende todo sin tener que preguntar.'
+          ],
+          muster:
+`Hallo! Ich heiße Ana García. Ich bin 28 Jahre alt.
+
+Ich komme aus Kolumbien, aus Medellín. Jetzt wohne ich in Hamburg.
+
+Ich spreche Spanisch, Englisch und ein bisschen Deutsch.
+
+Ich bin Krankenpflegerin von Beruf.
+
+In meiner Freizeit tanze ich gern Salsa, und ich koche gern.`
+        } ] }
     ] }
   ]
 });
