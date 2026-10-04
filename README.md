@@ -6,12 +6,16 @@ auf deinem Gerät.
 
 | Kurs | Richtung | Niveau | Tage |
 |---|---|---|---|
-| 🌎 Español (Latinoamérica) | Deutsch → Spanisch (Lateinamerika) | A2 → B2 | 90 |
+| 🌎 Español (Latinoamérica) | Deutsch → Spanisch (Lateinamerika) | A1 → B2 | 120 |
 | 🇩🇪 Alemán | Spanisch → Deutsch, Oberfläche auf Spanisch | A1 → B2 | 120 |
-| 🍽️ Alemán en el trabajo | Themen-Lernpfad des Deutschkurses: Hotel, Restaurant, Küche | A2 → B2 | 45 |
+| 🍽️ Alemán en el trabajo | Themen-Lernpfad des Deutschkurses: Hotel, Restaurant, Küche | A1 → B2 | 60 |
 
-**255 Tageslektionen · 2550 Vokabeln · 1275 Beispielsätze · 255 Grammatik- und
-Redemittelthemen**
+**300 Tageslektionen · 3000 Vokabeln · 1500 Beispielsätze · 300 Grammatik- und
+Redemittelthemen · 11 Prüfungen mit Schreib- und Sprechteil**
+
+Alle drei Kurse beginnen seit Oktober 2026 bei null (A1) und haben
+**Sprechübungen**: täglich Nachsprechen mit Selbstcheck, in jeder Prüfung einen
+Sprechteil, den ein Mensch bewertet.
 
 Der frühere Kurs *Español (España)* ist seit Oktober 2026 ausgeblendet und liegt
 in [`ablage/`](ablage/README.md). Ein vorhandener Lernstand bleibt erhalten.
@@ -40,7 +44,7 @@ in [`ablage/`](ablage/README.md). Ein vorhandener Lernstand bleibt erhalten.
 Grammatikthema. Der Aufbau folgt Memrise: erst die fälligen Wiederholungen,
 dann der neue Stoff.
 
-**Sechs Übungsarten**, die mit deinem Können anspruchsvoller werden:
+**Sieben Übungsarten**, die mit deinem Können anspruchsvoller werden:
 
 | Übung | Was du tust |
 |---|---|
@@ -50,6 +54,7 @@ dann der neue Stoff.
 | Satzbau | Vorgegebene Wörter in die richtige Reihenfolge bringen |
 | Hören | Den vorgelesenen Satz aufschreiben |
 | Lückentext | Die richtige grammatische Form einsetzen |
+| Nachsprechen | Satz vorsprechen lassen, sich selbst aufnehmen, beide Fassungen vergleichen und abhaken, was geklappt hat — ohne Note |
 
 **Wiederholsystem nach Memrise-Vorbild.** Jedes Wort hat eine Stufe. Sitzt es,
 wandert es weiter: 4 Stunden → 12 Stunden → 1 Tag → 6 Tage → 12 Tage → 48 Tage →
@@ -69,6 +74,17 @@ letzten Falscheingaben. Filterbar nach Problemwörtern und Fälligkeit.
 Handys und sucht sich je Kurs eine passende Stimme. Keine Audiodateien, kein
 Internet nötig.
 
+**Sprechen üben.** Nach den Sätzen des Tages kommen zwei davon zum
+**Nachsprechen**: Das Handy spricht vor, du nimmst dich auf, hörst dir beide
+Fassungen an („Vergleichen") und hakst ab, was geklappt hat — alle Wörter
+gesagt, Betonung ähnlich, flüssig. Es gibt bewusst keine Note: Aussprache kann
+ein Computer nicht verlässlich bewerten, du selbst beim direkten Vergleich aber
+recht gut. Die Aufnahme bleibt nur im Arbeitsspeicher und ist beim Weiterblättern
+weg. Das Mikrofon funktioniert nur, wenn die App über **https** geöffnet ist (z. B.
+über GitHub Pages) — beim Öffnen per Doppelklick zeigt die Übung stattdessen einen
+Hinweis, und du sprichst einfach laut nach. Aufgenommen wird als MP4 (AAC), das
+Android und iPhone gleichermaßen abspielen.
+
 ---
 
 ## Die drei Kurse
@@ -81,14 +97,17 @@ Problemwörter werden getrennt geführt. Du kannst also parallel Spanisch lernen
 und deiner Partnerin den Deutschkurs geben, ohne dass sich etwas vermischt.
 Gemeinsam sind nur die Einstellungen (Thema, Ton, Tagesziel).
 
-### 🌎 Español (Latinoamérica) — A2 → B2, 90 Tage
+### 🌎 Español (Latinoamérica) — A1 → B2, 120 Tage
 
 Neutrales Lateinamerika-Spanisch: **kein `vosotros`** (für „ihr" steht überall
 `ustedes`), `carro`/`departamento`/`jugo` statt `coche`/`piso`/`zumo`, und das
 Perfecto tritt zugunsten des Indefinido zurück. Wo eine Form sich zwischen den
 Ländern unterscheidet, steht die neutrale Variante — die dich von Mexiko bis
-Argentinien trägt. Erklärungen auf Deutsch. Die dreißig zusätzlichen Tage führen
-bis B2.
+Argentinien trägt. Erklärungen auf Deutsch.
+
+Seit Oktober 2026 beginnt der Kurs bei null: **Tag 1–30 sind A1** (Aussprache,
+sich vorstellen, Zahlen, Familie, Uhrzeit, Einkaufen, Stadt und Verkehr,
+Freizeit, Pläne). Tag 31–120 führen wie bisher von A2 bis B2.
 
 ### 🇩🇪 Alemán — A1 → B2, 120 Tage
 
@@ -99,7 +118,7 @@ Spanisch geschrieben, mit Blick auf genau die Stellen, an denen Spanischsprachig
 im Deutschen hängenbleiben: die vier Fälle, die Verbstellung, die
 Adjektivdeklination, `seit` mit Präsens, falsche Freunde.
 
-### 🍽️ Alemán en el trabajo — A2 → B2, 45 Tage
+### 🍽️ Alemán en el trabajo — A1 → B2, 60 Tage
 
 Ein **Themen-Lernpfad des Deutschkurses** für alle, die im Hotel oder im
 Restaurant arbeiten. Kein eigener Sprachkurs, sondern der Fachwortschatz und die
@@ -112,19 +131,23 @@ Lernstand, lässt sich also **parallel** zum langen Deutschkurs machen: der lang
 Kurs liefert die Grammatik, der Pfad die Wörter, die man im Dienst sofort
 braucht.
 
-**Empfehlung:** ab etwa Tag 30 des Deutschkurses (Niveau A2). Wer schon im Beruf
-steht, kann auch direkt einsteigen — die Redemittel sind als feste Bausteine
-erklärt und funktionieren auch ohne vollständige Grammatik.
+**Einstieg:** Seit Oktober 2026 beginnt der Pfad bei null — die **Tage 1–15
+(A1)** bringen das Nötigste für den ersten Arbeitstag: grüßen, sich vorstellen,
+Berufe, Zahlen und Uhrzeit, Arbeitsplatz und Arbeitskleidung, Grundnahrungsmittel,
+Gäste empfangen und kassieren. Ab Tag 16 folgt der Arbeitstag auf A2 bis B2. Die
+Redemittel sind als feste Bausteine erklärt und funktionieren auch ohne
+vollständige Grammatik.
 
 | Block | Tage | Inhalt |
 |---|---|---|
-| Küche | 1–8 | Geräte · Schneiden und Vorbereiten · Garmethoden · Fleisch und Fisch · Gemüse und Kräuter · Mengen und Rezepte · Mise en place und Schichtübergabe · Hygiene und HACCP |
-| Service | 9–16 | Gedeck und Begrüßung · Speisekarte · Getränke · Bestellung aufnehmen · Servieren · Reklamationen · Bezahlen und Trinkgeld · Reservierung am Telefon |
-| Hotel | 17–24 | Bereiche und Berufe · Zimmerarten · Check-in · Check-out und Rechnung · Housekeeping · Auskunft und Wegbeschreibung · Probleme und Defekte · Frühstück und Etagenservice |
-| Ernährung und Beruf | 25–30 | Allergene · Ernährungsformen · Nährstoffe · Arbeitssicherheit · Vertrag, Schichten, Urlaub · Vorstellungsgespräch und Abschluss |
-| Fachwortschatz Küche | 31–37 | Messerarten · Töpfe, Pfannen und Großküchengeräte · Küchenhelfer · Schnitttechniken · Fleischteile und Garstufen · Fisch und Meeresfrüchte · Gemüse, Kräuter und Gewürze |
-| Fachwortschatz Service | 38–42 | Tellerarten · Besteckarten · Gläserkunde · Wein, Bier und Kaffee · Menüfolge vom Aperitif bis zum Digestif |
-| Fachwortschatz Hotel | 43–45 | Zimmertypen, Betten, Verpflegungsarten · Bettwäsche, Handtücher, Bad · Reinigung, Zimmerstatus und Hausberufe |
+| Erste Schritte (A1) | 1–15 | Grüßen · sich vorstellen · Berufe im Haus · Zahlen · Uhrzeit · Wochentage und Dienstplan · Arbeitsplatz · Arbeitskleidung und Hygiene · Grundnahrungsmittel · Obst und Gemüse · Adjektive · Alltagsverben · Gäste empfangen · Preise und Kassieren · um Hilfe bitten |
+| Küche | 16–23 | Geräte · Schneiden und Vorbereiten · Garmethoden · Fleisch und Fisch · Gemüse und Kräuter · Mengen und Rezepte · Mise en place und Schichtübergabe · Hygiene und HACCP |
+| Service | 24–31 | Gedeck und Begrüßung · Speisekarte · Getränke · Bestellung aufnehmen · Servieren · Reklamationen · Bezahlen und Trinkgeld · Reservierung am Telefon |
+| Hotel | 32–39 | Bereiche und Berufe · Zimmerarten · Check-in · Check-out und Rechnung · Housekeeping · Auskunft und Wegbeschreibung · Probleme und Defekte · Frühstück und Etagenservice |
+| Ernährung und Beruf | 40–45 | Allergene · Ernährungsformen · Nährstoffe · Arbeitssicherheit · Vertrag, Schichten, Urlaub · Vorstellungsgespräch und Abschluss |
+| Fachwortschatz Küche | 46–52 | Messerarten · Töpfe, Pfannen und Großküchengeräte · Küchenhelfer · Schnitttechniken · Fleischteile und Garstufen · Fisch und Meeresfrüchte · Gemüse, Kräuter und Gewürze |
+| Fachwortschatz Service | 53–57 | Tellerarten · Besteckarten · Gläserkunde · Wein, Bier und Kaffee · Menüfolge vom Aperitif bis zum Digestif |
+| Fachwortschatz Hotel | 58–60 | Zimmertypen, Betten, Verpflegungsarten · Bettwäsche, Handtücher, Bad · Reinigung, Zimmerstatus und Hausberufe |
 
 Das Feld `grammatik` trägt in diesem Pfad **Redemittel** statt reiner Grammatik:
 fertige Formulierungen für wiederkehrende Situationen — die Bestellung abrufen,
@@ -162,8 +185,9 @@ Browser-Adressleiste, wie eine normale App.
 ### Weg B — ohne Hosting, direkt vom Gerät
 
 Lade das Repository als ZIP herunter, entpacke es und öffne `index.html` per
-Doppelklick. Die App funktioniert vollständig — es fehlen nur das App-Icon und
-der Offline-Modus.
+Doppelklick. Die App funktioniert vollständig — es fehlen nur das App-Icon, der
+Offline-Modus und die Sprachaufnahme (das Mikrofon gibt der Browser nur über
+https frei).
 
 > Diese App braucht bewusst keinen Server, kein npm und keinen Build-Schritt.
 > Es sind reine HTML-, CSS- und JavaScript-Dateien, die du alle lesen und
@@ -224,8 +248,9 @@ Das ist ein eigener Ausbauschritt und für den Anfang nicht nötig.
 2. 🔁  Wiederholungen     →  was heute fällig ist
 3. 📖  Neue Vokabeln      →  ansehen · Multiple Choice · tippen
 4. 💬  Sätze              →  Satzbau und Hören
-5. 📐  Grammatik          →  Erklärung lesen, dann Lückentext
-6. 🎉  Abschluss          →  Statistik und Fehlerübersicht
+5. 🎙️  Nachsprechen       →  zwei Sätze laut sagen, aufnehmen, vergleichen
+6. 📐  Grammatik          →  Erklärung lesen, dann Lückentext
+7. 🎉  Abschluss          →  Statistik und Fehlerübersicht
 ```
 
 ### Die Intervall-Leiter
@@ -277,7 +302,8 @@ Stand **aller** Kurse.
 Datei auswählen.
 
 So überträgst du deinen Stand auch auf ein neues Handy. Mach das am besten
-einmal im Monat.
+einmal im Monat. Sprachaufnahmen aus Prüfungen sind in der Sicherung nicht
+enthalten — schick sie vorher an deinen Prüfer.
 
 ---
 
@@ -298,26 +324,27 @@ js/daten.js                Sammelbehälter für die Lektionen des aktiven Kurses
 js/speicher.js             Fortschritt je Kurs speichern, Export und Import
 js/srs.js                  Intervall-Leiter und Problemwörter
 js/sprache.js              Sprachausgabe, sucht je Kurs eine passende Stimme
-js/uebungen.js             die sechs Übungstypen
+js/aufnahme.js             Mikrofon: aufnehmen, Formate, Ablage der Prüfungsaufnahmen
+js/uebungen.js             die sieben Übungstypen (mit Nachsprechen)
 js/statistik.js            Zähler, Streak, Kalendergitter, Kalenderdatei
 js/tagesplan.js            stellt die Aufgaben einer Sitzung zusammen
 js/app.js                  Ablaufsteuerung und Bildschirmwechsel
 
-data/es-419/lektionen-01-10.js …  -81-90.js    90 Lektionen, Lateinamerika
+data/es-419/lektionen-01-10.js …  -111-120.js 120 Lektionen, Lateinamerika
 data/de/lektionen-01-10.js     … -111-120.js  120 Lektionen, Deutsch
-data/de-beruf/lektionen-01-08.js … -43-45.js    45 Lektionen, Deutsch im Beruf
+data/de-beruf/lektionen-01-08.js … -58-60.js    60 Lektionen, Deutsch im Beruf
 
 js/teilen.js               Prüfauftrag und Bewertung in einen Link packen
 js/pruefungen.js           Prüfungen: Register, Punkte, Bestehensgrenze
-js/pruefung-ui.js          die fünf Prüfungs-Aufgabentypen
-data/pruefungen/de-a1.js … es-419-b2.js      9 Prüfungen
+js/pruefung-ui.js          die Prüfungs-Aufgabentypen, auch Schreiben und Sprechen
+data/pruefungen/de-a1.js … es-419-b2.js      11 Prüfungen
 
 ablage/                    ausgeblendeter Spanien-Kurs, siehe ablage/README.md
 
 tests/alle.sh              startet Server, laesst alle Tests laufen, raeumt auf
 tests/umgebung.js          gemeinsame Einstellungen (Pfade, Adresse, Browser)
 tests/01-daten.js          prueft alle Lerndaten — braucht keinen Browser
-tests/02-lernsystem.js  …  -07-luecken.js   sechs weitere Pruefungen
+tests/02-lernsystem.js  …  -13-datenstand.js zwölf weitere Pruefungen
 tests/README.md            was jeder Test prueft und wie man ihn startet
 ```
 
@@ -333,24 +360,27 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 
 ### Lernstoff auf einen Blick
 
-**Spanisch (beide Kurse, Tag 1–60 inhaltlich gleich)**
+**Spanisch (Lateinamerika), Tag 1–120**
 
 | Tage | Niveau | Grammatikthemen |
 |---|---|---|
-| 1–10 | A2 | ser/estar · hay/estar · unregelmäßige Verben · Reflexive · Gerundio · Objektpronomen · gustar · Possessiv/Demonstrativ |
-| 11–20 | A2 | Vergleiche · doler · Imperativ bejaht/verneint · Perfecto · Indefinido · Imperfecto · Indefinido vs. Imperfecto |
-| 21–30 | A2 | ir a + Infinitiv · Futuro · por/para · Konnektoren · Relativsätze · Verneinung · Adverbien · indirekte Fragen · unpersönliches se |
-| 31–40 | A2→B1 | Condicional · Pluscuamperfecto · Passiv · indirekte Rede · Perifrasen · **Subjuntivo: Bildung, Wunsch, Gefühl, Zweifel, ojalá** |
-| 41–50 | B1 | Subjuntivo nach Zeit- und Zweckkonjunktionen · in Relativsätzen · alle Imperativformen · Bedingungssätze Typ 1 · aunque · B1-Konnektoren |
-| 51–60 | B1 | Imperfecto de Subjuntivo · Bedingungssätze Typ 2 und 3 · Zeitenfolge · neutrales lo · se der Unabsichtlichkeit · Redewendungen |
+| 1–10 | A1 | Aussprache · Personalpronomen und ser · Nationalitäten · tener und Alter · Zahlen bis 100 · Artikel · Plural · Verben auf -ar, -er, -ir · Fragewörter |
+| 11–20 | A1 | mi/tu/su · hay · estar · Uhrzeit · Wochentage und Datum · Häufigkeit · querer (e → ie) · höflich bestellen · Preise und Mengen · Adjektive anpassen |
+| 21–30 | A1 | ir und al · Verkehrsmittel · Ortsangaben und del · gustar (Grundform) · Wetter mit hacer · tener hambre · Personen beschreiben · poder, saber, tener que · ir a + Infinitiv · A1-Überblick |
+| 31–40 | A2 | ser/estar · hay/estar · unregelmäßige Verben · Reflexive · Gerundio · Objektpronomen · gustar · Possessiv/Demonstrativ |
+| 41–50 | A2 | Vergleiche · doler · Imperativ bejaht/verneint · Perfecto · Indefinido · Imperfecto · Indefinido vs. Imperfecto |
+| 51–60 | A2 | ir a + Infinitiv · Futuro · por/para · Konnektoren · Relativsätze · Verneinung · Adverbien · indirekte Fragen · unpersönliches se |
+| 61–70 | A2→B1 | Condicional · Pluscuamperfecto · Passiv · indirekte Rede · Perifrasen · **Subjuntivo: Bildung, Wunsch, Gefühl, Zweifel, ojalá** |
+| 71–80 | B1 | Subjuntivo nach Zeit- und Zweckkonjunktionen · in Relativsätzen · alle Imperativformen · Bedingungssätze Typ 1 · aunque · B1-Konnektoren |
+| 81–90 | B1 | Imperfecto de Subjuntivo · Bedingungssätze Typ 2 und 3 · Zeitenfolge · neutrales lo · se der Unabsichtlichkeit · Redewendungen |
 
-**Nur Lateinamerika-Kurs, Tag 61–90 (B2)**
+**Spanisch (Lateinamerika), Tag 91–120 (B2)**
 
 | Tage | Grammatikthemen |
 |---|---|
-| 61–70 | Subjuntivo Perfecto und Pluscuamperfecto · Zeitenfolge komplett · estilo indirecto · perífrasis verbales |
-| 71–80 | Konnektoren des Arguments · Passivvarianten · Nominalstil · voseo verstehen · regionale Unterschiede |
-| 81–90 | Idiomatik · Register · falsche Freunde · Textaufbau · B2-Abschluss |
+| 91–100 | Subjuntivo Perfecto und Pluscuamperfecto · Zeitenfolge komplett · estilo indirecto · perífrasis verbales |
+| 101–110 | Konnektoren des Arguments · Passivvarianten · Nominalstil · voseo verstehen · regionale Unterschiede |
+| 111–120 | Idiomatik · Register · falsche Freunde · Textaufbau · B2-Abschluss |
 
 **Deutsch für Spanischsprachige, Tag 1–120**
 
@@ -361,17 +391,18 @@ globale Objekte statt Frameworks. So funktioniert die App auch, wenn du
 | 61–90 | B1 | Relativsätze in Dativ und Genitiv · Konjunktiv II der Vergangenheit · Passiv in allen Zeiten und mit Modalverben · Genitiv · n-Deklination · Partizipien als Adjektiv · TeKaMoLo · Stellung von nicht · da-/wo-Komposita · subjektive Modalverben · Futur I und II · Modalpartikeln |
 | 91–120 | B2 | Konjunktiv I und Pressesprache · erweiterte Partizipialattribute · Nominalstil · Zustandspassiv · konzessive Konstruktionen · Funktionsverbgefüge · Konditionalsätze ohne wenn · als ob · Register · Argumentation · Grafikbeschreibung · Kollokationen · Varianten D/A/CH · typische Fehlerquellen und falsche Freunde |
 
-**Deutsch im Beruf, Tag 1–45 — Redemittel statt reiner Grammatik**
+**Deutsch im Beruf, Tag 1–60 — Redemittel statt reiner Grammatik**
 
 | Tage | Niveau | Redemittel |
 |---|---|---|
-| 1–8 | A2–B1 | Anweisungen in der Küche verstehen (Imperativ) · Arbeitsanweisung bestätigen und wiederholen · Garstufen und Zeiten · Bestellung im Pass abrufen · Ware annehmen und prüfen · Mengen und Maße ohne „von" · Schichtübergabe mit Passiv und Modalverb · Temperaturen dokumentieren |
-| 9–16 | A2–B1 | Gäste begrüßen und platzieren · Gerichte erklären und empfehlen (Passiv) · Getränke empfehlen und servieren · höflich fragen mit Konjunktiv II · am Tisch nachfragen (schmecken + Dativ) · entschuldigen und Lösung anbieten · abrechnen, Trinkgeld, Beträge · telefonieren und buchstabieren |
-| 17–24 | A2–B1 | sich vorstellen und Zuständigkeit nennen · Zimmer beschreiben (haben + Akkusativ, mit + Dativ) · Check-in in sechs Schritten · Rechnungspositionen erklären · Zimmerstatus melden und Fundsachen · Weg beschreiben · Problem aufnehmen und weiterleiten · Frühstück und Etagenservice mit trennbaren Verben |
-| 25–30 | B1–B2 | Allergiefragen sicher beantworten (die 14 Allergene) · Alternativen anbieten (ersetzen durch, verzichten auf) · Nährwerte (viel/viele, reich an) · Gefahr melden und Unfall dokumentieren · mit dem Chef sprechen (Konjunktiv II, Krankmeldung, Urlaubsantrag) · Vorstellungsgespräch |
-| 31–37 | B1–B2 | **Wortbildung: wie ein Fachwort gebaut wird** · wohin/wo (Wechselpräpositionen) · Werkzeug benennen (mit + Dativ, zum + Infinitiv) · Verb + Nomen (Schneidebrett, Bratpfanne) · Adjektivendungen am Gericht · Pluralformen der Speisekarte · Geschmack und Geruch (schmecken nach, passen zu) |
-| 38–42 | B1–B2 | Hausstandard erklären (Passiv Präsens) · Reihenfolge des Gedecks (Ordnungszahlen, von außen nach innen) · nach dem richtigen Teil fragen (welcher/welches/welche) · Getränke vergleichen und empfehlen (Komparativ) · Gangfolge erzählen (zuerst, danach, zum Schluss) |
-| 43–45 | B1–B2 | erklären, was im Preis steckt (enthalten, bestehen aus, inbegriffen, betragen) · wer was bekommt (Dativ vor Akkusativ) · Abschluss-Repaso: das Fachwort selbst bauen |
+| 1–15 | A1 | sein und Pronomen · Verben im Präsens · Berufe männlich/weiblich · Zahlen (einundzwanzig) · Uhrzeit (Vorsicht bei „halb") · Verb an zweiter Stelle · der/die/das, ein/eine · haben, einen, kein · Plural · es gibt · sehr/zu/nicht · Akkusativ (den, einen) · möchten · Preise · können und müssen |
+| 16–23 | A2–B1 | Anweisungen in der Küche verstehen (Imperativ) · Arbeitsanweisung bestätigen und wiederholen · Garstufen und Zeiten · Bestellung im Pass abrufen · Ware annehmen und prüfen · Mengen und Maße ohne „von" · Schichtübergabe mit Passiv und Modalverb · Temperaturen dokumentieren |
+| 24–31 | A2–B1 | Gäste begrüßen und platzieren · Gerichte erklären und empfehlen (Passiv) · Getränke empfehlen und servieren · höflich fragen mit Konjunktiv II · am Tisch nachfragen (schmecken + Dativ) · entschuldigen und Lösung anbieten · abrechnen, Trinkgeld, Beträge · telefonieren und buchstabieren |
+| 32–39 | A2–B1 | sich vorstellen und Zuständigkeit nennen · Zimmer beschreiben (haben + Akkusativ, mit + Dativ) · Check-in in sechs Schritten · Rechnungspositionen erklären · Zimmerstatus melden und Fundsachen · Weg beschreiben · Problem aufnehmen und weiterleiten · Frühstück und Etagenservice mit trennbaren Verben |
+| 40–45 | B1–B2 | Allergiefragen sicher beantworten (die 14 Allergene) · Alternativen anbieten (ersetzen durch, verzichten auf) · Nährwerte (viel/viele, reich an) · Gefahr melden und Unfall dokumentieren · mit dem Chef sprechen (Konjunktiv II, Krankmeldung, Urlaubsantrag) · Vorstellungsgespräch |
+| 46–52 | B1–B2 | **Wortbildung: wie ein Fachwort gebaut wird** · wohin/wo (Wechselpräpositionen) · Werkzeug benennen (mit + Dativ, zum + Infinitiv) · Verb + Nomen (Schneidebrett, Bratpfanne) · Adjektivendungen am Gericht · Pluralformen der Speisekarte · Geschmack und Geruch (schmecken nach, passen zu) |
+| 53–57 | B1–B2 | Hausstandard erklären (Passiv Präsens) · Reihenfolge des Gedecks (Ordnungszahlen, von außen nach innen) · nach dem richtigen Teil fragen (welcher/welches/welche) · Getränke vergleichen und empfehlen (Komparativ) · Gangfolge erzählen (zuerst, danach, zum Schluss) |
+| 58–60 | B1–B2 | erklären, was im Preis steckt (enthalten, bestehen aus, inbegriffen, betragen) · wer was bekommt (Dativ vor Akkusativ) · Abschluss-Repaso: das Fachwort selbst bauen |
 
 ---
 
@@ -383,31 +414,33 @@ Startbildschirm, sobald der Tag erreicht ist.
 
 | Kurs | Zwischenstopps | Vorbild |
 |---|---|---|
-| Spanisch (Lateinamerika) | Tag 33 → A2 · Tag 60 → B1 · Tag 90 → B2 | DELE |
+| Spanisch (Lateinamerika) | Tag 30 → A1 · Tag 63 → A2 · Tag 90 → B1 · Tag 120 → B2 | DELE |
 | Deutsch | Tag 30 → A1 · Tag 60 → A2 · Tag 90 → B1 · Tag 120 → B2 | Goethe-Zertifikat |
-| Deutsch im Beruf | Tag 30 → Arbeitstag · Tag 45 → Fachwortschatz | telc Deutsch B1·B2 Beruf |
+| Deutsch im Beruf | Tag 15 → Erste Schritte · Tag 45 → Arbeitstag · Tag 60 → Fachwortschatz | Goethe A1 mit Berufsthemen · telc Deutsch B1·B2 Beruf |
 
-**Alle neun sind fertig.** Jede hat denselben Bauplan: vier Teile, sieben
-Aufgaben, 36 Fragen, davon 35 automatisch bewertet. Verlangt wird nur, was
-bis zum jeweiligen Stopp im Kurs vorkam.
+**Alle elf sind fertig.** Jede hat denselben Bauplan: fünf Teile (Lesen, Hören,
+Sprachbausteine, Schreiben, Sprechen), acht Aufgaben, 37 Fragen, davon 35
+automatisch bewertet. Verlangt wird nur, was bis zum jeweiligen Stopp im Kurs
+vorkam. Die Prüfungen, die durch den A1-Ausbau nach hinten gerückt sind, behalten
+ihre Kennung — frühere Ergebnisse bleiben also gültig.
 
 ### Wann eine Prüfung erscheint
 
 **Automatisch, sobald du den Tag erreicht hast.** Vorher steht sie schon auf
-dem Startbildschirm, aber gesperrt: „Prüfung A2 · ab Tag 34 · 🔒 noch 33 Tage".
+dem Startbildschirm, aber gesperrt: „Prüfung A1 · ab Tag 31 · 🔒 noch 30 Tage".
 So weißt du, dass sie kommt, auch wenn du sie noch nicht machen kannst.
 
 | Kurs | freigeschaltet ab |
 |---|---|
-| Spanisch (Lateinamerika) | Tag 34 · Tag 61 · Tag 91 |
+| Spanisch (Lateinamerika) | Tag 31 · Tag 64 · Tag 91 · Tag 121 |
 | Deutsch | Tag 31 · Tag 61 · Tag 91 · Tag 121 |
-| Deutsch im Beruf | Tag 31 · Tag 46 |
+| Deutsch im Beruf | Tag 16 · Tag 46 · Tag 61 |
 
 **Du siehst keine Prüfung, obwohl du weit genug bist?** Dann lädt dein Gerät
 noch eine ältere, offline gespeicherte Fassung. Die App meldet sich in dem Fall
 inzwischen selbst mit einem Streifen am unteren Rand: *Neue Fassung verfügbar ·
 Neu laden*. Nachsehen kannst du es außerdem unter *Einstellungen* ganz unten,
-beim Stand der Inhalte — dort muss **9 Prüfungen** stehen.
+beim Stand der Inhalte — dort muss **11 Prüfungen** stehen.
 
 Sind mehrere Prüfungen freigeschaltet, stehen sie als Liste unter der Karte.
 So kommt man auch an eine spätere Prüfung heran, ohne die frühere bestanden zu
@@ -435,13 +468,20 @@ Die App bewertet **nur, was sie zuverlässig bewerten kann**:
 | Sprachbausteine | Lücke im Text, drei Vorgaben | ✅ |
 | Hörverstehen | vorgelesener Text, dann ankreuzen | ✅ (wenn eine Stimme da ist) |
 | Schreiben | freier Text | ❌ |
+| Sprechen | eigene Aufnahme | ❌ |
 
-**Warum Schreiben nicht:** Die Bewertung ist ein Textvergleich
+**Warum Schreiben und Sprechen nicht:** Die Bewertung ist ein Textvergleich
 (`Uebungen.vergleiche()`). Für einen frei geschriebenen Brief gibt es tausende
 richtige Formulierungen — ein Textvergleich würde gute Antworten als falsch
-werten. Die Aufgabe wird deshalb gestellt und gespeichert, aber nicht benotet.
-Dafür gibt es eine Kriterienliste, eine Musterlösung — und den Weg zu einem
-Menschen (siehe nächster Abschnitt).
+werten. Beim Sprechen kommt dazu, dass es auf Aussprache, Flüssigkeit und
+Verständlichkeit ankommt, und das kann die App nicht zuverlässig messen. Beide
+Aufgaben werden deshalb gestellt und gespeichert, aber nicht benotet. Dafür gibt
+es eine Kriterienliste, eine Musterlösung — und den Weg zu einem Menschen (siehe
+nächster Abschnitt).
+
+**Ohne Mikrofon fällt der Sprechteil weg.** Kann das Gerät nicht aufnehmen (etwa
+weil die App per Doppelklick statt über https geöffnet ist), wird der Sprechteil
+übersprungen. Punkte kostet das nicht — er zählt ohnehin nicht in die Wertung.
 
 **Ohne Sprachausgabe fällt der Hörteil weg.** Ist auf dem Gerät keine passende
 Stimme installiert, wird der Hörteil übersprungen und zählt auch nicht mit —
@@ -458,7 +498,7 @@ Das Ergebnis ist eine **Selbsteinschätzung, kein Zertifikat**. Jeder Versuch
 wird gespeichert, wiederholen ist beliebig oft möglich, und das beste Ergebnis
 bleibt stehen.
 
-### Schreibaufgaben von einem Menschen bewerten lassen
+### Schreiben und Sprechen von einem Menschen bewerten lassen
 
 Die App hat keinen Server — es gibt also keinen Ort, an dem eine Aufgabe
 liegen könnte, während sie auf Bewertung wartet. Sie reist deshalb **im Link**:
@@ -481,6 +521,22 @@ Webserver wird er nicht geschickt.
 | 6 | du | Rücklink antippen → die Bewertung steht in deinem Ergebnis |
 
 Kein Konto, keine Installation, kein Hochladen.
+
+**Und die Sprachaufnahme?** Sie passt in keinen Link: Eine Minute sind etwa
+0,5 MB, ein Link trägt rund 4 KB. Die Aufnahme reist deshalb als **eigene
+Audiodatei in derselben Nachricht** — das Teilen-Menü des Handys gibt Link und
+Datei zusammen an WhatsApp, Signal oder Mail weiter. Im Link steht nur, *dass* es
+eine Aufnahme gibt, wie lang sie ist und wie die Datei heißt (z. B.
+`vamos-es-419-a1-TM22JS-lz5101.m4a`), damit der Prüfer sie sicher zuordnet. Er
+hört sie in seinem Messenger an oder öffnet sie in der App mit **„📂 Aufnahme hier
+öffnen"**, dann hat er sie direkt neben den Kriterien. Gibt es kein Teilen-Menü
+(Rechner), lädt die App die Datei herunter und legt den Link in die
+Zwischenablage — beides schickst du dann selbst.
+
+Bis zum Verschicken liegt die Aufnahme **auf deinem Gerät**, in der Datenbank des
+Browsers (IndexedDB), auch wenn du die App zwischendurch schließt. Achtung: Die
+Sicherungsdatei enthält die Aufnahmen **nicht**. Bricht man eine Prüfung ab oder
+setzt die App zurück, werden die Aufnahmen gelöscht.
 
 **Der Prüfer sieht alles in der Zielsprache des Kurses.** Wer einen spanischen
 Text bewerten soll, ist Spanischsprecher — er bekommt Aufgabenstellung,
@@ -506,7 +562,7 @@ mag. Zum Vergleich: Eine übliche A2-Schreibaufgabe ergibt einen Link von rund
 **Die ehrlichen Grenzen.** Das Verfahren ist **nicht fälschungssicher** — du
 könntest deine eigene Bewertung ändern. Für eine Lern-App ist das kein Problem,
 für etwas Offizielles taugt es nicht. Und: Der Messenger, mit dem du den Link
-verschickst, **sieht den Text**. Der Fragment-Teil erreicht zwar den Webserver
+verschickst, **sieht den Text und hat die Aufnahme**. Der Fragment-Teil erreicht zwar den Webserver
 nicht, verschlüsselt ist hier aber nichts.
 
 ---
@@ -543,7 +599,7 @@ Frage, deren Lösung fehlt, wäre nicht schwer — sie wäre unlösbar.
 
 ## Tests
 
-Im Ordner `tests/` liegen zehn automatische Prüfungen. Alle auf einmal:
+Im Ordner `tests/` liegen dreizehn automatische Prüfungen. Alle auf einmal:
 
 ```bash
 bash tests/alle.sh
@@ -693,14 +749,28 @@ langen Deutschkurs und „Deutsch im Beruf" **gleichzeitig** laufen lassen; die
 beiden Lernstände stören sich nicht.
 
 **Sollte ich erst den Deutschkurs machen oder gleich den Berufspfad?**
-Wer noch bei Null anfängt, beginnt beim langen Kurs — ohne Grundgrammatik
-bleiben die Redemittel auswendig gelernte Brocken. Wer schon etwa Niveau A2 hat
-(ungefähr Tag 30) oder bereits im Hotel bzw. Restaurant arbeitet, kann beide
-parallel machen: abends die Tageslektion des langen Kurses, und den Pfad, wenn
-gerade eine Schicht ansteht.
+Beides geht. Der Berufspfad beginnt seit Oktober 2026 selbst bei null (Tag 1–15
+A1) und bringt das Nötigste für den ersten Arbeitstag. Die Grammatik dahinter
+liefert der lange Kurs — wer kann, macht beide parallel: abends die Tageslektion
+des langen Kurses, und den Pfad, wenn gerade eine Schicht ansteht.
+
+**Ich kann schon A2 — muss ich jetzt erst durch A1?**
+Wer einen Kurs **schon begonnen** hatte, merkt vom A1-Ausbau nichts: Die App setzt
+den Lernstand beim ersten Start automatisch um 15 Tage (Deutsch im Beruf) bzw.
+30 Tage (Spanisch) weiter, du bleibst also genau bei deiner Lektion. Wer neu
+anfängt, beginnt bei Tag 1. Eine Einstufung, mit der man gleich bei A2 einsteigt,
+gibt es (noch) nicht — die A1-Tage gehen aber schnell, wenn man den Stoff kennt.
+
+**Die Aufnahme funktioniert nicht.**
+Das Mikrofon gibt der Browser nur auf einer sicheren Adresse frei (https, z. B.
+GitHub Pages) — nicht beim Öffnen per Doppelklick. Beim ersten Mal fragt der
+Browser um Erlaubnis; wer „Nein" getippt hat, ändert das in den
+Browser-Einstellungen (Schloss-Symbol neben der Adresse → Mikrofon → Zulassen).
+Läuft gerade ein Anruf, ist das Mikrofon belegt. Die App sagt in jedem dieser
+Fälle, woran es liegt.
 
 **Was passiert am Ende eines Kurses?**
-Nach dem letzten Tag (30, 60, 90 oder 120, je nach Kurs) wechselt die App in den
+Nach dem letzten Tag (60 oder 120, je nach Kurs) wechselt die App in den
 Wiederholungsmodus. Jeden Tag kommt, was fällig ist — genau das entscheidet
 darüber, ob das Gelernte in einem Jahr noch da ist.
 

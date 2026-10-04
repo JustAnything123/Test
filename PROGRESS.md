@@ -1,8 +1,9 @@
-# Projektfortschritt — ¡Vamos! (vier Kurse in einer App)
+# Projektfortschritt — ¡Vamos! (drei Kurse in einer App)
 
-**Stand:** 22. September 2026
+**Stand:** 4. Oktober 2026
 **Branch:** `claude/spanish-learning-app-daily-o5s13u`
-**Status:** ✅ Version 3.5 fertig, getestet und gepusht
+**Status:** ✅ Version 4 fertig, getestet und gepusht — Sprechübungen, A1-Ausbau,
+Spanien-Kurs in der Ablage
 
 ---
 
@@ -12,32 +13,35 @@ Die App ist vollständig gebaut und funktioniert. Alle Anforderungen aus der
 ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 „Deutsch im Beruf" sind umgesetzt.
 
-### Die vier Kurse
+### Die drei Kurse
 
 | Kurs | Richtung | Oberfläche | Niveau | Tage |
 |---|---|---|---|---|
-| 🇪🇸 Español (España) | Deutsch → Spanisch (Spanien) | Deutsch | A2 → B1 | 60 |
-| 🌎 Español (Latinoamérica) | Deutsch → Spanisch (LatAm) | Deutsch | A2 → B2 | 90 |
+| 🌎 Español (Latinoamérica) | Deutsch → Spanisch (LatAm) | Deutsch | A1 → B2 | 120 |
 | 🇩🇪 Alemán | Spanisch → Deutsch | **Spanisch** | A1 → B2 | 120 |
-| 🍽️ Alemán en el trabajo | Spanisch → Deutsch, Lernpfad des Deutschkurses | **Spanisch** | A2 → B2 | 30 |
+| 🍽️ Alemán en el trabajo | Spanisch → Deutsch, Lernpfad des Deutschkurses | **Spanisch** | A1 → B2 | 60 |
+
+Der Kurs *Español (España)* (60 Tage, A2 → B1) liegt seit Oktober 2026 in
+`ablage/` und ist ausgeblendet. Ein vorhandener Lernstand bleibt erhalten; wie
+man ihn zurückholt, steht in `ablage/README.md`.
 
 ### Kennzahlen
 
 | Kennzahl | Wert |
 |---|---|
-| Kurse (davon 1 Themen-Lernpfad) | 4 |
-| Tageslektionen gesamt | 315 |
-| Vokabeln | 3150 |
-| Beispielsätze | 1575 |
-| Grammatik- und Redemittelthemen | 315 |
-| Übungen dazu | 1576 |
-| Lernkarten gesamt | 6301 |
-| Übungstypen | 6 |
-| Oberflächentexte je Sprache | 140 |
-| Zeilen Programmcode | 3050 |
-| Zeilen Lerninhalt | 19 673 |
-| Prüfungen (Zwischenstopps) | 11 von 11 fertig · 396 Prüfungsfragen |
-| Automatische Tests | 288 (alle grün), im Repository unter `tests/` |
+| Kurse (davon 1 Themen-Lernpfad) | 3 sichtbar, 1 in der Ablage |
+| Tageslektionen gesamt | 300 |
+| Vokabeln | 3000 |
+| Beispielsätze | 1500 |
+| Grammatik- und Redemittelthemen | 300 |
+| Übungen dazu | 1501 |
+| Lernkarten gesamt | 6001 |
+| Übungstypen | 7 (neu: Nachsprechen) |
+| Oberflächentexte je Sprache | 272 |
+| Zeilen Programmcode (JS, HTML, CSS) | 6125 |
+| Zeilen Lerninhalt | 20 652 |
+| Prüfungen (Zwischenstopps) | 11 · je 5 Teile mit Schreib- und Sprechteil · 407 Prüfungsfragen |
+| Automatische Tests | 13 Testdateien, 435 Einzelprüfungen im Browser plus Datenprüfung — alle grün |
 
 ---
 
@@ -46,12 +50,12 @@ ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 | Deine Anforderung | Status | Umgesetzt als |
 |---|---|---|
 | Lern-App im HTML-Format | ✅ | Reines HTML/CSS/JavaScript, kein Build-Schritt |
-| Tägliche Aufgaben | ✅ | 270 Tageslektionen mit festem Ablauf |
-| Vokabeln | ✅ | 2700 Stück, je mit Artikel, Wortart und Beispielsatz |
-| Sätze | ✅ | 1350 Beispielsätze mit Übersetzung |
-| Grammatikalische Erklärungen | ✅ | 270 Themen mit Tabellen und Merksätzen |
-| Start bei Niveau A2 | ✅ | Spanischkurse beginnen bei A2 (der Deutschkurs auf deinen Wunsch bei A1) |
-| „Ggf. erweiterte Aufgaben" | ✅ | Hören, Satzbau, Lückentext, Schnell-Wiederholung |
+| Tägliche Aufgaben | ✅ | 300 Tageslektionen mit festem Ablauf |
+| Vokabeln | ✅ | 3000 Stück, je mit Artikel, Wortart und Beispielsatz |
+| Sätze | ✅ | 1500 Beispielsätze mit Übersetzung |
+| Grammatikalische Erklärungen | ✅ | 300 Themen mit Tabellen und Merksätzen |
+| Start bei Niveau A2 | ✅ | Seit Oktober 2026 beginnen auf deinen Wunsch alle Kurse bei A1; wer schon weiter war, bleibt bei seiner Lektion |
+| „Ggf. erweiterte Aufgaben" | ✅ | Hören, Satzbau, Lückentext, Nachsprechen, Schnell-Wiederholung |
 | Fortschrittszähler: aktive Tage | ✅ | Zähler + Streak + Kalendergitter |
 | Fortschrittszähler: gelernte Wörter | ✅ | Zählt Karten ab Stufe 2 |
 | Historie merkt sich Fehler | ✅ | Jede Karte mit Stufe, Fehlerzahl, letzten Falscheingaben |
@@ -65,9 +69,9 @@ ursprünglichen Idee, die fünf Änderungswünsche und der Themen-Lernpfad
 
 | Wunsch | Status | Umgesetzt als |
 |---|---|---|
-| 1. Auf Lateinamerika-Spanisch umstellen | ✅ | Eigener Kurs `es-419`: kein `vosotros`, LatAm-Wortschatz, Perfecto zurückgenommen. Der Spanien-Kurs bleibt daneben bestehen |
+| 1. Auf Lateinamerika-Spanisch umstellen | ✅ | Eigener Kurs `es-419`: kein `vosotros`, LatAm-Wortschatz, Perfecto zurückgenommen. Der Spanien-Kurs liegt seit Oktober 2026 in der Ablage |
 | 2. Deutsch für Spanisch-Muttersprachler | ✅ | Kurs `de`, 120 Tage, Oberfläche und alle Erklärungen auf Spanisch |
-| 3. Beide Sprachen bis B2 | ✅ | Spanisch (LatAm) 90 Tage bis B2, Deutsch 120 Tage von A1 bis B2 |
+| 3. Beide Sprachen bis B2 | ✅ | Spanisch (LatAm) und Deutsch je 120 Tage von A1 bis B2 |
 | 4. Sprache in der App umschaltbar? | ✅ | Ja — eine App, drei Kurse, jederzeit umschaltbar, Lernstand je Kurs getrennt |
 | 5. Alten Stand als Kopie sichern | ✅ | Sicherungs-Branch `backup/v1-spanien-a2-b1` mit dem unveränderten Einzelkurs-Stand |
 
@@ -420,6 +424,23 @@ Zahnrad bei Google-Sprachausgabe → *Sprache installieren* → **Español** fü
 Spanischkurse, **Deutsch** für den Deutschkurs. Ohne passende Stimme blendet die
 App die Hör-Übungen automatisch aus.
 
+### 🔲 Nur du: Aufnahme auf Android und iPhone testen
+
+Die Sprechübungen sind mit einem künstlichen Mikrofon getestet. Bitte einmal auf
+den echten Geräten ausprobieren — über die GitHub-Pages-Adresse, nicht per
+Doppelklick:
+
+1. **Nachsprechen:** Tageslektion starten, bis zur Phase „Sprechen" blättern,
+   🎙️ Aufnehmen → etwas sagen → Stopp → abspielen. Kommt die Mikrofon-Frage? Ist
+   der Ton zu hören? Verschwindet das rote Mikrofon-Symbol danach?
+2. **Prüfung:** Eine freigeschaltete Prüfung bis zum Sprechteil, aufnehmen,
+   abgeben, **„Zur Bewertung geben"** → kommt im Teilen-Menü die Audiodatei mit?
+3. **Gegenprobe:** Android-Aufnahme an das iPhone schicken und umgekehrt — lässt
+   sich die Datei dort abspielen und in der App über „📂 Aufnahme hier öffnen"
+   laden?
+
+Wenn etwas hakt: bitte Gerät, Browser und die genaue Meldung notieren.
+
 ### 🔲 Nur du: Kurs wählen
 
 Beim ersten Start fragt die App, welchen Kurs du machen willst. Wechseln geht
@@ -745,6 +766,116 @@ meldete. Muster jetzt `[0-9]*.js`.
 
 ---
 
+## Sprechübungen (Oktober 2026)
+
+Du wolltest, dass die Lernenden auch **sprechen**. Gebaut wurde das in zwei
+Stufen, für alle drei Kurse.
+
+### Stufe 1 — Nachsprechen in jeder Tageslektion
+
+Nach den Sätzen des Tages kommen zwei davon zum Nachsprechen. Der Ablauf:
+
+1. Der Satz steht groß da, darunter die Übersetzung.
+2. Das Handy spricht ihn vor (🔊 Vorsprechen, 🐢 Langsam).
+3. **🎙️ Aufnehmen** — die Zeit läuft mit, ein zweiter Tipp stoppt.
+4. **🔁 Vergleichen** spielt erst die Vorlage, dann die eigene Aufnahme.
+5. Selbstcheck mit drei Häkchen: alle Wörter gesagt · Betonung ähnlich · flüssig.
+
+Es gibt **keine Note** und nichts wird gespeichert oder verschickt — die
+Aufnahme liegt nur im Arbeitsspeicher und ist beim Weiterblättern weg.
+
+**Wie das technisch geht (für Einsteiger):** Jeder moderne Browser hat eine
+eingebaute Aufnahmefunktion, den `MediaRecorder`. Die App fragt mit
+`getUserMedia` nach dem Mikrofon, nimmt auf und bekommt am Ende ein „Blob" —
+ein Stück Binärdaten, das ein `<audio>`-Element direkt abspielen kann. Das alles
+steckt in **`js/aufnahme.js`**. Drei Dinge darin sind wichtig:
+
+| Thema | Lösung |
+|---|---|
+| Android **und** iPhone | Aufgenommen wird als **MP4 (AAC)**, sobald das Gerät es kann — das spielen beide ab. WebM nur als Ersatz. |
+| Mikrofon wirklich freigeben | Nach jedem Stopp, beim Weiterblättern und beim Verlassen werden alle Spuren beendet. Sonst bliebe auf dem Handy das rote Mikrofon-Symbol stehen. |
+| Verständliche Fehler | Verweigert, kein Mikrofon, belegt (z. B. Anruf) — jeder Fall hat eine eigene Meldung mit Lösungsweg. |
+
+Das Mikrofon gibt es nur auf einer **sicheren Adresse (https)**. Über GitHub
+Pages geht es; beim Öffnen per Doppelklick zeigt die Übung einen Hinweis.
+
+### Stufe 2 — Sprechteil in jeder Prüfung
+
+Alle elf Prüfungen haben einen fünften Teil **Sprechen** nach dem Vorbild der
+echten Prüfung (Goethe, DELE, telc): sich vorstellen, vom Wochenende erzählen,
+ein Thema präsentieren, ein Briefing ans Team, ein Menü vorstellen … Wie beim
+Schreiben bewertet ihn ein Mensch über den vorhandenen Prüfer-Rundlauf.
+
+| Schritt | Was passiert | Wo im Code |
+|---|---|---|
+| Aufnehmen | Aufnahme direkt in der Prüfungsseite, beliebig oft neu, Höchstdauer je Aufgabe | `PruefungUI.art_sprechen` |
+| Ablegen | Sofort in der **IndexedDB** (eine Datenbank im Browser, die auch größere Dateien fasst); im Lernstand steht nur ein kurzer Verweis | `Aufnahme.ablegen` |
+| Abgeben | Läuft noch eine Aufnahme, wird sie erst beendet und abgelegt — erst dann wird abgegeben | `PruefungUI.fertigstellen` |
+| Verschicken | Link **und Audiodatei in einer Nachricht** über das Teilen-Menü; ohne Teilen-Menü Download + Zwischenablage | `Teilen.verschicken` |
+| Prüfer | sieht Dauer und Dateinamen, kann die Datei in der App öffnen, bewertet richtig / teilweise / falsch + Hinweis | `App.prueferModusStarten` |
+| Rückweg | unverändert: Rücklink, Bewertung steht beim Sprechteil | `App.bewertungEinlesen` |
+
+**Warum die Datei getrennt reist:** Eine Minute Sprache sind etwa 0,5 MB, ein
+Link trägt verlässlich nur rund 4 KB. Im Link steht deshalb nur, *dass* es eine
+Aufnahme gibt — Länge und Dateiname, z. B. `vamos-es-419-a1-TM22JS-lz5101.m4a`.
+
+**Eine Feinheit für Android:** Chrome nimmt beim Teilen nur bestimmte Dateitypen
+an und kennt M4A unter `audio/x-m4a`, nicht unter `audio/mp4`. Die App probiert
+deshalb beide Bezeichnungen, bevor sie auf den Download ausweicht.
+
+**Ohne Mikrofon** fällt der Sprechteil weg (wie der Hörteil ohne Stimme), mit
+Hinweis auf der Übersichtsseite. **Abbrechen** einer Prüfung und **Zurücksetzen**
+der App löschen die Aufnahmen; die **Sicherungsdatei enthält sie nicht**.
+
+**Noch offen:** Der Test läuft mit einem künstlichen Mikrofon in Chromium. Ob
+Aufnahme, Teilen und Abspielen auf deinem Android-Handy und einem iPhone genauso
+klappen, kann nur ein Versuch auf den echten Geräten zeigen — siehe „Was als
+Nächstes ansteht".
+
+---
+
+## A1-Ausbau: Kurse, die nach vorne wachsen (Oktober 2026)
+
+„Deutsch im Beruf" und „Spanisch (Lateinamerika)" begannen bei A2. Beide haben
+jetzt einen A1-Block **vorne**:
+
+| Kurs | neu | bisherige Tage | neue A1-Prüfung | bisherige Prüfungen |
+|---|---|---|---|---|
+| Deutsch im Beruf | Tag 1–15 (A1) | 1–45 → 16–60 | nach Tag 15 („Examen 1 · Primeros pasos") | nach Tag 45 und 60, heißen jetzt Examen 2 und 3 |
+| Spanisch (Lateinamerika) | Tag 1–30 (A1) | 1–90 → 31–120 | nach Tag 30 („Prüfung A1", DELE A1) | A2 nach Tag 63, B1 nach 90, B2 nach 120 |
+
+**Das Problem dabei:** Ein Lernstand speichert den aktuellen Tag als Zahl. Wer
+gerade an Tag 20 war, wäre nach dem Update plötzlich mitten im A1-Block gelandet.
+
+**Die Lösung:** Jeder Kurs hat jetzt einen **Datenstand** und eine Liste der
+**Verschiebungen** (`js/kurs-definitionen.js`):
+
+```js
+datenStand: 2,
+verschiebungen: { 2: 15 }   // beim Wechsel auf Stand 2 kamen 15 Tage vorne dazu
+```
+
+Jeder Lernstand merkt sich, für welchen Datenstand er angelegt wurde. Ist er älter,
+rechnet `Speicher.datenStandAngleichen()` beim Laden nach: aus Tag 20 wird Tag 35
+(bzw. Tag 50 beim Spanischkurs). Das passiert nur, wenn man den Kurs **schon
+begonnen** hatte — wer noch nie angefangen hat, startet bei Tag 1 mit A1. Auch eine
+alte Sicherungsdatei wird beim Einspielen so angepasst.
+
+**Was dabei gleich bleibt:** Die IDs aller Vokabeln, Sätze und Übungen. Die neuen
+A1-Tage haben eigene Kürzel (`bev`/`bes`/`beg` bzw. `av`/`as`/`ag`). Dadurch bleibt
+der Wiederholungsstand jeder Karte erhalten. Ebenso behalten die verschobenen
+Prüfungen ihre IDs — frühere Ergebnisse gelten weiter.
+
+**Was beim Verschieben sonst noch anzupassen war:** die Dateinamen, die
+Kopfkommentare und alle Querverweise im Text („wie an Tag 9") — beim Spanischkurs
+34 Stück, beim Berufspfad 7. Ein neuer Test (`13-datenstand.js`) prüft, dass man
+nach dem Verschieben wirklich wieder bei **derselben Lektion** landet.
+
+**Bewusst nicht gebaut:** eine Einstufung, mit der Neue direkt bei A2 einsteigen.
+Wer neu anfängt und schon A2 kann, geht die A1-Tage zügig durch.
+
+---
+
 ## Tests im Repository
 
 Bis zum 22.09.2026 lagen die Prüfskripte nur im Arbeitsverzeichnis der jeweiligen
@@ -765,7 +896,7 @@ tests/package.json            nur für Playwright
 bash tests/alle.sh
 ```
 
-Startet den Webserver selbst, lässt alle sieben Prüfungen laufen und beendet den
+Startet den Webserver selbst, lässt alle Testdateien laufen und beendet den
 Server danach wieder. Dauer rund zwei bis drei Minuten.
 
 ### Was die sieben Tests prüfen
@@ -928,3 +1059,8 @@ Wer den Ordner `tests/` löscht, ändert am Lernen nichts.
 | 22.09.2026 | Meldung „Neue Fassung verfügbar" gebaut, mit echtem Update-Test |
 | 22.09.2026 | Fehler im Test-Starter: Muster `0*.js` hätte Test 10 und alle weiteren stillschweigend übersprungen |
 | 04.10.2026 | Spanisch (Spanien) in die Ablage verschoben und ausgeblendet (`ablage/`); Tests auf den Lateinamerika-Kurs umgestellt |
+| 04.10.2026 | Stufe 1: Nachsprech-Übung (`js/aufnahme.js`, Übungstyp `sprechen`), MP4 für Android und iPhone, Test `11-sprechen.js` mit künstlichem Mikrofon |
+| 04.10.2026 | Stufe 2: Sprechteil in allen Prüfungen, Ablage in der IndexedDB, Link und Audiodatei in einer Nachricht, Prüfer öffnet die Datei; Test `12-pruefung-sprechen.js` |
+| 04.10.2026 | Deutsch im Beruf: 15 A1-Tage vorne, bisherige Tage auf 16–60, neue A1-Prüfung; Datenstand mit automatischem Mitwandern des Lernstands, Test `13-datenstand.js` |
+| 04.10.2026 | Spanisch (Lateinamerika): 30 A1-Tage vorne, bisherige Tage auf 31–120, 34 Querverweise verschoben, neue Prüfung A1 nach DELE A1 |
+| 04.10.2026 | README und PROGRESS.md auf Version 4 aktualisiert; 13 Testdateien grün |

@@ -1,6 +1,6 @@
 # Tests
 
-Zehn Prüfungen, die nachsehen, ob die App noch tut, was sie soll. Alle laufen
+Dreizehn Prüfungen, die nachsehen, ob die App noch tut, was sie soll. Alle laufen
 automatisch und melden sich am Ende entweder mit „bestanden" oder mit einer Liste
 der Stellen, die nicht stimmen.
 
@@ -16,7 +16,7 @@ sieht, ob man aus Versehen etwas kaputt gemacht hat.
 bash tests/alle.sh
 ```
 
-Das Skript startet den lokalen Webserver selbst, lässt alle sieben Tests
+Das Skript startet den lokalen Webserver selbst, lässt alle Tests
 nacheinander laufen und beendet den Server danach wieder. Am Ende steht entweder
 `Alle Tests bestanden.` oder wie viele fehlgeschlagen sind.
 
