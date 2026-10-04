@@ -2,6 +2,7 @@
    dazukommen (A1-Block, Oktober 2026).
 
    Deutsch im Beruf: 15 Tage vorne dazu. Aus dem alten Tag 20 wird Tag 35.
+   Spanisch (Lateinamerika): 30 Tage vorne dazu. Aus Tag 20 wird Tag 50.
    Wer den Kurs noch nicht angefangen hatte, beginnt bei Tag 1 mit A1.
    Ein neuer Lernstand darf beim nächsten Laden NICHT verschoben werden. */
 const U = require('./umgebung');
@@ -16,7 +17,8 @@ const pruefe = (n, ist, soll) => {
 /* Die Kurse, die vorne gewachsen sind: id, Tage dazu, Stand und das Thema
    des ALTEN Tags 20 — dort muss man nach dem Verschieben wieder landen. */
 const FAELLE = [
-  { kurs: 'de-beruf', dazu: 15, stand: 2, thema20: 'Check-out y factura' }
+  { kurs: 'de-beruf', dazu: 15, stand: 2, thema20: 'Check-out y factura' },
+  { kurs: 'es-419',   dazu: 30, stand: 2, thema20: 'Eine Geschichte erzählen (2)' }
 ];
 
 /* Ein Lernstand, wie ihn eine ältere Fassung gespeichert hätte (ohne datenStand). */
@@ -117,6 +119,9 @@ function alterStand(kurse) {
     await page.evaluate(() => Pruefungen.nachId('p-de-beruf-1', 'de-beruf').nachTag), 45);
   pruefe('neue A1-Prüfung kommt zuerst',
     await page.evaluate(() => Pruefungen.fuerKurs('de-beruf').map(p => p.id)), ['p-de-beruf-a1', 'p-de-beruf-1', 'p-de-beruf-2']);
+  pruefe('Spanisch: A1-Prüfung zuerst, die anderen 30 Tage später',
+    await page.evaluate(() => Pruefungen.fuerKurs('es-419').map(p => p.id + '@' + p.nachTag)),
+    ['p-es-419-a1@30', 'p-es-419-a2@63', 'p-es-419-b1@90', 'p-es-419-b2@120']);
 
   console.log('\n=== Konsole ===');
   pruefe('keine JavaScript-Fehler', konsole, []);

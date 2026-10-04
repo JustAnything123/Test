@@ -9,7 +9,7 @@ Kurse.definieren({
   reihenfolge: 2,
   name: 'Español (Latinoamérica)',
   nameUi: 'Spanisch (Lateinamerika)',
-  untertitel: 'A2 → B2 · 90 Tage',
+  untertitel: 'A1 → B2 · 120 Tage',
   flagge: '🌎',
   ziel: 'es',
   ausgang: 'de',
@@ -18,7 +18,12 @@ Kurse.definieren({
   sonderzeichen: ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'],
   farbe: '#0b7a4b',
   sprechen: true,                               // Nachsprech-Übung und Sprech-Teil der Prüfung
-  hinweis: 'Neutrales Lateinamerikanisch: ustedes statt vosotros, Wortschatz der überall verstanden wird.'
+  hinweis: 'Neutrales Lateinamerikanisch: ustedes statt vosotros, Wortschatz der überall verstanden wird. Ab null: Tag 1–30 sind A1.',
+  // Oktober 2026: 30 A1-Tage vorne angefügt, die bisherigen Tage 1–90 sind
+  // jetzt 31–120. Wer schon angefangen hatte, wird beim Laden um 30 Tage
+  // weitergesetzt und bleibt so bei seiner Lektion (js/speicher.js).
+  datenStand: 2,
+  verschiebungen: { 2: 30 }
 });
 
 /* ---- 3. Deutsch für spanischsprachige Lernende ---- */

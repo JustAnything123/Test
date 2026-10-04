@@ -4,7 +4,7 @@
    Kalender bzw. Wecker des Handys. Dieser Service Worker ist aber die
    Grundlage, falls du das später einmal nachrüsten willst. */
 
-const CACHE = 'vamos-v12';
+const CACHE = 'vamos-v13';
 
 const DATEIEN = [
   './', './index.html', './manifest.json', './css/stil.css', './js/speicher.js',
@@ -15,6 +15,7 @@ const DATEIEN = [
   './data/pruefungen/de-b1.js', './data/pruefungen/de-b2.js',
   './data/pruefungen/de-beruf-a1.js',
   './data/pruefungen/de-beruf-1.js', './data/pruefungen/de-beruf-2.js',
+  './data/pruefungen/es-419-a1.js',
   './data/pruefungen/es-419-a2.js', './data/pruefungen/es-419-b1.js',
   './data/pruefungen/es-419-b2.js', './js/app.js', './data/de/lektionen-01-10.js',
   './data/de/lektionen-101-110.js', './data/de/lektionen-11-20.js',
@@ -33,6 +34,8 @@ const DATEIEN = [
   './data/es-419/lektionen-31-40.js', './data/es-419/lektionen-41-50.js',
   './data/es-419/lektionen-51-60.js', './data/es-419/lektionen-61-70.js',
   './data/es-419/lektionen-71-80.js', './data/es-419/lektionen-81-90.js',
+  './data/es-419/lektionen-91-100.js', './data/es-419/lektionen-101-110.js',
+  './data/es-419/lektionen-111-120.js',
   './icons/icon-192.png', './icons/icon-512.png'
 ];
 

@@ -1,11 +1,11 @@
-/* Prüfung B2 · Spanisch (Lateinamerika) · Zwischenstopp nach Tag 90 — Kursabschluss
+/* Prüfung B2 · Spanisch (Lateinamerika) · Zwischenstopp nach Tag 120 — Kursabschluss
 
-   Vorbild DELE B2. Verlangt wird, was ab Tag 61 dazukam: Perfecto und
+   Vorbild DELE B2. Verlangt wird, was ab Tag 91 dazukam: Perfecto und
    Pluscuamperfecto de Subjuntivo, Passiv-Ersatzformen, zweiteilige
    Konnektoren, Futuro und Condicional Perfecto, Nominalstil, Distanzierung. */
 
 PRUEFUNG('es-419', {
-  id: 'p-es-419-b2', nachTag: 90, niveau: 'B2',
+  id: 'p-es-419-b2', nachTag: 120, niveau: 'B2',
   name: 'Prüfung B2', vorbild: 'DELE B2', bestehen: 60, dauer: 75,
   teile: [
     { id: 't1', art: 'lesen', name: 'Leseverstehen', aufgaben: [

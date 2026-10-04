@@ -1,625 +1,605 @@
-/* Tag 41–50 · Niveau B1 · Subjuntivo im Einsatz */
+/* Tag 41–50 · Niveau A2 · Vergleichen, Befehlen, erste Vergangenheit */
 
 LEKTION('es-419', {
-  tag: 41, niveau: "B1", thema: "Bedingungen und Zeitpunkte",
+  tag: 41, niveau: "A2", thema: "Vergleichen",
   vokabeln: [
-    { id: "v4101", es: "en cuanto",      de: "sobald",           wortart: "Konjunktion", beispiel: "En cuanto llegue, te aviso.", beispielUe: "Sobald er kommt, sage ich dir Bescheid." },
-    { id: "v4102", es: "hasta que",      de: "bis",              wortart: "Konjunktion", beispiel: "Espera hasta que termine.", beispielUe: "Warte, bis ich fertig bin." },
-    { id: "v4103", es: "mientras",       de: "solange",          wortart: "Konjunktion", beispiel: "Mientras haya luz, seguimos.", beispielUe: "Solange es hell ist, machen wir weiter." },
-    { id: "v4104", es: "el plazo",       de: "die Frist",        wortart: "Substantiv", beispiel: "Cuando venza el plazo, avisamos.", beispielUe: "Wenn die Frist abläuft, geben wir Bescheid." },
-    { id: "v4105", es: "avisar",         de: "benachrichtigen",  wortart: "Verb", beispiel: "Avísame cuando llegues.", beispielUe: "Sag mir Bescheid, wenn du ankommst." },
-    { id: "v4106", es: "una vez que",    de: "sobald einmal",    wortart: "Konjunktion", beispiel: "Una vez que lo sepas, llámame.", beispielUe: "Sobald du es weißt, ruf mich an." },
-    { id: "v4107", es: "terminar",       de: "beenden",          wortart: "Verb", beispiel: "Cuando termine, salgo.", beispielUe: "Wenn ich fertig bin, gehe ich." },
-    { id: "v4108", es: "el momento",     de: "der Zeitpunkt",    wortart: "Substantiv", beispiel: "Llegó el momento de decidir.", beispielUe: "Der Moment zu entscheiden ist gekommen." },
-    { id: "v4109", es: "esperar a que",  de: "warten, bis",      wortart: "Verb", beispiel: "Espero a que vuelvas.", beispielUe: "Ich warte, bis du zurückkommst." },
-    { id: "v4110", es: "siempre que",    de: "immer wenn",       wortart: "Konjunktion", beispiel: "Siempre que puedo, salgo a andar.", beispielUe: "Immer wenn ich kann, gehe ich spazieren." }
+    { id: "v1101", es: "el tamaño",     de: "die Größe",        wortart: "Substantiv", beispiel: "El tamaño es perfecto.", beispielUe: "Die Größe ist perfekt." },
+    { id: "v1102", es: "caro",          de: "teuer",            wortart: "Adjektiv", beispiel: "Este hotel es más caro.", beispielUe: "Dieses Hotel ist teurer." },
+    { id: "v1103", es: "la diferencia", de: "der Unterschied",  wortart: "Substantiv", beispiel: "No veo la diferencia.", beispielUe: "Ich sehe den Unterschied nicht." },
+    { id: "v1104", es: "parecido",      de: "ähnlich",          wortart: "Adjektiv", beispiel: "Son muy parecidos.", beispielUe: "Sie sind sich sehr ähnlich." },
+    { id: "v1105", es: "el doble",      de: "das Doppelte",     wortart: "Substantiv", beispiel: "Cuesta el doble.", beispielUe: "Es kostet das Doppelte." },
+    { id: "v1106", es: "mejorar",       de: "verbessern",       wortart: "Verb", beispiel: "Quiero mejorar mi español.", beispielUe: "Ich will mein Spanisch verbessern." },
+    { id: "v1107", es: "la ventaja",    de: "der Vorteil",      wortart: "Substantiv", beispiel: "Tiene muchas ventajas.", beispielUe: "Es hat viele Vorteile." },
+    { id: "v1108", es: "peor",          de: "schlechter",       wortart: "Adjektiv", beispiel: "Hoy el tiempo está peor.", beispielUe: "Heute ist das Wetter schlechter." },
+    { id: "v1109", es: "suficiente",    de: "ausreichend",      wortart: "Adjektiv", beispiel: "No tengo suficiente tiempo.", beispielUe: "Ich habe nicht genug Zeit." },
+    { id: "v1110", es: "el nivel",      de: "das Niveau",       wortart: "Substantiv", beispiel: "Mi nivel de español es A2.", beispielUe: "Mein Spanischniveau ist A2." }
   ],
   saetze: [
-    { id: "s4101", es: "Cuando llegues, llámame.",              de: "Wenn du ankommst, ruf mich an." },
-    { id: "s4102", es: "Cuando llego a casa, siempre cocino.",  de: "Wenn ich nach Hause komme, koche ich immer." },
-    { id: "s4103", es: "En cuanto termine, te aviso.",          de: "Sobald ich fertig bin, sage ich dir Bescheid." },
-    { id: "s4104", es: "Espera hasta que deje de llover.",      de: "Warte, bis es aufhört zu regnen." },
-    { id: "s4105", es: "Mientras estudiaba, escuchaba música.", de: "Während ich lernte, hörte ich Musik." }
+    { id: "s1101", es: "Madrid es más grande que Sevilla.",     de: "Madrid ist größer als Sevilla." },
+    { id: "s1102", es: "Este libro es menos interesante.",      de: "Dieses Buch ist weniger interessant." },
+    { id: "s1103", es: "Mi hermano es tan alto como yo.",       de: "Mein Bruder ist so groß wie ich." },
+    { id: "s1104", es: "Es el mejor restaurante de la ciudad.", de: "Es ist das beste Restaurant der Stadt." },
+    { id: "s1105", es: "Tengo tantos libros como tú.",          de: "Ich habe so viele Bücher wie du." }
   ],
   grammatik: {
-    id: "g41", titel: "Subjuntivo nach Zeitkonjunktionen",
+    id: "g11", titel: "Vergleichen: más, menos, tan … como",
     erklaerung: `
-      <p>Nach Wörtern wie <em>cuando</em> steht mal der Indikativ, mal der Subjuntivo.
-      Die Regel ist erfreulich klar.</p>
-      <div class="merke"><strong>Der Zeitbezug entscheidet:</strong><br>
-      <strong>Zukunft</strong> (noch nicht passiert) → <strong>Subjuntivo</strong><br>
-      <em>Cuando <strong>llegues</strong>, llámame.</em> (Du bist noch nicht da.)<br>
-      <strong>Gewohnheit oder Vergangenheit</strong> (schon Realität) → <strong>Indikativ</strong><br>
-      <em>Cuando <strong>llego</strong> a casa, cocino.</em> (Das mache ich immer.)<br>
-      <em>Cuando <strong>llegué</strong>, cociné.</em> (Ist passiert.)</div>
-      <p>Das ist der große Unterschied zum Deutschen: Dort heißt es immer „wenn du ankommst",
-      egal ob Zukunft oder Gewohnheit.</p>
-      <p><strong>Diese Konjunktionen folgen der Regel:</strong></p>
+      <p>Drei Grundmuster reichen für fast alle Vergleiche:</p>
       <table>
-        <tr><th>Wort</th><th>Bedeutung</th></tr>
-        <tr><td><em>cuando</em></td><td>wenn, als</td></tr>
-        <tr><td><em>en cuanto</em></td><td>sobald</td></tr>
-        <tr><td><em>hasta que</em></td><td>bis</td></tr>
-        <tr><td><em>mientras</em></td><td>solange, während</td></tr>
-        <tr><td><em>después de que</em></td><td>nachdem</td></tr>
-        <tr><td><em>siempre que</em></td><td>immer wenn</td></tr>
-        <tr><td><em>una vez que</em></td><td>sobald</td></tr>
-        <tr><td><em>tan pronto como</em></td><td>sobald</td></tr>
+        <tr><th>Art</th><th>Bauplan</th><th>Beispiel</th></tr>
+        <tr><td>mehr als</td><td><em>más</em> + Adjektiv + <em>que</em></td><td>Ana es más alta que Luis.</td></tr>
+        <tr><td>weniger als</td><td><em>menos</em> + Adjektiv + <em>que</em></td><td>Este coche es menos caro que aquel.</td></tr>
+        <tr><td>genauso wie</td><td><em>tan</em> + Adjektiv + <em>como</em></td><td>Soy tan rápido como tú.</td></tr>
       </table>
-      <div class="merke"><strong>Die eine Ausnahme:</strong> <em>antes de que</em> (bevor)
-      steht <strong>immer</strong> im Subjuntivo — auch bei Vergangenheit. Logisch: Was
-      „davor" liegt, war zu dem Zeitpunkt noch nicht geschehen.<br>
-      <em>Salí antes de que <strong>llegara</strong>.</em></div>
-      <p><strong>Praktischer Test:</strong> Kannst du „dann irgendwann" hinzudenken?
-      Dann Subjuntivo. Bedeutet es „jedes Mal, wenn"? Dann Indikativ.</p>`,
-    uebungen: [
-      { id: "g4101", satz: "Cuando ___ (llegar, tú), llámame.", loesung: "llegues", tipps: ["llegues", "llegas", "llegaste"], hinweis: "Zukunft", ue: "Wenn du ankommst, ruf mich an." },
-      { id: "g4102", satz: "Cuando ___ (llegar, yo) a casa, siempre cocino.", loesung: "llego", tipps: ["llego", "llegue", "llegara"], hinweis: "Gewohnheit", ue: "Wenn ich nach Hause komme, koche ich immer." },
-      { id: "g4103", satz: "En cuanto ___ (terminar, yo), te aviso.", loesung: "termine", tipps: ["termine", "termino", "terminé"], hinweis: "Zukunft", ue: "Sobald ich fertig bin, sage ich Bescheid." },
-      { id: "g4104", satz: "Espera hasta que ___ (dejar) de llover.", loesung: "deje", tipps: ["deje", "deja", "dejó"], hinweis: "Zukunft", ue: "Warte, bis es aufhört zu regnen." },
-      { id: "g4105", satz: "Ayer, cuando ___ (salir, yo), llovía.", loesung: "salí", tipps: ["salí", "salga", "saliera"], hinweis: "Vergangenheit", ue: "Als ich gestern rausging, regnete es." }
-    ]
-  }
-});
-
-LEKTION('es-419', {
-  tag: 42, niveau: "B1", thema: "Absicht und Zweck",
-  vokabeln: [
-    { id: "v4201", es: "para que",       de: "damit",            wortart: "Konjunktion", beispiel: "Te lo digo para que lo sepas.", beispielUe: "Ich sage es dir, damit du es weißt." },
-    { id: "v4202", es: "a fin de que",   de: "damit (förmlich)", wortart: "Konjunktion", beispiel: "A fin de que todos entiendan.", beispielUe: "Damit alle verstehen." },
-    { id: "v4203", es: "sin que",        de: "ohne dass",        wortart: "Konjunktion", beispiel: "Salió sin que nadie lo viera.", beispielUe: "Er ging, ohne dass ihn jemand sah." },
-    { id: "v4204", es: "a menos que",    de: "es sei denn",      wortart: "Konjunktion", beispiel: "Iré, a menos que llueva.", beispielUe: "Ich gehe, es sei denn, es regnet." },
-    { id: "v4205", es: "con tal de que", de: "sofern",           wortart: "Konjunktion", beispiel: "Te ayudo con tal de que estudies.", beispielUe: "Ich helfe dir, sofern du lernst." },
-    { id: "v4206", es: "en caso de que", de: "falls",            wortart: "Konjunktion", beispiel: "En caso de que venga, avísame.", beispielUe: "Falls er kommt, sag mir Bescheid." },
-    { id: "v4207", es: "el fin",         de: "das Ziel",         wortart: "Substantiv", beispiel: "Con el fin de mejorar.", beispielUe: "Mit dem Ziel, sich zu verbessern." },
-    { id: "v4208", es: "lograr",         de: "erreichen",        wortart: "Verb", beispiel: "Logró que lo escucharan.", beispielUe: "Er erreichte, dass man ihm zuhörte." },
-    { id: "v4209", es: "evitar",         de: "vermeiden",        wortart: "Verb", beispiel: "Quiero evitar que se enfade.", beispielUe: "Ich will vermeiden, dass er sich ärgert." },
-    { id: "v4210", es: "la finalidad",   de: "der Zweck",        wortart: "Substantiv", beispiel: "¿Cuál es la finalidad?", beispielUe: "Was ist der Zweck?" }
-  ],
-  saetze: [
-    { id: "s4201", es: "Te lo explico para que lo entiendas.",   de: "Ich erkläre es dir, damit du es verstehst." },
-    { id: "s4202", es: "Estudio para aprobar el examen.",        de: "Ich lerne, um die Prüfung zu bestehen." },
-    { id: "s4203", es: "Salió sin que nadie lo viera.",          de: "Er ging, ohne dass ihn jemand sah." },
-    { id: "s4204", es: "Iremos, a menos que llueva mucho.",      de: "Wir gehen, es sei denn, es regnet stark." },
-    { id: "s4205", es: "Antes de que te vayas, dime una cosa.",  de: "Bevor du gehst, sag mir eine Sache." }
-  ],
-  grammatik: {
-    id: "g42", titel: "Konjunktionen, die immer den Subjuntivo verlangen",
-    erklaerung: `
-      <p>Eine Handvoll Konjunktionen zieht <strong>ausnahmslos</strong> den Subjuntivo nach
-      sich — hier musst du nicht überlegen, ob Zukunft oder Gewohnheit.</p>
-      <table>
-        <tr><th>Konjunktion</th><th>Deutsch</th><th>Beispiel</th></tr>
-        <tr><td><em>para que</em></td><td>damit</td><td>Te lo digo para que lo <em>sepas</em>.</td></tr>
-        <tr><td><em>a fin de que</em></td><td>damit</td><td>A fin de que <em>entiendan</em>.</td></tr>
-        <tr><td><em>antes de que</em></td><td>bevor</td><td>Antes de que te <em>vayas</em>.</td></tr>
-        <tr><td><em>sin que</em></td><td>ohne dass</td><td>Sin que nadie lo <em>vea</em>.</td></tr>
-        <tr><td><em>a menos que</em></td><td>es sei denn</td><td>A menos que <em>llueva</em>.</td></tr>
-        <tr><td><em>con tal de que</em></td><td>sofern</td><td>Con tal de que <em>estudies</em>.</td></tr>
-        <tr><td><em>en caso de que</em></td><td>falls</td><td>En caso de que <em>venga</em>.</td></tr>
-        <tr><td><em>para que no</em></td><td>damit nicht</td><td>Para que no se <em>enfade</em>.</td></tr>
-      </table>
-      <div class="merke"><strong>Warum ausnahmslos?</strong> Alle diese Wörter beschreiben
-      etwas, das (noch) nicht Wirklichkeit ist: eine Absicht, eine Bedingung, etwas
-      Verhindertes. Genau dafür ist der Subjuntivo da.</div>
-      <p><strong>Die Personen-Regel gilt auch hier</strong> (wie an Tag 37): Bei
-      <strong>gleicher</strong> Person nimmt man den Infinitiv und lässt das <em>que</em> weg.</p>
-      <table>
-        <tr><th>gleiche Person → Infinitiv</th><th>zwei Personen → Subjuntivo</th></tr>
-        <tr><td><em>Estudio <strong>para</strong> aprobar.</em><br>(ich lerne, ich bestehe)</td>
-            <td><em>Te ayudo <strong>para que</strong> apruebes.</em><br>(ich helfe, du bestehst)</td></tr>
-        <tr><td><em>Salí <strong>sin</strong> despedirme.</em></td>
-            <td><em>Salí <strong>sin que</strong> me vieran.</em></td></tr>
-        <tr><td><em><strong>Antes de</strong> salir, cerré.</em></td>
-            <td><em><strong>Antes de que</strong> salieras, cerré.</em></td></tr>
-      </table>
-      <p>Achte auf das Wörtchen <em>que</em>: Es ist das Signal dafür, dass ein neues Subjekt
-      kommt — und damit für den Subjuntivo.</p>`,
-    uebungen: [
-      { id: "g4201", satz: "Te lo digo para que lo ___ (saber, tú).", loesung: "sepas", tipps: ["sepas", "sabes", "saber"], hinweis: "para que → Subjuntivo", ue: "Ich sage es dir, damit du es weißt." },
-      { id: "g4202", satz: "Estudio para ___ (aprobar, yo).", loesung: "aprobar", tipps: ["aprobar", "apruebe", "apruebo"], hinweis: "gleiche Person", ue: "Ich lerne, um zu bestehen." },
-      { id: "g4203", satz: "Salió sin que nadie lo ___ (ver).", loesung: "viera", tipps: ["viera", "vio", "ve"], hinweis: "Vergangenheit → viera", ue: "Er ging, ohne dass ihn jemand sah." },
-      { id: "g4204", satz: "Iré, a menos que ___ (llover).", loesung: "llueva", tipps: ["llueva", "llueve", "lloverá"], hinweis: "a menos que", ue: "Ich gehe, es sei denn, es regnet." },
-      { id: "g4205", satz: "Antes de que te ___ (ir, tú), hablemos.", loesung: "vayas", tipps: ["vayas", "vas", "irás"], hinweis: "antes de que", ue: "Bevor du gehst, lass uns reden." }
-    ]
-  }
-});
-
-LEKTION('es-419', {
-  tag: 43, niveau: "B1", thema: "Suchen und Beschreiben",
-  vokabeln: [
-    { id: "v4301", es: "el requisito",   de: "die Anforderung",  wortart: "Substantiv", beispiel: "Busco a alguien que cumpla los requisitos.", beispielUe: "Ich suche jemanden, der die Anforderungen erfüllt." },
-    { id: "v4302", es: "adecuado",       de: "geeignet",         wortart: "Adjektiv", beispiel: "Busco un departamento adecuado.", beispielUe: "Ich suche eine geeignete Wohnung." },
-    { id: "v4303", es: "el candidato",   de: "der Bewerber",     wortart: "Substantiv", beispiel: "No hay ningún candidato que sirva.", beispielUe: "Es gibt keinen passenden Bewerber." },
-    { id: "v4304", es: "servir",         de: "taugen",           wortart: "Verb", beispiel: "Esto no me sirve.", beispielUe: "Das taugt mir nichts." },
-    { id: "v4305", es: "disponible",     de: "verfügbar",        wortart: "Adjektiv", beispiel: "¿Hay algo disponible?", beispielUe: "Ist etwas verfügbar?" },
-    { id: "v4306", es: "cumplir con",    de: "erfüllen",         wortart: "Verb", beispiel: "Cumple con todos los criterios.", beispielUe: "Er erfüllt alle Kriterien." },
-    { id: "v4307", es: "la experiencia", de: "die Erfahrung",    wortart: "Substantiv", beispiel: "Necesito a alguien con experiencia.", beispielUe: "Ich brauche jemanden mit Erfahrung." },
-    { id: "v4308", es: "el requisito previo", de: "die Voraussetzung", wortart: "Substantiv", beispiel: "Es un requisito previo.", beispielUe: "Das ist eine Voraussetzung." },
-    { id: "v4309", es: "encajar",        de: "passen",           wortart: "Verb", beispiel: "No encaja en el equipo.", beispielUe: "Er passt nicht ins Team." },
-    { id: "v4310", es: "la vacante",     de: "die offene Stelle", wortart: "Substantiv", beispiel: "Hay una vacante en la empresa.", beispielUe: "In der Firma ist eine Stelle frei." }
-  ],
-  saetze: [
-    { id: "s4301", es: "Busco un departamento que tenga terraza.",       de: "Ich suche eine Wohnung, die eine Terrasse hat." },
-    { id: "s4302", es: "Tengo un departamento que tiene terraza.",       de: "Ich habe eine Wohnung, die eine Terrasse hat." },
-    { id: "s4303", es: "No conozco a nadie que hable ruso.",     de: "Ich kenne niemanden, der Russisch spricht." },
-    { id: "s4304", es: "¿Hay alguien que pueda ayudarme?",       de: "Gibt es jemanden, der mir helfen kann?" },
-    { id: "s4305", es: "Necesito un libro que explique esto bien.", de: "Ich brauche ein Buch, das das gut erklärt." }
-  ],
-  grammatik: {
-    id: "g43", titel: "Subjuntivo in Relativsätzen",
-    erklaerung: `
-      <p>Ein sehr eleganter Gebrauch: Der Modus verrät, ob die gesuchte Sache
-      <strong>existiert</strong> oder nicht.</p>
-      <div class="merke"><strong>Der Unterschied in einem Satzpaar:</strong><br>
-      <em>Tengo un departamento que <strong>tiene</strong> terraza.</em><br>
-      → Indikativ: Die Wohnung existiert, ich kenne sie.<br>
-      <em>Busco un departamento que <strong>tenga</strong> terraza.</em><br>
-      → Subjuntivo: Ich weiß nicht, ob es sie gibt. Sie ist ein Wunschbild.</div>
-      <p>Im Deutschen klingen beide Sätze gleich — das Spanische unterscheidet sie klar.</p>
-      <table>
-        <tr><th>Indikativ — es existiert</th><th>Subjuntivo — unbekannt oder nicht vorhanden</th></tr>
-        <tr><td>Conozco a alguien que <em>habla</em> ruso.</td><td>Busco a alguien que <em>hable</em> ruso.</td></tr>
-        <tr><td>Aquí hay un bar que <em>abre</em> tarde.</td><td>¿Hay un bar que <em>abra</em> tarde?</td></tr>
-        <tr><td>Tengo el libro que <em>explica</em> esto.</td><td>Necesito un libro que <em>explique</em> esto.</td></tr>
-      </table>
-      <p><strong>Nach einer Verneinung</strong> steht deshalb fast immer der Subjuntivo —
-      was es nicht gibt, kann keine feste Eigenschaft haben:</p>
+      <p>Bei <strong>Mengen</strong> statt Eigenschaften nimmt man <em>tanto</em>, das sich anpasst:</p>
       <ul>
-        <li><em>No hay nadie que <strong>sepa</strong> la respuesta.</em></li>
-        <li><em>No conozco a nadie que <strong>viva</strong> allí.</em></li>
-        <li><em>No hay nada que <strong>pueda</strong> hacer.</em></li>
+        <li><em>tanto dinero como…</em> (männl. Einzahl)</li>
+        <li><em>tanta paciencia como…</em> (weibl. Einzahl)</li>
+        <li><em>tantos libros como…</em> / <em>tantas ideas como…</em> (Mehrzahl)</li>
       </ul>
-      <div class="merke"><strong>Der einfache Test:</strong> Frage dich, ob du auf die
-      konkrete Sache zeigen könntest. Ja → Indikativ. Nein, du suchst sie erst →
-      Subjuntivo.</div>
-      <p><strong>Signalverben für den Subjuntivo hier:</strong> <em>buscar, necesitar,
-      querer, ¿hay…?, no hay, no conozco</em>.</p>`,
+      <p><strong>Vier unregelmäßige Formen</strong> — die musst du auswendig können,
+      denn <s>más bueno</s> und <s>más malo</s> sagt niemand:</p>
+      <table>
+        <tr><th>normal</th><th>Vergleich</th></tr>
+        <tr><td>bueno (gut)</td><td><em>mejor</em> (besser)</td></tr>
+        <tr><td>malo (schlecht)</td><td><em>peor</em> (schlechter)</td></tr>
+        <tr><td>grande (groß)</td><td><em>mayor</em> (größer, älter)</td></tr>
+        <tr><td>pequeño (klein)</td><td><em>menor</em> (kleiner, jünger)</td></tr>
+      </table>
+      <p><strong>Superlativ</strong> = bestimmter Artikel + Vergleichsform, danach <em>de</em>
+      (nicht <em>en</em>!): <em>Es <strong>la</strong> ciudad más bonita <strong>de</strong> España.</em></p>
+      <div class="merke"><strong>Bonus:</strong> Die Endung <em>-ísimo</em> heißt „ganz besonders":
+      <em>guapo → guapísimo</em>, <em>fácil → facilísimo</em>. Sehr spanisch und sehr nützlich.</div>`,
     uebungen: [
-      { id: "g4301", satz: "Busco un departamento que ___ (tener) terraza.", loesung: "tenga", tipps: ["tenga", "tiene", "tendrá"], hinweis: "noch nicht gefunden", ue: "Ich suche eine Wohnung mit Terrasse." },
-      { id: "g4302", satz: "Tengo un departamento que ___ (tener) terraza.", loesung: "tiene", tipps: ["tiene", "tenga", "tendría"], hinweis: "existiert", ue: "Ich habe eine Wohnung mit Terrasse." },
-      { id: "g4303", satz: "No conozco a nadie que ___ (hablar) ruso.", loesung: "hable", tipps: ["hable", "habla", "hablará"], hinweis: "Verneinung", ue: "Ich kenne niemanden, der Russisch spricht." },
-      { id: "g4304", satz: "¿Hay alguien que ___ (poder) ayudarme?", loesung: "pueda", tipps: ["pueda", "puede", "podrá"], hinweis: "Frage nach Unbekanntem", ue: "Gibt es jemanden, der mir helfen kann?" },
-      { id: "g4305", satz: "Este es el hombre que ___ (vivir) al lado.", loesung: "vive", tipps: ["vive", "viva", "viviera"], hinweis: "bekannte Person", ue: "Das ist der Mann, der nebenan wohnt." }
+      { id: "g1101", satz: "Madrid es más grande ___ Sevilla.", loesung: "que", tipps: ["que", "como", "de"], hinweis: "más … ?", ue: "Madrid ist größer als Sevilla." },
+      { id: "g1102", satz: "Soy tan alto ___ mi padre.", loesung: "como", tipps: ["como", "que", "de"], hinweis: "tan … ?", ue: "Ich bin so groß wie mein Vater." },
+      { id: "g1103", satz: "Este vino es ___ que el otro. (bueno)", loesung: "mejor", tipps: ["mejor", "más bueno"], hinweis: "unregelmäßig!", ue: "Dieser Wein ist besser als der andere." },
+      { id: "g1104", satz: "Tengo ___ libros como tú.", loesung: "tantos", tipps: ["tantos", "tanto", "tan"], hinweis: "libros = Mehrzahl männl.", ue: "Ich habe so viele Bücher wie du." },
+      { id: "g1105", satz: "Es la mejor playa ___ España.", loesung: "de", tipps: ["de", "en", "que"], hinweis: "Superlativ + ?", ue: "Es ist der schönste Strand Spaniens." }
     ]
   }
 });
 
 LEKTION('es-419', {
-  tag: 44, niveau: "B1", thema: "Anweisungen geben",
+  tag: 42, niveau: "A2", thema: "Beim Arzt",
   vokabeln: [
-    { id: "v4401", es: "la instrucción", de: "die Anweisung",    wortart: "Substantiv", beispiel: "Sigue las instrucciones.", beispielUe: "Befolge die Anweisungen." },
-    { id: "v4402", es: "advertir",       de: "hinweisen",        wortart: "Verb", beispiel: "Te advierto: ten cuidado.", beispielUe: "Ich warne dich: Pass auf." },
-    { id: "v4403", es: "el manual",      de: "die Anleitung",    wortart: "Substantiv", beispiel: "Lee el manual primero.", beispielUe: "Lies zuerst die Anleitung." },
-    { id: "v4404", es: "encender",       de: "einschalten",      wortart: "Verb", beispiel: "Enciende la luz, por favor.", beispielUe: "Mach bitte das Licht an." },
-    { id: "v4405", es: "apagar",         de: "ausschalten",      wortart: "Verb", beispiel: "Apaga el celular.", beispielUe: "Schalte das Handy aus." },
-    { id: "v4406", es: "el paso",        de: "der Schritt",      wortart: "Substantiv", beispiel: "Sigue estos tres pasos.", beispielUe: "Befolge diese drei Schritte." },
-    { id: "v4407", es: "revisar",        de: "überprüfen",       wortart: "Verb", beispiel: "Revisa el texto antes de enviarlo.", beispielUe: "Prüfe den Text, bevor du ihn schickst." },
-    { id: "v4408", es: "guardar",        de: "speichern / aufbewahren", wortart: "Verb", beispiel: "Guarda el archivo aquí.", beispielUe: "Speichere die Datei hier." },
-    { id: "v4409", es: "rellenar",       de: "ausfüllen",        wortart: "Verb", beispiel: "Rellene este formulario.", beispielUe: "Füllen Sie dieses Formular aus." },
-    { id: "v4410", es: "el formulario",  de: "das Formular",     wortart: "Substantiv", beispiel: "Entregue el formulario firmado.", beispielUe: "Geben Sie das unterschriebene Formular ab." }
+    { id: "v1201", es: "la receta",      de: "das Rezept",       wortart: "Substantiv", beispiel: "El médico me dio una receta.", beispielUe: "Der Arzt gab mir ein Rezept." },
+    { id: "v1202", es: "doler",          de: "wehtun",           wortart: "Verb", beispiel: "Me duele la cabeza.", beispielUe: "Mir tut der Kopf weh." },
+    { id: "v1203", es: "la fiebre",      de: "das Fieber",       wortart: "Substantiv", beispiel: "Tengo fiebre desde ayer.", beispielUe: "Ich habe seit gestern Fieber." },
+    { id: "v1204", es: "la garganta",    de: "der Hals",         wortart: "Substantiv", beispiel: "Me duele la garganta.", beispielUe: "Mir tut der Hals weh." },
+    { id: "v1205", es: "la pastilla",    de: "die Tablette",     wortart: "Substantiv", beispiel: "Toma una pastilla cada ocho horas.", beispielUe: "Nimm alle acht Stunden eine Tablette." },
+    { id: "v1206", es: "la cita",        de: "der Termin",       wortart: "Substantiv", beispiel: "Tengo cita a las diez.", beispielUe: "Ich habe um zehn einen Termin." },
+    { id: "v1207", es: "el resfriado",   de: "die Erkältung",    wortart: "Substantiv", beispiel: "Tengo un resfriado fuerte.", beispielUe: "Ich habe eine starke Erkältung." },
+    { id: "v1208", es: "toser",          de: "husten",           wortart: "Verb", beispiel: "El niño tose mucho por la noche.", beispielUe: "Das Kind hustet nachts viel." },
+    { id: "v1209", es: "la muela",       de: "der Backenzahn",   wortart: "Substantiv", beispiel: "Me duele una muela.", beispielUe: "Mir tut ein Zahn weh." },
+    { id: "v1210", es: "grave",          de: "ernst / schlimm",  wortart: "Adjektiv", beispiel: "No es nada grave.", beispielUe: "Es ist nichts Ernstes." }
   ],
   saetze: [
-    { id: "s4401", es: "Dímelo otra vez, por favor.",            de: "Sag es mir bitte noch einmal." },
-    { id: "s4402", es: "No me lo digas ahora.",                  de: "Sag es mir jetzt nicht." },
-    { id: "s4403", es: "Siéntese aquí, por favor.",              de: "Setzen Sie sich bitte hierhin." },
-    { id: "s4404", es: "Vámonos, que es tarde.",                 de: "Gehen wir, es ist spät." },
-    { id: "s4405", es: "Rellene el formulario y fírmelo.",       de: "Füllen Sie das Formular aus und unterschreiben Sie es." }
+    { id: "s1201", es: "Me duele mucho la espalda.",           de: "Mir tut der Rücken sehr weh." },
+    { id: "s1202", es: "¿Desde cuándo tienes fiebre?",         de: "Seit wann hast du Fieber?" },
+    { id: "s1203", es: "Tienes que tomar estas pastillas.",    de: "Du musst diese Tabletten nehmen." },
+    { id: "s1204", es: "Me duelen los pies después de andar.", de: "Mir tun die Füße weh nach dem Laufen." },
+    { id: "s1205", es: "Hay que ir al médico mañana.",         de: "Man muss morgen zum Arzt gehen." }
   ],
   grammatik: {
-    id: "g44", titel: "Alle Imperativformen im Überblick",
+    id: "g12", titel: "doler und Ausdrücke der Notwendigkeit",
     erklaerung: `
-      <p>Jetzt fügt sich zusammen, was du an Tag 13, 14 und 36 gelernt hast. Der Clou:
-      <strong>Alle Befehlsformen außer dem bejahten <em>tú</em> sind Subjuntivformen.</strong></p>
+      <p><em>doler</em> funktioniert wie <em>gustar</em> (Tag 39): Nicht du bist das Subjekt,
+      sondern der Körperteil.</p>
+      <div class="merke"><em>Me duele <strong>la cabeza</strong>.</em> — Ein Körperteil → <em>duele</em>.<br>
+      <em>Me duelen <strong>los pies</strong>.</em> — Mehrere → <em>duelen</em>.<br>
+      Und: bestimmter Artikel, nie <s>mi cabeza</s>.</div>
+      <p><strong>Drei Wege, „müssen" auszudrücken</strong> — der Unterschied ist wichtig:</p>
       <table>
-        <tr><th>Person</th><th>bejaht</th><th>verneint</th></tr>
-        <tr><td>tú</td><td>habla (él-Form)</td><td>no habl<em>es</em></td></tr>
-        <tr><td>usted</td><td>habl<em>e</em></td><td>no habl<em>e</em></td></tr>
-        <tr><td>nosotros</td><td>habl<em>emos</em></td><td>no habl<em>emos</em></td></tr>
-        <tr><td>ustedes</td><td>habl<em>en</em></td><td>no habl<em>en</em></td></tr>
+        <tr><th>Ausdruck</th><th>Bauplan</th><th>Bedeutung</th></tr>
+        <tr><td><em>tener que</em></td><td>tener + que + Infinitiv</td><td>persönliche Pflicht:<br><em>Tengo que estudiar.</em></td></tr>
+        <tr><td><em>hay que</em></td><td>hay + que + Infinitiv</td><td>allgemein, ohne Person:<br><em>Hay que pagar aquí.</em> (Man muss…)</td></tr>
+        <tr><td><em>deber</em></td><td>deber + Infinitiv</td><td>moralische Pflicht, Rat:<br><em>Debes descansar.</em> (Du solltest…)</td></tr>
       </table>
-      <div class="merke"><strong>Vier Formen statt fünf.</strong> In Spanien gibt es
-      zusätzlich <em>hablad</em> für <em>vosotros</em>. In Lateinamerika sagt man auch zu
-      einer Gruppe von Freunden <em>hablen</em> — dieselbe Form wie zu Fremden. Das macht
-      den Imperativ hier spürbar einfacher.</div>
-      <div class="merke"><strong>Die Pronomen-Regel:</strong><br>
-      <strong>bejaht</strong> → angehängt, alles ein Wort:
-      <em>Dí<strong>melo</strong>. · Siénte<strong>se</strong>. · Levánta<strong>te</strong>.</em><br>
-      <strong>verneint</strong> → davor, getrennt:
-      <em>No <strong>me lo</strong> digas. · No <strong>se</strong> siente.</em></div>
-      <p><strong>Der Akzent beim Anhängen:</strong> Er kommt dazu, damit die ursprüngliche
-      Betonung erhalten bleibt. Faustregel: ab zwei angehängten Silben fast immer.<br>
-      <em>di → dime → dí<strong>melo</strong></em> · <em>compra → cómpralo</em></p>
-      <p><strong>Zwei kleine Besonderheiten:</strong></p>
+      <p><em>hay que</em> ist unpersönlich und wird nie gebeugt — genau wie <em>hay</em>.</p>`,
+    uebungen: [
+      { id: "g1201", satz: "Me ___ la cabeza.", loesung: "duele", tipps: ["duele", "duelen"], hinweis: "la cabeza = Einzahl", ue: "Mir tut der Kopf weh." },
+      { id: "g1202", satz: "Me ___ los pies.", loesung: "duelen", tipps: ["duelen", "duele"], hinweis: "los pies = Mehrzahl", ue: "Mir tun die Füße weh." },
+      { id: "g1203", satz: "___ que ir al médico. (man muss)", loesung: "Hay", tipps: ["Hay", "Tengo", "Debo"], hinweis: "unpersönlich", ue: "Man muss zum Arzt gehen." },
+      { id: "g1204", satz: "Yo ___ que trabajar mañana.", loesung: "tengo", tipps: ["tengo", "hay", "debo"], hinweis: "ich persönlich", ue: "Ich muss morgen arbeiten." },
+      { id: "g1205", satz: "A Ana le ___ la garganta.", loesung: "duele", tipps: ["duele", "duelen"], hinweis: "la garganta = Einzahl", ue: "Ana tut der Hals weh." }
+    ]
+  }
+});
+
+LEKTION('es-419', {
+  tag: 43, niveau: "A2", thema: "Wegbeschreibung",
+  vokabeln: [
+    { id: "v1301", es: "la esquina",     de: "die Ecke",        wortart: "Substantiv", beispiel: "Gira en la esquina.", beispielUe: "Bieg an der Ecke ab." },
+    { id: "v1302", es: "seguir recto",   de: "geradeaus gehen", wortart: "Verb", beispiel: "Sigue recto dos calles.", beispielUe: "Geh zwei Straßen geradeaus." },
+    { id: "v1303", es: "el semáforo",    de: "die Ampel",       wortart: "Substantiv", beispiel: "Gira a la izquierda en el semáforo.", beispielUe: "Bieg an der Ampel links ab." },
+    { id: "v1304", es: "cruzar",         de: "überqueren",      wortart: "Verb", beispiel: "Cruza la plaza.", beispielUe: "Überquere den Platz." },
+    { id: "v1305", es: "enfrente de",    de: "gegenüber von",   wortart: "Präposition", beispiel: "Está enfrente del banco.", beispielUe: "Es ist gegenüber der Bank." },
+    { id: "v1306", es: "detrás de",      de: "hinter",          wortart: "Präposition", beispiel: "El parque está detrás de la iglesia.", beispielUe: "Der Park ist hinter der Kirche." },
+    { id: "v1307", es: "la parada",      de: "die Haltestelle", wortart: "Substantiv", beispiel: "La parada está allí.", beispielUe: "Die Haltestelle ist dort." },
+    { id: "v1308", es: "perderse",       de: "sich verlaufen",  wortart: "Verb", beispiel: "Me he perdido, lo siento.", beispielUe: "Ich habe mich verlaufen, tut mir leid." },
+    { id: "v1309", es: "el puente",      de: "die Brücke",      wortart: "Substantiv", beispiel: "Pasa por el puente.", beispielUe: "Geh über die Brücke." },
+    { id: "v1310", es: "acercarse",      de: "sich nähern",     wortart: "Verb", beispiel: "Nos acercamos al centro.", beispielUe: "Wir nähern uns dem Zentrum." }
+  ],
+  saetze: [
+    { id: "s1301", es: "Sigue recto hasta el semáforo.",    de: "Geh geradeaus bis zur Ampel." },
+    { id: "s1302", es: "Gira a la derecha en la esquina.",  de: "Bieg an der Ecke rechts ab." },
+    { id: "s1303", es: "Perdona, ¿dónde está la estación?", de: "Entschuldige, wo ist der Bahnhof?" },
+    { id: "s1304", es: "No cruces aquí, es peligroso.",     de: "Überquere hier nicht, es ist gefährlich." },
+    { id: "s1305", es: "Toma la segunda calle a la izquierda.", de: "Nimm die zweite Straße links." }
+  ],
+  grammatik: {
+    id: "g13", titel: "Der bejahte Imperativ (Befehlsform)",
+    erklaerung: `
+      <p>Für <em>tú</em> ist die Befehlsform überraschend einfach: Du nimmst die
+      <em>él/ella</em>-Form des Präsens.</p>
+      <table>
+        <tr><th>Verb</th><th>él/ella sagt</th><th>Befehl an tú</th></tr>
+        <tr><td>hablar</td><td>habla</td><td>¡Habla!</td></tr>
+        <tr><td>comer</td><td>come</td><td>¡Come!</td></tr>
+        <tr><td>escribir</td><td>escribe</td><td>¡Escribe!</td></tr>
+        <tr><td>cerrar</td><td>cierra</td><td>¡Cierra!</td></tr>
+      </table>
+      <p><strong>Acht Ausnahmen</strong> — die häufigsten Verben überhaupt, deshalb lohnt
+      sich das Auswendiglernen:</p>
+      <table>
+        <tr><th>Verb</th><th>Befehl</th><th></th><th>Verb</th><th>Befehl</th></tr>
+        <tr><td>decir</td><td><em>di</em></td><td></td><td>salir</td><td><em>sal</em></td></tr>
+        <tr><td>hacer</td><td><em>haz</em></td><td></td><td>ser</td><td><em>sé</em></td></tr>
+        <tr><td>ir</td><td><em>ve</em></td><td></td><td>tener</td><td><em>ten</em></td></tr>
+        <tr><td>poner</td><td><em>pon</em></td><td></td><td>venir</td><td><em>ven</em></td></tr>
+      </table>
+      <div class="merke"><strong>Merkspruch:</strong> „<em>di, haz, ve, pon, sal, sé, ten, ven</em>" —
+      acht kurze Wörter, im Rhythmus gesprochen sitzen sie schnell.</div>
+      <p><strong>Pronomen werden angehängt</strong>, alles wird ein Wort — und oft kommt ein
+      Akzent dazu, damit die Betonung bleibt:</p>
       <ul>
-        <li>Bei <em>nosotros</em> + <em>nos</em> fällt das <em>-s</em> weg:
-            <em>vayamos + nos → <strong>vámonos</strong></em> (gehen wir)</li>
-        <li>Bei <em>ustedes</em> hängt das Pronomen ganz normal an:
-            <em>siéntense</em> (setzen Sie sich / setzt euch)</li>
+        <li><em>Dime.</em> (Sag mir.) · <em>Hazlo.</em> (Mach es.)</li>
+        <li><em>Dí<strong>me</strong>lo.</em> (Sag es mir.) · <em>Levánta<strong>te</strong>.</em> (Steh auf.)</li>
       </ul>`,
     uebungen: [
-      { id: "g4401", satz: "___ (sentarse, usted) aquí, por favor.", loesung: "Siéntese", tipps: ["Siéntese", "Siéntate", "Se siente"], hinweis: "usted + angehängt", ue: "Setzen Sie sich bitte hierhin." },
-      { id: "g4402", satz: "No me lo ___ (decir, tú) ahora.", loesung: "digas", tipps: ["digas", "dices", "di"], hinweis: "verneint", ue: "Sag es mir jetzt nicht." },
-      { id: "g4403", satz: "___ (rellenar, usted) el formulario.", loesung: "Rellene", tipps: ["Rellene", "Rellena", "Rellenad"], hinweis: "usted", ue: "Füllen Sie das Formular aus." },
-      { id: "g4404", satz: "¡___ (irse, nosotros)! (gehen wir)", loesung: "Vámonos", tipps: ["Vámonos", "Vayamosnos", "Vamos"], hinweis: "-s fällt weg", ue: "Gehen wir!" },
-      { id: "g4405", satz: "___ (comer, ustedes) todo.", loesung: "Coman", tipps: ["Coman", "Comen", "Comed"], hinweis: "ustedes = Subjuntivform", ue: "Esst alles auf." }
+      { id: "g1301", satz: "___ recto hasta el final. (seguir, tú)", loesung: "Sigue", tipps: ["Sigue", "Sigues", "Siga"], hinweis: "él-Form nehmen", ue: "Geh geradeaus bis zum Ende." },
+      { id: "g1302", satz: "¡___ la puerta! (cerrar, tú)", loesung: "Cierra", tipps: ["Cierra", "Cierre", "Cerra"], hinweis: "e → ie", ue: "Mach die Tür zu!" },
+      { id: "g1303", satz: "¡___ aquí! (venir, tú)", loesung: "Ven", tipps: ["Ven", "Viene", "Vení"], hinweis: "Ausnahme", ue: "Komm her!" },
+      { id: "g1304", satz: "¡___ los deberes! (hacer, tú)", loesung: "Haz", tipps: ["Haz", "Hace", "Haga"], hinweis: "Ausnahme", ue: "Mach die Hausaufgaben!" },
+      { id: "g1305", satz: "¡Dí___ la verdad! (mir)", loesung: "me", tipps: ["me", "te", "lo"], hinweis: "angehängtes Pronomen", ue: "Sag mir die Wahrheit!" }
     ]
   }
 });
 
 LEKTION('es-419', {
-  tag: 45, niveau: "B1", thema: "Digitales Leben",
+  tag: 44, niveau: "A2", thema: "Ratschläge und Verbote",
   vokabeln: [
-    { id: "v4501", es: "la contraseña",  de: "das Passwort",     wortart: "Substantiv", beispiel: "He olvidado la contraseña.", beispielUe: "Ich habe das Passwort vergessen." },
-    { id: "v4502", es: "descargar",      de: "herunterladen",    wortart: "Verb", beispiel: "Descarga la aplicación.", beispielUe: "Lade die App herunter." },
-    { id: "v4503", es: "la pantalla",    de: "der Bildschirm",   wortart: "Substantiv", beispiel: "La pantalla está rota.", beispielUe: "Der Bildschirm ist kaputt." },
-    { id: "v4504", es: "la nube",        de: "die Cloud",        wortart: "Substantiv", beispiel: "Guardo todo en la nube.", beispielUe: "Ich speichere alles in der Cloud." },
-    { id: "v4505", es: "actualizar",     de: "aktualisieren",    wortart: "Verb", beispiel: "Hay que actualizar el sistema.", beispielUe: "Man muss das System aktualisieren." },
-    { id: "v4506", es: "la red",         de: "das Netz",         wortart: "Substantiv", beispiel: "No hay red aquí.", beispielUe: "Hier gibt es kein Netz." },
-    { id: "v4507", es: "el archivo",     de: "die Datei",        wortart: "Substantiv", beispiel: "El archivo pesa mucho.", beispielUe: "Die Datei ist sehr groß." },
-    { id: "v4508", es: "compartir",      de: "teilen",           wortart: "Verb", beispiel: "¿Me lo puedes compartir?", beispielUe: "Kannst du es mit mir teilen?" },
-    { id: "v4509", es: "la copia de seguridad", de: "die Sicherung", wortart: "Substantiv", beispiel: "Haz una copia de seguridad.", beispielUe: "Mach eine Sicherung." },
-    { id: "v4510", es: "fiable",         de: "zuverlässig",      wortart: "Adjektiv", beispiel: "No es una fuente fiable.", beispielUe: "Das ist keine zuverlässige Quelle." }
+    { id: "v1401", es: "el consejo",     de: "der Rat",         wortart: "Substantiv", beispiel: "Te doy un consejo.", beispielUe: "Ich gebe dir einen Rat." },
+    { id: "v1402", es: "prohibido",      de: "verboten",        wortart: "Adjektiv", beispiel: "Está prohibido fumar aquí.", beispielUe: "Rauchen ist hier verboten." },
+    { id: "v1403", es: "preocuparse",    de: "sich sorgen",     wortart: "Verb", beispiel: "No te preocupes.", beispielUe: "Mach dir keine Sorgen." },
+    { id: "v1404", es: "el peligro",     de: "die Gefahr",      wortart: "Substantiv", beispiel: "No hay peligro.", beispielUe: "Es besteht keine Gefahr." },
+    { id: "v1405", es: "tener cuidado",  de: "aufpassen",       wortart: "Verb", beispiel: "Ten cuidado con el escalón.", beispielUe: "Pass auf die Stufe auf." },
+    { id: "v1406", es: "olvidar",        de: "vergessen",       wortart: "Verb", beispiel: "No olvides las llaves.", beispielUe: "Vergiss die Schlüssel nicht." },
+    { id: "v1407", es: "el error",       de: "der Fehler",      wortart: "Substantiv", beispiel: "Fue un error mío.", beispielUe: "Das war mein Fehler." },
+    { id: "v1408", es: "molestar",       de: "stören",          wortart: "Verb", beispiel: "No molestes a tu hermana.", beispielUe: "Stör deine Schwester nicht." },
+    { id: "v1409", es: "atreverse",      de: "sich trauen",     wortart: "Verb", beispiel: "No me atrevo a preguntar.", beispielUe: "Ich traue mich nicht zu fragen." },
+    { id: "v1410", es: "el riesgo",      de: "das Risiko",      wortart: "Substantiv", beispiel: "No quiero correr riesgos.", beispielUe: "Ich will keine Risiken eingehen." }
   ],
   saetze: [
-    { id: "s4501", es: "No creo que sea una buena idea.",        de: "Ich glaube nicht, dass das eine gute Idee ist." },
-    { id: "s4502", es: "Es evidente que necesitamos ayuda.",     de: "Es ist offensichtlich, dass wir Hilfe brauchen." },
-    { id: "s4503", es: "No es cierto que el archivo esté perdido.", de: "Es stimmt nicht, dass die Datei verloren ist." },
-    { id: "s4504", es: "Está claro que hay un problema.",        de: "Es ist klar, dass es ein Problem gibt." },
-    { id: "s4505", es: "Puede que la red no funcione bien.",     de: "Es kann sein, dass das Netz nicht gut funktioniert." }
+    { id: "s1401", es: "No te preocupes por eso.",           de: "Mach dir darüber keine Sorgen." },
+    { id: "s1402", es: "No hables tan rápido, por favor.",   de: "Sprich bitte nicht so schnell." },
+    { id: "s1403", es: "No olvides llamar a tu madre.",      de: "Vergiss nicht, deine Mutter anzurufen." },
+    { id: "s1404", es: "No comas tanto azúcar.",             de: "Iss nicht so viel Zucker." },
+    { id: "s1405", es: "No vengas tarde otra vez.",          de: "Komm nicht wieder zu spät." }
   ],
   grammatik: {
-    id: "g45", titel: "Indikativ oder Subjuntivo? Die Gesamtübersicht",
+    id: "g14", titel: "Der verneinte Imperativ",
     erklaerung: `
-      <p>Nach zehn Tagen Subjuntivo ist es Zeit für die Landkarte. Alles lässt sich auf
-      <strong>eine</strong> Unterscheidung zurückführen.</p>
-      <div class="merke"><strong>Der Kerngedanke:</strong><br>
-      <strong>Indikativ</strong> = ich stelle etwas als <strong>Tatsache</strong> hin.<br>
-      <strong>Subjuntivo</strong> = ich färbe es ein: gewünscht, bezweifelt, bewertet,
-      noch nicht eingetreten.</div>
+      <p>Achtung, hier passiert etwas Unerwartetes: Der verneinte Befehl hat eine
+      <strong>ganz andere</strong> Form als der bejahte. Man kann nicht einfach <em>no</em>
+      davorsetzen.</p>
       <table>
-        <tr><th>Auslöser</th><th>Modus</th><th>Beispiel</th></tr>
-        <tr><td>Feststellung (creer, saber, es verdad)</td><td>Indikativ</td><td>Creo que <em>viene</em>.</td></tr>
-        <tr><td>Verneinte Feststellung</td><td>Subjuntivo</td><td>No creo que <em>venga</em>.</td></tr>
-        <tr><td>Wunsch, Bitte (querer que, pedir que)</td><td>Subjuntivo</td><td>Quiero que <em>vengas</em>.</td></tr>
-        <tr><td>Gefühl (alegrarse de que, sentir que)</td><td>Subjuntivo</td><td>Me alegro de que <em>vengas</em>.</td></tr>
-        <tr><td>Wertung (es importante que)</td><td>Subjuntivo</td><td>Es mejor que <em>vengas</em>.</td></tr>
-        <tr><td>Zweifel (dudar que, puede que)</td><td>Subjuntivo</td><td>Dudo que <em>venga</em>.</td></tr>
-        <tr><td>Zeit + Zukunft (cuando, en cuanto)</td><td>Subjuntivo</td><td>Cuando <em>vengas</em>, hablamos.</td></tr>
-        <tr><td>Zeit + Gewohnheit</td><td>Indikativ</td><td>Cuando <em>viene</em>, hablamos.</td></tr>
-        <tr><td>Absicht (para que, sin que)</td><td>Subjuntivo</td><td>Lo hago para que <em>vengas</em>.</td></tr>
-        <tr><td>Gesuchtes, Unbekanntes (busco … que)</td><td>Subjuntivo</td><td>Busco a alguien que <em>venga</em>.</td></tr>
+        <tr><th>bejaht</th><th>verneint</th></tr>
+        <tr><td>¡Habla!</td><td>¡No habl<em>es</em>!</td></tr>
+        <tr><td>¡Come!</td><td>¡No com<em>as</em>!</td></tr>
+        <tr><td>¡Escribe!</td><td>¡No escrib<em>as</em>!</td></tr>
       </table>
-      <p><strong>Die drei Fragen, mit denen du dich immer entscheiden kannst:</strong></p>
-      <ol>
-        <li>Steht ein <em>que</em> im Satz und wechselt dahinter die Person? — Wenn nicht,
-            nimm einfach den Infinitiv.</li>
-        <li>Behaupte ich eine Tatsache? → Indikativ.</li>
-        <li>Wünsche, zweifle, bewerte ich, oder ist es noch nicht eingetreten? → Subjuntivo.</li>
-      </ol>
-      <div class="merke"><strong>Und ein tröstlicher Gedanke:</strong> Auch mit falschem
-      Modus versteht dich jeder. Der Subjuntivo wächst mit dem Sprachgefühl — die Regeln
-      sind das Gerüst, das du am Anfang brauchst und später kaum noch bemerkst.</div>`,
-    uebungen: [
-      { id: "g4501", satz: "No creo que ___ (ser) buena idea.", loesung: "sea", tipps: ["sea", "es", "será"], hinweis: "verneinte Feststellung", ue: "Ich glaube nicht, dass das gut ist." },
-      { id: "g4502", satz: "Es evidente que ___ (necesitar, nosotros) ayuda.", loesung: "necesitamos", tipps: ["necesitamos", "necesitemos"], hinweis: "Tatsache", ue: "Offensichtlich brauchen wir Hilfe." },
-      { id: "g4503", satz: "Quiero que ___ (venir, tú) conmigo.", loesung: "vengas", tipps: ["vengas", "vienes", "venir"], hinweis: "Wunsch", ue: "Ich will, dass du mitkommst." },
-      { id: "g4504", satz: "Cuando ___ (llegar, tú), cenamos.", loesung: "llegues", tipps: ["llegues", "llegas", "llegaste"], hinweis: "Zukunft", ue: "Wenn du ankommst, essen wir." },
-      { id: "g4505", satz: "Está claro que ___ (haber) un problema.", loesung: "hay", tipps: ["hay", "haya", "habrá"], hinweis: "Tatsache", ue: "Es ist klar, dass es ein Problem gibt." }
-    ]
-  }
-});
-
-LEKTION('es-419', {
-  tag: 46, niveau: "B1", thema: "Wenn-Sätze im Alltag",
-  vokabeln: [
-    { id: "v4601", es: "la condición",   de: "die Bedingung",    wortart: "Substantiv", beispiel: "Con una condición.", beispielUe: "Unter einer Bedingung." },
-    { id: "v4602", es: "depender de",    de: "abhängen von",     wortart: "Verb", beispiel: "Depende del tiempo.", beispielUe: "Das hängt vom Wetter ab." },
-    { id: "v4603", es: "en ese caso",    de: "in dem Fall",      wortart: "Adverb", beispiel: "En ese caso, me quedo.", beispielUe: "In dem Fall bleibe ich." },
-    { id: "v4604", es: "de lo contrario", de: "andernfalls",     wortart: "Adverb", beispiel: "Date prisa; de lo contrario, llegaremos tarde.", beispielUe: "Beeil dich; andernfalls kommen wir zu spät." },
-    { id: "v4605", es: "aceptar",        de: "annehmen",         wortart: "Verb", beispiel: "Si aceptas, empezamos hoy.", beispielUe: "Wenn du annimmst, fangen wir heute an." },
-    { id: "v4606", es: "el requisito",   de: "die Bedingung",    wortart: "Substantiv", beispiel: "Cumple el requisito.", beispielUe: "Er erfüllt die Bedingung." },
-    { id: "v4607", es: "arriesgarse",    de: "ein Risiko eingehen", wortart: "Verb", beispiel: "No quiero arriesgarme.", beispielUe: "Ich will kein Risiko eingehen." },
-    { id: "v4608", es: "salir bien",     de: "gut ausgehen",     wortart: "Verb", beispiel: "Si sale bien, celebramos.", beispielUe: "Wenn es gut ausgeht, feiern wir." },
-    { id: "v4609", es: "asumir",         de: "übernehmen",       wortart: "Verb", beispiel: "Asumo la responsabilidad.", beispielUe: "Ich übernehme die Verantwortung." },
-    { id: "v4610", es: "el compromiso",  de: "die Verpflichtung", wortart: "Substantiv", beispiel: "Es un compromiso serio.", beispielUe: "Das ist eine ernste Verpflichtung." }
-  ],
-  saetze: [
-    { id: "s4601", es: "Si tengo tiempo, iré contigo.",          de: "Wenn ich Zeit habe, gehe ich mit dir." },
-    { id: "s4602", es: "Si llueve, nos quedamos en casa.",       de: "Wenn es regnet, bleiben wir zu Hause." },
-    { id: "s4603", es: "Si me llamas, te lo explico todo.",      de: "Wenn du mich anrufst, erkläre ich dir alles." },
-    { id: "s4604", es: "Si no vienes, avísame por favor.",       de: "Wenn du nicht kommst, sag mir bitte Bescheid." },
-    { id: "s4605", es: "Todo depende de lo que decidas tú.",     de: "Alles hängt davon ab, was du entscheidest." }
-  ],
-  grammatik: {
-    id: "g46", titel: "Bedingungssätze Typ 1 — realistische Bedingungen",
-    erklaerung: `
-      <p>Der reale Bedingungssatz beschreibt etwas, das durchaus eintreten kann.
-      Er ist einfach gebaut — mit <strong>einer Regel, die man sich merken muss</strong>.</p>
-      <div class="merke"><strong>Bauplan:</strong><br>
-      <em>si</em> + <strong>Presente de Indicativo</strong> , Hauptsatz im Presente,
-      Futuro oder Imperativ<br>
-      <em>Si <strong>tengo</strong> tiempo, <strong>iré</strong> contigo.</em></div>
-      <table>
-        <tr><th>Nebensatz</th><th>Hauptsatz</th><th>Beispiel</th></tr>
-        <tr><td>si + Presente</td><td>Presente</td><td>Si llueve, no salgo.</td></tr>
-        <tr><td>si + Presente</td><td>Futuro</td><td>Si llueve, no saldré.</td></tr>
-        <tr><td>si + Presente</td><td><em>ir a</em> + Inf.</td><td>Si llueve, no voy a salir.</td></tr>
-        <tr><td>si + Presente</td><td>Imperativ</td><td>Si llueve, ¡quédate en casa!</td></tr>
-      </table>
-      <div class="merke"><strong>Die wichtigste Regel überhaupt:</strong> Nach <em>si</em>
-      steht <strong>nie</strong> das Futuro und <strong>nie</strong> der Presente de
-      Subjuntivo.<br>
-      Richtig: <em>Si <strong>tengo</strong> tiempo…</em><br>
-      Falsch: <s>Si tendré tiempo…</s> · <s>Si tenga tiempo…</s><br>
-      Diesen Fehler machen fast alle Lernenden — merke ihn dir jetzt und du sparst dir
-      viel Korrektur.</div>
-      <p><strong>Beide Reihenfolgen sind möglich:</strong></p>
+      <div class="merke"><strong>Der Trick — Endungen tauschen:</strong><br>
+      <em>-ar</em>-Verben bekommen ein <strong>e</strong>: hablar → no habl<em>es</em><br>
+      <em>-er</em>/<em>-ir</em>-Verben bekommen ein <strong>a</strong>: comer → no com<em>as</em></div>
+      <p><strong>So gehst du sicher vor:</strong> yo-Form nehmen, <em>-o</em> abschneiden,
+      Endung antauschen. Das funktioniert sogar bei unregelmäßigen Verben:</p>
       <ul>
-        <li><em>Si llueve, me quedo en casa.</em> (Komma nötig)</li>
-        <li><em>Me quedo en casa si llueve.</em> (kein Komma)</li>
+        <li>tener → ten<s>go</s> → <em>no tengas</em></li>
+        <li>hacer → ha<s>go</s> → <em>no hagas</em></li>
+        <li>venir → ven<s>go</s> → <em>no vengas</em></li>
+        <li>decir → di<s>go</s> → <em>no digas</em></li>
+        <li>salir → sal<s>go</s> → <em>no salgas</em></li>
       </ul>
-      <p><strong>Verwandte Ausdrücke:</strong> <em>siempre que</em> (sofern),
-      <em>con tal de que</em> (unter der Bedingung, dass), <em>a no ser que</em>
-      (es sei denn) — diese verlangen allerdings den Subjuntivo, weil sie nicht
-      <em>si</em> sind.</p>`,
+      <p>Echte Ausnahmen sind nur: <em>ir → no vayas</em>, <em>ser → no seas</em>,
+      <em>dar → no des</em>, <em>estar → no estés</em>, <em>saber → no sepas</em>.</p>
+      <div class="merke"><strong>Und die Pronomen wandern:</strong> beim bejahten Befehl
+      angehängt, beim verneinten davor.<br>
+      <em>¡Dímelo!</em> ↔ <em>¡No <strong>me lo</strong> digas!</em></div>`,
     uebungen: [
-      { id: "g4601", satz: "Si ___ (tener, yo) tiempo, iré contigo.", loesung: "tengo", tipps: ["tengo", "tenga", "tendré"], hinweis: "nach si: Presente!", ue: "Wenn ich Zeit habe, komme ich mit." },
-      { id: "g4602", satz: "Si ___ (llover), nos quedamos en casa.", loesung: "llueve", tipps: ["llueve", "llueva", "lloverá"], hinweis: "nach si: Presente!", ue: "Wenn es regnet, bleiben wir zu Hause." },
-      { id: "g4603", satz: "Si me llamas, te lo ___ (explicar, yo).", loesung: "explico", tipps: ["explico", "explique", "explicaría"], hinweis: "Hauptsatz Presente", ue: "Wenn du anrufst, erkläre ich es dir." },
-      { id: "g4604", satz: "Si no vienes, ___ (avisar, tú) por favor.", loesung: "avísame", tipps: ["avísame", "avises", "avisas"], hinweis: "Imperativ + Pronomen", ue: "Wenn du nicht kommst, sag mir Bescheid." },
-      { id: "g4605", satz: "Si ___ (poder, nosotros), lo haremos hoy.", loesung: "podemos", tipps: ["podemos", "podamos", "podremos"], hinweis: "nach si: Presente!", ue: "Wenn wir können, machen wir es heute." }
+      { id: "g1401", satz: "¡No ___ tan rápido! (hablar, tú)", loesung: "hables", tipps: ["hables", "hablas", "habla"], hinweis: "-ar bekommt e", ue: "Sprich nicht so schnell!" },
+      { id: "g1402", satz: "¡No ___ tanto! (comer, tú)", loesung: "comas", tipps: ["comas", "comes", "come"], hinweis: "-er bekommt a", ue: "Iss nicht so viel!" },
+      { id: "g1403", satz: "¡No ___ tarde! (venir, tú)", loesung: "vengas", tipps: ["vengas", "vienes", "ven"], hinweis: "yo-Form vengo → ?", ue: "Komm nicht zu spät!" },
+      { id: "g1404", satz: "¡No te ___! (preocuparse, tú)", loesung: "preocupes", tipps: ["preocupes", "preocupas", "preocupa"], hinweis: "Pronomen steht davor", ue: "Mach dir keine Sorgen!" },
+      { id: "g1405", satz: "¡No ___ ahí! (ir, tú)", loesung: "vayas", tipps: ["vayas", "vas", "ve"], hinweis: "echte Ausnahme", ue: "Geh da nicht hin!" }
     ]
   }
 });
 
 LEKTION('es-419', {
-  tag: 47, niveau: "B1", thema: "Arbeit und Bewerbung",
+  tag: 45, niveau: "A2", thema: "Diese Woche",
   vokabeln: [
-    { id: "v4701", es: "el currículum",  de: "der Lebenslauf",   wortart: "Substantiv", beispiel: "Envié mi currículum ayer.", beispielUe: "Ich schickte gestern meinen Lebenslauf." },
-    { id: "v4702", es: "la entrevista",  de: "das Vorstellungsgespräch", wortart: "Substantiv", beispiel: "Tengo una entrevista el lunes.", beispielUe: "Ich habe am Montag ein Gespräch." },
-    { id: "v4703", es: "el puesto",      de: "die Stelle",       wortart: "Substantiv", beispiel: "Es un puesto interesante.", beispielUe: "Das ist eine interessante Stelle." },
-    { id: "v4704", es: "el ascenso",     de: "die Beförderung",  wortart: "Substantiv", beispiel: "Consiguió un ascenso.", beispielUe: "Er bekam eine Beförderung." },
-    { id: "v4705", es: "la jornada",     de: "der Arbeitstag",   wortart: "Substantiv", beispiel: "Trabajo a jornada completa.", beispielUe: "Ich arbeite Vollzeit." },
-    { id: "v4706", es: "el convenio",    de: "der Tarifvertrag", wortart: "Substantiv", beispiel: "Según el convenio, son 30 días.", beispielUe: "Laut Tarifvertrag sind es 30 Tage." },
-    { id: "v4707", es: "despedir",       de: "entlassen",        wortart: "Verb", beispiel: "Despidieron a diez personas.", beispielUe: "Sie entließen zehn Leute." },
-    { id: "v4708", es: "el desempleo",   de: "die Arbeitslosigkeit", wortart: "Substantiv", beispiel: "El desempleo ha bajado.", beispielUe: "Die Arbeitslosigkeit ist gesunken." },
-    { id: "v4709", es: "la formación",   de: "die Ausbildung",   wortart: "Substantiv", beispiel: "Tiene buena formación.", beispielUe: "Er hat eine gute Ausbildung." },
-    { id: "v4710", es: "postularse",     de: "sich bewerben",    wortart: "Verb", beispiel: "Me postulé para el puesto.", beispielUe: "Ich bewarb mich für die Stelle." }
+    { id: "v1501", es: "todavía",        de: "noch",            wortart: "Adverb", beispiel: "Todavía no he comido.", beispielUe: "Ich habe noch nicht gegessen." },
+    { id: "v1502", es: "ya",             de: "schon",           wortart: "Adverb", beispiel: "Ya he terminado.", beispielUe: "Ich bin schon fertig." },
+    { id: "v1503", es: "últimamente",    de: "in letzter Zeit", wortart: "Adverb", beispiel: "Últimamente trabajo mucho.", beispielUe: "In letzter Zeit arbeite ich viel." },
+    { id: "v1504", es: "el rato libre",  de: "die freie Zeit",  wortart: "Substantiv", beispiel: "He tenido poco rato libre.", beispielUe: "Ich hatte wenig freie Zeit." },
+    { id: "v1505", es: "conseguir",      de: "erreichen / schaffen", wortart: "Verb", beispiel: "He conseguido el trabajo.", beispielUe: "Ich habe die Stelle bekommen." },
+    { id: "v1506", es: "romper",         de: "kaputt machen",   wortart: "Verb", beispiel: "He roto un vaso.", beispielUe: "Ich habe ein Glas zerbrochen." },
+    { id: "v1507", es: "el suceso",      de: "das Ereignis",    wortart: "Substantiv", beispiel: "Fue un suceso importante.", beispielUe: "Das war ein wichtiges Ereignis." },
+    { id: "v1508", es: "por fin",        de: "endlich",         wortart: "Adverb", beispiel: "Por fin ha llegado el verano.", beispielUe: "Endlich ist der Sommer da." },
+    { id: "v1509", es: "resolver",       de: "lösen",           wortart: "Verb", beispiel: "Hemos resuelto el problema.", beispielUe: "Wir haben das Problem gelöst." },
+    { id: "v1510", es: "el cambio",      de: "die Veränderung", wortart: "Substantiv", beispiel: "Ha habido muchos cambios.", beispielUe: "Es hat viele Veränderungen gegeben." }
   ],
   saetze: [
-    { id: "s4701", es: "Aunque no tengo experiencia, quiero intentarlo.", de: "Obwohl ich keine Erfahrung habe, will ich es versuchen." },
-    { id: "s4702", es: "Aunque llueva, iré a la entrevista.",     de: "Auch wenn es regnen sollte, gehe ich zum Gespräch." },
-    { id: "s4703", es: "A pesar de las dificultades, siguió adelante.", de: "Trotz der Schwierigkeiten machte er weiter." },
-    { id: "s4704", es: "Por mucho que estudie, siempre hay más.",  de: "So viel ich auch lerne, es gibt immer mehr." },
-    { id: "s4705", es: "Sin embargo, la oferta es interesante.",   de: "Dennoch ist das Angebot interessant." }
+    { id: "s1501", es: "Nunca he probado el mole poblano.",    de: "Ich habe noch nie Mole probiert." },
+    { id: "s1502", es: "Esta semana hemos visto tres películas.", de: "Diese Woche haben wir drei Filme gesehen." },
+    { id: "s1503", es: "¿Has estado alguna vez en México?",    de: "Warst du schon mal in Mexiko?" },
+    { id: "s1504", es: "Todavía no he terminado el informe.",  de: "Ich habe den Bericht noch nicht fertig." },
+    { id: "s1505", es: "Nunca he probado el pulpo.",           de: "Ich habe noch nie Oktopus probiert." }
   ],
   grammatik: {
-    id: "g47", titel: "aunque und die Einräumung",
+    id: "g15", titel: "Pretérito Perfecto — die nahe Vergangenheit",
     erklaerung: `
-      <p><em>aunque</em> heißt „obwohl" oder „auch wenn" — und je nach Modus bedeutet es
-      etwas anderes. Das ist eine der elegantesten Feinheiten des Spanischen.</p>
-      <div class="merke"><strong>Der Unterschied:</strong><br>
-      <em>Aunque <strong>llueve</strong>, salgo.</em> → Indikativ<br>
-      = <strong>Obwohl</strong> es regnet (Tatsache, ich sehe es), gehe ich raus.<br>
-      <em>Aunque <strong>llueva</strong>, saldré.</em> → Subjuntivo<br>
-      = <strong>Auch wenn</strong> es regnen sollte (noch offen), gehe ich raus.</div>
+      <p>Diese Zeit entspricht dem deutschen Perfekt und wird genauso gebaut:
+      Hilfsverb <em>haber</em> + Partizip.</p>
       <table>
-        <tr><th>Indikativ — feststehende Tatsache</th><th>Subjuntivo — Möglichkeit oder Zugeständnis</th></tr>
-        <tr><td>Aunque <em>es</em> caro, lo compro.<br>(Es ist teuer, ich weiß es.)</td>
-            <td>Aunque <em>sea</em> caro, lo compraré.<br>(Falls es teuer sein sollte.)</td></tr>
-        <tr><td>Aunque <em>tengo</em> poco tiempo, te ayudo.</td>
-            <td>Aunque <em>tenga</em> poco tiempo, te ayudaré.</td></tr>
+        <tr><th>Person</th><th>haber</th><th>Beispiel</th></tr>
+        <tr><td>yo</td><td>he</td><td>he hablado</td></tr>
+        <tr><td>tú</td><td>has</td><td>has comido</td></tr>
+        <tr><td>él/ella/usted</td><td>ha</td><td>ha vivido</td></tr>
+        <tr><td>nosotros</td><td>hemos</td><td>hemos hablado</td></tr>
+        <tr><td>ellos/ustedes</td><td>han</td><td>han vivido</td></tr>
       </table>
-      <p><strong>Verwandte Ausdrücke:</strong></p>
+      <p><strong>Partizip:</strong> <em>-ar</em> → <em>-ado</em>, <em>-er</em>/<em>-ir</em> → <em>-ido</em>.</p>
+      <p><strong>Unregelmäßige Partizipien</strong> (häufig gebraucht):</p>
       <ul>
-        <li><em>a pesar de</em> + Infinitiv/Substantiv: <em>A pesar de la lluvia, salimos.</em></li>
-        <li><em>a pesar de que</em> + Verb: <em>A pesar de que llovía, salimos.</em></li>
-        <li><em>por mucho que</em> + Subjuntivo: <em>Por mucho que <strong>estudie</strong>,
-            no me acuerdo.</em> (So viel ich auch lerne…)</li>
-        <li><em>por más que</em> + Subjuntivo — gleiche Bedeutung</li>
-        <li><em>aun así</em> = trotzdem: <em>Es difícil; aun así, lo intento.</em></li>
+        <li><em>hacer → hecho</em> · <em>ver → visto</em> · <em>decir → dicho</em></li>
+        <li><em>escribir → escrito</em> · <em>poner → puesto</em> · <em>volver → vuelto</em></li>
+        <li><em>abrir → abierto</em> · <em>romper → roto</em> · <em>morir → muerto</em></li>
       </ul>
-      <div class="merke"><strong>Nicht verwechseln:</strong><br>
-      <em>aun</em> (ohne Akzent) = sogar, selbst<br>
-      <em>aún</em> (mit Akzent) = noch (= <em>todavía</em>)<br>
-      <em>Aún no ha llegado.</em> — Er ist noch nicht angekommen.</div>`,
-    uebungen: [
-      { id: "g4701", satz: "Aunque ___ (llover) ahora, salgo igual.", loesung: "llueve", tipps: ["llueve", "llueva", "lloverá"], hinweis: "Tatsache", ue: "Obwohl es jetzt regnet, gehe ich trotzdem." },
-      { id: "g4702", satz: "Aunque ___ (llover) mañana, iré.", loesung: "llueva", tipps: ["llueva", "llueve", "lloverá"], hinweis: "noch offen", ue: "Auch wenn es morgen regnen sollte, gehe ich." },
-      { id: "g4703", satz: "Por mucho que ___ (estudiar, yo), olvido cosas.", loesung: "estudie", tipps: ["estudie", "estudio", "estudiaré"], hinweis: "por mucho que", ue: "So viel ich auch lerne, ich vergesse Dinge." },
-      { id: "g4704", satz: "A pesar ___ que llovía, salimos.", loesung: "de", tipps: ["de", "a", "en"], hinweis: "feste Wendung", ue: "Obwohl es regnete, gingen wir raus." },
-      { id: "g4705", satz: "___ no ha llegado. (noch nicht)", loesung: "Aún", tipps: ["Aún", "Aun", "Ya"], hinweis: "noch = mit Akzent", ue: "Er ist noch nicht angekommen." }
-    ]
-  }
-});
-
-LEKTION('es-419', {
-  tag: 48, niveau: "B1", thema: "Gesellschaft und Zusammenleben",
-  vokabeln: [
-    { id: "v4801", es: "la ciudadanía",  de: "die Bürgerschaft", wortart: "Substantiv", beispiel: "La ciudadanía participó mucho.", beispielUe: "Die Bürgerschaft beteiligte sich stark." },
-    { id: "v4802", es: "el derecho",     de: "das Recht",        wortart: "Substantiv", beispiel: "Todos tenemos derechos.", beispielUe: "Wir alle haben Rechte." },
-    { id: "v4803", es: "el deber",       de: "die Pflicht",      wortart: "Substantiv", beispiel: "También hay deberes.", beispielUe: "Es gibt auch Pflichten." },
-    { id: "v4804", es: "la igualdad",    de: "die Gleichheit",   wortart: "Substantiv", beispiel: "Luchan por la igualdad.", beispielUe: "Sie kämpfen für Gleichheit." },
-    { id: "v4805", es: "la convivencia", de: "das Zusammenleben", wortart: "Substantiv", beispiel: "La convivencia es fundamental.", beispielUe: "Zusammenleben ist grundlegend." },
-    { id: "v4806", es: "el apoyo",       de: "die Unterstützung", wortart: "Substantiv", beispiel: "Necesitan más apoyo.", beispielUe: "Sie brauchen mehr Unterstützung." },
-    { id: "v4807", es: "la brecha",      de: "die Kluft",        wortart: "Substantiv", beispiel: "Existe una brecha salarial.", beispielUe: "Es gibt eine Lohnkluft." },
-    { id: "v4808", es: "fomentar",       de: "fördern",          wortart: "Verb", beispiel: "Hay que fomentar el diálogo.", beispielUe: "Man muss den Dialog fördern." },
-    { id: "v4809", es: "la solidaridad", de: "die Solidarität",  wortart: "Substantiv", beispiel: "Mostraron mucha solidaridad.", beispielUe: "Sie zeigten viel Solidarität." },
-    { id: "v4810", es: "el reto",        de: "die Herausforderung", wortart: "Substantiv", beispiel: "Es un reto colectivo.", beispielUe: "Das ist eine gemeinsame Herausforderung." }
-  ],
-  saetze: [
-    { id: "s4801", es: "Es necesario que todos participen.",     de: "Es ist nötig, dass alle mitmachen." },
-    { id: "s4802", es: "No hay duda de que hay que cambiar algo.", de: "Es besteht kein Zweifel, dass sich etwas ändern muss." },
-    { id: "s4803", es: "Por lo tanto, debemos actuar juntos.",    de: "Deshalb müssen wir gemeinsam handeln." },
-    { id: "s4804", es: "En primer lugar, hay que escuchar.",      de: "Zunächst muss man zuhören." },
-    { id: "s4805", es: "Por otro lado, no todo es negativo.",     de: "Andererseits ist nicht alles negativ." }
-  ],
-  grammatik: {
-    id: "g48", titel: "Konnektoren für B1 — einen Text gliedern",
-    erklaerung: `
-      <p>Diese Wörter machen aus einer Aufzählung einen zusammenhängenden Gedankengang.
-      Sie sind der Unterschied zwischen A2 und B1 im Schriftlichen.</p>
-      <table>
-        <tr><th>Funktion</th><th>Ausdrücke</th></tr>
-        <tr><td>Anfang</td><td><em>en primer lugar</em> (zunächst), <em>para empezar</em>,
-            <em>ante todo</em> (vor allem)</td></tr>
-        <tr><td>Fortsetzung</td><td><em>además</em> (außerdem), <em>asimismo</em> (ebenso),
-            <em>por otra parte</em> (andererseits), <em>en segundo lugar</em></td></tr>
-        <tr><td>Gegensatz</td><td><em>sin embargo</em> (jedoch), <em>no obstante</em> (dennoch),
-            <em>en cambio</em> (hingegen), <em>por el contrario</em></td></tr>
-        <tr><td>Folge</td><td><em>por lo tanto</em> (daher), <em>por eso</em> (deshalb),
-            <em>en consecuencia</em>, <em>así que</em> (also)</td></tr>
-        <tr><td>Beispiel</td><td><em>por ejemplo</em>, <em>es decir</em> (das heißt),
-            <em>o sea</em> (also), <em>en concreto</em></td></tr>
-        <tr><td>Betonung</td><td><em>de hecho</em> (tatsächlich), <em>sobre todo</em> (vor allem),
-            <em>en realidad</em> (in Wirklichkeit)</td></tr>
-        <tr><td>Abschluss</td><td><em>en resumen</em> (zusammenfassend), <em>por último</em>
-            (schließlich), <em>en conclusión</em>, <em>en definitiva</em> (letztlich)</td></tr>
-      </table>
-      <div class="merke"><strong>Zeichensetzung:</strong> Steht der Konnektor am Satzanfang,
-      folgt ein Komma:<br>
-      <em><strong>Sin embargo,</strong> no estoy de acuerdo.</em><br>
-      Steht er mitten im Satz, wird er von Kommas eingeschlossen:<br>
-      <em>La idea, <strong>sin embargo,</strong> no es nueva.</em></div>
-      <p><strong>Ein Beispieltext</strong> mit Konnektoren:</p>
-      <p style="font-style:italic"><strong>En primer lugar,</strong> el problema afecta a
-      todos. <strong>Además,</strong> las consecuencias son graves. <strong>Sin embargo,</strong>
-      existen soluciones. <strong>Por ejemplo,</strong> se puede empezar por lo pequeño.
-      <strong>En resumen,</strong> hay motivos para el optimismo.</p>
-      <p>Genau so baut man eine B1-Prüfungsantwort auf: Einleitung, zwei Argumente,
-      ein Einwand, ein Beispiel, ein Fazit.</p>`,
-    uebungen: [
-      { id: "g4801", satz: "Es caro. ___, lo compro. (jedoch)", loesung: "Sin embargo", tipps: ["Sin embargo", "Por lo tanto", "Además"], hinweis: "Gegensatz", ue: "Es ist teuer. Dennoch kaufe ich es." },
-      { id: "g4802", satz: "Llovía. ___, cancelamos. (daher)", loesung: "Por lo tanto", tipps: ["Por lo tanto", "Sin embargo", "Es decir"], hinweis: "Folge", ue: "Es regnete. Daher sagten wir ab." },
-      { id: "g4803", satz: "___, quiero agradecer su ayuda. (zunächst)", loesung: "En primer lugar", tipps: ["En primer lugar", "Por último", "De hecho"], hinweis: "Anfang", ue: "Zunächst möchte ich für Ihre Hilfe danken." },
-      { id: "g4804", satz: "___, la situación ha mejorado. (zusammenfassend)", loesung: "En resumen", tipps: ["En resumen", "Además", "En cambio"], hinweis: "Abschluss", ue: "Zusammenfassend hat sich die Lage verbessert." },
-      { id: "g4805", satz: "Es necesario que todos ___ (participar).", loesung: "participen", tipps: ["participen", "participan", "participar"], hinweis: "es necesario que", ue: "Es ist nötig, dass alle mitmachen." }
-    ]
-  }
-});
-
-LEKTION('es-419', {
-  tag: 49, niveau: "B1", thema: "Kultur und Traditionen",
-  vokabeln: [
-    { id: "v4901", es: "la costumbre",   de: "der Brauch",       wortart: "Substantiv", beispiel: "Es una costumbre antigua.", beispielUe: "Das ist ein alter Brauch." },
-    { id: "v4902", es: "el ambiente",    de: "die Atmosphäre",   wortart: "Substantiv", beispiel: "Había un ambiente festivo.", beispielUe: "Es herrschte eine festliche Stimmung." },
-    { id: "v4903", es: "el desfile",     de: "der Umzug",        wortart: "Substantiv", beispiel: "El desfile pasó por el centro.", beispielUe: "Der Umzug zog durchs Zentrum." },
-    { id: "v4904", es: "celebrar",       de: "feiern",           wortart: "Verb", beispiel: "Celebramos la Nochevieja en casa.", beispielUe: "Wir feiern Silvester zu Hause." },
-    { id: "v4905", es: "el disfraz",     de: "das Kostüm",       wortart: "Substantiv", beispiel: "Llevaba un disfraz muy original.", beispielUe: "Er trug ein sehr originelles Kostüm." },
-    { id: "v4906", es: "la herencia",    de: "das Erbe",         wortart: "Substantiv", beispiel: "Es parte de nuestra herencia cultural.", beispielUe: "Das ist Teil unseres kulturellen Erbes." },
-    { id: "v4907", es: "el patrimonio",  de: "das Kulturgut",    wortart: "Substantiv", beispiel: "Es patrimonio de la humanidad.", beispielUe: "Es ist Weltkulturerbe." },
-    { id: "v4908", es: "arraigado",      de: "verwurzelt",       wortart: "Adjektiv", beispiel: "Es una tradición muy arraigada.", beispielUe: "Das ist eine tief verwurzelte Tradition." },
-    { id: "v4909", es: "el estreno",     de: "die Premiere",     wortart: "Substantiv", beispiel: "El estreno fue anoche.", beispielUe: "Die Premiere war gestern Abend." },
-    { id: "v4910", es: "acudir",         de: "hingehen",         wortart: "Verb", beispiel: "Acudió mucha gente.", beispielUe: "Es kamen viele Leute." }
-  ],
-  saetze: [
-    { id: "s4901", es: "Es la fiesta más importante del año.",   de: "Das ist das wichtigste Fest des Jahres." },
-    { id: "s4902", es: "Es un pueblo pequeñísimo pero precioso.", de: "Das ist ein winziges, aber wunderschönes Dorf." },
-    { id: "s4903", es: "Cuanto más lo veo, más me gusta.",       de: "Je öfter ich es sehe, desto besser gefällt es mir." },
-    { id: "s4904", es: "Fue de lo más interesante.",             de: "Das war äußerst interessant." },
-    { id: "s4905", es: "No es tan difícil como parece.",         de: "Es ist nicht so schwierig, wie es scheint." }
-  ],
-  grammatik: {
-    id: "g49", titel: "Steigern und Verstärken",
-    erklaerung: `
-      <p>Über den einfachen Vergleich (Tag 11) hinaus gibt es einige typisch spanische
-      Verstärkungen, die deine Sprache lebendiger machen.</p>
-      <p><strong>1. Die Endung <em>-ísimo</em></strong> — der absolute Superlativ.
-      Sehr spanisch und sehr häufig:</p>
-      <table>
-        <tr><th>Regel</th><th>Beispiel</th></tr>
-        <tr><td>Endvokal weg, <em>-ísimo</em> dran</td><td>guapo → guap<em>ísimo</em></td></tr>
-        <tr><td>endet auf Konsonant: direkt anhängen</td><td>fácil → facil<em>ísimo</em></td></tr>
-        <tr><td>c → qu</td><td>rico → ri<em>quísimo</em> (köstlich)</td></tr>
-        <tr><td>g → gu</td><td>largo → lar<em>guísimo</em></td></tr>
-        <tr><td>z → c</td><td>feliz → feli<em>císimo</em></td></tr>
-      </table>
-      <p><em>La paella estaba riquísima.</em> — Die Paella war köstlich.</p>
-      <p><strong>2. Je … desto:</strong> <em>cuanto más … más …</em></p>
+      <div class="merke"><strong>Zwei Regeln, die im Deutschen nicht gelten:</strong><br>
+      1. <em>haber</em> und Partizip dürfen <strong>nie</strong> getrennt werden:
+      <em>No he comido nada.</em> — niemals <s>He no comido</s>.<br>
+      2. Das Partizip bleibt immer unverändert: <em>Ana ha comid<strong>o</strong></em>,
+      nicht <s>comida</s>.</div>
+      <div class="merke"><strong>Wichtig für Lateinamerika:</strong> Diese Zeit gibt es
+      überall, aber sie wird <strong>viel seltener</strong> benutzt als in Spanien.<br>
+      In Spanien: <em>Hoy <strong>he comido</strong> paella.</em><br>
+      In Mexiko, Kolumbien, Argentinien: <em>Hoy <strong>comí</strong> paella.</em><br>
+      Beide sind grammatisch richtig und werden überall verstanden. Wenn du dich für eine
+      entscheiden musst, nimm in Lateinamerika das Indefinido (Tag 46) — damit klingst du
+      natürlicher.</div>
+      <p><strong>Wo das Perfecto in Lateinamerika trotzdem üblich ist:</strong></p>
       <ul>
-        <li><em><strong>Cuanto más</strong> estudio, <strong>más</strong> aprendo.</em></li>
-        <li><em><strong>Cuanto menos</strong> duermo, <strong>peor</strong> trabajo.</em></li>
+        <li>bei Erfahrungen ohne Zeitangabe: <em>¿<strong>Has estado</strong> en México?</em></li>
+        <li>mit <em>nunca</em> und <em>alguna vez</em>: <em>Nunca <strong>he probado</strong> el mole.</em></li>
+        <li>bei etwas, das bis heute anhält: <em><strong>He vivido</strong> aquí toda mi vida.</em></li>
       </ul>
-      <p><strong>3. Weitere Verstärkungen:</strong></p>
-      <table>
-        <tr><td><em>de lo más</em> + Adjektiv</td><td>äußerst: <em>de lo más raro</em></td></tr>
-        <tr><td><em>sumamente</em></td><td>überaus: <em>sumamente importante</em></td></tr>
-        <tr><td><em>un montón de</em></td><td>jede Menge: <em>un montón de gente</em></td></tr>
-        <tr><td><em>qué</em> + Adjektiv</td><td>wie …!: <em>¡Qué bonito!</em></td></tr>
-        <tr><td><em>lo</em> + Adjektiv</td><td>das … daran: <em>lo bueno es que…</em></td></tr>
-      </table>
-      <div class="merke"><strong>Das nützliche <em>lo</em>:</strong> Vor einem Adjektiv macht
-      es daraus ein Substantiv.<br>
-      <em><strong>Lo</strong> difícil es empezar.</em> — Das Schwierige ist der Anfang.<br>
-      <em><strong>Lo</strong> mejor de todo fue la comida.</em> — Das Beste war das Essen.<br>
-      Diese Wendung gibt es im Deutschen nicht in dieser Form — sie klingt sehr idiomatisch.</div>`,
+      <p>Signalwörter dafür: <em>ya, todavía no, nunca, alguna vez, últimamente,
+      siempre</em>.</p>`,
     uebungen: [
-      { id: "g4901", satz: "La comida estaba ___ (rico + ísimo).", loesung: "riquísima", tipps: ["riquísima", "ricísima", "riquísimo"], hinweis: "c → qu, weiblich", ue: "Das Essen war köstlich." },
-      { id: "g4902", satz: "___ más practico, más aprendo.", loesung: "Cuanto", tipps: ["Cuanto", "Cuando", "Tanto"], hinweis: "je … desto", ue: "Je mehr ich übe, desto mehr lerne ich." },
-      { id: "g4903", satz: "___ difícil es empezar.", loesung: "Lo", tipps: ["Lo", "El", "La"], hinweis: "Adjektiv wird Substantiv", ue: "Das Schwierige ist der Anfang." },
-      { id: "g4904", satz: "Es un libro ___ (interesante + ísimo).", loesung: "interesantísimo", tipps: ["interesantísimo", "interesantemente"], hinweis: "Endvokal weg", ue: "Das ist ein hochinteressantes Buch." },
-      { id: "g4905", satz: "No es tan difícil ___ parece.", loesung: "como", tipps: ["como", "que", "de"], hinweis: "tan … ?", ue: "Es ist nicht so schwer, wie es scheint." }
+      { id: "g1501", satz: "Nunca ___ estado en Perú. (yo)", loesung: "he", tipps: ["he", "ha", "has"], hinweis: "yo → ?", ue: "Ich war noch nie in Peru." },
+      { id: "g1502", satz: "¿___ visto la película? (tú)", loesung: "Has", tipps: ["Has", "Ha", "He"], hinweis: "tú → ?", ue: "Hast du den Film gesehen?" },
+      { id: "g1503", satz: "Hemos ___ (hacer) la compra.", loesung: "hecho", tipps: ["hecho", "hacido", "hacho"], hinweis: "unregelmäßig", ue: "Wir haben eingekauft." },
+      { id: "g1504", satz: "Ella ha ___ (escribir) un correo.", loesung: "escrito", tipps: ["escrito", "escribido"], hinweis: "unregelmäßig", ue: "Sie hat eine E-Mail geschrieben." },
+      { id: "g1505", satz: "Todavía no ___ llegado. (ellos)", loesung: "han", tipps: ["han", "ha", "hemos"], hinweis: "ellos → ?", ue: "Sie sind noch nicht angekommen." }
     ]
   }
 });
 
 LEKTION('es-419', {
-  tag: 50, niveau: "B1", thema: "Erinnerungen und Rückblick",
+  tag: 46, niveau: "A2", thema: "Gestern",
   vokabeln: [
-    { id: "v5001", es: "el recuerdo",    de: "die Erinnerung",   wortart: "Substantiv", beispiel: "Guardo buenos recuerdos.", beispielUe: "Ich bewahre gute Erinnerungen." },
-    { id: "v5002", es: "acordarse de",   de: "sich erinnern an", wortart: "Verb", beispiel: "¿Te acuerdas de aquel día?", beispielUe: "Erinnerst du dich an jenen Tag?" },
-    { id: "v5003", es: "la etapa",       de: "der Lebensabschnitt", wortart: "Substantiv", beispiel: "Fue una etapa difícil.", beispielUe: "Das war ein schwieriger Abschnitt." },
-    { id: "v5004", es: "la nostalgia",   de: "die Wehmut",       wortart: "Substantiv", beispiel: "Siento nostalgia de aquella época.", beispielUe: "Ich empfinde Wehmut für jene Zeit." },
-    { id: "v5005", es: "el logro",       de: "der Erfolg",       wortart: "Substantiv", beispiel: "Fue nuestro mayor logro.", beispielUe: "Das war unser größter Erfolg." },
-    { id: "v5006", es: "arrepentirse",   de: "bereuen",          wortart: "Verb", beispiel: "No me arrepiento de nada.", beispielUe: "Ich bereue nichts." },
-    { id: "v5007", es: "el punto de inflexión", de: "der Wendepunkt", wortart: "Substantiv", beispiel: "Fue un punto de inflexión.", beispielUe: "Das war ein Wendepunkt." },
-    { id: "v5008", es: "aprender de",    de: "lernen aus",       wortart: "Verb", beispiel: "Aprendí mucho de aquel error.", beispielUe: "Ich lernte viel aus jenem Fehler." },
-    { id: "v5009", es: "el balance",     de: "die Bilanz",       wortart: "Substantiv", beispiel: "El balance es positivo.", beispielUe: "Die Bilanz ist positiv." },
-    { id: "v5010", es: "por aquel entonces", de: "damals",       wortart: "Adverb", beispiel: "Por aquel entonces vivía solo.", beispielUe: "Damals lebte ich allein." }
+    { id: "v1601", es: "anoche",         de: "gestern Abend",   wortart: "Adverb", beispiel: "Anoche cenamos fuera.", beispielUe: "Gestern Abend haben wir auswärts gegessen." },
+    { id: "v1602", es: "el año pasado",  de: "letztes Jahr",    wortart: "Substantiv", beispiel: "El año pasado viajé a Perú.", beispielUe: "Letztes Jahr reiste ich nach Peru." },
+    { id: "v1603", es: "de repente",     de: "plötzlich",       wortart: "Adverb", beispiel: "De repente empezó a llover.", beispielUe: "Plötzlich fing es an zu regnen." },
+    { id: "v1604", es: "entonces",       de: "dann / damals",   wortart: "Adverb", beispiel: "Entonces decidí volver.", beispielUe: "Dann entschied ich mich zurückzukehren." },
+    { id: "v1605", es: "el suceso",      de: "der Vorfall",     wortart: "Substantiv", beispiel: "Nadie explicó el suceso.", beispielUe: "Niemand erklärte den Vorfall." },
+    { id: "v1606", es: "ocurrir",        de: "geschehen",       wortart: "Verb", beispiel: "¿Qué ocurrió ayer?", beispielUe: "Was ist gestern passiert?" },
+    { id: "v1607", es: "el viaje",       de: "die Reise",       wortart: "Substantiv", beispiel: "El viaje duró ocho horas.", beispielUe: "Die Reise dauerte acht Stunden." },
+    { id: "v1608", es: "quedarse",       de: "bleiben",         wortart: "Verb", beispiel: "Nos quedamos tres días.", beispielUe: "Wir blieben drei Tage." },
+    { id: "v1609", es: "el aniversario", de: "der Jahrestag",   wortart: "Substantiv", beispiel: "Celebramos nuestro aniversario.", beispielUe: "Wir feierten unseren Jahrestag." },
+    { id: "v1610", es: "despedirse",     de: "sich verabschieden", wortart: "Verb", beispiel: "Se despidió sin decir nada.", beispielUe: "Er verabschiedete sich, ohne etwas zu sagen." }
   ],
   saetze: [
-    { id: "s5001", es: "Cuando era joven, viajaba mucho.",       de: "Als ich jung war, reiste ich viel." },
-    { id: "s5002", es: "Ya había terminado cuando llegaste.",    de: "Ich war schon fertig, als du ankamst." },
-    { id: "s5003", es: "Ese año conocí a mi mejor amigo.",       de: "In jenem Jahr lernte ich meinen besten Freund kennen." },
-    { id: "s5004", es: "Llevaba diez años trabajando allí.",     de: "Ich arbeitete schon zehn Jahre dort." },
-    { id: "s5005", es: "Nunca he vuelto a aquel pueblo.",        de: "Ich bin nie wieder in jenes Dorf zurückgekehrt." }
+    { id: "s1601", es: "Ayer hablé con mi jefe.",           de: "Gestern sprach ich mit meinem Chef." },
+    { id: "s1602", es: "El sábado comimos en un bar.",      de: "Am Samstag aßen wir in einer Bar." },
+    { id: "s1603", es: "¿A qué hora saliste de casa?",      de: "Um wie viel Uhr gingst du aus dem Haus?" },
+    { id: "s1604", es: "Vivimos dos años en Barcelona.",    de: "Wir lebten zwei Jahre in Barcelona." },
+    { id: "s1605", es: "El año pasado viajaron a México.",  de: "Letztes Jahr reisten sie nach Mexiko." }
   ],
   grammatik: {
-    id: "g50", titel: "Die Vergangenheitszeiten zusammenspielen lassen",
+    id: "g16", titel: "Indefinido — die abgeschlossene Vergangenheit",
     erklaerung: `
-      <p>Du kennst jetzt vier Vergangenheitszeiten. In einer echten Erzählung greifen sie
-      ineinander — hier ist das Zusammenspiel.</p>
+      <p>Das <em>Indefinido</em> erzählt, <strong>was passiert ist</strong> — in einem
+      Zeitraum, der vorbei ist. Es ist die Erzählzeit schlechthin.</p>
       <table>
-        <tr><th>Zeit</th><th>Rolle in der Erzählung</th><th>Beispiel</th></tr>
-        <tr><td>Imperfecto</td><td>Kulisse, Zustand, Gewohnheit</td><td><em>Era de noche y llovía.</em></td></tr>
-        <tr><td>Indefinido</td><td>Handlung, die die Geschichte vorantreibt</td><td><em>Salí y cogí un taxi.</em></td></tr>
-        <tr><td>Pluscuamperfecto</td><td>was davor schon geschehen war</td><td><em>Había olvidado el paraguas.</em></td></tr>
-        <tr><td>Perfecto</td><td>Bezug zur Gegenwart</td><td><em>Nunca he vuelto allí.</em></td></tr>
+        <tr><th></th><th>hablar</th><th>comer</th><th>vivir</th></tr>
+        <tr><td>yo</td><td>habl<em>é</em></td><td>com<em>í</em></td><td>viv<em>í</em></td></tr>
+        <tr><td>tú</td><td>habl<em>aste</em></td><td>com<em>iste</em></td><td>viv<em>iste</em></td></tr>
+        <tr><td>él/ella</td><td>habl<em>ó</em></td><td>com<em>ió</em></td><td>viv<em>ió</em></td></tr>
+        <tr><td>nosotros</td><td>habl<em>amos</em></td><td>com<em>imos</em></td><td>viv<em>imos</em></td></tr>
+        <tr><td>ellos</td><td>habl<em>aron</em></td><td>com<em>ieron</em></td><td>viv<em>ieron</em></td></tr>
       </table>
-      <p><strong>Eine Beispielerzählung</strong> — achte darauf, wie die Zeiten wechseln:</p>
-      <p style="font-style:italic">
-      <em>Era</em> de noche y <em>llovía</em> mucho. (Kulisse)
-      Yo <em>había olvidado</em> el paraguas en la oficina. (Vorgeschichte)
-      <em>Salí</em> del edificio y <em>corrí</em> hasta la parada. (Handlung)
-      Mientras <em>esperaba</em>, <em>vi</em> a un viejo amigo. (Kulisse + Handlung)
-      <em>Hablamos</em> media hora. Desde entonces no lo <em>he vuelto</em> a ver. (Bezug zu heute)
-      </p>
-      <div class="merke"><strong>Beim Erzählen so vorgehen:</strong><br>
-      1. Bühne bauen — wo, wann, wie war es? → Imperfecto<br>
-      2. Vorgeschichte ergänzen, falls nötig → Pluscuamperfecto<br>
-      3. Erzählen, was geschah → Indefinido<br>
-      4. Bilanz für heute ziehen → Perfecto</div>
-      <p><strong>Typische Verbindungswörter:</strong> <em>entonces</em> (dann),
-      <em>después</em> (danach), <em>mientras tanto</em> (in der Zwischenzeit),
-      <em>al final</em> (schließlich), <em>desde entonces</em> (seitdem),
-      <em>de repente</em> (plötzlich).</p>`,
+      <div class="merke"><strong>Gute Nachricht:</strong> <em>-er</em> und <em>-ir</em> haben
+      exakt dieselben Endungen. Du musst also nur zwei Sätze lernen, nicht drei.</div>
+      <div class="merke"><strong>Achte auf die Akzente!</strong> Sie entscheiden über die
+      Person: <em>habl<strong>o</strong></em> = ich spreche (jetzt),
+      <em>habl<strong>ó</strong></em> = er sprach (damals).</div>
+      <p><strong>Signalwörter:</strong> <em>ayer, anoche, el lunes pasado, la semana pasada,
+      el año pasado, en 2019, hace dos años, entonces, de repente</em>.</p>
+      <div class="merke"><strong>Das ist deine Arbeitszeit für die Vergangenheit.</strong>
+      In Lateinamerika deckt das Indefinido fast alles ab, was abgeschlossen ist — auch
+      das, wofür Spanien das Perfecto nähme:<br>
+      <em><strong>Comí</strong> muy bien hoy.</em> (Ich habe heute sehr gut gegessen.)<br>
+      <em>¿Ya <strong>terminaste</strong>?</em> (Bist du schon fertig?)<br>
+      <em>Esta mañana <strong>me levanté</strong> temprano.</em><br>
+      In Spanien stünde an all diesen Stellen <em>he comido</em>, <em>has terminado</em>,
+      <em>me he levantado</em>.</div>
+      <p><strong>Merke dir die Faustregel:</strong> Ist die Handlung vorbei — egal ob vor
+      einer Minute oder vor zehn Jahren — nimm das Indefinido. Nur bei Erfahrungen ohne
+      Zeitbezug (<em>nunca, alguna vez</em>) greifst du zum Perfecto.</p>`,
     uebungen: [
-      { id: "g5001", satz: "___ (ser) de noche y llovía.", loesung: "Era", tipps: ["Era", "Fue", "Ha sido"], hinweis: "Kulisse", ue: "Es war Nacht und es regnete." },
-      { id: "g5002", satz: "___ (olvidar, yo) el paraguas antes de salir.", loesung: "Había olvidado", tipps: ["Había olvidado", "Olvidé", "He olvidado"], hinweis: "davor geschehen", ue: "Ich hatte den Schirm vergessen." },
-      { id: "g5003", satz: "Entonces ___ (coger, yo) un taxi.", loesung: "cogí", tipps: ["cogí", "cogía", "he cogido"], hinweis: "Handlung", ue: "Dann nahm ich ein Taxi." },
-      { id: "g5004", satz: "Desde entonces no lo ___ (ver, yo).", loesung: "he visto", tipps: ["he visto", "vi", "veía"], hinweis: "Bezug zu heute", ue: "Seitdem habe ich ihn nicht gesehen." },
-      { id: "g5005", satz: "Mientras ___ (esperar, yo), vi a un amigo.", loesung: "esperaba", tipps: ["esperaba", "esperé", "he esperado"], hinweis: "mientras → Kulisse", ue: "Während ich wartete, sah ich einen Freund." }
+      { id: "g1601", satz: "Ayer ___ (hablar, yo) con Ana.", loesung: "hablé", tipps: ["hablé", "hablo", "habló"], hinweis: "yo mit Akzent", ue: "Gestern sprach ich mit Ana." },
+      { id: "g1602", satz: "Él ___ (comer) en casa.", loesung: "comió", tipps: ["comió", "comí", "come"], hinweis: "él → -ió", ue: "Er aß zu Hause." },
+      { id: "g1603", satz: "Nosotros ___ (vivir) allí dos años.", loesung: "vivimos", tipps: ["vivimos", "vivíamos", "vivieron"], hinweis: "nosotros -ir", ue: "Wir lebten zwei Jahre dort." },
+      { id: "g1604", satz: "¿___ (salir, tú) anoche?", loesung: "Saliste", tipps: ["Saliste", "Salió", "Sales"], hinweis: "tú → -iste", ue: "Bist du gestern Abend ausgegangen?" },
+      { id: "g1605", satz: "Ellos ___ (trabajar) todo el día.", loesung: "trabajaron", tipps: ["trabajaron", "trabajamos", "trabajaban"], hinweis: "ellos -ar", ue: "Sie arbeiteten den ganzen Tag." }
+    ]
+  }
+});
+
+LEKTION('es-419', {
+  tag: 47, niveau: "A2", thema: "Eine Reise erzählen",
+  vokabeln: [
+    { id: "v1701", es: "el equipaje",    de: "das Gepäck",      wortart: "Substantiv", beispiel: "Perdimos el equipaje.", beispielUe: "Wir verloren das Gepäck." },
+    { id: "v1702", es: "el vuelo",       de: "der Flug",        wortart: "Substantiv", beispiel: "El vuelo tuvo retraso.", beispielUe: "Der Flug hatte Verspätung." },
+    { id: "v1703", es: "el retraso",     de: "die Verspätung",  wortart: "Substantiv", beispiel: "Hubo dos horas de retraso.", beispielUe: "Es gab zwei Stunden Verspätung." },
+    { id: "v1704", es: "el alojamiento", de: "die Unterkunft",  wortart: "Substantiv", beispiel: "El alojamiento estuvo bien.", beispielUe: "Die Unterkunft war gut." },
+    { id: "v1705", es: "la maleta",      de: "der Koffer",      wortart: "Substantiv", beispiel: "Hice la maleta anoche.", beispielUe: "Ich packte gestern Abend den Koffer." },
+    { id: "v1706", es: "el recuerdo",    de: "die Erinnerung / das Souvenir", wortart: "Substantiv", beispiel: "Tengo buenos recuerdos.", beispielUe: "Ich habe gute Erinnerungen." },
+    { id: "v1707", es: "el paisaje",     de: "die Landschaft",  wortart: "Substantiv", beispiel: "El paisaje fue impresionante.", beispielUe: "Die Landschaft war beeindruckend." },
+    { id: "v1708", es: "alojarse",       de: "übernachten",     wortart: "Verb", beispiel: "Nos alojamos en un hostal.", beispielUe: "Wir übernachteten in einer Pension." },
+    { id: "v1709", es: "la frontera",    de: "die Grenze",      wortart: "Substantiv", beispiel: "Cruzamos la frontera de noche.", beispielUe: "Wir überquerten nachts die Grenze." },
+    { id: "v1710", es: "merecer la pena",de: "sich lohnen",     wortart: "Verb", beispiel: "El viaje mereció la pena.", beispielUe: "Die Reise hat sich gelohnt." }
+  ],
+  saetze: [
+    { id: "s1701", es: "Fui a Barcelona el año pasado.",     de: "Ich fuhr letztes Jahr nach Barcelona." },
+    { id: "s1702", es: "Tuvimos un problema con el carro.",  de: "Wir hatten ein Problem mit dem Auto." },
+    { id: "s1703", es: "Ella hizo la maleta muy rápido.",    de: "Sie packte den Koffer sehr schnell." },
+    { id: "s1704", es: "No pude dormir en el avión.",        de: "Ich konnte im Flugzeug nicht schlafen." },
+    { id: "s1705", es: "Estuvimos allí una semana entera.",  de: "Wir waren eine ganze Woche dort." }
+  ],
+  grammatik: {
+    id: "g17", titel: "Unregelmäßiges Indefinido",
+    erklaerung: `
+      <p>Etwa zwanzig sehr häufige Verben bilden das Indefinido mit einem eigenen Stamm —
+      und dann alle mit <strong>denselben</strong> Endungen. Und: <strong>ohne Akzente</strong>.</p>
+      <table>
+        <tr><th>Infinitiv</th><th>Stamm</th><th>yo</th><th>él</th></tr>
+        <tr><td>tener</td><td>tuv-</td><td>tuve</td><td>tuvo</td></tr>
+        <tr><td>estar</td><td>estuv-</td><td>estuve</td><td>estuvo</td></tr>
+        <tr><td>poder</td><td>pud-</td><td>pude</td><td>pudo</td></tr>
+        <tr><td>poner</td><td>pus-</td><td>puse</td><td>puso</td></tr>
+        <tr><td>saber</td><td>sup-</td><td>supe</td><td>supo</td></tr>
+        <tr><td>hacer</td><td>hic-</td><td>hice</td><td>hi<em>z</em>o</td></tr>
+        <tr><td>querer</td><td>quis-</td><td>quise</td><td>quiso</td></tr>
+        <tr><td>venir</td><td>vin-</td><td>vine</td><td>vino</td></tr>
+        <tr><td>decir</td><td>dij-</td><td>dije</td><td>dijo</td></tr>
+      </table>
+      <p><strong>Die gemeinsamen Endungen:</strong>
+      <em>-e, -iste, -o, -imos, -isteis, -ieron</em><br>
+      Beispiel: <em>tuve, tuviste, tuvo, tuvimos, tuvisteis, tuvieron</em></p>
+      <div class="merke"><strong>Zwei Merkwürdigkeiten:</strong><br>
+      <em>hacer</em> wird bei <em>él</em> zu <em>hizo</em> (mit z, damit die Aussprache stimmt).<br>
+      Nach <em>j</em> fällt das i weg: <em>dijeron</em>, nicht <s>dijieron</s>.</div>
+      <p><strong>ser und ir sind identisch</strong> — welches gemeint ist, verrät der Zusammenhang:</p>
+      <table>
+        <tr><td>fui, fuiste, fue, fuimos, fuisteis, fueron</td></tr>
+        <tr><td><em>Fui a Madrid.</em> = Ich fuhr nach Madrid. (ir)</td></tr>
+        <tr><td><em>Fue difícil.</em> = Es war schwierig. (ser)</td></tr>
+      </table>
+      <p><em>dar</em> nimmt die <em>-er</em>-Endungen: <em>di, diste, dio, dimos, disteis, dieron</em>.</p>`,
+    uebungen: [
+      { id: "g1701", satz: "Ayer ___ (tener, yo) mucho trabajo.", loesung: "tuve", tipps: ["tuve", "tení", "tenía"], hinweis: "Stamm tuv-", ue: "Gestern hatte ich viel Arbeit." },
+      { id: "g1702", satz: "Ella ___ (hacer) la comida.", loesung: "hizo", tipps: ["hizo", "hació", "hice"], hinweis: "él → hizo mit z", ue: "Sie machte das Essen." },
+      { id: "g1703", satz: "___ (ir, yo) a Barcelona en mayo.", loesung: "Fui", tipps: ["Fui", "Fue", "Iba"], hinweis: "ir = ser im Indefinido", ue: "Ich fuhr im Mai nach Barcelona." },
+      { id: "g1704", satz: "No ___ (poder, nosotros) entrar.", loesung: "pudimos", tipps: ["pudimos", "podimos", "podíamos"], hinweis: "Stamm pud-", ue: "Wir konnten nicht hinein." },
+      { id: "g1705", satz: "Ellos ___ (decir) la verdad.", loesung: "dijeron", tipps: ["dijeron", "dijieron", "decieron"], hinweis: "nach j kein i", ue: "Sie sagten die Wahrheit." }
+    ]
+  }
+});
+
+LEKTION('es-419', {
+  tag: 48, niveau: "A2", thema: "Als ich klein war",
+  vokabeln: [
+    { id: "v1801", es: "la infancia",    de: "die Kindheit",    wortart: "Substantiv", beispiel: "Mi infancia fue feliz.", beispielUe: "Meine Kindheit war glücklich." },
+    { id: "v1802", es: "el juguete",     de: "das Spielzeug",   wortart: "Substantiv", beispiel: "Tenía muchos juguetes.", beispielUe: "Ich hatte viele Spielsachen." },
+    { id: "v1803", es: "solía",          de: "pflegte zu",      wortart: "Verb", beispiel: "Solía jugar en la calle.", beispielUe: "Ich spielte immer auf der Straße." },
+    { id: "v1804", es: "el colegio",     de: "die Schule",      wortart: "Substantiv", beispiel: "Iba al colegio a pie.", beispielUe: "Ich ging zu Fuß zur Schule." },
+    { id: "v1805", es: "a menudo",       de: "häufig",          wortart: "Adverb", beispiel: "A menudo visitábamos a los abuelos.", beispielUe: "Wir besuchten oft die Großeltern." },
+    { id: "v1806", es: "el vecindario",  de: "die Nachbarschaft", wortart: "Substantiv", beispiel: "Todo el vecindario nos conocía.", beispielUe: "Die ganze Nachbarschaft kannte uns." },
+    { id: "v1807", es: "travieso",       de: "frech",           wortart: "Adjektiv", beispiel: "Era un niño muy travieso.", beispielUe: "Ich war ein sehr frecher Junge." },
+    { id: "v1808", es: "la costumbre",   de: "die Gewohnheit",  wortart: "Substantiv", beispiel: "Era una costumbre familiar.", beispielUe: "Das war eine Familiengewohnheit." },
+    { id: "v1809", es: "el recreo",      de: "die Pause (Schule)", wortart: "Substantiv", beispiel: "En el recreo jugábamos al fútbol.", beispielUe: "In der Pause spielten wir Fußball." },
+    { id: "v1810", es: "echar de menos", de: "vermissen",       wortart: "Verb", beispiel: "Echo de menos aquellos veranos.", beispielUe: "Ich vermisse jene Sommer." }
+  ],
+  saetze: [
+    { id: "s1801", es: "Cuando era niño, vivía en un pueblo.", de: "Als ich ein Kind war, lebte ich in einem Dorf." },
+    { id: "s1802", es: "Todos los días íbamos al parque.",     de: "Jeden Tag gingen wir in den Park." },
+    { id: "s1803", es: "Mi abuela cocinaba muy bien.",         de: "Meine Großmutter kochte sehr gut." },
+    { id: "s1804", es: "Antes no había celulares.",              de: "Früher gab es keine Handys." },
+    { id: "s1805", es: "En verano siempre hacía mucho calor.", de: "Im Sommer war es immer sehr heiß." }
+  ],
+  grammatik: {
+    id: "g18", titel: "Imperfecto — wie es früher war",
+    erklaerung: `
+      <p>Das <em>Imperfecto</em> beschreibt Zustände und Gewohnheiten in der Vergangenheit —
+      es sagt nicht, was passierte, sondern <strong>wie es war</strong>.</p>
+      <table>
+        <tr><th></th><th>hablar</th><th>comer / vivir</th></tr>
+        <tr><td>yo</td><td>habl<em>aba</em></td><td>com<em>ía</em></td></tr>
+        <tr><td>tú</td><td>habl<em>abas</em></td><td>com<em>ías</em></td></tr>
+        <tr><td>él/ella</td><td>habl<em>aba</em></td><td>com<em>ía</em></td></tr>
+        <tr><td>nosotros</td><td>habl<em>ábamos</em></td><td>com<em>íamos</em></td></tr>
+        <tr><td>ellos</td><td>habl<em>aban</em></td><td>com<em>ían</em></td></tr>
+      </table>
+      <div class="merke"><strong>Die einfachste Zeit im Spanischen:</strong> Es gibt nur
+      <strong>drei</strong> unregelmäßige Verben überhaupt.</div>
+      <table>
+        <tr><th>ser</th><th>ir</th><th>ver</th></tr>
+        <tr><td>era, eras, era,<br>éramos, erais, eran</td>
+            <td>iba, ibas, iba,<br>íbamos, ibais, iban</td>
+            <td>veía, veías, veía,<br>veíamos, veíais, veían</td></tr>
+      </table>
+      <p><strong>Wofür man es benutzt:</strong></p>
+      <ul>
+        <li>Gewohnheiten früher: <em>Todos los días iba al colegio.</em></li>
+        <li>Beschreibungen: <em>La casa era grande y tenía un jardín.</em></li>
+        <li>Alter und Uhrzeit: <em>Tenía diez años. Eran las tres.</em></li>
+        <li>Wetter: <em>Hacía frío.</em></li>
+        <li>Hintergrund für ein Ereignis: <em>Llovía cuando salí.</em></li>
+      </ul>
+      <p><strong>Signalwörter:</strong> <em>antes, siempre, todos los días, cada verano,
+      normalmente, mientras, cuando era niño, a menudo</em>.</p>`,
+    uebungen: [
+      { id: "g1801", satz: "Cuando ___ (ser, yo) niño, jugaba mucho.", loesung: "era", tipps: ["era", "fui", "estaba"], hinweis: "ser unregelmäßig", ue: "Als ich ein Kind war, spielte ich viel." },
+      { id: "g1802", satz: "Todos los días ___ (ir, nosotros) al parque.", loesung: "íbamos", tipps: ["íbamos", "fuimos", "vamos"], hinweis: "ir unregelmäßig", ue: "Jeden Tag gingen wir in den Park." },
+      { id: "g1803", satz: "Mi abuela ___ (cocinar) muy bien.", loesung: "cocinaba", tipps: ["cocinaba", "cocinó", "cocina"], hinweis: "-ar → -aba", ue: "Meine Großmutter kochte sehr gut." },
+      { id: "g1804", satz: "Antes no ___ (haber) celulares.", loesung: "había", tipps: ["había", "hubo", "hay"], hinweis: "hay im Imperfecto", ue: "Früher gab es keine Handys." },
+      { id: "g1805", satz: "Ellos ___ (vivir) en Sevilla entonces.", loesung: "vivían", tipps: ["vivían", "vivieron", "viven"], hinweis: "-ir → -ía", ue: "Sie lebten damals in Sevilla." }
+    ]
+  }
+});
+
+LEKTION('es-419', {
+  tag: 49, niveau: "A2", thema: "Eine Geschichte erzählen (1)",
+  vokabeln: [
+    { id: "v1901", es: "mientras",       de: "während",         wortart: "Konjunktion", beispiel: "Mientras cocinaba, sonó el teléfono.", beispielUe: "Während ich kochte, klingelte das Telefon." },
+    { id: "v1902", es: "de pronto",      de: "auf einmal",      wortart: "Adverb", beispiel: "De pronto se apagó la luz.", beispielUe: "Auf einmal ging das Licht aus." },
+    { id: "v1903", es: "darse cuenta",   de: "merken",          wortart: "Verb", beispiel: "Me di cuenta muy tarde.", beispielUe: "Ich merkte es sehr spät." },
+    { id: "v1904", es: "asustarse",      de: "erschrecken",     wortart: "Verb", beispiel: "Me asusté mucho.", beispielUe: "Ich erschrak sehr." },
+    { id: "v1905", es: "el ruido",       de: "das Geräusch",    wortart: "Substantiv", beispiel: "Oí un ruido extraño.", beispielUe: "Ich hörte ein seltsames Geräusch." },
+    { id: "v1906", es: "sonar",          de: "klingeln",        wortart: "Verb", beispiel: "Sonó el despertador.", beispielUe: "Der Wecker klingelte." },
+    { id: "v1907", es: "por casualidad", de: "zufällig",        wortart: "Adverb", beispiel: "Lo encontré por casualidad.", beispielUe: "Ich fand es zufällig." },
+    { id: "v1908", es: "al final",       de: "am Ende",         wortart: "Adverb", beispiel: "Al final todo salió bien.", beispielUe: "Am Ende ging alles gut." },
+    { id: "v1909", es: "olvidarse de",   de: "vergessen",       wortart: "Verb", beispiel: "Me olvidé de las llaves.", beispielUe: "Ich vergaß die Schlüssel." },
+    { id: "v1910", es: "el susto",       de: "der Schreck",     wortart: "Substantiv", beispiel: "¡Qué susto me diste!", beispielUe: "Hast du mich erschreckt!" }
+  ],
+  saetze: [
+    { id: "s1901", es: "Mientras cocinaba, sonó el teléfono.",  de: "Während ich kochte, klingelte das Telefon." },
+    { id: "s1902", es: "Hacía frío cuando salimos de casa.",    de: "Es war kalt, als wir aus dem Haus gingen." },
+    { id: "s1903", es: "Estaba cansado, así que me acosté.",    de: "Ich war müde, also legte ich mich hin." },
+    { id: "s1904", es: "Cuando llegué, ella ya no estaba.",     de: "Als ich ankam, war sie schon nicht mehr da." },
+    { id: "s1905", es: "Llovía mucho y decidimos quedarnos.",   de: "Es regnete stark und wir beschlossen zu bleiben." }
+  ],
+  grammatik: {
+    id: "g19", titel: "Indefinido oder Imperfecto? (Teil 1)",
+    erklaerung: `
+      <p>Das ist <strong>das</strong> Thema, an dem sich A2 entscheidet. Beide Zeiten sind
+      Vergangenheit, aber sie erzählen Verschiedenes.</p>
+      <div class="merke"><strong>Das Bild, das alles erklärt — ein Film:</strong><br>
+      <strong>Imperfecto</strong> = die Kulisse. Wie es aussah, wie das Wetter war, wie
+      du dich fühltest. Läuft im Hintergrund weiter.<br>
+      <strong>Indefinido</strong> = die Handlung. Was passiert ist. Ein Punkt auf der
+      Zeitachse, dann geht es weiter.</div>
+      <table>
+        <tr><th>Imperfecto — Kulisse</th><th>Indefinido — Handlung</th></tr>
+        <tr><td>Beschreibung: <em>La casa era grande.</em></td><td>Ereignis: <em>Compré la casa.</em></td></tr>
+        <tr><td>Gewohnheit: <em>Iba todos los días.</em></td><td>einmalig: <em>Fui una vez.</em></td></tr>
+        <tr><td>Zustand: <em>Estaba cansado.</em></td><td>Beginn: <em>Me cansé.</em></td></tr>
+        <tr><td>Uhrzeit/Wetter: <em>Eran las ocho. Llovía.</em></td><td>Abfolge: <em>Salí, comí y volví.</em></td></tr>
+        <tr><td>ohne Ende gedacht</td><td>abgeschlossen, ggf. mit Dauerangabe</td></tr>
+      </table>
+      <p><strong>Der klassische Satzbau — beide zusammen:</strong></p>
+      <ul>
+        <li><em><strong>Mientras</strong> cocin<strong>aba</strong> (Kulisse),
+            <strong>sonó</strong> el teléfono (Handlung).</em></li>
+        <li><em><strong>Cuando</strong> lleg<strong>ué</strong> (Handlung),
+            ella dorm<strong>ía</strong> (Kulisse).</em></li>
+      </ul>
+      <p>Faustregel für diese Satzpaare: nach <em>mientras</em> steht meist Imperfecto,
+      nach <em>cuando</em> meist Indefinido.</p>
+      <div class="merke"><strong>Testfrage im Zweifel:</strong> „Beschreibe ich, wie es war,
+      oder erzähle ich, was passierte?" — Beschreibung → Imperfecto. Ereignis → Indefinido.</div>`,
+    uebungen: [
+      { id: "g1901", satz: "Mientras ___ (cocinar, yo), sonó el teléfono.", loesung: "cocinaba", tipps: ["cocinaba", "cociné"], hinweis: "Kulisse", ue: "Während ich kochte, klingelte das Telefon." },
+      { id: "g1902", satz: "Ayer ___ (ir, yo) al cine con Ana.", loesung: "fui", tipps: ["fui", "iba"], hinweis: "einmaliges Ereignis", ue: "Gestern ging ich mit Ana ins Kino." },
+      { id: "g1903", satz: "___ (ser) las ocho cuando llegó.", loesung: "Eran", tipps: ["Eran", "Fueron"], hinweis: "Uhrzeit = Kulisse", ue: "Es war acht, als er ankam." },
+      { id: "g1904", satz: "De repente ___ (empezar) a llover.", loesung: "empezó", tipps: ["empezó", "empezaba"], hinweis: "de repente = Handlung", ue: "Plötzlich fing es an zu regnen." },
+      { id: "g1905", satz: "Antes ___ (jugar, nosotros) todos los días.", loesung: "jugábamos", tipps: ["jugábamos", "jugamos"], hinweis: "Gewohnheit", ue: "Früher spielten wir jeden Tag." }
+    ]
+  }
+});
+
+LEKTION('es-419', {
+  tag: 50, niveau: "A2", thema: "Eine Geschichte erzählen (2)",
+  vokabeln: [
+    { id: "v2001", es: "el desenlace",   de: "der Ausgang",      wortart: "Substantiv", beispiel: "El desenlace fue inesperado.", beispielUe: "Der Ausgang war unerwartet." },
+    { id: "v2002", es: "en aquella época", de: "damals",         wortart: "Adverb", beispiel: "En aquella época yo era estudiante.", beispielUe: "Damals war ich Student." },
+    { id: "v2003", es: "durar",          de: "dauern",          wortart: "Verb", beispiel: "La reunión duró dos horas.", beispielUe: "Die Sitzung dauerte zwei Stunden." },
+    { id: "v2004", es: "enterarse",      de: "erfahren",        wortart: "Verb", beispiel: "Me enteré ayer.", beispielUe: "Ich habe es gestern erfahren." },
+    { id: "v2005", es: "el detalle",     de: "das Detail",      wortart: "Substantiv", beispiel: "No recuerdo los detalles.", beispielUe: "Ich erinnere mich nicht an die Details." },
+    { id: "v2006", es: "convertirse en", de: "werden zu",       wortart: "Verb", beispiel: "Se convirtió en un problema.", beispielUe: "Es wurde zu einem Problem." },
+    { id: "v2007", es: "mudarse",        de: "umziehen",        wortart: "Verb", beispiel: "Nos mudamos en 2018.", beispielUe: "Wir zogen 2018 um." },
+    { id: "v2008", es: "el ambiente",    de: "die Stimmung",    wortart: "Substantiv", beispiel: "El ambiente era muy bueno.", beispielUe: "Die Stimmung war sehr gut." },
+    { id: "v2009", es: "de golpe",       de: "schlagartig",     wortart: "Adverb", beispiel: "Todo cambió de golpe.", beispielUe: "Alles änderte sich schlagartig." },
+    { id: "v2010", es: "el motivo",      de: "der Grund",       wortart: "Substantiv", beispiel: "Nunca supe el motivo.", beispielUe: "Ich erfuhr nie den Grund." }
+  ],
+  saetze: [
+    { id: "s2001", es: "Vivíamos en Madrid cuando nació mi hijo.", de: "Wir wohnten in Madrid, als mein Sohn geboren wurde." },
+    { id: "s2002", es: "La película duró dos horas y media.",      de: "Der Film dauerte zweieinhalb Stunden." },
+    { id: "s2003", es: "Estaba lloviendo, así que cogimos un taxi.", de: "Es regnete, also nahmen wir ein Taxi." },
+    { id: "s2004", es: "Trabajé allí desde 2015 hasta 2019.",      de: "Ich arbeitete dort von 2015 bis 2019." },
+    { id: "s2005", es: "Cuando lo conocí, tenía veinte años.",     de: "Als ich ihn kennenlernte, war er zwanzig." }
+  ],
+  grammatik: {
+    id: "g20", titel: "Indefinido oder Imperfecto? (Teil 2)",
+    erklaerung: `
+      <p>Heute die Feinheiten — die Fälle, in denen beide Zeiten gehen, aber Verschiedenes
+      bedeuten.</p>
+      <p><strong>1. Dauer: begrenzt oder unbegrenzt?</strong></p>
+      <ul>
+        <li><em>Viví en Madrid <strong>cinco años</strong>.</em> — abgeschlossener Zeitraum
+            mit Anfang und Ende → Indefinido</li>
+        <li><em>Vivía en Madrid <strong>cuando era joven</strong>.</em> — Hintergrund,
+            kein Ende genannt → Imperfecto</li>
+      </ul>
+      <div class="merke"><strong>Wichtig:</strong> Eine Zeitangabe macht einen Satz nicht
+      automatisch zum Imperfecto. <em>Duró dos horas</em> ist Indefinido — die zwei Stunden
+      sind ein abgeschlossener Block.</div>
+      <p><strong>2. Verben, die die Bedeutung wechseln.</strong> Hier ist der Unterschied am
+      auffälligsten:</p>
+      <table>
+        <tr><th>Verb</th><th>Imperfecto (Zustand)</th><th>Indefinido (Ereignis)</th></tr>
+        <tr><td>saber</td><td><em>sabía</em> = ich wusste</td><td><em>supe</em> = ich erfuhr</td></tr>
+        <tr><td>conocer</td><td><em>conocía</em> = ich kannte</td><td><em>conocí</em> = ich lernte kennen</td></tr>
+        <tr><td>poder</td><td><em>podía</em> = ich konnte (war fähig)</td><td><em>pude</em> = ich schaffte es</td></tr>
+        <tr><td>querer</td><td><em>quería</em> = ich wollte</td><td><em>quise</em> = ich versuchte</td></tr>
+        <tr><td>tener</td><td><em>tenía</em> = ich hatte</td><td><em>tuve</em> = ich bekam</td></tr>
+      </table>
+      <p><em>Conocía a Ana.</em> = Ich kannte Ana (schon länger).<br>
+      <em>Conocí a Ana en 2020.</em> = Ich lernte Ana 2020 kennen.</p>
+      <p><strong>3. Unterbrochene Handlung.</strong> Das Imperfecto war im Gange, das
+      Indefinido kommt dazwischen:<br>
+      <em>Dormía tranquilamente cuando <strong>sonó</strong> el despertador.</em></p>`,
+    uebungen: [
+      { id: "g2001", satz: "___ (vivir, yo) allí cinco años.", loesung: "Viví", tipps: ["Viví", "Vivía"], hinweis: "begrenzter Zeitraum", ue: "Ich lebte fünf Jahre dort." },
+      { id: "g2002", satz: "La reunión ___ (durar) dos horas.", loesung: "duró", tipps: ["duró", "duraba"], hinweis: "abgeschlossener Block", ue: "Die Sitzung dauerte zwei Stunden." },
+      { id: "g2003", satz: "___ (conocer, yo) a mi mujer en 2010.", loesung: "Conocí", tipps: ["Conocí", "Conocía"], hinweis: "kennenlernen = Ereignis", ue: "Ich lernte meine Frau 2010 kennen." },
+      { id: "g2004", satz: "Yo no ___ (saber) nada del asunto.", loesung: "sabía", tipps: ["sabía", "supe"], hinweis: "Zustand des Wissens", ue: "Ich wusste nichts von der Sache." },
+      { id: "g2005", satz: "Dormía cuando ___ (sonar) el teléfono.", loesung: "sonó", tipps: ["sonó", "sonaba"], hinweis: "Unterbrechung", ue: "Ich schlief, als das Telefon klingelte." }
     ]
   }
 });

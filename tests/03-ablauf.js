@@ -148,7 +148,9 @@ async function durchspielen(page, opt = {}) {
   }));
   pruefe('Tag weiterhin 2', s2.tag, 2);
   pruefe('Karten erhalten', s2.karten, 20);
-  pruefe('Tag-2-Thema angezeigt', s2.angezeigt, 'Meine Wohnung');
+  // Das Thema kommt aus den Daten — bis Oktober 2026 war Tag 2 „Meine Wohnung",
+  // seit dem A1-Block vorne ist es ein A1-Thema.
+  pruefe('Tag-2-Thema angezeigt', s2.angezeigt, await page.evaluate(() => Daten.lektion(2).thema));
   pruefe('Zähler zeigt gelernte Wörter', s2.woerterAnzeige, String(s1.gelernt));
 
   console.log('\n=== 4. Problemwörter: 4x falsch macht ein Leech, es kehrt wieder ===');

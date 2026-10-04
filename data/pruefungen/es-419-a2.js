@@ -1,11 +1,13 @@
-/* Prüfung A2 · Spanisch (Lateinamerika) · Zwischenstopp nach Tag 33
+/* Prüfung A2 · Spanisch (Lateinamerika) · Zwischenstopp nach Tag 63
+   (bis Oktober 2026 nach Tag 33 — seitdem stehen 30 A1-Tage davor; die ID
+   bleibt, damit gespeicherte Ergebnisse erhalten bleiben)
 
    Vorbild DELE A2. Wortschatz und Formen wie im Kurs: ustedes statt vosotros,
    el carro, la papa, el jugo, el celular, el departamento. */
 
 PRUEFUNG('es-419', {
   id: 'p-es-419-a2',
-  nachTag: 33,
+  nachTag: 63,
   niveau: 'A2',
   name: 'Prüfung A2',
   vorbild: 'DELE A2',

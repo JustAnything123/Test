@@ -1,7 +1,8 @@
-/* Prüfung B1 · Spanisch (Lateinamerika) · Zwischenstopp nach Tag 60 */
+/* Prüfung B1 · Spanisch (Lateinamerika) · Zwischenstopp nach Tag 90
+   (bis Oktober 2026 nach Tag 60 — seitdem stehen 30 A1-Tage davor) */
 
 PRUEFUNG('es-419', {
-  id: 'p-es-419-b1', nachTag: 60, niveau: 'B1',
+  id: 'p-es-419-b1', nachTag: 90, niveau: 'B1',
   name: 'Prüfung B1', vorbild: 'DELE B1', bestehen: 60, dauer: 60,
   teile: [
     { id: 't1', art: 'lesen', name: 'Leseverstehen', aufgaben: [
