@@ -782,6 +782,7 @@ Server danach wieder. Dauer rund zwei bis drei Minuten.
 | `08-pruefung.js` | ja | Prüfungssystem: Freischaltung, Prüfungsregeln, Durchlauf richtig und falsch, Bestehensgrenze, gespeicherte Versuche, Gerät ohne Sprachausgabe |
 | `09-pruefer.js` | ja | Prüfer-Rundlauf in zwei getrennten Browserkontexten: Link, fremdes Gerät ohne Lernstand, Bewertung, Rücklink, kaputte Links, Eintragen von Hand |
 | `10-update.js` | ja | Meldung „Neue Fassung verfügbar" über einen echten Update-Vorgang des Service Workers |
+| `11-sprechen.js` | ja | Nachsprech-Übung mit künstlichem Mikrofon: Aufnahme, Wiedergabe, Selbstcheck, Freigabe des Mikrofons, Fehlerfälle |
 
 `02` bis `05` enthalten zusammen 173 einzelne Prüfungen, dazu kommen die
 inhaltlichen Kontrollen aus `01`, `06` und `07`.

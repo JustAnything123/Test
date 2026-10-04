@@ -1,4 +1,4 @@
-/* Die sechs Übungstypen.
+/* Die Übungstypen.
    Jeder Typ hat zwei Aufgaben:
      1. zeichnen()  – die Aufgabe auf den Bildschirm bringen
      2. pruefen()   – die Antwort bewerten
@@ -403,6 +403,150 @@ var Uebungen = {
     return {
       nurAnsehen: true,
       pruefen: () => ({ korrekt: true, fast: false, loesung: '', meins: '' })
+    };
+  },
+
+  /* ================= 8. Nachsprechen (Sprechübung) =================
+     Ablauf: Das Gerät spricht den Satz vor. Du nimmst dich auf, hörst dir
+     beide Fassungen an und hakst ab, was geklappt hat. Es gibt keine Note —
+     ein Computer kann Aussprache nicht verlässlich bewerten, du selbst beim
+     direkten Vergleich aber schon recht gut.
+     Die Aufnahme bleibt im Arbeitsspeicher und ist beim Weiterblättern weg. */
+
+  typ_sprechen(a, b) {
+    const k = a.karte;
+    const satz = this.ziel(k);
+    const esc = s => this.escape(s);
+    const ton = Sprache.kannHoeren();
+    const mikro = Aufnahme.moeglich();
+
+    b.innerHTML = `
+      <div class="frage">${esc(t(ton ? 'sprech.anweisung' : 'sprech.anweisungOhneTon'))}</div>
+      <div class="sprech-satz">${esc(satz)}</div>
+      <div class="wortart sprech-ue">${esc(this.ausgang(k))}</div>
+      ${ton ? `<div class="sprech-reihe">
+          <button type="button" class="btn btn-neben" id="sprech-vor">${esc(t('sprech.vorsprechen'))}</button>
+          <button type="button" class="btn btn-neben" id="sprech-langsam">${esc(t('sprech.langsam'))}</button>
+        </div>` : ''}
+      ${mikro ? `
+        <button type="button" class="sprech-knopf" id="sprech-auf">${esc(t('sprech.aufnehmen'))}</button>
+        <div class="sprech-status" id="sprech-status" hidden></div>
+        <div class="sprech-meldung" id="sprech-meldung" hidden></div>
+        <div class="sprech-ergebnis" id="sprech-ergebnis" hidden>
+          <div class="wortart">${esc(t('sprech.deine'))}</div>
+          <audio id="sprech-audio" controls preload="auto"></audio>
+          ${ton ? `<button type="button" class="btn btn-neben" id="sprech-vergleich">${esc(t('sprech.vergleichen'))}</button>` : ''}
+        </div>`
+      : `<div class="sprech-meldung" id="sprech-ohne">${esc(t('sprech.ohneMikro'))}</div>`}
+      <div class="sprech-check" id="sprech-check">
+        <div class="sprech-check-titel">${esc(t(ton && mikro ? 'sprech.checkTitel' : 'sprech.checkTitelOhne'))}</div>
+        ${[1, 2, 3].map(n => `<label class="sprech-punkt">
+            <input type="checkbox" data-punkt="${n}"> <span>${esc(t('sprech.check' + n))}</span>
+          </label>`).join('')}
+        <div class="sprech-check-fazit" id="sprech-fazit" hidden></div>
+      </div>`;
+
+    const $ = id => b.querySelector('#' + id);
+    let weg = false;            // Aufgabe verlassen? Dann nichts mehr anfassen.
+    let laufend = null;         // die gerade laufende Aufnahme
+    let uhr = null;             // Sekundenzähler während der Aufnahme
+    let adresse = null;         // blob:-Adresse der letzten Aufnahme
+
+    if (ton) {
+      $('sprech-vor').addEventListener('click', () => Sprache.sprich(satz, 0.9));
+      $('sprech-langsam').addEventListener('click', () => Sprache.sprich(satz, 0.55));
+      setTimeout(() => { if (!weg) Sprache.sprich(satz, 0.9); }, 250);
+    }
+
+    // Selbstcheck: nur zur eigenen Einschätzung, wird nirgends gespeichert
+    const haken = Array.from(b.querySelectorAll('.sprech-punkt input'));
+    haken.forEach(h => h.addEventListener('change', () => {
+      const n = haken.filter(x => x.checked).length;
+      const fazit = $('sprech-fazit');
+      fazit.hidden = n === 0;
+      fazit.textContent = t(n === haken.length ? 'sprech.checkFertig' : 'sprech.checkTipp');
+    }));
+
+    const meldung = text => {
+      const m = $('sprech-meldung');
+      m.hidden = !text;
+      m.textContent = text || '';
+    };
+
+    const uhrStoppen = () => { if (uhr) { clearInterval(uhr); uhr = null; } };
+
+    const aufnahmeFertig = erg => {
+      uhrStoppen();
+      laufend = null;
+      if (weg) return;
+      const knopf = $('sprech-auf');
+      knopf.classList.remove('nimmt-auf');
+      knopf.textContent = t('sprech.nochmalAufnehmen');
+      $('sprech-status').hidden = true;
+      if (!erg || !erg.blob || !erg.blob.size) { meldung(t('sprech.leer')); return; }
+      if (adresse) URL.revokeObjectURL(adresse);
+      adresse = URL.createObjectURL(erg.blob);
+      const audio = $('sprech-audio');
+      audio.src = adresse;
+      $('sprech-ergebnis').hidden = false;
+    };
+
+    if (mikro) {
+      $('sprech-auf').addEventListener('click', async () => {
+        const knopf = $('sprech-auf');
+        if (laufend) { laufend.stoppen(); return; }        // zweiter Tipp = Stopp
+        meldung('');
+        window.speechSynthesis && window.speechSynthesis.cancel();
+        $('sprech-audio').pause();
+        knopf.disabled = true;                              // bis das Mikrofon da ist
+        try {
+          const r = await Aufnahme.starten(20);
+          if (weg) { r.abbrechen(); return; }
+          laufend = r;
+          r.ergebnis.then(aufnahmeFertig);
+        } catch (e) {
+          knopf.disabled = false;
+          meldung(Aufnahme.fehlertext(e));
+          return;
+        }
+        knopf.disabled = false;
+        knopf.classList.add('nimmt-auf');
+        knopf.textContent = t('sprech.stopp');
+        const status = $('sprech-status');
+        const beginn = Date.now();
+        const zeigen = () => {
+          const sek = Math.floor((Date.now() - beginn) / 1000);
+          status.textContent = `${t('sprech.laeuft')} 0:${String(sek).padStart(2, '0')}`;
+        };
+        zeigen();
+        status.hidden = false;
+        uhr = setInterval(zeigen, 250);
+      });
+
+      if (ton) {
+        $('sprech-vergleich').addEventListener('click', () => {
+          const audio = $('sprech-audio');
+          audio.pause();
+          audio.currentTime = 0;
+          Sprache.sprich(satz, 0.9, () => { if (!weg) audio.play().catch(() => {}); });
+        });
+      }
+    }
+
+    return {
+      nurAnsehen: true,
+      pruefen: () => ({ korrekt: true, fast: false, loesung: '', meins: '' }),
+      // Beim Verlassen der Aufgabe: Mikrofon los, Wiedergabe aus, Speicher frei
+      aufraeumen: () => {
+        weg = true;
+        uhrStoppen();
+        if (laufend) { laufend.abbrechen(); laufend = null; }
+        Aufnahme.allesFreigeben();
+        const audio = $('sprech-audio');
+        if (audio) { audio.pause(); audio.removeAttribute('src'); }
+        if (adresse) { URL.revokeObjectURL(adresse); adresse = null; }
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+      }
     };
   }
 };

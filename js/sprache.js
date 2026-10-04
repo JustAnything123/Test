@@ -55,18 +55,30 @@ var Sprache = {
     this.verfuegbar = !!grob;
   },
 
-  /** Text vorlesen. tempo < 1 = langsamer (gut für lange Sätze). */
-  sprich(text, tempo) {
-    if (!this.verfuegbar || !Speicher.einstellung('ton')) return;
+  /** Text vorlesen. tempo < 1 = langsamer (gut für lange Sätze).
+      nachher (freiwillig): wird aufgerufen, wenn das Vorlesen vorbei ist —
+      oder sofort, wenn gar nicht vorgelesen werden kann. */
+  sprich(text, tempo, nachher) {
+    if (!this.verfuegbar || !Speicher.einstellung('ton')) { if (nachher) nachher(); return; }
     try {
       window.speechSynthesis.cancel();          // laufende Ausgabe abbrechen
       const s = new SpeechSynthesisUtterance(text);
       s.voice = this.stimme;
       s.lang = this.stimme ? this.stimme.lang : (Kurse.aktiv() || {}).ziel;
       s.rate = tempo || 0.9;                    // etwas langsamer als normal
+      if (nachher) {
+        // Manche Handys melden das Ende nie. Deshalb zusätzlich eine
+        // Zeitgrenze, grob geschätzt aus der Textlänge. Was zuerst kommt, gilt.
+        let erledigt = false;
+        const einmal = () => { if (!erledigt) { erledigt = true; nachher(); } };
+        s.onend = einmal;
+        s.onerror = einmal;
+        setTimeout(einmal, 1500 + String(text).length * 110 / (tempo || 0.9));
+      }
       window.speechSynthesis.speak(s);
     } catch (e) {
       console.warn('Vorlesen fehlgeschlagen:', e);
+      if (nachher) nachher();
     }
   },
 

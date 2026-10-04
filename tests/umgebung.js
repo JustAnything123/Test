@@ -83,10 +83,18 @@ function chromiumPfad() {
   return null;                       // null = Playwright sucht selbst
 }
 
+/* Für die Sprechübung braucht der Testbrowser ein Mikrofon. Diese beiden
+   Schalter geben ihm ein künstliches (es liefert einen Piepton) und
+   beantworten die Frage „Darf die Seite das Mikrofon benutzen?" ungefragt
+   mit Ja. Auf echten Geräten fragt der Browser natürlich nach. */
+const MIKROFON_SCHALTER = ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream'];
+
 async function browserStarten() {
   const { chromium } = playwright();
   const pfad = chromiumPfad();
-  return chromium.launch(pfad ? { executablePath: pfad } : {});
+  const optionen = { args: MIKROFON_SCHALTER };
+  if (pfad) optionen.executablePath = pfad;
+  return chromium.launch(optionen);
 }
 
 /* Standard-Ansicht: Handyformat, so wie die App tatsächlich benutzt wird. */

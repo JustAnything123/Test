@@ -17,6 +17,7 @@ Kurse.definieren({
   stimmen: ['es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es'],
   sonderzeichen: ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'],
   farbe: '#0b7a4b',
+  sprechen: true,                               // Nachsprech-Übung und Sprech-Teil der Prüfung
   hinweis: 'Neutrales Lateinamerikanisch: ustedes statt vosotros, Wortschatz der überall verstanden wird.'
 });
 
@@ -34,6 +35,7 @@ Kurse.definieren({
   stimmen: ['de-DE', 'de-AT', 'de-CH', 'de'],
   sonderzeichen: ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'],
   farbe: '#1a1a1a',
+  sprechen: true,                               // Nachsprech-Übung und Sprech-Teil der Prüfung
   hinweis: 'Explicaciones en español. Desde cero hasta B2.'
 });
 
@@ -55,5 +57,6 @@ Kurse.definieren({
   stimmen: ['de-DE', 'de-AT', 'de-CH', 'de'],
   sonderzeichen: ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'],
   farbe: '#a8651a',
+  sprechen: true,                               // Nachsprech-Übung und Sprech-Teil der Prüfung
   hinweis: 'Vocabulario y frases del turno diario en cocina, servicio y recepción. Recomendado a partir del día 30 del curso de alemán (nivel A2).'
 });

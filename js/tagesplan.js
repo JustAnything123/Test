@@ -4,7 +4,8 @@
      2. Fällige Wiederholungen
      3. Neue Vokabeln  (erst zeigen, dann abfragen)
      4. Sätze des Tages
-     5. Grammatik: Erklärung lesen, dann anwenden
+     5. Nachsprechen: zwei Sätze laut nachsprechen (nur Kurse mit sprechen: true)
+     6. Grammatik: Erklärung lesen, dann anwenden
 
    Herauskommt eine einfache Liste von Aufgaben. Jede Aufgabe sieht so aus:
      { typ: 'mc', karte: {...}, richtung: 'nachAusgang', phase: 'Wiederholung' } */
@@ -57,7 +58,7 @@ var Tagesplan = {
 
     if (modus === 'nurWdh') return aufgaben;
 
-    /* ---- 3./4./5. Die Tageslektion ---- */
+    /* ---- 3. bis 6. Die Tageslektion ---- */
     const tag = Speicher.fortschritt().aktuellerTag;
     const lektion = Daten.lektion(tag);
     if (!lektion) return aufgaben;          // alle 60 Tage durch → nur noch Wiederholung
@@ -81,6 +82,12 @@ var Tagesplan = {
       aufgaben.push({ typ: nutzeHoeren ? 'hoeren' : 'tapping', karte: { ...s, art: 'satz' }, phase: 'satz' });
     });
 
+    // Nachsprechen: die ersten Sätze des Tages, die man gerade gebaut und
+    // gehört hat, jetzt selbst laut sagen.
+    for (const s of this.sprechSaetze(lektion)) {
+      aufgaben.push({ typ: 'sprechen', karte: { ...s, art: 'satz' }, phase: 'sprechen' });
+    }
+
     // Grammatik: erst die Erklärung, dann die Übungen dazu
     if (lektion.grammatik) {
       aufgaben.push({ typ: 'erklaerung', karte: lektion.grammatik, phase: 'grammatik' });
@@ -90,6 +97,17 @@ var Tagesplan = {
     }
 
     return aufgaben;
+  },
+
+  /** Wie viele Sätze täglich nachgesprochen werden. */
+  SPRECH_SAETZE: 2,
+
+  /** Die Sätze, die heute nachgesprochen werden. Leer, wenn der Kurs keine
+      Sprechübungen hat (Eintrag sprechen: true in js/kurs-definitionen.js). */
+  sprechSaetze(lektion) {
+    const kurs = Kurse.aktiv();
+    if (!lektion || !kurs || !kurs.sprechen) return [];
+    return lektion.saetze.slice(0, this.SPRECH_SAETZE);
   },
 
   /** Schnell-Wiederholung: kurzes Multiple-Choice-Quiz aus allem,
@@ -124,6 +142,7 @@ var Tagesplan = {
       faellige: SRS.faellige().length,
       neueVokabeln: lektion ? lektion.vokabeln.length : 0,
       neueSaetze:   lektion ? lektion.saetze.length : 0,
+      sprechen:     this.sprechSaetze(lektion).length,
       grammatik:    lektion && lektion.grammatik ? lektion.grammatik.titel : null
     };
   }

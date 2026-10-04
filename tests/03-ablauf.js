@@ -114,10 +114,11 @@ async function durchspielen(page, opt = {}) {
   console.log('\n=== 2. Tag 1 komplett, jede 7. Antwort falsch ===');
   await page.click('#btn-lernen'); await page.waitForTimeout(250);
   await page.screenshot({ path: U.bild(`02-karte.png`) });
-  const r1 = await durchspielen(page, { falschJede: 7, screenshotTypen: ['mc','tippen','tapping','luecke','erklaerung'] });
+  const r1 = await durchspielen(page, { falschJede: 7, screenshotTypen: ['mc','tippen','tapping','sprechen','luecke','erklaerung'] });
   console.log('  Übungstypen:', JSON.stringify(r1.gesehen));
   pruefe('alle Vokabeln 3x (ansehen, MC, tippen)', [r1.gesehen.karte, r1.gesehen.mc, r1.gesehen.tippen], [10,10,10]);
   pruefe('5 Sätze', r1.gesehen.tapping, 5);
+  pruefe('2 Sätze nachsprechen', r1.gesehen.sprechen, 2);
   pruefe('1 Grammatik-Erklärung + 5 Lücken', [r1.gesehen.erklaerung, r1.gesehen.luecke], [1,5]);
   await page.waitForTimeout(200);
   await page.screenshot({ path: U.bild(`05-fertig.png`) });

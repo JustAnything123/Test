@@ -82,6 +82,7 @@ async function kursDurchspielen(page, kursId, erwartet) {
   pruefe('nicht abgebrochen', !r.abgebrochen, true);
   pruefe('10 Vokabeln dreimal', [r.gesehen.karte, r.gesehen.mc, r.gesehen.tippen], [10, 10, 10]);
   pruefe('5 Saetze', r.gesehen.tapping, 5);
+  pruefe('2 Saetze nachsprechen', r.gesehen.sprechen, 2);
   pruefe('Erklaerung und 5 Luecken', [r.gesehen.erklaerung, r.gesehen.luecke], [1, 5]);
 
   const stand = await page.evaluate(id => ({

@@ -305,6 +305,41 @@ code { background: var(--flaeche-2); padding: .1em .35em; border-radius: 5px; fo
   cursor: pointer; padding: .2rem .4rem;
 }
 
+/* Sprechübung (Nachsprechen) */
+.sprech-satz {
+  font-size: 1.45rem; font-weight: 700; line-height: 1.35; color: var(--akzent);
+  margin: .4rem 0 .2rem; overflow-wrap: anywhere;
+}
+.sprech-ue { margin-bottom: .9rem; }
+.sprech-reihe { display: flex; gap: .5rem; }
+.sprech-reihe .btn { flex: 1; margin-top: 0; }
+.sprech-knopf {
+  display: block; width: 100%; margin: .9rem 0 .4rem; padding: 1rem;
+  border: 0; border-radius: 99px; background: var(--akzent); color: #fff;
+  font-size: 1.1rem; font-weight: 700; font-family: inherit; cursor: pointer;
+  box-shadow: var(--schatten); -webkit-tap-highlight-color: transparent;
+}
+.sprech-knopf:disabled { opacity: .55; cursor: default; }
+.sprech-knopf.nimmt-auf { background: var(--rot); animation: sprech-puls 1.2s ease-in-out infinite; }
+@keyframes sprech-puls { 50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--rot) 25%, transparent); } }
+.sprech-status { text-align: center; font-weight: 600; color: var(--rot); font-variant-numeric: tabular-nums; }
+.sprech-meldung {
+  margin: .6rem 0; padding: .6rem .7rem; border-radius: 10px; font-size: .9rem;
+  background: color-mix(in srgb, var(--gold) 16%, var(--flaeche));
+  border-left: 3px solid var(--gold);
+}
+.sprech-ergebnis { margin: .6rem 0; }
+.sprech-ergebnis audio { width: 100%; margin: .3rem 0 .5rem; }
+.sprech-check {
+  margin-top: .9rem; padding: .7rem .8rem; border: 1px solid var(--rand);
+  border-radius: var(--radius); background: var(--flaeche);
+}
+.sprech-check-titel { font-weight: 600; margin-bottom: .4rem; }
+.sprech-punkt { display: flex; align-items: center; gap: .55rem; padding: .35rem 0; cursor: pointer; }
+.sprech-punkt input { width: 1.25rem; height: 1.25rem; accent-color: var(--gruen); flex: none; }
+.sprech-check-fazit { margin-top: .4rem; font-size: .88rem; color: var(--text-leise); }
+@media (prefers-reduced-motion: reduce) { .sprech-knopf.nimmt-auf { animation: none; } }
+
 /* Rückmeldung */
 .rueckmeldung { border-radius: 12px; padding: .8rem .9rem; margin-top: 1rem; }
 .rueckmeldung.gut    { background: var(--gruen-hell); border: 1px solid var(--gruen); }

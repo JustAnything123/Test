@@ -139,6 +139,8 @@ var App = {
            'pruefung-info', 'pruefung', 'pruefung-ergebnis', 'pruefer'],
 
   zeigeSeite(name) {
+    // Wer die Übung verlässt (Menü, Zurück), lässt auch das Mikrofon los
+    if (this.seite === 'uebung' && name !== 'uebung') this.aufgabeAufraeumen();
     this.SEITEN.forEach(s => {
       const el = document.getElementById('seite-' + s);
       if (el) el.hidden = (s !== name);
@@ -208,6 +210,7 @@ var App = {
       { an: v.faellige > 0,     txt: t('plan.faellig'),   n: v.faellige },
       { an: v.neueVokabeln > 0, txt: t('plan.vokabeln'),  n: v.neueVokabeln },
       { an: v.neueSaetze  > 0,  txt: t('plan.saetze'),    n: v.neueSaetze },
+      { an: v.sprechen    > 0,  txt: t('plan.sprechen'),  n: v.sprechen },
       { an: !!v.grammatik,      txt: t('plan.grammatik'), n: '' }
     ];
     g('tageskarte-zeilen').innerHTML = zeilen.map(z => `
@@ -246,8 +249,16 @@ var App = {
     this.aufgabeZeigen();
   },
 
+  /** Die vorige Aufgabe aufräumen lassen — wichtig bei der Sprechübung:
+      laufende Aufnahme stoppen, Mikrofon freigeben, Wiedergabe beenden. */
+  aufgabeAufraeumen() {
+    if (this.aktuell && this.aktuell.aufraeumen) this.aktuell.aufraeumen();
+    if (typeof Aufnahme !== 'undefined') Aufnahme.allesFreigeben();
+  },
+
   aufgabeZeigen() {
     const s = this.sitzung;
+    this.aufgabeAufraeumen();
     if (s.index >= s.aufgaben.length) return this.sitzungBeenden();
 
     const a = s.aufgaben[s.index];

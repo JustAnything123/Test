@@ -60,6 +60,7 @@ node tests/05-sprachrichtungen.js
 | `08-pruefung.js` | ja | Das Prüfungssystem — darunter ein vollständiger Durchlauf **jeder einzelnen der elf Prüfungen**: Freischaltung am richtigen Tag, Prüfungsregeln (keine Hilfe, keine Rückmeldung, Antworten überleben das Blättern), Durchlauf alles richtig und alles falsch, Bestehensgrenze, gespeicherte Versuche, und das Verhalten auf einem Gerät ohne Sprachausgabe |
 | `09-pruefer.js` | ja | Der komplette Prüfer-Rundlauf in **zwei getrennten Browserkontexten**: Link erzeugen, in einem Fenster ohne jeden Lernstand öffnen, bewerten, Rücklink einlesen. Dazu Umlaute und Akzente im Link, erzwungene Oberflächensprache, unberührter Lernstand des Prüfers, kaputte und fremde Links, Eintragen von Hand |
 | `10-update.js` | ja | Die Meldung „Neue Fassung verfügbar“. Der Test löst einen **echten** Update-Vorgang aus: Er ändert `service-worker.js` auf der Platte, stößt die Prüfung an und stellt die Datei danach wieder her. Geprüft wird auch, dass beim allerersten Besuch keine Meldung kommt |
+| `11-sprechen.js` | ja | Die Nachsprech-Übung mit einem **künstlichen Mikrofon** (Chromium-Schalter in `umgebung.js`): aufnehmen, stoppen, anhören, Selbstcheck. Vor allem: Das Mikrofon wird nach dem Stoppen, beim Weiterblättern und beim Verlassen wieder freigegeben. Dazu Zeitgrenze, verweigertes Mikrofon und ein Gerät ohne Aufnahmefunktion |
 
 Zusammen sind das **288 einzelne Prüfungen** in `02` bis `05` und `08` bis `10`,
 plus die inhaltlichen Kontrollen aus `01`, `06` und `07`.
