@@ -1,8 +1,8 @@
-/* Ruta temática «Alemán en el trabajo» · Día 25–30 · Alimentación, seguridad y empleo
+/* Ruta temática «Alemán en el trabajo» · Día 40–45 · Alimentación, seguridad y empleo
    Alérgenos, formas de alimentación, nutrientes, seguridad laboral, contrato y entrevista. */
 
 LEKTION('de-beruf', {
-  tag: 25, niveau: "B1", thema: "Alérgenos e intolerancias",
+  tag: 40, niveau: "B1", thema: "Alérgenos e intolerancias",
   vokabeln: [
     { id: "bv2501", de: "das Allergen",          es: "el alérgeno",       wortart: "sustantivo", beispiel: "Alle Allergene stehen in der Karte.", beispielUe: "Todos los alérgenos están en la carta." },
     { id: "bv2502", de: "die Allergie",          es: "la alergia",        wortart: "sustantivo", beispiel: "Haben Sie eine Allergie?", beispielUe: "¿Tiene alguna alergia?" },
@@ -62,7 +62,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 26, niveau: "B1", thema: "Formas de alimentación",
+  tag: 41, niveau: "B1", thema: "Formas de alimentación",
   vokabeln: [
     { id: "bv2601", de: "vegetarisch",    es: "vegetariano",              wortart: "adjetivo", beispiel: "Wir haben vier vegetarische Gerichte.", beispielUe: "Tenemos cuatro platos vegetarianos." },
     { id: "bv2602", de: "vegan",          es: "vegano",                   wortart: "adjetivo", beispiel: "Der Kuchen ist vegan.", beispielUe: "El pastel es vegano." },
@@ -118,7 +118,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 27, niveau: "B1", thema: "Nutrientes y alimentación",
+  tag: 42, niveau: "B1", thema: "Nutrientes y alimentación",
   vokabeln: [
     { id: "bv2701", de: "der Nährwert",      es: "el valor nutricional",     wortart: "sustantivo", beispiel: "Der Nährwert steht auf der Packung.", beispielUe: "El valor nutricional está en el envase." },
     { id: "bv2702", de: "das Eiweiß",        es: "la proteína",              wortart: "sustantivo", beispiel: "Fisch enthält viel Eiweiß.", beispielUe: "El pescado tiene mucha proteína." },
@@ -153,7 +153,7 @@ LEKTION('de-beruf', {
       <div class="merke"><strong>viel</strong> va con incontables (viel Fett, viel Zucker)
       y <strong>viele</strong> con contables en plural (viele Vitamine, viele Kalorien). Lo
       mismo con <em>wenig</em> y <em>wenige</em>. Es la misma lógica de
-      <em>wie viel / wie viele</em> del día 6.</div>
+      <em>wie viel / wie viele</em> del día 21.</div>
       <p>Los tres grandes grupos de nutrientes, tal y como aparecen en una etiqueta alemana:</p>
       <ul>
         <li><strong>Eiweiß</strong> (también <em>Protein</em>) — carne, pescado, legumbres</li>
@@ -173,7 +173,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 28, niveau: "B1", thema: "Seguridad laboral y accidentes",
+  tag: 43, niveau: "B1", thema: "Seguridad laboral y accidentes",
   vokabeln: [
     { id: "bv2801", de: "die Arbeitssicherheit", es: "la seguridad laboral",     wortart: "sustantivo", beispiel: "Arbeitssicherheit geht vor.", beispielUe: "La seguridad laboral es lo primero." },
     { id: "bv2802", de: "der Unfall",            es: "el accidente",             wortart: "sustantivo", beispiel: "Jeder Unfall wird gemeldet.", beispielUe: "Todo accidente se notifica." },
@@ -230,7 +230,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 29, niveau: "B2", thema: "Contrato, turnos y vacaciones",
+  tag: 44, niveau: "B2", thema: "Contrato, turnos y vacaciones",
   vokabeln: [
     { id: "bv2901", de: "der Arbeitsvertrag", es: "el contrato de trabajo",    wortart: "sustantivo", beispiel: "Der Arbeitsvertrag gilt ein Jahr.", beispielUe: "El contrato vale un año." },
     { id: "bv2902", de: "der Lohn",           es: "el sueldo",                 wortart: "sustantivo", beispiel: "Der Lohn kommt am Monatsende.", beispielUe: "El sueldo llega a fin de mes." },
@@ -254,7 +254,7 @@ LEKTION('de-beruf', {
     id: "bg29", titel: "Recursos: hablar con el jefe sobre turnos y derechos",
     erklaerung: `
       <p>Pedir algo al jefe se hace en <strong>Konjunktiv II</strong> — la misma forma
-      cortés del día 12, ahora aplicada a ti y no al cliente. Directo suena exigente;
+      cortés del día 27, ahora aplicada a ti y no al cliente. Directo suena exigente;
       en condicional suena profesional.</p>
       <table>
         <tr><th>Directo</th><th>Profesional</th></tr>
@@ -290,7 +290,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 30, niveau: "B2", thema: "Entrevista de trabajo y repaso final",
+  tag: 45, niveau: "B2", thema: "Entrevista de trabajo y repaso final",
   vokabeln: [
     { id: "bv3001", de: "das Vorstellungsgespräch", es: "la entrevista de trabajo", wortart: "sustantivo", beispiel: "Das Vorstellungsgespräch ist am Montag.", beispielUe: "La entrevista es el lunes." },
     { id: "bv3002", de: "die Bewerbung",            es: "la solicitud de empleo",   wortart: "sustantivo", beispiel: "Ich schicke meine Bewerbung.", beispielUe: "Envío mi solicitud." },
@@ -326,12 +326,13 @@ LEKTION('de-beruf', {
       <div class="merke">Sobre el alemán, di la verdad y añade lo que estás haciendo:
       <em>Mein Deutsch ist noch nicht perfekt, aber ich lerne jeden Tag und im Service
       verstehe ich alles Wichtige.</em> Eso vale más que fingir un nivel que no tienes.</div>
-      <p><strong>Repaso de la ruta.</strong> En treinta días has cubierto el turno completo:</p>
+      <p><strong>Repaso de la ruta.</strong> Hasta aquí has cubierto el turno completo:</p>
       <ul>
-        <li><strong>Cocina</strong> (días 1–8): aparatos, cortes, cocciones, productos, cantidades, mise en place, HACCP.</li>
-        <li><strong>Servicio</strong> (días 9–16): recibir, carta, bebidas, comanda, atender, quejas, cobrar, teléfono.</li>
-        <li><strong>Hotel</strong> (días 17–24): recepción, habitaciones, check-in y check-out, housekeeping, información, problemas, desayuno.</li>
-        <li><strong>Alimentación y empleo</strong> (días 25–30): alérgenos, dietas, nutrientes, seguridad, contrato, entrevista.</li>
+        <li><strong>Primeros pasos</strong> (días 1–15): saludar, presentarte, números y horas, el lugar de trabajo, alimentos básicos, recibir y cobrar.</li>
+        <li><strong>Cocina</strong> (días 16–23): aparatos, cortes, cocciones, productos, cantidades, mise en place, HACCP.</li>
+        <li><strong>Servicio</strong> (días 24–31): recibir, carta, bebidas, comanda, atender, quejas, cobrar, teléfono.</li>
+        <li><strong>Hotel</strong> (días 32–39): recepción, habitaciones, check-in y check-out, housekeeping, información, problemas, desayuno.</li>
+        <li><strong>Alimentación y empleo</strong> (días 40–45): alérgenos, dietas, nutrientes, seguridad, contrato, entrevista.</li>
       </ul>
       <p>A partir de aquí lo que sostiene el nivel es la repetición: las tarjetas siguen
       volviendo según el plan de repasos, y las palabras que fallas vuelven antes. Sigue con

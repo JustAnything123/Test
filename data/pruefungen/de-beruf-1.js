@@ -1,11 +1,13 @@
-/* Prüfung · Deutsch im Beruf · Zwischenstopp nach Tag 30 — Grundpfad
+/* Prüfung · Deutsch im Beruf · Zwischenstopp nach Tag 45 — Grundpfad
 
    Vorbild telc Deutsch B1·B2 Beruf. Geprüft wird der Arbeitstag aus Küche,
-   Service, Rezeption und Ernährung, wie er in den Tagen 1–30 vorkam. */
+   Service, Rezeption und Ernährung, wie er in den Tagen 16–45 vorkam.
+   (Bis Oktober 2026 nach Tag 30 — seitdem stehen 15 A1-Tage davor.
+   Die ID bleibt, damit gespeicherte Ergebnisse erhalten bleiben.) */
 
 PRUEFUNG('de-beruf', {
-  id: 'p-de-beruf-1', nachTag: 30, niveau: 'B1',
-  name: 'Examen 1 · El turno diario', vorbild: 'telc Deutsch B1·B2 Beruf',
+  id: 'p-de-beruf-1', nachTag: 45, niveau: 'B1',
+  name: 'Examen 2 · El turno diario', vorbild: 'telc Deutsch B1·B2 Beruf',
   bestehen: 60, dauer: 60,
   teile: [
     { id: 't1', art: 'lesen', name: 'Comprensión de lectura', aufgaben: [

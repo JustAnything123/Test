@@ -18,7 +18,9 @@ const fehler = [];
   await page.click('.kurs-karte[data-kurs="de-beruf"]');
   await page.waitForTimeout(300);
 
-  for (const tag of [31, 33, 34, 35, 36, 38, 39, 40, 41, 42, 43, 44, 45]) {
+  // Die Vertiefungstage — bis Oktober 2026 waren das die Tage 31–45; seit dem
+  // A1-Block vorne (15 Tage) sind es 46–60.
+  for (const tag of [46, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60]) {
     await page.evaluate(t => {
       const f = Speicher.fortschritt(); f.aktuellerTag = t; f.karten = {}; Speicher.sichern();
     }, tag);

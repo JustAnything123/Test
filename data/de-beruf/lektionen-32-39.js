@@ -1,8 +1,8 @@
-/* Ruta temática «Alemán en el trabajo» · Día 17–24 · Hotel
+/* Ruta temática «Alemán en el trabajo» · Día 32–39 · Hotel
    Recepción, habitaciones, housekeeping y el trato con el huésped. */
 
 LEKTION('de-beruf', {
-  tag: 17, niveau: "A2", thema: "El hotel: áreas y oficios",
+  tag: 32, niveau: "A2", thema: "El hotel: áreas y oficios",
   vokabeln: [
     { id: "bv1701", de: "das Hotel",           es: "el hotel",                   wortart: "sustantivo", beispiel: "Das Hotel hat achtzig Zimmer.", beispielUe: "El hotel tiene ochenta habitaciones." },
     { id: "bv1702", de: "die Rezeption",       es: "la recepción",               wortart: "sustantivo", beispiel: "Ich arbeite an der Rezeption.", beispielUe: "Trabajo en recepción." },
@@ -58,7 +58,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 18, niveau: "A2", thema: "Tipos de habitación y equipamiento",
+  tag: 33, niveau: "A2", thema: "Tipos de habitación y equipamiento",
   vokabeln: [
     { id: "bv1801", de: "das Einzelzimmer", es: "la habitación individual", wortart: "sustantivo", beispiel: "Ein Einzelzimmer kostet 95 Euro.", beispielUe: "Una individual cuesta 95 euros." },
     { id: "bv1802", de: "das Doppelzimmer", es: "la habitación doble",      wortart: "sustantivo", beispiel: "Wir haben noch ein Doppelzimmer.", beispielUe: "Nos queda una habitación doble." },
@@ -114,7 +114,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 19, niveau: "B1", thema: "El check-in",
+  tag: 34, niveau: "B1", thema: "El check-in",
   vokabeln: [
     { id: "bv1901", de: "die Anmeldung",    es: "el registro",               wortart: "sustantivo", beispiel: "Die Anmeldung dauert fünf Minuten.", beispielUe: "El registro dura cinco minutos." },
     { id: "bv1902", de: "der Ausweis",      es: "el documento de identidad", wortart: "sustantivo", beispiel: "Darf ich Ihren Ausweis sehen?", beispielUe: "¿Me permite su documento?" },
@@ -169,7 +169,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 20, niveau: "B1", thema: "Check-out y factura",
+  tag: 35, niveau: "B1", thema: "Check-out y factura",
   vokabeln: [
     { id: "bv2001", de: "auschecken",      es: "hacer el check-out",      wortart: "verbo separable", beispiel: "Wann möchten Sie auschecken?", beispielUe: "¿Cuándo desea hacer el check-out?" },
     { id: "bv2002", de: "die Abreise",     es: "la salida",               wortart: "sustantivo", beispiel: "Ihre Abreise ist morgen.", beispielUe: "Su salida es mañana." },
@@ -225,7 +225,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 21, niveau: "B1", thema: "Housekeeping: limpieza y ropa",
+  tag: 36, niveau: "B1", thema: "Housekeeping: limpieza y ropa",
   vokabeln: [
     { id: "bv2101", de: "die Zimmerreinigung", es: "la limpieza de habitaciones", wortart: "sustantivo", beispiel: "Die Zimmerreinigung beginnt um neun.", beispielUe: "La limpieza empieza a las nueve." },
     { id: "bv2102", de: "die Bettwäsche",      es: "la ropa de cama",            wortart: "sustantivo", beispiel: "Die Bettwäsche wird täglich gewechselt.", beispielUe: "La ropa de cama se cambia a diario." },
@@ -281,7 +281,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 22, niveau: "B1", thema: "Peticiones del huésped e información",
+  tag: 37, niveau: "B1", thema: "Peticiones del huésped e información",
   vokabeln: [
     { id: "bv2201", de: "die Auskunft",         es: "la información",     wortart: "sustantivo", beispiel: "Ich gebe Ihnen gern Auskunft.", beispielUe: "Con gusto le informo." },
     { id: "bv2202", de: "der Weg",              es: "el camino",          wortart: "sustantivo", beispiel: "Ich zeige Ihnen den Weg.", beispielUe: "Le muestro el camino." },
@@ -337,7 +337,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 23, niveau: "B1", thema: "Problemas en el hotel",
+  tag: 38, niveau: "B1", thema: "Problemas en el hotel",
   vokabeln: [
     { id: "bv2301", de: "die Störung",       es: "la molestia, la avería",   wortart: "sustantivo", beispiel: "Entschuldigen Sie die Störung.", beispielUe: "Disculpe la molestia." },
     { id: "bv2302", de: "defekt",            es: "averiado",                 wortart: "adjetivo", beispiel: "Der Fernseher ist defekt.", beispielUe: "El televisor está averiado." },
@@ -392,7 +392,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 24, niveau: "B1", thema: "Desayuno y servicio de habitaciones",
+  tag: 39, niveau: "B1", thema: "Desayuno y servicio de habitaciones",
   vokabeln: [
     { id: "bv2401", de: "das Frühstücksbuffet", es: "el bufé de desayuno",         wortart: "sustantivo", beispiel: "Das Frühstücksbuffet ist im Erdgeschoss.", beispielUe: "El bufé está en la planta baja." },
     { id: "bv2402", de: "das Rührei",           es: "el huevo revuelto",           wortart: "sustantivo", beispiel: "Das Rührei ist frisch.", beispielUe: "El huevo revuelto está recién hecho." },

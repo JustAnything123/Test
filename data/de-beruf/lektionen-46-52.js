@@ -1,10 +1,10 @@
-/* Ruta temática «Alemán en el trabajo» · Día 31–37 · Vocabulario técnico de cocina
+/* Ruta temática «Alemán en el trabajo» · Día 46–52 · Vocabulario técnico de cocina
    Aquí ya no aprendes la palabra general («das Messer»), sino la familia completa:
    qué cuchillo, qué olla, qué corte, qué pieza de carne. Es el vocabulario con el
    que de verdad se habla en una cocina profesional. */
 
 LEKTION('de-beruf', {
-  tag: 31, niveau: "B1", thema: "Cuchillos y herramientas de corte",
+  tag: 46, niveau: "B1", thema: "Cuchillos y herramientas de corte",
   vokabeln: [
     { id: "bv3101", de: "das Kochmesser",     es: "el cuchillo de chef",     wortart: "sustantivo", beispiel: "Das Kochmesser ist das wichtigste Messer.", beispielUe: "El cuchillo de chef es el más importante." },
     { id: "bv3102", de: "das Schälmesser",    es: "la puntilla",             wortart: "sustantivo", beispiel: "Nimm das Schälmesser für die Kartoffeln.", beispielUe: "Toma la puntilla para las papas." },
@@ -64,7 +64,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 32, niveau: "B1", thema: "Ollas, sartenes y aparatos de cocina grande",
+  tag: 47, niveau: "B1", thema: "Ollas, sartenes y aparatos de cocina grande",
   vokabeln: [
     { id: "bv3201", de: "der Kochtopf",       es: "la olla",                 wortart: "sustantivo", beispiel: "Der Kochtopf ist zu klein.", beispielUe: "La olla es demasiado pequeña." },
     { id: "bv3202", de: "die Bratpfanne",     es: "la sartén",               wortart: "sustantivo", beispiel: "Die Bratpfanne ist beschichtet.", beispielUe: "La sartén es antiadherente." },
@@ -117,7 +117,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 33, niveau: "B1", thema: "Utensilios y aparatos pequeños",
+  tag: 48, niveau: "B1", thema: "Utensilios y aparatos pequeños",
   vokabeln: [
     { id: "bv3301", de: "der Schneebesen",   es: "el batidor de varillas",  wortart: "sustantivo", beispiel: "Der Schneebesen hängt an der Wand.", beispielUe: "El batidor cuelga en la pared." },
     { id: "bv3302", de: "der Pfannenwender", es: "la espátula de sartén",   wortart: "sustantivo", beispiel: "Nimm den Pfannenwender für das Ei.", beispielUe: "Toma la espátula para el huevo." },
@@ -169,7 +169,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 34, niveau: "B2", thema: "Cortes y técnicas de preparación",
+  tag: 49, niveau: "B2", thema: "Cortes y técnicas de preparación",
   vokabeln: [
     { id: "bv3401", de: "die Julienne",   es: "la juliana",            wortart: "sustantivo", beispiel: "Schneide die Möhren in Julienne.", beispielUe: "Corta las zanahorias en juliana." },
     { id: "bv3402", de: "die Brunoise",   es: "la brunoise",           wortart: "sustantivo", beispiel: "Die Brunoise ist ein winziger Würfel.", beispielUe: "La brunoise es un dado diminuto." },
@@ -221,7 +221,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 35, niveau: "B1", thema: "Piezas de carne y puntos de cocción",
+  tag: 50, niveau: "B1", thema: "Piezas de carne y puntos de cocción",
   vokabeln: [
     { id: "bv3501", de: "das Rinderfilet",  es: "el solomillo de res",   wortart: "sustantivo", beispiel: "Das Rinderfilet ist das zarteste Stück.", beispielUe: "El solomillo es la pieza más tierna." },
     { id: "bv3502", de: "das Rumpsteak",    es: "el bife de lomo",       wortart: "sustantivo", beispiel: "Das Rumpsteak hat einen Fettrand.", beispielUe: "El bife de lomo tiene un borde de grasa." },
@@ -275,7 +275,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 36, niveau: "B1", thema: "Pescados y mariscos en detalle",
+  tag: 51, niveau: "B1", thema: "Pescados y mariscos en detalle",
   vokabeln: [
     { id: "bv3601", de: "die Forelle",       es: "la trucha",          wortart: "sustantivo", beispiel: "Die Forelle kommt aus dem Süßwasser.", beispielUe: "La trucha viene de agua dulce." },
     { id: "bv3602", de: "die Dorade",        es: "la dorada",          wortart: "sustantivo", beispiel: "Die Dorade wird im Ganzen gegrillt.", beispielUe: "La dorada se asa entera." },
@@ -326,7 +326,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 37, niveau: "B1", thema: "Verduras, hierbas y especias en detalle",
+  tag: 52, niveau: "B1", thema: "Verduras, hierbas y especias en detalle",
   vokabeln: [
     { id: "bv3701", de: "der Lauch",        es: "el puerro",          wortart: "sustantivo", beispiel: "Der Lauch muss gut gewaschen werden.", beispielUe: "El puerro hay que lavarlo bien." },
     { id: "bv3702", de: "der Fenchel",      es: "el hinojo",          wortart: "sustantivo", beispiel: "Fenchel schmeckt leicht nach Anis.", beispielUe: "El hinojo sabe un poco a anís." },

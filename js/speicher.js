@@ -21,9 +21,12 @@ var Speicher = {
     };
   },
 
-  /** So sieht der Fortschritt eines einzelnen Kurses aus. */
-  leererKurs() {
+  /** So sieht der Fortschritt eines einzelnen Kurses aus.
+      kursId (freiwillig): merkt sich den Datenstand des Kurses, siehe
+      datenStandAngleichen(). */
+  leererKurs(kursId) {
     return {
+      datenStand: this.aktuellerDatenStand(kursId),
       aktuellerTag: 1,
       aktiveTage: [],                  // ["2026-09-09", …]
       tagesUebungen: {},               // { "2026-09-09": 34 } → für die Heatmap
@@ -45,6 +48,7 @@ var Speicher = {
       }
       this.daten.einstellungen = Object.assign(this.leer().einstellungen, this.daten.einstellungen || {});
       if (!this.daten.kurse) this.daten.kurse = {};
+      this.datenStandAngleichen();
     } catch (e) {
       console.warn('Fortschritt konnte nicht gelesen werden, starte neu:', e);
       this.daten = this.leer();
@@ -76,6 +80,53 @@ var Speicher = {
     }
   },
 
+  /* ---------------- Kurse, die nach vorne wachsen ----------------
+
+     Manchmal kommt ein Kurs vorne dazu, z. B. ein A1-Block vor den
+     bisherigen Tagen. Dann stehen die alten Lektionen unter neuen
+     Tagesnummern: Aus dem alten Tag 20 wird Tag 35. Ein laufender
+     Lernstand muss mitwandern, sonst landete man mitten im A1-Block.
+
+     Dafür hat jeder Kurs in js/kurs-definitionen.js einen "datenStand" und
+     eine Liste "verschiebungen": { 2: 15 } heißt "beim Wechsel auf Stand 2
+     sind 15 Tage vorne dazugekommen". Jeder Lernstand merkt sich, für
+     welchen Stand er angelegt wurde. Ist er älter, wird er hier angepasst —
+     aber nur, wenn man den Kurs schon begonnen hatte. Wer noch nicht
+     angefangen hat, beginnt ganz normal bei Tag 1.
+
+     Die Vokabeln behalten dabei ihre IDs, also auch ihren Lernstand. */
+
+  /** Der aktuelle Datenstand eines Kurses (1, wenn er keinen angibt). */
+  aktuellerDatenStand(kursId) {
+    const kurs = kursId && typeof KURSE !== 'undefined' ? KURSE[kursId] : null;
+    return (kurs && kurs.datenStand) || 1;
+  },
+
+  /** Alle Lernstände auf den Datenstand ihres Kurses bringen.
+      Gibt true zurück, wenn etwas geändert wurde. */
+  datenStandAngleichen() {
+    if (typeof KURSE === 'undefined' || !this.daten || !this.daten.kurse) return false;
+    let geaendert = false;
+    for (const id of Object.keys(this.daten.kurse)) {
+      const kurs = KURSE[id];
+      const f = this.daten.kurse[id];
+      if (!kurs || !f) continue;                        // z. B. Kurs in der Ablage
+      const ziel = kurs.datenStand || 1;
+      let stand = f.datenStand || 1;                    // ohne Angabe: Stand 1
+      if (stand >= ziel) continue;
+      const begonnen = (f.aktuellerTag || 1) > 1 || Object.keys(f.karten || {}).length > 0;
+      while (stand < ziel) {
+        stand++;
+        const dazu = (kurs.verschiebungen || {})[stand] || 0;
+        if (begonnen) f.aktuellerTag = (f.aktuellerTag || 1) + dazu;
+      }
+      f.datenStand = ziel;
+      geaendert = true;
+    }
+    if (geaendert) this.sichern();
+    return geaendert;
+  },
+
   /** Nach jeder Änderung aufrufen. */
   sichern() {
     try {
@@ -95,7 +146,7 @@ var Speicher = {
   fortschritt(kursId) {
     const id = kursId || this.daten.aktiverKurs;
     if (!id) return this.leererKurs();                 // kein Kurs gewählt
-    if (!this.daten.kurse[id]) this.daten.kurse[id] = this.leererKurs();
+    if (!this.daten.kurse[id]) this.daten.kurse[id] = this.leererKurs(id);
     return this.daten.kurse[id];
   },
 
@@ -197,13 +248,15 @@ var Speicher = {
     } else {
       throw new Error('Das sieht nicht nach einer Sicherungsdatei dieser App aus.');
     }
+    // Eine ältere Sicherung kennt neue Tage vorne im Kurs noch nicht
+    this.datenStandAngleichen();
     this.sichern();
   },
 
   /** Nur den laufenden Kurs zurücksetzen. */
   kursZuruecksetzen(kursId) {
     const id = kursId || this.daten.aktiverKurs;
-    if (id) this.daten.kurse[id] = this.leererKurs();
+    if (id) this.daten.kurse[id] = this.leererKurs(id);
     this.sichern();
   },
 

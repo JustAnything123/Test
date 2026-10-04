@@ -1,12 +1,12 @@
-/* Prüfung · Deutsch im Beruf · Zwischenstopp nach Tag 45 — Fachwortschatz
+/* Prüfung · Deutsch im Beruf · Zwischenstopp nach Tag 60 — Fachwortschatz
 
    Hier wird geprüft, was den Profi vom Anfänger unterscheidet: nicht „das
-   Messer", sondern welches. Dazu die Wortbildungsregel aus Tag 31, mit der
+   Messer", sondern welches. Dazu die Wortbildungsregel aus Tag 46, mit der
    sich solche Begriffe selbst herleiten lassen. */
 
 PRUEFUNG('de-beruf', {
-  id: 'p-de-beruf-2', nachTag: 45, niveau: 'B2',
-  name: 'Examen 2 · Vocabulario técnico', vorbild: 'telc Deutsch B1·B2 Beruf',
+  id: 'p-de-beruf-2', nachTag: 60, niveau: 'B2',
+  name: 'Examen 3 · Vocabulario técnico', vorbild: 'telc Deutsch B1·B2 Beruf',
   bestehen: 60, dauer: 60,
   teile: [
     { id: 't1', art: 'lesen', name: 'Comprensión de lectura', aufgaben: [

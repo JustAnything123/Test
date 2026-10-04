@@ -1,10 +1,10 @@
-/* Ruta temática «Alemán en el trabajo» · Día 43–45 · Vocabulario técnico de hotel
+/* Ruta temática «Alemán en el trabajo» · Día 58–60 · Vocabulario técnico de hotel
    Los tipos de habitación y de cama con su nombre exacto, la ropa y el baño pieza por
    pieza, y los términos internos de limpieza — incluidos los cargos de la casa, que en
    hotelería alemana llevan casi todos nombre francés. */
 
 LEKTION('de-beruf', {
-  tag: 43, niveau: "B1", thema: "Tipos de habitación, camas y regímenes",
+  tag: 58, niveau: "B1", thema: "Tipos de habitación, camas y regímenes",
   vokabeln: [
     { id: "bv4301", de: "das Zweibettzimmer",     es: "la habitación con dos camas", wortart: "sustantivo", beispiel: "Das Zweibettzimmer hat zwei Einzelbetten.", beispielUe: "La habitación de dos camas tiene dos camas individuales." },
     { id: "bv4302", de: "das Familienzimmer",     es: "la habitación familiar",      wortart: "sustantivo", beispiel: "Das Familienzimmer ist für vier Personen.", beispielUe: "La habitación familiar es para cuatro personas." },
@@ -56,7 +56,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 44, niveau: "B1", thema: "Ropa de cama, toallas y baño",
+  tag: 59, niveau: "B1", thema: "Ropa de cama, toallas y baño",
   vokabeln: [
     { id: "bv4401", de: "das Spannbettuch",   es: "la sábana bajera",        wortart: "sustantivo", beispiel: "Das Spannbettuch ist fleckig.", beispielUe: "La sábana bajera tiene manchas." },
     { id: "bv4402", de: "der Bettbezug",      es: "la funda nórdica",        wortart: "sustantivo", beispiel: "Der Bettbezug muss gewechselt werden.", beispielUe: "Hay que cambiar la funda nórdica." },
@@ -111,7 +111,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 45, niveau: "B2", thema: "Limpieza, estado de habitación y cargos de la casa",
+  tag: 60, niveau: "B2", thema: "Limpieza, estado de habitación y cargos de la casa",
   vokabeln: [
     { id: "bv4501", de: "das Abreisezimmer",   es: "la habitación de salida",     wortart: "sustantivo", beispiel: "Abreisezimmer werden zuerst gereinigt.", beispielUe: "Las habitaciones de salida se limpian primero." },
     { id: "bv4502", de: "das Bleibezimmer",    es: "la habitación de cliente que sigue", wortart: "sustantivo", beispiel: "Bleibezimmer brauchen weniger Zeit.", beispielUe: "Las habitaciones ocupadas llevan menos tiempo." },
@@ -136,7 +136,7 @@ LEKTION('de-beruf', {
     erklaerung: `
       <p>Último día de la ruta técnica. Aquí no hay gramática nueva: hay una comprobación
       de que ya no necesitas que nadie te enseñe la palabra, porque puedes
-      <strong>construirla</strong>. Vuelve a la regla del día 31 y míralo con todo lo que
+      <strong>construirla</strong>. Vuelve a la regla del día 46 y míralo con todo lo que
       has aprendido desde entonces.</p>
       <table>
         <tr><th>Base</th><th>Familia completa</th></tr>

@@ -108,7 +108,8 @@ async function kursDurchspielen(page, kursId, erwartet) {
   // Spanisch (Spanien) liegt seit Oktober 2026 in der Ablage.
   await kursDurchspielen(page, 'es-419', { tage: 90,  ziel: 'es', ausgang: 'de', ui: 'de', zeichen: 9 });
   await kursDurchspielen(page, 'de',     { tage: 120, ziel: 'de', ausgang: 'es', ui: 'es', zeichen: 7 });
-  await kursDurchspielen(page, 'de-beruf', { tage: 45, ziel: 'de', ausgang: 'es', ui: 'es', zeichen: 7 });
+  // Seit Oktober 2026 mit 15 A1-Tagen vorne: 60 Tage, Tag 1 ist A1
+  await kursDurchspielen(page, 'de-beruf', { tage: 60, ziel: 'de', ausgang: 'es', ui: 'es', zeichen: 7 });
 
   console.log('\n=== Deutschkurs: letzter Tag ===');
   await page.evaluate(() => { Speicher.fortschritt().aktuellerTag = 121; Speicher.sichern(); App.zeigeSeite('start'); });

@@ -49,7 +49,7 @@ Kurse.definieren({
   gehoertZu: 'de',                              // Lernpfad des Deutschkurses
   name: 'Alemán en el trabajo',
   nameUi: 'Deutsch im Beruf (Hotel & Restaurant)',
-  untertitel: 'Cocina · Restaurante · Hotel · 45 días',
+  untertitel: 'Cocina · Restaurante · Hotel · 60 días',
   flagge: '🍽️',
   ziel: 'de',
   ausgang: 'es',
@@ -58,5 +58,10 @@ Kurse.definieren({
   sonderzeichen: ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'],
   farbe: '#a8651a',
   sprechen: true,                               // Nachsprech-Übung und Sprech-Teil der Prüfung
-  hinweis: 'Vocabulario y frases del turno diario en cocina, servicio y recepción. Recomendado a partir del día 30 del curso de alemán (nivel A2).'
+  hinweis: 'Vocabulario y frases del turno diario en cocina, servicio y recepción. Desde cero: los días 1–15 (A1) cubren lo básico del trabajo; después sigue de A2 a B2.',
+  // Oktober 2026: 15 A1-Tage vorne angefügt, die bisherigen Tage 1–45 sind
+  // jetzt 16–60. Wer schon angefangen hatte, wird beim Laden um 15 Tage
+  // weitergesetzt und bleibt so bei seiner Lektion (js/speicher.js).
+  datenStand: 2,
+  verschiebungen: { 2: 15 }
 });

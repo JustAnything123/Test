@@ -1,10 +1,10 @@
-/* Ruta temática «Alemán en el trabajo» · Día 38–42 · Vocabulario técnico de servicio
+/* Ruta temática «Alemán en el trabajo» · Día 53–57 · Vocabulario técnico de servicio
    El material del comedor con su nombre exacto: qué plato, qué cubierto, qué copa —
    y la secuencia completa de un menú. Es lo que distingue a un profesional de alguien
    que solo sabe decir «Teller» y «Glas». */
 
 LEKTION('de-beruf', {
-  tag: 38, niveau: "B1", thema: "Los platos y las fuentes",
+  tag: 53, niveau: "B1", thema: "Los platos y las fuentes",
   vokabeln: [
     { id: "bv3801", de: "der Platzteller",       es: "el plato de presentación", wortart: "sustantivo", beispiel: "Der Platzteller bleibt bis zur Vorspeise stehen.", beispielUe: "El plato de presentación se queda hasta la entrada." },
     { id: "bv3802", de: "der Speiseteller",      es: "el plato llano",           wortart: "sustantivo", beispiel: "Der Speiseteller ist für den Hauptgang.", beispielUe: "El plato llano es para el principal." },
@@ -57,7 +57,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 39, niveau: "B1", thema: "Los cubiertos en detalle",
+  tag: 54, niveau: "B1", thema: "Los cubiertos en detalle",
   vokabeln: [
     { id: "bv3901", de: "das Fleischmesser",    es: "el cuchillo de carne",    wortart: "sustantivo", beispiel: "Das Fleischmesser liegt rechts.", beispielUe: "El cuchillo de carne va a la derecha." },
     { id: "bv3902", de: "das Steakmesser",      es: "el cuchillo de bife",     wortart: "sustantivo", beispiel: "Zum Steak legen wir ein Steakmesser.", beispielUe: "Para el bife ponemos un cuchillo de bife." },
@@ -113,7 +113,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 40, niveau: "B1", thema: "Las copas y los vasos",
+  tag: 55, niveau: "B1", thema: "Las copas y los vasos",
   vokabeln: [
     { id: "bv4001", de: "das Wasserglas",      es: "el vaso de agua",         wortart: "sustantivo", beispiel: "Das Wasserglas steht rechts oben.", beispielUe: "El vaso de agua va arriba a la derecha." },
     { id: "bv4002", de: "das Weißweinglas",    es: "la copa de vino blanco",  wortart: "sustantivo", beispiel: "Das Weißweinglas ist kleiner.", beispielUe: "La copa de vino blanco es más pequeña." },
@@ -167,7 +167,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 41, niveau: "B2", thema: "Vino, cerveza y café en detalle",
+  tag: 56, niveau: "B2", thema: "Vino, cerveza y café en detalle",
   vokabeln: [
     { id: "bv4101", de: "der Rotwein",       es: "el vino tinto",         wortart: "sustantivo", beispiel: "Der Rotwein wird nicht gekühlt.", beispielUe: "El tinto no se enfría." },
     { id: "bv4102", de: "der Weißwein",      es: "el vino blanco",        wortart: "sustantivo", beispiel: "Der Weißwein steht im Kühlschrank.", beispielUe: "El blanco está en el refrigerador." },
@@ -221,7 +221,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 42, niveau: "B2", thema: "La secuencia completa de un menú",
+  tag: 57, niveau: "B2", thema: "La secuencia completa de un menú",
   vokabeln: [
     { id: "bv4201", de: "der Aperitif",           es: "el aperitivo",           wortart: "sustantivo", beispiel: "Darf ich Ihnen einen Aperitif bringen?", beispielUe: "¿Le traigo un aperitivo?" },
     { id: "bv4202", de: "der Gruß aus der Küche", es: "el saludo de la cocina", wortart: "expresión", beispiel: "Das ist ein Gruß aus der Küche.", beispielUe: "Esto es un saludo de la cocina." },

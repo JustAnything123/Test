@@ -1,8 +1,8 @@
-/* Ruta temática «Alemán en el trabajo» · Día 9–16 · Restaurante y servicio
+/* Ruta temática «Alemán en el trabajo» · Día 24–31 · Restaurante y servicio
    Del saludo en la puerta hasta la cuenta y la reserva por teléfono. */
 
 LEKTION('de-beruf', {
-  tag: 9, niveau: "A2", thema: "El restaurante y el cubierto",
+  tag: 24, niveau: "A2", thema: "El restaurante y el cubierto",
   vokabeln: [
     { id: "bv0901", de: "der Gast",       es: "el cliente",     wortart: "sustantivo", beispiel: "Der Gast wartet an der Tür.", beispielUe: "El cliente espera en la puerta." },
     { id: "bv0902", de: "der Tisch",      es: "la mesa",        wortart: "sustantivo", beispiel: "Tisch sieben ist frei.", beispielUe: "La mesa siete está libre." },
@@ -56,7 +56,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 10, niveau: "A2", thema: "La carta y los platos",
+  tag: 25, niveau: "A2", thema: "La carta y los platos",
   vokabeln: [
     { id: "bv1001", de: "die Speisekarte",     es: "la carta",                wortart: "sustantivo", beispiel: "Hier ist die Speisekarte.", beispielUe: "Aquí está la carta." },
     { id: "bv1002", de: "die Vorspeise",       es: "la entrada",              wortart: "sustantivo", beispiel: "Als Vorspeise gibt es Suppe.", beispielUe: "De entrada hay sopa." },
@@ -110,7 +110,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 11, niveau: "A2", thema: "Bebidas",
+  tag: 26, niveau: "A2", thema: "Bebidas",
   vokabeln: [
     { id: "bv1101", de: "das Getränk",        es: "la bebida",        wortart: "sustantivo", beispiel: "Die Getränke kommen zuerst.", beispielUe: "Las bebidas vienen primero." },
     { id: "bv1102", de: "der Wein",           es: "el vino",          wortart: "sustantivo", beispiel: "Der Wein ist aus Spanien.", beispielUe: "El vino es de España." },
@@ -165,7 +165,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 12, niveau: "B1", thema: "Tomar la comanda",
+  tag: 27, niveau: "B1", thema: "Tomar la comanda",
   vokabeln: [
     { id: "bv1201", de: "bestellen",          es: "pedir",            wortart: "verbo", beispiel: "Möchten Sie schon bestellen?", beispielUe: "¿Desean pedir ya?" },
     { id: "bv1202", de: "wählen",             es: "elegir",           wortart: "verbo", beispiel: "Haben Sie schon gewählt?", beispielUe: "¿Ya eligieron?" },
@@ -222,7 +222,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 13, niveau: "B1", thema: "Servir y atender la mesa",
+  tag: 28, niveau: "B1", thema: "Servir y atender la mesa",
   vokabeln: [
     { id: "bv1301", de: "servieren",   es: "servir",           wortart: "verbo", beispiel: "Wir servieren ab 18 Uhr.", beispielUe: "Servimos a partir de las 18." },
     { id: "bv1302", de: "der Teller",  es: "el plato",         wortart: "sustantivo", beispiel: "Der Teller ist sehr heiß.", beispielUe: "El plato está muy caliente." },
@@ -276,7 +276,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 14, niveau: "B1", thema: "Quejas y reclamaciones",
+  tag: 29, niveau: "B1", thema: "Quejas y reclamaciones",
   vokabeln: [
     { id: "bv1401", de: "die Beschwerde",    es: "la queja",          wortart: "sustantivo", beispiel: "Es gab eine Beschwerde.", beispielUe: "Hubo una queja." },
     { id: "bv1402", de: "sich beschweren",   es: "quejarse",          wortart: "verbo reflexivo", beispiel: "Der Gast beschwert sich.", beispielUe: "El cliente se queja." },
@@ -332,7 +332,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 15, niveau: "B1", thema: "Cobrar y cerrar la mesa",
+  tag: 30, niveau: "B1", thema: "Cobrar y cerrar la mesa",
   vokabeln: [
     { id: "bv1501", de: "die Rechnung",    es: "la cuenta",              wortart: "sustantivo", beispiel: "Die Rechnung, bitte.", beispielUe: "La cuenta, por favor." },
     { id: "bv1502", de: "bezahlen",        es: "pagar",                  wortart: "verbo", beispiel: "Wir möchten bezahlen.", beispielUe: "Queremos pagar." },
@@ -387,7 +387,7 @@ LEKTION('de-beruf', {
 });
 
 LEKTION('de-beruf', {
-  tag: 16, niveau: "B1", thema: "Reservas por teléfono",
+  tag: 31, niveau: "B1", thema: "Reservas por teléfono",
   vokabeln: [
     { id: "bv1601", de: "die Reservierung",   es: "la reserva",          wortart: "sustantivo", beispiel: "Ihre Reservierung ist notiert.", beispielUe: "Su reserva está anotada." },
     { id: "bv1602", de: "der Anruf",          es: "la llamada",          wortart: "sustantivo", beispiel: "Es war ein Anruf für Sie.", beispielUe: "Hubo una llamada para usted." },

@@ -784,6 +784,7 @@ Server danach wieder. Dauer rund zwei bis drei Minuten.
 | `10-update.js` | ja | Meldung „Neue Fassung verfügbar" über einen echten Update-Vorgang des Service Workers |
 | `11-sprechen.js` | ja | Nachsprech-Übung mit künstlichem Mikrofon: Aufnahme, Wiedergabe, Selbstcheck, Freigabe des Mikrofons, Fehlerfälle |
 | `12-pruefung-sprechen.js` | ja | Sprechteil der Prüfung: Aufnahme, Ablage, Teilen mit Audiodatei, Prüfer, Rücklink, Aufräumen, Gerät ohne Mikrofon |
+| `13-datenstand.js` | ja | Lernstand wandert mit, wenn vorne A1-Tage dazukommen; alte Sicherungen und Prüfungsergebnisse bleiben gültig |
 
 `02` bis `05` enthalten zusammen 173 einzelne Prüfungen, dazu kommen die
 inhaltlichen Kontrollen aus `01`, `06` und `07`.
