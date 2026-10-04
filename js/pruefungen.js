@@ -89,15 +89,24 @@ var Pruefungen = {
     return raus;
   },
 
+  /** Aufgabenarten, die ein Mensch bewerten muss. Für freies Schreiben und
+      freies Sprechen gibt es keine abzählbare Menge richtiger Antworten —
+      die App stellt sie, speichert sie, gibt ihnen aber keine Punkte. */
+  OFFENE_ARTEN: ['schreiben', 'sprechen'],
+
+  istOffeneArt(art) {
+    return this.OFFENE_ARTEN.includes(art);
+  },
+
   /** Zählt nur die Fragen, die automatisch bewertet werden können. */
   maxPunkte(def) {
-    return this.fragen(def).filter(f => f.aufgabe.art !== 'schreiben').length;
+    return this.fragen(def).filter(f => !this.istOffeneArt(f.aufgabe.art)).length;
   },
 
   /** Wie viele Punkte hat ein einzelner Teil? */
   maxPunkteTeil(teil) {
     let n = 0;
-    for (const a of teil.aufgaben) if (a.art !== 'schreiben') n += a.fragen.length;
+    for (const a of teil.aufgaben) if (!this.istOffeneArt(a.art)) n += a.fragen.length;
     return n;
   },
 
@@ -138,8 +147,9 @@ var Pruefungen = {
 
       for (const aufgabe of teil.aufgaben) {
         for (const frage of aufgabe.fragen) {
-          if (aufgabe.art === 'schreiben') {
+          if (this.istOffeneArt(aufgabe.art)) {
             offen.push({
+              art: aufgabe.art,          // 'schreiben' oder 'sprechen'
               teilId: teil.id, aufgabeId: aufgabe.id, frageId: frage.id,
               auftrag: frage.auftrag, kriterien: frage.kriterien || [],
               muster: frage.muster || '',

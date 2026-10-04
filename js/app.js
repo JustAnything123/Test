@@ -568,7 +568,7 @@ var App = {
     // Unbeantwortete Fragen sind in einer Prüfung erlaubt, aber man sollte
     // es wissen, bevor abgegeben wird.
     const offen = Pruefungen.fragen(p.def)
-      .filter(f => f.aufgabe.art !== 'schreiben')
+      .filter(f => !Pruefungen.istOffeneArt(f.aufgabe.art))
       .filter(f => p.antworten[f.frage.id] === undefined).length;
     if (offen && !confirm(t('pruef.nochOffen', { n: offen }))) return;
 

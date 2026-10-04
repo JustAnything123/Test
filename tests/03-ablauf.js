@@ -1,5 +1,6 @@
 const U = require('./umgebung');
 const URL = U.URL;
+const KURS = 'es-419';   // Kurs mit deutscher Oberfläche
 
 let fehler = 0;
 const pruefe = (name, ist, soll) => {
@@ -94,15 +95,20 @@ async function durchspielen(page, opt = {}) {
 
   console.log('\n=== 0. Kursauswahl ===');
   pruefe('Kursauswahl beim ersten Start', await page.isVisible('#seite-kurse'), true);
-  await page.click('.kurs-karte[data-kurs="es-es"]'); await page.waitForTimeout(300);
-  pruefe('Spanien-Kurs aktiv', await page.evaluate(() => Kurse.aktiv().id), 'es-es');
+  // Durchgespielt wird der Kurs mit deutscher Oberfläche. Bis Oktober 2026 war
+  // das Spanisch (Spanien); der liegt jetzt in der Ablage.
+  await page.click(`.kurs-karte[data-kurs="${KURS}"]`); await page.waitForTimeout(300);
+  pruefe('Lateinamerika-Kurs aktiv', await page.evaluate(() => Kurse.aktiv().id), KURS);
 
   console.log('\n=== 1. Daten vollständig geladen ===');
-  pruefe('60 Lektionen', await page.evaluate(() => Daten.anzahlTage()), 60);
-  pruefe('600 Vokabeln', await page.evaluate(() => Daten.alleVokabeln().length), 600);
-  pruefe('300 Sätze', await page.evaluate(() => Daten.alleSaetze().length), 300);
-  pruefe('Startanzeige "Tag 1 von 60"',
-    (await page.textContent('.tageskarte-tag')).replace(/\s+/g, ' ').trim(), 'Tag 1 von 60');
+  // Die Tageszahl ändert sich, wenn Inhalte dazukommen. Geprüft wird deshalb,
+  // dass die Mengen zur Tageszahl passen: 10 Vokabeln und 5 Sätze je Tag.
+  const TAGE = await page.evaluate(() => Daten.anzahlTage());
+  pruefe('mindestens 90 Lektionen', TAGE >= 90, true);
+  pruefe('10 Vokabeln je Tag', await page.evaluate(() => Daten.alleVokabeln().length), TAGE * 10);
+  pruefe('5 Sätze je Tag', await page.evaluate(() => Daten.alleSaetze().length), TAGE * 5);
+  pruefe(`Startanzeige "Tag 1 von ${TAGE}"`,
+    (await page.textContent('.tageskarte-tag')).replace(/\s+/g, ' ').trim(), `Tag 1 von ${TAGE}`);
   await page.screenshot({ path: U.bild(`01-start.png`) });
 
   console.log('\n=== 2. Tag 1 komplett, jede 7. Antwort falsch ===');
@@ -260,7 +266,7 @@ async function durchspielen(page, opt = {}) {
   await page.evaluate(() => { Speicher.kursZuruecksetzen(); App.zeigeSeite('start'); });
   pruefe('nach Zurücksetzen: Tag 1', await page.evaluate(() => Speicher.fortschritt().aktuellerTag), 1);
   pruefe('nach Zurücksetzen: keine Karten', await page.evaluate(() => Object.keys(Speicher.fortschritt().karten).length), 0);
-  pruefe('Kurs bleibt gewählt', await page.evaluate(() => Speicher.daten.aktiverKurs), 'es-es');
+  pruefe('Kurs bleibt gewählt', await page.evaluate(() => Speicher.daten.aktiverKurs), KURS);
   await page.evaluate(t => { Speicher.importieren(t); App.zeigeSeite('start'); }, sicherung);
   pruefe('nach Import: Tag wieder 2', await page.evaluate(() => Speicher.fortschritt().aktuellerTag), 2);
   pruefe('nach Import: Karten wieder da', await page.evaluate(() => Object.keys(Speicher.fortschritt().karten).length), 20);
@@ -302,17 +308,17 @@ async function durchspielen(page, opt = {}) {
   await ctx.setOffline(true);
   const offline = await page.goto(URL, { waitUntil: 'domcontentloaded' }).then(r => r && r.status()).catch(e => 'FEHLER: ' + e.message);
   await page.waitForTimeout(500);
-  const offlineOk = await page.evaluate(() => typeof Daten !== 'undefined' && Daten.anzahlTage() === 60).catch(() => false);
+  const offlineOk = await page.evaluate(t => typeof Daten !== 'undefined' && Daten.anzahlTage() === t, TAGE).catch(() => false);
   pruefe('App lädt ohne Netz', offlineOk, true);
   await ctx.setOffline(false);
 
-  console.log('\n=== 14. Letzter Tag: was passiert nach Tag 60? ===');
+  console.log(`\n=== 14. Letzter Tag: was passiert nach Tag ${TAGE}? ===`);
   await page.goto(URL, { waitUntil: 'networkidle' }); await page.waitForTimeout(400);
-  await page.evaluate(() => { Speicher.fortschritt().aktuellerTag = 61; Speicher.sichern(); App.zeigeSeite('start'); });
+  await page.evaluate(t => { Speicher.fortschritt().aktuellerTag = t + 1; Speicher.sichern(); App.zeigeSeite('start'); }, TAGE);
   await page.waitForTimeout(200);
   pruefe('Abschlussmeldung erscheint', (await page.textContent('#tag-thema')).includes('geschafft'), true);
   pruefe('Knopf heißt jetzt "Wiederholen"', await page.textContent('#btn-lernen'), 'Wiederholen');
-  await page.screenshot({ path: U.bild(`11-nach-tag-60.png`) });
+  await page.screenshot({ path: U.bild(`11-nach-letztem-tag.png`) });
 
   console.log('\n=== Konsole ===');
   const echteFehler = konsole.filter(f => !/favicon|manifest|Failed to load resource: the server responded with a status of 404/i.test(f));

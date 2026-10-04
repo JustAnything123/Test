@@ -34,10 +34,20 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   a.on('dialog', d => d.accept());
 
   await a.goto(URL, { waitUntil: 'networkidle' });
-  await a.evaluate(() => {
-    localStorage.clear(); Speicher.laden(); Kurse.wechseln('es-es');
-    const f = Speicher.fortschritt(); f.aktuellerTag = 34; Speicher.sichern();
+  // Geprüft wird an der ersten Prüfung des Lateinamerika-Kurses. Welche das
+  // ist, welche Frage die Schreibaufgabe ist und was der Prüfer sehen muss,
+  // steht in der Definition — der Test liest es dort ab.
+  const P = await a.evaluate(() => {
+    const def = Pruefungen.fuerKurs('es-419')[0];
+    const s = Pruefungen.fragen(def).find(f => f.aufgabe.art === 'schreiben').frage;
+    return { id: def.id, nachTag: def.nachTag, sfid: s.id,
+             auftragZiel: s.auftragZiel, kriterienZiel: s.kriterienZiel };
   });
+  console.log(`    Prüfung ${P.id}, Schreibaufgabe ${P.sfid}`);
+  await a.evaluate(tag => {
+    localStorage.clear(); Speicher.laden(); Kurse.wechseln('es-419');
+    const f = Speicher.fortschritt(); f.aktuellerTag = tag; Speicher.sichern();
+  }, P.nachTag + 1);
   await a.reload({ waitUntil: 'networkidle' }); await a.waitForTimeout(250);
   await a.evaluate(() => { Sprache.kannHoeren = () => true; });
 
@@ -45,19 +55,19 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   console.log('\n=== Prüfung mit Schreibaufgabe ablegen ===');
   await a.click('#btn-pruefung');     await a.waitForTimeout(150);
   await a.click('#btn-pruefung-los'); await a.waitForTimeout(250);
-  await a.evaluate(text => {
+  await a.evaluate(({ text, sfid }) => {
     const p = App.pruefung;
     for (const f of Pruefungen.fragen(p.def)) {
-      if (f.aufgabe.art !== 'schreiben') p.antworten[f.frage.id] = f.frage.loesung;
+      if (!Pruefungen.istOffeneArt(f.aufgabe.art)) p.antworten[f.frage.id] = f.frage.loesung;
     }
-    p.antworten['q4101'] = text;
+    p.antworten[sfid] = text;
     App.pruefungAbgeben();
-  }, ANTWORT);
+  }, { text: ANTWORT, sfid: P.sfid });
   await a.waitForTimeout(300);
 
   const versuch = await a.evaluate(() => App.letztesErgebnis);
   pruefe('Versuch hat eine Kennung', /^[A-Z2-9]{6}$/.test(versuch.id || ''), true);
-  pruefe('Schreibaufgabe ist offen', versuch.offen.length, 1);
+  pruefe('Schreibaufgabe ist offen', versuch.offen.some(o => o.frageId === P.sfid), true);
   pruefe('noch keine Bewertung', await a.evaluate(() => Pruefungen.wartetAufBewertung(App.letztesErgebnis)), true);
 
   /* Streifen auf dem Startbildschirm */
@@ -121,9 +131,9 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
     kriterien: Array.from(document.querySelectorAll('.pruefer-kriterien span')).map(x => x.textContent.trim()),
     kennung:  document.getElementById('pruefer-kennung').textContent.trim()
   }));
-  pruefe('Aufgabenstellung auf Spanisch', inhalt.auftrag.startsWith('Tu amigo Miguel'), true);
-  pruefe('Kriterien auf Spanisch', inhalt.kriterien[0], 'Hay saludo y despedida.');
-  pruefe('fünf Kriterien zum Abhaken', inhalt.kriterien.length, 5);
+  pruefe('Aufgabenstellung auf Spanisch', inhalt.auftrag, P.auftragZiel);
+  pruefe('Kriterien auf Spanisch', inhalt.kriterien[0], P.kriterienZiel[0]);
+  pruefe('alle Kriterien zum Abhaken', inhalt.kriterien.length, P.kriterienZiel.length);
   pruefe('Kennung wird angezeigt', inhalt.kennung.includes(versuch.id), true);
 
   /* Der Text muss Zeichen für Zeichen angekommen sein */
@@ -162,7 +172,7 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
          await p.evaluate(() => {
            const d = JSON.parse(localStorage.getItem('vamos_v2') || localStorage.getItem('spanisch_v1') || 'null');
            if (!d) return 'leer';
-           const k = d.kurse && d.kurse['es-es'];
+           const k = d.kurse && d.kurse['es-419'];
            return (!k || !k.pruefungen || !Object.keys(k.pruefungen).length) ? 'leer' : 'beschrieben';
          }), 'leer');
 
@@ -175,10 +185,10 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   await a.waitForTimeout(400);
 
   pruefe('Ergebnisbildschirm erscheint', await a.isVisible('#seite-pruefung-ergebnis'), true);
-  const b2 = await a.evaluate(id => {
+  const b2 = await a.evaluate(({ id, sfid }) => {
     const f = Pruefungen.versuchNachId(id);
-    return f && f.versuch.bewertungen && f.versuch.bewertungen['q4101'];
-  }, versuch.id);
+    return f && f.versuch.bewertungen && f.versuch.bewertungen[sfid];
+  }, { id: versuch.id, sfid: P.sfid });
   pruefe('Bewertung beim richtigen Versuch abgelegt', !!b2, true);
   pruefe('Urteil übernommen', b2 && b2.urteil, 'teilweise');
   pruefe('Name des Prüfers übernommen', b2 && b2.von, 'María');
@@ -212,15 +222,15 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   pruefe('und nicht beim Prüfer', await a.isVisible('#seite-pruefer'), false);
 
   // Bewertung mit unbekannter Kennung: darf nichts kaputtmachen
-  const fremd = await a.evaluate(() => Teilen.packen({
-    v: 1, art: 'bewertung', id: 'XXXXXX', kurs: 'es-es', pruefung: 'p-es-es-a2',
-    von: 'Niemand', datum: '2026-09-22', b: [{ fid: 'q4101', urteil: 'richtig', hinweis: '' }]
-  }));
+  const fremd = await a.evaluate(p => Teilen.packen({
+    v: 1, art: 'bewertung', id: 'XXXXXX', kurs: 'es-419', pruefung: p.id,
+    von: 'Niemand', datum: '2026-09-22', b: [{ fid: p.sfid, urteil: 'richtig', hinweis: '' }]
+  }), P);
   await a.goto(grund + '#bewertung=' + fremd, { waitUntil: 'networkidle' });
   await a.waitForTimeout(300);
   pruefe('fremde Kennung landet auf dem Startbildschirm', await a.isVisible('#seite-start'), true);
   pruefe('bestehende Bewertung unverändert',
-         await a.evaluate(id => Pruefungen.versuchNachId(id).versuch.bewertungen['q4101'].urteil, versuch.id),
+         await a.evaluate(({ id, sfid }) => Pruefungen.versuchNachId(id).versuch.bewertungen[sfid].urteil, { id: versuch.id, sfid: P.sfid }),
          'teilweise');
 
   /* ---------- Selbst eintragen ---------- */
@@ -245,7 +255,7 @@ const ANTWORT = 'Querido Miguel:\n\n¡Muchas gracias por tu invitación! Voy a i
   await a.evaluate(() => App.prueferAbschicken());
   await a.waitForTimeout(300);
   pruefe('von Hand eingetragene Bewertung ist gespeichert',
-         await a.evaluate(id => Pruefungen.versuchNachId(id).versuch.bewertungen['q4101'].urteil, versuch.id),
+         await a.evaluate(({ id, sfid }) => Pruefungen.versuchNachId(id).versuch.bewertungen[sfid].urteil, { id: versuch.id, sfid: P.sfid }),
          'richtig');
 
   /* ---------- Konsole ---------- */

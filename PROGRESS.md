@@ -924,3 +924,4 @@ Wer den Ordner `tests/` löscht, ändert am Lernen nichts.
 | 22.09.2026 | Entwurfsfehler behoben: Prüfungen waren vor dem Stichtag unsichtbar statt gesperrt sichtbar; dazu Inhaltsstand in den Einstellungen |
 | 22.09.2026 | Meldung „Neue Fassung verfügbar" gebaut, mit echtem Update-Test |
 | 22.09.2026 | Fehler im Test-Starter: Muster `0*.js` hätte Test 10 und alle weiteren stillschweigend übersprungen |
+| 04.10.2026 | Spanisch (Spanien) in die Ablage verschoben und ausgeblendet (`ablage/`); Tests auf den Lateinamerika-Kurs umgestellt |

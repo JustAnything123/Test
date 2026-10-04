@@ -104,7 +104,7 @@ async function kursDurchspielen(page, kursId, erwartet) {
   page.on('pageerror', e => konsole.push('PAGEERROR: ' + e.message));
   await page.goto(URL, { waitUntil: 'networkidle' }); await page.waitForTimeout(400);
 
-  await kursDurchspielen(page, 'es-es',  { tage: 60,  ziel: 'es', ausgang: 'de', ui: 'de', zeichen: 9 });
+  // Spanisch (Spanien) liegt seit Oktober 2026 in der Ablage.
   await kursDurchspielen(page, 'es-419', { tage: 90,  ziel: 'es', ausgang: 'de', ui: 'de', zeichen: 9 });
   await kursDurchspielen(page, 'de',     { tage: 120, ziel: 'de', ausgang: 'es', ui: 'es', zeichen: 7 });
   await kursDurchspielen(page, 'de-beruf', { tage: 45, ziel: 'de', ausgang: 'es', ui: 'es', zeichen: 7 });

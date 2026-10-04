@@ -1,7 +1,7 @@
 {
   "name": "¡Vamos! — Spanisch & Deutsch lernen",
   "short_name": "¡Vamos!",
-  "description": "Vier Kurse mit täglichen Lektionen aus Vokabeln, Sätzen und Grammatik: Spanisch (Spanien), Spanisch (Lateinamerika), Deutsch für Spanischsprachige und Deutsch im Beruf für Hotel und Restaurant. · Cuatro cursos con lecciones diarias de vocabulario, frases y gramática.",
+  "description": "Drei Kurse mit täglichen Lektionen aus Vokabeln, Sätzen, Grammatik und Sprechübungen: Spanisch (Lateinamerika), Deutsch für Spanischsprachige und Deutsch im Beruf für Hotel und Restaurant. · Tres cursos con lecciones diarias de vocabulario, frases, gramática y práctica oral.",
   "lang": "de",
   "start_url": "./index.html",
   "scope": "./",
@@ -10,8 +10,23 @@
   "background_color": "#f6f4f0",
   "theme_color": "#c8102e",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }

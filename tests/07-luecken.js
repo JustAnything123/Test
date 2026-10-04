@@ -1,9 +1,8 @@
-/* Rendert die vier korrigierten Uebungen wirklich im Browser und prueft,
+/* Rendert die korrigierten Uebungen wirklich im Browser und prueft,
    dass der ganze Satz sichtbar ist und die Loesung akzeptiert wird. */
 const U = require('./umgebung');
 const faelle = [
   { kurs: 'de',     id: 'g0901' },
-  { kurs: 'es-es',  id: 'g2605' },
   { kurs: 'es-419', id: 'g2605' },
   { kurs: 'es-419', id: 'g6603' }
 ];
@@ -37,7 +36,7 @@ const faelle = [
     console.log(`   Tipp-Knoepfe: ${JSON.stringify(r.tipps)}`);
     if (!zeigtEnde || !r.korrekt) fehler.push(f.kurs + '/' + f.id);
   }
-  console.log(fehler.length ? '\nPROBLEME: ' + fehler.join(', ') : '\nAlle vier Uebungen rendern vollstaendig und sind loesbar.');
+  console.log(fehler.length ? '\nPROBLEME: ' + fehler.join(', ') : '\nAlle Uebungen rendern vollstaendig und sind loesbar.');
   await b.close();
   process.exit(fehler.length ? 1 : 0);
 })();

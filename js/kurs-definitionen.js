@@ -1,23 +1,7 @@
-/* Die drei Kurse dieser App.
+/* Die Kurse dieser App.
+   (Spanisch (Spanien) liegt seit Oktober 2026 in ablage/ und ist ausgeblendet.)
    Muss VOR den Datendateien geladen werden, damit LEKTION(...) die Kurse
    schon kennt. */
-
-/* ---- 1. Spanisch, wie es in Spanien gesprochen wird ---- */
-Kurse.definieren({
-  id: 'es-es',
-  reihenfolge: 1,
-  name: 'Español (España)',
-  nameUi: 'Spanisch (Spanien)',
-  untertitel: 'A2 → B1 · 60 Tage',
-  flagge: '🇪🇸',
-  ziel: 'es',                                   // Zielsprache
-  ausgang: 'de',                                // Sprache, aus der übersetzt wird
-  ui: 'de',                                     // Oberflächensprache
-  stimmen: ['es-ES', 'es'],                     // Suchreihenfolge für die Sprachausgabe
-  sonderzeichen: ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'],
-  farbe: '#c8102e',
-  hinweis: 'Mit vosotros und dem Wortschatz Spaniens.'
-});
 
 /* ---- 2. Spanisch, wie es in Lateinamerika gesprochen wird ---- */
 Kurse.definieren({

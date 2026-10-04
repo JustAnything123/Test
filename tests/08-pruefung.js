@@ -10,6 +10,13 @@
    der Hörtext wird nicht angezeigt. */
 const U = require('./umgebung');
 const URL = U.URL;
+
+/* Geprüft wird an der ERSTEN Prüfung des Lateinamerika-Kurses. Name,
+   Stichtag und Folgeprüfung liest der Test aus den Definitionen — fest
+   eingetragene Werte wären beim nächsten neuen Kursabschnitt falsch. */
+const KURS = 'es-419';
+let ERSTE = null;    // { id, name, nachTag }
+let ZWEITE = null;   // { id, name, nachTag }
 const fehler = [];
 
 const pruefe = (name, ist, soll) => {
@@ -30,9 +37,9 @@ async function vorbereiten(page, { leeren = false, stimme = true } = {}) {
   await page.evaluate(l => {
     if (l) localStorage.clear();
     Speicher.laden();
-    Kurse.wechseln('es-es');
+    Kurse.wechseln('es-419');
     const f = Speicher.fortschritt();
-    f.aktuellerTag = 34;             // Prüfung steht nach Tag 33 an
+    f.aktuellerTag = Pruefungen.fuerKurs('es-419')[0].nachTag + 1;   // Stichtag erreicht
     Speicher.sichern();
   }, leeren);
   await page.reload({ waitUntil: 'networkidle' });
@@ -52,7 +59,7 @@ async function durchspielen(page, wahl) {
       const a = p.aufgaben[p.index].aufgabe;
       if (a.art === 'schreiben') {
         const feld = document.getElementById('pruef-schreibfeld');
-        feld.value = 'Querido Miguel: Muchas gracias por tu invitacion.';
+        feld.value = 'Querido Mateo: Muchas gracias por tu invitacion.';
         feld.dispatchEvent(new Event('input'));
         return;
       }
@@ -87,8 +94,11 @@ async function durchspielen(page, wahl) {
 
   /* ---------- 1. Freischaltung ---------- */
   console.log('\n=== Freischaltung ===');
+  [ERSTE, ZWEITE] = await page.evaluate(k => Pruefungen.fuerKurs(k).slice(0, 2)
+    .map(p => ({ id: p.id, name: p.name, nachTag: p.nachTag })), KURS);
+  console.log(`    erste Prüfung: ${ERSTE.name} (${ERSTE.id}), ab Tag ${ERSTE.nachTag + 1}`);
   await page.evaluate(() => {
-    localStorage.clear(); Speicher.laden(); Kurse.wechseln('es-es');
+    localStorage.clear(); Speicher.laden(); Kurse.wechseln('es-419');
     const f = Speicher.fortschritt(); f.aktuellerTag = 10; Speicher.sichern();
   });
   await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(250);
@@ -96,13 +106,13 @@ async function durchspielen(page, wahl) {
   // wüsste niemand, dass es überhaupt Prüfungen gibt.
   pruefe('vor dem Stichtag ist die Karte da', await page.isVisible('#pruefkarte'), true);
   pruefe('aber gesperrt', await page.evaluate(() => document.getElementById('btn-pruefung').disabled), true);
-  pruefe('mit Hinweis auf den Tag', (await page.textContent('#pruefkarte-stand')).trim(), 'ab Tag 34');
+  pruefe('mit Hinweis auf den Tag', (await page.textContent('#pruefkarte-stand')).trim(), `ab Tag ${ERSTE.nachTag + 1}`);
   pruefe('und der Zahl der fehlenden Tage',
-         (await page.textContent('#btn-pruefung')).includes('24'), true);
+         (await page.textContent('#btn-pruefung')).includes(String(ERSTE.nachTag + 1 - 10)), true);
 
   await vorbereiten(page, { leeren: true });
-  pruefe('ab Tag 34 ist die Prüfung da', await page.isVisible('#pruefkarte'), true);
-  pruefe('Name steht auf der Karte', (await page.textContent('#pruefkarte-name')).trim(), 'Prüfung A2');
+  pruefe('am Stichtag ist die Prüfung da', await page.isVisible('#pruefkarte'), true);
+  pruefe('Name steht auf der Karte', (await page.textContent('#pruefkarte-name')).trim(), ERSTE.name);
 
   /* ---------- 2. Übersicht vor dem Start ---------- */
   console.log('\n=== Übersicht vor dem Start ===');
@@ -162,7 +172,7 @@ async function durchspielen(page, wahl) {
   pruefe('Hörverstehen fehlt in der Liste', ohneStimme.includes('Hörverstehen'), false);
   pruefe('die anderen Teile bleiben', ohneStimme, ['Leseverstehen', 'Sprachbausteine', 'Schreiben']);
   pruefe('Punkte sinken auf 25',
-         await page.evaluate(() => Pruefungen.maxPunkte(Pruefungen.ohneHoeren(Pruefungen.nachId('p-es-es-a2')))), 25);
+         await page.evaluate(id => Pruefungen.maxPunkte(Pruefungen.ohneHoeren(Pruefungen.nachId(id))), ERSTE.id), 25);
 
   await page.goto(URL, { waitUntil: 'networkidle' }); await page.waitForTimeout(250);
 
@@ -187,41 +197,41 @@ async function durchspielen(page, wahl) {
   pruefe('100 Prozent', e.prozent, 100);
   pruefe('bestanden', e.bestanden, true);
   pruefe('Schreibaufgabe bleibt offen', e.offen.length, 1);
-  pruefe('Schreibtext wurde mitgenommen', e.offen[0].antwort.startsWith('Querido Miguel'), true);
+  pruefe('Schreibtext wurde mitgenommen', e.offen[0].antwort.startsWith('Querido Mateo'), true);
   pruefe('Schreiben zählt nicht in die Punkte', e.teile.find(x => x.id === 't4').max, 0);
   pruefe('Urteil im Kopf', (await page.textContent('#perg-urteil')).trim(), 'Bestanden');
 
   /* ---------- 6. Die Bestehensgrenze ---------- */
   console.log('\n=== Bestehensgrenze ===');
-  const grenze = await page.evaluate(() => {
-    const def = Pruefungen.nachId('p-es-es-a2');
-    const fragen = Pruefungen.fragen(def).filter(f => f.aufgabe.art !== 'schreiben');
+  const grenze = await page.evaluate(id => {
+    const def = Pruefungen.nachId(id);
+    const fragen = Pruefungen.fragen(def).filter(f => !Pruefungen.istOffeneArt(f.aufgabe.art));
     const bauen = n => {
       const a = {};
       fragen.forEach((f, i) => { a[f.frage.id] = i < n ? f.frage.loesung : 'ZZZ'; });
       return Pruefungen.auswerten(def, a);
     };
     return { knapp: bauen(20), genau: bauen(21) };   // 20/35 = 57 %, 21/35 = 60 %
-  });
+  }, ERSTE.id);
   pruefe('20 von 35 reichen nicht', [grenze.knapp.prozent, grenze.knapp.bestanden], [57, false]);
   pruefe('21 von 35 reichen',       [grenze.genau.prozent, grenze.genau.bestanden], [60, true]);
 
   /* ---------- 7. Versuche werden gespeichert ---------- */
   console.log('\n=== Gespeicherte Versuche ===');
-  const stand = await page.evaluate(() => ({
-    versuche: Pruefungen.versuche('p-es-es-a2').length,
-    bestes:   Pruefungen.bestesErgebnis('p-es-es-a2'),
-    bestanden: Pruefungen.bestanden('p-es-es-a2')
-  }));
+  const stand = await page.evaluate(id => ({
+    versuche: Pruefungen.versuche(id).length,
+    bestes:   Pruefungen.bestesErgebnis(id),
+    bestanden: Pruefungen.bestanden(id)
+  }), ERSTE.id);
   pruefe('zwei Versuche abgelegt', stand.versuche, 2);
   pruefe('bestes Ergebnis gemerkt', stand.bestes, 100);
   pruefe('als bestanden vermerkt', stand.bestanden, true);
 
   await page.goto(URL, { waitUntil: 'networkidle' }); await page.waitForTimeout(250);
-  // Nach bestandener A2 ist die nächste (B1, ab Tag 61) noch gesperrt —
+  // Nach der bestandenen ersten Prüfung ist die nächste noch gesperrt —
   // die Karte bleibt also sichtbar, aber nicht anklickbar.
   pruefe('nach bestandener Prüfung zeigt die Karte die nächste',
-         (await page.textContent('#pruefkarte-name')).trim(), 'Prüfung B1');
+         (await page.textContent('#pruefkarte-name')).trim(), ZWEITE.name);
   pruefe('und die ist gesperrt',
          await page.evaluate(() => document.getElementById('btn-pruefung').disabled), true);
 
@@ -232,7 +242,11 @@ async function durchspielen(page, wahl) {
   const alleP = await page.evaluate(() =>
     Object.keys(PRUEFUNGEN).flatMap(k => PRUEFUNGEN[k].map(p =>
       ({ kurs: k, id: p.id, name: p.name, tag: p.nachTag, niveau: p.niveau }))));
-  pruefe('elf Prüfungen angemeldet', alleP.length, 11);
+  // So viele Prüfungen, wie Dateien unter data/pruefungen/ liegen — keine darf
+  // beim Laden verlorengehen (etwa weil sie in index.html fehlt).
+  const dateien = require('fs').readdirSync(require('path').join(U.PROJEKT, 'data', 'pruefungen'))
+                    .filter(f => f.endsWith('.js')).length;
+  pruefe(`alle ${dateien} Prüfungsdateien angemeldet`, alleP.length, dateien);
 
   for (const P of alleP) {
     await page.evaluate(({ kurs, tag }) => {
@@ -290,7 +304,7 @@ async function durchspielen(page, wahl) {
     const doppelt = alle.filter((x, i) => alle.indexOf(x) !== i);
     return { gesamt: alle.length, doppelt };
   });
-  pruefe('396 Fragen insgesamt', kreuz.gesamt, 396);
+  pruefe('mindestens 36 Fragen je Prüfung', kreuz.gesamt >= alleP.length * 36, true);
   pruefe('keine doppelte Frage-ID', kreuz.doppelt, []);
 
   /* ---------- Konsole ---------- */

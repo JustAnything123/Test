@@ -18,23 +18,27 @@ const pruefe = (n, ist, soll) => {
 
   console.log('\n=== Kursauswahl beim ersten Start ===');
   pruefe('Kursauswahl sichtbar', await page.isVisible('#seite-kurse'), true);
-  pruefe('vier Kurse angeboten', (await page.$$('.kurs-karte')).length, 4);
+  // Spanisch (Spanien) liegt seit Oktober 2026 in der Ablage und wird nicht angeboten.
+  pruefe('drei Kurse angeboten', (await page.$$('.kurs-karte')).length, 3);
   pruefe('Kursnamen', await page.$$eval('.kurs-name', e => e.map(x => x.textContent)),
-    ['Español (España)', 'Español (Latinoamérica)', 'Alemán', 'Alemán en el trabajo']);
+    ['Español (Latinoamérica)', 'Alemán', 'Alemán en el trabajo']);
+  pruefe('Spanien-Kurs nicht mehr angeboten',
+    await page.$$eval('.kurs-karte', e => e.some(x => x.dataset.kurs === 'es-es')), false);
   pruefe('genau ein Lernpfad, und der gehoert zum Deutschkurs',
     await page.$$eval('.kurs-karte.kurs-pfad', e => e.map(x => x.dataset.kurs)), ['de-beruf']);
   // Vor der Kurswahl ist die ganze Auswahlseite deutsch, also auch das Schildchen.
   pruefe('Schildchen beschriftet', (await page.textContent('.kurs-schild')).trim(), 'Lernpfad');
   await page.screenshot({ path: U.bild('k1-kursauswahl.png') });
 
-  console.log('\n=== Spanien-Kurs waehlen ===');
-  await page.click('.kurs-karte[data-kurs="es-es"]'); await page.waitForTimeout(300);
+  console.log('\n=== Lateinamerika-Kurs waehlen ===');
+  await page.click('.kurs-karte[data-kurs="es-419"]'); await page.waitForTimeout(300);
   pruefe('Startseite sichtbar', await page.isVisible('#seite-start'), true);
-  pruefe('60 Lektionen geladen', await page.evaluate(() => Daten.anzahlTage()), 60);
+  const tage = await page.evaluate(() => Daten.anzahlTage());
+  pruefe('mindestens 90 Lektionen geladen', tage >= 90, true);
   pruefe('Oberflaeche deutsch', await page.textContent('#btn-lernen'), 'Heute lernen');
-  pruefe('Kursname im Kopf', (await page.textContent('#kopf-kurs')).includes('España'), true);
-  pruefe('Tag-Anzeige', (await page.textContent('#tageskarte-tag')), 'Tag 1 von 60');
-  await page.screenshot({ path: U.bild('k2-start-spanien.png') });
+  pruefe('Kursname im Kopf', (await page.textContent('#kopf-kurs')).includes('Latinoamérica'), true);
+  pruefe('Tag-Anzeige', (await page.textContent('#tageskarte-tag')), `Tag 1 von ${tage}`);
+  await page.screenshot({ path: U.bild('k2-start-lateinamerika.png') });
 
   console.log('\n=== Eine Aufgabe loesen, dann Kurs wechseln ===');
   await page.click('#btn-lernen'); await page.waitForTimeout(250);
@@ -50,12 +54,12 @@ const pruefe = (n, ist, soll) => {
   const opts = await page.$$('.option');
   for (const o of opts) { if (await o.getAttribute('data-wert') === loesung) { await o.click(); break; } }
   await page.click('#btn-pruefen'); await page.waitForTimeout(150);
-  pruefe('Antwort verbucht', await page.evaluate(() => Object.keys(Speicher.fortschritt('es-es').karten).length > 0), true);
+  pruefe('Antwort verbucht', await page.evaluate(() => Object.keys(Speicher.fortschritt('es-419').karten).length > 0), true);
 
   await page.evaluate(() => { App.sitzung = null; App.zeigeSeite('kurse'); }); await page.waitForTimeout(250);
   const staende = await page.$$eval('.kurs-stand', e => e.map(x => x.textContent));
-  pruefe('Spanien-Kurs zeigt Fortschritt', staende[0].includes('Tag 1'), true);
-  pruefe('LatAm-Kurs noch unbegonnen', staende[1], 'noch nicht begonnen');
+  pruefe('LatAm-Kurs zeigt Fortschritt', staende[0].includes('Tag 1'), true);
+  pruefe('Deutschkurs noch unbegonnen', staende[1], 'noch nicht begonnen');
 
   console.log('\n=== Deutschkurs: Oberflaeche muss auf Spanisch sein ===');
   await page.click('.kurs-karte[data-kurs="de"]'); await page.waitForTimeout(300);
@@ -78,13 +82,13 @@ const pruefe = (n, ist, soll) => {
   pruefe('Erinnerung auf Spanisch', (await page.textContent('#seite-erinnerung')).includes('Recordatorio diario'), true);
   await page.screenshot({ path: U.bild('k5-erinnerung-spanisch.png'), fullPage: true });
 
-  console.log('\n=== Zurueck zum Spanienkurs: Fortschritt noch da? ===');
+  console.log('\n=== Zurueck zum Lateinamerika-Kurs: Fortschritt noch da? ===');
   await page.click('#btn-menue'); await page.waitForTimeout(120);
   await page.click('#menue button[data-ziel="kurse"]'); await page.waitForTimeout(200);
-  await page.click('.kurs-karte[data-kurs="es-es"]'); await page.waitForTimeout(300);
+  await page.click('.kurs-karte[data-kurs="es-419"]'); await page.waitForTimeout(300);
   pruefe('Oberflaeche wieder deutsch', await page.textContent('#btn-lernen'), 'Heute lernen');
-  pruefe('Karten des Spanienkurses erhalten',
-    await page.evaluate(() => Object.keys(Speicher.fortschritt('es-es').karten).length > 0), true);
+  pruefe('Karten des LatAm-Kurses erhalten',
+    await page.evaluate(() => Object.keys(Speicher.fortschritt('es-419').karten).length > 0), true);
   pruefe('Deutschkurs hat eigenen, leeren Stand',
     await page.evaluate(() => Object.keys(Speicher.fortschritt('de').karten).length), 0);
 
@@ -109,12 +113,16 @@ const pruefe = (n, ist, soll) => {
     ton: Speicher.einstellung('ton'),
     thema: Speicher.einstellung('thema')
   }));
-  pruefe('alter Stand landet im Spanien-Kurs', m.kurs, 'es-es');
+  // Der allererste Stand war immer Spanisch (Spanien). Er wird weiterhin dort
+  // abgelegt — der Kurs ist zwar ausgeblendet, aber der Lernstand geht nicht
+  // verloren und ist in jeder Sicherung enthalten.
+  pruefe('alter Stand landet beim Spanien-Kurs', m.kurs, 'es-es');
   pruefe('Tagesstand uebernommen', m.tag, 7);
   pruefe('Karten uebernommen', m.karten, 1);
   pruefe('aktive Tage uebernommen', m.tage, 2);
   pruefe('Einstellungen uebernommen', [m.ton, m.thema], [false, 'dunkel']);
-  pruefe('kein Sprung in die Kursauswahl', await page.isVisible('#seite-start'), true);
+  pruefe('weil der Kurs ausgeblendet ist: Kursauswahl statt Absturz',
+    await page.isVisible('#seite-kurse'), true);
 
   console.log('\n=== Konsole ===');
   const echte = konsole.filter(f => !/404|favicon/i.test(f));

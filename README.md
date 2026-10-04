@@ -1,25 +1,27 @@
 # ¡Vamos! — Sprachen lernen, jeden Tag
 
-Eine Lern-App zum Selbsthosten, mit **vier Kursen in einer Anwendung**. Läuft als
+Eine Lern-App zum Selbsthosten, mit **drei Kursen in einer Anwendung**. Läuft als
 normale Webseite im Browser, funktioniert offline und speichert deinen Fortschritt
 auf deinem Gerät.
 
 | Kurs | Richtung | Niveau | Tage |
 |---|---|---|---|
-| 🇪🇸 Español (España) | Deutsch → Spanisch (Spanien) | A2 → B1 | 60 |
 | 🌎 Español (Latinoamérica) | Deutsch → Spanisch (Lateinamerika) | A2 → B2 | 90 |
 | 🇩🇪 Alemán | Spanisch → Deutsch, Oberfläche auf Spanisch | A1 → B2 | 120 |
 | 🍽️ Alemán en el trabajo | Themen-Lernpfad des Deutschkurses: Hotel, Restaurant, Küche | A2 → B2 | 45 |
 
-**315 Tageslektionen · 3150 Vokabeln · 1575 Beispielsätze · 315 Grammatik- und
+**255 Tageslektionen · 2550 Vokabeln · 1275 Beispielsätze · 255 Grammatik- und
 Redemittelthemen**
+
+Der frühere Kurs *Español (España)* ist seit Oktober 2026 ausgeblendet und liegt
+in [`ablage/`](ablage/README.md). Ein vorhandener Lernstand bleibt erhalten.
 
 ---
 
 ## Inhalt
 
 1. [Was die App kann](#was-die-app-kann)
-2. [Die vier Kurse](#die-vier-kurse)
+2. [Die drei Kurse](#die-drei-kurse)
 3. [Schnellstart in 5 Minuten](#schnellstart-in-5-minuten)
 4. [Die Erinnerung um 19:30 einrichten](#die-erinnerung-um-1930-einrichten)
 5. [Wie das Lernsystem funktioniert](#wie-das-lernsystem-funktioniert)
@@ -69,7 +71,7 @@ Internet nötig.
 
 ---
 
-## Die vier Kurse
+## Die drei Kurse
 
 Beim ersten Start wählst du einen Kurs. Wechseln kannst du jederzeit über
 Menü (☰) → **🎓 Kurs wechseln**.
@@ -78,11 +80,6 @@ Menü (☰) → **🎓 Kurs wechseln**.
 Problemwörter werden getrennt geführt. Du kannst also parallel Spanisch lernen
 und deiner Partnerin den Deutschkurs geben, ohne dass sich etwas vermischt.
 Gemeinsam sind nur die Einstellungen (Thema, Ton, Tagesziel).
-
-### 🇪🇸 Español (España) — A2 → B1, 60 Tage
-
-Das Spanisch Spaniens, mit `vosotros` und dem dort üblichen Wortschatz.
-Erklärungen auf Deutsch.
 
 ### 🌎 Español (Latinoamérica) — A2 → B2, 90 Tage
 
@@ -295,7 +292,7 @@ icons/                     App-Icons
 css/stil.css               gesamtes Aussehen, helles und dunkles Thema
 
 js/kurse.js                Kursregister: anlegen, wechseln, Stand je Kurs
-js/kurs-definitionen.js    die vier Kurse (Name, Sprachen, Stimmen, Farbe)
+js/kurs-definitionen.js    die drei Kurse (Name, Sprachen, Stimmen, Farbe)
 js/texte.js                alle Oberflächentexte auf Deutsch und Spanisch
 js/daten.js                Sammelbehälter für die Lektionen des aktiven Kurses
 js/speicher.js             Fortschritt je Kurs speichern, Export und Import
@@ -306,7 +303,6 @@ js/statistik.js            Zähler, Streak, Kalendergitter, Kalenderdatei
 js/tagesplan.js            stellt die Aufgaben einer Sitzung zusammen
 js/app.js                  Ablaufsteuerung und Bildschirmwechsel
 
-data/es-es/lektionen-01-10.js  …  -51-60.js    60 Lektionen, Spanien
 data/es-419/lektionen-01-10.js …  -81-90.js    90 Lektionen, Lateinamerika
 data/de/lektionen-01-10.js     … -111-120.js  120 Lektionen, Deutsch
 data/de-beruf/lektionen-01-08.js … -43-45.js    45 Lektionen, Deutsch im Beruf
@@ -314,7 +310,9 @@ data/de-beruf/lektionen-01-08.js … -43-45.js    45 Lektionen, Deutsch im Beruf
 js/teilen.js               Prüfauftrag und Bewertung in einen Link packen
 js/pruefungen.js           Prüfungen: Register, Punkte, Bestehensgrenze
 js/pruefung-ui.js          die fünf Prüfungs-Aufgabentypen
-data/pruefungen/es-es-a2.js … de-beruf-2.js   11 Prüfungen
+data/pruefungen/de-a1.js … es-419-b2.js      9 Prüfungen
+
+ablage/                    ausgeblendeter Spanien-Kurs, siehe ablage/README.md
 
 tests/alle.sh              startet Server, laesst alle Tests laufen, raeumt auf
 tests/umgebung.js          gemeinsame Einstellungen (Pfade, Adresse, Browser)
@@ -385,12 +383,11 @@ Startbildschirm, sobald der Tag erreicht ist.
 
 | Kurs | Zwischenstopps | Vorbild |
 |---|---|---|
-| Spanisch (Spanien) | Tag 33 → A2 · Tag 60 → B1 | DELE |
 | Spanisch (Lateinamerika) | Tag 33 → A2 · Tag 60 → B1 · Tag 90 → B2 | DELE |
 | Deutsch | Tag 30 → A1 · Tag 60 → A2 · Tag 90 → B1 · Tag 120 → B2 | Goethe-Zertifikat |
 | Deutsch im Beruf | Tag 30 → Arbeitstag · Tag 45 → Fachwortschatz | telc Deutsch B1·B2 Beruf |
 
-**Alle elf sind fertig.** Jede hat denselben Bauplan: vier Teile, sieben
+**Alle neun sind fertig.** Jede hat denselben Bauplan: vier Teile, sieben
 Aufgaben, 36 Fragen, davon 35 automatisch bewertet. Verlangt wird nur, was
 bis zum jeweiligen Stopp im Kurs vorkam.
 
@@ -402,7 +399,6 @@ So weißt du, dass sie kommt, auch wenn du sie noch nicht machen kannst.
 
 | Kurs | freigeschaltet ab |
 |---|---|
-| Spanisch (Spanien) | Tag 34 (A2) · Tag 61 (B1) |
 | Spanisch (Lateinamerika) | Tag 34 · Tag 61 · Tag 91 |
 | Deutsch | Tag 31 · Tag 61 · Tag 91 · Tag 121 |
 | Deutsch im Beruf | Tag 31 · Tag 46 |
@@ -411,7 +407,7 @@ So weißt du, dass sie kommt, auch wenn du sie noch nicht machen kannst.
 noch eine ältere, offline gespeicherte Fassung. Die App meldet sich in dem Fall
 inzwischen selbst mit einem Streifen am unteren Rand: *Neue Fassung verfügbar ·
 Neu laden*. Nachsehen kannst du es außerdem unter *Einstellungen* ganz unten,
-beim Stand der Inhalte — dort muss **11 Prüfungen** stehen.
+beim Stand der Inhalte — dort muss **9 Prüfungen** stehen.
 
 Sind mehrere Prüfungen freigeschaltet, stehen sie als Liste unter der Karte.
 So kommt man auch an eine spätere Prüfung heran, ohne die frühere bestanden zu
@@ -521,9 +517,9 @@ Eine Datei unter `data/pruefungen/` anlegen und in `index.html` sowie
 `service-worker.js` eintragen. Der Aufbau:
 
 ```js
-PRUEFUNG('es-es', {
-  id: 'p-es-es-b1', nachTag: 60, niveau: 'B1',
-  name: 'Prüfung B1', vorbild: 'DELE B1', bestehen: 60,
+PRUEFUNG('es-419', {
+  id: 'p-es-419-c1', nachTag: 150, niveau: 'C1',
+  name: 'Prüfung C1', vorbild: 'DELE C1', bestehen: 60,
   teile: [{
     id: 't1', art: 'lesen', name: 'Leseverstehen',
     aufgaben: [{
